@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "checkedMonth": "May 2026",
   "shops": [
     {
@@ -20,7 +20,9 @@
       ],
       "signature": "Sweet Hut Milk Tea (Assam + Earl Grey) with honey boba",
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Sweet%20Hut%20Bakery%20%26%20Cafe%202180%20Pleasant%20Hill%20Rd%20Duluth%20GA",
-      "yelpUrl": "https://www.yelp.com/biz/sweet-hut-bakery-and-cafe-duluth"
+      "yelpUrl": "https://www.yelp.com/biz/sweet-hut-bakery-and-cafe-duluth",
+      "city": "Duluth",
+      "addrKey": "duluth-2180-pleasanthill"
     },
     {
       "name": "Cafe Mozart Bakery",
@@ -40,7 +42,9 @@
       ],
       "signature": "Mocha Bun & Butter Cream Bread",
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Cafe%20Mozart%20Bakery%202131%20Pleasant%20Hill%20Rd%20Duluth%20GA",
-      "yelpUrl": "https://www.yelp.com/biz/mozart-bakery-duluth-4"
+      "yelpUrl": "https://www.yelp.com/biz/mozart-bakery-duluth-4",
+      "city": "Duluth",
+      "addrKey": "duluth-2131-pleasanthill"
     },
     {
       "name": "TwoHa's Cafe",
@@ -60,7 +64,9 @@
       ],
       "signature": "Strawberry Matcha Latte with real strawberry chunks",
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=TwoHa%27s%20Cafe%202645%20N%20Berkeley%20Lake%20Rd%20Duluth%20GA",
-      "yelpUrl": "https://www.yelp.com/biz/twohas-cafe-duluth"
+      "yelpUrl": "https://www.yelp.com/biz/twohas-cafe-duluth",
+      "city": "Duluth",
+      "addrKey": "duluth-2645-nberkeley"
     },
     {
       "name": "White Windmill Bakery & Cafe",
@@ -80,7 +86,9 @@
       ],
       "signature": "Dalgona Latte & signature milk bread",
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=White%20Windmill%20Bakery%20%26%20Cafe%202200%20Duluth%20Hwy%20Duluth%20GA",
-      "yelpUrl": "https://www.yelp.com/biz/white-windmill-bakery-and-cafe-duluth-4"
+      "yelpUrl": "https://www.yelp.com/biz/white-windmill-bakery-and-cafe-duluth-4",
+      "city": "Duluth",
+      "addrKey": "duluth-2200-duluth"
     },
     {
       "name": "Land of a Thousand Hills Coffee",
@@ -100,7 +108,9 @@
       ],
       "signature": "Single-origin Rwandan pour-over (Ruli Mountain)",
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Land%20of%20a%20Thousand%20Hills%20Coffee%203176%20Main%20St%20Duluth%20GA",
-      "yelpUrl": "https://www.yelp.com/biz/land-of-a-thousand-hills-duluth"
+      "yelpUrl": "https://www.yelp.com/biz/land-of-a-thousand-hills-duluth",
+      "city": "Duluth",
+      "addrKey": "duluth-3176-main"
     },
     {
       "name": "Alchemist on the Divide",
@@ -120,7 +130,9 @@
       ],
       "signature": "The Alchemist Special (Dutch coffee with espresso)",
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Alchemist%20on%20the%20Divide%203550%20W%20Lawrenceville%20St%20Duluth%20GA",
-      "yelpUrl": "https://www.yelp.com/biz/alchemist-on-the-divide-duluth"
+      "yelpUrl": "https://www.yelp.com/biz/alchemist-on-the-divide-duluth",
+      "city": "Duluth",
+      "addrKey": "duluth-3550-wlawrenceville"
     },
     {
       "name": "The Cream",
@@ -140,7 +152,9 @@
       ],
       "signature": "Mango Bingsu",
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=The%20Cream%203455%20Duluth%20Hwy%20Duluth%20GA",
-      "yelpUrl": "https://www.yelp.com/biz/the-cream-duluth-4"
+      "yelpUrl": "https://www.yelp.com/biz/the-cream-duluth-4",
+      "city": "Duluth",
+      "addrKey": "duluth-3455-duluth"
     },
     {
       "name": "Ginkgo Bakery & Cafe",
@@ -160,7 +174,9 @@
       ],
       "signature": "Portuguese-style Egg Tart",
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Ginkgo%20Bakery%20%26%20Cafe%203550%20W%20Lawrenceville%20St%20Duluth%20GA",
-      "yelpUrl": "https://www.yelp.com/biz/ginkgo-duluth"
+      "yelpUrl": "https://www.yelp.com/biz/ginkgo-duluth",
+      "city": "Duluth",
+      "addrKey": "duluth-3550-wlawrenceville"
     },
     {
       "name": "Coffee That Matters",
@@ -180,7 +196,9 @@
       ],
       "signature": "White Lightning Bird iced brew",
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Coffee%20That%20Matters%202640%20Old%20Peachtree%20Rd%20Duluth%20GA",
-      "yelpUrl": "https://www.yelp.com/biz/phoenix-roasters-duluth"
+      "yelpUrl": "https://www.yelp.com/biz/phoenix-roasters-duluth",
+      "city": "Duluth",
+      "addrKey": "duluth-2640-oldpeachtree"
     },
     {
       "name": "The Coffee By Hand",
@@ -200,7 +218,9 @@
       ],
       "signature": "Honey Croffle (croissant-waffle)",
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=The%20Coffee%20By%20Hand%202180%20Pleasant%20Hill%20Rd%20Duluth%20GA",
-      "yelpUrl": "https://www.yelp.com/biz/the-coffee-by-hand-duluth"
+      "yelpUrl": "https://www.yelp.com/biz/the-coffee-by-hand-duluth",
+      "city": "Duluth",
+      "addrKey": "duluth-2180-pleasanthill"
     },
     {
       "name": "OneZo Boba Tea",
@@ -220,7 +240,9 @@
       ],
       "signature": "Brown Sugar Pearl Milk with handmade boba",
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=OneZo%20Boba%20Tea%203580%20Breckinridge%20Blvd%20Duluth%20GA",
-      "yelpUrl": "https://www.yelp.com/biz/one-zo-boba-duluth-duluth"
+      "yelpUrl": "https://www.yelp.com/biz/one-zo-boba-duluth-duluth",
+      "city": "Duluth",
+      "addrKey": "duluth-3580-breckinridge"
     },
     {
       "name": "Molly Tea",
@@ -240,7 +262,9 @@
       ],
       "signature": "Premium Jasmine White Milk Tea",
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Molly%20Tea%202131%20Pleasant%20Hill%20Rd%20Duluth%20GA",
-      "yelpUrl": "https://www.yelp.com/biz/molly-tea-duluth"
+      "yelpUrl": "https://www.yelp.com/biz/molly-tea-duluth",
+      "city": "Duluth",
+      "addrKey": "duluth-2131-pleasanthill"
     },
     {
       "name": "ChiCha San Chen",
@@ -260,7 +284,9 @@
       ],
       "signature": "Lishan Oolong Tea",
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=ChiCha%20San%20Chen%202174%20Pleasant%20Hill%20Rd%20Duluth%20GA",
-      "yelpUrl": "https://www.yelp.com/biz/chicha-san-chen-duluth"
+      "yelpUrl": "https://www.yelp.com/biz/chicha-san-chen-duluth",
+      "city": "Duluth",
+      "addrKey": "duluth-2174-pleasanthill"
     },
     {
       "name": "Matcha Cafe Maiko",
@@ -280,7 +306,9 @@
       ],
       "signature": "Matcha Soft Serve with Mochi & Red Bean",
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Matcha%20Cafe%20Maiko%202131%20Pleasant%20Hill%20Rd%20Duluth%20GA",
-      "yelpUrl": "https://www.yelp.com/biz/matcha-cafe-maiko-duluth-3"
+      "yelpUrl": "https://www.yelp.com/biz/matcha-cafe-maiko-duluth-3",
+      "city": "Duluth",
+      "addrKey": "duluth-2131-pleasanthill"
     },
     {
       "name": "Hiro Tea Bar",
@@ -300,7 +328,9 @@
       ],
       "signature": "Orange Green Tea (fresh-squeezed)",
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Hiro%20Tea%20Bar%203648%20Satellite%20Blvd%20Duluth%20GA",
-      "yelpUrl": "https://www.yelp.com/biz/hiro-tea-bar-duluth-2"
+      "yelpUrl": "https://www.yelp.com/biz/hiro-tea-bar-duluth-2",
+      "city": "Duluth",
+      "addrKey": "duluth-3648-satellite"
     },
     {
       "name": "Ding Tea",
@@ -320,7 +350,9 @@
       ],
       "signature": "Brown Sugar Pearl Milk Tea",
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Ding%20Tea%202180%20Pleasant%20Hill%20Rd%20Duluth%20GA",
-      "yelpUrl": "https://www.yelp.com/biz/ding-tea-duluth-duluth-2"
+      "yelpUrl": "https://www.yelp.com/biz/ding-tea-duluth-duluth-2",
+      "city": "Duluth",
+      "addrKey": "duluth-2180-pleasanthill"
     },
     {
       "name": "Tiger Sugar",
@@ -340,7 +372,9 @@
       ],
       "signature": "Brown Sugar Boba Milk with Cream Mousse",
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Tiger%20Sugar%202570%20Pleasant%20Hill%20Rd%20Duluth%20GA",
-      "yelpUrl": "https://www.yelp.com/biz/tiger-sugar-duluth"
+      "yelpUrl": "https://www.yelp.com/biz/tiger-sugar-duluth",
+      "city": "Duluth",
+      "addrKey": "duluth-2570-pleasanthill"
     },
     {
       "name": "Xing Fu Tang",
@@ -360,7 +394,9 @@
       ],
       "signature": "Signature Brown Sugar Boba Milk",
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Xing%20Fu%20Tang%202476%20Pleasant%20Hill%20Rd%20Duluth%20GA",
-      "yelpUrl": "https://www.yelp.com/biz/xing-fu-tang-duluth"
+      "yelpUrl": "https://www.yelp.com/biz/xing-fu-tang-duluth",
+      "city": "Duluth",
+      "addrKey": "duluth-2476-pleasanthill"
     },
     {
       "name": "Goodwin Tea House & More",
@@ -380,7 +416,9 @@
       ],
       "signature": "Taro Bubble Tea + Taiwanese Popcorn Chicken",
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Goodwin%20Tea%20House%203455%20Peachtree%20Industrial%20Blvd%20Duluth%20GA",
-      "yelpUrl": "https://www.yelp.com/biz/goodwin-tea-house-and-more-duluth-5"
+      "yelpUrl": "https://www.yelp.com/biz/goodwin-tea-house-and-more-duluth-5",
+      "city": "Duluth",
+      "addrKey": "duluth-3455-peachtree"
     },
     {
       "name": "The Bep Teahouse",
@@ -400,7 +438,9 @@
       ],
       "signature": "The Bep Organic Milk Tea",
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=The%20Bep%20Teahouse%202180%20Pleasant%20Hill%20Rd%20Duluth%20GA",
-      "yelpUrl": "https://www.yelp.com/biz/the-bep-teahouse-duluth"
+      "yelpUrl": "https://www.yelp.com/biz/the-bep-teahouse-duluth",
+      "city": "Duluth",
+      "addrKey": "duluth-2180-pleasanthill"
     },
     {
       "name": "Paris Baguette",
@@ -420,7 +460,9 @@
       ],
       "signature": "Strawberry Soft Cream Cake",
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Paris%20Baguette%203492%20Satellite%20Blvd%20Duluth%20GA",
-      "yelpUrl": "https://www.yelp.com/biz/paris-baguette-duluth-2"
+      "yelpUrl": "https://www.yelp.com/biz/paris-baguette-duluth-2",
+      "city": "Duluth",
+      "addrKey": "duluth-3492-satellite"
     },
     {
       "name": "Bread Museum Bakery & Cafe",
@@ -440,7 +482,9 @@
       ],
       "signature": "Salt Bread (Sogeumppang)",
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Bread%20Museum%20Bakery%203473%20Old%20Norcross%20Rd%20Duluth%20GA",
-      "yelpUrl": "https://www.yelp.com/biz/bread-museum-duluth-3"
+      "yelpUrl": "https://www.yelp.com/biz/bread-museum-duluth-3",
+      "city": "Duluth",
+      "addrKey": "duluth-3473-oldnorcross"
     },
     {
       "name": "Tous Les Jours",
@@ -460,7 +504,9 @@
       ],
       "signature": "Cloud Cream Cheese Bread",
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Tous%20Les%20Jours%202550%20Pleasant%20Hill%20Rd%20Duluth%20GA",
-      "yelpUrl": "https://www.yelp.com/biz/tous-les-jours-duluth-2"
+      "yelpUrl": "https://www.yelp.com/biz/tous-les-jours-duluth-2",
+      "city": "Duluth",
+      "addrKey": "duluth-2550-pleasanthill"
     },
     {
       "name": "Tree Story Bakery & Cafe",
@@ -480,7 +526,9 @@
       ],
       "signature": "Tiramisu Bingsu",
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Tree%20Story%20Bakery%202550%20Pleasant%20Hill%20Rd%20Duluth%20GA",
-      "yelpUrl": "https://www.yelp.com/biz/tree-story-bakery-and-cafe-duluth"
+      "yelpUrl": "https://www.yelp.com/biz/tree-story-bakery-and-cafe-duluth",
+      "city": "Duluth",
+      "addrKey": "duluth-2550-pleasanthill"
     },
     {
       "name": "Vincent Bakery & Cafe",
@@ -500,7 +548,9 @@
       ],
       "signature": "Red Bean Bun",
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Vincent%20Bakery%20Cafe%202442%20Pleasant%20Hill%20Rd%20Duluth%20GA",
-      "yelpUrl": "https://www.yelp.com/biz/vincent-bakery-cafe-duluth"
+      "yelpUrl": "https://www.yelp.com/biz/vincent-bakery-cafe-duluth",
+      "city": "Duluth",
+      "addrKey": "duluth-2442-pleasanthill"
     },
     {
       "name": "Hansel & Gretel Bakery Cafe",
@@ -520,7 +570,9 @@
       ],
       "signature": "Fresh Cream Strawberry Cake",
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Hansel%20and%20Gretel%20Bakery%202131%20Pleasant%20Hill%20Rd%20Duluth%20GA",
-      "yelpUrl": "https://www.yelp.com/biz/hansel-and-gretel-bakery-cafe-duluth"
+      "yelpUrl": "https://www.yelp.com/biz/hansel-and-gretel-bakery-cafe-duluth",
+      "city": "Duluth",
+      "addrKey": "duluth-2131-pleasanthill"
     },
     {
       "name": "Georgia French Bakery & Cafe",
@@ -540,7 +592,9 @@
       ],
       "signature": "Almond Croissant",
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Georgia%20French%20Bakery%203512%20Satellite%20Blvd%20Duluth%20GA",
-      "yelpUrl": "https://www.yelp.com/biz/georgia-french-bakery-and-cafe-duluth"
+      "yelpUrl": "https://www.yelp.com/biz/georgia-french-bakery-and-cafe-duluth",
+      "city": "Duluth",
+      "addrKey": "duluth-3512-satellite"
     },
     {
       "name": "Mai Bakery",
@@ -560,7 +614,9 @@
       ],
       "signature": "BBQ Pork Bun",
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Mai%20Bakery%202300%20Pleasant%20Hill%20Rd%20Duluth%20GA",
-      "yelpUrl": "https://www.yelp.com/biz/mai-bakery-duluth"
+      "yelpUrl": "https://www.yelp.com/biz/mai-bakery-duluth",
+      "city": "Duluth",
+      "addrKey": "duluth-2300-pleasanthill"
     },
     {
       "name": "The Patio Cafe & Bakery",
@@ -580,7 +636,9 @@
       ],
       "signature": "Brownies & Homemade Soup",
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=The%20Patio%20Cafe%205950%20State%20Bridge%20Rd%20Duluth%20GA",
-      "yelpUrl": "https://www.yelp.com/biz/the-patio-cafe-and-bakery-duluth"
+      "yelpUrl": "https://www.yelp.com/biz/the-patio-cafe-and-bakery-duluth",
+      "city": "Duluth",
+      "addrKey": "duluth-5950-state"
     },
     {
       "name": "Shokku Bakery",
@@ -600,7 +658,9 @@
       ],
       "signature": "Charcoal Croissant",
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Shokku%20Bakery%203875%20Venture%20Dr%20Duluth%20GA",
-      "yelpUrl": "https://www.yelp.com/biz/shokku-bakery-duluth"
+      "yelpUrl": "https://www.yelp.com/biz/shokku-bakery-duluth",
+      "city": "Duluth",
+      "addrKey": "duluth-3875-venture"
     },
     {
       "name": "Forest Cafe",
@@ -620,7 +680,9 @@
       ],
       "signature": "Strawberry Tanghulu",
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Forest%20Cafe%203780%20Old%20Norcross%20Rd%20Duluth%20GA",
-      "yelpUrl": "https://www.yelp.com/biz/forest-cafe-duluth"
+      "yelpUrl": "https://www.yelp.com/biz/forest-cafe-duluth",
+      "city": "Duluth",
+      "addrKey": "duluth-3780-oldnorcross"
     },
     {
       "name": "Cafe 104",
@@ -640,7 +702,9 @@
       ],
       "signature": "Mochi Souffle Pancakes",
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Cafe%20104%203705%20Old%20Norcross%20Rd%20Duluth%20GA",
-      "yelpUrl": "https://www.yelp.com/biz/cafe-104-duluth"
+      "yelpUrl": "https://www.yelp.com/biz/cafe-104-duluth",
+      "city": "Duluth",
+      "addrKey": "duluth-3705-oldnorcross"
     },
     {
       "name": "Boba Mocha",
@@ -660,7 +724,9 @@
       ],
       "signature": "Mix-and-match milk tea with popping boba",
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Boba%20Mocha%202628%20Pleasant%20Hill%20Rd%20Duluth%20GA",
-      "yelpUrl": "https://www.yelp.com/biz/boba-mocha-duluth"
+      "yelpUrl": "https://www.yelp.com/biz/boba-mocha-duluth",
+      "city": "Duluth",
+      "addrKey": "duluth-2628-pleasanthill"
     },
     {
       "name": "Long's Cafe 2",
@@ -680,7 +746,9 @@
       ],
       "signature": "Cà phê sữa đá (Vietnamese iced coffee)",
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Long%27s%20Cafe%202%201630%20Pleasant%20Hill%20Rd%20Duluth%20GA",
-      "yelpUrl": "https://www.yelp.com/search?find_desc=Long%27s+Cafe+2&find_loc=Duluth%2C+GA"
+      "yelpUrl": "https://www.yelp.com/search?find_desc=Long%27s+Cafe+2&find_loc=Duluth%2C+GA",
+      "city": "Duluth",
+      "addrKey": "duluth-1630-pleasanthill"
     },
     {
       "name": "Incha Duluth (Duck Ink + Boba)",
@@ -700,7 +768,9 @@
       ],
       "signature": "Duck Ink figurine + taro milk tea",
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Incha%20Duluth%20Duck%20Ink%203500%20Gwinnett%20Pl%20Dr%20Duluth%20GA",
-      "yelpUrl": "https://www.yelp.com/biz/incha-duck-ink-duluth"
+      "yelpUrl": "https://www.yelp.com/biz/incha-duck-ink-duluth",
+      "city": "Duluth",
+      "addrKey": "duluth-3500-gwinnettpl"
     },
     {
       "name": "Orange Coffee Bar",
@@ -720,7 +790,9 @@
       ],
       "signature": "Sweet Potato Latte",
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Orange%20Coffee%20Bar%203473%20Old%20Norcross%20Rd%20Duluth%20GA",
-      "yelpUrl": "https://www.yelp.com/biz/orange-coffee-bar-duluth"
+      "yelpUrl": "https://www.yelp.com/biz/orange-coffee-bar-duluth",
+      "city": "Duluth",
+      "addrKey": "duluth-3473-oldnorcross"
     },
     {
       "name": "Tom N Toms Coffee Black",
@@ -740,7 +812,9 @@
       ],
       "signature": "Honey butter pretzel + Americano",
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Tom%20N%20Toms%20Coffee%20Black%203473%20Old%20Norcross%20Rd%20Duluth%20GA",
-      "yelpUrl": "https://www.yelp.com/biz/tom-n-toms-coffee-black-duluth"
+      "yelpUrl": "https://www.yelp.com/biz/tom-n-toms-coffee-black-duluth",
+      "city": "Duluth",
+      "addrKey": "duluth-3473-oldnorcross"
     },
     {
       "name": "Gonggan ATL",
@@ -760,7 +834,9 @@
       ],
       "signature": "Matcha latte + croffle",
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Gonggan%20ATL%202645%20N%20Berkeley%20Lake%20Rd%20Duluth%20GA",
-      "yelpUrl": "https://www.yelp.com/biz/gong-gan-duluth"
+      "yelpUrl": "https://www.yelp.com/biz/gong-gan-duluth",
+      "city": "Duluth",
+      "addrKey": "duluth-2645-nberkeley"
     },
     {
       "name": "Kafeiin",
@@ -780,7 +856,9 @@
       ],
       "signature": "Corn Latte",
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Kafeiin%203865%20Venture%20Dr%20Duluth%20GA",
-      "yelpUrl": "https://www.yelp.com/biz/kafeiin-duluth"
+      "yelpUrl": "https://www.yelp.com/biz/kafeiin-duluth",
+      "city": "Duluth",
+      "addrKey": "duluth-3865-venture"
     },
     {
       "name": "Fujiissa",
@@ -800,7 +878,9 @@
       ],
       "signature": "Fujisa Special matcha parfait",
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Fujiissa%203875%20Venture%20Dr%20Duluth%20GA",
-      "yelpUrl": "https://www.yelp.com/biz/fujiissa-duluth"
+      "yelpUrl": "https://www.yelp.com/biz/fujiissa-duluth",
+      "city": "Duluth",
+      "addrKey": "duluth-3875-venture"
     },
     {
       "name": "Yezi Coconut Dessert",
@@ -820,7 +900,9 @@
       ],
       "signature": "Mango Coconut Snowy",
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Yezi%20Coconut%20Dessert%202174%20Pleasant%20Hill%20Rd%20Duluth%20GA",
-      "yelpUrl": "https://www.yelp.com/biz/yezi-coconut-dessert-duluth"
+      "yelpUrl": "https://www.yelp.com/biz/yezi-coconut-dessert-duluth",
+      "city": "Duluth",
+      "addrKey": "duluth-2174-pleasanthill"
     },
     {
       "name": "Fluffy Fluffy Dessert Cafe",
@@ -840,7 +922,9 @@
       ],
       "signature": "Strawberry Tiramisu Souffle Pancakes",
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Fluffy%20Fluffy%20Dessert%20Cafe%202180%20Pleasant%20Hill%20Rd%20Duluth%20GA",
-      "yelpUrl": "https://www.yelp.com/biz/fluffy-fluffy-dessert-cafe-duluth"
+      "yelpUrl": "https://www.yelp.com/biz/fluffy-fluffy-dessert-cafe-duluth",
+      "city": "Duluth",
+      "addrKey": "duluth-2180-pleasanthill"
     },
     {
       "name": "Qamaria Yemeni Coffee Co.",
@@ -860,7 +944,9 @@
       ],
       "signature": "Adeni Tea with Honeycomb Bread",
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Qamaria%20Yemeni%20Coffee%202645%20N%20Berkeley%20Lake%20Rd%20Duluth%20GA",
-      "yelpUrl": "https://www.yelp.com/biz/qamaria-yemeni-coffee-duluth"
+      "yelpUrl": "https://www.yelp.com/biz/qamaria-yemeni-coffee-duluth",
+      "city": "Duluth",
+      "addrKey": "duluth-2645-nberkeley"
     },
     {
       "name": "Yibna Cafe",
@@ -880,7 +966,9 @@
       ],
       "signature": "Sahlab Latte",
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Yibna%20Cafe%203700%20Crestwood%20Pkwy%20Duluth%20GA",
-      "yelpUrl": "https://www.yelp.com/biz/yibna-caf%C3%A9-duluth"
+      "yelpUrl": "https://www.yelp.com/biz/yibna-caf%C3%A9-duluth",
+      "city": "Duluth",
+      "addrKey": "duluth-3700-crestwood"
     },
     {
       "name": "El Cafe by La Abuela",
@@ -900,7 +988,9 @@
       ],
       "signature": "Crepes y Fresas (Strawberry Crepes)",
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=El%20Cafe%20by%20La%20Abuela%201630%20Pleasant%20Hill%20Rd%20Duluth%20GA",
-      "yelpUrl": "https://www.yelp.com/biz/el-cafe-by-la-abuela-duluth-2"
+      "yelpUrl": "https://www.yelp.com/biz/el-cafe-by-la-abuela-duluth-2",
+      "city": "Duluth",
+      "addrKey": "duluth-1630-pleasanthill"
     },
     {
       "name": "Date un Gusto",
@@ -920,7 +1010,9 @@
       ],
       "signature": "Cachapa with Queso de Mano",
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Date%20un%20Gusto%203350%20Steve%20Reynolds%20Blvd%20Duluth%20GA",
-      "yelpUrl": "https://www.yelp.com/biz/date-un-gusto-duluth"
+      "yelpUrl": "https://www.yelp.com/biz/date-un-gusto-duluth",
+      "city": "Duluth",
+      "addrKey": "duluth-3350-steve"
     },
     {
       "name": "7 Leaves Cafe",
@@ -940,7 +1032,9 @@
       ],
       "signature": "Mung Bean Milk Tea",
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=7%20Leaves%20Cafe%204020%20Satellite%20Blvd%20Duluth%20GA",
-      "yelpUrl": "https://www.yelp.com/biz/7-leaves-cafe-duluth-duluth"
+      "yelpUrl": "https://www.yelp.com/biz/7-leaves-cafe-duluth-duluth",
+      "city": "Duluth",
+      "addrKey": "duluth-4020-satellite"
     },
     {
       "name": "The Quynh Cafe",
@@ -960,7 +1054,9 @@
       ],
       "signature": "Chè Thái (Vietnamese Fruit Dessert Soup)",
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=The%20Quynh%20Cafe%203665%20Club%20Dr%20Duluth%20GA",
-      "yelpUrl": "https://www.yelp.com/biz/the-quynh-cafe-duluth"
+      "yelpUrl": "https://www.yelp.com/biz/the-quynh-cafe-duluth",
+      "city": "Duluth",
+      "addrKey": "duluth-3665-club"
     },
     {
       "name": "Lemon Sweets Bakery & Cafe",
@@ -980,7 +1076,9 @@
       ],
       "signature": "Mango Bingsu",
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Lemon%20Sweets%20Bakery%203531%20Peachtree%20Industrial%20Blvd%20Duluth%20GA",
-      "yelpUrl": "https://www.yelp.com/biz/lemon-sweets-bakery-and-cafe-duluth"
+      "yelpUrl": "https://www.yelp.com/biz/lemon-sweets-bakery-and-cafe-duluth",
+      "city": "Duluth",
+      "addrKey": "duluth-3531-peachtree"
     },
     {
       "name": "Cafe Rothem",
@@ -1000,7 +1098,9 @@
       ],
       "signature": "Injeolmi Bingsu",
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Cafe%20Rothem%203585%20Peachtree%20Industrial%20Blvd%20Duluth%20GA",
-      "yelpUrl": "https://www.yelp.com/biz/cafe-rothem-duluth"
+      "yelpUrl": "https://www.yelp.com/biz/cafe-rothem-duluth",
+      "city": "Duluth",
+      "addrKey": "duluth-3585-peachtree"
     },
     {
       "name": "Wich Tea",
@@ -1020,7 +1120,9 @@
       ],
       "signature": "Chargrilled Pork Banh Mi",
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Wich%20Tea%203350%20Steve%20Reynolds%20Blvd%20Duluth%20GA",
-      "yelpUrl": "https://www.yelp.com/biz/wich-tea-duluth-3"
+      "yelpUrl": "https://www.yelp.com/biz/wich-tea-duluth-3",
+      "city": "Duluth",
+      "addrKey": "duluth-3350-steve"
     },
     {
       "name": "Tea Drip",
@@ -1040,7 +1142,9 @@
       ],
       "signature": "Ube Drip Coffee",
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Tea%20Drip%203675%20Satellite%20Blvd%20Duluth%20GA",
-      "yelpUrl": "https://www.yelp.com/biz/tea-drip-duluth"
+      "yelpUrl": "https://www.yelp.com/biz/tea-drip-duluth",
+      "city": "Duluth",
+      "addrKey": "duluth-3675-satellite"
     },
     {
       "name": "Cuckoo's Cafe",
@@ -1060,7 +1164,9 @@
       ],
       "signature": "Pearl Milk Tea with Taiwanese Chicken Nuggets",
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Cuckoo%27s%20Cafe%203182%20Steve%20Reynolds%20Blvd%20Duluth%20GA",
-      "yelpUrl": "https://www.yelp.com/biz/cuckoos-cafe-duluth"
+      "yelpUrl": "https://www.yelp.com/biz/cuckoos-cafe-duluth",
+      "city": "Duluth",
+      "addrKey": "duluth-3182-steve"
     },
     {
       "name": "Chuchat",
@@ -1080,7 +1186,9 @@
       ],
       "signature": "Sea Salt Oolong Milk Tea",
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Chuchat%206000%20Medlock%20Bridge%20Pkwy%20Johns%20Creek%20GA",
-      "yelpUrl": "https://www.yelp.com/biz/chuchat-johns-creek"
+      "yelpUrl": "https://www.yelp.com/biz/chuchat-johns-creek",
+      "city": "Duluth",
+      "addrKey": "duluth-6000-medlock"
     },
     {
       "name": "Art's Bakery & Cafe",
@@ -1100,7 +1208,9 @@
       ],
       "signature": "Baklava & Almond Success Cake",
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Art%27s%20Bakery%20%26%20Cafe%204500%20Satellite%20Blvd%20Duluth%20GA",
-      "yelpUrl": "https://www.yelp.com/biz/arts-bakery-and-cafe-duluth"
+      "yelpUrl": "https://www.yelp.com/biz/arts-bakery-and-cafe-duluth",
+      "city": "Duluth",
+      "addrKey": "duluth-4500-satellite"
     },
     {
       "name": "Artistea",
@@ -1120,7 +1230,9 @@
       ],
       "signature": "Banana Pudding Matcha + Garlic Cream Cheese Korean Bagel",
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Artistea%203545%20Peachtree%20Industrial%20Blvd%20Duluth%20GA",
-      "yelpUrl": "https://www.yelp.com/biz/artistea-duluth"
+      "yelpUrl": "https://www.yelp.com/biz/artistea-duluth",
+      "city": "Duluth",
+      "addrKey": "duluth-3545-peachtree"
     },
     {
       "name": "Hayat Coffee",
@@ -1140,7 +1252,9 @@
       ],
       "signature": "Arabic Cardamom Coffee with Kanafeh",
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Hayat%20Coffee%202870%20Peachtree%20Industrial%20Blvd%20Duluth%20GA",
-      "yelpUrl": "https://www.yelp.com/biz/hayat-coffee-duluth"
+      "yelpUrl": "https://www.yelp.com/biz/hayat-coffee-duluth",
+      "city": "Duluth",
+      "addrKey": "duluth-2870-peachtree"
     },
     {
       "name": "Cafe Flat",
@@ -1160,7 +1274,9 @@
       ],
       "signature": "Dirty Chai Latte + Yuza Cream Cheese Croffle",
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Cafe%20Flat%202227%20Duluth%20Hwy%20Duluth%20GA",
-      "yelpUrl": "https://www.yelp.com/biz/cafe-flat-duluth"
+      "yelpUrl": "https://www.yelp.com/biz/cafe-flat-duluth",
+      "city": "Duluth",
+      "addrKey": "duluth-2227-duluth"
     },
     {
       "name": "Glaze Tea Duluth",
@@ -1180,283 +1296,224 @@
       ],
       "signature": "Signature Camellia Milk Tea",
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Glaze%20Tea%202205%20Pleasant%20Hill%20Rd%20Duluth%20GA",
-      "yelpUrl": "https://www.yelp.com/biz/glaze-tea-duluth-duluth-4"
+      "yelpUrl": "https://www.yelp.com/biz/glaze-tea-duluth-duluth-4",
+      "city": "Duluth",
+      "addrKey": "duluth-2205-pleasanthill"
     }
   ],
   "addr": {
-    "2180-pleasanthill": {
+    "duluth-2180-pleasanthill": {
       "lat": 33.96147,
       "lng": -84.13401
     },
-    "2131-pleasanthill": {
+    "duluth-2131-pleasanthill": {
       "lat": 33.95655,
       "lng": -84.13344
     },
-    "2174-pleasanthill": {
+    "duluth-2174-pleasanthill": {
       "lat": 33.95996,
       "lng": -84.13462
     },
-    "2645-nberkeley": {
+    "duluth-2645-nberkeley": {
       "lat": 33.9757,
       "lng": -84.15897
     },
-    "2200-duluth": {
+    "duluth-2200-duluth": {
       "lat": 33.97921,
       "lng": -84.0994
     },
-    "3176-main": {
+    "duluth-3176-main": {
       "lat": 34.00172,
       "lng": -84.14616
     },
-    "3550-wlawrenceville": {
+    "duluth-3550-wlawrenceville": {
       "lat": 34.00364,
       "lng": -84.14489
     },
-    "3455-duluth": {
+    "duluth-3455-duluth": {
       "lat": 34.00135,
       "lng": -84.14334
     },
-    "2640-oldpeachtree": {
+    "duluth-2640-oldpeachtree": {
       "lat": 34.0077,
       "lng": -84.12879
     },
-    "3580-breckinridge": {
+    "duluth-3580-breckinridge": {
       "lat": 33.9498,
       "lng": -84.12683
     },
-    "3648-satellite": {
+    "duluth-3648-satellite": {
       "lat": 33.95682,
       "lng": -84.13615
     },
-    "2570-pleasanthill": {
+    "duluth-2570-pleasanthill": {
       "lat": 33.96917,
       "lng": -84.14479
     },
-    "2476-pleasanthill": {
+    "duluth-2476-pleasanthill": {
       "lat": 33.96721,
       "lng": -84.14259
     },
-    "3455-peachtree": {
+    "duluth-3455-peachtree": {
       "lat": 34.00669,
       "lng": -84.17235
     },
-    "3492-satellite": {
+    "duluth-3492-satellite": {
       "lat": 33.96244,
       "lng": -84.13156
     },
-    "3473-oldnorcross": {
+    "duluth-3473-oldnorcross": {
       "lat": 33.96631,
       "lng": -84.13354
     },
-    "2550-pleasanthill": {
+    "duluth-2550-pleasanthill": {
       "lat": 33.9699,
       "lng": -84.14299
     },
-    "2442-pleasanthill": {
+    "duluth-2442-pleasanthill": {
       "lat": 33.96608,
       "lng": -84.14109
     },
-    "3512-satellite": {
+    "duluth-3512-satellite": {
       "lat": 33.96068,
       "lng": -84.13215
     },
-    "2300-pleasanthill": {
+    "duluth-2300-pleasanthill": {
       "lat": 33.96386,
       "lng": -84.13438
     },
-    "5950-state": {
+    "duluth-5950-state": {
       "lat": 34.01447,
       "lng": -84.1891
     },
-    "3875-venture": {
+    "duluth-3875-venture": {
       "lat": 33.95225,
       "lng": -84.1414
     },
-    "3865-venture": {
+    "duluth-3865-venture": {
       "lat": 33.95227,
       "lng": -84.14059
     },
-    "3780-oldnorcross": {
+    "duluth-3780-oldnorcross": {
       "lat": 33.9612,
       "lng": -84.14413
     },
-    "3705-oldnorcross": {
+    "duluth-3705-oldnorcross": {
       "lat": 33.96367,
       "lng": -84.14146
     },
-    "2628-pleasanthill": {
+    "duluth-2628-pleasanthill": {
       "lat": 33.97165,
       "lng": -84.14781
     },
-    "1630-pleasanthill": {
+    "duluth-1630-pleasanthill": {
       "lat": 33.94747,
       "lng": -84.12322
     },
-    "3500-gwinnettpl": {
+    "duluth-3500-gwinnettpl": {
       "lat": 33.95654,
       "lng": -84.12827
     },
-    "3700-crestwood": {
+    "duluth-3700-crestwood": {
       "lat": 33.9456,
       "lng": -84.12795
     },
-    "3350-steve": {
+    "duluth-3350-steve": {
       "lat": 33.95325,
       "lng": -84.13994
     },
-    "4020-satellite": {
+    "duluth-4020-satellite": {
       "lat": 33.95115,
       "lng": -84.14607
     },
-    "3665-club": {
+    "duluth-3665-club": {
       "lat": 33.94218,
       "lng": -84.12559
     },
-    "3531-peachtree": {
+    "duluth-3531-peachtree": {
       "lat": 34.00294,
       "lng": -84.17039
     },
-    "3585-peachtree": {
+    "duluth-3585-peachtree": {
       "lat": 34.0004,
       "lng": -84.16994
     },
-    "3675-satellite": {
+    "duluth-3675-satellite": {
       "lat": 33.95939,
       "lng": -84.13574
     },
-    "3182-steve": {
+    "duluth-3182-steve": {
       "lat": 33.9584,
       "lng": -84.1408
     },
-    "6000-medlock": {
+    "duluth-6000-medlock": {
       "lat": 34.03154,
       "lng": -84.18814
     },
-    "4500-satellite": {
+    "duluth-4500-satellite": {
       "lat": 33.94168,
       "lng": -84.1599
     },
-    "3545-peachtree": {
+    "duluth-3545-peachtree": {
       "lat": 34.00227,
       "lng": -84.17106
     },
-    "2870-peachtree": {
+    "duluth-2870-peachtree": {
       "lat": 34.02212,
       "lng": -84.14947
     },
-    "2227-duluth": {
+    "duluth-2227-duluth": {
       "lat": 33.97743,
       "lng": -84.09924
     },
-    "2205-pleasanthill": {
+    "duluth-2205-pleasanthill": {
       "lat": 33.96092,
       "lng": -84.13679
     }
   },
-  "shopAddr": {
-    "Sweet Hut Bakery & Cafe": "2180-pleasanthill",
-    "The Coffee By Hand": "2180-pleasanthill",
-    "Ding Tea": "2180-pleasanthill",
-    "The Bep Teahouse": "2180-pleasanthill",
-    "Fluffy Fluffy Dessert Cafe": "2180-pleasanthill",
-    "Cafe Mozart Bakery": "2131-pleasanthill",
-    "Molly Tea": "2131-pleasanthill",
-    "Matcha Cafe Maiko": "2131-pleasanthill",
-    "Hansel & Gretel Bakery Cafe": "2131-pleasanthill",
-    "ChiCha San Chen": "2174-pleasanthill",
-    "Yezi Coconut Dessert": "2174-pleasanthill",
-    "TwoHa's Cafe": "2645-nberkeley",
-    "Gonggan ATL": "2645-nberkeley",
-    "Qamaria Yemeni Coffee Co.": "2645-nberkeley",
-    "White Windmill Bakery & Cafe": "2200-duluth",
-    "Land of a Thousand Hills Coffee": "3176-main",
-    "Alchemist on the Divide": "3550-wlawrenceville",
-    "Ginkgo Bakery & Cafe": "3550-wlawrenceville",
-    "The Cream": "3455-duluth",
-    "Coffee That Matters": "2640-oldpeachtree",
-    "OneZo Boba Tea": "3580-breckinridge",
-    "Hiro Tea Bar": "3648-satellite",
-    "Tiger Sugar": "2570-pleasanthill",
-    "Xing Fu Tang": "2476-pleasanthill",
-    "Goodwin Tea House & More": "3455-peachtree",
-    "Paris Baguette": "3492-satellite",
-    "Bread Museum Bakery & Cafe": "3473-oldnorcross",
-    "Orange Coffee Bar": "3473-oldnorcross",
-    "Tom N Toms Coffee Black": "3473-oldnorcross",
-    "Tous Les Jours": "2550-pleasanthill",
-    "Tree Story Bakery & Cafe": "2550-pleasanthill",
-    "Vincent Bakery & Cafe": "2442-pleasanthill",
-    "Georgia French Bakery & Cafe": "3512-satellite",
-    "Mai Bakery": "2300-pleasanthill",
-    "The Patio Cafe & Bakery": "5950-state",
-    "Shokku Bakery": "3875-venture",
-    "Fujiissa": "3875-venture",
-    "Kafeiin": "3865-venture",
-    "Forest Cafe": "3780-oldnorcross",
-    "Cafe 104": "3705-oldnorcross",
-    "Boba Mocha": "2628-pleasanthill",
-    "Long's Cafe 2": "1630-pleasanthill",
-    "El Cafe by La Abuela": "1630-pleasanthill",
-    "Incha Duluth (Duck Ink + Boba)": "3500-gwinnettpl",
-    "Yibna Cafe": "3700-crestwood",
-    "Date un Gusto": "3350-steve",
-    "Wich Tea": "3350-steve",
-    "7 Leaves Cafe": "4020-satellite",
-    "The Quynh Cafe": "3665-club",
-    "Lemon Sweets Bakery & Cafe": "3531-peachtree",
-    "Cafe Rothem": "3585-peachtree",
-    "Tea Drip": "3675-satellite",
-    "Cuckoo's Cafe": "3182-steve",
-    "Chuchat": "6000-medlock",
-    "Art's Bakery & Cafe": "4500-satellite",
-    "Artistea": "3545-peachtree",
-    "Hayat Coffee": "2870-peachtree",
-    "Cafe Flat": "2227-duluth",
-    "Glaze Tea Duluth": "2205-pleasanthill"
-  },
   "neighborhoods": {
-    "2180-pleasanthill": "Pleasant Hill",
-    "2131-pleasanthill": "Pleasant Hill",
-    "2174-pleasanthill": "Pleasant Hill",
-    "2300-pleasanthill": "Pleasant Hill",
-    "2442-pleasanthill": "Pleasant Hill",
-    "2476-pleasanthill": "Pleasant Hill",
-    "2550-pleasanthill": "Pleasant Hill",
-    "2570-pleasanthill": "Pleasant Hill",
-    "2628-pleasanthill": "Pleasant Hill",
-    "1630-pleasanthill": "Pleasant Hill",
-    "2645-nberkeley": "Berkeley Lake",
-    "2200-duluth": "Sugarloaf",
-    "3176-main": "Downtown Duluth",
-    "3550-wlawrenceville": "Downtown Duluth",
-    "3455-duluth": "Downtown Duluth",
-    "2640-oldpeachtree": "Sugarloaf",
-    "3580-breckinridge": "Breckinridge",
-    "3648-satellite": "Satellite Blvd",
-    "3492-satellite": "Satellite Blvd",
-    "3512-satellite": "Satellite Blvd",
-    "3675-satellite": "Satellite Blvd",
-    "4020-satellite": "Satellite Blvd",
-    "4500-satellite": "Satellite Blvd",
-    "3455-peachtree": "Peachtree Industrial",
-    "3531-peachtree": "Peachtree Industrial",
-    "3545-peachtree": "Peachtree Industrial",
-    "3585-peachtree": "Peachtree Industrial",
-    "3473-oldnorcross": "Old Norcross",
-    "3705-oldnorcross": "Old Norcross",
-    "3780-oldnorcross": "Old Norcross",
-    "3875-venture": "Venture Dr",
-    "3865-venture": "Venture Dr",
-    "5950-state": "State Bridge",
-    "3500-gwinnettpl": "Gwinnett Place",
-    "3700-crestwood": "Gwinnett Place",
-    "3350-steve": "Steve Reynolds",
-    "3182-steve": "Steve Reynolds",
-    "3665-club": "Club Dr",
-    "6000-medlock": "Johns Creek",
-    "2870-peachtree": "Peachtree Industrial",
-    "2227-duluth": "Sugarloaf",
-    "2205-pleasanthill": "Pleasant Hill"
+    "duluth-2180-pleasanthill": "Pleasant Hill",
+    "duluth-2131-pleasanthill": "Pleasant Hill",
+    "duluth-2174-pleasanthill": "Pleasant Hill",
+    "duluth-2300-pleasanthill": "Pleasant Hill",
+    "duluth-2442-pleasanthill": "Pleasant Hill",
+    "duluth-2476-pleasanthill": "Pleasant Hill",
+    "duluth-2550-pleasanthill": "Pleasant Hill",
+    "duluth-2570-pleasanthill": "Pleasant Hill",
+    "duluth-2628-pleasanthill": "Pleasant Hill",
+    "duluth-1630-pleasanthill": "Pleasant Hill",
+    "duluth-2645-nberkeley": "Berkeley Lake",
+    "duluth-2200-duluth": "Sugarloaf",
+    "duluth-3176-main": "Downtown Duluth",
+    "duluth-3550-wlawrenceville": "Downtown Duluth",
+    "duluth-3455-duluth": "Downtown Duluth",
+    "duluth-2640-oldpeachtree": "Sugarloaf",
+    "duluth-3580-breckinridge": "Breckinridge",
+    "duluth-3648-satellite": "Satellite Blvd",
+    "duluth-3492-satellite": "Satellite Blvd",
+    "duluth-3512-satellite": "Satellite Blvd",
+    "duluth-3675-satellite": "Satellite Blvd",
+    "duluth-4020-satellite": "Satellite Blvd",
+    "duluth-4500-satellite": "Satellite Blvd",
+    "duluth-3455-peachtree": "Peachtree Industrial",
+    "duluth-3531-peachtree": "Peachtree Industrial",
+    "duluth-3545-peachtree": "Peachtree Industrial",
+    "duluth-3585-peachtree": "Peachtree Industrial",
+    "duluth-3473-oldnorcross": "Old Norcross",
+    "duluth-3705-oldnorcross": "Old Norcross",
+    "duluth-3780-oldnorcross": "Old Norcross",
+    "duluth-3875-venture": "Venture Dr",
+    "duluth-3865-venture": "Venture Dr",
+    "duluth-5950-state": "State Bridge",
+    "duluth-3500-gwinnettpl": "Gwinnett Place",
+    "duluth-3700-crestwood": "Gwinnett Place",
+    "duluth-3350-steve": "Steve Reynolds",
+    "duluth-3182-steve": "Steve Reynolds",
+    "duluth-3665-club": "Club Dr",
+    "duluth-6000-medlock": "Johns Creek",
+    "duluth-2870-peachtree": "Peachtree Industrial",
+    "duluth-2227-duluth": "Sugarloaf",
+    "duluth-2205-pleasanthill": "Pleasant Hill"
   },
   "cws": {
     "Sweet Hut Bakery & Cafe": {
@@ -1977,5 +2034,8 @@
     "Hayat Coffee": "https://www.instagram.com/hayatcoffee.co/",
     "Cafe Flat": "https://joe.coffee/locations/ga/duluth/cafe-flat-duluth/",
     "Glaze Tea Duluth": "https://www.glazetea.com/"
-  }
+  },
+  "cities": [
+    "Duluth"
+  ]
 }

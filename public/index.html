@@ -299,6 +299,10 @@
 
   <div class="filter-bar">
     <div class="filter-row">
+      <span class="filter-label">City</span>
+      <div id="cityChips"></div>
+    </div>
+    <div class="filter-row">
       <span class="filter-label">Type</span>
       <div id="categoryChips"></div>
     </div>
@@ -336,18 +340,18 @@ const CATS = {
   "Specialty":    { hex: "#7b6cb8", icon: "✦"  }
 };
 
-let SHOPS, ADDR, SHOP_ADDR, NEIGHBORHOODS, CWS, LATE, WEBSITES;
+let SHOPS, ADDR, NEIGHBORHOODS, CWS, LATE, WEBSITES, CITIES;
 
 fetch('./shops.json')
   .then(r => r.json())
   .then(data => {
     SHOPS = data.shops;
     ADDR = data.addr;
-    SHOP_ADDR = data.shopAddr;
     NEIGHBORHOODS = data.neighborhoods;
     CWS = data.cws;
     LATE = data.late;
     WEBSITES = data.websites;
+    CITIES = data.cities || ['Duluth'];
     boot();
   })
   .catch(err => {
@@ -358,10 +362,10 @@ function boot() {
   // DERIVED
   const slug = s => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
   SHOPS.forEach(s => {
-    const key = SHOP_ADDR[s.name];
+    const key = s.addrKey;
     if (key && ADDR[key]) { s.lat = ADDR[key].lat; s.lng = ADDR[key].lng; }
     s.id = slug(s.name);
-    s.neighborhood = NEIGHBORHOODS[key] || "Duluth";
+    s.neighborhood = NEIGHBORHOODS[key] || s.city || "Duluth";
   });
 
   // Multiple shops can sit at the exact same building. Without offsetting,
@@ -445,6 +449,7 @@ function boot() {
 
   // STATE
   const state = {
+    activeCity: null,            // null = All cities; otherwise the city name
     categories: new Set(),
     features: new Set(),
     search: '',
@@ -452,9 +457,17 @@ function boot() {
   };
 
   // FILTER CHIPS
+  const cityChipsEl = document.getElementById('cityChips');
   const catChipsEl = document.getElementById('categoryChips');
   const featChipsEl = document.getElementById('featureChips');
   const catCounts = SHOPS.reduce((acc, s) => { acc[s.category] = (acc[s.category]||0)+1; return acc; }, {});
+  const cityCounts = SHOPS.reduce((acc, s) => { acc[s.city] = (acc[s.city]||0)+1; return acc; }, {});
+  // Hide the City row entirely when there's only one city in the data.
+  const showCityRow = (CITIES && CITIES.length > 1);
+  if (!showCityRow) {
+    const row = cityChipsEl && cityChipsEl.closest('.filter-row');
+    if (row) row.style.display = 'none';
+  }
 
   function makeChip({ label, count, color, icon, themeColor, onClick, isActive }) {
     const b = document.createElement('button');
@@ -495,12 +508,31 @@ function boot() {
   }
 
   function renderChips() {
+    if (showCityRow) {
+      cityChipsEl.innerHTML = '';
+      cityChipsEl.style.display = 'inline-flex';
+      cityChipsEl.style.gap = '6px';
+      cityChipsEl.style.flexWrap = 'wrap';
+      cityChipsEl.appendChild(makeChip({
+        label: 'All cities', count: SHOPS.length,
+        onClick: () => { selectCity(null); },
+        isActive: state.activeCity === null
+      }));
+      CITIES.forEach(city => {
+        cityChipsEl.appendChild(makeChip({
+          label: city, count: cityCounts[city] || 0,
+          onClick: () => { selectCity(state.activeCity === city ? null : city); },
+          isActive: state.activeCity === city
+        }));
+      });
+    }
+
     catChipsEl.innerHTML = '';
     catChipsEl.style.display = 'inline-flex';
     catChipsEl.style.gap = '6px';
     catChipsEl.style.flexWrap = 'wrap';
     catChipsEl.appendChild(makeChip({
-      label: 'All', count: SHOPS.length,
+      label: 'All', count: state.activeCity ? (cityCounts[state.activeCity]||0) : SHOPS.length,
       onClick: () => { state.categories.clear(); render(); },
       isActive: state.categories.size === 0
     }));
@@ -761,9 +793,10 @@ function boot() {
   const resultsCountEl = document.getElementById('resultsCount');
   const searchInput = document.getElementById('searchInput');
 
-  // Global filters (category / feature / search) — these gate BOTH map markers and the list.
+  // Global filters (city / category / feature / search) — these gate BOTH map markers and the list.
   function passesGlobalFilters(s) {
     const term = state.search.toLowerCase().trim();
+    if (state.activeCity && s.city !== state.activeCity) return false;
     if (state.categories.size && !state.categories.has(s.category)) return false;
     const cw = CWS[s.name] || {};
     const ln = LATE[s.name];
@@ -953,6 +986,19 @@ function boot() {
     }
   }
 
+  function selectCity(city) {
+    state.activeCity = city;
+    // If a detail card is open and the chosen city doesn't include that shop, close it.
+    if (state.selected && city && state.selected.city !== city) {
+      deselectShop();
+    }
+    render();
+    // Refit the map to whatever's now on it (clusterGroup reflects the new filter).
+    if (clusterGroup.getLayers().length) {
+      map.fitBounds(clusterGroup.getBounds(), { padding: [40, 40], animate: true });
+    }
+  }
+
   function deselectShop() {
     const lastSelectedId = state.selected ? state.selected.id : null;
     state.selected = null;
@@ -992,7 +1038,7 @@ function boot() {
   render();
 
   // Expose key globals for console testing and the test suite in TESTS.md.
-  Object.assign(window, { SHOPS, ADDR, SHOP_ADDR, NEIGHBORHOODS, CWS, LATE, WEBSITES, CATS, map, markers, clusterGroup });
+  Object.assign(window, { SHOPS, ADDR, NEIGHBORHOODS, CWS, LATE, WEBSITES, CATS, CITIES, map, markers, clusterGroup, selectCity });
 }
 
 </script>
