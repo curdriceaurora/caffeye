@@ -1,19 +1,19 @@
 # CLAUDE.md
 
-Operating notes for Claude when working on this project. Companion to `VISION.md` (the "why"), `REQUIREMENTS.md` (the "what"), and `TESTS.md` (the "verify"). Read those when the task isn't covered here.
+Operating notes for Claude when working on this project. Companion to `PRODUCT.md` (the "why"), `REQUIREMENTS.md` (the "what"), and `TESTS.md` (the "verify"). Read those when the task isn't covered here.
 
 ## What this project is
 
 A single static HTML file (`index.html`) that maps every coffee shop, bakery, and tea house in Duluth, GA. Hosted on Cloudflare Workers static assets at <https://duluth-coffee-shoppes.sra-e69.workers.dev>. No build step, no backend, no framework. Leaflet + MarkerCluster loaded from CDN.
 
-For design rationale and the seven product principles, read `VISION.md` first.
+For product principles and design rationale, read `PRODUCT.md` first.
 
 ## File layout
 
 ```
 public/index.html # the entire app (~91 KB) — the ONLY file Cloudflare publishes
 wrangler.jsonc    # Cloudflare deploy config; assets.directory = ./public
-VISION.md         # principles + design rationale
+PRODUCT.md        # principles + design rationale (single source of truth)
 REQUIREMENTS.md   # numbered requirements (R1.x – R10.x)
 TESTS.md          # tests traced to requirement IDs
 README.md         # public-facing overview
@@ -97,15 +97,15 @@ SHOPS.filter(s => !s.addrKey.startsWith(s.city.toLowerCase() + '-'));  // must b
 
 ## Key conventions to preserve
 
-These are decisions, not accidents — don't undo them without reading the linked principle in `VISION.md`.
+These are decisions, not accidents — don't undo them without reading the linked principle in `PRODUCT.md`.
 
 | Convention | Why | Principle |
 |---|---|---|
 | **No sort dropdown.** The list always orders by Bayesian weighted rating, descending. | The right default beats a control. | §2 |
 | **Single-tap pin → detail card.** No preview popup. | One tap to the answer. | §1 |
 | **Viewport-filtered list.** The right-side list only shows shops whose pins lie in the current map viewport. | Show what the user can see. | §3 |
-| **Same-coord shops are radially nudged** ~20 m via `spreadCoincidentShops()`. | Pins must not stack. | §6 |
-| **16-angle label placer.** Labels prefer cardinal angles, fall back through diagonals + in-betweens; obstacles are other labels, all pins, all `.coffee-cluster` bubbles. Higher-weighted shops claim space first. | Labels must never lie. | §6 |
+| **Same-coord shops are radially nudged** ~20 m via `spreadCoincidentShops()`. | Pins must not stack. | §7 |
+| **16-angle label placer.** Labels prefer cardinal angles, fall back through diagonals + in-betweens; obstacles are other labels, all pins, all `.coffee-cluster` bubbles. Higher-weighted shops claim space first. | Labels must never lie. | §7 |
 | **Label threshold is `LABEL_MIN_ZOOM = 13`** (the default fit-bounds zoom), so labels show on first paint. | — | — |
 | **Bayesian weighted rating** formula `WR = (v/(v+m))·R + (m/(v+m))·C` — `C` = mean rating, `m` = median review count, both computed at load. | Trustworthy ranking. | §2 |
 | **Mobile: map fixed at 220 px**, panel takes the rest, footer hidden. | Density on phones — iPhone 14 Pro target = 5 cards visible. | §4 |

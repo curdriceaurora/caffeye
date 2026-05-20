@@ -1,6 +1,6 @@
 # DESIGN.md — caffeye
 
-Design system spec for AI agents generating UI for the **caffeye** project. Everything here is sourced from `public/index.html`, `public/shops.json`, `README.md`, and `VISION.md`. If a value isn't here, it isn't part of the system.
+Design system spec for AI agents generating UI for the **caffeye** project. Everything here is sourced from `public/index.html`, `public/shops.json`, `README.md`, and `PRODUCT.md`. If a value isn't here, it isn't part of the system.
 
 ## What this product is
 
@@ -172,27 +172,27 @@ Uppercase labels use `letter-spacing: 0.06em`. There are no italic styles.
 
 ### Native shape
 
-The product is geographically organized. The page is **map + viewport-filtered list + detail card**. That is the only layout. Don't introduce category pages, brand pages, or alternate views — those break the "one tap to the answer" principle from `VISION.md` §1.
+The product is geographically organized. The page is **map + viewport-filtered list + detail card**. That is the only layout. Don't introduce category pages, brand pages, or alternate views — those break the "one tap to the answer" principle from `PRODUCT.md` §1.
 
 ### Single-tap, no preview
 
-A pin click selects the shop and immediately opens the detail card. There is no popup intermediary. (VISION §1.)
+A pin click selects the shop and immediately opens the detail card. There is no popup intermediary. (PRODUCT §1.)
 
 ### Viewport = filter
 
-As the map pans or zooms, the right-side list re-filters to the visible markers. The map view is itself a filter. The cluster layer keeps *all* matching markers, even those off-screen; the list is the only thing that contracts. (VISION §3.)
+As the map pans or zooms, the right-side list re-filters to the visible markers. The map view is itself a filter. The cluster layer keeps *all* matching markers, even those off-screen; the list is the only thing that contracts. (PRODUCT §3.)
 
 ### Ranking is implicit
 
-There is no sort dropdown. The list is always ordered by Bayesian weighted rating, descending — IMDB's Top-250 formula with `C` = mean rating across the active city's shops and `m` = median review count in that city. (VISION §2.)
+There is no sort dropdown. The list is always ordered by Bayesian weighted rating, descending — IMDB's Top-250 formula with `C` = mean rating across the active city's shops and `m` = median review count in that city. (PRODUCT §2.)
 
 ### Labels never lie
 
-No two shop labels overlap. No label sits over a pin or cluster. Higher-rated shops claim space first; shops that can't find a non-colliding angle hide their label. (VISION §6.)
+No two shop labels overlap. No label sits over a pin or cluster. Higher-rated shops claim space first; shops that can't find a non-colliding angle hide their label. (PRODUCT §7.)
 
 ### Density on mobile
 
-Below 820 px viewport: map fixed at 220 px (180 min), panel fills the remaining vertical space, footer hidden, chip rows scroll horizontally if needed. Target: 5 list cards visible above the fold on a 750 px Safari viewport. (VISION §4.)
+Below 820 px viewport: map fixed at 220 px (180 min), panel fills the remaining vertical space, footer hidden, chip rows scroll horizontally if needed. Target: 5 list cards visible above the fold on a 750 px Safari viewport. (PRODUCT §5.)
 
 ## Page anatomy
 
@@ -278,8 +278,8 @@ Map on the left flex-grow, 380 px panel on the right, 1 px vertical divider.
 
 These come from product principles and prior incidents — don't re-introduce them.
 
-- **No sort dropdown.** The default beats the control. (VISION §2)
-- **No preview popup on pin click.** One tap to the answer. (VISION §1)
+- **No sort dropdown.** The default beats the control. (PRODUCT §2)
+- **No preview popup on pin click.** One tap to the answer. (PRODUCT §1)
 - **No floating action buttons, no modals, no toasts.** The detail card is the only secondary surface.
 - **No approximate coordinates.** Coords come from Apple Maps via `CLGeocoder` only. Linear interpolation has put pins in residential subdivisions before.
 - **No emoji outside the category / feature system.** No decorative emoji in copy.

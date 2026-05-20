@@ -10,7 +10,7 @@ A one-page, single-tap map of every coffee shop, bakery, and tea house in **Dulu
 
 A static HTML file. No build step, no backend. Loads Leaflet + MarkerCluster from CDN, renders 59 curated shops with category-colored emoji pins, and lets you filter by category, work-friendly, meeting room, open-late, or open-until-midnight. The right-side list mirrors what's in the current map viewport, sorted by Bayesian weighted rating (IMDB Top 250 formula).
 
-For the design decisions and trade-offs, see **[VISION.md](VISION.md)**.
+For the product principles and design decisions, see **[PRODUCT.md](PRODUCT.md)**.
 For the spec, see **[REQUIREMENTS.md](REQUIREMENTS.md)**.
 For the test suite, see **[TESTS.md](TESTS.md)**.
 
@@ -44,7 +44,7 @@ wrangler deploy
 4. Update the freshness count in the header and the `resultsCount` placeholder.
 5. Verify locally — `js> SHOPS.length` and `js> Object.keys(CWS).filter(k => !SHOPS.some(s => s.name === k))` should be `[]`.
 
-Coords should be verified against an authoritative geocoder (e.g. Apple Maps via `CLGeocoder`) — see `VISION.md` principle 7.
+Coords should be verified against an authoritative geocoder (e.g. Apple Maps via `CLGeocoder`) — see `PRODUCT.md` §8.
 
 ## Project structure
 
@@ -54,7 +54,7 @@ caffeye/
 │   └── index.html    # the entire app (~91 KB) — only file Cloudflare publishes
 ├── wrangler.jsonc    # Cloudflare deploy config (assets.directory = ./public)
 ├── README.md         # this file
-├── VISION.md         # principles + design rationale
+├── PRODUCT.md        # principles + design rationale (single source of truth)
 ├── REQUIREMENTS.md   # numbered requirements (R1.x – R10.x)
 ├── TESTS.md          # test suite traced to requirements
 └── CLAUDE.md         # operating notes for AI sessions

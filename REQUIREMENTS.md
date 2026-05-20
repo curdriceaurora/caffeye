@@ -1,6 +1,6 @@
 # Coffee in Duluth — Requirements
 
-Functional and non-functional requirements for the current state of the page. Each requirement is numbered for traceability from the test suite. Principles referenced map to `VISION.md`.
+Functional and non-functional requirements for the current state of the page. Each requirement is numbered for traceability from the test suite. Principles referenced map to `PRODUCT.md`.
 
 ## R1. Data set
 
