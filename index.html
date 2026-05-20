@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Coffee in Duluth</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f7f6f2;
+    --surface: #ffffff;
+    --surface-alt: #faf9f5;
+    --text: #1f1f1f;
+    --muted: #6f6f6f;
+    --border: #e3e0d6;
+    --border-strong: #c9c4b4;
+    --accent: #7a5635;
+    --accent-soft: #ebe1d2;
+    --c-coffee: #6f4e37;
+    --c-bakery: #b89464;
+    --c-tea: #5b8a72;
+    --c-dessert: #c66980;
+    --c-specialty: #7b6cb8;
+    --c-late: #3f4f8a;
+    --c-work: #2e7d4f;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; height: 100%; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    overflow: hidden;
+    font-size: 14px;
+    line-height: 1.45;
+  }
+  .app { display: flex; flex-direction: column; height: 100vh; }
+
+  header {
+    padding: 14px 20px 12px;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    flex-shrink: 0;
+  }
+  .brand {
+    font-family: 'Fraunces', serif;
+    font-weight: 800;
+    font-size: 22px;
+    letter-spacing: -0.015em;
+  }
+  .freshness { font-size: 12px; color: var(--muted); }
+
+  .filter-bar {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 10px 20px;
+    flex-shrink: 0;
+  }
+  .filter-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .filter-row + .filter-row { margin-top: 6px; }
+  .filter-label {
+    font-size: 11px; color: var(--muted);
+    text-transform: uppercase; letter-spacing: 0.06em;
+    font-weight: 600; min-width: 70px;
+  }
+  .chip {
+    padding: 4px 10px; border-radius: 6px;
+    background: var(--bg); border: 1px solid var(--border);
+    font-size: 12.5px; font-weight: 500; color: var(--text);
+    cursor: pointer; font-family: inherit;
+    display: inline-flex; align-items: center; gap: 6px;
+    transition: background 0.1s, border-color 0.1s;
+  }
+  .chip:hover { background: var(--surface-alt); border-color: var(--border-strong); }
+  .chip.active { background: var(--text); color: var(--surface); border-color: var(--text); }
+  .chip .dot { width: 7px; height: 7px; border-radius: 50%; }
+  .chip .chip-icon { font-size: 13px; line-height: 1; }
+  .chip .num { font-size: 11px; color: var(--muted); font-weight: 500; }
+  .chip.active .num { color: rgba(255,255,255,0.6); }
+  .chip.themed .num { color: inherit; opacity: 0.65; }
+  .chip.themed.active .num { color: rgba(255,255,255,0.7); opacity: 1; }
+  .filter-bar .right { margin-left: auto; display: flex; align-items: center; gap: 8px; }
+  .sort-select {
+    padding: 4px 8px; border-radius: 6px;
+    border: 1px solid var(--border); background: var(--bg);
+    font-family: inherit; font-size: 12.5px; color: var(--text); cursor: pointer;
+  }
+
+  .layout { flex: 1; display: flex; min-height: 0; }
+  #map { flex: 1; background: #e9e5dc; }
+  .panel {
+    width: 380px; background: var(--surface);
+    border-left: 1px solid var(--border);
+    display: flex; flex-direction: column; min-height: 0;
+  }
+
+  .search { padding: 12px 16px 8px; border-bottom: 1px solid var(--border); }
+  .search input {
+    width: 100%; padding: 8px 12px;
+    border: 1px solid var(--border); border-radius: 6px;
+    font-family: inherit; font-size: 13px;
+    background: var(--bg); color: var(--text); outline: none;
+  }
+  .search input:focus { border-color: var(--accent); background: var(--surface); }
+  .results-meta {
+    padding: 8px 16px 6px; font-size: 11px; color: var(--muted);
+    text-transform: uppercase; letter-spacing: 0.06em;
+    font-weight: 600; border-bottom: 1px solid var(--border);
+  }
+  .list-view { flex: 1; display: flex; flex-direction: column; min-height: 0; }
+  .shop-list { flex: 1; overflow-y: auto; margin: 0; padding: 0; list-style: none; min-height: 0; }
+  .shop-item {
+    padding: 10px 16px 10px 13px;
+    border-bottom: 1px solid var(--border);
+    border-left: 3px solid transparent;
+    cursor: pointer; transition: background 0.1s;
+  }
+  .shop-item:hover { background: var(--surface-alt); }
+  .shop-item.active { background: var(--accent-soft); }
+  .shop-name {
+    font-weight: 600; font-size: 14px;
+    margin: 0 0 4px 0; line-height: 1.25;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .shop-name .shop-icon-tile {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 22px; height: 22px; border-radius: 50%;
+    font-size: 11.5px; line-height: 1;
+    flex-shrink: 0; color: #fff;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.12);
+  }
+  .shop-meta { font-size: 12px; color: var(--muted); margin-bottom: 4px; }
+  .shop-meta .rating { color: var(--text); font-weight: 500; }
+  .shop-tags { font-size: 11.5px; color: var(--muted); line-height: 1.4; }
+  .shop-tags .tag-sep { color: var(--border-strong); margin: 0 4px; }
+
+  .detail-view { flex: 1; overflow-y: auto; display: none; min-height: 0; }
+  .detail-view.visible { display: block; }
+  .panel.detail-mode .list-view { display: none; }
+  .back-btn {
+    padding: 12px 16px; background: var(--surface);
+    border: none; border-bottom: 1px solid var(--border);
+    font-family: inherit; font-size: 12.5px; font-weight: 500;
+    color: var(--muted); cursor: pointer; width: 100%;
+    text-align: left; display: flex; align-items: center; gap: 6px;
+  }
+  .back-btn:hover { color: var(--text); }
+
+  .detail-header { padding: 16px 20px 14px; border-bottom: 1px solid var(--border); }
+  .detail-cat {
+    font-size: 11px; color: var(--muted);
+    text-transform: uppercase; letter-spacing: 0.06em;
+    font-weight: 600; display: inline-flex; align-items: center; gap: 6px;
+    margin-bottom: 6px;
+  }
+  .detail-cat .dot { width: 8px; height: 8px; border-radius: 50%; }
+  .detail-name {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700; font-size: 19px; line-height: 1.2;
+    margin: 0 0 6px 0;
+  }
+  .detail-rating { font-size: 13px; color: var(--text); }
+  .detail-rating .star { color: #c89b3c; }
+  .detail-rating .muted { color: var(--muted); }
+  .detail-section { padding: 12px 20px; border-bottom: 1px solid var(--border); }
+  .detail-section:last-of-type { border-bottom: none; }
+  .detail-section-label {
+    font-size: 11px; color: var(--muted);
+    text-transform: uppercase; letter-spacing: 0.06em;
+    font-weight: 600; margin-bottom: 6px;
+  }
+  .detail-text { font-size: 13.5px; color: var(--text); }
+  .detail-text-muted { font-size: 12.5px; color: var(--muted); }
+  .tag-row { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px; }
+  .pill-tag {
+    background: var(--bg); border: 1px solid var(--border);
+    padding: 2px 8px; border-radius: 4px;
+    font-size: 11.5px; color: var(--text);
+  }
+  .pill-tag.feature {
+    background: var(--accent-soft); border-color: transparent;
+    color: var(--accent); font-weight: 500;
+  }
+  .pill-tag.late { background: #e6ebf7; color: var(--c-late); border-color: transparent; }
+  .pill-tag.work { background: #e2f1e8; color: var(--c-work); border-color: transparent; }
+
+  .callout {
+    padding: 10px 12px; background: var(--accent-soft);
+    border-left: 3px solid var(--accent); border-radius: 4px; margin-top: 8px;
+  }
+  .callout-label {
+    font-size: 10.5px; font-weight: 700; color: var(--accent);
+    text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 2px;
+  }
+  .callout-text { font-size: 12.5px; line-height: 1.4; }
+
+  .actions {
+    padding: 14px 20px 18px; display: flex; gap: 6px; flex-wrap: wrap;
+    border-top: 1px solid var(--border);
+  }
+  .action-btn {
+    flex: 1 1 auto; min-width: 0;
+    padding: 7px 10px; border-radius: 6px;
+    background: var(--surface); border: 1px solid var(--border-strong);
+    font-size: 12px; font-weight: 500; color: var(--text);
+    text-decoration: none; text-align: center; white-space: nowrap;
+    transition: background 0.1s;
+  }
+  .action-btn:hover { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
+
+  /* Map markers */
+  .pin-wrap { position: relative; }
+  .pin {
+    width: 26px; height: 26px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.35);
+    transition: transform 0.12s;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; line-height: 1; color: #fff;
+  }
+  .pin-label {
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px; font-weight: 600; line-height: 1.2;
+    background: rgba(255,255,255,0.94);
+    color: var(--text);
+    padding: 2px 6px;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.18);
+    pointer-events: none;
+    display: none;
+  }
+  .leaflet-container.with-labels .pin-label { display: block; }
+  .pin.late { box-shadow: 0 0 0 3px rgba(63,79,138,0.32), 0 2px 6px rgba(0,0,0,0.35); }
+  .pin.selected {
+    width: 32px; height: 32px; font-size: 16px; border-width: 3px;
+    box-shadow: 0 0 0 5px rgba(122,86,53,0.32), 0 2px 8px rgba(0,0,0,0.4);
+  }
+  .pin:hover { transform: scale(1.12); }
+
+  .marker-cluster-small, .marker-cluster-medium, .marker-cluster-large { background: none !important; }
+  .marker-cluster-small div, .marker-cluster-medium div, .marker-cluster-large div { background: none !important; }
+
+  .leaflet-popup-content-wrapper {
+    border-radius: 6px; padding: 0; background: var(--surface);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+  }
+  .leaflet-popup-content { margin: 0; width: auto !important; min-width: 180px; }
+  .leaflet-popup-tip { background: var(--surface); }
+  .preview { padding: 10px 12px; font-family: 'Inter', sans-serif; }
+  .preview-name { font-weight: 600; font-size: 13px; margin: 0 0 2px 0; }
+  .preview-meta { font-size: 11.5px; color: var(--muted); margin-bottom: 6px; }
+  .preview-btn {
+    display: inline-block; padding: 4px 10px;
+    background: var(--text); color: var(--surface);
+    border-radius: 4px; text-decoration: none;
+    font-size: 11.5px; font-weight: 500; cursor: pointer;
+    border: none; font-family: inherit;
+  }
+
+  footer {
+    background: var(--surface); border-top: 1px solid var(--border);
+    padding: 8px 20px; font-size: 11px; color: var(--muted);
+    flex-shrink: 0; text-align: center;
+  }
+  .empty-state { padding: 32px 20px; text-align: center; color: var(--muted); font-size: 13px; }
+
+  @media (max-width: 820px) {
+    header { padding: 6px 14px 5px; flex-wrap: wrap; gap: 4px; }
+    .brand { font-size: 16px; }
+    .freshness { font-size: 10.5px; }
+    .filter-bar { padding: 4px 12px 5px; }
+    .filter-row + .filter-row { margin-top: 3px; }
+    .filter-label { display: none; }
+    .filter-row { gap: 5px; overflow-x: auto; flex-wrap: nowrap; padding-bottom: 2px; }
+    .filter-row::-webkit-scrollbar { display: none; }
+    .chip { flex-shrink: 0; padding: 2px 7px; font-size: 11.5px; gap: 4px; }
+    .chip .chip-icon { font-size: 11.5px; }
+    .chip .num { font-size: 10px; }
+    .filter-bar .right { margin-left: 0; }
+    .sort-select { flex-shrink: 0; padding: 2px 6px; font-size: 11.5px; }
+    .layout { flex-direction: column; }
+    #map { flex: 0 0 220px; min-height: 180px; }
+    .panel { width: 100%; height: auto; flex: 1; min-height: 0; border-left: none; border-top: 1px solid var(--border); }
+    .search { padding: 8px 14px 6px; }
+    .search input { padding: 6px 10px; font-size: 12.5px; }
+    .results-meta { padding: 5px 14px 4px; font-size: 10px; }
+    .shop-item { padding: 7px 14px 7px 13px; }
+    .shop-name { font-size: 13px; gap: 6px; margin: 0 0 3px 0; }
+    .shop-name .shop-icon-tile { width: 18px; height: 18px; font-size: 10px; }
+    .shop-meta { font-size: 11px; margin-bottom: 2px; }
+    .shop-tags { font-size: 10.5px; }
+    footer { display: none; }
+  }
+</style>
+</head>
+<body>
+<div class="app">
+  <header>
+    <div class="brand">Coffee in Duluth</div>
+    <div class="freshness">59 cafés, bakeries &amp; tea shops · checked May 2026</div>
+  </header>
+
+  <div class="filter-bar">
+    <div class="filter-row">
+      <span class="filter-label">Type</span>
+      <div id="categoryChips"></div>
+    </div>
+    <div class="filter-row">
+      <span class="filter-label">Useful for</span>
+      <div id="featureChips"></div>
+    </div>
+  </div>
+
+  <div class="layout">
+    <div id="map"></div>
+    <aside class="panel" id="panel">
+      <div class="list-view" id="listView">
+        <div class="search">
+          <input type="text" id="searchInput" placeholder="Search by name, drink, or area…" />
+        </div>
+        <div class="results-meta"><span id="resultsCount">59</span> spots</div>
+        <ul class="shop-list" id="shopList"></ul>
+      </div>
+      <div class="detail-view" id="detailView"></div>
+    </aside>
+  </div>
+
+  <footer>Ratings, hours, and addresses change. Verify before visiting.</footer>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+<script>
+const CATS = {
+  "Coffee":       { hex: "#6f4e37", icon: "☕" },
+  "Bakery+Cafe":  { hex: "#b89464", icon: "🥐" },
+  "Tea/Boba":     { hex: "#5b8a72", icon: "🧋" },
+  "Dessert Cafe": { hex: "#c66980", icon: "🍰" },
+  "Specialty":    { hex: "#7b6cb8", icon: "✦"  }
+};
+
+const SHOPS = [
+  { name: "Sweet Hut Bakery & Cafe", address: "2180 Pleasant Hill Rd, Ste 18, Duluth, GA 30096", lat: 0, lng: 0, category: "Bakery+Cafe", rating: 4.4, ratingCount: "5,900+", ratingNum: 5900, hours: "Sun-Thu 10am-10pm · Fri-Sat 10am-11pm", usp: "Asian-American bakery known for endless pastry trays, large seating, and bubble tea.", loved: ["mozzarella buns", "creme brulee milk tea", "fresh pastries"], signature: "Sweet Hut Milk Tea (Assam + Earl Grey) with honey boba", googleUrl: "https://www.google.com/maps/search/?api=1&query=Sweet%20Hut%20Bakery%20%26%20Cafe%202180%20Pleasant%20Hill%20Rd%20Duluth%20GA", yelpUrl: "https://www.yelp.com/biz/sweet-hut-bakery-and-cafe-duluth" },
+  { name: "Cafe Mozart Bakery", address: "2131 Pleasant Hill Rd, Ste 148, Duluth, GA 30096", lat: 0, lng: 0, category: "Bakery+Cafe", rating: 4.2, ratingCount: "400+", ratingNum: 400, hours: "Sun-Thu 8am-10pm · Fri-Sat 8am-12am", usp: "The original Korean bakery of Pleasant Hill K-town, family-run for 20+ years.", loved: ["mocha buns", "butter cream bread", "fresh fruit cakes"], signature: "Mocha Bun & Butter Cream Bread", googleUrl: "https://www.google.com/maps/search/?api=1&query=Cafe%20Mozart%20Bakery%202131%20Pleasant%20Hill%20Rd%20Duluth%20GA", yelpUrl: "https://www.yelp.com/biz/mozart-bakery-duluth-4" },
+  { name: "TwoHa's Cafe", address: "2645 N Berkeley Lake Rd NW, Ste 231, Duluth, GA 30096", lat: 0, lng: 0, category: "Dessert Cafe", rating: 4.3, ratingCount: "730+", ratingNum: 730, hours: "Sun-Thu 11am-12am · Fri-Sat 11am-1am", usp: "Second-floor Korean dessert cafe open past midnight, popular for matcha and bingsoo.", loved: ["strawberry matcha latte", "Dubai chocolate strawberries", "bingsoo"], signature: "Strawberry Matcha Latte with real strawberry chunks", googleUrl: "https://www.google.com/maps/search/?api=1&query=TwoHa%27s%20Cafe%202645%20N%20Berkeley%20Lake%20Rd%20Duluth%20GA", yelpUrl: "https://www.yelp.com/biz/twohas-cafe-duluth" },
+  { name: "White Windmill Bakery & Cafe", address: "2200 Duluth Hwy, Ste 108, Duluth, GA 30097", lat: 0, lng: 0, category: "Bakery+Cafe", rating: 4.3, ratingCount: "300+", ratingNum: 300, hours: "Sun-Thu 7:30am-10pm · Fri-Sat 7:30am-11pm", usp: "Korean bakery favored for milk bread and croissant sandwiches; quiet enough to study.", loved: ["milk bread", "Dalgona latte", "croissant sandwiches"], signature: "Dalgona Latte & signature milk bread", googleUrl: "https://www.google.com/maps/search/?api=1&query=White%20Windmill%20Bakery%20%26%20Cafe%202200%20Duluth%20Hwy%20Duluth%20GA", yelpUrl: "https://www.yelp.com/biz/white-windmill-bakery-and-cafe-duluth-4" },
+  { name: "Land of a Thousand Hills Coffee", address: "3176 Main St, Ste 200, Duluth, GA 30096", lat: 0, lng: 0, category: "Coffee", rating: 4.7, ratingCount: "150+", ratingNum: 150, hours: "Mon-Thu 7:30am-8pm · Fri 7:30am-9:30pm · Sat 8am-9:30pm · Sun 9am-6pm", usp: "Direct-trade Rwandan specialty coffee shop on the downtown square; profits fund farming communities in Rwanda.", loved: ["Rwandan single-origin", "knowledgeable baristas", "pastries"], signature: "Single-origin Rwandan pour-over (Ruli Mountain)", googleUrl: "https://www.google.com/maps/search/?api=1&query=Land%20of%20a%20Thousand%20Hills%20Coffee%203176%20Main%20St%20Duluth%20GA", yelpUrl: "https://www.yelp.com/biz/land-of-a-thousand-hills-duluth" },
+  { name: "Alchemist on the Divide", address: "3550 W Lawrenceville St, Ste 220, Duluth, GA 30096", lat: 0, lng: 0, category: "Specialty", rating: 4.7, ratingCount: "120+", ratingNum: 120, hours: "Daily 8am-8pm", usp: "Specialty cafe with apothecary-lab decor, blending Dutch coffee, espresso, and unique teas.", loved: ["Alchemist Special", "butterscotch latte", "caramel croffle"], signature: "The Alchemist Special (Dutch coffee with espresso)", googleUrl: "https://www.google.com/maps/search/?api=1&query=Alchemist%20on%20the%20Divide%203550%20W%20Lawrenceville%20St%20Duluth%20GA", yelpUrl: "https://www.yelp.com/biz/alchemist-on-the-divide-duluth" },
+  { name: "The Cream", address: "3455 Duluth Hwy, Duluth, GA 30096", lat: 0, lng: 0, category: "Dessert Cafe", rating: 4.2, ratingCount: "300+", ratingNum: 300, hours: "Sun-Thu 10am-10pm · Fri-Sat 10am-11pm", usp: "Korean shaved ice and cake in a sleek modern setting near downtown.", loved: ["mango bingsu", "Oreo waffles", "Korean cakes"], signature: "Mango Bingsu", googleUrl: "https://www.google.com/maps/search/?api=1&query=The%20Cream%203455%20Duluth%20Hwy%20Duluth%20GA", yelpUrl: "https://www.yelp.com/biz/the-cream-duluth-4" },
+  { name: "Ginkgo Bakery & Cafe", address: "3550 W Lawrenceville St, Ste 340, Duluth, GA 30096", lat: 0, lng: 0, category: "Bakery+Cafe", rating: 4.8, ratingCount: "200+", ratingNum: 200, hours: "Tue-Thu 8am-6pm · Fri-Sat 8am-7pm · Sun 8am-4pm · Closed Mon", usp: "Downtown Duluth bakery blending Taiwanese and American flavors, with viral Dubai chocolate.", loved: ["egg tarts", "Dubai chocolate", "tres leches cake"], signature: "Portuguese-style Egg Tart", googleUrl: "https://www.google.com/maps/search/?api=1&query=Ginkgo%20Bakery%20%26%20Cafe%203550%20W%20Lawrenceville%20St%20Duluth%20GA", yelpUrl: "https://www.yelp.com/biz/ginkgo-duluth" },
+  { name: "Coffee That Matters", address: "2640 Old Peachtree Rd NW, Ste C, Duluth, GA 30097", lat: 0, lng: 0, category: "Coffee", rating: 4.8, ratingCount: "250+", ratingNum: 250, hours: "Mon-Fri 7am-5pm · Sat 8am-4pm · Sun 1pm-5pm", usp: "Mission-driven specialty roaster with a drive-thru; profits fund Phoenix Roasters Foundation anti-trafficking work.", loved: ["White Lightning Bird iced", "nitro cold brew", "brisket sandwich"], signature: "White Lightning Bird iced brew", googleUrl: "https://www.google.com/maps/search/?api=1&query=Coffee%20That%20Matters%202640%20Old%20Peachtree%20Rd%20Duluth%20GA", yelpUrl: "https://www.yelp.com/biz/phoenix-roasters-duluth" },
+  { name: "The Coffee By Hand", address: "2180 Pleasant Hill Rd, Duluth, GA 30096", lat: 0, lng: 0, category: "Dessert Cafe", rating: 4.3, ratingCount: "340+", ratingNum: 340, hours: "Sun-Thu 11am-11pm · Fri-Sat 11am-12am", usp: "Korean K-town dessert cafe with a dried-tree centerpiece and private nooks for croffles and lattes.", loved: ["honey croffle", "mango bingsu", "Korean iced sweet coffee"], signature: "Honey Croffle (croissant-waffle)", googleUrl: "https://www.google.com/maps/search/?api=1&query=The%20Coffee%20By%20Hand%202180%20Pleasant%20Hill%20Rd%20Duluth%20GA", yelpUrl: "https://www.yelp.com/biz/the-coffee-by-hand-duluth" },
+  { name: "OneZo Boba Tea", address: "3580 Breckinridge Blvd, Ste 105, Duluth, GA 30096", lat: 0, lng: 0, category: "Tea/Boba", rating: 4.7, ratingCount: "240+", ratingNum: 240, hours: "Sun-Thu 12pm-10:30pm · Fri-Sat 12pm-11:30pm", usp: "First bubble-tea brand to make fresh handmade boba pearls in-store every day.", loved: ["soft fresh in-house boba", "real milk", "not overly sweet"], signature: "Brown Sugar Pearl Milk with handmade boba", googleUrl: "https://www.google.com/maps/search/?api=1&query=OneZo%20Boba%20Tea%203580%20Breckinridge%20Blvd%20Duluth%20GA", yelpUrl: "https://www.yelp.com/biz/one-zo-boba-duluth-duluth" },
+  { name: "Molly Tea", address: "2131 Pleasant Hill Rd, Ste 135, Duluth, GA 30096", lat: 0, lng: 0, category: "Tea/Boba", rating: 4.6, ratingCount: "100+", ratingNum: 100, hours: "Daily 11am-10:10pm", usp: "Chinese tea chain pouring loose-leaf brews and floral milk teas instead of syrup-heavy boba.", loved: ["jasmine milk teas", "tea cream with pecans", "loose-leaf brewing"], signature: "Premium Jasmine White Milk Tea", googleUrl: "https://www.google.com/maps/search/?api=1&query=Molly%20Tea%202131%20Pleasant%20Hill%20Rd%20Duluth%20GA", yelpUrl: "https://www.yelp.com/biz/molly-tea-duluth" },
+  { name: "ChiCha San Chen", address: "2174 Pleasant Hill Rd, Ste 105, Duluth, GA 30096", lat: 0, lng: 0, category: "Tea/Boba", rating: 4.6, ratingCount: "200+", ratingNum: 200, hours: "Sun-Thu 12pm-9pm · Fri-Sat 12pm-10pm", usp: "Michelin-Plate Taiwanese tea house pouring some of the world's most expensive oolongs.", loved: ["Lishan oolong", "tea tastings", "fruit teas"], signature: "Lishan Oolong Tea", googleUrl: "https://www.google.com/maps/search/?api=1&query=ChiCha%20San%20Chen%202174%20Pleasant%20Hill%20Rd%20Duluth%20GA", yelpUrl: "https://www.yelp.com/biz/chicha-san-chen-duluth" },
+  { name: "Matcha Cafe Maiko", address: "2131 Pleasant Hill Rd, Ste 139, Duluth, GA 30096", lat: 0, lng: 0, category: "Dessert Cafe", rating: 4.5, ratingCount: "900+", ratingNum: 900, hours: "Sun-Thu 1pm-10pm · Fri-Sat 1pm-10:30pm", usp: "Hawaii-born matcha cafe serving Uji matcha lattes, soft serve, and Japanese parfaits.", loved: ["matcha latte with almond milk", "Dubai chocolate", "banana pudding"], signature: "Matcha Soft Serve with Mochi & Red Bean", googleUrl: "https://www.google.com/maps/search/?api=1&query=Matcha%20Cafe%20Maiko%202131%20Pleasant%20Hill%20Rd%20Duluth%20GA", yelpUrl: "https://www.yelp.com/biz/matcha-cafe-maiko-duluth-3" },
+  { name: "Hiro Tea Bar", address: "3648 Satellite Blvd, Ste A, Duluth, GA 30096", lat: 0, lng: 0, category: "Tea/Boba", rating: 4.7, ratingCount: "30+", ratingNum: 30, hours: "Sun-Thu 10am-9pm · Fri-Sat 10am-10pm", usp: "Boba cooked fresh every 2 hours and 100% real fruit cut daily — no syrup.", loved: ["orange green tea", "fresh-cooked boba", "real fruit"], signature: "Orange Green Tea (fresh-squeezed)", googleUrl: "https://www.google.com/maps/search/?api=1&query=Hiro%20Tea%20Bar%203648%20Satellite%20Blvd%20Duluth%20GA", yelpUrl: "https://www.yelp.com/biz/hiro-tea-bar-duluth-2" },
+  { name: "Ding Tea", address: "2180 Pleasant Hill Rd, Ste B13, Duluth, GA 30096", lat: 0, lng: 0, category: "Tea/Boba", rating: 4.2, ratingCount: "250+", ratingNum: 250, hours: "Daily 11am-10pm", usp: "Taiwanese chain known for consistent chewy boba and a large customizable menu.", loved: ["chewy boba", "wide flavor variety", "friendly staff"], signature: "Brown Sugar Pearl Milk Tea", googleUrl: "https://www.google.com/maps/search/?api=1&query=Ding%20Tea%202180%20Pleasant%20Hill%20Rd%20Duluth%20GA", yelpUrl: "https://www.yelp.com/biz/ding-tea-duluth-duluth-2" },
+  { name: "Tiger Sugar", address: "2570 Pleasant Hill Rd, Ste 101, Duluth, GA 30096", lat: 0, lng: 0, category: "Tea/Boba", rating: 4.2, ratingCount: "170+", ratingNum: 170, hours: "Sun-Thu 12pm-10pm · Fri-Sat 12pm-11pm", usp: "Originator of the 'tiger stripes' brown sugar milk, with 8-hour-cooked pearls.", loved: ["tiger-striped cups", "chewy pearls", "mousse-topped drinks"], signature: "Brown Sugar Boba Milk with Cream Mousse", googleUrl: "https://www.google.com/maps/search/?api=1&query=Tiger%20Sugar%202570%20Pleasant%20Hill%20Rd%20Duluth%20GA", yelpUrl: "https://www.yelp.com/biz/tiger-sugar-duluth" },
+  { name: "Xing Fu Tang", address: "2476 Pleasant Hill Rd, Duluth, GA 30096", lat: 0, lng: 0, category: "Tea/Boba", rating: 4.4, ratingCount: "190+", ratingNum: 190, hours: "Sun-Thu 12pm-9:30pm · Fri-Sat 12pm-10:30pm", usp: "Taiwanese chain that stir-fries fresh tapioca pearls in brown sugar in front of you.", loved: ["wok-fried pearls", "fresh pearls daily", "matcha cream puffs"], signature: "Signature Brown Sugar Boba Milk", googleUrl: "https://www.google.com/maps/search/?api=1&query=Xing%20Fu%20Tang%202476%20Pleasant%20Hill%20Rd%20Duluth%20GA", yelpUrl: "https://www.yelp.com/biz/xing-fu-tang-duluth" },
+  { name: "Goodwin Tea House & More", address: "3455 Peachtree Industrial Blvd, Ste 205, Duluth, GA 30096", lat: 0, lng: 0, category: "Specialty", rating: 4.4, ratingCount: "100+", ratingNum: 100, hours: "Tue-Sun 11:30am-10pm · Closed Mon", usp: "Taiwanese tea house pairing taro and mango bubble teas with small plates and noodle bowls.", loved: ["taro tea", "popcorn chicken", "satay noodles"], signature: "Taro Bubble Tea + Taiwanese Popcorn Chicken", googleUrl: "https://www.google.com/maps/search/?api=1&query=Goodwin%20Tea%20House%203455%20Peachtree%20Industrial%20Blvd%20Duluth%20GA", yelpUrl: "https://www.yelp.com/biz/goodwin-tea-house-and-more-duluth-5" },
+  { name: "The Bep Teahouse", address: "2180 Pleasant Hill Rd, Ste B7, Duluth, GA 30096", lat: 0, lng: 0, category: "Tea/Boba", rating: 4.5, ratingCount: "80+", ratingNum: 80, hours: "Sun-Thu 10am-11pm · Fri-Sat 10am-12am", usp: "Vietnamese-owned teahouse with organic milk, loose-leaf tea, and 100+ drinks.", loved: ["organic milk teas", "board games", "big seating"], signature: "The Bep Organic Milk Tea", googleUrl: "https://www.google.com/maps/search/?api=1&query=The%20Bep%20Teahouse%202180%20Pleasant%20Hill%20Rd%20Duluth%20GA", yelpUrl: "https://www.yelp.com/biz/the-bep-teahouse-duluth" },
+  { name: "Paris Baguette", address: "3492 Satellite Blvd, Ste 100, Duluth, GA 30096", lat: 0, lng: 0, category: "Bakery+Cafe", rating: 4.2, ratingCount: "1,200+", ratingNum: 1200, hours: "Daily 7am-9pm", usp: "Korean-French bakery chain with 300+ pastries, cakes, and espresso drinks.", loved: ["cakes", "croissants", "coffee program"], signature: "Strawberry Soft Cream Cake", googleUrl: "https://www.google.com/maps/search/?api=1&query=Paris%20Baguette%203492%20Satellite%20Blvd%20Duluth%20GA", yelpUrl: "https://www.yelp.com/biz/paris-baguette-duluth-2" },
+  { name: "Bread Museum Bakery & Cafe", address: "3473 Old Norcross Rd, Ste 306, Duluth, GA 30096", lat: 0, lng: 0, category: "Bakery+Cafe", rating: 4.9, ratingCount: "190+", ratingNum: 190, hours: "Mon-Tue 10:30am-7pm · Thu 10:30am-7:30pm · Fri-Sat to 10pm · Sun to 7:30pm · Closed Wed", usp: "Boutique French-Korean bakery focused on less-sweet, scratch-made breads.", loved: ["salt bread", "specialty cakes", "30% off day-old after 4:30pm"], signature: "Salt Bread (Sogeumppang)", googleUrl: "https://www.google.com/maps/search/?api=1&query=Bread%20Museum%20Bakery%203473%20Old%20Norcross%20Rd%20Duluth%20GA", yelpUrl: "https://www.yelp.com/biz/bread-museum-duluth-3" },
+  { name: "Tous Les Jours", address: "2550 Pleasant Hill Rd, Bldg 300, Duluth, GA 30096", lat: 0, lng: 0, category: "Bakery+Cafe", rating: 4.3, ratingCount: "850+", ratingNum: 850, hours: "Daily 8:30am-8:30pm", usp: "French-Asian bakery inside H Mart with 300+ daily-baked breads, cakes, and pastries.", loved: ["pastry selection", "cute themed cakes", "coffee pairings"], signature: "Cloud Cream Cheese Bread", googleUrl: "https://www.google.com/maps/search/?api=1&query=Tous%20Les%20Jours%202550%20Pleasant%20Hill%20Rd%20Duluth%20GA", yelpUrl: "https://www.yelp.com/biz/tous-les-jours-duluth-2" },
+  { name: "Tree Story Bakery & Cafe", address: "2550 Pleasant Hill Rd, Ste 415, Duluth, GA 30096", lat: 0, lng: 0, category: "Bakery+Cafe", rating: 4.2, ratingCount: "230+", ratingNum: 230, hours: "Sun-Thu 8am-9pm · Fri-Sat 8am-10pm", usp: "Korean dessert cafe serving cream-filled breads and bingsu in a calm modern space.", loved: ["tiramisu bingsu", "mochi red bean bun", "sweet potato latte"], signature: "Tiramisu Bingsu", googleUrl: "https://www.google.com/maps/search/?api=1&query=Tree%20Story%20Bakery%202550%20Pleasant%20Hill%20Rd%20Duluth%20GA", yelpUrl: "https://www.yelp.com/biz/tree-story-bakery-and-cafe-duluth" },
+  { name: "Vincent Bakery & Cafe", address: "2442 Pleasant Hill Rd, Duluth, GA 30096", lat: 0, lng: 0, category: "Bakery+Cafe", rating: 4.0, ratingCount: "190+", ratingNum: 190, hours: "Daily 7am-8pm", usp: "Long-running Korean bakery with Van Gogh-inspired branding and Asian-style pastries.", loved: ["red bean breads", "custard pastries", "organized displays"], signature: "Red Bean Bun", googleUrl: "https://www.google.com/maps/search/?api=1&query=Vincent%20Bakery%20Cafe%202442%20Pleasant%20Hill%20Rd%20Duluth%20GA", yelpUrl: "https://www.yelp.com/biz/vincent-bakery-cafe-duluth" },
+  { name: "Hansel & Gretel Bakery Cafe", address: "2131 Pleasant Hill Rd, Ste 101, Duluth, GA 30096", lat: 0, lng: 0, category: "Bakery+Cafe", rating: 4.2, ratingCount: "1,300+", ratingNum: 1300, hours: "Sun-Thu 8am-11pm · Fri-Sat 8am-12am", usp: "Late-night Korean bakery with fresh cream cakes and a fairy-tale theme.", loved: ["fresh cream cakes", "custom birthday cakes", "open late"], signature: "Fresh Cream Strawberry Cake", googleUrl: "https://www.google.com/maps/search/?api=1&query=Hansel%20and%20Gretel%20Bakery%202131%20Pleasant%20Hill%20Rd%20Duluth%20GA", yelpUrl: "https://www.yelp.com/biz/hansel-and-gretel-bakery-cafe-duluth" },
+  { name: "Georgia French Bakery & Cafe", address: "3512 Satellite Blvd, Ste 5, Duluth, GA 30096", lat: 0, lng: 0, category: "Bakery+Cafe", rating: 4.8, ratingCount: "800+", ratingNum: 800, hours: "Tue-Fri 7:30am-3pm · Sat 9am-3pm · Closed Sun-Mon", usp: "Family-run French bakery with scratch-made croissants and baguettes by a Paris-trained baker.", loved: ["crispy baguettes", "almond croissants", "made-from-scratch"], signature: "Almond Croissant", googleUrl: "https://www.google.com/maps/search/?api=1&query=Georgia%20French%20Bakery%203512%20Satellite%20Blvd%20Duluth%20GA", yelpUrl: "https://www.yelp.com/biz/georgia-french-bakery-and-cafe-duluth" },
+  { name: "Mai Bakery", address: "2300 Pleasant Hill Rd, Ste B6, Duluth, GA 30096", lat: 0, lng: 0, category: "Bakery+Cafe", rating: 4.6, ratingCount: "14+", ratingNum: 14, hours: "Daily 10am-8pm", usp: "Tiny Chinese bakery counter inside Great Wall Supermarket with daily-baked buns.", loved: ["daily-baked buns", "pork floss bun", "affordable"], signature: "BBQ Pork Bun", googleUrl: "https://www.google.com/maps/search/?api=1&query=Mai%20Bakery%202300%20Pleasant%20Hill%20Rd%20Duluth%20GA", yelpUrl: "https://www.yelp.com/biz/mai-bakery-duluth" },
+  { name: "The Patio Cafe & Bakery", address: "5950 State Bridge Rd, Duluth, GA 30097", lat: 0, lng: 0, category: "Bakery+Cafe", rating: 4.2, ratingCount: "85+", ratingNum: 85, hours: "Mon-Thu 9am-7pm · Fri-Sat 9am-4pm · Closed Sun", usp: "American scratch kitchen and bakery making soups, sandwiches, and cookies from scratch daily.", loved: ["Philly cheesesteak", "homemade soups", "fresh cookies"], signature: "Brownies & Homemade Soup", googleUrl: "https://www.google.com/maps/search/?api=1&query=The%20Patio%20Cafe%205950%20State%20Bridge%20Rd%20Duluth%20GA", yelpUrl: "https://www.yelp.com/biz/the-patio-cafe-and-bakery-duluth" },
+  { name: "Shokku Bakery", address: "3875 Venture Dr, Duluth, GA 30096", lat: 0, lng: 0, category: "Bakery+Cafe", rating: 4.5, ratingCount: "70+", ratingNum: 70, hours: "Daily 11am-8pm", usp: "Metro Atlanta's first Hokkaido-style Japanese bakery inside Jusgo Supermarket.", loved: ["matcha croissants", "crystal mochi", "melon pan"], signature: "Charcoal Croissant", googleUrl: "https://www.google.com/maps/search/?api=1&query=Shokku%20Bakery%203875%20Venture%20Dr%20Duluth%20GA", yelpUrl: "https://www.yelp.com/biz/shokku-bakery-duluth" },
+  { name: "Forest Cafe", address: "3780 Old Norcross Rd, Ste 109, Duluth, GA 30096", lat: 0, lng: 0, category: "Dessert Cafe", rating: 4.8, ratingCount: "340+", ratingNum: 340, hours: "Daily 9am-11pm", usp: "Korean tanghulu and bingsu specialist; every drink and dessert made to order.", loved: ["fresh-fruit tanghulu", "strawberry bingsu", "fish-shaped pastries"], signature: "Strawberry Tanghulu", googleUrl: "https://www.google.com/maps/search/?api=1&query=Forest%20Cafe%203780%20Old%20Norcross%20Rd%20Duluth%20GA", yelpUrl: "https://www.yelp.com/biz/forest-cafe-duluth" },
+  { name: "Cafe 104", address: "3705 Old Norcross Rd, Duluth, GA 30096", lat: 0, lng: 0, category: "Bakery+Cafe", rating: 4.1, ratingCount: "540+", ratingNum: 540, hours: "Daily 10am-11pm", usp: "Japanese souffle pancakes and Korean-fusion brunch; widely cited as a Duluth study spot.", loved: ["souffle pancakes", "bingsu", "kimchi avocado toast"], signature: "Mochi Souffle Pancakes", googleUrl: "https://www.google.com/maps/search/?api=1&query=Cafe%20104%203705%20Old%20Norcross%20Rd%20Duluth%20GA", yelpUrl: "https://www.yelp.com/biz/cafe-104-duluth" },
+  { name: "Boba Mocha", address: "2628 Pleasant Hill Rd, Ste 100, Duluth, GA 30096", lat: 0, lng: 0, category: "Tea/Boba", rating: 4.6, ratingCount: "1,680+", ratingNum: 1680, hours: "Sun-Thu 11am-10pm · Fri-Sat 11am-11pm", usp: "Longtime Duluth boba favorite with handmade Taiwanese teas, popping boba, and board games.", loved: ["light-up boba cup", "popping boba", "board games"], signature: "Mix-and-match milk tea with popping boba", googleUrl: "https://www.google.com/maps/search/?api=1&query=Boba%20Mocha%202628%20Pleasant%20Hill%20Rd%20Duluth%20GA", yelpUrl: "https://www.yelp.com/biz/boba-mocha-duluth" },
+  { name: "Long's Cafe 2", address: "1630 Pleasant Hill Rd, Ste 110-A, Duluth, GA 30096", lat: 0, lng: 0, category: "Specialty", rating: null, ratingCount: "—", ratingNum: 0, hours: "Call (470) 365-2179 for hours", usp: "Vietnamese coffee and sugarcane juice lounge with weekly karaoke and sports.", loved: ["Vietnamese iced coffee", "sugarcane juice", "karaoke"], signature: "Cà phê sữa đá (Vietnamese iced coffee)", googleUrl: "https://www.google.com/maps/search/?api=1&query=Long%27s%20Cafe%202%201630%20Pleasant%20Hill%20Rd%20Duluth%20GA", yelpUrl: "https://www.yelp.com/search?find_desc=Long%27s+Cafe+2&find_loc=Duluth%2C+GA" },
+  { name: "Incha Duluth (Duck Ink + Boba)", address: "3500 Gwinnett Pl Dr NW, Ste 6, Duluth, GA 30096", lat: 0, lng: 0, category: "Specialty", rating: 4.5, ratingCount: "25+", ratingNum: 25, hours: "Walk-ins; check socials for daily hours", usp: "Korean-style cafe where you paint Duck Ink figurines while sipping boba.", loved: ["figurine painting from $3", "taro milk tea", "budak ramen"], signature: "Duck Ink figurine + taro milk tea", googleUrl: "https://www.google.com/maps/search/?api=1&query=Incha%20Duluth%20Duck%20Ink%203500%20Gwinnett%20Pl%20Dr%20Duluth%20GA", yelpUrl: "https://www.yelp.com/biz/incha-duck-ink-duluth" },
+  { name: "Orange Coffee Bar", address: "3473 Old Norcross Rd, Ste 107, Duluth, GA 30096", lat: 0, lng: 0, category: "Coffee", rating: 4.4, ratingCount: "310+", ratingNum: 310, hours: "Daily 10am-10pm", usp: "Korean coffee bar known for sweet potato latte and summer bingsoo.", loved: ["sweet potato latte", "bingsoo", "Wi-Fi & outdoor seating"], signature: "Sweet Potato Latte", googleUrl: "https://www.google.com/maps/search/?api=1&query=Orange%20Coffee%20Bar%203473%20Old%20Norcross%20Rd%20Duluth%20GA", yelpUrl: "https://www.yelp.com/biz/orange-coffee-bar-duluth" },
+  { name: "Tom N Toms Coffee Black", address: "3473 Old Norcross Rd, Ste 100-A, Duluth, GA 30096", lat: 0, lng: 0, category: "Coffee", rating: 4.5, ratingCount: "245+", ratingNum: 245, hours: "Daily 8am-10pm", usp: "Korean coffee chain's Black-label flagship — 2 stories with an upstairs study area.", loved: ["pretzel breads", "specialty espresso", "breakfast plates"], signature: "Honey butter pretzel + Americano", googleUrl: "https://www.google.com/maps/search/?api=1&query=Tom%20N%20Toms%20Coffee%20Black%203473%20Old%20Norcross%20Rd%20Duluth%20GA", yelpUrl: "https://www.yelp.com/biz/tom-n-toms-coffee-black-duluth" },
+  { name: "Gonggan ATL", address: "2645 N Berkeley Lake Rd NW, Ste 109, Duluth, GA 30096", lat: 0, lng: 0, category: "Coffee", rating: 4.6, ratingCount: "12+", ratingNum: 12, hours: "Fri-Sun 11am-11pm · Closed Mon-Thu", usp: "NYC/LA Korean cafe brand's first Atlanta outpost, weekends only, South Korean roasters.", loved: ["dark green matcha", "Korean specialty coffee", "Earl Grey blueberry toast"], signature: "Matcha latte + croffle", googleUrl: "https://www.google.com/maps/search/?api=1&query=Gonggan%20ATL%202645%20N%20Berkeley%20Lake%20Rd%20Duluth%20GA", yelpUrl: "https://www.yelp.com/biz/gong-gan-duluth" },
+  { name: "Kafeiin", address: "3865 Venture Dr, Ste A, Duluth, GA 30096", lat: 0, lng: 0, category: "Coffee", rating: 3.9, ratingCount: "190+", ratingNum: 190, hours: "Sun-Thu 9/10am-10pm · Fri-Sat 9am-11pm", usp: "Independent Korean specialty cafe with playful lattes like corn and banana matcha.", loved: ["corn latte", "banana matcha latte", "aesthetic interior"], signature: "Corn Latte", googleUrl: "https://www.google.com/maps/search/?api=1&query=Kafeiin%203865%20Venture%20Dr%20Duluth%20GA", yelpUrl: "https://www.yelp.com/biz/kafeiin-duluth" },
+  { name: "Fujiissa", address: "3875 Venture Dr, Unit A10, Duluth, GA 30096 (Tokyo Kuma Food Court)", lat: 0, lng: 0, category: "Dessert Cafe", rating: 4.5, ratingCount: "30+", ratingNum: 30, hours: "Mon-Fri 11:30am-8pm · Sat-Sun 11am-8pm", usp: "Japanese matcha dessert counter inside Tokyo Kuma food court — authentic uji matcha.", loved: ["matcha soft serve", "Fujisa Special parfait", "self-order kiosk"], signature: "Fujisa Special matcha parfait", googleUrl: "https://www.google.com/maps/search/?api=1&query=Fujiissa%203875%20Venture%20Dr%20Duluth%20GA", yelpUrl: "https://www.yelp.com/biz/fujiissa-duluth" },
+  { name: "Yezi Coconut Dessert", address: "2174 Pleasant Hill Rd, Ste 106, Duluth, GA 30096", lat: 0, lng: 0, category: "Dessert Cafe", rating: 4.6, ratingCount: "180+", ratingNum: 180, hours: "Daily 12pm-9pm", usp: "Georgia's first coconut-based dessert shop, crafting young-coconut puddings and clouds with a reusable-jar program.", loved: ["real fruit", "fresh coconut base", "reusable jar trade-in"], signature: "Mango Coconut Snowy", googleUrl: "https://www.google.com/maps/search/?api=1&query=Yezi%20Coconut%20Dessert%202174%20Pleasant%20Hill%20Rd%20Duluth%20GA", yelpUrl: "https://www.yelp.com/biz/yezi-coconut-dessert-duluth" },
+  { name: "Fluffy Fluffy Dessert Cafe", address: "2180 Pleasant Hill Rd, Ste B4, Duluth, GA 30096", lat: 0, lng: 0, category: "Dessert Cafe", rating: 4.4, ratingCount: "480+", ratingNum: 480, hours: "Mon-Fri 11am-10pm · Sat-Sun 9am-10pm", usp: "Japanese souffle pancakes hand-whipped to order.", loved: ["jiggly pancakes", "matcha tiramisu", "creme brulee top"], signature: "Strawberry Tiramisu Souffle Pancakes", googleUrl: "https://www.google.com/maps/search/?api=1&query=Fluffy%20Fluffy%20Dessert%20Cafe%202180%20Pleasant%20Hill%20Rd%20Duluth%20GA", yelpUrl: "https://www.yelp.com/biz/fluffy-fluffy-dessert-cafe-duluth" },
+  { name: "Qamaria Yemeni Coffee Co.", address: "2645 N Berkeley Lake Rd NW, Ste 221, Duluth, GA 30096", lat: 0, lng: 0, category: "Coffee", rating: 4.6, ratingCount: "320+", ratingNum: 320, hours: "Sun-Thu 12pm-11pm · Fri-Sat 12pm-12am", usp: "Late-night Yemeni coffeehouse pouring adeni, mofawar, and qishr brews with cardamom and saffron.", loved: ["adeni chai", "honeycomb pastries", "large seating, open late"], signature: "Adeni Tea with Honeycomb Bread", googleUrl: "https://www.google.com/maps/search/?api=1&query=Qamaria%20Yemeni%20Coffee%202645%20N%20Berkeley%20Lake%20Rd%20Duluth%20GA", yelpUrl: "https://www.yelp.com/biz/qamaria-yemeni-coffee-duluth" },
+  { name: "Yibna Cafe", address: "3700 Crestwood Pkwy NW, Duluth, GA 30096", lat: 0, lng: 0, category: "Coffee", rating: 4.7, ratingCount: "90+", ratingNum: 90, hours: "Mon-Fri 8am-6pm · Sat 8am-3pm · Closed Sun", usp: "Drive-thru Mediterranean-fusion coffee shop with Yemeni and Middle Eastern flavors.", loved: ["matcha lattes", "drive-thru", "Middle Eastern pastries"], signature: "Sahlab Latte", googleUrl: "https://www.google.com/maps/search/?api=1&query=Yibna%20Cafe%203700%20Crestwood%20Pkwy%20Duluth%20GA", yelpUrl: "https://www.yelp.com/biz/yibna-caf%C3%A9-duluth" },
+  { name: "El Cafe by La Abuela", address: "1630 Pleasant Hill Rd, Ste 260, Duluth, GA 30096", lat: 0, lng: 0, category: "Dessert Cafe", rating: 4.5, ratingCount: "210+", ratingNum: 210, hours: "Mon-Thu 10:30am-9pm · Fri-Sun 10am-11pm", usp: "Colombian-rooted dessert cafe with crepes, waffles, milkshakes, and banana splits.", loved: ["towering milkshakes", "fruit crepes", "banana splits"], signature: "Crepes y Fresas (Strawberry Crepes)", googleUrl: "https://www.google.com/maps/search/?api=1&query=El%20Cafe%20by%20La%20Abuela%201630%20Pleasant%20Hill%20Rd%20Duluth%20GA", yelpUrl: "https://www.yelp.com/biz/el-cafe-by-la-abuela-duluth-2" },
+  { name: "Date un Gusto", address: "3350 Steve Reynolds Blvd, Duluth, GA 30096", lat: 0, lng: 0, category: "Bakery+Cafe", rating: 4.6, ratingCount: "140+", ratingNum: 140, hours: "Sun-Thu 8am-10pm · Fri-Sat 8am-11pm", usp: "Venezuelan-Colombian bakery-cafe with arepas, cachapas, tres-leches, and South American coffee.", loved: ["fresh arepas", "signature cake", "Venezuelan coffee"], signature: "Cachapa with Queso de Mano", googleUrl: "https://www.google.com/maps/search/?api=1&query=Date%20un%20Gusto%203350%20Steve%20Reynolds%20Blvd%20Duluth%20GA", yelpUrl: "https://www.yelp.com/biz/date-un-gusto-duluth" },
+  { name: "7 Leaves Cafe", address: "4020 Satellite Blvd, Ste 118, Duluth, GA 30096", lat: 0, lng: 0, category: "Tea/Boba", rating: 4.5, ratingCount: "410+", ratingNum: 410, hours: "Mon-Thu 10am-8pm · Fri-Sat 10am-10pm · Sun 10am-9pm", usp: "Vietnamese-American tea chain with childhood flavors like mung bean and Thai tea — drive-thru.", loved: ["mung bean milk tea", "jasmine macchiato", "drive-thru"], signature: "Mung Bean Milk Tea", googleUrl: "https://www.google.com/maps/search/?api=1&query=7%20Leaves%20Cafe%204020%20Satellite%20Blvd%20Duluth%20GA", yelpUrl: "https://www.yelp.com/biz/7-leaves-cafe-duluth-duluth" },
+  { name: "The Quynh Cafe", address: "3665 Club Dr, Ste 102a, Duluth, GA 30096", lat: 0, lng: 0, category: "Dessert Cafe", rating: 4.4, ratingCount: "390+", ratingNum: 390, hours: "Mon, Wed-Sun 10am-8pm · Closed Tue", usp: "Modern Vietnamese cafe celebrating chè and phin-dripped robusta coffee.", loved: ["Vietnamese coffee", "chè desserts", "natural light"], signature: "Chè Thái (Vietnamese Fruit Dessert Soup)", googleUrl: "https://www.google.com/maps/search/?api=1&query=The%20Quynh%20Cafe%203665%20Club%20Dr%20Duluth%20GA", yelpUrl: "https://www.yelp.com/biz/the-quynh-cafe-duluth" },
+  { name: "Lemon Sweets Bakery & Cafe", address: "3531 Peachtree Industrial Blvd, Duluth, GA 30096", lat: 0, lng: 0, category: "Bakery+Cafe", rating: 4.5, ratingCount: "220+", ratingNum: 220, hours: "Mon, Wed-Thu, Sun 10:30am-8:30pm · Fri-Sat to 9:30pm · Closed Tue", usp: "Asian-owned bakery and boba shop blending Vietnamese, Chinese, and Korean pastries.", loved: ["mango bingsu", "durian mille crepe", "purple yam pastries"], signature: "Mango Bingsu", googleUrl: "https://www.google.com/maps/search/?api=1&query=Lemon%20Sweets%20Bakery%203531%20Peachtree%20Industrial%20Blvd%20Duluth%20GA", yelpUrl: "https://www.yelp.com/biz/lemon-sweets-bakery-and-cafe-duluth" },
+  { name: "Cafe Rothem", address: "3585 Peachtree Industrial Blvd, Ste 28, Duluth, GA 30096", lat: 0, lng: 0, category: "Specialty", rating: 4.8, ratingCount: "360+", ratingNum: 360, hours: "Mon-Fri 10am-9pm · Sat 11:30am-9pm · Closed Sun", usp: "Korean cafe doubling as a book-and-vinyl listening lounge with bingsu, garlic bread, and specialty coffee.", loved: ["garlic bread", "Korean bingsu", "vinyl & study seating"], signature: "Injeolmi Bingsu", googleUrl: "https://www.google.com/maps/search/?api=1&query=Cafe%20Rothem%203585%20Peachtree%20Industrial%20Blvd%20Duluth%20GA", yelpUrl: "https://www.yelp.com/biz/cafe-rothem-duluth" },
+  { name: "Wich Tea", address: "3350 Steve Reynolds Blvd, Ste 303, Duluth, GA 30096", lat: 0, lng: 0, category: "Specialty", rating: 4.8, ratingCount: "330+", ratingNum: 330, hours: "Mon, Wed-Thu 9am-7:30pm · Fri-Sat 10am-9pm · Sun 10am-7:30pm · Closed Tue", usp: "Family-run Vietnamese cafe with in-house-baked banh mi and Vietnamese coffee.", loved: ["fresh-baked bread", "well-seasoned banh mi", "everything under $10"], signature: "Chargrilled Pork Banh Mi", googleUrl: "https://www.google.com/maps/search/?api=1&query=Wich%20Tea%203350%20Steve%20Reynolds%20Blvd%20Duluth%20GA", yelpUrl: "https://www.yelp.com/biz/wich-tea-duluth-3" },
+  { name: "Tea Drip", address: "3675 Satellite Blvd, Ste 1020, Duluth, GA 30096", lat: 0, lng: 0, category: "Tea/Boba", rating: 4.8, ratingCount: "65+", ratingNum: 65, hours: "Sun-Thu 10am-9pm · Fri-Sat 10am-10pm", usp: "Vietnamese drip coffee bar pairing Dalat coffee with Japanese matcha and real-ingredient boba.", loved: ["real taro paste", "ube drip coffee", "homemade desserts"], signature: "Ube Drip Coffee", googleUrl: "https://www.google.com/maps/search/?api=1&query=Tea%20Drip%203675%20Satellite%20Blvd%20Duluth%20GA", yelpUrl: "https://www.yelp.com/biz/tea-drip-duluth" },
+  { name: "Cuckoo's Cafe", address: "3182 Steve Reynolds Blvd, Ste 110, Duluth, GA 30096", lat: 0, lng: 0, category: "Tea/Boba", rating: 4.4, ratingCount: "150+", ratingNum: 150, hours: "Mon-Tue, Thu-Sun 12pm-11pm · Closed Wed", usp: "Late-night Taiwanese hangout with boba, tea cocktails, and Taiwanese street snacks.", loved: ["Taiwanese chicken nuggets", "outlets & comfy seating", "tea cocktails"], signature: "Pearl Milk Tea with Taiwanese Chicken Nuggets", googleUrl: "https://www.google.com/maps/search/?api=1&query=Cuckoo%27s%20Cafe%203182%20Steve%20Reynolds%20Blvd%20Duluth%20GA", yelpUrl: "https://www.yelp.com/biz/cuckoos-cafe-duluth" },
+  { name: "Chuchat", address: "6000 Medlock Bridge Pkwy F200, Johns Creek, GA 30097", lat: 0, lng: 0, category: "Tea/Boba", rating: 4.8, ratingCount: "530+", ratingNum: 530, hours: "Daily 11:30am-10pm", usp: "Minimalist cafe with Taiwanese tea, house-made kabob skewers, and a hangout-friendly space (just over the Johns Creek line).", loved: ["sea salt milk tea", "kabob skewers", "study-friendly"], signature: "Sea Salt Oolong Milk Tea", googleUrl: "https://www.google.com/maps/search/?api=1&query=Chuchat%206000%20Medlock%20Bridge%20Pkwy%20Johns%20Creek%20GA", yelpUrl: "https://www.yelp.com/biz/chuchat-johns-creek" },
+  { name: "Art's Bakery & Cafe", address: "4500 Satellite Blvd #1170, Duluth, GA 30096", lat: 0, lng: 0, category: "Bakery+Cafe", rating: 4.7, ratingCount: "350+", ratingNum: 350, hours: "Wed-Thu 11am-8pm · Fri-Sat 11am-10pm · Sun 12pm-8pm · Closed Mon-Tue", usp: "International bakery combining French technique with Middle Eastern pastries and custom cakes.", loved: ["pistachio & cashew baklava", "chocolate mousse cake", "custom cakes"], signature: "Baklava & Almond Success Cake", googleUrl: "https://www.google.com/maps/search/?api=1&query=Art%27s%20Bakery%20%26%20Cafe%204500%20Satellite%20Blvd%20Duluth%20GA", yelpUrl: "https://www.yelp.com/biz/arts-bakery-and-cafe-duluth" },
+  { name: "Artistea", address: "3545 Peachtree Industrial Blvd, Ste 12, Duluth, GA 30096", lat: 0, lng: 0, category: "Dessert Cafe", rating: 4.7, ratingCount: "60+", ratingNum: 60, hours: "Sun-Tue, Thu 11am-10pm · Fri-Sat 11am-11pm · Closed Wed", usp: "Boba and Korean-bagel cafe doubling as a craft studio for ceramic painting and plush-making.", loved: ["banana pudding matcha", "Korean bagels", "paint nights"], signature: "Banana Pudding Matcha + Garlic Cream Cheese Korean Bagel", googleUrl: "https://www.google.com/maps/search/?api=1&query=Artistea%203545%20Peachtree%20Industrial%20Blvd%20Duluth%20GA", yelpUrl: "https://www.yelp.com/biz/artistea-duluth" },
+  { name: "Hayat Coffee", address: "2870 Peachtree Industrial Blvd, Ste G, Duluth, GA 30097", lat: 0, lng: 0, category: "Coffee", rating: 4.7, ratingCount: "25+", ratingNum: 25, hours: "Sun-Thu 7am-1am · Fri-Sat 7am-2am", usp: "Locally-owned Arab coffeehouse celebrating cardamom-spiced brews in a 3,600 sqft family-friendly lounge — open past midnight every night.", loved: ["kanafeh", "saffron milk cake", "spacious family seating"], signature: "Arabic Cardamom Coffee with Kanafeh", googleUrl: "https://www.google.com/maps/search/?api=1&query=Hayat%20Coffee%202870%20Peachtree%20Industrial%20Blvd%20Duluth%20GA", yelpUrl: "https://www.yelp.com/biz/hayat-coffee-duluth" },
+  { name: "Cafe Flat", address: "2227 Duluth Hwy, Ste 109, Duluth, GA 30097", lat: 0, lng: 0, category: "Coffee", rating: 4.7, ratingCount: "350+", ratingNum: 350, hours: "Sun-Thu 9am-9pm · Fri-Sat 9am-10pm", usp: "Locally-roasted craft coffee with viral Korean-style croffles in a sleek, study-friendly space at Hwy 120 & Boggs Rd.", loved: ["Dirty Chai Latte", "Yuza Cream Cheese Croffle", "study-friendly seating"], signature: "Dirty Chai Latte + Yuza Cream Cheese Croffle", googleUrl: "https://www.google.com/maps/search/?api=1&query=Cafe%20Flat%202227%20Duluth%20Hwy%20Duluth%20GA", yelpUrl: "https://www.yelp.com/biz/cafe-flat-duluth" },
+  { name: "Glaze Tea Duluth", address: "2205 Pleasant Hill Rd, Ste 125, Duluth, GA 30096", lat: 0, lng: 0, category: "Tea/Boba", rating: 4.5, ratingCount: "60+", ratingNum: 60, hours: "Mon-Thu 12pm-11pm · Fri-Sat 12pm-12am · Sun 12pm-11pm", usp: "Traditional Chinese tea craftsmanship meets modern boba — handcrafted milk teas with premium loose-leaf and a signature milk-tea hot pot.", loved: ["Camellia Milk Tea", "milk tea hot pot", "kiosk ordering"], signature: "Signature Camellia Milk Tea", googleUrl: "https://www.google.com/maps/search/?api=1&query=Glaze%20Tea%202205%20Pleasant%20Hill%20Rd%20Duluth%20GA", yelpUrl: "https://www.yelp.com/biz/glaze-tea-duluth-duluth-4" }
+];
+
+const ADDR = {
+  "2180-pleasanthill":{lat:33.96147,lng:-84.13401},"2131-pleasanthill":{lat:33.95655,lng:-84.13344},"2174-pleasanthill":{lat:33.95996,lng:-84.13462},"2645-nberkeley":{lat:33.97570,lng:-84.15897},"2200-duluth":{lat:33.97921,lng:-84.09940},"3176-main":{lat:34.00172,lng:-84.14616},"3550-wlawrenceville":{lat:34.00364,lng:-84.14489},"3455-duluth":{lat:34.00135,lng:-84.14334},"2640-oldpeachtree":{lat:34.00770,lng:-84.12879},"3580-breckinridge":{lat:33.94980,lng:-84.12683},"3648-satellite":{lat:33.95682,lng:-84.13615},"2570-pleasanthill":{lat:33.96917,lng:-84.14479},"2476-pleasanthill":{lat:33.96721,lng:-84.14259},"3455-peachtree":{lat:34.00669,lng:-84.17235},"3492-satellite":{lat:33.96244,lng:-84.13156},"3473-oldnorcross":{lat:33.96631,lng:-84.13354},"2550-pleasanthill":{lat:33.96990,lng:-84.14299},"2442-pleasanthill":{lat:33.96608,lng:-84.14109},"3512-satellite":{lat:33.96068,lng:-84.13215},"2300-pleasanthill":{lat:33.96386,lng:-84.13438},"5950-state":{lat:34.01447,lng:-84.18910},"3875-venture":{lat:33.95225,lng:-84.14140},"3865-venture":{lat:33.95227,lng:-84.14059},"3780-oldnorcross":{lat:33.96120,lng:-84.14413},"3705-oldnorcross":{lat:33.96367,lng:-84.14146},"2628-pleasanthill":{lat:33.97165,lng:-84.14781},"1630-pleasanthill":{lat:33.94747,lng:-84.12322},"3500-gwinnettpl":{lat:33.95654,lng:-84.12827},"3700-crestwood":{lat:33.94560,lng:-84.12795},"3350-steve":{lat:33.95325,lng:-84.13994},"4020-satellite":{lat:33.95115,lng:-84.14607},"3665-club":{lat:33.94218,lng:-84.12559},"3531-peachtree":{lat:34.00294,lng:-84.17039},"3585-peachtree":{lat:34.00040,lng:-84.16994},"3675-satellite":{lat:33.95939,lng:-84.13574},"3182-steve":{lat:33.95840,lng:-84.14080},"6000-medlock":{lat:34.03154,lng:-84.18814},"4500-satellite":{lat:33.94168,lng:-84.15990},"3545-peachtree":{lat:34.00227,lng:-84.17106},"2870-peachtree":{lat:34.02212,lng:-84.14947},"2227-duluth":{lat:33.97743,lng:-84.09924},"2205-pleasanthill":{lat:33.96092,lng:-84.13679}
+};
+
+const SHOP_ADDR = {"Sweet Hut Bakery & Cafe":"2180-pleasanthill","The Coffee By Hand":"2180-pleasanthill","Ding Tea":"2180-pleasanthill","The Bep Teahouse":"2180-pleasanthill","Fluffy Fluffy Dessert Cafe":"2180-pleasanthill","Cafe Mozart Bakery":"2131-pleasanthill","Molly Tea":"2131-pleasanthill","Matcha Cafe Maiko":"2131-pleasanthill","Hansel & Gretel Bakery Cafe":"2131-pleasanthill","ChiCha San Chen":"2174-pleasanthill","Yezi Coconut Dessert":"2174-pleasanthill","TwoHa's Cafe":"2645-nberkeley","Gonggan ATL":"2645-nberkeley","Qamaria Yemeni Coffee Co.":"2645-nberkeley","White Windmill Bakery & Cafe":"2200-duluth","Land of a Thousand Hills Coffee":"3176-main","Alchemist on the Divide":"3550-wlawrenceville","Ginkgo Bakery & Cafe":"3550-wlawrenceville","The Cream":"3455-duluth","Coffee That Matters":"2640-oldpeachtree","OneZo Boba Tea":"3580-breckinridge","Hiro Tea Bar":"3648-satellite","Tiger Sugar":"2570-pleasanthill","Xing Fu Tang":"2476-pleasanthill","Goodwin Tea House & More":"3455-peachtree","Paris Baguette":"3492-satellite","Bread Museum Bakery & Cafe":"3473-oldnorcross","Orange Coffee Bar":"3473-oldnorcross","Tom N Toms Coffee Black":"3473-oldnorcross","Tous Les Jours":"2550-pleasanthill","Tree Story Bakery & Cafe":"2550-pleasanthill","Vincent Bakery & Cafe":"2442-pleasanthill","Georgia French Bakery & Cafe":"3512-satellite","Mai Bakery":"2300-pleasanthill","The Patio Cafe & Bakery":"5950-state","Shokku Bakery":"3875-venture","Fujiissa":"3875-venture","Kafeiin":"3865-venture","Forest Cafe":"3780-oldnorcross","Cafe 104":"3705-oldnorcross","Boba Mocha":"2628-pleasanthill","Long's Cafe 2":"1630-pleasanthill","El Cafe by La Abuela":"1630-pleasanthill","Incha Duluth (Duck Ink + Boba)":"3500-gwinnettpl","Yibna Cafe":"3700-crestwood","Date un Gusto":"3350-steve","Wich Tea":"3350-steve","7 Leaves Cafe":"4020-satellite","The Quynh Cafe":"3665-club","Lemon Sweets Bakery & Cafe":"3531-peachtree","Cafe Rothem":"3585-peachtree","Tea Drip":"3675-satellite","Cuckoo's Cafe":"3182-steve","Chuchat":"6000-medlock","Art's Bakery & Cafe":"4500-satellite","Artistea":"3545-peachtree","Hayat Coffee":"2870-peachtree","Cafe Flat":"2227-duluth","Glaze Tea Duluth":"2205-pleasanthill"};
+
+const NEIGHBORHOODS = {"2180-pleasanthill":"Pleasant Hill","2131-pleasanthill":"Pleasant Hill","2174-pleasanthill":"Pleasant Hill","2300-pleasanthill":"Pleasant Hill","2442-pleasanthill":"Pleasant Hill","2476-pleasanthill":"Pleasant Hill","2550-pleasanthill":"Pleasant Hill","2570-pleasanthill":"Pleasant Hill","2628-pleasanthill":"Pleasant Hill","1630-pleasanthill":"Pleasant Hill","2645-nberkeley":"Berkeley Lake","2200-duluth":"Sugarloaf","3176-main":"Downtown Duluth","3550-wlawrenceville":"Downtown Duluth","3455-duluth":"Downtown Duluth","2640-oldpeachtree":"Sugarloaf","3580-breckinridge":"Breckinridge","3648-satellite":"Satellite Blvd","3492-satellite":"Satellite Blvd","3512-satellite":"Satellite Blvd","3675-satellite":"Satellite Blvd","4020-satellite":"Satellite Blvd","4500-satellite":"Satellite Blvd","3455-peachtree":"Peachtree Industrial","3531-peachtree":"Peachtree Industrial","3545-peachtree":"Peachtree Industrial","3585-peachtree":"Peachtree Industrial","3473-oldnorcross":"Old Norcross","3705-oldnorcross":"Old Norcross","3780-oldnorcross":"Old Norcross","3875-venture":"Venture Dr","3865-venture":"Venture Dr","5950-state":"State Bridge","3500-gwinnettpl":"Gwinnett Place","3700-crestwood":"Gwinnett Place","3350-steve":"Steve Reynolds","3182-steve":"Steve Reynolds","3665-club":"Club Dr","6000-medlock":"Johns Creek","2870-peachtree":"Peachtree Industrial","2227-duluth":"Sugarloaf","2205-pleasanthill":"Pleasant Hill"};
+
+const CWS = {"Sweet Hut Bakery & Cafe":{tier:"excellent",note:"Large seating, Wi-Fi, outlets — popular student spot.",hasMeetingRoom:true,meetingRoomNote:"Private meeting room — contact catering@sweethut.com"},"Cafe Mozart Bakery":{tier:"excellent",note:"Renovated work area, natural light, free parking.",hasMeetingRoom:false},"TwoHa's Cafe":{tier:"excellent",note:"Dividers for privacy, tons of seating, open till midnight.",hasMeetingRoom:false},"White Windmill Bakery & Cafe":{tier:"excellent",note:"Quiet, popular with students.",hasMeetingRoom:true,meetingRoomNote:"Private booth-style rooms in the back, bookable on demand."},"Land of a Thousand Hills Coffee":{tier:"excellent",note:"Connected to Thrive Coworking, built for work.",hasMeetingRoom:false},"Alchemist on the Divide":{tier:"good",note:"Plenty of seating, but trendy and busy.",hasMeetingRoom:false},"The Cream":{tier:"good",note:"Many outlets, but more brunch/dessert leaning.",hasMeetingRoom:false},"Ginkgo Bakery & Cafe":{tier:"good",note:"Warm atmosphere; workable but small.",hasMeetingRoom:false},"Coffee That Matters":{tier:"excellent",note:"Large, quiet, built for remote work and study.",hasMeetingRoom:false},"The Coffee By Hand":{tier:"good",note:"Wi-Fi, good weekday afternoons; livelier at night.",hasMeetingRoom:false},"OneZo Boba Tea":{tier:"limited",note:"Small boba shop, quick-grab.",hasMeetingRoom:false},"Molly Tea":{tier:"limited",note:"Designed for to-go.",hasMeetingRoom:false},"ChiCha San Chen":{tier:"limited",note:"Crowded seating, better for short visits.",hasMeetingRoom:false},"Matcha Cafe Maiko":{tier:"limited",note:"Dessert-focused with limited seating.",hasMeetingRoom:false},"Hiro Tea Bar":{tier:"good",note:"Peaceful, covered outdoor seating.",hasMeetingRoom:false},"Ding Tea":{tier:"limited",note:"Primarily a to-go boba shop.",hasMeetingRoom:false},"Tiger Sugar":{tier:"limited",note:"Limited seating, mostly to-go.",hasMeetingRoom:false},"Xing Fu Tang":{tier:"limited",note:"Small footprint, takeout-oriented.",hasMeetingRoom:false},"Goodwin Tea House & More":{tier:"good",note:"Workable with snacks; modest size.",hasMeetingRoom:false},"The Bep Teahouse":{tier:"good",note:"Generous seating, board games, gathering-oriented.",hasMeetingRoom:false},"Paris Baguette":{tier:"excellent",note:"Lots of tables, Wi-Fi, commonly used for studying.",hasMeetingRoom:false},"Bread Museum Bakery & Cafe":{tier:"good",note:"Cozy, casual; limited seating.",hasMeetingRoom:false},"Tous Les Jours":{tier:"good",note:"Inside H Mart, seating exists but not focused on work.",hasMeetingRoom:false},"Tree Story Bakery & Cafe":{tier:"excellent",note:"Quiet seating area for students and remote workers.",hasMeetingRoom:false},"Vincent Bakery & Cafe":{tier:"excellent",note:"Ample seating with outlets, library-like atmosphere.",hasMeetingRoom:false},"Hansel & Gretel Bakery Cafe":{tier:"excellent",note:"Spacious, charging spots, open late — can be noisy.",hasMeetingRoom:false},"Georgia French Bakery & Cafe":{tier:"good",note:"Cozy local bakery; workable but not a study mecca.",hasMeetingRoom:false},"Mai Bakery":{tier:"limited",note:"Inside Great Wall food court, no real cafe space.",hasMeetingRoom:false},"The Patio Cafe & Bakery":{tier:"good",note:"Plenty of indoor and patio seating.",hasMeetingRoom:false},"Shokku Bakery":{tier:"limited",note:"Inside Jusgo food court, counter service only.",hasMeetingRoom:false},"Forest Cafe":{tier:"good",note:"Comfy sofa seating, some charging spots.",hasMeetingRoom:false},"Cafe 104":{tier:"excellent",note:"Wi-Fi, outlets, open till 11pm — top-cited Duluth study spot.",hasMeetingRoom:false},"Boba Mocha":{tier:"good",note:"Cozy with couches, indoor + outdoor, board games.",hasMeetingRoom:false},"Long's Cafe 2":{tier:"good",note:"Small neighborhood Vietnamese cafe.",hasMeetingRoom:false},"Incha Duluth (Duck Ink + Boba)":{tier:"limited",note:"Paint-your-own-ceramics activity venue.",hasMeetingRoom:false},"Orange Coffee Bar":{tier:"excellent",note:"Quiet, Wi-Fi, ample parking — recommended for working.",hasMeetingRoom:false},"Tom N Toms Coffee Black":{tier:"excellent",note:"Huge 2-story cafe with upstairs study area.",hasMeetingRoom:true,meetingRoomNote:"Private rooms upstairs — bookable via info@tomntomsatlanta.com"},"Gonggan ATL":{tier:"good",note:"Minimalist study spot — only Fri-Sun.",hasMeetingRoom:false},"Kafeiin":{tier:"excellent",note:"Modern minimalist, Wi-Fi, comfy seating, open late.",hasMeetingRoom:false},"Fujiissa":{tier:"limited",note:"Counter inside Tokyo Kuma food court.",hasMeetingRoom:false},"Yezi Coconut Dessert":{tier:"limited",note:"Small dessert shop — not a sit-and-work spot.",hasMeetingRoom:false},"Fluffy Fluffy Dessert Cafe":{tier:"limited",note:"Dine-and-leave dessert cafe.",hasMeetingRoom:false},"Qamaria Yemeni Coffee Co.":{tier:"excellent",note:"3,600 sqft, ~140 seats, open till late — built for studying.",hasMeetingRoom:false},"Yibna Cafe":{tier:"good",note:"Plenty of chairs and outdoor seating.",hasMeetingRoom:false},"El Cafe by La Abuela":{tier:"good",note:"Dine-in works; not marketed for studying.",hasMeetingRoom:false},"Date un Gusto":{tier:"good",note:"Latin bakery + coffee, modest dine-in.",hasMeetingRoom:false},"7 Leaves Cafe":{tier:"good",note:"Wi-Fi; medium size, fills quickly.",hasMeetingRoom:false},"The Quynh Cafe":{tier:"good",note:"Vietnamese coffee/boba; on local quiet-study lists.",hasMeetingRoom:false},"Lemon Sweets Bakery & Cafe":{tier:"good",note:"Cozy, fine for studying with friends.",hasMeetingRoom:false},"Cafe Rothem":{tier:"excellent",note:"Outlets at nearly every seat, jazz, books — a study haven.",hasMeetingRoom:true,meetingRoomNote:"Conference room + private meeting room rentable hourly or daily."},"Wich Tea":{tier:"good",note:"Plenty of seating, board games; takeout-leaning.",hasMeetingRoom:false},"Tea Drip":{tier:"good",note:"Outdoor seating, Wi-Fi; small.",hasMeetingRoom:false},"Cuckoo's Cafe":{tier:"excellent",note:"Spacious, outlets, private curtained booths.",hasMeetingRoom:false},"Chuchat":{tier:"good",note:"Spacious with outdoor option; study-friendly.",hasMeetingRoom:false},"Art's Bakery & Cafe":{tier:"good",note:"Indoor and outdoor seating.",hasMeetingRoom:false},"Artistea":{tier:"good",note:"Family-friendly, outdoor seating, Wi-Fi.",hasMeetingRoom:false},"Hayat Coffee":{tier:"excellent",note:"3,600 sqft, ~100-120 seats with study and lounge areas; open past midnight nightly.",hasMeetingRoom:false},"Cafe Flat":{tier:"excellent",note:"Spacious clean design built for working and studying; locally roasted coffee.",hasMeetingRoom:false},"Glaze Tea Duluth":{tier:"good",note:"Spacious, clean and inviting; kiosk ordering, dine-in friendly.",hasMeetingRoom:false}};
+
+const LATE = {"Sweet Hut Bakery & Cafe":{tier:"10pm+",when:"Fri-Sat until 11pm; weekdays till 10pm"},"Cafe Mozart Bakery":{tier:"midnight",when:"Fri-Sat till midnight; weekdays till 10pm"},"TwoHa's Cafe":{tier:"midnight",when:"Fri-Sat till 1am; rest of week till midnight"},"White Windmill Bakery & Cafe":{tier:"10pm+",when:"Fri-Sat till 11pm; weekdays till 10pm"},"The Cream":{tier:"10pm+",when:"Fri-Sat till 11pm; weekdays till 10pm"},"The Coffee By Hand":{tier:"midnight",when:"Fri-Sat till midnight; rest till 11pm"},"OneZo Boba Tea":{tier:"10pm+",when:"Fri-Sun till 11:30pm"},"Molly Tea":{tier:"10pm+",when:"Daily till 10:10pm"},"ChiCha San Chen":{tier:"10pm+",when:"Fri-Sat till 10pm"},"Matcha Cafe Maiko":{tier:"10pm+",when:"Fri-Sat till 10:30pm"},"Hiro Tea Bar":{tier:"10pm+",when:"Fri-Sat till 10pm"},"Ding Tea":{tier:"10pm+",when:"Daily till 10pm"},"Tiger Sugar":{tier:"10pm+",when:"Fri-Sat till 11pm"},"Xing Fu Tang":{tier:"10pm+",when:"Fri-Sat till 10:30pm"},"Goodwin Tea House & More":{tier:"10pm+",when:"Tue-Sun till 10pm"},"The Bep Teahouse":{tier:"midnight",when:"Fri-Sat till midnight; rest till 11pm"},"Bread Museum Bakery & Cafe":{tier:"10pm+",when:"Fri-Sat till 10pm"},"Tree Story Bakery & Cafe":{tier:"10pm+",when:"Fri-Sat till 10pm"},"Hansel & Gretel Bakery Cafe":{tier:"midnight",when:"Fri-Sat till midnight; rest till 11pm"},"Forest Cafe":{tier:"10pm+",when:"Daily till 11pm"},"Cafe 104":{tier:"10pm+",when:"Daily till 11pm"},"Boba Mocha":{tier:"10pm+",when:"Fri-Sat till 11pm"},"Orange Coffee Bar":{tier:"10pm+",when:"Daily till 10pm"},"Tom N Toms Coffee Black":{tier:"10pm+",when:"Daily till 10pm"},"Gonggan ATL":{tier:"10pm+",when:"Fri-Sun till 11pm"},"Kafeiin":{tier:"10pm+",when:"Fri-Sat till 11pm"},"Fluffy Fluffy Dessert Cafe":{tier:"10pm+",when:"Daily till 10pm"},"Qamaria Yemeni Coffee Co.":{tier:"midnight",when:"Fri-Sat till midnight; rest till 11pm"},"El Cafe by La Abuela":{tier:"10pm+",when:"Fri-Sat & Sun till 11pm"},"Date un Gusto":{tier:"10pm+",when:"Fri-Sat till 11pm"},"7 Leaves Cafe":{tier:"10pm+",when:"Fri-Sat till 10pm"},"Tea Drip":{tier:"10pm+",when:"Fri-Sat till 10pm"},"Cuckoo's Cafe":{tier:"10pm+",when:"Mon-Tue, Thu-Sun till 11pm"},"Chuchat":{tier:"10pm+",when:"Daily till 10pm"},"Art's Bakery & Cafe":{tier:"10pm+",when:"Fri-Sat till 10pm"},"Artistea":{tier:"10pm+",when:"Fri-Sat till 11pm"},"Hayat Coffee":{tier:"midnight",when:"Fri-Sat till 2am; rest of week till 1am"},"Cafe Flat":{tier:"10pm+",when:"Fri-Sat till 10pm"},"Glaze Tea Duluth":{tier:"midnight",when:"Fri-Sat till midnight; rest till 11pm"}};
+
+const WEBSITES = {"Sweet Hut Bakery & Cafe":"https://www.sweethutbakery.com","Cafe Mozart Bakery":"https://www.cafemozartbakery.com","TwoHa's Cafe":"https://www.twohascafe.com","White Windmill Bakery & Cafe":"https://www.whitewbakerycafe.com","Land of a Thousand Hills Coffee":"https://landofathousandhills.com/pages/location-duluth-georgia","Alchemist on the Divide":"https://alchemist-on-the-divide.grubbio.com","The Cream":"https://www.thecreambakery.com","Ginkgo Bakery & Cafe":"https://www.ginkgobakery.com","Coffee That Matters":"https://phoenixroasters.coffee","The Coffee By Hand":"https://www.instagram.com/thecoffeebyhandatl","OneZo Boba Tea":"https://www.onezo.us","Molly Tea":"https://mollyteaatl.com","ChiCha San Chen":"https://chichasanchenusa.com","Matcha Cafe Maiko":"https://www.matchacafeatl.com","Hiro Tea Bar":"https://www.hiroteabar.com","Ding Tea":"https://www.instagram.com/dingteaduluth","Tiger Sugar":"https://en.tigersugar.com","Xing Fu Tang":"https://www.xingfutangga.com","Goodwin Tea House & More":"https://www.goodwinteahouse.com","The Bep Teahouse":"https://thebepteahouse.com/locations/the-bep-teahouse-duluth/","Paris Baguette":"https://parisbaguette.com/locations/ga/duluth/3492-satellite-boulevard/","Bread Museum Bakery & Cafe":"https://thebreadmuseum.com","Tous Les Jours":"https://tljus.com/stores/duluth-2550-pleasant-hill-rd","Tree Story Bakery & Cafe":"https://www.facebook.com/TreeStoryCafe/","Vincent Bakery & Cafe":"https://www.instagram.com/vincentbakeryofficial","Hansel & Gretel Bakery Cafe":"https://www.instagram.com/hanselgretel.bakery","Georgia French Bakery & Cafe":"https://georgiafrenchbakerycafe.com","Mai Bakery":null,"The Patio Cafe & Bakery":"https://www.patiocafebakery.com/","Shokku Bakery":"https://www.instagram.com/shokkubakery/","Forest Cafe":"https://www.instagram.com/forest_cafe_ga/","Cafe 104":"https://www.cafe104duluth.com/","Boba Mocha":"https://www.bobamochaonline.com/","Long's Cafe 2":"https://www.facebook.com/people/Longs-Cafe-2/61553102627374/","Incha Duluth (Duck Ink + Boba)":"https://www.instagram.com/inchaduckink/","Orange Coffee Bar":"https://www.instagram.com/orangecoffeebar.duluth/","Tom N Toms Coffee Black":"https://www.tomntomsatlanta.com/","Gonggan ATL":"https://www.instagram.com/gonggan.atl/","Kafeiin":"https://www.instagram.com/kafeiin.coffee/","Fujiissa":"https://fujiissa.com/","Yezi Coconut Dessert":"https://www.yezicoconutatl.com/","Fluffy Fluffy Dessert Cafe":"https://www.fluffyfluffy.com/locations/duluth","Qamaria Yemeni Coffee Co.":"https://www.instagram.com/qamariacoffeeatl/","Yibna Cafe":"https://yibnacafe.com/","El Cafe by La Abuela":"https://www.elcafebylaabuela.com/","Date un Gusto":"https://www.instagram.com/dateungusto.atl/","7 Leaves Cafe":"https://7leavescafe.com/locations/satellite/","The Quynh Cafe":"https://www.facebook.com/theQuynhCafe/","Lemon Sweets Bakery & Cafe":"https://www.lemonsweetsbakery.com/","Cafe Rothem":"https://www.facebook.com/caferothem/","Wich Tea":"https://linktr.ee/wichteabanhmi","Tea Drip":"https://www.instagram.com/teadrip.duluth/","Cuckoo's Cafe":"https://cuckooscafeduluth.com/","Chuchat":"https://www.chuchatusa.com/","Art's Bakery & Cafe":"https://www.facebook.com/artsbakeryandcafe/","Artistea":"https://artistea.shop/","Hayat Coffee":"https://www.instagram.com/hayatcoffee.co/","Cafe Flat":"https://joe.coffee/locations/ga/duluth/cafe-flat-duluth/","Glaze Tea Duluth":"https://www.glazetea.com/"};
+
+// DERIVED
+const slug = s => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+SHOPS.forEach(s => {
+  const key = SHOP_ADDR[s.name];
+  if (key && ADDR[key]) { s.lat = ADDR[key].lat; s.lng = ADDR[key].lng; }
+  s.id = slug(s.name);
+  s.neighborhood = NEIGHBORHOODS[key] || "Duluth";
+});
+
+// Multiple shops can sit at the exact same building. Without offsetting,
+// their pins (and labels) stack on top of each other. Group by coord and
+// fan each group out in a tiny ring (~15m radius), and assign distinct
+// label positions so the labels point in different directions.
+(function spreadCoincidentShops() {
+  const LABEL_POSITIONS = ['bottom', 'right', 'top', 'left'];
+  const groups = new Map();
+  SHOPS.forEach(s => {
+    const k = `${s.lat.toFixed(5)},${s.lng.toFixed(5)}`;
+    if (!groups.has(k)) groups.set(k, []);
+    groups.get(k).push(s);
+  });
+  const radiusDeg = 0.00018; // ~20m
+  groups.forEach(group => {
+    if (group.length === 1) {
+      group[0].labelPos = 'bottom';
+      return;
+    }
+    const n = group.length;
+    group.forEach((s, i) => {
+      const angle = (i / n) * 2 * Math.PI - Math.PI / 2; // start at top, go clockwise
+      const latCorrection = Math.cos(s.lat * Math.PI / 180) || 1;
+      s.lat += radiusDeg * Math.cos(angle);
+      s.lng += (radiusDeg * Math.sin(angle)) / latCorrection;
+      s.labelPos = LABEL_POSITIONS[i % LABEL_POSITIONS.length];
+    });
+  });
+})();
+
+// Bayesian weighted rating (IMDB Top 250 formula):
+//   WR = (v / (v + m)) * R + (m / (v + m)) * C
+// Pulls under-reviewed shops toward the global mean so a 4.9 with 14 reviews
+// doesn't outrank a 4.6 with 1,680. Sort order = "best overall".
+(function computeWeightedRatings() {
+  const rated = SHOPS.filter(s => typeof s.rating === 'number');
+  const C = rated.reduce((acc, s) => acc + s.rating, 0) / rated.length;
+  const counts = SHOPS.map(s => s.ratingNum || 0).slice().sort((a, b) => a - b);
+  const m = counts[Math.floor(counts.length / 2)]; // median
+  SHOPS.forEach(s => {
+    const R = (typeof s.rating === 'number') ? s.rating : C;
+    const v = s.ratingNum || 0;
+    s.weightedRating = (v / (v + m)) * R + (m / (v + m)) * C;
+  });
+})();
+
+function websiteHost(url) {
+  if (!url) return null;
+  if (url.includes('instagram.com')) return 'Instagram';
+  if (url.includes('facebook.com')) return 'Facebook';
+  if (url.includes('linktr.ee')) return 'Linktree';
+  return 'Website';
+}
+
+function compactTags(shop) {
+  const tags = [];
+  const ln = LATE[shop.name];
+  const cw = CWS[shop.name] || {};
+  if (ln && ln.tier === 'midnight') tags.push('Until midnight');
+  else if (ln) tags.push('Open late');
+  if (cw.hasMeetingRoom) tags.push('Meeting room');
+  else if (cw.tier === 'excellent') tags.push('Work-friendly');
+  for (const item of (shop.loved || [])) {
+    if (tags.length >= 3) break;
+    tags.push(item);
+  }
+  return tags.slice(0, 3);
+}
+
+function bestForTags(shop) {
+  const tags = [];
+  const cw = CWS[shop.name] || {};
+  const ln = LATE[shop.name];
+  if (cw.tier === 'excellent') tags.push({ label: 'Work', cls: 'work', icon: '💻' });
+  if (cw.hasMeetingRoom) tags.push({ label: 'Meetings', cls: 'work', icon: '🤝' });
+  if (ln && ln.tier === 'midnight') tags.push({ label: 'Until midnight', cls: 'late', icon: '🦉' });
+  else if (ln) tags.push({ label: 'Open late', cls: 'late', icon: '🌙' });
+  return tags;
+}
+
+// STATE
+const state = {
+  categories: new Set(),
+  features: new Set(),
+  search: '',
+  selected: null
+};
+
+// FILTER CHIPS
+const catChipsEl = document.getElementById('categoryChips');
+const featChipsEl = document.getElementById('featureChips');
+const catCounts = SHOPS.reduce((acc, s) => { acc[s.category] = (acc[s.category]||0)+1; return acc; }, {});
+
+function makeChip({ label, count, color, icon, themeColor, onClick, isActive }) {
+  const b = document.createElement('button');
+  b.className = 'chip' + (isActive ? ' active' : '') + (themeColor ? ' themed' : '');
+  b.type = 'button';
+  if (themeColor) {
+    if (isActive) {
+      b.style.background = themeColor;
+      b.style.color = '#fff';
+      b.style.borderColor = themeColor;
+    } else {
+      b.style.background = themeColor + '1f';
+      b.style.borderColor = themeColor + '55';
+      b.style.color = themeColor;
+    }
+  }
+  if (icon) {
+    const ic = document.createElement('span');
+    ic.className = 'chip-icon';
+    ic.textContent = icon;
+    b.appendChild(ic);
+  } else if (color) {
+    const dot = document.createElement('span');
+    dot.className = 'dot';
+    dot.style.background = color;
+    b.appendChild(dot);
+  }
+  b.appendChild(document.createTextNode(label));
+  if (count != null) {
+    const n = document.createElement('span');
+    n.className = 'num';
+    n.textContent = count;
+    b.appendChild(n);
+  }
+  b.addEventListener('click', onClick);
+  return b;
+}
+
+function renderChips() {
+  catChipsEl.innerHTML = '';
+  catChipsEl.style.display = 'inline-flex';
+  catChipsEl.style.gap = '6px';
+  catChipsEl.style.flexWrap = 'wrap';
+  catChipsEl.appendChild(makeChip({
+    label: 'All', count: SHOPS.length,
+    onClick: () => { state.categories.clear(); render(); },
+    isActive: state.categories.size === 0
+  }));
+  Object.keys(CATS).forEach(cat => {
+    catChipsEl.appendChild(makeChip({
+      label: cat.replace('+', ' & '),
+      count: catCounts[cat] || 0,
+      icon: CATS[cat].icon,
+      themeColor: CATS[cat].hex,
+      onClick: () => {
+        if (state.categories.has(cat)) state.categories.delete(cat);
+        else state.categories.add(cat);
+        render();
+      },
+      isActive: state.categories.has(cat)
+    }));
+  });
+
+  featChipsEl.innerHTML = '';
+  featChipsEl.style.display = 'inline-flex';
+  featChipsEl.style.gap = '6px';
+  featChipsEl.style.flexWrap = 'wrap';
+  const workCount = SHOPS.filter(s => (CWS[s.name]||{}).tier === 'excellent').length;
+  const meetingCount = SHOPS.filter(s => (CWS[s.name]||{}).hasMeetingRoom).length;
+  const lateCount = SHOPS.filter(s => LATE[s.name]).length;
+  const midnightCount = SHOPS.filter(s => (LATE[s.name]||{}).tier === 'midnight').length;
+  const features = [
+    { key: 'work',     label: 'Work-friendly', icon: '💻', themeColor: '#2e7d4f', count: workCount },
+    { key: 'meeting',  label: 'Meeting room',  icon: '🤝', themeColor: '#7a5635', count: meetingCount },
+    { key: 'late',     label: 'Open late',     icon: '🌙', themeColor: '#3f4f8a', count: lateCount },
+    { key: 'midnight', label: 'Until midnight', icon: '🦉', themeColor: '#2a2f5c', count: midnightCount }
+  ];
+  features.forEach(f => {
+    featChipsEl.appendChild(makeChip({
+      label: f.label, count: f.count, icon: f.icon, themeColor: f.themeColor,
+      onClick: () => {
+        if (state.features.has(f.key)) state.features.delete(f.key);
+        else state.features.add(f.key);
+        render();
+      },
+      isActive: state.features.has(f.key)
+    }));
+  });
+}
+
+// MAP
+const map = L.map('map', { zoomControl: true }).setView([33.972, -84.142], 13); // initial view; refit to markers below
+L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+  attribution: '&copy; OpenStreetMap &copy; CARTO',
+  subdomains: 'abcd', maxZoom: 19
+}).addTo(map);
+
+const clusterGroup = L.markerClusterGroup({
+  showCoverageOnHover: false,
+  zoomToBoundsOnClick: true,
+  spiderfyOnMaxZoom: true,
+  spiderfyDistanceMultiplier: 1.4,
+  maxClusterRadius: 35,
+  iconCreateFunction: function(cluster) {
+    const count = cluster.getChildCount();
+    const size = count >= 10 ? 36 : count >= 5 ? 32 : 28;
+    return L.divIcon({
+      html: `<div style="background:#2b1d12;color:#fff;border-radius:50%;width:${size}px;height:${size}px;display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-weight:600;font-size:${count>=10?13:12}px;border:2px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,0.3);">${count}</div>`,
+      className: 'coffee-cluster',
+      iconSize: [size, size]
+    });
+  }
+});
+map.addLayer(clusterGroup);
+
+function escapeHtml(s) {
+  return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+function makeIcon(shop, isSelected) {
+  const c = CATS[shop.category] || { hex: '#999', icon: '•' };
+  const late = LATE[shop.name] ? ' late' : '';
+  const sel = isSelected ? ' selected' : '';
+  const name = escapeHtml(shop.name);
+  return L.divIcon({
+    className: '',
+    html: `<div class="pin-wrap"><div class="pin${late}${sel}" style="background:${c.hex}">${c.icon}</div><div class="pin-label">${name}</div></div>`,
+    iconSize: isSelected ? [32, 32] : [26, 26],
+    iconAnchor: isSelected ? [16, 16] : [13, 13],
+    popupAnchor: [0, -14]
+  });
+}
+
+function previewHtml(shop) {
+  return `
+    <div class="preview">
+      <div class="preview-name">${shop.name}</div>
+      <div class="preview-meta">${shop.category.replace('+',' & ')} · ${shop.rating ? '★ ' + shop.rating : 'no rating'} · ${shop.neighborhood}</div>
+      <button class="preview-btn" type="button">View details</button>
+    </div>
+  `;
+}
+
+const markers = SHOPS.map(shop => {
+  const m = L.marker([shop.lat, shop.lng], { icon: makeIcon(shop, false) });
+  m.shopRef = shop;
+  m.on('click', () => selectShop(shop));
+  clusterGroup.addLayer(m);
+  return m;
+});
+
+// Fit the map to all markers on first paint (instead of the hardcoded center+zoom)
+map.fitBounds(clusterGroup.getBounds(), { padding: [40, 40] });
+
+// Keep the right-hand list in sync with the current map viewport.
+// Debounce so panning/zooming doesn't thrash the DOM.
+let __viewportTimer = null;
+map.on('moveend zoomend', () => {
+  clearTimeout(__viewportTimer);
+  __viewportTimer = setTimeout(() => { renderList(); }, 80);
+});
+
+// Show shop-name labels under pins. Below LABEL_MIN_ZOOM they're hidden;
+// at or above, each visible label is greedily placed in the first of
+// {bottom, right, top, left} that doesn't collide with already-placed
+// labels (prioritized by weighted rating). Labels that can't fit anywhere
+// are hidden until the user zooms in further.
+const LABEL_MIN_ZOOM = 13;
+function toggleLabels() {
+  const el = map.getContainer();
+  if (map.getZoom() >= LABEL_MIN_ZOOM) el.classList.add('with-labels');
+  else el.classList.remove('with-labels');
+}
+
+// 16 candidate angles around each pin (in degrees, screen coords:
+//   0° = right, 90° = up, 180° = left, 270° = down).
+// Ordered so we prefer cardinals first, then diagonals, then in-betweens.
+const LABEL_ANGLES = [
+  270, 0, 90, 180,
+  315, 45, 135, 225,
+  292.5, 247.5, 337.5, 22.5,
+  112.5, 67.5, 157.5, 202.5
+];
+const LABEL_GAP = 4;
+
+function placeLabels() {
+  const enabled = map.getZoom() >= LABEL_MIN_ZOOM;
+  // Gather visible (non-clustered) pin labels
+  const items = [];
+  markers.forEach(m => {
+    if (!m._icon) return;
+    const pin = m._icon.querySelector('.pin');
+    const label = m._icon.querySelector('.pin-label');
+    if (!pin || !label) return;
+    items.push({ pin, label, shop: m.shopRef });
+  });
+  if (!enabled || !items.length) {
+    items.forEach(it => {
+      it.label.style.visibility = '';
+      it.label.style.transform = '';
+    });
+    return;
+  }
+  // Reset transforms to base centered, measure
+  const measured = items.map(it => {
+    it.label.style.transform = 'translate(-50%, -50%)';
+    it.label.style.visibility = 'visible';
+    const pr = it.pin.getBoundingClientRect();
+    const lr = it.label.getBoundingClientRect();
+    return {
+      it,
+      cx: pr.left + pr.width / 2,
+      cy: pr.top + pr.height / 2,
+      pinR: Math.max(pr.width, pr.height) / 2,
+      lw: lr.width, lh: lr.height
+    };
+  });
+
+  // Seed the obstacle list with everything that's already on the map:
+  //  - every individual pin (so a label can't slide over another pin)
+  //  - every cluster bubble (so labels avoid the "+N" cluster markers)
+  const obstacles = [];
+  function pushRect(el) {
+    const r = el.getBoundingClientRect();
+    if (r.width === 0 || r.height === 0) return;
+    obstacles.push({ left: r.left, top: r.top, right: r.right, bottom: r.bottom });
+  }
+  measured.forEach(m => pushRect(m.it.pin));
+  document.querySelectorAll('.coffee-cluster').forEach(pushRect);
+
+  function rectForAngle(m, angleDeg) {
+    const rad = angleDeg * Math.PI / 180;
+    const cos = Math.cos(rad), sin = Math.sin(rad);
+    // distance so the label's near edge sits LABEL_GAP from the pin's edge
+    const horiz = Math.abs(cos) * m.lw / 2;
+    const vert = Math.abs(sin) * m.lh / 2;
+    const labelExtent = Math.sqrt(horiz * horiz + vert * vert);
+    const d = m.pinR + LABEL_GAP + labelExtent;
+    const dx = cos * d;
+    const dy = -sin * d; // screen y goes down
+    const cx = m.cx + dx, cy = m.cy + dy;
+    return {
+      dx, dy,
+      left: cx - m.lw / 2, top: cy - m.lh / 2,
+      right: cx + m.lw / 2, bottom: cy + m.lh / 2
+    };
+  }
+  // Priority: higher-weighted shops claim labels first
+  measured.sort((a, b) => (b.it.shop.weightedRating || 0) - (a.it.shop.weightedRating || 0));
+  measured.forEach(m => {
+    let chosen = null;
+    for (const angle of LABEL_ANGLES) {
+      const r = rectForAngle(m, angle);
+      const collides = obstacles.some(p =>
+        !(r.right <= p.left || r.left >= p.right || r.bottom <= p.top || r.top >= p.bottom)
+      );
+      if (!collides) { chosen = r; obstacles.push(r); break; }
+    }
+    if (chosen) {
+      m.it.label.style.transform =
+        `translate(-50%, -50%) translate(${chosen.dx}px, ${chosen.dy}px)`;
+      m.it.label.style.visibility = 'visible';
+    } else {
+      m.it.label.style.visibility = 'hidden';
+    }
+  });
+}
+
+let __labelTimer = null;
+function scheduleLabels() {
+  clearTimeout(__labelTimer);
+  __labelTimer = setTimeout(placeLabels, 60);
+}
+map.on('zoomend', () => { toggleLabels(); scheduleLabels(); });
+map.on('moveend', scheduleLabels);
+clusterGroup.on('animationend spiderfied unspiderfied', scheduleLabels);
+toggleLabels();
+scheduleLabels();
+
+function setMarkerSelected(shop) {
+  markers.forEach(m => {
+    m.setIcon(makeIcon(m.shopRef, shop && m.shopRef.id === shop.id));
+  });
+}
+
+// LIST
+const shopListEl = document.getElementById('shopList');
+const resultsCountEl = document.getElementById('resultsCount');
+const searchInput = document.getElementById('searchInput');
+
+// Global filters (category / feature / search) — these gate BOTH map markers and the list.
+function passesGlobalFilters(s) {
+  const term = state.search.toLowerCase().trim();
+  if (state.categories.size && !state.categories.has(s.category)) return false;
+  const cw = CWS[s.name] || {};
+  const ln = LATE[s.name];
+  if (state.features.has('work') && cw.tier !== 'excellent') return false;
+  if (state.features.has('meeting') && !cw.hasMeetingRoom) return false;
+  if (state.features.has('late') && !ln) return false;
+  if (state.features.has('midnight') && (!ln || ln.tier !== 'midnight')) return false;
+  if (!term) return true;
+  const hay = [s.name, s.usp, s.signature, s.category, s.neighborhood, cw.note || '', (ln ? ln.when : ''), ...(s.loved || [])].join(' ').toLowerCase();
+  return hay.includes(term);
+}
+
+// Shops eligible to live on the map (global filters only — no viewport).
+function filteredForMap() {
+  return SHOPS.filter(passesGlobalFilters);
+}
+
+// Shops shown in the right-hand list (global filters + current map viewport).
+function filteredForList() {
+  const view = (typeof map !== 'undefined' && map && map._loaded) ? map.getBounds() : null;
+  return SHOPS.filter(s => {
+    if (!passesGlobalFilters(s)) return false;
+    if (view && !view.contains([s.lat, s.lng])) return false;
+    return true;
+  });
+}
+
+function sortShops(arr) {
+  // Always sort by Bayesian weighted rating (best → worst).
+  return arr.slice().sort((x, y) => y.weightedRating - x.weightedRating);
+}
+
+function renderList() {
+  // Map cluster membership tracks global filters only — viewport filtering must not
+  // shrink clusterGroup.getBounds() (otherwise later fitBounds calls fit to a tiny set).
+  const mapSet = new Set(filteredForMap());
+  markers.forEach(m => {
+    const onMap = mapSet.has(m.shopRef);
+    if (onMap && !clusterGroup.hasLayer(m)) clusterGroup.addLayer(m);
+    else if (!onMap && clusterGroup.hasLayer(m)) clusterGroup.removeLayer(m);
+  });
+  const filtered = sortShops(filteredForList());
+  resultsCountEl.textContent = filtered.length;
+  shopListEl.innerHTML = '';
+  if (filtered.length === 0) {
+    const empty = document.createElement('li');
+    empty.className = 'empty-state';
+    empty.textContent = 'No shops in this view. Try zooming out, clearing filters, or changing search.';
+    shopListEl.appendChild(empty);
+  }
+  filtered.forEach(shop => {
+    const li = document.createElement('li');
+    li.className = 'shop-item' + (state.selected && state.selected.id === shop.id ? ' active' : '');
+    li.dataset.id = shop.id;
+    const cat = CATS[shop.category] || {};
+    const catColor = cat.hex || '#999';
+    const catIcon = cat.icon || '';
+    li.style.borderLeftColor = catColor;
+    const tags = compactTags(shop);
+    const tagsHtml = tags.map((t, i) => (i > 0 ? '<span class="tag-sep">·</span>' : '') + t).join('');
+    const ratingHtml = shop.rating
+      ? `<span class="rating">★ ${shop.rating}</span> <span class="muted">(${shop.ratingCount})</span>`
+      : `<span class="muted">no rating</span>`;
+    li.innerHTML = `
+      <div class="shop-name"><span class="shop-icon-tile" style="background:${catColor}">${catIcon}</span>${shop.name}</div>
+      <div class="shop-meta">${shop.category.replace('+', ' & ')} · ${ratingHtml} · ${shop.neighborhood}</div>
+      <div class="shop-tags">${tagsHtml}</div>
+    `;
+    li.addEventListener('click', () => selectShop(shop));
+    shopListEl.appendChild(li);
+  });
+  if (typeof scheduleLabels === 'function') scheduleLabels();
+}
+
+// DETAIL
+const panelEl = document.getElementById('panel');
+const detailEl = document.getElementById('detailView');
+
+function renderDetail(shop) {
+  const cat = CATS[shop.category] || {};
+  const cw = CWS[shop.name];
+  const ln = LATE[shop.name];
+  const site = WEBSITES[shop.name];
+  const host = websiteHost(site);
+  const bft = bestForTags(shop);
+  const ratingHtml = shop.rating
+    ? `<span class="star">★</span> <b>${shop.rating}</b> <span class="muted">· ${shop.ratingCount} reviews</span>`
+    : `<span class="muted">No public rating yet</span>`;
+
+  let html = `
+    <button class="back-btn" id="backBtn">← Back to list</button>
+    <div class="detail-header">
+      <div class="detail-cat"><span class="dot" style="background:${cat.hex}"></span>${shop.category.replace('+',' & ')} · ${shop.neighborhood}</div>
+      <h2 class="detail-name">${shop.name}</h2>
+      <div class="detail-rating">${ratingHtml}</div>
+    </div>
+    <div class="detail-section">
+      <div class="detail-text">${shop.usp}</div>
+    </div>
+  `;
+  if (bft.length) {
+    html += `<div class="detail-section">
+      <div class="detail-section-label">Best for</div>
+      <div class="tag-row">${bft.map(t => `<span class="pill-tag feature ${t.cls}">${t.icon ? t.icon + ' ' : ''}${t.label}</span>`).join('')}</div>
+    </div>`;
+  }
+  html += `<div class="detail-section">
+    <div class="detail-section-label">Known for</div>
+    <div class="tag-row">${(shop.loved || []).map(l => `<span class="pill-tag">${l}</span>`).join('')}</div>
+    <div class="detail-text-muted" style="margin-top:8px;">Try the <b>${shop.signature}</b>.</div>
+  </div>`;
+  html += `<div class="detail-section">
+    <div class="detail-section-label">Location & hours</div>
+    <div class="detail-text-muted">${shop.address}</div>
+    <div class="detail-text-muted" style="margin-top:4px;">${shop.hours}</div>
+  </div>`;
+  if (cw) {
+    const tierLabel = { excellent: 'Coworking-ready', good: 'Workable', limited: 'Quick-grab' }[cw.tier];
+    html += `<div class="detail-section">
+      <div class="detail-section-label">Coworking</div>
+      <div class="detail-text"><b>${tierLabel}.</b> ${cw.note}</div>
+      ${cw.hasMeetingRoom ? `<div class="callout">
+        <div class="callout-label">Reservable meeting room</div>
+        <div class="callout-text">${cw.meetingRoomNote || 'Private/meeting room available on demand'}</div>
+      </div>` : ''}
+    </div>`;
+  }
+  if (ln) {
+    const lnLabel = ln.tier === 'midnight' ? 'Open until midnight' : 'Open till 10pm+';
+    html += `<div class="detail-section">
+      <div class="detail-section-label">Late-night</div>
+      <div class="detail-text"><b>${lnLabel}.</b> ${ln.when}</div>
+    </div>`;
+  }
+  html += `<div class="actions">
+    <a class="action-btn" href="${shop.googleUrl}" target="_blank" rel="noopener">Google Maps</a>
+    <a class="action-btn" href="${shop.yelpUrl}" target="_blank" rel="noopener">Yelp</a>
+    ${site ? `<a class="action-btn" href="${site}" target="_blank" rel="noopener">${host}</a>` : ''}
+  </div>`;
+  detailEl.innerHTML = html;
+  document.getElementById('backBtn').addEventListener('click', deselectShop);
+}
+
+function selectShop(shop, opts) {
+  opts = opts || {};
+  state.selected = shop;
+  renderDetail(shop);
+  panelEl.classList.add('detail-mode');
+  detailEl.classList.add('visible');
+  setMarkerSelected(shop);
+  if (opts.recenterMap !== false) {
+    const m = markers.find(mm => mm.shopRef.id === shop.id);
+    if (m) clusterGroup.zoomToShowLayer(m, () => {
+      map.setView([shop.lat, shop.lng], Math.max(map.getZoom(), 16), { animate: true });
+    });
+  }
+}
+
+function deselectShop() {
+  state.selected = null;
+  panelEl.classList.remove('detail-mode');
+  detailEl.classList.remove('visible');
+  setMarkerSelected(null);
+  renderList();
+  // Reset the map back to the full-spread view
+  if (clusterGroup.getLayers().length) {
+    map.fitBounds(clusterGroup.getBounds(), { padding: [40, 40], animate: true });
+  }
+}
+
+function render() {
+  renderChips();
+  if (state.selected) renderDetail(state.selected);
+  renderList();
+}
+
+searchInput.addEventListener('input', e => { state.search = e.target.value; renderList(); });
+
+render();
+</script>
+</body>
+</html>

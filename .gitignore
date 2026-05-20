@@ -1,0 +1,17 @@
+# Wrangler / Cloudflare local state — never commit
+.wrangler/
+wrangler-account.json
+
+# Editor cruft
+.DS_Store
+*.swp
+.idea/
+.vscode/
+
+# Local dev artifacts
+*.log
+*.pid
+
+# Scratch
+scratch/
+tmp/
