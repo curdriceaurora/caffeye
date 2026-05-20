@@ -63,15 +63,16 @@ Functional and non-functional requirements for the current state of the page. Ea
 | R5.3 | Shops with no rating use `C` (the global mean) as `R` in the formula. | — |
 | R5.4 | Each list item shows: a small (22 px) category-color circular emoji tile, the shop name, a meta row (category · ★ rating (count) · neighborhood), and up to three compact tags. | Playfulness is information |
 | R5.5 | Each list item has a left border in the category color. | — |
-| R5.6 | The "X SPOTS" header shows the live filtered count. | — |
+| R5.6 | The results header shows the live filtered count. When the viewport is the active constraint (list count < global-filter count), the label reads **"X in view"**; otherwise **"X spots"**. | Show what's available |
 | R5.7 | The shop list scrolls vertically inside its panel; the rest of the layout does not scroll. | Density on phones |
 | R5.8 | Empty state copy hints at zooming out or clearing filters. | — |
+| R5.9 | On every list refresh, items animate in with a staggered fade + translateY (28 ms per item, max 140 ms total delay). When triggered by a viewport change, the results-meta bar briefly flashes `--accent-soft` to signal "the map caused this". | Show what's available |
 
 ## R6. Detail card
 
 | ID | Requirement | Principle |
 |---|---|---|
-| R6.1 | Shown when a shop is selected, replacing the list view. | One tap to the answer |
+| R6.1 | Shown when a shop is selected, replacing the list view via a compositor-only crossfade (list slides left + fades; detail slides in from right + fades). No layout shift. | One tap to the answer |
 | R6.2 | Top section: category + neighborhood, shop name (heading), star rating with review count, USP description. | — |
 | R6.3 | "Best for" pills auto-derived from CWS / LATE data: 💻 Work, 🤝 Meetings, 🌙 Open late, 🦉 Until midnight. | — |
 | R6.4 | "Known for" pills (the loved-items list) plus a "Try the **{signature}**" line. | — |
@@ -107,6 +108,7 @@ Functional and non-functional requirements for the current state of the page. Ea
 | R9.2 | No JS errors on initial load, on filter changes, on selection, or on zoom. | — |
 | R9.3 | All Leaflet, MarkerCluster, and Google Fonts assets load via CDN with SRI hashes where applicable. | — |
 | R9.4 | Renders correctly with no build step — open the `.html` file directly in a browser and it works. | Operating constraint |
+| R9.5 | All transitions and animations use compositor-only properties (`opacity`, `transform`). `will-change: transform` on `.pin` and `.pin-label`; `will-change: opacity, transform` on `.list-view` and `.detail-view`. `.panel` carries `contain: layout style` to scope reflow. Target 60 fps with no Layout or Paint during list↔detail transitions. | — |
 
 ## R10. Deployment
 

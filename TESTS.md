@@ -103,14 +103,19 @@ Expected output: `{ visibleLabels: N, labelLabel: 0, labelCluster: 0 }`.
 | T5.5 | R5.4 | Inspect any list item. | Shows: colored circular icon tile, name, meta row, ≤ 3 tags. |
 | T5.6 | R5.5 | `js> document.querySelector('.shop-item').style.borderLeftColor` | Non-empty (a category color). |
 | T5.7 | R5.6 | Filter to "Meeting room". `js> document.getElementById('resultsCount').textContent` | `"4"` |
+| T5.7b | R5.6 | Hard reload (all 59 in viewport). `js> document.getElementById('resultsLabel').textContent` | `" spots"` |
+| T5.7c | R5.6 | Zoom in until < 59 shops visible in map. `js> document.getElementById('resultsLabel').textContent` | `" in view"` |
 | T5.8 | R5.7 | Scroll the shop list. | Inner list scrolls; header, filters, map don't. |
-| T5.9 | R5.8 | Set zoom 18 in an empty area + search "xyzqwerty". | Empty state reads: "No shops in this view. Try zooming out, clearing filters, or changing search." |
+| T5.9 | R5.8 | Set zoom 18 in an empty area + search "xyzqwerty". | Empty state reads: "Nothing here — try zooming out or clearing a filter." |
+| T5.10 | R5.9 | Open DevTools → Elements. After any pan/zoom, inspect first `.shop-item`. | Has `animation-delay` inline style ≥ 0ms and CSS animation `itemEnter`. |
+| T5.11 | R5.9 | After a viewport-triggered list refresh, inspect `.results-meta`. | Briefly has class `viewport-flash`, then class is removed after `transitionend`. |
 
 ## T6. Detail card (R6)
 
 | ID | Trace | Test | Pass |
 |---|---|---|---|
-| T6.1 | R6.1 | Click any list item. | Detail card replaces the list view. |
+| T6.1 | R6.1 | Click any list item. | Detail card slides in from the right while list slides left; no jump/flash. |
+| T6.10 | R6.1 | While detail is open: `js> getComputedStyle(document.querySelector('.list-view')).opacity` | `"0"` (compositor-hidden, not `display:none`) |
 | T6.2 | R6.2 | Inspect a high-rated shop card (e.g. Bread Museum). | Shows category + neighborhood badge, name as `<h2>`, star rating, USP paragraph. |
 | T6.3 | R6.3 | Open Cafe Rothem. | "Best for" pills include 💻 Work and 🤝 Meetings. |
 | T6.4 | R6.3 | Open Hayat Coffee. | "Best for" includes 💻 Work and 🦉 Until midnight. |
@@ -147,6 +152,7 @@ Expected output: `{ visibleLabels: N, labelLabel: 0, labelCluster: 0 }`.
 | T9.2 | R9.2 | Load with DevTools console open. Click around, zoom, filter. | No errors logged. |
 | T9.3 | R9.3 | Network tab on hard reload. | Leaflet CSS/JS + MarkerCluster CSS/JS + Google Fonts all return 200; the two SRI'd files match their hashes. |
 | T9.4 | R9.4 | `open index.html` directly from filesystem (no server). | Page loads and map renders. |
+| T9.5 | R9.5 | DevTools → Performance: record a list↔detail click and a zoom/pan. | Frames row stays green (60fps). No `Layout` or `Paint` blocks during the panel transition. Compositor thread handles the slide. |
 
 ## T10. Deployment (R10)
 
@@ -162,13 +168,14 @@ Expected output: `{ visibleLabels: N, labelLabel: 0, labelCluster: 0 }`.
 
 Run after every `wrangler deploy`:
 
-1. Open the live URL on desktop. Expect 59 markers, all 5 category chips, 4 feature chips, full list of 59 shops sorted by weighted rating.
-2. Click Bread Museum → detail card → "← Back to list" → fits bounds.
+1. Open the live URL on desktop. Expect 59 markers, all 5 category chips, 4 feature chips, full list of 59 shops sorted by weighted rating. Results header reads "59 spots".
+2. Click Bread Museum → detail card slides in (list slides left). Click "← Back to list" → list slides back in, map fits bounds.
 3. Click "Until midnight" → expect 8 shops (TwoHa's, Hayat, Cafe Mozart, The Coffee By Hand, The Bep Teahouse, Hansel & Gretel, Qamaria Yemeni, Glaze Tea).
 4. Search "matcha" → ≥ 10 results.
-5. Resize window below 820 px → mobile layout kicks in, footer disappears, ≥ 5 cards visible.
-6. Zoom in to a single shop, confirm label appears with no overlap. Zoom out to default fit, confirm clusters reform.
-7. Open DevTools console → no errors.
+5. Zoom in until fewer than 59 shops appear in the list. Confirm header changes to "X in view" and list items cascade in. Zoom back out — header returns to "59 spots".
+6. Resize window below 820 px → mobile layout kicks in, footer disappears, ≥ 5 cards visible.
+7. Zoom in to a single shop, confirm label appears with no overlap. Zoom out to default fit, confirm clusters reform.
+8. Open DevTools console → no errors.
 
 ## Known-good fixture data (May 2026)
 

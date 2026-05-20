@@ -24,9 +24,9 @@ Sorting controls force the user to decide what they want before they know what's
 
 ### 3. Show what the user can see
 
-If the map is zoomed into Pleasant Hill, the right-side list should not still be showing every shop in Duluth. The view *is* a filter — using it to filter the list keeps the two panels coherent.
+If the map is zoomed into Pleasant Hill, the right-side list should not still be showing every shop in Duluth. The view *is* a filter — using it to filter the list keeps the two panels coherent. But a list that silently changes count without explanation breaks that coherence for the user — they see the number drop and don't know why.
 
-→ The list shows only shops whose pins are inside the current viewport. As you pan and zoom, the list narrows or expands.
+→ The list shows only shops whose pins are inside the current viewport. As you pan and zoom, the list narrows or expands. When the viewport is the active constraint, the header reads **"X in view"** instead of **"X spots"** — naming the cause explicitly. List items stagger in on each refresh (28 ms per row, capped at 140 ms) so the update reads as a deliberate response to the map, not random jank. The count pops to accent color when it changes.
 
 ### 4. Density matters on phones
 

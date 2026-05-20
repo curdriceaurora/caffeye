@@ -10,15 +10,16 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #f7f6f2;
-    --surface: #ffffff;
-    --surface-alt: #faf9f5;
-    --text: #1f1f1f;
-    --muted: #6f6f6f;
-    --border: #e3e0d6;
-    --border-strong: #c9c4b4;
-    --accent: #7a5635;
-    --accent-soft: #ebe1d2;
+    --bg: oklch(97% 0.008 75);
+    --surface: oklch(99.5% 0.006 75);
+    --surface-alt: oklch(98% 0.007 75);
+    --text: oklch(17% 0.005 70);
+    --muted: oklch(50% 0.005 70);
+    --border: oklch(89% 0.012 78);
+    --border-strong: oklch(80% 0.016 78);
+    --accent: oklch(43% 0.10 52);
+    --accent-soft: oklch(91% 0.025 70);
+    --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
     --c-coffee: #6f4e37;
     --c-bakery: #b89464;
     --c-tea: #5b8a72;
@@ -75,7 +76,7 @@
     font-size: 12.5px; font-weight: 500; color: var(--text);
     cursor: pointer; font-family: inherit;
     display: inline-flex; align-items: center; gap: 6px;
-    transition: background 0.1s, border-color 0.1s;
+    transition: background 200ms var(--ease-out), border-color 200ms var(--ease-out), color 200ms var(--ease-out), box-shadow 200ms var(--ease-out);
   }
   .chip:hover { background: var(--surface-alt); border-color: var(--border-strong); }
   .chip.active { background: var(--text); color: var(--surface); border-color: var(--text); }
@@ -93,6 +94,7 @@
     width: 380px; background: var(--surface);
     border-left: 1px solid var(--border);
     display: flex; flex-direction: column; min-height: 0;
+    position: relative; contain: layout style;
   }
 
   .search { padding: 12px 16px 8px; border-bottom: 1px solid var(--border); }
@@ -102,19 +104,38 @@
     font-family: inherit; font-size: 13px;
     background: var(--bg); color: var(--text); outline: none;
   }
-  .search input:focus { border-color: var(--accent); background: var(--surface); }
+  .search input:focus { border-color: var(--accent); background: var(--surface); box-shadow: 0 0 0 3px var(--accent-soft); outline: none; }
   .results-meta {
     padding: 8px 16px 6px; font-size: 11px; color: var(--muted);
     text-transform: uppercase; letter-spacing: 0.06em;
     font-weight: 600; border-bottom: 1px solid var(--border);
+    transition: background 400ms var(--ease-out);
   }
-  .list-view { flex: 1; display: flex; flex-direction: column; min-height: 0; }
+  .results-meta.viewport-flash { background: var(--accent-soft); }
+  #resultsCount { display: inline-block; transform-origin: left center; }
+  @keyframes countPop {
+    0%   { transform: scale(1); }
+    40%  { transform: scale(1.3); color: var(--accent); }
+    100% { transform: scale(1); color: inherit; }
+  }
+  .count-pop { animation: countPop 280ms var(--ease-out); }
+  @keyframes itemEnter {
+    from { opacity: 0; transform: translateY(5px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .shop-item { animation: itemEnter 200ms var(--ease-out) both; }
+  .list-view {
+    position: absolute; inset: 0;
+    display: flex; flex-direction: column;
+    opacity: 1; transform: translateX(0); pointer-events: auto;
+    transition: opacity 220ms var(--ease-out), transform 220ms var(--ease-out);
+    will-change: opacity, transform;
+  }
   .shop-list { flex: 1; overflow-y: auto; margin: 0; padding: 0; list-style: none; min-height: 0; }
   .shop-item {
-    padding: 10px 16px 10px 13px;
+    padding: 10px 16px;
     border-bottom: 1px solid var(--border);
-    border-left: 3px solid transparent;
-    cursor: pointer; transition: background 0.1s;
+    cursor: pointer; transition: background 150ms var(--ease-out);
   }
   .shop-item:hover { background: var(--surface-alt); }
   .shop-item.active { background: var(--accent-soft); }
@@ -135,15 +156,22 @@
   .shop-tags { font-size: 11.5px; color: var(--muted); line-height: 1.4; }
   .shop-tags .tag-sep { color: var(--border-strong); margin: 0 4px; }
 
-  .detail-view { flex: 1; overflow-y: auto; display: none; min-height: 0; }
-  .detail-view.visible { display: block; }
-  .panel.detail-mode .list-view { display: none; }
+  .detail-view {
+    position: absolute; inset: 0;
+    overflow-y: auto;
+    opacity: 0; transform: translateX(24px); pointer-events: none;
+    transition: opacity 220ms var(--ease-out), transform 220ms var(--ease-out);
+    will-change: opacity, transform;
+  }
+  .panel.detail-mode .list-view { opacity: 0; transform: translateX(-24px); pointer-events: none; }
+  .panel.detail-mode .detail-view { opacity: 1; transform: translateX(0); pointer-events: auto; }
   .back-btn {
     padding: 12px 16px; background: var(--surface);
     border: none; border-bottom: 1px solid var(--border);
     font-family: inherit; font-size: 12.5px; font-weight: 500;
     color: var(--muted); cursor: pointer; width: 100%;
     text-align: left; display: flex; align-items: center; gap: 6px;
+    transition: color 150ms var(--ease-out);
   }
   .back-btn:hover { color: var(--text); }
 
@@ -187,7 +215,7 @@
 
   .callout {
     padding: 10px 12px; background: var(--accent-soft);
-    border-left: 3px solid var(--accent); border-radius: 4px; margin-top: 8px;
+    border: 1px solid oklch(78% 0.04 65); border-radius: 4px; margin-top: 8px;
   }
   .callout-label {
     font-size: 10.5px; font-weight: 700; color: var(--accent);
@@ -205,7 +233,7 @@
     background: var(--surface); border: 1px solid var(--border-strong);
     font-size: 12px; font-weight: 500; color: var(--text);
     text-decoration: none; text-align: center; white-space: nowrap;
-    transition: background 0.1s;
+    transition: background 180ms var(--ease-out), border-color 180ms var(--ease-out), color 180ms var(--ease-out);
   }
   .action-btn:hover { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
 
@@ -216,9 +244,10 @@
     border-radius: 50%;
     border: 2px solid #fff;
     box-shadow: 0 2px 6px rgba(0,0,0,0.35);
-    transition: transform 0.12s;
+    transition: transform 150ms var(--ease-out), box-shadow 200ms var(--ease-out);
     display: flex; align-items: center; justify-content: center;
     font-size: 13px; line-height: 1; color: #fff;
+    will-change: transform;
   }
   .pin-label {
     position: absolute;
@@ -234,6 +263,7 @@
     box-shadow: 0 1px 3px rgba(0,0,0,0.18);
     pointer-events: none;
     display: none;
+    will-change: transform;
   }
   .leaflet-container.with-labels .pin-label { display: block; }
   .pin.late { box-shadow: 0 0 0 3px rgba(63,79,138,0.32), 0 2px 6px rgba(0,0,0,0.35); }
@@ -261,6 +291,14 @@
   }
   .empty-state { padding: 32px 20px; text-align: center; color: var(--muted); font-size: 13px; }
 
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
   @media (max-width: 820px) {
     header { padding: 6px 14px 5px; flex-wrap: wrap; gap: 4px; }
     .brand { font-size: 16px; }
@@ -280,7 +318,7 @@
     .search { padding: 8px 14px 6px; }
     .search input { padding: 6px 10px; font-size: 12.5px; }
     .results-meta { padding: 5px 14px 4px; font-size: 10px; }
-    .shop-item { padding: 7px 14px 7px 13px; }
+    .shop-item { padding: 7px 14px; }
     .shop-name { font-size: 13px; gap: 6px; margin: 0 0 3px 0; }
     .shop-name .shop-icon-tile { width: 18px; height: 18px; font-size: 10px; }
     .shop-meta { font-size: 11px; margin-bottom: 2px; }
@@ -294,7 +332,7 @@
 <div class="app">
   <header>
     <div class="brand">Coffee in Duluth</div>
-    <div class="freshness">59 cafés, bakeries &amp; tea shops · checked May 2026</div>
+    <div class="freshness">59 spots in Duluth · verified May 2026</div>
   </header>
 
   <div class="filter-bar">
@@ -319,7 +357,7 @@
         <div class="search">
           <input type="text" id="searchInput" placeholder="Search by name, drink, or area…" />
         </div>
-        <div class="results-meta"><span id="resultsCount">59</span> spots</div>
+        <div class="results-meta" id="resultsMeta"><span id="resultsCount">59</span><span id="resultsLabel"> spots</span></div>
         <ul class="shop-list" id="shopList"></ul>
       </div>
       <div class="detail-view" id="detailView"></div>
@@ -640,7 +678,7 @@ function boot() {
   let __viewportTimer = null;
   map.on('moveend zoomend', () => {
     clearTimeout(__viewportTimer);
-    __viewportTimer = setTimeout(() => { renderList(); }, 80);
+    __viewportTimer = setTimeout(() => { renderList('viewport'); }, 80);
   });
 
   // Show shop-name labels under pins. Below LABEL_MIN_ZOOM they're hidden;
@@ -792,6 +830,8 @@ function boot() {
   // LIST
   const shopListEl = document.getElementById('shopList');
   const resultsCountEl = document.getElementById('resultsCount');
+  const resultsLabelEl = document.getElementById('resultsLabel');
+  const resultsMetaEl  = document.getElementById('resultsMeta');
   const searchInput = document.getElementById('searchInput');
 
   // Global filters (city / category / feature / search) — these gate BOTH map markers and the list.
@@ -842,7 +882,7 @@ function boot() {
     return arr.slice().sort((x, y) => y.weightedRating - x.weightedRating);
   }
 
-  function renderList() {
+  function renderList(source) {
     // Map cluster membership tracks global filters only — viewport filtering must not
     // shrink clusterGroup.getBounds() (otherwise later fitBounds calls fit to a tiny set).
     const mapSet = new Set(filteredForMap());
@@ -852,17 +892,40 @@ function boot() {
       else if (!onMap && clusterGroup.hasLayer(m)) clusterGroup.removeLayer(m);
     });
     const filtered = sortShops(filteredForList());
+    const isViewportFiltering = filtered.length < mapSet.size;
+
+    // Count pop when number changes
+    const prevCount = parseInt(resultsCountEl.textContent) || -1;
     resultsCountEl.textContent = filtered.length;
+    if (filtered.length !== prevCount) {
+      resultsCountEl.classList.remove('count-pop');
+      void resultsCountEl.offsetWidth;
+      resultsCountEl.classList.add('count-pop');
+    }
+
+    // Label and pulse: "17 in view" vs "59 spots"
+    resultsLabelEl.textContent = isViewportFiltering ? ' in view' : ' spots';
+    if (source === 'viewport') {
+      resultsMetaEl.classList.remove('viewport-flash');
+      void resultsMetaEl.offsetWidth;
+      resultsMetaEl.classList.add('viewport-flash');
+      // Remove class after transition so it can re-trigger next pan
+      resultsMetaEl.addEventListener('transitionend', () => {
+        resultsMetaEl.classList.remove('viewport-flash');
+      }, { once: true });
+    }
+
     shopListEl.innerHTML = '';
     if (filtered.length === 0) {
       const empty = document.createElement('li');
       empty.className = 'empty-state';
-      empty.textContent = 'No shops in this view. Try zooming out, clearing filters, or changing search.';
+      empty.textContent = 'Nothing here — try zooming out or clearing a filter.';
       shopListEl.appendChild(empty);
     }
-    filtered.forEach(shop => {
+    filtered.forEach((shop, i) => {
       const li = document.createElement('li');
       li.className = 'shop-item' + (state.selected && state.selected.id === shop.id ? ' active' : '');
+      li.style.animationDelay = `${Math.min(i * 28, 140)}ms`;
       li.dataset.id = shop.id;
       li.setAttribute('tabindex', '0');
       li.setAttribute('role', 'button');
@@ -872,7 +935,6 @@ function boot() {
       const cat = CATS[shop.category] || {};
       const catColor = cat.hex || '#999';
       const catIcon = cat.icon || '';
-      li.style.borderLeftColor = catColor;
       const tags = compactTags(shop);
       const tagsHtml = tags.map((t, i) => (i > 0 ? '<span class="tag-sep">·</span>' : '') + t).join('');
       const ratingHtml = shop.rating
@@ -946,7 +1008,7 @@ function boot() {
         <div class="detail-section-label">Coworking</div>
         <div class="detail-text"><b>${tierLabel}.</b> ${cw.note}</div>
         ${cw.hasMeetingRoom ? `<div class="callout">
-          <div class="callout-label">Reservable meeting room</div>
+          <div class="callout-label">Meeting room</div>
           <div class="callout-text">${cw.meetingRoomNote || 'Private/meeting room available on demand'}</div>
         </div>` : ''}
       </div>`;
@@ -974,7 +1036,6 @@ function boot() {
     state.selected = shop;
     renderDetail(shop);
     panelEl.classList.add('detail-mode');
-    detailEl.classList.add('visible');
     setMarkerSelected(shop);
     // Trigger immediate label placement since the selection ring changed the marker's size
     if (typeof scheduleLabels === 'function') scheduleLabels();
@@ -1004,7 +1065,6 @@ function boot() {
     const lastSelectedId = state.selected ? state.selected.id : null;
     state.selected = null;
     panelEl.classList.remove('detail-mode');
-    detailEl.classList.remove('visible');
     setMarkerSelected(null);
     renderList();
 
@@ -1038,8 +1098,8 @@ function boot() {
     document.title = title;
     if (brandEl) brandEl.textContent = title;
     if (freshnessEl) {
-      freshnessEl.textContent = count + ' cafés, bakeries & tea shops in ' + scope
-        + (CHECKED_MONTH ? ' · checked ' + CHECKED_MONTH : '');
+      freshnessEl.textContent = count + ' spots in ' + scope
+        + (CHECKED_MONTH ? ' · verified ' + CHECKED_MONTH : '');
     }
   }
 
