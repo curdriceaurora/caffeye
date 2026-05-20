@@ -44,26 +44,55 @@ wrangler deploy
 
 ## Editing the data
 
-The shop list is a hand-curated JS array in `index.html` (`const SHOPS = [ … ]`). Adding a shop requires touching multiple parallel structures — they must all stay in sync:
+All curated data lives in `public/shops.json` (v4 schema). `index.html` only carries the rendering shell — it fetches `shops.json` on boot and hydrates the in-memory globals.
 
-1. `SHOPS` — append a new entry with `lat: 0, lng: 0` placeholders.
-2. `ADDR` — if it's a new building, add `"{num}-{streetslug}": {lat, lng}`. Coords **must** come from an authoritative geocoder (Apple Maps via `CLGeocoder` is the standard — see `outputs/apple_geocode.swift` in scratch). Do not approximate. A wrong coord that lands a shop in a residential subdivision was the bug that triggered the geocoding QA pass.
-3. `SHOP_ADDR` — map the shop name → the ADDR key.
-4. `NEIGHBORHOODS` — map the ADDR key → a neighborhood label (must be consistent with existing ones).
-5. `CWS` — every shop **must** have an entry with `tier: 'excellent' | 'good' | 'limited'`.
-6. `WEBSITES` — every shop **must** have an entry (use `null` if no site).
-7. `LATE` — only if the shop's closing time is ≥ 10 pm.
-8. Update header freshness count (`"58 cafés…"`) and the `resultsCount` placeholder (`<span id="resultsCount">58</span>`).
+The schema:
 
-After editing, verify with the console snippets in `TESTS.md` §T1 — particularly:
+```jsonc
+{
+  "version": 4,
+  "regionLabel": "Duluth",       // shown when no single city is active
+  "checkedMonth": "May 2026",
+  "cities": ["Duluth"],          // list grows as new cities are added
+  "shops": [
+    {
+      "name": "...",
+      "city": "Duluth",
+      "addrKey": "duluth-2180-pleasanthill",  // city-prefixed to prevent cross-city collisions
+      "address": "...",          // full text address
+      "category": "...",         // must exist in CATS in index.html
+      "rating": 4.4, "ratingCount": "5,900+", "ratingNum": 5900,
+      "hours": "...",
+      "usp": "...",
+      "loved": ["...", "...", "..."],
+      "signature": "...",
+      "googleUrl": "...", "yelpUrl": "...",
+      "cw": { "tier": "excellent|good|limited", "note": "...", "hasMeetingRoom": false, "meetingRoomNote": "..." },
+      "late": { "tier": "10pm+|midnight", "when": "..." },  // omit if shop closes before 10 pm
+      "website": "https://..."   // or null
+    }
+  ],
+  "addr":  { "duluth-2180-pleasanthill": { "lat": 33.96147, "lng": -84.13401 } },
+  "neighborhoods": { "duluth-2180-pleasanthill": "Pleasant Hill" }
+}
+```
+
+**To add a shop:**
+
+1. Append a shop object to `shops`. Include `city`, the new compound `addrKey`, and the inline `cw` / `late?` / `website` blocks. No more separate CWS / LATE / WEBSITES tables — that pattern collided when the same brand opened in two cities.
+2. If it's a new building, add a `"{city}-{num}-{streetslug}": {lat, lng}` entry to `addr` and a matching `neighborhoods` entry. Coords **must** come from an authoritative geocoder (Apple Maps via `CLGeocoder` is the standard — see `outputs/apple_geocode.swift` in scratch). Do not approximate. A wrong coord that lands a shop in a residential subdivision was the bug that triggered the geocoding QA pass.
+3. Bump nothing else — the header freshness count is computed at runtime from `SHOPS.length` scoped to the active city.
+4. If you're adding the first shop in a new city, append the city to `cities`. Once `cities.length > 1`, the City chip row appears automatically.
+
+After editing, verify with these console snippets (also available in `TESTS.md` §T1):
 
 ```js
 SHOPS.length;
-Object.keys(CWS).filter(k => !SHOPS.some(s => s.name === k));    // must be []
-Object.keys(LATE).filter(k => !SHOPS.some(s => s.name === k));   // must be []
-Object.keys(WEBSITES).filter(k => !SHOPS.some(s => s.name === k)); // must be []
-SHOPS.filter(s => !CATS[s.category]);                            // must be []
-SHOPS.filter(s => !s.lat || !s.lng);                             // must be []
+SHOPS.filter(s => !s.lat || !s.lng);                       // must be []
+SHOPS.filter(s => !s.cw);                                  // must be []
+SHOPS.filter(s => !CATS[s.category]);                      // must be []
+SHOPS.filter(s => !s.addrKey || !ADDR[s.addrKey]);         // must be []
+SHOPS.filter(s => !s.addrKey.startsWith(s.city.toLowerCase() + '-'));  // must be []
 ```
 
 ## Key conventions to preserve

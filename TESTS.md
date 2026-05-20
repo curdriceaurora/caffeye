@@ -21,10 +21,10 @@ Local: `python3 -m http.server 8765` in the project root, open `http://127.0.0.1
 | T1.1 | R1.1 | `js> SHOPS.length` | `59` |
 | T1.2 | R1.2 | `js> SHOPS.every(s => s.name && s.address && s.lat && s.lng && s.category && s.hours && s.usp && s.signature && Array.isArray(s.loved) && s.loved.length === 3 && s.googleUrl && s.yelpUrl)` | `true` |
 | T1.3 | R1.2 | `js> SHOPS.filter(s => !s.lat \|\| !s.lng \|\| s.lat === 0).length` | `0` |
-| T1.4 | R1.3 | `js> SHOPS.every(s => CWS[s.name] && ['excellent','good','limited'].includes(CWS[s.name].tier))` | `true` |
-| T1.5 | R1.4 | `js> SHOPS.every(s => WEBSITES.hasOwnProperty(s.name))` | `true` |
-| T1.6 | R1.5 | `js> Object.values(LATE).every(l => ['10pm+','midnight'].includes(l.tier) && typeof l.when === 'string')` | `true` |
-| T1.7 | R1.6 | `js> [...Object.keys(CWS), ...Object.keys(LATE), ...Object.keys(WEBSITES)].filter(k => !SHOPS.some(s => s.name === k))` | `[]` |
+| T1.4 | R1.3 | `js> SHOPS.every(s => s.cw && ['excellent','good','limited'].includes(s.cw.tier))` | `true` |
+| T1.5 | R1.4 | `js> SHOPS.every(s => 'website' in s)` | `true` |
+| T1.6 | R1.5 | `js> SHOPS.filter(s => s.late).every(s => ['10pm+','midnight'].includes(s.late.tier) && typeof s.late.when === 'string')` | `true` |
+| T1.7 | R1.6 | `js> SHOPS.filter(s => !s.addrKey.startsWith(s.city.toLowerCase() + '-'))` | `[]` |
 | T1.8 | R1.7 | `js> SHOPS.filter(s => !CATS[s.category]).map(s => s.name)` | `[]` |
 | T1.9 | R1.9 | Open page, check header text. | Reads "**59** cafés, bakeries & tea shops · checked **May 2026**". |
 

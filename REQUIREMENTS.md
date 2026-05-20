@@ -8,10 +8,10 @@ Functional and non-functional requirements for the current state of the page. Ea
 |---|---|---|
 | R1.1 | The page shows **59** curated shops covering Duluth, Berkeley Lake, Johns Creek border, and adjacent commercial strips. | Curation > count |
 | R1.2 | Every shop has: `name`, full street address, lat/lng, category, star rating *or* `null`, review-count string, numeric review count, hours, USP description, 3 "loved" items, signature drink/dish, Google Maps URL, Yelp URL. | — |
-| R1.3 | Every shop has a coworking entry in `CWS` with `tier` ∈ {`excellent`, `good`, `limited`} and an optional reservable-meeting-room flag. | — |
-| R1.4 | Every shop has a website (or `null`) in `WEBSITES`. | — |
-| R1.5 | Shops with late hours (≥ 10 pm) appear in `LATE` with `tier` ∈ {`10pm+`, `midnight`} and a `when` description. | — |
-| R1.6 | Every `CWS`, `LATE`, `WEBSITES` key matches an existing shop name exactly (no orphans). | Data integrity |
+| R1.3 | Every shop has an inline `cw` object with `tier` ∈ {`excellent`, `good`, `limited`} and an optional reservable-meeting-room flag. | — |
+| R1.4 | Every shop has a `website` field (URL string or `null`). | — |
+| R1.5 | Shops with late hours (≥ 10 pm) carry an inline `late` object with `tier` ∈ {`10pm+`, `midnight`} and a `when` description. Shops closing earlier omit `late` entirely. | — |
+| R1.6 | Coworking/late/website data is **per-shop**, not keyed by name — two locations of the same brand in different cities can have different coworking notes, hours, and URLs. | Data integrity |
 | R1.7 | Every shop's `category` exists in `CATS`. | Data integrity |
 | R1.8 | All 42 unique building addresses (`ADDR`) are geocoded via Apple Maps with a verified `subThoroughfare` (house-number) match. | Geocode authoritatively |
 | R1.9 | The freshness label in the header reflects the live count and the month the data was last verified. | — |

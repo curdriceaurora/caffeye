@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 4,
   "checkedMonth": "May 2026",
   "shops": [
     {
@@ -22,7 +22,18 @@
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Sweet%20Hut%20Bakery%20%26%20Cafe%202180%20Pleasant%20Hill%20Rd%20Duluth%20GA",
       "yelpUrl": "https://www.yelp.com/biz/sweet-hut-bakery-and-cafe-duluth",
       "city": "Duluth",
-      "addrKey": "duluth-2180-pleasanthill"
+      "addrKey": "duluth-2180-pleasanthill",
+      "cw": {
+        "tier": "excellent",
+        "note": "Large seating, Wi-Fi, outlets — popular student spot.",
+        "hasMeetingRoom": true,
+        "meetingRoomNote": "Private meeting room — contact catering@sweethut.com"
+      },
+      "late": {
+        "tier": "10pm+",
+        "when": "Fri-Sat until 11pm; weekdays till 10pm"
+      },
+      "website": "https://www.sweethutbakery.com"
     },
     {
       "name": "Cafe Mozart Bakery",
@@ -44,7 +55,17 @@
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Cafe%20Mozart%20Bakery%202131%20Pleasant%20Hill%20Rd%20Duluth%20GA",
       "yelpUrl": "https://www.yelp.com/biz/mozart-bakery-duluth-4",
       "city": "Duluth",
-      "addrKey": "duluth-2131-pleasanthill"
+      "addrKey": "duluth-2131-pleasanthill",
+      "cw": {
+        "tier": "excellent",
+        "note": "Renovated work area, natural light, free parking.",
+        "hasMeetingRoom": false
+      },
+      "late": {
+        "tier": "midnight",
+        "when": "Fri-Sat till midnight; weekdays till 10pm"
+      },
+      "website": "https://www.cafemozartbakery.com"
     },
     {
       "name": "TwoHa's Cafe",
@@ -66,7 +87,17 @@
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=TwoHa%27s%20Cafe%202645%20N%20Berkeley%20Lake%20Rd%20Duluth%20GA",
       "yelpUrl": "https://www.yelp.com/biz/twohas-cafe-duluth",
       "city": "Duluth",
-      "addrKey": "duluth-2645-nberkeley"
+      "addrKey": "duluth-2645-nberkeley",
+      "cw": {
+        "tier": "excellent",
+        "note": "Dividers for privacy, tons of seating, open till midnight.",
+        "hasMeetingRoom": false
+      },
+      "late": {
+        "tier": "midnight",
+        "when": "Fri-Sat till 1am; rest of week till midnight"
+      },
+      "website": "https://www.twohascafe.com"
     },
     {
       "name": "White Windmill Bakery & Cafe",
@@ -88,7 +119,18 @@
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=White%20Windmill%20Bakery%20%26%20Cafe%202200%20Duluth%20Hwy%20Duluth%20GA",
       "yelpUrl": "https://www.yelp.com/biz/white-windmill-bakery-and-cafe-duluth-4",
       "city": "Duluth",
-      "addrKey": "duluth-2200-duluth"
+      "addrKey": "duluth-2200-duluth",
+      "cw": {
+        "tier": "excellent",
+        "note": "Quiet, popular with students.",
+        "hasMeetingRoom": true,
+        "meetingRoomNote": "Private booth-style rooms in the back, bookable on demand."
+      },
+      "late": {
+        "tier": "10pm+",
+        "when": "Fri-Sat till 11pm; weekdays till 10pm"
+      },
+      "website": "https://www.whitewbakerycafe.com"
     },
     {
       "name": "Land of a Thousand Hills Coffee",
@@ -110,7 +152,13 @@
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Land%20of%20a%20Thousand%20Hills%20Coffee%203176%20Main%20St%20Duluth%20GA",
       "yelpUrl": "https://www.yelp.com/biz/land-of-a-thousand-hills-duluth",
       "city": "Duluth",
-      "addrKey": "duluth-3176-main"
+      "addrKey": "duluth-3176-main",
+      "cw": {
+        "tier": "excellent",
+        "note": "Connected to Thrive Coworking, built for work.",
+        "hasMeetingRoom": false
+      },
+      "website": "https://landofathousandhills.com/pages/location-duluth-georgia"
     },
     {
       "name": "Alchemist on the Divide",
@@ -132,7 +180,13 @@
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Alchemist%20on%20the%20Divide%203550%20W%20Lawrenceville%20St%20Duluth%20GA",
       "yelpUrl": "https://www.yelp.com/biz/alchemist-on-the-divide-duluth",
       "city": "Duluth",
-      "addrKey": "duluth-3550-wlawrenceville"
+      "addrKey": "duluth-3550-wlawrenceville",
+      "cw": {
+        "tier": "good",
+        "note": "Plenty of seating, but trendy and busy.",
+        "hasMeetingRoom": false
+      },
+      "website": "https://alchemist-on-the-divide.grubbio.com"
     },
     {
       "name": "The Cream",
@@ -154,7 +208,17 @@
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=The%20Cream%203455%20Duluth%20Hwy%20Duluth%20GA",
       "yelpUrl": "https://www.yelp.com/biz/the-cream-duluth-4",
       "city": "Duluth",
-      "addrKey": "duluth-3455-duluth"
+      "addrKey": "duluth-3455-duluth",
+      "cw": {
+        "tier": "good",
+        "note": "Many outlets, but more brunch/dessert leaning.",
+        "hasMeetingRoom": false
+      },
+      "late": {
+        "tier": "10pm+",
+        "when": "Fri-Sat till 11pm; weekdays till 10pm"
+      },
+      "website": "https://www.thecreambakery.com"
     },
     {
       "name": "Ginkgo Bakery & Cafe",
@@ -176,7 +240,13 @@
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Ginkgo%20Bakery%20%26%20Cafe%203550%20W%20Lawrenceville%20St%20Duluth%20GA",
       "yelpUrl": "https://www.yelp.com/biz/ginkgo-duluth",
       "city": "Duluth",
-      "addrKey": "duluth-3550-wlawrenceville"
+      "addrKey": "duluth-3550-wlawrenceville",
+      "cw": {
+        "tier": "good",
+        "note": "Warm atmosphere; workable but small.",
+        "hasMeetingRoom": false
+      },
+      "website": "https://www.ginkgobakery.com"
     },
     {
       "name": "Coffee That Matters",
@@ -198,7 +268,13 @@
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Coffee%20That%20Matters%202640%20Old%20Peachtree%20Rd%20Duluth%20GA",
       "yelpUrl": "https://www.yelp.com/biz/phoenix-roasters-duluth",
       "city": "Duluth",
-      "addrKey": "duluth-2640-oldpeachtree"
+      "addrKey": "duluth-2640-oldpeachtree",
+      "cw": {
+        "tier": "excellent",
+        "note": "Large, quiet, built for remote work and study.",
+        "hasMeetingRoom": false
+      },
+      "website": "https://phoenixroasters.coffee"
     },
     {
       "name": "The Coffee By Hand",
@@ -220,7 +296,17 @@
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=The%20Coffee%20By%20Hand%202180%20Pleasant%20Hill%20Rd%20Duluth%20GA",
       "yelpUrl": "https://www.yelp.com/biz/the-coffee-by-hand-duluth",
       "city": "Duluth",
-      "addrKey": "duluth-2180-pleasanthill"
+      "addrKey": "duluth-2180-pleasanthill",
+      "cw": {
+        "tier": "good",
+        "note": "Wi-Fi, good weekday afternoons; livelier at night.",
+        "hasMeetingRoom": false
+      },
+      "late": {
+        "tier": "midnight",
+        "when": "Fri-Sat till midnight; rest till 11pm"
+      },
+      "website": "https://www.instagram.com/thecoffeebyhandatl"
     },
     {
       "name": "OneZo Boba Tea",
@@ -242,7 +328,17 @@
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=OneZo%20Boba%20Tea%203580%20Breckinridge%20Blvd%20Duluth%20GA",
       "yelpUrl": "https://www.yelp.com/biz/one-zo-boba-duluth-duluth",
       "city": "Duluth",
-      "addrKey": "duluth-3580-breckinridge"
+      "addrKey": "duluth-3580-breckinridge",
+      "cw": {
+        "tier": "limited",
+        "note": "Small boba shop, quick-grab.",
+        "hasMeetingRoom": false
+      },
+      "late": {
+        "tier": "10pm+",
+        "when": "Fri-Sun till 11:30pm"
+      },
+      "website": "https://www.onezo.us"
     },
     {
       "name": "Molly Tea",
@@ -264,7 +360,17 @@
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Molly%20Tea%202131%20Pleasant%20Hill%20Rd%20Duluth%20GA",
       "yelpUrl": "https://www.yelp.com/biz/molly-tea-duluth",
       "city": "Duluth",
-      "addrKey": "duluth-2131-pleasanthill"
+      "addrKey": "duluth-2131-pleasanthill",
+      "cw": {
+        "tier": "limited",
+        "note": "Designed for to-go.",
+        "hasMeetingRoom": false
+      },
+      "late": {
+        "tier": "10pm+",
+        "when": "Daily till 10:10pm"
+      },
+      "website": "https://mollyteaatl.com"
     },
     {
       "name": "ChiCha San Chen",
@@ -286,7 +392,17 @@
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=ChiCha%20San%20Chen%202174%20Pleasant%20Hill%20Rd%20Duluth%20GA",
       "yelpUrl": "https://www.yelp.com/biz/chicha-san-chen-duluth",
       "city": "Duluth",
-      "addrKey": "duluth-2174-pleasanthill"
+      "addrKey": "duluth-2174-pleasanthill",
+      "cw": {
+        "tier": "limited",
+        "note": "Crowded seating, better for short visits.",
+        "hasMeetingRoom": false
+      },
+      "late": {
+        "tier": "10pm+",
+        "when": "Fri-Sat till 10pm"
+      },
+      "website": "https://chichasanchenusa.com"
     },
     {
       "name": "Matcha Cafe Maiko",
@@ -308,7 +424,17 @@
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Matcha%20Cafe%20Maiko%202131%20Pleasant%20Hill%20Rd%20Duluth%20GA",
       "yelpUrl": "https://www.yelp.com/biz/matcha-cafe-maiko-duluth-3",
       "city": "Duluth",
-      "addrKey": "duluth-2131-pleasanthill"
+      "addrKey": "duluth-2131-pleasanthill",
+      "cw": {
+        "tier": "limited",
+        "note": "Dessert-focused with limited seating.",
+        "hasMeetingRoom": false
+      },
+      "late": {
+        "tier": "10pm+",
+        "when": "Fri-Sat till 10:30pm"
+      },
+      "website": "https://www.matchacafeatl.com"
     },
     {
       "name": "Hiro Tea Bar",
@@ -330,7 +456,17 @@
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Hiro%20Tea%20Bar%203648%20Satellite%20Blvd%20Duluth%20GA",
       "yelpUrl": "https://www.yelp.com/biz/hiro-tea-bar-duluth-2",
       "city": "Duluth",
-      "addrKey": "duluth-3648-satellite"
+      "addrKey": "duluth-3648-satellite",
+      "cw": {
+        "tier": "good",
+        "note": "Peaceful, covered outdoor seating.",
+        "hasMeetingRoom": false
+      },
+      "late": {
+        "tier": "10pm+",
+        "when": "Fri-Sat till 10pm"
+      },
+      "website": "https://www.hiroteabar.com"
     },
     {
       "name": "Ding Tea",
@@ -352,7 +488,17 @@
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Ding%20Tea%202180%20Pleasant%20Hill%20Rd%20Duluth%20GA",
       "yelpUrl": "https://www.yelp.com/biz/ding-tea-duluth-duluth-2",
       "city": "Duluth",
-      "addrKey": "duluth-2180-pleasanthill"
+      "addrKey": "duluth-2180-pleasanthill",
+      "cw": {
+        "tier": "limited",
+        "note": "Primarily a to-go boba shop.",
+        "hasMeetingRoom": false
+      },
+      "late": {
+        "tier": "10pm+",
+        "when": "Daily till 10pm"
+      },
+      "website": "https://www.instagram.com/dingteaduluth"
     },
     {
       "name": "Tiger Sugar",
@@ -374,7 +520,17 @@
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Tiger%20Sugar%202570%20Pleasant%20Hill%20Rd%20Duluth%20GA",
       "yelpUrl": "https://www.yelp.com/biz/tiger-sugar-duluth",
       "city": "Duluth",
-      "addrKey": "duluth-2570-pleasanthill"
+      "addrKey": "duluth-2570-pleasanthill",
+      "cw": {
+        "tier": "limited",
+        "note": "Limited seating, mostly to-go.",
+        "hasMeetingRoom": false
+      },
+      "late": {
+        "tier": "10pm+",
+        "when": "Fri-Sat till 11pm"
+      },
+      "website": "https://en.tigersugar.com"
     },
     {
       "name": "Xing Fu Tang",
@@ -396,7 +552,17 @@
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Xing%20Fu%20Tang%202476%20Pleasant%20Hill%20Rd%20Duluth%20GA",
       "yelpUrl": "https://www.yelp.com/biz/xing-fu-tang-duluth",
       "city": "Duluth",
-      "addrKey": "duluth-2476-pleasanthill"
+      "addrKey": "duluth-2476-pleasanthill",
+      "cw": {
+        "tier": "limited",
+        "note": "Small footprint, takeout-oriented.",
+        "hasMeetingRoom": false
+      },
+      "late": {
+        "tier": "10pm+",
+        "when": "Fri-Sat till 10:30pm"
+      },
+      "website": "https://www.xingfutangga.com"
     },
     {
       "name": "Goodwin Tea House & More",
@@ -418,7 +584,17 @@
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Goodwin%20Tea%20House%203455%20Peachtree%20Industrial%20Blvd%20Duluth%20GA",
       "yelpUrl": "https://www.yelp.com/biz/goodwin-tea-house-and-more-duluth-5",
       "city": "Duluth",
-      "addrKey": "duluth-3455-peachtree"
+      "addrKey": "duluth-3455-peachtree",
+      "cw": {
+        "tier": "good",
+        "note": "Workable with snacks; modest size.",
+        "hasMeetingRoom": false
+      },
+      "late": {
+        "tier": "10pm+",
+        "when": "Tue-Sun till 10pm"
+      },
+      "website": "https://www.goodwinteahouse.com"
     },
     {
       "name": "The Bep Teahouse",
@@ -440,7 +616,17 @@
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=The%20Bep%20Teahouse%202180%20Pleasant%20Hill%20Rd%20Duluth%20GA",
       "yelpUrl": "https://www.yelp.com/biz/the-bep-teahouse-duluth",
       "city": "Duluth",
-      "addrKey": "duluth-2180-pleasanthill"
+      "addrKey": "duluth-2180-pleasanthill",
+      "cw": {
+        "tier": "good",
+        "note": "Generous seating, board games, gathering-oriented.",
+        "hasMeetingRoom": false
+      },
+      "late": {
+        "tier": "midnight",
+        "when": "Fri-Sat till midnight; rest till 11pm"
+      },
+      "website": "https://thebepteahouse.com/locations/the-bep-teahouse-duluth/"
     },
     {
       "name": "Paris Baguette",
@@ -462,7 +648,13 @@
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Paris%20Baguette%203492%20Satellite%20Blvd%20Duluth%20GA",
       "yelpUrl": "https://www.yelp.com/biz/paris-baguette-duluth-2",
       "city": "Duluth",
-      "addrKey": "duluth-3492-satellite"
+      "addrKey": "duluth-3492-satellite",
+      "cw": {
+        "tier": "excellent",
+        "note": "Lots of tables, Wi-Fi, commonly used for studying.",
+        "hasMeetingRoom": false
+      },
+      "website": "https://parisbaguette.com/locations/ga/duluth/3492-satellite-boulevard/"
     },
     {
       "name": "Bread Museum Bakery & Cafe",
@@ -484,7 +676,17 @@
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Bread%20Museum%20Bakery%203473%20Old%20Norcross%20Rd%20Duluth%20GA",
       "yelpUrl": "https://www.yelp.com/biz/bread-museum-duluth-3",
       "city": "Duluth",
-      "addrKey": "duluth-3473-oldnorcross"
+      "addrKey": "duluth-3473-oldnorcross",
+      "cw": {
+        "tier": "good",
+        "note": "Cozy, casual; limited seating.",
+        "hasMeetingRoom": false
+      },
+      "late": {
+        "tier": "10pm+",
+        "when": "Fri-Sat till 10pm"
+      },
+      "website": "https://thebreadmuseum.com"
     },
     {
       "name": "Tous Les Jours",
@@ -506,7 +708,13 @@
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Tous%20Les%20Jours%202550%20Pleasant%20Hill%20Rd%20Duluth%20GA",
       "yelpUrl": "https://www.yelp.com/biz/tous-les-jours-duluth-2",
       "city": "Duluth",
-      "addrKey": "duluth-2550-pleasanthill"
+      "addrKey": "duluth-2550-pleasanthill",
+      "cw": {
+        "tier": "good",
+        "note": "Inside H Mart, seating exists but not focused on work.",
+        "hasMeetingRoom": false
+      },
+      "website": "https://tljus.com/stores/duluth-2550-pleasant-hill-rd"
     },
     {
       "name": "Tree Story Bakery & Cafe",
@@ -528,7 +736,17 @@
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Tree%20Story%20Bakery%202550%20Pleasant%20Hill%20Rd%20Duluth%20GA",
       "yelpUrl": "https://www.yelp.com/biz/tree-story-bakery-and-cafe-duluth",
       "city": "Duluth",
-      "addrKey": "duluth-2550-pleasanthill"
+      "addrKey": "duluth-2550-pleasanthill",
+      "cw": {
+        "tier": "excellent",
+        "note": "Quiet seating area for students and remote workers.",
+        "hasMeetingRoom": false
+      },
+      "late": {
+        "tier": "10pm+",
+        "when": "Fri-Sat till 10pm"
+      },
+      "website": "https://www.facebook.com/TreeStoryCafe/"
     },
     {
       "name": "Vincent Bakery & Cafe",
@@ -550,7 +768,13 @@
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Vincent%20Bakery%20Cafe%202442%20Pleasant%20Hill%20Rd%20Duluth%20GA",
       "yelpUrl": "https://www.yelp.com/biz/vincent-bakery-cafe-duluth",
       "city": "Duluth",
-      "addrKey": "duluth-2442-pleasanthill"
+      "addrKey": "duluth-2442-pleasanthill",
+      "cw": {
+        "tier": "excellent",
+        "note": "Ample seating with outlets, library-like atmosphere.",
+        "hasMeetingRoom": false
+      },
+      "website": "https://www.instagram.com/vincentbakeryofficial"
     },
     {
       "name": "Hansel & Gretel Bakery Cafe",
@@ -572,7 +796,17 @@
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Hansel%20and%20Gretel%20Bakery%202131%20Pleasant%20Hill%20Rd%20Duluth%20GA",
       "yelpUrl": "https://www.yelp.com/biz/hansel-and-gretel-bakery-cafe-duluth",
       "city": "Duluth",
-      "addrKey": "duluth-2131-pleasanthill"
+      "addrKey": "duluth-2131-pleasanthill",
+      "cw": {
+        "tier": "excellent",
+        "note": "Spacious, charging spots, open late — can be noisy.",
+        "hasMeetingRoom": false
+      },
+      "late": {
+        "tier": "midnight",
+        "when": "Fri-Sat till midnight; rest till 11pm"
+      },
+      "website": "https://www.instagram.com/hanselgretel.bakery"
     },
     {
       "name": "Georgia French Bakery & Cafe",
@@ -594,7 +828,13 @@
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Georgia%20French%20Bakery%203512%20Satellite%20Blvd%20Duluth%20GA",
       "yelpUrl": "https://www.yelp.com/biz/georgia-french-bakery-and-cafe-duluth",
       "city": "Duluth",
-      "addrKey": "duluth-3512-satellite"
+      "addrKey": "duluth-3512-satellite",
+      "cw": {
+        "tier": "good",
+        "note": "Cozy local bakery; workable but not a study mecca.",
+        "hasMeetingRoom": false
+      },
+      "website": "https://georgiafrenchbakerycafe.com"
     },
     {
       "name": "Mai Bakery",
@@ -616,7 +856,13 @@
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Mai%20Bakery%202300%20Pleasant%20Hill%20Rd%20Duluth%20GA",
       "yelpUrl": "https://www.yelp.com/biz/mai-bakery-duluth",
       "city": "Duluth",
-      "addrKey": "duluth-2300-pleasanthill"
+      "addrKey": "duluth-2300-pleasanthill",
+      "cw": {
+        "tier": "limited",
+        "note": "Inside Great Wall food court, no real cafe space.",
+        "hasMeetingRoom": false
+      },
+      "website": null
     },
     {
       "name": "The Patio Cafe & Bakery",
@@ -638,7 +884,13 @@
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=The%20Patio%20Cafe%205950%20State%20Bridge%20Rd%20Duluth%20GA",
       "yelpUrl": "https://www.yelp.com/biz/the-patio-cafe-and-bakery-duluth",
       "city": "Duluth",
-      "addrKey": "duluth-5950-state"
+      "addrKey": "duluth-5950-state",
+      "cw": {
+        "tier": "good",
+        "note": "Plenty of indoor and patio seating.",
+        "hasMeetingRoom": false
+      },
+      "website": "https://www.patiocafebakery.com/"
     },
     {
       "name": "Shokku Bakery",
@@ -660,7 +912,13 @@
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Shokku%20Bakery%203875%20Venture%20Dr%20Duluth%20GA",
       "yelpUrl": "https://www.yelp.com/biz/shokku-bakery-duluth",
       "city": "Duluth",
-      "addrKey": "duluth-3875-venture"
+      "addrKey": "duluth-3875-venture",
+      "cw": {
+        "tier": "limited",
+        "note": "Inside Jusgo food court, counter service only.",
+        "hasMeetingRoom": false
+      },
+      "website": "https://www.instagram.com/shokkubakery/"
     },
     {
       "name": "Forest Cafe",
@@ -682,7 +940,17 @@
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Forest%20Cafe%203780%20Old%20Norcross%20Rd%20Duluth%20GA",
       "yelpUrl": "https://www.yelp.com/biz/forest-cafe-duluth",
       "city": "Duluth",
-      "addrKey": "duluth-3780-oldnorcross"
+      "addrKey": "duluth-3780-oldnorcross",
+      "cw": {
+        "tier": "good",
+        "note": "Comfy sofa seating, some charging spots.",
+        "hasMeetingRoom": false
+      },
+      "late": {
+        "tier": "10pm+",
+        "when": "Daily till 11pm"
+      },
+      "website": "https://www.instagram.com/forest_cafe_ga/"
     },
     {
       "name": "Cafe 104",
@@ -704,7 +972,17 @@
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Cafe%20104%203705%20Old%20Norcross%20Rd%20Duluth%20GA",
       "yelpUrl": "https://www.yelp.com/biz/cafe-104-duluth",
       "city": "Duluth",
-      "addrKey": "duluth-3705-oldnorcross"
+      "addrKey": "duluth-3705-oldnorcross",
+      "cw": {
+        "tier": "excellent",
+        "note": "Wi-Fi, outlets, open till 11pm — top-cited Duluth study spot.",
+        "hasMeetingRoom": false
+      },
+      "late": {
+        "tier": "10pm+",
+        "when": "Daily till 11pm"
+      },
+      "website": "https://www.cafe104duluth.com/"
     },
     {
       "name": "Boba Mocha",
@@ -726,7 +1004,17 @@
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Boba%20Mocha%202628%20Pleasant%20Hill%20Rd%20Duluth%20GA",
       "yelpUrl": "https://www.yelp.com/biz/boba-mocha-duluth",
       "city": "Duluth",
-      "addrKey": "duluth-2628-pleasanthill"
+      "addrKey": "duluth-2628-pleasanthill",
+      "cw": {
+        "tier": "good",
+        "note": "Cozy with couches, indoor + outdoor, board games.",
+        "hasMeetingRoom": false
+      },
+      "late": {
+        "tier": "10pm+",
+        "when": "Fri-Sat till 11pm"
+      },
+      "website": "https://www.bobamochaonline.com/"
     },
     {
       "name": "Long's Cafe 2",
@@ -748,7 +1036,13 @@
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Long%27s%20Cafe%202%201630%20Pleasant%20Hill%20Rd%20Duluth%20GA",
       "yelpUrl": "https://www.yelp.com/search?find_desc=Long%27s+Cafe+2&find_loc=Duluth%2C+GA",
       "city": "Duluth",
-      "addrKey": "duluth-1630-pleasanthill"
+      "addrKey": "duluth-1630-pleasanthill",
+      "cw": {
+        "tier": "good",
+        "note": "Small neighborhood Vietnamese cafe.",
+        "hasMeetingRoom": false
+      },
+      "website": "https://www.facebook.com/people/Longs-Cafe-2/61553102627374/"
     },
     {
       "name": "Incha Duluth (Duck Ink + Boba)",
@@ -770,7 +1064,13 @@
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Incha%20Duluth%20Duck%20Ink%203500%20Gwinnett%20Pl%20Dr%20Duluth%20GA",
       "yelpUrl": "https://www.yelp.com/biz/incha-duck-ink-duluth",
       "city": "Duluth",
-      "addrKey": "duluth-3500-gwinnettpl"
+      "addrKey": "duluth-3500-gwinnettpl",
+      "cw": {
+        "tier": "limited",
+        "note": "Paint-your-own-ceramics activity venue.",
+        "hasMeetingRoom": false
+      },
+      "website": "https://www.instagram.com/inchaduckink/"
     },
     {
       "name": "Orange Coffee Bar",
@@ -792,7 +1092,17 @@
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Orange%20Coffee%20Bar%203473%20Old%20Norcross%20Rd%20Duluth%20GA",
       "yelpUrl": "https://www.yelp.com/biz/orange-coffee-bar-duluth",
       "city": "Duluth",
-      "addrKey": "duluth-3473-oldnorcross"
+      "addrKey": "duluth-3473-oldnorcross",
+      "cw": {
+        "tier": "excellent",
+        "note": "Quiet, Wi-Fi, ample parking — recommended for working.",
+        "hasMeetingRoom": false
+      },
+      "late": {
+        "tier": "10pm+",
+        "when": "Daily till 10pm"
+      },
+      "website": "https://www.instagram.com/orangecoffeebar.duluth/"
     },
     {
       "name": "Tom N Toms Coffee Black",
@@ -814,7 +1124,18 @@
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Tom%20N%20Toms%20Coffee%20Black%203473%20Old%20Norcross%20Rd%20Duluth%20GA",
       "yelpUrl": "https://www.yelp.com/biz/tom-n-toms-coffee-black-duluth",
       "city": "Duluth",
-      "addrKey": "duluth-3473-oldnorcross"
+      "addrKey": "duluth-3473-oldnorcross",
+      "cw": {
+        "tier": "excellent",
+        "note": "Huge 2-story cafe with upstairs study area.",
+        "hasMeetingRoom": true,
+        "meetingRoomNote": "Private rooms upstairs — bookable via info@tomntomsatlanta.com"
+      },
+      "late": {
+        "tier": "10pm+",
+        "when": "Daily till 10pm"
+      },
+      "website": "https://www.tomntomsatlanta.com/"
     },
     {
       "name": "Gonggan ATL",
@@ -836,7 +1157,17 @@
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Gonggan%20ATL%202645%20N%20Berkeley%20Lake%20Rd%20Duluth%20GA",
       "yelpUrl": "https://www.yelp.com/biz/gong-gan-duluth",
       "city": "Duluth",
-      "addrKey": "duluth-2645-nberkeley"
+      "addrKey": "duluth-2645-nberkeley",
+      "cw": {
+        "tier": "good",
+        "note": "Minimalist study spot — only Fri-Sun.",
+        "hasMeetingRoom": false
+      },
+      "late": {
+        "tier": "10pm+",
+        "when": "Fri-Sun till 11pm"
+      },
+      "website": "https://www.instagram.com/gonggan.atl/"
     },
     {
       "name": "Kafeiin",
@@ -858,7 +1189,17 @@
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Kafeiin%203865%20Venture%20Dr%20Duluth%20GA",
       "yelpUrl": "https://www.yelp.com/biz/kafeiin-duluth",
       "city": "Duluth",
-      "addrKey": "duluth-3865-venture"
+      "addrKey": "duluth-3865-venture",
+      "cw": {
+        "tier": "excellent",
+        "note": "Modern minimalist, Wi-Fi, comfy seating, open late.",
+        "hasMeetingRoom": false
+      },
+      "late": {
+        "tier": "10pm+",
+        "when": "Fri-Sat till 11pm"
+      },
+      "website": "https://www.instagram.com/kafeiin.coffee/"
     },
     {
       "name": "Fujiissa",
@@ -880,7 +1221,13 @@
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Fujiissa%203875%20Venture%20Dr%20Duluth%20GA",
       "yelpUrl": "https://www.yelp.com/biz/fujiissa-duluth",
       "city": "Duluth",
-      "addrKey": "duluth-3875-venture"
+      "addrKey": "duluth-3875-venture",
+      "cw": {
+        "tier": "limited",
+        "note": "Counter inside Tokyo Kuma food court.",
+        "hasMeetingRoom": false
+      },
+      "website": "https://fujiissa.com/"
     },
     {
       "name": "Yezi Coconut Dessert",
@@ -902,7 +1249,13 @@
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Yezi%20Coconut%20Dessert%202174%20Pleasant%20Hill%20Rd%20Duluth%20GA",
       "yelpUrl": "https://www.yelp.com/biz/yezi-coconut-dessert-duluth",
       "city": "Duluth",
-      "addrKey": "duluth-2174-pleasanthill"
+      "addrKey": "duluth-2174-pleasanthill",
+      "cw": {
+        "tier": "limited",
+        "note": "Small dessert shop — not a sit-and-work spot.",
+        "hasMeetingRoom": false
+      },
+      "website": "https://www.yezicoconutatl.com/"
     },
     {
       "name": "Fluffy Fluffy Dessert Cafe",
@@ -924,7 +1277,17 @@
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Fluffy%20Fluffy%20Dessert%20Cafe%202180%20Pleasant%20Hill%20Rd%20Duluth%20GA",
       "yelpUrl": "https://www.yelp.com/biz/fluffy-fluffy-dessert-cafe-duluth",
       "city": "Duluth",
-      "addrKey": "duluth-2180-pleasanthill"
+      "addrKey": "duluth-2180-pleasanthill",
+      "cw": {
+        "tier": "limited",
+        "note": "Dine-and-leave dessert cafe.",
+        "hasMeetingRoom": false
+      },
+      "late": {
+        "tier": "10pm+",
+        "when": "Daily till 10pm"
+      },
+      "website": "https://www.fluffyfluffy.com/locations/duluth"
     },
     {
       "name": "Qamaria Yemeni Coffee Co.",
@@ -946,7 +1309,17 @@
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Qamaria%20Yemeni%20Coffee%202645%20N%20Berkeley%20Lake%20Rd%20Duluth%20GA",
       "yelpUrl": "https://www.yelp.com/biz/qamaria-yemeni-coffee-duluth",
       "city": "Duluth",
-      "addrKey": "duluth-2645-nberkeley"
+      "addrKey": "duluth-2645-nberkeley",
+      "cw": {
+        "tier": "excellent",
+        "note": "3,600 sqft, ~140 seats, open till late — built for studying.",
+        "hasMeetingRoom": false
+      },
+      "late": {
+        "tier": "midnight",
+        "when": "Fri-Sat till midnight; rest till 11pm"
+      },
+      "website": "https://www.instagram.com/qamariacoffeeatl/"
     },
     {
       "name": "Yibna Cafe",
@@ -968,7 +1341,13 @@
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Yibna%20Cafe%203700%20Crestwood%20Pkwy%20Duluth%20GA",
       "yelpUrl": "https://www.yelp.com/biz/yibna-caf%C3%A9-duluth",
       "city": "Duluth",
-      "addrKey": "duluth-3700-crestwood"
+      "addrKey": "duluth-3700-crestwood",
+      "cw": {
+        "tier": "good",
+        "note": "Plenty of chairs and outdoor seating.",
+        "hasMeetingRoom": false
+      },
+      "website": "https://yibnacafe.com/"
     },
     {
       "name": "El Cafe by La Abuela",
@@ -990,7 +1369,17 @@
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=El%20Cafe%20by%20La%20Abuela%201630%20Pleasant%20Hill%20Rd%20Duluth%20GA",
       "yelpUrl": "https://www.yelp.com/biz/el-cafe-by-la-abuela-duluth-2",
       "city": "Duluth",
-      "addrKey": "duluth-1630-pleasanthill"
+      "addrKey": "duluth-1630-pleasanthill",
+      "cw": {
+        "tier": "good",
+        "note": "Dine-in works; not marketed for studying.",
+        "hasMeetingRoom": false
+      },
+      "late": {
+        "tier": "10pm+",
+        "when": "Fri-Sat & Sun till 11pm"
+      },
+      "website": "https://www.elcafebylaabuela.com/"
     },
     {
       "name": "Date un Gusto",
@@ -1012,7 +1401,17 @@
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Date%20un%20Gusto%203350%20Steve%20Reynolds%20Blvd%20Duluth%20GA",
       "yelpUrl": "https://www.yelp.com/biz/date-un-gusto-duluth",
       "city": "Duluth",
-      "addrKey": "duluth-3350-steve"
+      "addrKey": "duluth-3350-steve",
+      "cw": {
+        "tier": "good",
+        "note": "Latin bakery + coffee, modest dine-in.",
+        "hasMeetingRoom": false
+      },
+      "late": {
+        "tier": "10pm+",
+        "when": "Fri-Sat till 11pm"
+      },
+      "website": "https://www.instagram.com/dateungusto.atl/"
     },
     {
       "name": "7 Leaves Cafe",
@@ -1034,7 +1433,17 @@
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=7%20Leaves%20Cafe%204020%20Satellite%20Blvd%20Duluth%20GA",
       "yelpUrl": "https://www.yelp.com/biz/7-leaves-cafe-duluth-duluth",
       "city": "Duluth",
-      "addrKey": "duluth-4020-satellite"
+      "addrKey": "duluth-4020-satellite",
+      "cw": {
+        "tier": "good",
+        "note": "Wi-Fi; medium size, fills quickly.",
+        "hasMeetingRoom": false
+      },
+      "late": {
+        "tier": "10pm+",
+        "when": "Fri-Sat till 10pm"
+      },
+      "website": "https://7leavescafe.com/locations/satellite/"
     },
     {
       "name": "The Quynh Cafe",
@@ -1056,7 +1465,13 @@
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=The%20Quynh%20Cafe%203665%20Club%20Dr%20Duluth%20GA",
       "yelpUrl": "https://www.yelp.com/biz/the-quynh-cafe-duluth",
       "city": "Duluth",
-      "addrKey": "duluth-3665-club"
+      "addrKey": "duluth-3665-club",
+      "cw": {
+        "tier": "good",
+        "note": "Vietnamese coffee/boba; on local quiet-study lists.",
+        "hasMeetingRoom": false
+      },
+      "website": "https://www.facebook.com/theQuynhCafe/"
     },
     {
       "name": "Lemon Sweets Bakery & Cafe",
@@ -1078,7 +1493,13 @@
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Lemon%20Sweets%20Bakery%203531%20Peachtree%20Industrial%20Blvd%20Duluth%20GA",
       "yelpUrl": "https://www.yelp.com/biz/lemon-sweets-bakery-and-cafe-duluth",
       "city": "Duluth",
-      "addrKey": "duluth-3531-peachtree"
+      "addrKey": "duluth-3531-peachtree",
+      "cw": {
+        "tier": "good",
+        "note": "Cozy, fine for studying with friends.",
+        "hasMeetingRoom": false
+      },
+      "website": "https://www.lemonsweetsbakery.com/"
     },
     {
       "name": "Cafe Rothem",
@@ -1100,7 +1521,14 @@
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Cafe%20Rothem%203585%20Peachtree%20Industrial%20Blvd%20Duluth%20GA",
       "yelpUrl": "https://www.yelp.com/biz/cafe-rothem-duluth",
       "city": "Duluth",
-      "addrKey": "duluth-3585-peachtree"
+      "addrKey": "duluth-3585-peachtree",
+      "cw": {
+        "tier": "excellent",
+        "note": "Outlets at nearly every seat, jazz, books — a study haven.",
+        "hasMeetingRoom": true,
+        "meetingRoomNote": "Conference room + private meeting room rentable hourly or daily."
+      },
+      "website": "https://www.facebook.com/caferothem/"
     },
     {
       "name": "Wich Tea",
@@ -1122,7 +1550,13 @@
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Wich%20Tea%203350%20Steve%20Reynolds%20Blvd%20Duluth%20GA",
       "yelpUrl": "https://www.yelp.com/biz/wich-tea-duluth-3",
       "city": "Duluth",
-      "addrKey": "duluth-3350-steve"
+      "addrKey": "duluth-3350-steve",
+      "cw": {
+        "tier": "good",
+        "note": "Plenty of seating, board games; takeout-leaning.",
+        "hasMeetingRoom": false
+      },
+      "website": "https://linktr.ee/wichteabanhmi"
     },
     {
       "name": "Tea Drip",
@@ -1144,7 +1578,17 @@
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Tea%20Drip%203675%20Satellite%20Blvd%20Duluth%20GA",
       "yelpUrl": "https://www.yelp.com/biz/tea-drip-duluth",
       "city": "Duluth",
-      "addrKey": "duluth-3675-satellite"
+      "addrKey": "duluth-3675-satellite",
+      "cw": {
+        "tier": "good",
+        "note": "Outdoor seating, Wi-Fi; small.",
+        "hasMeetingRoom": false
+      },
+      "late": {
+        "tier": "10pm+",
+        "when": "Fri-Sat till 10pm"
+      },
+      "website": "https://www.instagram.com/teadrip.duluth/"
     },
     {
       "name": "Cuckoo's Cafe",
@@ -1166,7 +1610,17 @@
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Cuckoo%27s%20Cafe%203182%20Steve%20Reynolds%20Blvd%20Duluth%20GA",
       "yelpUrl": "https://www.yelp.com/biz/cuckoos-cafe-duluth",
       "city": "Duluth",
-      "addrKey": "duluth-3182-steve"
+      "addrKey": "duluth-3182-steve",
+      "cw": {
+        "tier": "excellent",
+        "note": "Spacious, outlets, private curtained booths.",
+        "hasMeetingRoom": false
+      },
+      "late": {
+        "tier": "10pm+",
+        "when": "Mon-Tue, Thu-Sun till 11pm"
+      },
+      "website": "https://cuckooscafeduluth.com/"
     },
     {
       "name": "Chuchat",
@@ -1188,7 +1642,17 @@
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Chuchat%206000%20Medlock%20Bridge%20Pkwy%20Johns%20Creek%20GA",
       "yelpUrl": "https://www.yelp.com/biz/chuchat-johns-creek",
       "city": "Duluth",
-      "addrKey": "duluth-6000-medlock"
+      "addrKey": "duluth-6000-medlock",
+      "cw": {
+        "tier": "good",
+        "note": "Spacious with outdoor option; study-friendly.",
+        "hasMeetingRoom": false
+      },
+      "late": {
+        "tier": "10pm+",
+        "when": "Daily till 10pm"
+      },
+      "website": "https://www.chuchatusa.com/"
     },
     {
       "name": "Art's Bakery & Cafe",
@@ -1210,7 +1674,17 @@
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Art%27s%20Bakery%20%26%20Cafe%204500%20Satellite%20Blvd%20Duluth%20GA",
       "yelpUrl": "https://www.yelp.com/biz/arts-bakery-and-cafe-duluth",
       "city": "Duluth",
-      "addrKey": "duluth-4500-satellite"
+      "addrKey": "duluth-4500-satellite",
+      "cw": {
+        "tier": "good",
+        "note": "Indoor and outdoor seating.",
+        "hasMeetingRoom": false
+      },
+      "late": {
+        "tier": "10pm+",
+        "when": "Fri-Sat till 10pm"
+      },
+      "website": "https://www.facebook.com/artsbakeryandcafe/"
     },
     {
       "name": "Artistea",
@@ -1232,7 +1706,17 @@
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Artistea%203545%20Peachtree%20Industrial%20Blvd%20Duluth%20GA",
       "yelpUrl": "https://www.yelp.com/biz/artistea-duluth",
       "city": "Duluth",
-      "addrKey": "duluth-3545-peachtree"
+      "addrKey": "duluth-3545-peachtree",
+      "cw": {
+        "tier": "good",
+        "note": "Family-friendly, outdoor seating, Wi-Fi.",
+        "hasMeetingRoom": false
+      },
+      "late": {
+        "tier": "10pm+",
+        "when": "Fri-Sat till 11pm"
+      },
+      "website": "https://artistea.shop/"
     },
     {
       "name": "Hayat Coffee",
@@ -1254,7 +1738,17 @@
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Hayat%20Coffee%202870%20Peachtree%20Industrial%20Blvd%20Duluth%20GA",
       "yelpUrl": "https://www.yelp.com/biz/hayat-coffee-duluth",
       "city": "Duluth",
-      "addrKey": "duluth-2870-peachtree"
+      "addrKey": "duluth-2870-peachtree",
+      "cw": {
+        "tier": "excellent",
+        "note": "3,600 sqft, ~100-120 seats with study and lounge areas; open past midnight nightly.",
+        "hasMeetingRoom": false
+      },
+      "late": {
+        "tier": "midnight",
+        "when": "Fri-Sat till 2am; rest of week till 1am"
+      },
+      "website": "https://www.instagram.com/hayatcoffee.co/"
     },
     {
       "name": "Cafe Flat",
@@ -1276,7 +1770,17 @@
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Cafe%20Flat%202227%20Duluth%20Hwy%20Duluth%20GA",
       "yelpUrl": "https://www.yelp.com/biz/cafe-flat-duluth",
       "city": "Duluth",
-      "addrKey": "duluth-2227-duluth"
+      "addrKey": "duluth-2227-duluth",
+      "cw": {
+        "tier": "excellent",
+        "note": "Spacious clean design built for working and studying; locally roasted coffee.",
+        "hasMeetingRoom": false
+      },
+      "late": {
+        "tier": "10pm+",
+        "when": "Fri-Sat till 10pm"
+      },
+      "website": "https://joe.coffee/locations/ga/duluth/cafe-flat-duluth/"
     },
     {
       "name": "Glaze Tea Duluth",
@@ -1298,7 +1802,17 @@
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Glaze%20Tea%202205%20Pleasant%20Hill%20Rd%20Duluth%20GA",
       "yelpUrl": "https://www.yelp.com/biz/glaze-tea-duluth-duluth-4",
       "city": "Duluth",
-      "addrKey": "duluth-2205-pleasanthill"
+      "addrKey": "duluth-2205-pleasanthill",
+      "cw": {
+        "tier": "good",
+        "note": "Spacious, clean and inviting; kiosk ordering, dine-in friendly.",
+        "hasMeetingRoom": false
+      },
+      "late": {
+        "tier": "midnight",
+        "when": "Fri-Sat till midnight; rest till 11pm"
+      },
+      "website": "https://www.glazetea.com/"
     }
   ],
   "addr": {
@@ -1515,527 +2029,8 @@
     "duluth-2227-duluth": "Sugarloaf",
     "duluth-2205-pleasanthill": "Pleasant Hill"
   },
-  "cws": {
-    "Sweet Hut Bakery & Cafe": {
-      "tier": "excellent",
-      "note": "Large seating, Wi-Fi, outlets — popular student spot.",
-      "hasMeetingRoom": true,
-      "meetingRoomNote": "Private meeting room — contact catering@sweethut.com"
-    },
-    "Cafe Mozart Bakery": {
-      "tier": "excellent",
-      "note": "Renovated work area, natural light, free parking.",
-      "hasMeetingRoom": false
-    },
-    "TwoHa's Cafe": {
-      "tier": "excellent",
-      "note": "Dividers for privacy, tons of seating, open till midnight.",
-      "hasMeetingRoom": false
-    },
-    "White Windmill Bakery & Cafe": {
-      "tier": "excellent",
-      "note": "Quiet, popular with students.",
-      "hasMeetingRoom": true,
-      "meetingRoomNote": "Private booth-style rooms in the back, bookable on demand."
-    },
-    "Land of a Thousand Hills Coffee": {
-      "tier": "excellent",
-      "note": "Connected to Thrive Coworking, built for work.",
-      "hasMeetingRoom": false
-    },
-    "Alchemist on the Divide": {
-      "tier": "good",
-      "note": "Plenty of seating, but trendy and busy.",
-      "hasMeetingRoom": false
-    },
-    "The Cream": {
-      "tier": "good",
-      "note": "Many outlets, but more brunch/dessert leaning.",
-      "hasMeetingRoom": false
-    },
-    "Ginkgo Bakery & Cafe": {
-      "tier": "good",
-      "note": "Warm atmosphere; workable but small.",
-      "hasMeetingRoom": false
-    },
-    "Coffee That Matters": {
-      "tier": "excellent",
-      "note": "Large, quiet, built for remote work and study.",
-      "hasMeetingRoom": false
-    },
-    "The Coffee By Hand": {
-      "tier": "good",
-      "note": "Wi-Fi, good weekday afternoons; livelier at night.",
-      "hasMeetingRoom": false
-    },
-    "OneZo Boba Tea": {
-      "tier": "limited",
-      "note": "Small boba shop, quick-grab.",
-      "hasMeetingRoom": false
-    },
-    "Molly Tea": {
-      "tier": "limited",
-      "note": "Designed for to-go.",
-      "hasMeetingRoom": false
-    },
-    "ChiCha San Chen": {
-      "tier": "limited",
-      "note": "Crowded seating, better for short visits.",
-      "hasMeetingRoom": false
-    },
-    "Matcha Cafe Maiko": {
-      "tier": "limited",
-      "note": "Dessert-focused with limited seating.",
-      "hasMeetingRoom": false
-    },
-    "Hiro Tea Bar": {
-      "tier": "good",
-      "note": "Peaceful, covered outdoor seating.",
-      "hasMeetingRoom": false
-    },
-    "Ding Tea": {
-      "tier": "limited",
-      "note": "Primarily a to-go boba shop.",
-      "hasMeetingRoom": false
-    },
-    "Tiger Sugar": {
-      "tier": "limited",
-      "note": "Limited seating, mostly to-go.",
-      "hasMeetingRoom": false
-    },
-    "Xing Fu Tang": {
-      "tier": "limited",
-      "note": "Small footprint, takeout-oriented.",
-      "hasMeetingRoom": false
-    },
-    "Goodwin Tea House & More": {
-      "tier": "good",
-      "note": "Workable with snacks; modest size.",
-      "hasMeetingRoom": false
-    },
-    "The Bep Teahouse": {
-      "tier": "good",
-      "note": "Generous seating, board games, gathering-oriented.",
-      "hasMeetingRoom": false
-    },
-    "Paris Baguette": {
-      "tier": "excellent",
-      "note": "Lots of tables, Wi-Fi, commonly used for studying.",
-      "hasMeetingRoom": false
-    },
-    "Bread Museum Bakery & Cafe": {
-      "tier": "good",
-      "note": "Cozy, casual; limited seating.",
-      "hasMeetingRoom": false
-    },
-    "Tous Les Jours": {
-      "tier": "good",
-      "note": "Inside H Mart, seating exists but not focused on work.",
-      "hasMeetingRoom": false
-    },
-    "Tree Story Bakery & Cafe": {
-      "tier": "excellent",
-      "note": "Quiet seating area for students and remote workers.",
-      "hasMeetingRoom": false
-    },
-    "Vincent Bakery & Cafe": {
-      "tier": "excellent",
-      "note": "Ample seating with outlets, library-like atmosphere.",
-      "hasMeetingRoom": false
-    },
-    "Hansel & Gretel Bakery Cafe": {
-      "tier": "excellent",
-      "note": "Spacious, charging spots, open late — can be noisy.",
-      "hasMeetingRoom": false
-    },
-    "Georgia French Bakery & Cafe": {
-      "tier": "good",
-      "note": "Cozy local bakery; workable but not a study mecca.",
-      "hasMeetingRoom": false
-    },
-    "Mai Bakery": {
-      "tier": "limited",
-      "note": "Inside Great Wall food court, no real cafe space.",
-      "hasMeetingRoom": false
-    },
-    "The Patio Cafe & Bakery": {
-      "tier": "good",
-      "note": "Plenty of indoor and patio seating.",
-      "hasMeetingRoom": false
-    },
-    "Shokku Bakery": {
-      "tier": "limited",
-      "note": "Inside Jusgo food court, counter service only.",
-      "hasMeetingRoom": false
-    },
-    "Forest Cafe": {
-      "tier": "good",
-      "note": "Comfy sofa seating, some charging spots.",
-      "hasMeetingRoom": false
-    },
-    "Cafe 104": {
-      "tier": "excellent",
-      "note": "Wi-Fi, outlets, open till 11pm — top-cited Duluth study spot.",
-      "hasMeetingRoom": false
-    },
-    "Boba Mocha": {
-      "tier": "good",
-      "note": "Cozy with couches, indoor + outdoor, board games.",
-      "hasMeetingRoom": false
-    },
-    "Long's Cafe 2": {
-      "tier": "good",
-      "note": "Small neighborhood Vietnamese cafe.",
-      "hasMeetingRoom": false
-    },
-    "Incha Duluth (Duck Ink + Boba)": {
-      "tier": "limited",
-      "note": "Paint-your-own-ceramics activity venue.",
-      "hasMeetingRoom": false
-    },
-    "Orange Coffee Bar": {
-      "tier": "excellent",
-      "note": "Quiet, Wi-Fi, ample parking — recommended for working.",
-      "hasMeetingRoom": false
-    },
-    "Tom N Toms Coffee Black": {
-      "tier": "excellent",
-      "note": "Huge 2-story cafe with upstairs study area.",
-      "hasMeetingRoom": true,
-      "meetingRoomNote": "Private rooms upstairs — bookable via info@tomntomsatlanta.com"
-    },
-    "Gonggan ATL": {
-      "tier": "good",
-      "note": "Minimalist study spot — only Fri-Sun.",
-      "hasMeetingRoom": false
-    },
-    "Kafeiin": {
-      "tier": "excellent",
-      "note": "Modern minimalist, Wi-Fi, comfy seating, open late.",
-      "hasMeetingRoom": false
-    },
-    "Fujiissa": {
-      "tier": "limited",
-      "note": "Counter inside Tokyo Kuma food court.",
-      "hasMeetingRoom": false
-    },
-    "Yezi Coconut Dessert": {
-      "tier": "limited",
-      "note": "Small dessert shop — not a sit-and-work spot.",
-      "hasMeetingRoom": false
-    },
-    "Fluffy Fluffy Dessert Cafe": {
-      "tier": "limited",
-      "note": "Dine-and-leave dessert cafe.",
-      "hasMeetingRoom": false
-    },
-    "Qamaria Yemeni Coffee Co.": {
-      "tier": "excellent",
-      "note": "3,600 sqft, ~140 seats, open till late — built for studying.",
-      "hasMeetingRoom": false
-    },
-    "Yibna Cafe": {
-      "tier": "good",
-      "note": "Plenty of chairs and outdoor seating.",
-      "hasMeetingRoom": false
-    },
-    "El Cafe by La Abuela": {
-      "tier": "good",
-      "note": "Dine-in works; not marketed for studying.",
-      "hasMeetingRoom": false
-    },
-    "Date un Gusto": {
-      "tier": "good",
-      "note": "Latin bakery + coffee, modest dine-in.",
-      "hasMeetingRoom": false
-    },
-    "7 Leaves Cafe": {
-      "tier": "good",
-      "note": "Wi-Fi; medium size, fills quickly.",
-      "hasMeetingRoom": false
-    },
-    "The Quynh Cafe": {
-      "tier": "good",
-      "note": "Vietnamese coffee/boba; on local quiet-study lists.",
-      "hasMeetingRoom": false
-    },
-    "Lemon Sweets Bakery & Cafe": {
-      "tier": "good",
-      "note": "Cozy, fine for studying with friends.",
-      "hasMeetingRoom": false
-    },
-    "Cafe Rothem": {
-      "tier": "excellent",
-      "note": "Outlets at nearly every seat, jazz, books — a study haven.",
-      "hasMeetingRoom": true,
-      "meetingRoomNote": "Conference room + private meeting room rentable hourly or daily."
-    },
-    "Wich Tea": {
-      "tier": "good",
-      "note": "Plenty of seating, board games; takeout-leaning.",
-      "hasMeetingRoom": false
-    },
-    "Tea Drip": {
-      "tier": "good",
-      "note": "Outdoor seating, Wi-Fi; small.",
-      "hasMeetingRoom": false
-    },
-    "Cuckoo's Cafe": {
-      "tier": "excellent",
-      "note": "Spacious, outlets, private curtained booths.",
-      "hasMeetingRoom": false
-    },
-    "Chuchat": {
-      "tier": "good",
-      "note": "Spacious with outdoor option; study-friendly.",
-      "hasMeetingRoom": false
-    },
-    "Art's Bakery & Cafe": {
-      "tier": "good",
-      "note": "Indoor and outdoor seating.",
-      "hasMeetingRoom": false
-    },
-    "Artistea": {
-      "tier": "good",
-      "note": "Family-friendly, outdoor seating, Wi-Fi.",
-      "hasMeetingRoom": false
-    },
-    "Hayat Coffee": {
-      "tier": "excellent",
-      "note": "3,600 sqft, ~100-120 seats with study and lounge areas; open past midnight nightly.",
-      "hasMeetingRoom": false
-    },
-    "Cafe Flat": {
-      "tier": "excellent",
-      "note": "Spacious clean design built for working and studying; locally roasted coffee.",
-      "hasMeetingRoom": false
-    },
-    "Glaze Tea Duluth": {
-      "tier": "good",
-      "note": "Spacious, clean and inviting; kiosk ordering, dine-in friendly.",
-      "hasMeetingRoom": false
-    }
-  },
-  "late": {
-    "Sweet Hut Bakery & Cafe": {
-      "tier": "10pm+",
-      "when": "Fri-Sat until 11pm; weekdays till 10pm"
-    },
-    "Cafe Mozart Bakery": {
-      "tier": "midnight",
-      "when": "Fri-Sat till midnight; weekdays till 10pm"
-    },
-    "TwoHa's Cafe": {
-      "tier": "midnight",
-      "when": "Fri-Sat till 1am; rest of week till midnight"
-    },
-    "White Windmill Bakery & Cafe": {
-      "tier": "10pm+",
-      "when": "Fri-Sat till 11pm; weekdays till 10pm"
-    },
-    "The Cream": {
-      "tier": "10pm+",
-      "when": "Fri-Sat till 11pm; weekdays till 10pm"
-    },
-    "The Coffee By Hand": {
-      "tier": "midnight",
-      "when": "Fri-Sat till midnight; rest till 11pm"
-    },
-    "OneZo Boba Tea": {
-      "tier": "10pm+",
-      "when": "Fri-Sun till 11:30pm"
-    },
-    "Molly Tea": {
-      "tier": "10pm+",
-      "when": "Daily till 10:10pm"
-    },
-    "ChiCha San Chen": {
-      "tier": "10pm+",
-      "when": "Fri-Sat till 10pm"
-    },
-    "Matcha Cafe Maiko": {
-      "tier": "10pm+",
-      "when": "Fri-Sat till 10:30pm"
-    },
-    "Hiro Tea Bar": {
-      "tier": "10pm+",
-      "when": "Fri-Sat till 10pm"
-    },
-    "Ding Tea": {
-      "tier": "10pm+",
-      "when": "Daily till 10pm"
-    },
-    "Tiger Sugar": {
-      "tier": "10pm+",
-      "when": "Fri-Sat till 11pm"
-    },
-    "Xing Fu Tang": {
-      "tier": "10pm+",
-      "when": "Fri-Sat till 10:30pm"
-    },
-    "Goodwin Tea House & More": {
-      "tier": "10pm+",
-      "when": "Tue-Sun till 10pm"
-    },
-    "The Bep Teahouse": {
-      "tier": "midnight",
-      "when": "Fri-Sat till midnight; rest till 11pm"
-    },
-    "Bread Museum Bakery & Cafe": {
-      "tier": "10pm+",
-      "when": "Fri-Sat till 10pm"
-    },
-    "Tree Story Bakery & Cafe": {
-      "tier": "10pm+",
-      "when": "Fri-Sat till 10pm"
-    },
-    "Hansel & Gretel Bakery Cafe": {
-      "tier": "midnight",
-      "when": "Fri-Sat till midnight; rest till 11pm"
-    },
-    "Forest Cafe": {
-      "tier": "10pm+",
-      "when": "Daily till 11pm"
-    },
-    "Cafe 104": {
-      "tier": "10pm+",
-      "when": "Daily till 11pm"
-    },
-    "Boba Mocha": {
-      "tier": "10pm+",
-      "when": "Fri-Sat till 11pm"
-    },
-    "Orange Coffee Bar": {
-      "tier": "10pm+",
-      "when": "Daily till 10pm"
-    },
-    "Tom N Toms Coffee Black": {
-      "tier": "10pm+",
-      "when": "Daily till 10pm"
-    },
-    "Gonggan ATL": {
-      "tier": "10pm+",
-      "when": "Fri-Sun till 11pm"
-    },
-    "Kafeiin": {
-      "tier": "10pm+",
-      "when": "Fri-Sat till 11pm"
-    },
-    "Fluffy Fluffy Dessert Cafe": {
-      "tier": "10pm+",
-      "when": "Daily till 10pm"
-    },
-    "Qamaria Yemeni Coffee Co.": {
-      "tier": "midnight",
-      "when": "Fri-Sat till midnight; rest till 11pm"
-    },
-    "El Cafe by La Abuela": {
-      "tier": "10pm+",
-      "when": "Fri-Sat & Sun till 11pm"
-    },
-    "Date un Gusto": {
-      "tier": "10pm+",
-      "when": "Fri-Sat till 11pm"
-    },
-    "7 Leaves Cafe": {
-      "tier": "10pm+",
-      "when": "Fri-Sat till 10pm"
-    },
-    "Tea Drip": {
-      "tier": "10pm+",
-      "when": "Fri-Sat till 10pm"
-    },
-    "Cuckoo's Cafe": {
-      "tier": "10pm+",
-      "when": "Mon-Tue, Thu-Sun till 11pm"
-    },
-    "Chuchat": {
-      "tier": "10pm+",
-      "when": "Daily till 10pm"
-    },
-    "Art's Bakery & Cafe": {
-      "tier": "10pm+",
-      "when": "Fri-Sat till 10pm"
-    },
-    "Artistea": {
-      "tier": "10pm+",
-      "when": "Fri-Sat till 11pm"
-    },
-    "Hayat Coffee": {
-      "tier": "midnight",
-      "when": "Fri-Sat till 2am; rest of week till 1am"
-    },
-    "Cafe Flat": {
-      "tier": "10pm+",
-      "when": "Fri-Sat till 10pm"
-    },
-    "Glaze Tea Duluth": {
-      "tier": "midnight",
-      "when": "Fri-Sat till midnight; rest till 11pm"
-    }
-  },
-  "websites": {
-    "Sweet Hut Bakery & Cafe": "https://www.sweethutbakery.com",
-    "Cafe Mozart Bakery": "https://www.cafemozartbakery.com",
-    "TwoHa's Cafe": "https://www.twohascafe.com",
-    "White Windmill Bakery & Cafe": "https://www.whitewbakerycafe.com",
-    "Land of a Thousand Hills Coffee": "https://landofathousandhills.com/pages/location-duluth-georgia",
-    "Alchemist on the Divide": "https://alchemist-on-the-divide.grubbio.com",
-    "The Cream": "https://www.thecreambakery.com",
-    "Ginkgo Bakery & Cafe": "https://www.ginkgobakery.com",
-    "Coffee That Matters": "https://phoenixroasters.coffee",
-    "The Coffee By Hand": "https://www.instagram.com/thecoffeebyhandatl",
-    "OneZo Boba Tea": "https://www.onezo.us",
-    "Molly Tea": "https://mollyteaatl.com",
-    "ChiCha San Chen": "https://chichasanchenusa.com",
-    "Matcha Cafe Maiko": "https://www.matchacafeatl.com",
-    "Hiro Tea Bar": "https://www.hiroteabar.com",
-    "Ding Tea": "https://www.instagram.com/dingteaduluth",
-    "Tiger Sugar": "https://en.tigersugar.com",
-    "Xing Fu Tang": "https://www.xingfutangga.com",
-    "Goodwin Tea House & More": "https://www.goodwinteahouse.com",
-    "The Bep Teahouse": "https://thebepteahouse.com/locations/the-bep-teahouse-duluth/",
-    "Paris Baguette": "https://parisbaguette.com/locations/ga/duluth/3492-satellite-boulevard/",
-    "Bread Museum Bakery & Cafe": "https://thebreadmuseum.com",
-    "Tous Les Jours": "https://tljus.com/stores/duluth-2550-pleasant-hill-rd",
-    "Tree Story Bakery & Cafe": "https://www.facebook.com/TreeStoryCafe/",
-    "Vincent Bakery & Cafe": "https://www.instagram.com/vincentbakeryofficial",
-    "Hansel & Gretel Bakery Cafe": "https://www.instagram.com/hanselgretel.bakery",
-    "Georgia French Bakery & Cafe": "https://georgiafrenchbakerycafe.com",
-    "Mai Bakery": null,
-    "The Patio Cafe & Bakery": "https://www.patiocafebakery.com/",
-    "Shokku Bakery": "https://www.instagram.com/shokkubakery/",
-    "Forest Cafe": "https://www.instagram.com/forest_cafe_ga/",
-    "Cafe 104": "https://www.cafe104duluth.com/",
-    "Boba Mocha": "https://www.bobamochaonline.com/",
-    "Long's Cafe 2": "https://www.facebook.com/people/Longs-Cafe-2/61553102627374/",
-    "Incha Duluth (Duck Ink + Boba)": "https://www.instagram.com/inchaduckink/",
-    "Orange Coffee Bar": "https://www.instagram.com/orangecoffeebar.duluth/",
-    "Tom N Toms Coffee Black": "https://www.tomntomsatlanta.com/",
-    "Gonggan ATL": "https://www.instagram.com/gonggan.atl/",
-    "Kafeiin": "https://www.instagram.com/kafeiin.coffee/",
-    "Fujiissa": "https://fujiissa.com/",
-    "Yezi Coconut Dessert": "https://www.yezicoconutatl.com/",
-    "Fluffy Fluffy Dessert Cafe": "https://www.fluffyfluffy.com/locations/duluth",
-    "Qamaria Yemeni Coffee Co.": "https://www.instagram.com/qamariacoffeeatl/",
-    "Yibna Cafe": "https://yibnacafe.com/",
-    "El Cafe by La Abuela": "https://www.elcafebylaabuela.com/",
-    "Date un Gusto": "https://www.instagram.com/dateungusto.atl/",
-    "7 Leaves Cafe": "https://7leavescafe.com/locations/satellite/",
-    "The Quynh Cafe": "https://www.facebook.com/theQuynhCafe/",
-    "Lemon Sweets Bakery & Cafe": "https://www.lemonsweetsbakery.com/",
-    "Cafe Rothem": "https://www.facebook.com/caferothem/",
-    "Wich Tea": "https://linktr.ee/wichteabanhmi",
-    "Tea Drip": "https://www.instagram.com/teadrip.duluth/",
-    "Cuckoo's Cafe": "https://cuckooscafeduluth.com/",
-    "Chuchat": "https://www.chuchatusa.com/",
-    "Art's Bakery & Cafe": "https://www.facebook.com/artsbakeryandcafe/",
-    "Artistea": "https://artistea.shop/",
-    "Hayat Coffee": "https://www.instagram.com/hayatcoffee.co/",
-    "Cafe Flat": "https://joe.coffee/locations/ga/duluth/cafe-flat-duluth/",
-    "Glaze Tea Duluth": "https://www.glazetea.com/"
-  },
   "cities": [
     "Duluth"
-  ]
+  ],
+  "regionLabel": "Duluth"
 }

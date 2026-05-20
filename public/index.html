@@ -340,7 +340,7 @@ const CATS = {
   "Specialty":    { hex: "#7b6cb8", icon: "✦"  }
 };
 
-let SHOPS, ADDR, NEIGHBORHOODS, CWS, LATE, WEBSITES, CITIES;
+let SHOPS, ADDR, NEIGHBORHOODS, CITIES, REGION_LABEL, CHECKED_MONTH;
 
 fetch('./shops.json')
   .then(r => r.json())
@@ -348,10 +348,9 @@ fetch('./shops.json')
     SHOPS = data.shops;
     ADDR = data.addr;
     NEIGHBORHOODS = data.neighborhoods;
-    CWS = data.cws;
-    LATE = data.late;
-    WEBSITES = data.websites;
     CITIES = data.cities || ['Duluth'];
+    REGION_LABEL = data.regionLabel || (CITIES.length === 1 ? CITIES[0] : 'Duluth & Nearby');
+    CHECKED_MONTH = data.checkedMonth || '';
     boot();
   })
   .catch(err => {
@@ -364,7 +363,9 @@ function boot() {
   SHOPS.forEach(s => {
     const key = s.addrKey;
     if (key && ADDR[key]) { s.lat = ADDR[key].lat; s.lng = ADDR[key].lng; }
-    s.id = slug(s.name);
+    // Include city slug in the id so the same shop name in two cities
+    // never collides on DOM data-id or selection lookups.
+    s.id = slug(s.city || 'duluth') + '-' + slug(s.name);
     s.neighborhood = NEIGHBORHOODS[key] || s.city || "Duluth";
   });
 
@@ -423,8 +424,8 @@ function boot() {
 
   function compactTags(shop) {
     const tags = [];
-    const ln = LATE[shop.name];
-    const cw = CWS[shop.name] || {};
+    const ln = shop.late;
+    const cw = shop.cw || {};
     if (ln && ln.tier === 'midnight') tags.push('Until midnight');
     else if (ln) tags.push('Open late');
     if (cw.hasMeetingRoom) tags.push('Meeting room');
@@ -438,8 +439,8 @@ function boot() {
 
   function bestForTags(shop) {
     const tags = [];
-    const cw = CWS[shop.name] || {};
-    const ln = LATE[shop.name];
+    const cw = shop.cw || {};
+    const ln = shop.late;
     if (cw.tier === 'excellent') tags.push({ label: 'Work', cls: 'work', icon: '💻' });
     if (cw.hasMeetingRoom) tags.push({ label: 'Meetings', cls: 'work', icon: '🤝' });
     if (ln && ln.tier === 'midnight') tags.push({ label: 'Until midnight', cls: 'late', icon: '🦉' });
@@ -555,10 +556,10 @@ function boot() {
     featChipsEl.style.display = 'inline-flex';
     featChipsEl.style.gap = '6px';
     featChipsEl.style.flexWrap = 'wrap';
-    const workCount = SHOPS.filter(s => (CWS[s.name]||{}).tier === 'excellent').length;
-    const meetingCount = SHOPS.filter(s => (CWS[s.name]||{}).hasMeetingRoom).length;
-    const lateCount = SHOPS.filter(s => LATE[s.name]).length;
-    const midnightCount = SHOPS.filter(s => (LATE[s.name]||{}).tier === 'midnight').length;
+    const workCount = SHOPS.filter(s => (s.cw||{}).tier === 'excellent').length;
+    const meetingCount = SHOPS.filter(s => (s.cw||{}).hasMeetingRoom).length;
+    const lateCount = SHOPS.filter(s => s.late).length;
+    const midnightCount = SHOPS.filter(s => (s.late||{}).tier === 'midnight').length;
     const features = [
       { key: 'work',     label: 'Work-friendly', icon: '💻', themeColor: '#2e7d4f', count: workCount },
       { key: 'meeting',  label: 'Meeting room',  icon: '🤝', themeColor: '#7a5635', count: meetingCount },
@@ -609,7 +610,7 @@ function boot() {
 
   function makeIcon(shop, isSelected) {
     const c = CATS[shop.category] || { hex: '#999', icon: '•' };
-    const late = LATE[shop.name] ? ' late' : '';
+    const late = shop.late ? ' late' : '';
     const sel = isSelected ? ' selected' : '';
     const name = escapeHtml(shop.name);
     return L.divIcon({
@@ -798,8 +799,8 @@ function boot() {
     const term = state.search.toLowerCase().trim();
     if (state.activeCity && s.city !== state.activeCity) return false;
     if (state.categories.size && !state.categories.has(s.category)) return false;
-    const cw = CWS[s.name] || {};
-    const ln = LATE[s.name];
+    const cw = s.cw || {};
+    const ln = s.late;
     if (state.features.has('work') && cw.tier !== 'excellent') return false;
     if (state.features.has('meeting') && !cw.hasMeetingRoom) return false;
     if (state.features.has('late') && !ln) return false;
@@ -903,9 +904,9 @@ function boot() {
 
   function renderDetail(shop) {
     const cat = CATS[shop.category] || {};
-    const cw = CWS[shop.name];
-    const ln = LATE[shop.name];
-    const site = WEBSITES[shop.name];
+    const cw = shop.cw;
+    const ln = shop.late;
+    const site = shop.website;
     const host = websiteHost(site);
     const bft = bestForTags(shop);
     const ratingHtml = shop.rating
@@ -1024,7 +1025,26 @@ function boot() {
     }
   }
 
+  // Title / brand / freshness all reflect the current scope (active city, or
+  // the whole curated region when no single city is selected).
+  const brandEl = document.querySelector('.brand');
+  const freshnessEl = document.querySelector('.freshness');
+  function updateHeader() {
+    const scope = state.activeCity || REGION_LABEL;
+    const count = state.activeCity
+      ? SHOPS.filter(s => s.city === state.activeCity).length
+      : SHOPS.length;
+    const title = 'Coffee in ' + scope;
+    document.title = title;
+    if (brandEl) brandEl.textContent = title;
+    if (freshnessEl) {
+      freshnessEl.textContent = count + ' cafés, bakeries & tea shops in ' + scope
+        + (CHECKED_MONTH ? ' · checked ' + CHECKED_MONTH : '');
+    }
+  }
+
   function render() {
+    updateHeader();
     renderChips();
     if (state.selected) renderDetail(state.selected);
     renderList();
@@ -1032,13 +1052,10 @@ function boot() {
 
   searchInput.addEventListener('input', e => { state.search = e.target.value; renderList(); });
 
-  // Initialize dynamic freshness count with hardcoded date
-  document.querySelector('.freshness').textContent = `${SHOPS.length} cafés, bakeries & tea shops · checked May 2026`;
-
   render();
 
   // Expose key globals for console testing and the test suite in TESTS.md.
-  Object.assign(window, { SHOPS, ADDR, NEIGHBORHOODS, CWS, LATE, WEBSITES, CATS, CITIES, map, markers, clusterGroup, selectCity });
+  Object.assign(window, { SHOPS, ADDR, NEIGHBORHOODS, CATS, CITIES, REGION_LABEL, map, markers, clusterGroup, selectCity });
 }
 
 </script>
