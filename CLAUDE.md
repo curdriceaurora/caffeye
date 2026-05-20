@@ -11,8 +11,8 @@ For design rationale and the seven product principles, read `VISION.md` first.
 ## File layout
 
 ```
-index.html        # the entire app (~91 KB)
-wrangler.jsonc    # Cloudflare deploy config
+public/index.html # the entire app (~91 KB) — the ONLY file Cloudflare publishes
+wrangler.jsonc    # Cloudflare deploy config; assets.directory = ./public
 VISION.md         # principles + design rationale
 REQUIREMENTS.md   # numbered requirements (R1.x – R10.x)
 TESTS.md          # tests traced to requirement IDs
@@ -22,25 +22,25 @@ README.md         # public-facing overview
 ## Run locally
 
 ```sh
+cd public
 python3 -m http.server 8765
 # open http://127.0.0.1:8765
 ```
 
-## Deploy — important security pattern
+## Deploy — auto-deploy via Cloudflare Git integration
 
-**Never run `wrangler deploy` from this project folder.** Wrangler treats every file under `assets.directory` as a public static asset, and the deploy process creates `.wrangler/cache/wrangler-account.json` (containing the OAuth token) in the working directory. If that ends up under `directory`, it gets uploaded and publicly served. This has happened once before — see the incident reasoning in `VISION.md`.
+The Cloudflare Worker `duluth-coffee-shoppes` is connected to the GitHub repo `curdriceaurora/caffeye`. **Pushing to `main` triggers an automatic deploy.** No `wrangler deploy` needed in the normal flow.
 
-The safe pattern: deploy from a *clean* folder that contains only `wrangler.jsonc` and a `public/` subfolder with `index.html`.
+The repo layout is designed so wrangler can't accidentally publish secrets: `assets.directory` points to `./public/`, and only `index.html` lives in there. Everything else (README, docs, `.git/`, `.wrangler/` cache) is outside the published tree.
+
+For manual hotfix deploys:
 
 ```sh
-mkdir -p /tmp/cof-clean/public
-cp index.html /tmp/cof-clean/public/
-cp wrangler.jsonc /tmp/cof-clean/
-cd /tmp/cof-clean
+# from the repo root, not from inside public/
 wrangler deploy
 ```
 
-`wrangler login` is already set up; tokens are stored in the user's keyring. If a fresh login is needed, OAuth opens in the default browser — the user clicks "Allow" once.
+`wrangler login` is set up; tokens are stored in the user's keyring. If a fresh login is needed, OAuth opens in the default browser — the user clicks "Allow" once. **Never** add files to `public/` other than `index.html` — anything you drop there is publicly served.
 
 ## Editing the data
 

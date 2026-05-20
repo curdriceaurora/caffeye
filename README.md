@@ -17,26 +17,24 @@ For the test suite, see **[TESTS.md](TESTS.md)**.
 ## Run locally
 
 ```sh
-cd "caffeye"
+cd "caffeye/public"
 python3 -m http.server 8765
 # open http://127.0.0.1:8765
 ```
 
-You can also just `open index.html` directly — the file is fully self-contained except for CDN assets.
+You can also just `open public/index.html` directly — the file is fully self-contained except for CDN assets.
 
 ## Deploy
 
-Hosted on Cloudflare Workers static assets. To redeploy:
+Hosted on Cloudflare Workers static assets. **Pushing to `main` auto-deploys** via Cloudflare's Git integration — `wrangler.jsonc` points `assets.directory` at `./public/`, which contains only `index.html`, so nothing else in the repo ever ends up publicly served.
+
+To deploy manually (e.g. for a hotfix while bypassing Git):
 
 ```sh
-mkdir -p /tmp/cof-clean/public
-cp index.html /tmp/cof-clean/public/
-cp wrangler.jsonc /tmp/cof-clean/
-cd /tmp/cof-clean
 wrangler deploy
 ```
 
-⚠️ Always deploy from a clean folder containing **only** `index.html` and `wrangler.jsonc`. Wrangler treats every file under the assets `directory` as a static asset, so never deploy from a folder that contains `.wrangler/` (it'll publish your OAuth token).
+⚠️ Run from the repo root, never from inside `public/`. Wrangler treats every file under the assets `directory` as a static asset; `.wrangler/` cache files contain an OAuth token and must never end up there. The `/public/` subfolder guarantees this.
 
 ## Add a new shop
 
@@ -52,12 +50,14 @@ Coords should be verified against an authoritative geocoder (e.g. Apple Maps via
 
 ```
 caffeye/
-├── index.html        # the entire app (~91 KB)
-├── wrangler.jsonc    # Cloudflare deploy config
+├── public/
+│   └── index.html    # the entire app (~91 KB) — only file Cloudflare publishes
+├── wrangler.jsonc    # Cloudflare deploy config (assets.directory = ./public)
 ├── README.md         # this file
 ├── VISION.md         # principles + design rationale
 ├── REQUIREMENTS.md   # numbered requirements (R1.x – R10.x)
-└── TESTS.md          # test suite traced to requirements
+├── TESTS.md          # test suite traced to requirements
+└── CLAUDE.md         # operating notes for AI sessions
 ```
 
 ## Stack
