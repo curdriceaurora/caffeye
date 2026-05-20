@@ -85,12 +85,7 @@
   .chip.active .num { color: rgba(255,255,255,0.6); }
   .chip.themed .num { color: inherit; opacity: 0.65; }
   .chip.themed.active .num { color: rgba(255,255,255,0.7); opacity: 1; }
-  .filter-bar .right { margin-left: auto; display: flex; align-items: center; gap: 8px; }
-  .sort-select {
-    padding: 4px 8px; border-radius: 6px;
-    border: 1px solid var(--border); background: var(--bg);
-    font-family: inherit; font-size: 12.5px; color: var(--text); cursor: pointer;
-  }
+
 
   .layout { flex: 1; display: flex; min-height: 0; }
   #map { flex: 1; background: #e9e5dc; }
@@ -257,16 +252,7 @@
   }
   .leaflet-popup-content { margin: 0; width: auto !important; min-width: 180px; }
   .leaflet-popup-tip { background: var(--surface); }
-  .preview { padding: 10px 12px; font-family: 'Inter', sans-serif; }
-  .preview-name { font-weight: 600; font-size: 13px; margin: 0 0 2px 0; }
-  .preview-meta { font-size: 11.5px; color: var(--muted); margin-bottom: 6px; }
-  .preview-btn {
-    display: inline-block; padding: 4px 10px;
-    background: var(--text); color: var(--surface);
-    border-radius: 4px; text-decoration: none;
-    font-size: 11.5px; font-weight: 500; cursor: pointer;
-    border: none; font-family: inherit;
-  }
+
 
   footer {
     background: var(--surface); border-top: 1px solid var(--border);
@@ -287,8 +273,7 @@
     .chip { flex-shrink: 0; padding: 2px 7px; font-size: 11.5px; gap: 4px; }
     .chip .chip-icon { font-size: 11.5px; }
     .chip .num { font-size: 10px; }
-    .filter-bar .right { margin-left: 0; }
-    .sort-select { flex-shrink: 0; padding: 2px 6px; font-size: 11.5px; }
+
     .layout { flex-direction: column; }
     #map { flex: 0 0 220px; min-height: 180px; }
     .panel { width: 100%; height: auto; flex: 1; min-height: 0; border-left: none; border-top: 1px solid var(--border); }
@@ -531,6 +516,7 @@ function makeChip({ label, count, color, icon, themeColor, onClick, isActive }) 
   const b = document.createElement('button');
   b.className = 'chip' + (isActive ? ' active' : '') + (themeColor ? ' themed' : '');
   b.type = 'button';
+  b.setAttribute('aria-pressed', isActive ? 'true' : 'false');
   if (themeColor) {
     if (isActive) {
       b.style.background = themeColor;
@@ -659,15 +645,7 @@ function makeIcon(shop, isSelected) {
   });
 }
 
-function previewHtml(shop) {
-  return `
-    <div class="preview">
-      <div class="preview-name">${shop.name}</div>
-      <div class="preview-meta">${shop.category.replace('+',' & ')} · ${shop.rating ? '★ ' + shop.rating : 'no rating'} · ${shop.neighborhood}</div>
-      <button class="preview-btn" type="button">View details</button>
-    </div>
-  `;
-}
+
 
 const markers = SHOPS.map(shop => {
   const m = L.marker([shop.lat, shop.lng], { icon: makeIcon(shop, false) });
@@ -730,9 +708,14 @@ function placeLabels() {
     return;
   }
   // Reset transforms to base centered, measure
-  const measured = items.map(it => {
+  // Batch all CSS writes (resets of transform and visibility) to prevent layout thrashing
+  items.forEach(it => {
     it.label.style.transform = 'translate(-50%, -50%)';
     it.label.style.visibility = 'visible';
+  });
+
+  // Do all getBoundingClientRect() reads in a separate loop
+  const measured = items.map(it => {
     const pr = it.pin.getBoundingClientRect();
     const lr = it.label.getBoundingClientRect();
     return {
@@ -748,13 +731,19 @@ function placeLabels() {
   //  - every individual pin (so a label can't slide over another pin)
   //  - every cluster bubble (so labels avoid the "+N" cluster markers)
   const obstacles = [];
-  function pushRect(el) {
+  function pushRect(el, ownerId = null) {
     const r = el.getBoundingClientRect();
     if (r.width === 0 || r.height === 0) return;
-    obstacles.push({ left: r.left, top: r.top, right: r.right, bottom: r.bottom });
+    obstacles.push({
+      left: r.left,
+      top: r.top,
+      right: r.right,
+      bottom: r.bottom,
+      ownerId: ownerId
+    });
   }
-  measured.forEach(m => pushRect(m.it.pin));
-  document.querySelectorAll('.coffee-cluster').forEach(pushRect);
+  measured.forEach(m => pushRect(m.it.pin, m.it.shop.id));
+  document.querySelectorAll('.coffee-cluster').forEach(el => pushRect(el));
 
   function rectForAngle(m, angleDeg) {
     const rad = angleDeg * Math.PI / 180;
@@ -779,10 +768,22 @@ function placeLabels() {
     let chosen = null;
     for (const angle of LABEL_ANGLES) {
       const r = rectForAngle(m, angle);
-      const collides = obstacles.some(p =>
-        !(r.right <= p.left || r.left >= p.right || r.bottom <= p.top || r.top >= p.bottom)
-      );
-      if (!collides) { chosen = r; obstacles.push(r); break; }
+      const collides = obstacles.some(p => {
+        // Exclude the shop's own pin (and its own placed labels if any)
+        if (p.ownerId === m.it.shop.id) return false;
+        return !(r.right <= p.left || r.left >= p.right || r.bottom <= p.top || r.top >= p.bottom);
+      });
+      if (!collides) {
+        chosen = r;
+        obstacles.push({
+          left: r.left,
+          top: r.top,
+          right: r.right,
+          bottom: r.bottom,
+          ownerId: m.it.shop.id
+        });
+        break;
+      }
     }
     if (chosen) {
       m.it.label.style.transform =
@@ -827,8 +828,20 @@ function passesGlobalFilters(s) {
   if (state.features.has('late') && !ln) return false;
   if (state.features.has('midnight') && (!ln || ln.tier !== 'midnight')) return false;
   if (!term) return true;
-  const hay = [s.name, s.usp, s.signature, s.category, s.neighborhood, cw.note || '', (ln ? ln.when : ''), ...(s.loved || [])].join(' ').toLowerCase();
-  return hay.includes(term);
+  const hay = [
+    s.name,
+    s.usp,
+    s.signature,
+    s.category,
+    s.neighborhood,
+    cw.tier || '',
+    cw.note || '',
+    ln ? ln.tier : '',
+    ln ? ln.when : '',
+    ...(s.loved || [])
+  ].join(' ').toLowerCase();
+  const words = term.split(/\s+/);
+  return words.every(word => hay.includes(word));
 }
 
 // Shops eligible to live on the map (global filters only — no viewport).
@@ -873,6 +886,11 @@ function renderList() {
     const li = document.createElement('li');
     li.className = 'shop-item' + (state.selected && state.selected.id === shop.id ? ' active' : '');
     li.dataset.id = shop.id;
+    li.setAttribute('tabindex', '0');
+    li.setAttribute('role', 'button');
+    const cleanCat = shop.category.replace('+', ' and ');
+    li.setAttribute('aria-label', `${shop.name}, ${cleanCat} in ${shop.neighborhood}`);
+
     const cat = CATS[shop.category] || {};
     const catColor = cat.hex || '#999';
     const catIcon = cat.icon || '';
@@ -887,7 +905,16 @@ function renderList() {
       <div class="shop-meta">${shop.category.replace('+', ' & ')} · ${ratingHtml} · ${shop.neighborhood}</div>
       <div class="shop-tags">${tagsHtml}</div>
     `;
-    li.addEventListener('click', () => selectShop(shop));
+    
+    const triggerSelect = () => selectShop(shop);
+    li.addEventListener('click', triggerSelect);
+    li.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        triggerSelect();
+      }
+    });
+    
     shopListEl.appendChild(li);
   });
   if (typeof scheduleLabels === 'function') scheduleLabels();
@@ -964,11 +991,16 @@ function renderDetail(shop) {
 
 function selectShop(shop, opts) {
   opts = opts || {};
+  // Save scroll position of the list before entering detail mode
+  state.lastScrollTop = shopListEl.scrollTop;
   state.selected = shop;
   renderDetail(shop);
   panelEl.classList.add('detail-mode');
   detailEl.classList.add('visible');
   setMarkerSelected(shop);
+  // Trigger immediate label placement since the selection ring changed the marker's size
+  if (typeof scheduleLabels === 'function') scheduleLabels();
+
   if (opts.recenterMap !== false) {
     const m = markers.find(mm => mm.shopRef.id === shop.id);
     if (m) clusterGroup.zoomToShowLayer(m, () => {
@@ -978,11 +1010,24 @@ function selectShop(shop, opts) {
 }
 
 function deselectShop() {
+  const lastSelectedId = state.selected ? state.selected.id : null;
   state.selected = null;
   panelEl.classList.remove('detail-mode');
   detailEl.classList.remove('visible');
   setMarkerSelected(null);
   renderList();
+
+  // Restore scroll position
+  if (state.lastScrollTop !== undefined) {
+    shopListEl.scrollTop = state.lastScrollTop;
+  }
+
+  // Restore keyboard focus to the list item that was open
+  if (lastSelectedId) {
+    const el = shopListEl.querySelector(`[data-id="${lastSelectedId}"]`);
+    if (el) el.focus();
+  }
+
   // Reset the map back to the full-spread view
   if (clusterGroup.getLayers().length) {
     map.fitBounds(clusterGroup.getBounds(), { padding: [40, 40], animate: true });
@@ -996,6 +1041,9 @@ function render() {
 }
 
 searchInput.addEventListener('input', e => { state.search = e.target.value; renderList(); });
+
+// Initialize dynamic freshness count with hardcoded date
+document.querySelector('.freshness').textContent = `${SHOPS.length} cafés, bakeries & tea shops · checked May 2026`;
 
 render();
 </script>
