@@ -11,7 +11,7 @@
       "rating": 4.4,
       "ratingCount": "5,900+",
       "ratingNum": 5900,
-      "hours": "Sun-Thu 10am-10pm · Fri-Sat 10am-11pm",
+      "hours": "Sun-Thu 10am-10pm \u00b7 Fri-Sat 10am-11pm",
       "usp": "Asian-American bakery known for endless pastry trays, large seating, and bubble tea.",
       "loved": [
         "mozzarella buns",
@@ -25,9 +25,9 @@
       "addrKey": "duluth-2180-pleasanthill",
       "cw": {
         "tier": "excellent",
-        "note": "Large seating, Wi-Fi, outlets — popular student spot.",
+        "note": "Large seating, Wi-Fi, outlets \u2014 popular student spot.",
         "hasMeetingRoom": true,
-        "meetingRoomNote": "Private meeting room — contact catering@sweethut.com"
+        "meetingRoomNote": "Private meeting room \u2014 contact catering@sweethut.com"
       },
       "late": {
         "tier": "10pm+",
@@ -44,7 +44,7 @@
       "rating": 4.2,
       "ratingCount": "400+",
       "ratingNum": 400,
-      "hours": "Sun-Thu 8am-10pm · Fri-Sat 8am-12am",
+      "hours": "Sun-Thu 8am-10pm \u00b7 Fri-Sat 8am-12am",
       "usp": "The original Korean bakery of Pleasant Hill K-town, family-run for 20+ years.",
       "loved": [
         "mocha buns",
@@ -76,7 +76,7 @@
       "rating": 4.3,
       "ratingCount": "730+",
       "ratingNum": 730,
-      "hours": "Sun-Thu 11am-12am · Fri-Sat 11am-1am",
+      "hours": "Sun-Thu 11am-12am \u00b7 Fri-Sat 11am-1am",
       "usp": "Second-floor Korean dessert cafe open past midnight, popular for matcha and bingsoo.",
       "loved": [
         "strawberry matcha latte",
@@ -108,7 +108,7 @@
       "rating": 4.3,
       "ratingCount": "300+",
       "ratingNum": 300,
-      "hours": "Sun-Thu 7:30am-10pm · Fri-Sat 7:30am-11pm",
+      "hours": "Sun-Thu 7:30am-10pm \u00b7 Fri-Sat 7:30am-11pm",
       "usp": "Korean bakery favored for milk bread and croissant sandwiches; quiet enough to study.",
       "loved": [
         "milk bread",
@@ -141,7 +141,7 @@
       "rating": 4.7,
       "ratingCount": "150+",
       "ratingNum": 150,
-      "hours": "Mon-Thu 7:30am-8pm · Fri 7:30am-9:30pm · Sat 8am-9:30pm · Sun 9am-6pm",
+      "hours": "Mon-Thu 7:30am-8pm \u00b7 Fri 7:30am-9:30pm \u00b7 Sat 8am-9:30pm \u00b7 Sun 9am-6pm",
       "usp": "Direct-trade Rwandan specialty coffee shop on the downtown square; profits fund farming communities in Rwanda.",
       "loved": [
         "Rwandan single-origin",
@@ -197,7 +197,7 @@
       "rating": 4.2,
       "ratingCount": "300+",
       "ratingNum": 300,
-      "hours": "Sun-Thu 10am-10pm · Fri-Sat 10am-11pm",
+      "hours": "Sun-Thu 10am-10pm \u00b7 Fri-Sat 10am-11pm",
       "usp": "Korean shaved ice and cake in a sleek modern setting near downtown.",
       "loved": [
         "mango bingsu",
@@ -229,7 +229,7 @@
       "rating": 4.8,
       "ratingCount": "200+",
       "ratingNum": 200,
-      "hours": "Tue-Thu 8am-6pm · Fri-Sat 8am-7pm · Sun 8am-4pm · Closed Mon",
+      "hours": "Tue-Thu 8am-6pm \u00b7 Fri-Sat 8am-7pm \u00b7 Sun 8am-4pm \u00b7 Closed Mon",
       "usp": "Downtown Duluth bakery blending Taiwanese and American flavors, with viral Dubai chocolate.",
       "loved": [
         "egg tarts",
@@ -257,7 +257,7 @@
       "rating": 4.8,
       "ratingCount": "250+",
       "ratingNum": 250,
-      "hours": "Mon-Fri 7am-5pm · Sat 8am-4pm · Sun 1pm-5pm",
+      "hours": "Mon-Fri 7am-5pm \u00b7 Sat 8am-4pm \u00b7 Sun 1pm-5pm",
       "usp": "Mission-driven specialty roaster with a drive-thru; profits fund Phoenix Roasters Foundation anti-trafficking work.",
       "loved": [
         "White Lightning Bird iced",
@@ -285,7 +285,7 @@
       "rating": 4.3,
       "ratingCount": "340+",
       "ratingNum": 340,
-      "hours": "Sun-Thu 11am-11pm · Fri-Sat 11am-12am",
+      "hours": "Sun-Thu 11am-11pm \u00b7 Fri-Sat 11am-12am",
       "usp": "Korean K-town dessert cafe with a dried-tree centerpiece and private nooks for croffles and lattes.",
       "loved": [
         "honey croffle",
@@ -317,7 +317,7 @@
       "rating": 4.7,
       "ratingCount": "240+",
       "ratingNum": 240,
-      "hours": "Sun-Thu 12pm-10:30pm · Fri-Sat 12pm-11:30pm",
+      "hours": "Sun-Thu 12pm-10:30pm \u00b7 Fri-Sat 12pm-11:30pm",
       "usp": "First bubble-tea brand to make fresh handmade boba pearls in-store every day.",
       "loved": [
         "soft fresh in-house boba",
@@ -381,7 +381,7 @@
       "rating": 4.6,
       "ratingCount": "200+",
       "ratingNum": 200,
-      "hours": "Sun-Thu 12pm-9pm · Fri-Sat 12pm-10pm",
+      "hours": "Sun-Thu 12pm-9pm \u00b7 Fri-Sat 12pm-10pm",
       "usp": "Michelin-Plate Taiwanese tea house pouring some of the world's most expensive oolongs.",
       "loved": [
         "Lishan oolong",
@@ -413,7 +413,7 @@
       "rating": 4.5,
       "ratingCount": "900+",
       "ratingNum": 900,
-      "hours": "Sun-Thu 1pm-10pm · Fri-Sat 1pm-10:30pm",
+      "hours": "Sun-Thu 1pm-10pm \u00b7 Fri-Sat 1pm-10:30pm",
       "usp": "Hawaii-born matcha cafe serving Uji matcha lattes, soft serve, and Japanese parfaits.",
       "loved": [
         "matcha latte with almond milk",
@@ -445,8 +445,8 @@
       "rating": 4.7,
       "ratingCount": "30+",
       "ratingNum": 30,
-      "hours": "Sun-Thu 10am-9pm · Fri-Sat 10am-10pm",
-      "usp": "Boba cooked fresh every 2 hours and 100% real fruit cut daily — no syrup.",
+      "hours": "Sun-Thu 10am-9pm \u00b7 Fri-Sat 10am-10pm",
+      "usp": "Boba cooked fresh every 2 hours and 100% real fruit cut daily \u2014 no syrup.",
       "loved": [
         "orange green tea",
         "fresh-cooked boba",
@@ -509,7 +509,7 @@
       "rating": 4.2,
       "ratingCount": "170+",
       "ratingNum": 170,
-      "hours": "Sun-Thu 12pm-10pm · Fri-Sat 12pm-11pm",
+      "hours": "Sun-Thu 12pm-10pm \u00b7 Fri-Sat 12pm-11pm",
       "usp": "Originator of the 'tiger stripes' brown sugar milk, with 8-hour-cooked pearls.",
       "loved": [
         "tiger-striped cups",
@@ -541,7 +541,7 @@
       "rating": 4.4,
       "ratingCount": "190+",
       "ratingNum": 190,
-      "hours": "Sun-Thu 12pm-9:30pm · Fri-Sat 12pm-10:30pm",
+      "hours": "Sun-Thu 12pm-9:30pm \u00b7 Fri-Sat 12pm-10:30pm",
       "usp": "Taiwanese chain that stir-fries fresh tapioca pearls in brown sugar in front of you.",
       "loved": [
         "wok-fried pearls",
@@ -573,7 +573,7 @@
       "rating": 4.4,
       "ratingCount": "100+",
       "ratingNum": 100,
-      "hours": "Tue-Sun 11:30am-10pm · Closed Mon",
+      "hours": "Tue-Sun 11:30am-10pm \u00b7 Closed Mon",
       "usp": "Taiwanese tea house pairing taro and mango bubble teas with small plates and noodle bowls.",
       "loved": [
         "taro tea",
@@ -605,7 +605,7 @@
       "rating": 4.5,
       "ratingCount": "80+",
       "ratingNum": 80,
-      "hours": "Sun-Thu 10am-11pm · Fri-Sat 10am-12am",
+      "hours": "Sun-Thu 10am-11pm \u00b7 Fri-Sat 10am-12am",
       "usp": "Vietnamese-owned teahouse with organic milk, loose-leaf tea, and 100+ drinks.",
       "loved": [
         "organic milk teas",
@@ -665,7 +665,7 @@
       "rating": 4.9,
       "ratingCount": "190+",
       "ratingNum": 190,
-      "hours": "Mon-Tue 10:30am-7pm · Thu 10:30am-7:30pm · Fri-Sat to 10pm · Sun to 7:30pm · Closed Wed",
+      "hours": "Mon-Tue 10:30am-7pm \u00b7 Thu 10:30am-7:30pm \u00b7 Fri-Sat to 10pm \u00b7 Sun to 7:30pm \u00b7 Closed Wed",
       "usp": "Boutique French-Korean bakery focused on less-sweet, scratch-made breads.",
       "loved": [
         "salt bread",
@@ -725,7 +725,7 @@
       "rating": 4.2,
       "ratingCount": "230+",
       "ratingNum": 230,
-      "hours": "Sun-Thu 8am-9pm · Fri-Sat 8am-10pm",
+      "hours": "Sun-Thu 8am-9pm \u00b7 Fri-Sat 8am-10pm",
       "usp": "Korean dessert cafe serving cream-filled breads and bingsu in a calm modern space.",
       "loved": [
         "tiramisu bingsu",
@@ -785,7 +785,7 @@
       "rating": 4.2,
       "ratingCount": "1,300+",
       "ratingNum": 1300,
-      "hours": "Sun-Thu 8am-11pm · Fri-Sat 8am-12am",
+      "hours": "Sun-Thu 8am-11pm \u00b7 Fri-Sat 8am-12am",
       "usp": "Late-night Korean bakery with fresh cream cakes and a fairy-tale theme.",
       "loved": [
         "fresh cream cakes",
@@ -799,7 +799,7 @@
       "addrKey": "duluth-2131-pleasanthill",
       "cw": {
         "tier": "excellent",
-        "note": "Spacious, charging spots, open late — can be noisy.",
+        "note": "Spacious, charging spots, open late \u2014 can be noisy.",
         "hasMeetingRoom": false
       },
       "late": {
@@ -817,7 +817,7 @@
       "rating": 4.8,
       "ratingCount": "800+",
       "ratingNum": 800,
-      "hours": "Tue-Fri 7:30am-3pm · Sat 9am-3pm · Closed Sun-Mon",
+      "hours": "Tue-Fri 7:30am-3pm \u00b7 Sat 9am-3pm \u00b7 Closed Sun-Mon",
       "usp": "Family-run French bakery with scratch-made croissants and baguettes by a Paris-trained baker.",
       "loved": [
         "crispy baguettes",
@@ -873,7 +873,7 @@
       "rating": 4.2,
       "ratingCount": "85+",
       "ratingNum": 85,
-      "hours": "Mon-Thu 9am-7pm · Fri-Sat 9am-4pm · Closed Sun",
+      "hours": "Mon-Thu 9am-7pm \u00b7 Fri-Sat 9am-4pm \u00b7 Closed Sun",
       "usp": "American scratch kitchen and bakery making soups, sandwiches, and cookies from scratch daily.",
       "loved": [
         "Philly cheesesteak",
@@ -975,7 +975,7 @@
       "addrKey": "duluth-3705-oldnorcross",
       "cw": {
         "tier": "excellent",
-        "note": "Wi-Fi, outlets, open till 11pm — top-cited Duluth study spot.",
+        "note": "Wi-Fi, outlets, open till 11pm \u2014 top-cited Duluth study spot.",
         "hasMeetingRoom": false
       },
       "late": {
@@ -993,7 +993,7 @@
       "rating": 4.6,
       "ratingCount": "1,680+",
       "ratingNum": 1680,
-      "hours": "Sun-Thu 11am-10pm · Fri-Sat 11am-11pm",
+      "hours": "Sun-Thu 11am-10pm \u00b7 Fri-Sat 11am-11pm",
       "usp": "Longtime Duluth boba favorite with handmade Taiwanese teas, popping boba, and board games.",
       "loved": [
         "light-up boba cup",
@@ -1023,7 +1023,7 @@
       "lng": 0,
       "category": "Specialty",
       "rating": null,
-      "ratingCount": "—",
+      "ratingCount": "\u2014",
       "ratingNum": 0,
       "hours": "Call (470) 365-2179 for hours",
       "usp": "Vietnamese coffee and sugarcane juice lounge with weekly karaoke and sports.",
@@ -1032,7 +1032,7 @@
         "sugarcane juice",
         "karaoke"
       ],
-      "signature": "Cà phê sữa đá (Vietnamese iced coffee)",
+      "signature": "C\u00e0 ph\u00ea s\u1eefa \u0111\u00e1 (Vietnamese iced coffee)",
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Long%27s%20Cafe%202%201630%20Pleasant%20Hill%20Rd%20Duluth%20GA",
       "yelpUrl": "https://www.yelp.com/search?find_desc=Long%27s+Cafe+2&find_loc=Duluth%2C+GA",
       "city": "Duluth",
@@ -1095,7 +1095,7 @@
       "addrKey": "duluth-3473-oldnorcross",
       "cw": {
         "tier": "excellent",
-        "note": "Quiet, Wi-Fi, ample parking — recommended for working.",
+        "note": "Quiet, Wi-Fi, ample parking \u2014 recommended for working.",
         "hasMeetingRoom": false
       },
       "late": {
@@ -1114,7 +1114,7 @@
       "ratingCount": "245+",
       "ratingNum": 245,
       "hours": "Daily 8am-10pm",
-      "usp": "Korean coffee chain's Black-label flagship — 2 stories with an upstairs study area.",
+      "usp": "Korean coffee chain's Black-label flagship \u2014 2 stories with an upstairs study area.",
       "loved": [
         "pretzel breads",
         "specialty espresso",
@@ -1129,7 +1129,7 @@
         "tier": "excellent",
         "note": "Huge 2-story cafe with upstairs study area.",
         "hasMeetingRoom": true,
-        "meetingRoomNote": "Private rooms upstairs — bookable via info@tomntomsatlanta.com"
+        "meetingRoomNote": "Private rooms upstairs \u2014 bookable via info@tomntomsatlanta.com"
       },
       "late": {
         "tier": "10pm+",
@@ -1146,7 +1146,7 @@
       "rating": 4.6,
       "ratingCount": "12+",
       "ratingNum": 12,
-      "hours": "Fri-Sun 11am-11pm · Closed Mon-Thu",
+      "hours": "Fri-Sun 11am-11pm \u00b7 Closed Mon-Thu",
       "usp": "NYC/LA Korean cafe brand's first Atlanta outpost, weekends only, South Korean roasters.",
       "loved": [
         "dark green matcha",
@@ -1160,7 +1160,7 @@
       "addrKey": "duluth-2645-nberkeley",
       "cw": {
         "tier": "good",
-        "note": "Minimalist study spot — only Fri-Sun.",
+        "note": "Minimalist study spot \u2014 only Fri-Sun.",
         "hasMeetingRoom": false
       },
       "late": {
@@ -1178,7 +1178,7 @@
       "rating": 3.9,
       "ratingCount": "190+",
       "ratingNum": 190,
-      "hours": "Sun-Thu 9/10am-10pm · Fri-Sat 9am-11pm",
+      "hours": "Sun-Thu 9/10am-10pm \u00b7 Fri-Sat 9am-11pm",
       "usp": "Independent Korean specialty cafe with playful lattes like corn and banana matcha.",
       "loved": [
         "corn latte",
@@ -1210,8 +1210,8 @@
       "rating": 4.5,
       "ratingCount": "30+",
       "ratingNum": 30,
-      "hours": "Mon-Fri 11:30am-8pm · Sat-Sun 11am-8pm",
-      "usp": "Japanese matcha dessert counter inside Tokyo Kuma food court — authentic uji matcha.",
+      "hours": "Mon-Fri 11:30am-8pm \u00b7 Sat-Sun 11am-8pm",
+      "usp": "Japanese matcha dessert counter inside Tokyo Kuma food court \u2014 authentic uji matcha.",
       "loved": [
         "matcha soft serve",
         "Fujisa Special parfait",
@@ -1252,7 +1252,7 @@
       "addrKey": "duluth-2174-pleasanthill",
       "cw": {
         "tier": "limited",
-        "note": "Small dessert shop — not a sit-and-work spot.",
+        "note": "Small dessert shop \u2014 not a sit-and-work spot.",
         "hasMeetingRoom": false
       },
       "website": "https://www.yezicoconutatl.com/"
@@ -1266,7 +1266,7 @@
       "rating": 4.4,
       "ratingCount": "480+",
       "ratingNum": 480,
-      "hours": "Mon-Fri 11am-10pm · Sat-Sun 9am-10pm",
+      "hours": "Mon-Fri 11am-10pm \u00b7 Sat-Sun 9am-10pm",
       "usp": "Japanese souffle pancakes hand-whipped to order.",
       "loved": [
         "jiggly pancakes",
@@ -1298,7 +1298,7 @@
       "rating": 4.6,
       "ratingCount": "320+",
       "ratingNum": 320,
-      "hours": "Sun-Thu 12pm-11pm · Fri-Sat 12pm-12am",
+      "hours": "Sun-Thu 12pm-11pm \u00b7 Fri-Sat 12pm-12am",
       "usp": "Late-night Yemeni coffeehouse pouring adeni, mofawar, and qishr brews with cardamom and saffron.",
       "loved": [
         "adeni chai",
@@ -1312,7 +1312,7 @@
       "addrKey": "duluth-2645-nberkeley",
       "cw": {
         "tier": "excellent",
-        "note": "3,600 sqft, ~140 seats, open till late — built for studying.",
+        "note": "3,600 sqft, ~140 seats, open till late \u2014 built for studying.",
         "hasMeetingRoom": false
       },
       "late": {
@@ -1330,7 +1330,7 @@
       "rating": 4.7,
       "ratingCount": "90+",
       "ratingNum": 90,
-      "hours": "Mon-Fri 8am-6pm · Sat 8am-3pm · Closed Sun",
+      "hours": "Mon-Fri 8am-6pm \u00b7 Sat 8am-3pm \u00b7 Closed Sun",
       "usp": "Drive-thru Mediterranean-fusion coffee shop with Yemeni and Middle Eastern flavors.",
       "loved": [
         "matcha lattes",
@@ -1358,7 +1358,7 @@
       "rating": 4.5,
       "ratingCount": "210+",
       "ratingNum": 210,
-      "hours": "Mon-Thu 10:30am-9pm · Fri-Sun 10am-11pm",
+      "hours": "Mon-Thu 10:30am-9pm \u00b7 Fri-Sun 10am-11pm",
       "usp": "Colombian-rooted dessert cafe with crepes, waffles, milkshakes, and banana splits.",
       "loved": [
         "towering milkshakes",
@@ -1390,7 +1390,7 @@
       "rating": 4.6,
       "ratingCount": "140+",
       "ratingNum": 140,
-      "hours": "Sun-Thu 8am-10pm · Fri-Sat 8am-11pm",
+      "hours": "Sun-Thu 8am-10pm \u00b7 Fri-Sat 8am-11pm",
       "usp": "Venezuelan-Colombian bakery-cafe with arepas, cachapas, tres-leches, and South American coffee.",
       "loved": [
         "fresh arepas",
@@ -1422,8 +1422,8 @@
       "rating": 4.5,
       "ratingCount": "410+",
       "ratingNum": 410,
-      "hours": "Mon-Thu 10am-8pm · Fri-Sat 10am-10pm · Sun 10am-9pm",
-      "usp": "Vietnamese-American tea chain with childhood flavors like mung bean and Thai tea — drive-thru.",
+      "hours": "Mon-Thu 10am-8pm \u00b7 Fri-Sat 10am-10pm \u00b7 Sun 10am-9pm",
+      "usp": "Vietnamese-American tea chain with childhood flavors like mung bean and Thai tea \u2014 drive-thru.",
       "loved": [
         "mung bean milk tea",
         "jasmine macchiato",
@@ -1454,14 +1454,14 @@
       "rating": 4.4,
       "ratingCount": "390+",
       "ratingNum": 390,
-      "hours": "Mon, Wed-Sun 10am-8pm · Closed Tue",
-      "usp": "Modern Vietnamese cafe celebrating chè and phin-dripped robusta coffee.",
+      "hours": "Mon, Wed-Sun 10am-8pm \u00b7 Closed Tue",
+      "usp": "Modern Vietnamese cafe celebrating ch\u00e8 and phin-dripped robusta coffee.",
       "loved": [
         "Vietnamese coffee",
-        "chè desserts",
+        "ch\u00e8 desserts",
         "natural light"
       ],
-      "signature": "Chè Thái (Vietnamese Fruit Dessert Soup)",
+      "signature": "Ch\u00e8 Th\u00e1i (Vietnamese Fruit Dessert Soup)",
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=The%20Quynh%20Cafe%203665%20Club%20Dr%20Duluth%20GA",
       "yelpUrl": "https://www.yelp.com/biz/the-quynh-cafe-duluth",
       "city": "Duluth",
@@ -1482,7 +1482,7 @@
       "rating": 4.5,
       "ratingCount": "220+",
       "ratingNum": 220,
-      "hours": "Mon, Wed-Thu, Sun 10:30am-8:30pm · Fri-Sat to 9:30pm · Closed Tue",
+      "hours": "Mon, Wed-Thu, Sun 10:30am-8:30pm \u00b7 Fri-Sat to 9:30pm \u00b7 Closed Tue",
       "usp": "Asian-owned bakery and boba shop blending Vietnamese, Chinese, and Korean pastries.",
       "loved": [
         "mango bingsu",
@@ -1510,7 +1510,7 @@
       "rating": 4.8,
       "ratingCount": "360+",
       "ratingNum": 360,
-      "hours": "Mon-Fri 10am-9pm · Sat 11:30am-9pm · Closed Sun",
+      "hours": "Mon-Fri 10am-9pm \u00b7 Sat 11:30am-9pm \u00b7 Closed Sun",
       "usp": "Korean cafe doubling as a book-and-vinyl listening lounge with bingsu, garlic bread, and specialty coffee.",
       "loved": [
         "garlic bread",
@@ -1524,7 +1524,7 @@
       "addrKey": "duluth-3585-peachtree",
       "cw": {
         "tier": "excellent",
-        "note": "Outlets at nearly every seat, jazz, books — a study haven.",
+        "note": "Outlets at nearly every seat, jazz, books \u2014 a study haven.",
         "hasMeetingRoom": true,
         "meetingRoomNote": "Conference room + private meeting room rentable hourly or daily."
       },
@@ -1539,7 +1539,7 @@
       "rating": 4.8,
       "ratingCount": "330+",
       "ratingNum": 330,
-      "hours": "Mon, Wed-Thu 9am-7:30pm · Fri-Sat 10am-9pm · Sun 10am-7:30pm · Closed Tue",
+      "hours": "Mon, Wed-Thu 9am-7:30pm \u00b7 Fri-Sat 10am-9pm \u00b7 Sun 10am-7:30pm \u00b7 Closed Tue",
       "usp": "Family-run Vietnamese cafe with in-house-baked banh mi and Vietnamese coffee.",
       "loved": [
         "fresh-baked bread",
@@ -1567,7 +1567,7 @@
       "rating": 4.8,
       "ratingCount": "65+",
       "ratingNum": 65,
-      "hours": "Sun-Thu 10am-9pm · Fri-Sat 10am-10pm",
+      "hours": "Sun-Thu 10am-9pm \u00b7 Fri-Sat 10am-10pm",
       "usp": "Vietnamese drip coffee bar pairing Dalat coffee with Japanese matcha and real-ingredient boba.",
       "loved": [
         "real taro paste",
@@ -1599,7 +1599,7 @@
       "rating": 4.4,
       "ratingCount": "150+",
       "ratingNum": 150,
-      "hours": "Mon-Tue, Thu-Sun 12pm-11pm · Closed Wed",
+      "hours": "Mon-Tue, Thu-Sun 12pm-11pm \u00b7 Closed Wed",
       "usp": "Late-night Taiwanese hangout with boba, tea cocktails, and Taiwanese street snacks.",
       "loved": [
         "Taiwanese chicken nuggets",
@@ -1663,7 +1663,7 @@
       "rating": 4.7,
       "ratingCount": "350+",
       "ratingNum": 350,
-      "hours": "Wed-Thu 11am-8pm · Fri-Sat 11am-10pm · Sun 12pm-8pm · Closed Mon-Tue",
+      "hours": "Wed-Thu 11am-8pm \u00b7 Fri-Sat 11am-10pm \u00b7 Sun 12pm-8pm \u00b7 Closed Mon-Tue",
       "usp": "International bakery combining French technique with Middle Eastern pastries and custom cakes.",
       "loved": [
         "pistachio & cashew baklava",
@@ -1695,7 +1695,7 @@
       "rating": 4.7,
       "ratingCount": "60+",
       "ratingNum": 60,
-      "hours": "Sun-Tue, Thu 11am-10pm · Fri-Sat 11am-11pm · Closed Wed",
+      "hours": "Sun-Tue, Thu 11am-10pm \u00b7 Fri-Sat 11am-11pm \u00b7 Closed Wed",
       "usp": "Boba and Korean-bagel cafe doubling as a craft studio for ceramic painting and plush-making.",
       "loved": [
         "banana pudding matcha",
@@ -1727,8 +1727,8 @@
       "rating": 4.7,
       "ratingCount": "25+",
       "ratingNum": 25,
-      "hours": "Sun-Thu 7am-1am · Fri-Sat 7am-2am",
-      "usp": "Locally-owned Arab coffeehouse celebrating cardamom-spiced brews in a 3,600 sqft family-friendly lounge — open past midnight every night.",
+      "hours": "Sun-Thu 7am-1am \u00b7 Fri-Sat 7am-2am",
+      "usp": "Locally-owned Arab coffeehouse celebrating cardamom-spiced brews in a 3,600 sqft family-friendly lounge \u2014 open past midnight every night.",
       "loved": [
         "kanafeh",
         "saffron milk cake",
@@ -1759,7 +1759,7 @@
       "rating": 4.7,
       "ratingCount": "350+",
       "ratingNum": 350,
-      "hours": "Sun-Thu 9am-9pm · Fri-Sat 9am-10pm",
+      "hours": "Sun-Thu 9am-9pm \u00b7 Fri-Sat 9am-10pm",
       "usp": "Locally-roasted craft coffee with viral Korean-style croffles in a sleek, study-friendly space at Hwy 120 & Boggs Rd.",
       "loved": [
         "Dirty Chai Latte",
@@ -1791,8 +1791,8 @@
       "rating": 4.5,
       "ratingCount": "60+",
       "ratingNum": 60,
-      "hours": "Mon-Thu 12pm-11pm · Fri-Sat 12pm-12am · Sun 12pm-11pm",
-      "usp": "Traditional Chinese tea craftsmanship meets modern boba — handcrafted milk teas with premium loose-leaf and a signature milk-tea hot pot.",
+      "hours": "Mon-Thu 12pm-11pm \u00b7 Fri-Sat 12pm-12am \u00b7 Sun 12pm-11pm",
+      "usp": "Traditional Chinese tea craftsmanship meets modern boba \u2014 handcrafted milk teas with premium loose-leaf and a signature milk-tea hot pot.",
       "loved": [
         "Camellia Milk Tea",
         "milk tea hot pot",
@@ -1813,6 +1813,93 @@
         "when": "Fri-Sat till midnight; rest till 11pm"
       },
       "website": "https://www.glazetea.com/"
+    },
+    {
+      "name": "Break Coffee Roasters",
+      "address": "3122 Hill St NW, Duluth, GA 30096",
+      "lat": 0,
+      "lng": 0,
+      "category": "Coffee",
+      "rating": 4.6,
+      "ratingCount": "355+",
+      "ratingNum": 355,
+      "hours": "Mon-Thu 7am-5pm \u00b7 Fri 7am-6pm \u00b7 Sat 8am-6pm \u00b7 Sun 9am-6pm",
+      "usp": "In-house small-batch roastery in walkable downtown Duluth \u2014 patio seating, outlets, and fresh pastries.",
+      "loved": [
+        "house-roasted pour-over",
+        "vanilla latte",
+        "breakfast burrito"
+      ],
+      "signature": "Single-origin pour-over, roasted in-house at their Lawrenceville roastery",
+      "googleUrl": "https://www.google.com/maps/search/?api=1&query=Break%20Coffee%20Roasters%203122%20Hill%20St%20NW%20Duluth%20GA",
+      "yelpUrl": "https://www.yelp.com/biz/break-coffee-roasters-duluth-2",
+      "city": "Duluth",
+      "addrKey": "duluth-3122-hillst",
+      "cw": {
+        "tier": "good",
+        "note": "Outlets, varied seating, patio \u2014 popular student spot in downtown.",
+        "hasMeetingRoom": false,
+        "meetingRoomNote": ""
+      },
+      "website": "https://breakroasters.com"
+    },
+    {
+      "name": "Cafe Soon",
+      "address": "3300 Peachtree Industrial Blvd Ste H, Duluth, GA 30096",
+      "lat": 0,
+      "lng": 0,
+      "category": "Bakery+Cafe",
+      "rating": 4.2,
+      "ratingCount": "22+",
+      "ratingNum": 22,
+      "hours": "Mon-Sat 10am-9pm \u00b7 Sun 1pm-9pm",
+      "usp": "Sister caf\u00e9 of Soon's Bakery \u2014 mini cakes, Cloud drink series, and salt-bread sandwiches.",
+      "loved": [
+        "Cloud Matcha",
+        "Cloud Espresso",
+        "mini cakes"
+      ],
+      "signature": "Cloud Matcha \u2014 signature layered cloud drink",
+      "googleUrl": "https://www.google.com/maps/search/?api=1&query=Cafe%20Soon%203300%20Peachtree%20Industrial%20Blvd%20Duluth%20GA",
+      "yelpUrl": "https://www.yelp.com/biz/cafe-soon-duluth",
+      "city": "Duluth",
+      "addrKey": "duluth-3300-peachtreeindustrial",
+      "cw": {
+        "tier": "limited",
+        "note": "Caf\u00e9 seating; no dedicated work zone noted.",
+        "hasMeetingRoom": false,
+        "meetingRoomNote": ""
+      },
+      "website": "https://www.cafesoonatl.com"
+    },
+    {
+      "name": "Tropic Bowls Cafe",
+      "address": "3065 Buford Hwy Suite B, Duluth, GA 30096",
+      "lat": 0,
+      "lng": 0,
+      "category": "Specialty",
+      "rating": 4.2,
+      "ratingCount": "80+",
+      "ratingNum": 80,
+      "hours": "Mon-Sat 10am-8pm \u00b7 Sun Closed",
+      "usp": "Family-owned acai and smoothie bowl caf\u00e9 \u2014 fresh-cut fruit, no added sugar, huge portions.",
+      "loved": [
+        "Hurricane Bowl",
+        "Rainbow Bowl",
+        "pitaya bowl"
+      ],
+      "signature": "Hurricane Bowl \u2014 acai with Nutella, peanut butter, and fresh fruit",
+      "googleUrl": "https://www.google.com/maps/search/?api=1&query=Tropic%20Bowls%20Cafe%203065%20Buford%20Hwy%20Duluth%20GA",
+      "yelpUrl": "https://www.yelp.com/biz/tropic-bowls-cafe-duluth",
+      "city": "Duluth",
+      "addrKey": "duluth-3065-bufordhwy",
+      "cw": {
+        "tier": "limited",
+        "note": "Counter-service caf\u00e9; minimal seating.",
+        "hasMeetingRoom": false,
+        "meetingRoomNote": ""
+      },
+      "website": null
     }
   ],
   "addr": {
@@ -1983,6 +2070,18 @@
     "duluth-2205-pleasanthill": {
       "lat": 33.96092,
       "lng": -84.13679
+    },
+    "duluth-3122-hillst": {
+      "lat": 34.00355,
+      "lng": -84.14568
+    },
+    "duluth-3300-peachtreeindustrial": {
+      "lat": 33.98768,
+      "lng": -84.17053
+    },
+    "duluth-3065-bufordhwy": {
+      "lat": 34.00274,
+      "lng": -84.14259
     }
   },
   "neighborhoods": {
@@ -2027,7 +2126,10 @@
     "duluth-6000-medlock": "Johns Creek",
     "duluth-2870-peachtree": "Peachtree Industrial",
     "duluth-2227-duluth": "Sugarloaf",
-    "duluth-2205-pleasanthill": "Pleasant Hill"
+    "duluth-2205-pleasanthill": "Pleasant Hill",
+    "duluth-3122-hillst": "Downtown Duluth",
+    "duluth-3300-peachtreeindustrial": "Peachtree Industrial",
+    "duluth-3065-bufordhwy": "Buford Hwy"
   },
   "cities": [
     "Duluth"
