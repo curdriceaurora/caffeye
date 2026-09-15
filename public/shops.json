@@ -1017,34 +1017,6 @@
       "website": "https://www.bobamochaonline.com/"
     },
     {
-      "name": "Long's Cafe 2",
-      "address": "1630 Pleasant Hill Rd, Ste 110-A, Duluth, GA 30096",
-      "lat": 0,
-      "lng": 0,
-      "category": "Specialty",
-      "rating": null,
-      "ratingCount": "\u2014",
-      "ratingNum": 0,
-      "hours": "Call (470) 365-2179 for hours",
-      "usp": "Vietnamese coffee and sugarcane juice lounge with weekly karaoke and sports.",
-      "loved": [
-        "Vietnamese iced coffee",
-        "sugarcane juice",
-        "karaoke"
-      ],
-      "signature": "C\u00e0 ph\u00ea s\u1eefa \u0111\u00e1 (Vietnamese iced coffee)",
-      "googleUrl": "https://www.google.com/maps/search/?api=1&query=Long%27s%20Cafe%202%201630%20Pleasant%20Hill%20Rd%20Duluth%20GA",
-      "yelpUrl": "https://www.yelp.com/search?find_desc=Long%27s+Cafe+2&find_loc=Duluth%2C+GA",
-      "city": "Duluth",
-      "addrKey": "duluth-1630-pleasanthill",
-      "cw": {
-        "tier": "good",
-        "note": "Small neighborhood Vietnamese cafe.",
-        "hasMeetingRoom": false
-      },
-      "website": "https://www.facebook.com/people/Longs-Cafe-2/61553102627374/"
-    },
-    {
       "name": "Incha Duluth (Duck Ink + Boba)",
       "address": "3500 Gwinnett Pl Dr NW, Ste 6, Duluth, GA 30096",
       "lat": 0,
