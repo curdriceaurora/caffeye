@@ -36,6 +36,8 @@ Sorting controls force the user to decide what they want before they know what's
 
 → Removed the sort dropdown entirely. The list opens in the best-overall order. Anyone who wants to slice the data can use the category and feature chips.
 
+→ The weighted score is the number the page shows — `◆ 4.6` on every card and large on the detail card — because a ranking you can't see isn't opinionated, it's hidden. Google's raw star and review count sit under the score on the detail card as provenance, and nowhere else. A ◆ is never a ★: the score is ours and is labelled as such.
+
 ### §3. Show what the user can see
 
 If the map is zoomed into Pleasant Hill, the right-side list should not still be showing every shop in Duluth. The view *is* a filter — using it to filter the list keeps the two panels coherent. But a list that silently changes count without explanation breaks that coherence — the user sees the number drop and doesn't know why.

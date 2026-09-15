@@ -102,6 +102,7 @@ These are decisions, not accidents — don't undo them without reading the linke
 | Convention | Why | Principle |
 |---|---|---|
 | **No sort dropdown.** The list always orders by Bayesian weighted rating, descending. | The right default beats a control. | §2 |
+| **The ◆ score is the headline number.** Cards show `◆ 4.6` (weighted rating, 1 decimal); Google's raw `★ 4.5 · 3,767 reviews` appears only under the score on the detail card. Never show a ★ as if it were our ranking. | Labels must never lie; the ranking is ours. | §2, §7 |
 | **Single-tap pin → detail card.** No preview popup. | One tap to the answer. | §1 |
 | **Viewport-filtered list.** The right-side list only shows shops whose pins lie in the current map viewport. | Show what the user can see. | §3 |
 | **Same-coord shops are radially nudged** ~20 m via `spreadCoincidentShops()`. | Pins must not stack. | §7 |
