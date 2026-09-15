@@ -1,6 +1,6 @@
 {
   "version": 4,
-  "checkedMonth": "June 2026",
+  "checkedMonth": "September 2026",
   "shops": [
     {
       "name": "Sweet Hut Bakery & Cafe",
@@ -1502,35 +1502,6 @@
       "website": "https://www.lemonsweetsbakery.com/"
     },
     {
-      "name": "Cafe Rothem",
-      "address": "3585 Peachtree Industrial Blvd, Ste 28, Duluth, GA 30096",
-      "lat": 0,
-      "lng": 0,
-      "category": "Specialty",
-      "rating": 4.8,
-      "ratingCount": "360+",
-      "ratingNum": 360,
-      "hours": "Mon-Fri 10am-9pm \u00b7 Sat 11:30am-9pm \u00b7 Closed Sun",
-      "usp": "Korean cafe doubling as a book-and-vinyl listening lounge with bingsu, garlic bread, and specialty coffee.",
-      "loved": [
-        "garlic bread",
-        "Korean bingsu",
-        "vinyl & study seating"
-      ],
-      "signature": "Injeolmi Bingsu",
-      "googleUrl": "https://www.google.com/maps/search/?api=1&query=Cafe%20Rothem%203585%20Peachtree%20Industrial%20Blvd%20Duluth%20GA",
-      "yelpUrl": "https://www.yelp.com/biz/cafe-rothem-duluth",
-      "city": "Duluth",
-      "addrKey": "duluth-3585-peachtree",
-      "cw": {
-        "tier": "excellent",
-        "note": "Outlets at nearly every seat, jazz, books \u2014 a study haven.",
-        "hasMeetingRoom": true,
-        "meetingRoomNote": "Conference room + private meeting room rentable hourly or daily."
-      },
-      "website": "https://www.facebook.com/caferothem/"
-    },
-    {
       "name": "Wich Tea",
       "address": "3350 Steve Reynolds Blvd, Ste 303, Duluth, GA 30096",
       "lat": 0,
@@ -1873,33 +1844,64 @@
       "website": "https://www.cafesoonatl.com"
     },
     {
-      "name": "Tropic Bowls Cafe",
-      "address": "3065 Buford Hwy Suite B, Duluth, GA 30096",
+      "name": "Arwa Specialty Coffee",
+      "address": "11160 Medlock Bridge Rd, Ste 140, Johns Creek, GA 30097",
+      "lat": 0,
+      "lng": 0,
+      "category": "Coffee",
+      "rating": null,
+      "ratingCount": "\u2014",
+      "ratingNum": 0,
+      "hours": "Sun-Thu 9am-10pm \u00b7 Fri-Sat 9am-12am",
+      "usp": "First Georgia outpost of the Texas-born Yemeni coffee franchise \u2014 cardamom-forward brews and honeycomb bread in a lounge built for long stays.",
+      "loved": [
+        "date latte",
+        "honeycomb bread",
+        "mango cardamom smoothie"
+      ],
+      "signature": "Jubani Coffee with Honeycomb Bread",
+      "googleUrl": "https://www.google.com/maps/search/?api=1&query=Arwa%20Specialty%20Coffee%2011160%20Medlock%20Bridge%20Rd%20Johns%20Creek%20GA",
+      "yelpUrl": "https://www.yelp.com/search?find_desc=Arwa+Specialty+Coffee&find_loc=Johns+Creek%2C+GA",
+      "city": "Duluth",
+      "addrKey": "duluth-11160-medlock",
+      "cw": {
+        "tier": "good",
+        "note": "Decorated indoor seating meant for extended stays; open till midnight Fri-Sat.",
+        "hasMeetingRoom": false
+      },
+      "late": {
+        "tier": "midnight",
+        "when": "Fri-Sat till midnight; rest till 10pm"
+      },
+      "website": "https://arwacoffee.com"
+    },
+    {
+      "name": "Eleva Cafe",
+      "address": "3312 Peachtree Industrial Blvd, Ste 2-3, Duluth, GA 30096",
       "lat": 0,
       "lng": 0,
       "category": "Specialty",
-      "rating": 4.2,
-      "ratingCount": "80+",
-      "ratingNum": 80,
-      "hours": "Mon-Sat 10am-8pm \u00b7 Sun Closed",
-      "usp": "Family-owned acai and smoothie bowl caf\u00e9 \u2014 fresh-cut fruit, no added sugar, huge portions.",
+      "rating": 4.7,
+      "ratingCount": "175+",
+      "ratingNum": 175,
+      "hours": "Daily 9am-4pm",
+      "usp": "Halal, Arabian-inspired breakfast caf\u00e9 \u2014 hummus and falafel plates, waffles and crepes, espresso drinks \u2014 in a modern, upscale room.",
       "loved": [
-        "Hurricane Bowl",
-        "Rainbow Bowl",
-        "pitaya bowl"
+        "falafel breakfast plate",
+        "hummus bowls",
+        "Dubai chocolate desserts"
       ],
-      "signature": "Hurricane Bowl \u2014 acai with Nutella, peanut butter, and fresh fruit",
-      "googleUrl": "https://www.google.com/maps/search/?api=1&query=Tropic%20Bowls%20Cafe%203065%20Buford%20Hwy%20Duluth%20GA",
-      "yelpUrl": "https://www.yelp.com/biz/tropic-bowls-cafe-duluth",
+      "signature": "Dubai Chocolate Dessert with Turkish Coffee",
+      "googleUrl": "https://www.google.com/maps/search/?api=1&query=Eleva%20Cafe%203312%20Peachtree%20Industrial%20Blvd%20Duluth%20GA",
+      "yelpUrl": "https://www.yelp.com/biz/eleva-cafe-duluth",
       "city": "Duluth",
-      "addrKey": "duluth-3065-bufordhwy",
+      "addrKey": "duluth-3312-peachtree",
       "cw": {
-        "tier": "limited",
-        "note": "Counter-service caf\u00e9; minimal seating.",
-        "hasMeetingRoom": false,
-        "meetingRoomNote": ""
+        "tier": "good",
+        "note": "Free Wi-Fi and sit-down tables; daytime only (closes 4pm).",
+        "hasMeetingRoom": false
       },
-      "website": null
+      "website": "https://elevacafe.com"
     }
   ],
   "addr": {
@@ -2035,10 +2037,6 @@
       "lat": 34.00294,
       "lng": -84.17039
     },
-    "duluth-3585-peachtree": {
-      "lat": 34.0004,
-      "lng": -84.16994
-    },
     "duluth-3675-satellite": {
       "lat": 33.95939,
       "lng": -84.13574
@@ -2072,16 +2070,20 @@
       "lng": -84.13679
     },
     "duluth-3122-hillst": {
-      "lat": 34.00355,
-      "lng": -84.14568
+      "lat": 34.00335,
+      "lng": -84.1459
     },
     "duluth-3300-peachtreeindustrial": {
-      "lat": 33.98768,
-      "lng": -84.17053
+      "lat": 34.01538,
+      "lng": -84.16369
     },
-    "duluth-3065-bufordhwy": {
-      "lat": 34.00274,
-      "lng": -84.14259
+    "duluth-11160-medlock": {
+      "lat": 34.05372,
+      "lng": -84.17533
+    },
+    "duluth-3312-peachtree": {
+      "lat": 34.01421,
+      "lng": -84.16476
     }
   },
   "neighborhoods": {
@@ -2111,7 +2113,6 @@
     "duluth-3455-peachtree": "Peachtree Industrial",
     "duluth-3531-peachtree": "Peachtree Industrial",
     "duluth-3545-peachtree": "Peachtree Industrial",
-    "duluth-3585-peachtree": "Peachtree Industrial",
     "duluth-3473-oldnorcross": "Old Norcross",
     "duluth-3705-oldnorcross": "Old Norcross",
     "duluth-3780-oldnorcross": "Old Norcross",
@@ -2129,7 +2130,8 @@
     "duluth-2205-pleasanthill": "Pleasant Hill",
     "duluth-3122-hillst": "Downtown Duluth",
     "duluth-3300-peachtreeindustrial": "Peachtree Industrial",
-    "duluth-3065-bufordhwy": "Buford Hwy"
+    "duluth-11160-medlock": "Johns Creek",
+    "duluth-3312-peachtree": "Peachtree Industrial"
   },
   "cities": [
     "Duluth"
