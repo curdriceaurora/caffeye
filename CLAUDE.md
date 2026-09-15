@@ -84,6 +84,15 @@ The schema:
 3. Bump nothing else — the header freshness count is computed at runtime from `SHOPS.length` scoped to the active city.
 4. If you're adding the first shop in a new city, append the city to `cities`. Once `cities.length > 1`, the City chip row appears automatically.
 
+**To refresh ratings** (`rating` / `ratingCount` / `ratingNum` drive the Bayesian ranking, so they must all come from one source — Google, via the Places API):
+
+```sh
+python3 scripts/refresh_ratings.py --raw /tmp/raw.json   # dry run: before/after table + audit dump
+python3 scripts/refresh_ratings.py --replay /tmp/raw.json --write   # write, no extra API calls
+```
+
+The key lives in `~/.config/caffeye/google_maps_key` (restricted to Places API (New)); the script never prints it. Rows marked ⚠ (no match within 400 m, no name overlap, `CLOSED_PERMANENTLY`) are skipped, not written. Never hand-type ratings from web-search snippets or aggregator mirrors — they merge locations (Sweet Hut: RestaurantGuru 5,980 vs Google 3,767). A `CLOSED_TEMPORARILY` / `CLOSED_PERMANENTLY` flag in the table is a status lead — follow up on it like a closure report.
+
 After editing, verify with these console snippets (also available in `TESTS.md` §T1):
 
 ```js
