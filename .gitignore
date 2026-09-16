@@ -15,3 +15,6 @@ wrangler-account.json
 # Scratch
 scratch/
 tmp/
+
+# Python
+__pycache__/

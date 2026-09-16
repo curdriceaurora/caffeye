@@ -61,7 +61,8 @@ The schema:
       "addrKey": "duluth-2180-pleasanthill",  // city-prefixed to prevent cross-city collisions
       "address": "...",          // full text address
       "category": "...",         // must exist in CATS in index.html
-      "rating": 4.4, "ratingCount": "5,900+", "ratingNum": 5900,
+      "rating": 4.5, "ratingCount": "3,767", "ratingNum": 3767,   // Google's own numbers; ratingCount = display string of ratingNum
+      "placeId": "ChIJ…",        // Google place id, stored by scripts/refresh_ratings.py on first match
       "hours": "...",
       "usp": "...",
       "loved": ["...", "...", "..."],
@@ -83,6 +84,15 @@ The schema:
 2. If it's a new building, add a `"{city}-{num}-{streetslug}": {lat, lng}` entry to `addr` and a matching `neighborhoods` entry. Coords **must** come from an authoritative geocoder (Apple Maps via `CLGeocoder` is the standard — see `outputs/apple_geocode.swift` in scratch). Do not approximate. A wrong coord that lands a shop in a residential subdivision was the bug that triggered the geocoding QA pass.
 3. Bump nothing else — the header freshness count is computed at runtime from `SHOPS.length` scoped to the active city.
 4. If you're adding the first shop in a new city, append the city to `cities`. Once `cities.length > 1`, the City chip row appears automatically.
+
+**To refresh ratings** (`rating` / `ratingCount` / `ratingNum` drive the Bayesian ranking, so they must all come from one source — Google, via the Places API):
+
+```sh
+python3 scripts/refresh_ratings.py
+python3 scripts/refresh_ratings.py --replay scratch/ratings-<date>.json --write
+```
+
+The first command is a live run: it prints the before/after table and dumps every response to `scratch/ratings-<date>.json` (git-ignored, merged into on later runs). The second writes exactly what was audited — `--write` refuses to run without `--replay`. Rows marked ⚠ are refused; `--accept "<name>"` overrides the two soft refusals (temporarily closed, review count fell by more than half — the signature of a relisted or duplicate Google entry). `python3 scripts/refresh_ratings.py --help` has the full rules and the key lookup order (`$GOOGLE_MAPS_API_KEY` wins over `~/.config/caffeye/google_maps_key`; the key is never printed). Never hand-type ratings from web-search snippets or aggregator mirrors — they merge locations (Sweet Hut: RestaurantGuru 5,980 vs Google 3,767). A `CLOSED_*` flag in the table is a status lead — follow up on it like a closure report.
 
 After editing, verify with these console snippets (also available in `TESTS.md` §T1):
 
