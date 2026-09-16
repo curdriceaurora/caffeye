@@ -112,6 +112,7 @@
     transition: background 400ms var(--ease-out);
   }
   .results-meta.viewport-flash { background: var(--accent-soft); }
+  .results-meta .score-legend { float: right; font-weight: 400; color: var(--muted); }
   #resultsCount { display: inline-block; transform-origin: left center; }
   @keyframes countPop {
     0%   { transform: scale(1); }
@@ -360,14 +361,14 @@
         <div class="search">
           <input type="text" id="searchInput" placeholder="Search by name, drink, or area…" />
         </div>
-        <div class="results-meta" id="resultsMeta"><span id="resultsCount">59</span><span id="resultsLabel"> spots</span></div>
+        <div class="results-meta" id="resultsMeta"><span id="resultsCount">59</span><span id="resultsLabel"> spots</span><span class="score-legend">◆ = weighted score</span></div>
         <ul class="shop-list" id="shopList"></ul>
       </div>
       <div class="detail-view" id="detailView"></div>
     </aside>
   </div>
 
-  <footer>◆ score = Google rating weighted by review count. Ratings, hours, and addresses change. Verify before visiting.</footer>
+  <footer>Ratings, hours, and addresses change. Verify before visiting.</footer>
 </div>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
@@ -449,9 +450,13 @@ function boot() {
     const counts = SHOPS.map(s => s.ratingNum || 0).slice().sort((a, b) => a - b);
     const m = counts[Math.floor(counts.length / 2)]; // median
     SHOPS.forEach(s => {
-      const R = (typeof s.rating === 'number') ? s.rating : C;
+      s.rated = typeof s.rating === 'number';
+      const R = s.rated ? s.rating : C;
       const v = s.ratingNum || 0;
       s.weightedRating = (v / (v + m)) * R + (m / (v + m)) * C;
+      // Display strings, derived once so every renderer shows the same precision.
+      s.scoreText = s.weightedRating.toFixed(1);
+      s.ratingText = s.rated ? s.rating.toFixed(1) : null;
     });
   })();
 
@@ -933,9 +938,7 @@ function boot() {
       li.setAttribute('tabindex', '0');
       li.setAttribute('role', 'button');
       const cleanCat = shop.category.replace('+', ' and ');
-      const rated = typeof shop.rating === 'number';
-      const score = shop.weightedRating.toFixed(1);
-      li.setAttribute('aria-label', `${shop.name}, ${cleanCat} in ${shop.neighborhood}${rated ? `, score ${score}` : ''}`);
+      li.setAttribute('aria-label', `${shop.name}, ${cleanCat} in ${shop.neighborhood}${shop.rated ? `, score ${shop.scoreText}` : ''}`);
 
       const cat = CATS[shop.category] || {};
       const catColor = cat.hex || '#999';
@@ -943,9 +946,10 @@ function boot() {
       const tags = compactTags(shop);
       const tagsHtml = tags.map((t, i) => (i > 0 ? '<span class="tag-sep">·</span>' : '') + t).join('');
       // The headline number is OUR score (Bayesian-weighted), not Google's star —
-      // it is what the list is ordered by. Google's raw rating lives on the detail card.
-      const ratingHtml = rated
-        ? `<span class="score" title="Score ${score} — Google ★ ${shop.rating} across ${shop.ratingCount} reviews, weighted by review count">◆ ${score}</span>`
+      // it is what the list is ordered by. Google's raw rating lives only on the
+      // detail card; the results-bar legend explains ◆ (tooltips don't fire on touch).
+      const ratingHtml = shop.rated
+        ? `<span class="score">◆ ${shop.scoreText}</span>`
         : `<span class="muted">no rating</span>`;
       li.innerHTML = `
         <div class="shop-name"><span class="shop-icon-tile" style="background:${catColor}">${catIcon}</span>${shop.name}</div>
@@ -978,11 +982,9 @@ function boot() {
     const site = shop.website;
     const host = websiteHost(site);
     const bft = bestForTags(shop);
-    const rated = typeof shop.rating === 'number';
-    const score = shop.weightedRating.toFixed(1);
-    const ratingHtml = rated
-      ? `<span class="score">◆ ${score}</span><span class="score-label">score</span>` +
-        `<span class="google">Google <span class="star">★</span> ${shop.rating} · ${shop.ratingCount} reviews</span>`
+    const ratingHtml = shop.rated
+      ? `<span class="score">◆ ${shop.scoreText}</span><span class="score-label">weighted score</span>` +
+        `<span class="google">Google <span class="star">★</span> ${shop.ratingText} · ${shop.ratingCount} reviews</span>`
       : `<span class="muted">No public rating yet</span>`;
 
     let html = `
