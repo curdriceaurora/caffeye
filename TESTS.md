@@ -18,7 +18,7 @@ Local: `python3 -m http.server 8765` in the project root, open `http://127.0.0.1
 
 | ID | Trace | Test | Pass |
 |---|---|---|---|
-| T1.1 | R1.1 | `js> SHOPS.length` | `59` |
+| T1.1 | R1.1 | `js> SHOPS.length` | `61` (Sept 2026 — equals the count in the header) |
 | T1.2 | R1.2 | `js> SHOPS.every(s => s.name && s.address && s.lat && s.lng && s.category && s.hours && s.usp && s.signature && Array.isArray(s.loved) && s.loved.length === 3 && s.googleUrl && s.yelpUrl)` | `true` |
 | T1.3 | R1.2 | `js> SHOPS.filter(s => !s.lat \|\| !s.lng \|\| s.lat === 0).length` | `0` |
 | T1.4 | R1.3 | `js> SHOPS.every(s => s.cw && ['excellent','good','limited'].includes(s.cw.tier))` | `true` |
@@ -26,21 +26,21 @@ Local: `python3 -m http.server 8765` in the project root, open `http://127.0.0.1
 | T1.6 | R1.5 | `js> SHOPS.filter(s => s.late).every(s => ['10pm+','midnight'].includes(s.late.tier) && typeof s.late.when === 'string')` | `true` |
 | T1.7 | R1.6 | `js> SHOPS.filter(s => !s.addrKey.startsWith(s.city.toLowerCase() + '-'))` | `[]` |
 | T1.8 | R1.7 | `js> SHOPS.filter(s => !CATS[s.category]).map(s => s.name)` | `[]` |
-| T1.9 | R1.9 | Open page, check header text. | Reads "**59** cafés, bakeries & tea shops · checked **May 2026**". |
+| T1.9 | R1.9 | Open page, check header text. | Reads "**61** spots in Duluth · verified **September 2026**" (count = `SHOPS.length`, month = `checkedMonth`). |
 
 ## T2. Map setup (R2)
 
 | ID | Trace | Test | Pass |
 |---|---|---|---|
 | T2.1 | R2.1 | `js> typeof L !== 'undefined' && typeof L.markerClusterGroup === 'function'` | `true` |
-| T2.2 | R2.2 | Hard reload, wait 1.5 s, then `js> { let v = map.getBounds(); SHOPS.filter(s => !v.contains([s.lat, s.lng])).length }` | `0` (all 59 in viewport) |
+| T2.2 | R2.2 | Hard reload, wait 1.5 s, then `js> { let v = map.getBounds(); SHOPS.filter(s => !v.contains([s.lat, s.lng])).length }` | `0` (all `SHOPS.length` in viewport) |
 | T2.3 | R2.3 | `js> document.querySelectorAll('.pin').length > 0 && [...document.querySelectorAll('.pin')].every(p => p.textContent.length > 0)` | `true` (every visible pin shows its emoji) |
 | T2.4 | R2.4 | `js> document.querySelectorAll('.pin.late').length > 0` | `true` (≥ 1 late pin visible) |
 | T2.5 | R2.5 | Click a pin. Check `js> document.querySelectorAll('.pin.selected').length === 1` | `true` |
 | T2.6 | R2.6 | `js> document.querySelectorAll('.coffee-cluster').length` | `≥ 1` at zoom 13 |
 | T2.7 | R2.7 | `js> { const same = SHOPS.filter(s => s.name === 'Alchemist on the Divide' \|\| s.name === 'Ginkgo Bakery & Cafe').map(s => [s.lat, s.lng]); Math.abs(same[0][0] - same[1][0]) + Math.abs(same[0][1] - same[1][1]) > 0 }` | `true` (same-address pins are nudged apart) |
 | T2.8 | R2.8 | Click a pin. | The detail card opens directly; no preview popup appears. |
-| T2.9 | R2.9 | Click a pin, then "← Back to list". | Map fits all 59 markers again. |
+| T2.9 | R2.9 | Click a pin, then "← Back to list". | Map fits all markers again. |
 
 ## T3. Pin labels (R3)
 
@@ -84,7 +84,7 @@ Expected output: `{ visibleLabels: N, labelLabel: 0, labelCluster: 0 }`.
 | ID | Trace | Test | Pass |
 |---|---|---|---|
 | T4.1 | R4.1 | `js> document.querySelectorAll('#categoryChips .chip').length` | `6` (All + 5 categories) |
-| T4.2 | R4.1 | Each category chip displays its emoji + label + count; sum of category counts = 59. | `8 + 18 + 14 + 11 + 6 = 57… wait, plus 2-3 misc = 59`. (Recount per the live build; sum must equal 59.) |
+| T4.2 | R4.1 | Each category chip displays its emoji + label + count; sum of category counts = `SHOPS.length`. | Recount per the live build; the five counts must sum to `SHOPS.length` (61 as of Sept 2026). |
 | T4.3 | R4.2 | Click "All". `js> [...document.querySelectorAll('#categoryChips .chip')][0].classList.contains('active')` | `true` |
 | T4.4 | R4.3 | `js> document.querySelectorAll('#featureChips .chip').length` | `4` |
 | T4.5 | R4.3 | Feature chip text matches `['💻Work-friendly{n}', '🤝Meeting room{n}', '🌙Open late{n}', '🦉Until midnight{n}']` (spaces normalized). | All four present. |
@@ -96,15 +96,15 @@ Expected output: `{ visibleLabels: N, labelLabel: 0, labelCluster: 0 }`.
 
 | ID | Trace | Test | Pass |
 |---|---|---|---|
-| T5.1 | R5.1 | Hard reload, after settle: `js> document.querySelectorAll('.shop-item').length` | `59` |
-| T5.2 | R5.2 | First 3 list items by name. | Top of list reflects weighted-rating order (Georgia French Bakery, Chuchat, Cafe Rothem at the time of writing). |
+| T5.1 | R5.1 | Hard reload, after settle: `js> document.querySelectorAll('.shop-item').length` | `SHOPS.length` (61 as of Sept 2026) |
+| T5.2 | R5.2 | First 3 list items by name. | Top of list reflects weighted-rating order (Yibna Cafe, Incha Duluth, Georgia French Bakery as of Sept 2026). |
 | T5.3 | R5.2 | `js> Math.abs(SHOPS.filter(s=>typeof s.rating==='number').reduce((a,s)=>a+s.rating,0)/SHOPS.filter(s=>typeof s.rating==='number').length - 4.5) < 0.1` | `true` (C ≈ 4.5) |
-| T5.4 | R5.3 | `js> SHOPS.find(s => s.rating == null).weightedRating !== undefined` | `true` |
+| T5.4 | R5.3 | `js> SHOPS.filter(s => s.rating == null).every(s => typeof s.weightedRating === 'number')` | `true` (vacuously true while every shop is rated — as of Sept 2026 none is null; the branch is exercised whenever one is) |
 | T5.5 | R5.4 | Inspect any list item. | Shows: colored circular icon tile, name, meta row, ≤ 3 tags. |
 | T5.6 | R5.5 | `js> document.querySelector('.shop-item').style.borderLeftColor` | Non-empty (a category color). |
 | T5.7 | R5.6 | Filter to "Meeting room". `js> document.getElementById('resultsCount').textContent` | `"4"` |
-| T5.7b | R5.6 | Hard reload (all 59 in viewport). `js> document.getElementById('resultsLabel').textContent` | `" spots"` |
-| T5.7c | R5.6 | Zoom in until < 59 shops visible in map. `js> document.getElementById('resultsLabel').textContent` | `" in view"` |
+| T5.7b | R5.6 | Hard reload (all shops in viewport). `js> document.getElementById('resultsLabel').textContent` | `" spots"` |
+| T5.7c | R5.6 | Zoom in until fewer than `SHOPS.length` shops are visible in the map. `js> document.getElementById('resultsLabel').textContent` | `" in view"` |
 | T5.8 | R5.7 | Scroll the shop list. | Inner list scrolls; header, filters, map don't. |
 | T5.9 | R5.8 | Set zoom 18 in an empty area + search "xyzqwerty". | Empty state reads: "Nothing here — try zooming out or clearing a filter." |
 | T5.10 | R5.9 | Open DevTools → Elements. After any pan/zoom, inspect first `.shop-item`. | Has `animation-delay` inline style ≥ 0ms and CSS animation `itemEnter`. |
@@ -119,7 +119,7 @@ Expected output: `{ visibleLabels: N, labelLabel: 0, labelCluster: 0 }`.
 | T6.2 | R6.2 | Inspect a high-rated shop card (e.g. Bread Museum). | Shows category + neighborhood badge, name as `<h2>`, star rating, USP paragraph. |
 | T6.3 | R6.3 | Open Cafe Rothem. | "Best for" pills include 💻 Work and 🤝 Meetings. |
 | T6.4 | R6.3 | Open Hayat Coffee. | "Best for" includes 💻 Work and 🦉 Until midnight. |
-| T6.5 | R6.4 | Every detail view has a "Known for" pill row and a "Try the **X**" line. | True for all 59. |
+| T6.5 | R6.4 | Every detail view has a "Known for" pill row and a "Try the **X**" line. | True for every shop. |
 | T6.6 | R6.6 | Open Sweet Hut. | Coworking section shows "Coworking-ready" + meeting-room callout. |
 | T6.7 | R6.7 | Open a shop without late hours (e.g. Land of a Thousand Hills). | No Late-night section. |
 | T6.8 | R6.8 | Every detail view has Google Maps + Yelp action buttons, and a Website button when the shop has a URL. | True. |
@@ -168,11 +168,11 @@ Expected output: `{ visibleLabels: N, labelLabel: 0, labelCluster: 0 }`.
 
 Run after every `wrangler deploy`:
 
-1. Open the live URL on desktop. Expect 59 markers, all 5 category chips, 4 feature chips, full list of 59 shops sorted by weighted rating. Results header reads "59 spots".
+1. Open the live URL on desktop. Expect `SHOPS.length` markers (61 as of Sept 2026), all 5 category chips, 4 feature chips, the full list sorted by weighted rating. Results header reads "61 spots".
 2. Click Bread Museum → detail card slides in (list slides left). Click "← Back to list" → list slides back in, map fits bounds.
 3. Click "Until midnight" → expect 8 shops (TwoHa's, Hayat, Cafe Mozart, The Coffee By Hand, The Bep Teahouse, Hansel & Gretel, Qamaria Yemeni, Glaze Tea).
 4. Search "matcha" → ≥ 10 results.
-5. Zoom in until fewer than 59 shops appear in the list. Confirm header changes to "X in view" and list items cascade in. Zoom back out — header returns to "59 spots".
+5. Zoom in until fewer than all shops appear in the list. Confirm header changes to "X in view" and list items cascade in. Zoom back out — header returns to "61 spots".
 6. Resize window below 820 px → mobile layout kicks in, footer disappears, ≥ 5 cards visible.
 7. Zoom in to a single shop, confirm label appears with no overlap. Zoom out to default fit, confirm clusters reform.
 8. Open DevTools console → no errors.
@@ -181,7 +181,7 @@ Run after every `wrangler deploy`:
 
 | Field | Value |
 |---|---|
-| Total shops | 59 |
+| Total shops | 61 (Sept 2026) |
 | Category counts | Coffee 10, Bakery & Cafe 18, Tea/Boba 14, Dessert Cafe 11, Specialty 6 |
 | Work-friendly | 19 |
 | Meeting room | 4 |
@@ -189,5 +189,5 @@ Run after every `wrangler deploy`:
 | Until midnight | 8 |
 | Bayesian C | ≈ 4.50 |
 | Bayesian m | 230 (median review count) |
-| #1 by weighted rating | Georgia French Bakery & Cafe |
+| #1 by weighted rating | Yibna Cafe (Sept 2026; Georgia French Bakery & Cafe before the Places API refresh) |
 | Unique buildings (ADDR keys) | 42 |

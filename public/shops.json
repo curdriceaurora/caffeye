@@ -8,9 +8,9 @@
       "lat": 0,
       "lng": 0,
       "category": "Bakery+Cafe",
-      "rating": 4.4,
-      "ratingCount": "5,900+",
-      "ratingNum": 5900,
+      "rating": 4.5,
+      "ratingCount": "3,767",
+      "ratingNum": 3767,
       "hours": "Sun-Thu 10am-10pm \u00b7 Fri-Sat 10am-11pm",
       "usp": "Asian-American bakery known for endless pastry trays, large seating, and bubble tea.",
       "loved": [
@@ -33,7 +33,8 @@
         "tier": "10pm+",
         "when": "Fri-Sat until 11pm; weekdays till 10pm"
       },
-      "website": "https://www.sweethutbakery.com"
+      "website": "https://www.sweethutbakery.com",
+      "placeId": "ChIJq48l3QSj9YgRTgBKaRBsqdU"
     },
     {
       "name": "Cafe Mozart Bakery",
@@ -41,9 +42,9 @@
       "lat": 0,
       "lng": 0,
       "category": "Bakery+Cafe",
-      "rating": 4.2,
-      "ratingCount": "400+",
-      "ratingNum": 400,
+      "rating": 4.3,
+      "ratingCount": "1,207",
+      "ratingNum": 1207,
       "hours": "Sun-Thu 8am-10pm \u00b7 Fri-Sat 8am-12am",
       "usp": "The original Korean bakery of Pleasant Hill K-town, family-run for 20+ years.",
       "loved": [
@@ -65,7 +66,8 @@
         "tier": "midnight",
         "when": "Fri-Sat till midnight; weekdays till 10pm"
       },
-      "website": "https://www.cafemozartbakery.com"
+      "website": "https://www.cafemozartbakery.com",
+      "placeId": "ChIJ8cuxMhCj9YgRuq3-mrvbrp0"
     },
     {
       "name": "TwoHa's Cafe",
@@ -73,9 +75,9 @@
       "lat": 0,
       "lng": 0,
       "category": "Dessert Cafe",
-      "rating": 4.3,
-      "ratingCount": "730+",
-      "ratingNum": 730,
+      "rating": 4.2,
+      "ratingCount": "594",
+      "ratingNum": 594,
       "hours": "Sun-Thu 11am-12am \u00b7 Fri-Sat 11am-1am",
       "usp": "Second-floor Korean dessert cafe open past midnight, popular for matcha and bingsoo.",
       "loved": [
@@ -97,7 +99,8 @@
         "tier": "midnight",
         "when": "Fri-Sat till 1am; rest of week till midnight"
       },
-      "website": "https://www.twohascafe.com"
+      "website": "https://www.twohascafe.com",
+      "placeId": "ChIJndytoJyj9YgRFU8Kx1lknJc"
     },
     {
       "name": "White Windmill Bakery & Cafe",
@@ -106,8 +109,8 @@
       "lng": 0,
       "category": "Bakery+Cafe",
       "rating": 4.3,
-      "ratingCount": "300+",
-      "ratingNum": 300,
+      "ratingCount": "342",
+      "ratingNum": 342,
       "hours": "Sun-Thu 7:30am-10pm \u00b7 Fri-Sat 7:30am-11pm",
       "usp": "Korean bakery favored for milk bread and croissant sandwiches; quiet enough to study.",
       "loved": [
@@ -130,7 +133,8 @@
         "tier": "10pm+",
         "when": "Fri-Sat till 11pm; weekdays till 10pm"
       },
-      "website": "https://www.whitewbakerycafe.com"
+      "website": "https://www.whitewbakerycafe.com",
+      "placeId": "ChIJh5FTqAa99YgRp6nWVT1BBL0"
     },
     {
       "name": "Land of a Thousand Hills Coffee",
@@ -138,9 +142,9 @@
       "lat": 0,
       "lng": 0,
       "category": "Coffee",
-      "rating": 4.7,
-      "ratingCount": "150+",
-      "ratingNum": 150,
+      "rating": 4.8,
+      "ratingCount": "144",
+      "ratingNum": 144,
       "hours": "Mon-Thu 7:30am-8pm \u00b7 Fri 7:30am-9:30pm \u00b7 Sat 8am-9:30pm \u00b7 Sun 9am-6pm",
       "usp": "Direct-trade Rwandan specialty coffee shop on the downtown square; profits fund farming communities in Rwanda.",
       "loved": [
@@ -158,7 +162,8 @@
         "note": "Connected to Thrive Coworking, built for work.",
         "hasMeetingRoom": false
       },
-      "website": "https://landofathousandhills.com/pages/location-duluth-georgia"
+      "website": "https://landofathousandhills.com/pages/location-duluth-georgia",
+      "placeId": "ChIJt5QVXM6j9YgRVn73gMkySMo"
     },
     {
       "name": "Alchemist on the Divide",
@@ -167,8 +172,8 @@
       "lng": 0,
       "category": "Specialty",
       "rating": 4.7,
-      "ratingCount": "120+",
-      "ratingNum": 120,
+      "ratingCount": "146",
+      "ratingNum": 146,
       "hours": "Daily 8am-8pm",
       "usp": "Specialty cafe with apothecary-lab decor, blending Dutch coffee, espresso, and unique teas.",
       "loved": [
@@ -186,7 +191,8 @@
         "note": "Plenty of seating, but trendy and busy.",
         "hasMeetingRoom": false
       },
-      "website": "https://alchemist-on-the-divide.grubbio.com"
+      "website": "https://alchemist-on-the-divide.grubbio.com",
+      "placeId": "ChIJ81YdKhCj9YgRvlohaZgCq1Y"
     },
     {
       "name": "The Cream",
@@ -194,9 +200,9 @@
       "lat": 0,
       "lng": 0,
       "category": "Dessert Cafe",
-      "rating": 4.2,
-      "ratingCount": "300+",
-      "ratingNum": 300,
+      "rating": 4.6,
+      "ratingCount": "499",
+      "ratingNum": 499,
       "hours": "Sun-Thu 10am-10pm \u00b7 Fri-Sat 10am-11pm",
       "usp": "Korean shaved ice and cake in a sleek modern setting near downtown.",
       "loved": [
@@ -218,7 +224,8 @@
         "tier": "10pm+",
         "when": "Fri-Sat till 11pm; weekdays till 10pm"
       },
-      "website": "https://www.thecreambakery.com"
+      "website": "https://www.thecreambakery.com",
+      "placeId": "ChIJzZj65uWj9YgRUCFRjhq_jas"
     },
     {
       "name": "Ginkgo Bakery & Cafe",
@@ -226,9 +233,9 @@
       "lat": 0,
       "lng": 0,
       "category": "Bakery+Cafe",
-      "rating": 4.8,
-      "ratingCount": "200+",
-      "ratingNum": 200,
+      "rating": 4.6,
+      "ratingCount": "76",
+      "ratingNum": 76,
       "hours": "Tue-Thu 8am-6pm \u00b7 Fri-Sat 8am-7pm \u00b7 Sun 8am-4pm \u00b7 Closed Mon",
       "usp": "Downtown Duluth bakery blending Taiwanese and American flavors, with viral Dubai chocolate.",
       "loved": [
@@ -246,7 +253,8 @@
         "note": "Warm atmosphere; workable but small.",
         "hasMeetingRoom": false
       },
-      "website": "https://www.ginkgobakery.com"
+      "website": "https://www.ginkgobakery.com",
+      "placeId": "ChIJzXDncDOj9YgRB2UWXEWX18w"
     },
     {
       "name": "Coffee That Matters",
@@ -254,9 +262,9 @@
       "lat": 0,
       "lng": 0,
       "category": "Coffee",
-      "rating": 4.8,
-      "ratingCount": "250+",
-      "ratingNum": 250,
+      "rating": 4.7,
+      "ratingCount": "236",
+      "ratingNum": 236,
       "hours": "Mon-Fri 7am-5pm \u00b7 Sat 8am-4pm \u00b7 Sun 1pm-5pm",
       "usp": "Mission-driven specialty roaster with a drive-thru; profits fund Phoenix Roasters Foundation anti-trafficking work.",
       "loved": [
@@ -274,7 +282,8 @@
         "note": "Large, quiet, built for remote work and study.",
         "hasMeetingRoom": false
       },
-      "website": "https://phoenixroasters.coffee"
+      "website": "https://phoenixroasters.coffee",
+      "placeId": "ChIJx0uk0Yqj9YgRSADpy4VNZ6g"
     },
     {
       "name": "The Coffee By Hand",
@@ -282,9 +291,9 @@
       "lat": 0,
       "lng": 0,
       "category": "Dessert Cafe",
-      "rating": 4.3,
-      "ratingCount": "340+",
-      "ratingNum": 340,
+      "rating": 4.4,
+      "ratingCount": "879",
+      "ratingNum": 879,
       "hours": "Sun-Thu 11am-11pm \u00b7 Fri-Sat 11am-12am",
       "usp": "Korean K-town dessert cafe with a dried-tree centerpiece and private nooks for croffles and lattes.",
       "loved": [
@@ -306,7 +315,8 @@
         "tier": "midnight",
         "when": "Fri-Sat till midnight; rest till 11pm"
       },
-      "website": "https://www.instagram.com/thecoffeebyhandatl"
+      "website": "https://www.instagram.com/thecoffeebyhandatl",
+      "placeId": "ChIJy83g5wSj9YgR_7QRo2QKmLA"
     },
     {
       "name": "OneZo Boba Tea",
@@ -315,8 +325,8 @@
       "lng": 0,
       "category": "Tea/Boba",
       "rating": 4.7,
-      "ratingCount": "240+",
-      "ratingNum": 240,
+      "ratingCount": "469",
+      "ratingNum": 469,
       "hours": "Sun-Thu 12pm-10:30pm \u00b7 Fri-Sat 12pm-11:30pm",
       "usp": "First bubble-tea brand to make fresh handmade boba pearls in-store every day.",
       "loved": [
@@ -338,7 +348,8 @@
         "tier": "10pm+",
         "when": "Fri-Sun till 11:30pm"
       },
-      "website": "https://www.onezo.us"
+      "website": "https://www.onezo.us",
+      "placeId": "ChIJQ_0PG8Oj9YgR4VT_WcsEdrI"
     },
     {
       "name": "Molly Tea",
@@ -346,9 +357,9 @@
       "lat": 0,
       "lng": 0,
       "category": "Tea/Boba",
-      "rating": 4.6,
-      "ratingCount": "100+",
-      "ratingNum": 100,
+      "rating": 4.7,
+      "ratingCount": "464",
+      "ratingNum": 464,
       "hours": "Daily 11am-10:10pm",
       "usp": "Chinese tea chain pouring loose-leaf brews and floral milk teas instead of syrup-heavy boba.",
       "loved": [
@@ -370,7 +381,8 @@
         "tier": "10pm+",
         "when": "Daily till 10:10pm"
       },
-      "website": "https://mollyteaatl.com"
+      "website": "https://mollyteaatl.com",
+      "placeId": "ChIJpblW6cSj9YgRg_xfxrqorhU"
     },
     {
       "name": "ChiCha San Chen",
@@ -378,9 +390,9 @@
       "lat": 0,
       "lng": 0,
       "category": "Tea/Boba",
-      "rating": 4.6,
-      "ratingCount": "200+",
-      "ratingNum": 200,
+      "rating": 4.7,
+      "ratingCount": "995",
+      "ratingNum": 995,
       "hours": "Sun-Thu 12pm-9pm \u00b7 Fri-Sat 12pm-10pm",
       "usp": "Michelin-Plate Taiwanese tea house pouring some of the world's most expensive oolongs.",
       "loved": [
@@ -402,7 +414,8 @@
         "tier": "10pm+",
         "when": "Fri-Sat till 10pm"
       },
-      "website": "https://chichasanchenusa.com"
+      "website": "https://chichasanchenusa.com",
+      "placeId": "ChIJzSbcDeyj9YgRvGFxBuHeXQA"
     },
     {
       "name": "Matcha Cafe Maiko",
@@ -411,8 +424,8 @@
       "lng": 0,
       "category": "Dessert Cafe",
       "rating": 4.5,
-      "ratingCount": "900+",
-      "ratingNum": 900,
+      "ratingCount": "587",
+      "ratingNum": 587,
       "hours": "Sun-Thu 1pm-10pm \u00b7 Fri-Sat 1pm-10:30pm",
       "usp": "Hawaii-born matcha cafe serving Uji matcha lattes, soft serve, and Japanese parfaits.",
       "loved": [
@@ -434,7 +447,8 @@
         "tier": "10pm+",
         "when": "Fri-Sat till 10:30pm"
       },
-      "website": "https://www.matchacafeatl.com"
+      "website": "https://www.matchacafeatl.com",
+      "placeId": "ChIJK98kSIOj9YgRt3772mDpL_A"
     },
     {
       "name": "Hiro Tea Bar",
@@ -442,9 +456,9 @@
       "lat": 0,
       "lng": 0,
       "category": "Tea/Boba",
-      "rating": 4.7,
-      "ratingCount": "30+",
-      "ratingNum": 30,
+      "rating": 4.1,
+      "ratingCount": "139",
+      "ratingNum": 139,
       "hours": "Sun-Thu 10am-9pm \u00b7 Fri-Sat 10am-10pm",
       "usp": "Boba cooked fresh every 2 hours and 100% real fruit cut daily \u2014 no syrup.",
       "loved": [
@@ -466,7 +480,8 @@
         "tier": "10pm+",
         "when": "Fri-Sat till 10pm"
       },
-      "website": "https://www.hiroteabar.com"
+      "website": "https://www.hiroteabar.com",
+      "placeId": "ChIJSwPoW0Gj9YgRP-LI4n5RcI8"
     },
     {
       "name": "Ding Tea",
@@ -474,9 +489,9 @@
       "lat": 0,
       "lng": 0,
       "category": "Tea/Boba",
-      "rating": 4.2,
-      "ratingCount": "250+",
-      "ratingNum": 250,
+      "rating": 4.1,
+      "ratingCount": "446",
+      "ratingNum": 446,
       "hours": "Daily 11am-10pm",
       "usp": "Taiwanese chain known for consistent chewy boba and a large customizable menu.",
       "loved": [
@@ -498,7 +513,8 @@
         "tier": "10pm+",
         "when": "Daily till 10pm"
       },
-      "website": "https://www.instagram.com/dingteaduluth"
+      "website": "https://www.instagram.com/dingteaduluth",
+      "placeId": "ChIJRRacWxWj9YgRZT9YxK4Qs4Q"
     },
     {
       "name": "Tiger Sugar",
@@ -507,8 +523,8 @@
       "lng": 0,
       "category": "Tea/Boba",
       "rating": 4.2,
-      "ratingCount": "170+",
-      "ratingNum": 170,
+      "ratingCount": "459",
+      "ratingNum": 459,
       "hours": "Sun-Thu 12pm-10pm \u00b7 Fri-Sat 12pm-11pm",
       "usp": "Originator of the 'tiger stripes' brown sugar milk, with 8-hour-cooked pearls.",
       "loved": [
@@ -530,7 +546,8 @@
         "tier": "10pm+",
         "when": "Fri-Sat till 11pm"
       },
-      "website": "https://en.tigersugar.com"
+      "website": "https://en.tigersugar.com",
+      "placeId": "ChIJRfiUQtOj9YgRyiMsgL9WRCo"
     },
     {
       "name": "Xing Fu Tang",
@@ -538,9 +555,9 @@
       "lat": 0,
       "lng": 0,
       "category": "Tea/Boba",
-      "rating": 4.4,
-      "ratingCount": "190+",
-      "ratingNum": 190,
+      "rating": 4.7,
+      "ratingCount": "526",
+      "ratingNum": 526,
       "hours": "Sun-Thu 12pm-9:30pm \u00b7 Fri-Sat 12pm-10:30pm",
       "usp": "Taiwanese chain that stir-fries fresh tapioca pearls in brown sugar in front of you.",
       "loved": [
@@ -562,7 +579,8 @@
         "tier": "10pm+",
         "when": "Fri-Sat till 10:30pm"
       },
-      "website": "https://www.xingfutangga.com"
+      "website": "https://www.xingfutangga.com",
+      "placeId": "ChIJ-y0J-Iyj9YgR41wD64_AeXM"
     },
     {
       "name": "Goodwin Tea House & More",
@@ -570,9 +588,9 @@
       "lat": 0,
       "lng": 0,
       "category": "Specialty",
-      "rating": 4.4,
-      "ratingCount": "100+",
-      "ratingNum": 100,
+      "rating": 4.5,
+      "ratingCount": "110",
+      "ratingNum": 110,
       "hours": "Tue-Sun 11:30am-10pm \u00b7 Closed Mon",
       "usp": "Taiwanese tea house pairing taro and mango bubble teas with small plates and noodle bowls.",
       "loved": [
@@ -594,7 +612,8 @@
         "tier": "10pm+",
         "when": "Tue-Sun till 10pm"
       },
-      "website": "https://www.goodwinteahouse.com"
+      "website": "https://www.goodwinteahouse.com",
+      "placeId": "ChIJ-XYPlKyj9YgRk8laEZCDT88"
     },
     {
       "name": "The Bep Teahouse",
@@ -602,9 +621,9 @@
       "lat": 0,
       "lng": 0,
       "category": "Tea/Boba",
-      "rating": 4.5,
-      "ratingCount": "80+",
-      "ratingNum": 80,
+      "rating": 4.6,
+      "ratingCount": "143",
+      "ratingNum": 143,
       "hours": "Sun-Thu 10am-11pm \u00b7 Fri-Sat 10am-12am",
       "usp": "Vietnamese-owned teahouse with organic milk, loose-leaf tea, and 100+ drinks.",
       "loved": [
@@ -626,7 +645,8 @@
         "tier": "midnight",
         "when": "Fri-Sat till midnight; rest till 11pm"
       },
-      "website": "https://thebepteahouse.com/locations/the-bep-teahouse-duluth/"
+      "website": "https://thebepteahouse.com/locations/the-bep-teahouse-duluth/",
+      "placeId": "ChIJi3EKOwCj9YgRGA6cVxHttL0"
     },
     {
       "name": "Paris Baguette",
@@ -635,8 +655,8 @@
       "lng": 0,
       "category": "Bakery+Cafe",
       "rating": 4.2,
-      "ratingCount": "1,200+",
-      "ratingNum": 1200,
+      "ratingCount": "1,377",
+      "ratingNum": 1377,
       "hours": "Daily 7am-9pm",
       "usp": "Korean-French bakery chain with 300+ pastries, cakes, and espresso drinks.",
       "loved": [
@@ -654,7 +674,8 @@
         "note": "Lots of tables, Wi-Fi, commonly used for studying.",
         "hasMeetingRoom": false
       },
-      "website": "https://parisbaguette.com/locations/ga/duluth/3492-satellite-boulevard/"
+      "website": "https://parisbaguette.com/locations/ga/duluth/3492-satellite-boulevard/",
+      "placeId": "ChIJj4NlQBuj9YgRWKbr7eZKsLU"
     },
     {
       "name": "Bread Museum Bakery & Cafe",
@@ -663,8 +684,8 @@
       "lng": 0,
       "category": "Bakery+Cafe",
       "rating": 4.9,
-      "ratingCount": "190+",
-      "ratingNum": 190,
+      "ratingCount": "274",
+      "ratingNum": 274,
       "hours": "Mon-Tue 10:30am-7pm \u00b7 Thu 10:30am-7:30pm \u00b7 Fri-Sat to 10pm \u00b7 Sun to 7:30pm \u00b7 Closed Wed",
       "usp": "Boutique French-Korean bakery focused on less-sweet, scratch-made breads.",
       "loved": [
@@ -686,7 +707,8 @@
         "tier": "10pm+",
         "when": "Fri-Sat till 10pm"
       },
-      "website": "https://thebreadmuseum.com"
+      "website": "https://thebreadmuseum.com",
+      "placeId": "ChIJNaJX212j9YgRYTgmGuxK67M"
     },
     {
       "name": "Tous Les Jours",
@@ -694,9 +716,9 @@
       "lat": 0,
       "lng": 0,
       "category": "Bakery+Cafe",
-      "rating": 4.3,
-      "ratingCount": "850+",
-      "ratingNum": 850,
+      "rating": 3.7,
+      "ratingCount": "19",
+      "ratingNum": 19,
       "hours": "Daily 8:30am-8:30pm",
       "usp": "French-Asian bakery inside H Mart with 300+ daily-baked breads, cakes, and pastries.",
       "loved": [
@@ -714,7 +736,8 @@
         "note": "Inside H Mart, seating exists but not focused on work.",
         "hasMeetingRoom": false
       },
-      "website": "https://tljus.com/stores/duluth-2550-pleasant-hill-rd"
+      "website": "https://tljus.com/stores/duluth-2550-pleasant-hill-rd",
+      "placeId": "ChIJiWdFPACj9YgR12Cmx4EHKqM"
     },
     {
       "name": "Tree Story Bakery & Cafe",
@@ -722,9 +745,9 @@
       "lat": 0,
       "lng": 0,
       "category": "Bakery+Cafe",
-      "rating": 4.2,
-      "ratingCount": "230+",
-      "ratingNum": 230,
+      "rating": 4.3,
+      "ratingCount": "548",
+      "ratingNum": 548,
       "hours": "Sun-Thu 8am-9pm \u00b7 Fri-Sat 8am-10pm",
       "usp": "Korean dessert cafe serving cream-filled breads and bingsu in a calm modern space.",
       "loved": [
@@ -746,7 +769,8 @@
         "tier": "10pm+",
         "when": "Fri-Sat till 10pm"
       },
-      "website": "https://www.facebook.com/TreeStoryCafe/"
+      "website": "https://www.facebook.com/TreeStoryCafe/",
+      "placeId": "ChIJKwxu1qCk4RQRV1Ie0BA26bk"
     },
     {
       "name": "Vincent Bakery & Cafe",
@@ -754,9 +778,9 @@
       "lat": 0,
       "lng": 0,
       "category": "Bakery+Cafe",
-      "rating": 4,
-      "ratingCount": "190+",
-      "ratingNum": 190,
+      "rating": 4.5,
+      "ratingCount": "511",
+      "ratingNum": 511,
       "hours": "Daily 7am-8pm",
       "usp": "Long-running Korean bakery with Van Gogh-inspired branding and Asian-style pastries.",
       "loved": [
@@ -774,7 +798,8 @@
         "note": "Ample seating with outlets, library-like atmosphere.",
         "hasMeetingRoom": false
       },
-      "website": "https://www.instagram.com/vincentbakeryofficial"
+      "website": "https://www.instagram.com/vincentbakeryofficial",
+      "placeId": "ChIJ-5BW-gCj9YgRydc8vJNauKM"
     },
     {
       "name": "Hansel & Gretel Bakery Cafe",
@@ -783,8 +808,8 @@
       "lng": 0,
       "category": "Bakery+Cafe",
       "rating": 4.2,
-      "ratingCount": "1,300+",
-      "ratingNum": 1300,
+      "ratingCount": "1,290",
+      "ratingNum": 1290,
       "hours": "Sun-Thu 8am-11pm \u00b7 Fri-Sat 8am-12am",
       "usp": "Late-night Korean bakery with fresh cream cakes and a fairy-tale theme.",
       "loved": [
@@ -806,7 +831,8 @@
         "tier": "midnight",
         "when": "Fri-Sat till midnight; rest till 11pm"
       },
-      "website": "https://www.instagram.com/hanselgretel.bakery"
+      "website": "https://www.instagram.com/hanselgretel.bakery",
+      "placeId": "ChIJcdUtPw6j9YgRVLVnRHS0JVE"
     },
     {
       "name": "Georgia French Bakery & Cafe",
@@ -815,8 +841,8 @@
       "lng": 0,
       "category": "Bakery+Cafe",
       "rating": 4.8,
-      "ratingCount": "800+",
-      "ratingNum": 800,
+      "ratingCount": "854",
+      "ratingNum": 854,
       "hours": "Tue-Fri 7:30am-3pm \u00b7 Sat 9am-3pm \u00b7 Closed Sun-Mon",
       "usp": "Family-run French bakery with scratch-made croissants and baguettes by a Paris-trained baker.",
       "loved": [
@@ -834,7 +860,8 @@
         "note": "Cozy local bakery; workable but not a study mecca.",
         "hasMeetingRoom": false
       },
-      "website": "https://georgiafrenchbakerycafe.com"
+      "website": "https://georgiafrenchbakerycafe.com",
+      "placeId": "ChIJpadk2Bqj9YgRaJhkGNYMsrU"
     },
     {
       "name": "Mai Bakery",
@@ -842,9 +869,9 @@
       "lat": 0,
       "lng": 0,
       "category": "Bakery+Cafe",
-      "rating": 4.6,
-      "ratingCount": "14+",
-      "ratingNum": 14,
+      "rating": 4.4,
+      "ratingCount": "20",
+      "ratingNum": 20,
       "hours": "Daily 10am-8pm",
       "usp": "Tiny Chinese bakery counter inside Great Wall Supermarket with daily-baked buns.",
       "loved": [
@@ -862,7 +889,8 @@
         "note": "Inside Great Wall food court, no real cafe space.",
         "hasMeetingRoom": false
       },
-      "website": null
+      "website": null,
+      "placeId": "ChIJBZCgZgOj9YgRAgvSfyGFbN0"
     },
     {
       "name": "The Patio Cafe & Bakery",
@@ -870,9 +898,9 @@
       "lat": 0,
       "lng": 0,
       "category": "Bakery+Cafe",
-      "rating": 4.2,
-      "ratingCount": "85+",
-      "ratingNum": 85,
+      "rating": 4.5,
+      "ratingCount": "281",
+      "ratingNum": 281,
       "hours": "Mon-Thu 9am-7pm \u00b7 Fri-Sat 9am-4pm \u00b7 Closed Sun",
       "usp": "American scratch kitchen and bakery making soups, sandwiches, and cookies from scratch daily.",
       "loved": [
@@ -890,7 +918,8 @@
         "note": "Plenty of indoor and patio seating.",
         "hasMeetingRoom": false
       },
-      "website": "https://www.patiocafebakery.com/"
+      "website": "https://www.patiocafebakery.com/",
+      "placeId": "ChIJS-L0ef-h9YgRE_2f231k7Ww"
     },
     {
       "name": "Shokku Bakery",
@@ -898,9 +927,9 @@
       "lat": 0,
       "lng": 0,
       "category": "Bakery+Cafe",
-      "rating": 4.5,
-      "ratingCount": "70+",
-      "ratingNum": 70,
+      "rating": 4.2,
+      "ratingCount": "94",
+      "ratingNum": 94,
       "hours": "Daily 11am-8pm",
       "usp": "Metro Atlanta's first Hokkaido-style Japanese bakery inside Jusgo Supermarket.",
       "loved": [
@@ -918,7 +947,8 @@
         "note": "Inside Jusgo food court, counter service only.",
         "hasMeetingRoom": false
       },
-      "website": "https://www.instagram.com/shokkubakery/"
+      "website": "https://www.instagram.com/shokkubakery/",
+      "placeId": "ChIJPcS5YACj9YgR74NNBnXaVGw"
     },
     {
       "name": "Forest Cafe",
@@ -927,8 +957,8 @@
       "lng": 0,
       "category": "Dessert Cafe",
       "rating": 4.8,
-      "ratingCount": "340+",
-      "ratingNum": 340,
+      "ratingCount": "369",
+      "ratingNum": 369,
       "hours": "Daily 9am-11pm",
       "usp": "Korean tanghulu and bingsu specialist; every drink and dessert made to order.",
       "loved": [
@@ -950,7 +980,8 @@
         "tier": "10pm+",
         "when": "Daily till 11pm"
       },
-      "website": "https://www.instagram.com/forest_cafe_ga/"
+      "website": "https://www.instagram.com/forest_cafe_ga/",
+      "placeId": "ChIJ1ee7vEWj9YgRuakY6y4vmBc"
     },
     {
       "name": "Cafe 104",
@@ -958,9 +989,9 @@
       "lat": 0,
       "lng": 0,
       "category": "Bakery+Cafe",
-      "rating": 4.1,
-      "ratingCount": "540+",
-      "ratingNum": 540,
+      "rating": 4.2,
+      "ratingCount": "503",
+      "ratingNum": 503,
       "hours": "Daily 10am-11pm",
       "usp": "Japanese souffle pancakes and Korean-fusion brunch; widely cited as a Duluth study spot.",
       "loved": [
@@ -982,7 +1013,8 @@
         "tier": "10pm+",
         "when": "Daily till 11pm"
       },
-      "website": "https://www.cafe104duluth.com/"
+      "website": "https://www.cafe104duluth.com/",
+      "placeId": "ChIJjRDCjXWj9YgRP6O-zrRHR50"
     },
     {
       "name": "Boba Mocha",
@@ -991,8 +1023,8 @@
       "lng": 0,
       "category": "Tea/Boba",
       "rating": 4.6,
-      "ratingCount": "1,680+",
-      "ratingNum": 1680,
+      "ratingCount": "1,065",
+      "ratingNum": 1065,
       "hours": "Sun-Thu 11am-10pm \u00b7 Fri-Sat 11am-11pm",
       "usp": "Longtime Duluth boba favorite with handmade Taiwanese teas, popping boba, and board games.",
       "loved": [
@@ -1014,35 +1046,8 @@
         "tier": "10pm+",
         "when": "Fri-Sat till 11pm"
       },
-      "website": "https://www.bobamochaonline.com/"
-    },
-    {
-      "name": "Long's Cafe 2",
-      "address": "1630 Pleasant Hill Rd, Ste 110-A, Duluth, GA 30096",
-      "lat": 0,
-      "lng": 0,
-      "category": "Specialty",
-      "rating": null,
-      "ratingCount": "\u2014",
-      "ratingNum": 0,
-      "hours": "Call (470) 365-2179 for hours",
-      "usp": "Vietnamese coffee and sugarcane juice lounge with weekly karaoke and sports.",
-      "loved": [
-        "Vietnamese iced coffee",
-        "sugarcane juice",
-        "karaoke"
-      ],
-      "signature": "C\u00e0 ph\u00ea s\u1eefa \u0111\u00e1 (Vietnamese iced coffee)",
-      "googleUrl": "https://www.google.com/maps/search/?api=1&query=Long%27s%20Cafe%202%201630%20Pleasant%20Hill%20Rd%20Duluth%20GA",
-      "yelpUrl": "https://www.yelp.com/search?find_desc=Long%27s+Cafe+2&find_loc=Duluth%2C+GA",
-      "city": "Duluth",
-      "addrKey": "duluth-1630-pleasanthill",
-      "cw": {
-        "tier": "good",
-        "note": "Small neighborhood Vietnamese cafe.",
-        "hasMeetingRoom": false
-      },
-      "website": "https://www.facebook.com/people/Longs-Cafe-2/61553102627374/"
+      "website": "https://www.bobamochaonline.com/",
+      "placeId": "ChIJWbYMlFSi9YgReTXKTrCaHUM"
     },
     {
       "name": "Incha Duluth (Duck Ink + Boba)",
@@ -1050,9 +1055,9 @@
       "lat": 0,
       "lng": 0,
       "category": "Specialty",
-      "rating": 4.5,
-      "ratingCount": "25+",
-      "ratingNum": 25,
+      "rating": 4.9,
+      "ratingCount": "781",
+      "ratingNum": 781,
       "hours": "Walk-ins; check socials for daily hours",
       "usp": "Korean-style cafe where you paint Duck Ink figurines while sipping boba.",
       "loved": [
@@ -1070,7 +1075,8 @@
         "note": "Paint-your-own-ceramics activity venue.",
         "hasMeetingRoom": false
       },
-      "website": "https://www.instagram.com/inchaduckink/"
+      "website": "https://www.instagram.com/inchaduckink/",
+      "placeId": "ChIJt6u5LoWj9YgR12fpaUNj6g8"
     },
     {
       "name": "Orange Coffee Bar",
@@ -1079,8 +1085,8 @@
       "lng": 0,
       "category": "Coffee",
       "rating": 4.4,
-      "ratingCount": "310+",
-      "ratingNum": 310,
+      "ratingCount": "381",
+      "ratingNum": 381,
       "hours": "Daily 10am-10pm",
       "usp": "Korean coffee bar known for sweet potato latte and summer bingsoo.",
       "loved": [
@@ -1102,7 +1108,8 @@
         "tier": "10pm+",
         "when": "Daily till 10pm"
       },
-      "website": "https://www.instagram.com/orangecoffeebar.duluth/"
+      "website": "https://www.instagram.com/orangecoffeebar.duluth/",
+      "placeId": "ChIJpxdHHgOj9YgRT2TKHqAJu88"
     },
     {
       "name": "Tom N Toms Coffee Black",
@@ -1110,9 +1117,9 @@
       "lat": 0,
       "lng": 0,
       "category": "Coffee",
-      "rating": 4.5,
-      "ratingCount": "245+",
-      "ratingNum": 245,
+      "rating": 4.4,
+      "ratingCount": "332",
+      "ratingNum": 332,
       "hours": "Daily 8am-10pm",
       "usp": "Korean coffee chain's Black-label flagship \u2014 2 stories with an upstairs study area.",
       "loved": [
@@ -1135,7 +1142,8 @@
         "tier": "10pm+",
         "when": "Daily till 10pm"
       },
-      "website": "https://www.tomntomsatlanta.com/"
+      "website": "https://www.tomntomsatlanta.com/",
+      "placeId": "ChIJ_S2mIQCj9YgRKDjTjwQxiQs"
     },
     {
       "name": "Gonggan ATL",
@@ -1143,9 +1151,9 @@
       "lat": 0,
       "lng": 0,
       "category": "Coffee",
-      "rating": 4.6,
-      "ratingCount": "12+",
-      "ratingNum": 12,
+      "rating": 4.4,
+      "ratingCount": "103",
+      "ratingNum": 103,
       "hours": "Fri-Sun 11am-11pm \u00b7 Closed Mon-Thu",
       "usp": "NYC/LA Korean cafe brand's first Atlanta outpost, weekends only, South Korean roasters.",
       "loved": [
@@ -1167,7 +1175,8 @@
         "tier": "10pm+",
         "when": "Fri-Sun till 11pm"
       },
-      "website": "https://www.instagram.com/gonggan.atl/"
+      "website": "https://www.instagram.com/gonggan.atl/",
+      "placeId": "ChIJlwQvQf-j9YgRbt4L-yPzGjQ"
     },
     {
       "name": "Kafeiin",
@@ -1175,9 +1184,9 @@
       "lat": 0,
       "lng": 0,
       "category": "Coffee",
-      "rating": 3.9,
-      "ratingCount": "190+",
-      "ratingNum": 190,
+      "rating": 4.1,
+      "ratingCount": "389",
+      "ratingNum": 389,
       "hours": "Sun-Thu 9/10am-10pm \u00b7 Fri-Sat 9am-11pm",
       "usp": "Independent Korean specialty cafe with playful lattes like corn and banana matcha.",
       "loved": [
@@ -1199,7 +1208,8 @@
         "tier": "10pm+",
         "when": "Fri-Sat till 11pm"
       },
-      "website": "https://www.instagram.com/kafeiin.coffee/"
+      "website": "https://www.instagram.com/kafeiin.coffee/",
+      "placeId": "ChIJ0-b3MwCj9YgRFVVeq4bS0Nc"
     },
     {
       "name": "Fujiissa",
@@ -1207,9 +1217,9 @@
       "lat": 0,
       "lng": 0,
       "category": "Dessert Cafe",
-      "rating": 4.5,
-      "ratingCount": "30+",
-      "ratingNum": 30,
+      "rating": 4.6,
+      "ratingCount": "163",
+      "ratingNum": 163,
       "hours": "Mon-Fri 11:30am-8pm \u00b7 Sat-Sun 11am-8pm",
       "usp": "Japanese matcha dessert counter inside Tokyo Kuma food court \u2014 authentic uji matcha.",
       "loved": [
@@ -1227,7 +1237,8 @@
         "note": "Counter inside Tokyo Kuma food court.",
         "hasMeetingRoom": false
       },
-      "website": "https://fujiissa.com/"
+      "website": "https://fujiissa.com/",
+      "placeId": "ChIJXSooIACj9YgRpyWAqRTwF5c"
     },
     {
       "name": "Yezi Coconut Dessert",
@@ -1235,9 +1246,9 @@
       "lat": 0,
       "lng": 0,
       "category": "Dessert Cafe",
-      "rating": 4.6,
-      "ratingCount": "180+",
-      "ratingNum": 180,
+      "rating": 4.3,
+      "ratingCount": "172",
+      "ratingNum": 172,
       "hours": "Daily 12pm-9pm",
       "usp": "Georgia's first coconut-based dessert shop, crafting young-coconut puddings and clouds with a reusable-jar program.",
       "loved": [
@@ -1255,7 +1266,8 @@
         "note": "Small dessert shop \u2014 not a sit-and-work spot.",
         "hasMeetingRoom": false
       },
-      "website": "https://www.yezicoconutatl.com/"
+      "website": "https://www.yezicoconutatl.com/",
+      "placeId": "ChIJsb_4QUSj9YgRDhbbvw5cgpU"
     },
     {
       "name": "Fluffy Fluffy Dessert Cafe",
@@ -1264,8 +1276,8 @@
       "lng": 0,
       "category": "Dessert Cafe",
       "rating": 4.4,
-      "ratingCount": "480+",
-      "ratingNum": 480,
+      "ratingCount": "1,053",
+      "ratingNum": 1053,
       "hours": "Mon-Fri 11am-10pm \u00b7 Sat-Sun 9am-10pm",
       "usp": "Japanese souffle pancakes hand-whipped to order.",
       "loved": [
@@ -1287,7 +1299,8 @@
         "tier": "10pm+",
         "when": "Daily till 10pm"
       },
-      "website": "https://www.fluffyfluffy.com/locations/duluth"
+      "website": "https://www.fluffyfluffy.com/locations/duluth",
+      "placeId": "ChIJDxYx1SCj9YgRtkcQ-5-k5Pc"
     },
     {
       "name": "Qamaria Yemeni Coffee Co.",
@@ -1295,9 +1308,9 @@
       "lat": 0,
       "lng": 0,
       "category": "Coffee",
-      "rating": 4.6,
-      "ratingCount": "320+",
-      "ratingNum": 320,
+      "rating": 4.5,
+      "ratingCount": "251",
+      "ratingNum": 251,
       "hours": "Sun-Thu 12pm-11pm \u00b7 Fri-Sat 12pm-12am",
       "usp": "Late-night Yemeni coffeehouse pouring adeni, mofawar, and qishr brews with cardamom and saffron.",
       "loved": [
@@ -1319,7 +1332,8 @@
         "tier": "midnight",
         "when": "Fri-Sat till midnight; rest till 11pm"
       },
-      "website": "https://www.instagram.com/qamariacoffeeatl/"
+      "website": "https://www.instagram.com/qamariacoffeeatl/",
+      "placeId": "ChIJh4jIqNyj9YgRu1_QcC8GzmA"
     },
     {
       "name": "Yibna Cafe",
@@ -1327,9 +1341,9 @@
       "lat": 0,
       "lng": 0,
       "category": "Coffee",
-      "rating": 4.7,
-      "ratingCount": "90+",
-      "ratingNum": 90,
+      "rating": 5.0,
+      "ratingCount": "620",
+      "ratingNum": 620,
       "hours": "Mon-Fri 8am-6pm \u00b7 Sat 8am-3pm \u00b7 Closed Sun",
       "usp": "Drive-thru Mediterranean-fusion coffee shop with Yemeni and Middle Eastern flavors.",
       "loved": [
@@ -1347,7 +1361,8 @@
         "note": "Plenty of chairs and outdoor seating.",
         "hasMeetingRoom": false
       },
-      "website": "https://yibnacafe.com/"
+      "website": "https://yibnacafe.com/",
+      "placeId": "ChIJC3WdtKij9YgRW4poSauN8aE"
     },
     {
       "name": "El Cafe by La Abuela",
@@ -1355,9 +1370,9 @@
       "lat": 0,
       "lng": 0,
       "category": "Dessert Cafe",
-      "rating": 4.5,
-      "ratingCount": "210+",
-      "ratingNum": 210,
+      "rating": 4.4,
+      "ratingCount": "1,016",
+      "ratingNum": 1016,
       "hours": "Mon-Thu 10:30am-9pm \u00b7 Fri-Sun 10am-11pm",
       "usp": "Colombian-rooted dessert cafe with crepes, waffles, milkshakes, and banana splits.",
       "loved": [
@@ -1379,7 +1394,8 @@
         "tier": "10pm+",
         "when": "Fri-Sat & Sun till 11pm"
       },
-      "website": "https://www.elcafebylaabuela.com/"
+      "website": "https://www.elcafebylaabuela.com/",
+      "placeId": "ChIJXTE1tmqj9YgRCR9QgRZ09EM"
     },
     {
       "name": "Date un Gusto",
@@ -1388,8 +1404,8 @@
       "lng": 0,
       "category": "Bakery+Cafe",
       "rating": 4.6,
-      "ratingCount": "140+",
-      "ratingNum": 140,
+      "ratingCount": "133",
+      "ratingNum": 133,
       "hours": "Sun-Thu 8am-10pm \u00b7 Fri-Sat 8am-11pm",
       "usp": "Venezuelan-Colombian bakery-cafe with arepas, cachapas, tres-leches, and South American coffee.",
       "loved": [
@@ -1411,7 +1427,8 @@
         "tier": "10pm+",
         "when": "Fri-Sat till 11pm"
       },
-      "website": "https://www.instagram.com/dateungusto.atl/"
+      "website": "https://www.instagram.com/dateungusto.atl/",
+      "placeId": "ChIJCRoynPqj9YgRDsoE_v7XnAM"
     },
     {
       "name": "7 Leaves Cafe",
@@ -1419,9 +1436,9 @@
       "lat": 0,
       "lng": 0,
       "category": "Tea/Boba",
-      "rating": 4.5,
-      "ratingCount": "410+",
-      "ratingNum": 410,
+      "rating": 4.6,
+      "ratingCount": "218",
+      "ratingNum": 218,
       "hours": "Mon-Thu 10am-8pm \u00b7 Fri-Sat 10am-10pm \u00b7 Sun 10am-9pm",
       "usp": "Vietnamese-American tea chain with childhood flavors like mung bean and Thai tea \u2014 drive-thru.",
       "loved": [
@@ -1443,7 +1460,8 @@
         "tier": "10pm+",
         "when": "Fri-Sat till 10pm"
       },
-      "website": "https://7leavescafe.com/locations/satellite/"
+      "website": "https://7leavescafe.com/locations/satellite/",
+      "placeId": "ChIJeVScd9Wj9YgRPvfMkoImdOw"
     },
     {
       "name": "The Quynh Cafe",
@@ -1451,9 +1469,9 @@
       "lat": 0,
       "lng": 0,
       "category": "Dessert Cafe",
-      "rating": 4.4,
-      "ratingCount": "390+",
-      "ratingNum": 390,
+      "rating": 4.3,
+      "ratingCount": "319",
+      "ratingNum": 319,
       "hours": "Mon, Wed-Sun 10am-8pm \u00b7 Closed Tue",
       "usp": "Modern Vietnamese cafe celebrating ch\u00e8 and phin-dripped robusta coffee.",
       "loved": [
@@ -1471,7 +1489,8 @@
         "note": "Vietnamese coffee/boba; on local quiet-study lists.",
         "hasMeetingRoom": false
       },
-      "website": "https://www.facebook.com/theQuynhCafe/"
+      "website": "https://www.facebook.com/theQuynhCafe/",
+      "placeId": "ChIJp65w1S-j9YgRE9o1oSp-FYQ"
     },
     {
       "name": "Lemon Sweets Bakery & Cafe",
@@ -1479,9 +1498,9 @@
       "lat": 0,
       "lng": 0,
       "category": "Bakery+Cafe",
-      "rating": 4.5,
-      "ratingCount": "220+",
-      "ratingNum": 220,
+      "rating": 4.7,
+      "ratingCount": "239",
+      "ratingNum": 239,
       "hours": "Mon, Wed-Thu, Sun 10:30am-8:30pm \u00b7 Fri-Sat to 9:30pm \u00b7 Closed Tue",
       "usp": "Asian-owned bakery and boba shop blending Vietnamese, Chinese, and Korean pastries.",
       "loved": [
@@ -1499,7 +1518,8 @@
         "note": "Cozy, fine for studying with friends.",
         "hasMeetingRoom": false
       },
-      "website": "https://www.lemonsweetsbakery.com/"
+      "website": "https://www.lemonsweetsbakery.com/",
+      "placeId": "ChIJqysGDoij9YgR4N7l5zw0c4o"
     },
     {
       "name": "Wich Tea",
@@ -1508,8 +1528,8 @@
       "lng": 0,
       "category": "Specialty",
       "rating": 4.8,
-      "ratingCount": "330+",
-      "ratingNum": 330,
+      "ratingCount": "468",
+      "ratingNum": 468,
       "hours": "Mon, Wed-Thu 9am-7:30pm \u00b7 Fri-Sat 10am-9pm \u00b7 Sun 10am-7:30pm \u00b7 Closed Tue",
       "usp": "Family-run Vietnamese cafe with in-house-baked banh mi and Vietnamese coffee.",
       "loved": [
@@ -1527,7 +1547,8 @@
         "note": "Plenty of seating, board games; takeout-leaning.",
         "hasMeetingRoom": false
       },
-      "website": "https://linktr.ee/wichteabanhmi"
+      "website": "https://linktr.ee/wichteabanhmi",
+      "placeId": "ChIJ_f0IFwWj9YgRT8ZnfvUKpYk"
     },
     {
       "name": "Tea Drip",
@@ -1535,9 +1556,9 @@
       "lat": 0,
       "lng": 0,
       "category": "Tea/Boba",
-      "rating": 4.8,
-      "ratingCount": "65+",
-      "ratingNum": 65,
+      "rating": 4.6,
+      "ratingCount": "243",
+      "ratingNum": 243,
       "hours": "Sun-Thu 10am-9pm \u00b7 Fri-Sat 10am-10pm",
       "usp": "Vietnamese drip coffee bar pairing Dalat coffee with Japanese matcha and real-ingredient boba.",
       "loved": [
@@ -1559,7 +1580,8 @@
         "tier": "10pm+",
         "when": "Fri-Sat till 10pm"
       },
-      "website": "https://www.instagram.com/teadrip.duluth/"
+      "website": "https://www.instagram.com/teadrip.duluth/",
+      "placeId": "ChIJTZQTrZWj9YgR7yCPR1mlVJ0"
     },
     {
       "name": "Cuckoo's Cafe",
@@ -1567,9 +1589,9 @@
       "lat": 0,
       "lng": 0,
       "category": "Tea/Boba",
-      "rating": 4.4,
-      "ratingCount": "150+",
-      "ratingNum": 150,
+      "rating": 4.5,
+      "ratingCount": "471",
+      "ratingNum": 471,
       "hours": "Mon-Tue, Thu-Sun 12pm-11pm \u00b7 Closed Wed",
       "usp": "Late-night Taiwanese hangout with boba, tea cocktails, and Taiwanese street snacks.",
       "loved": [
@@ -1591,7 +1613,8 @@
         "tier": "10pm+",
         "when": "Mon-Tue, Thu-Sun till 11pm"
       },
-      "website": "https://cuckooscafeduluth.com/"
+      "website": "https://cuckooscafeduluth.com/",
+      "placeId": "ChIJ6eLU5JOj9YgRlxEb8l9aaYs"
     },
     {
       "name": "Chuchat",
@@ -1599,9 +1622,9 @@
       "lat": 0,
       "lng": 0,
       "category": "Tea/Boba",
-      "rating": 4.8,
-      "ratingCount": "530+",
-      "ratingNum": 530,
+      "rating": 4.7,
+      "ratingCount": "603",
+      "ratingNum": 603,
       "hours": "Daily 11:30am-10pm",
       "usp": "Minimalist cafe with Taiwanese tea, house-made kabob skewers, and a hangout-friendly space (just over the Johns Creek line).",
       "loved": [
@@ -1623,7 +1646,8 @@
         "tier": "10pm+",
         "when": "Daily till 10pm"
       },
-      "website": "https://www.chuchatusa.com/"
+      "website": "https://www.chuchatusa.com/",
+      "placeId": "ChIJPR5SJL-f9YgRF4jcZyLZtrk"
     },
     {
       "name": "Art's Bakery & Cafe",
@@ -1631,9 +1655,9 @@
       "lat": 0,
       "lng": 0,
       "category": "Bakery+Cafe",
-      "rating": 4.7,
-      "ratingCount": "350+",
-      "ratingNum": 350,
+      "rating": 4.8,
+      "ratingCount": "266",
+      "ratingNum": 266,
       "hours": "Wed-Thu 11am-8pm \u00b7 Fri-Sat 11am-10pm \u00b7 Sun 12pm-8pm \u00b7 Closed Mon-Tue",
       "usp": "International bakery combining French technique with Middle Eastern pastries and custom cakes.",
       "loved": [
@@ -1655,7 +1679,8 @@
         "tier": "10pm+",
         "when": "Fri-Sat till 10pm"
       },
-      "website": "https://www.facebook.com/artsbakeryandcafe/"
+      "website": "https://www.facebook.com/artsbakeryandcafe/",
+      "placeId": "ChIJ23zF_pOj9YgR6dfuviJItdg"
     },
     {
       "name": "Artistea",
@@ -1663,9 +1688,9 @@
       "lat": 0,
       "lng": 0,
       "category": "Dessert Cafe",
-      "rating": 4.7,
-      "ratingCount": "60+",
-      "ratingNum": 60,
+      "rating": 4.8,
+      "ratingCount": "264",
+      "ratingNum": 264,
       "hours": "Sun-Tue, Thu 11am-10pm \u00b7 Fri-Sat 11am-11pm \u00b7 Closed Wed",
       "usp": "Boba and Korean-bagel cafe doubling as a craft studio for ceramic painting and plush-making.",
       "loved": [
@@ -1687,7 +1712,8 @@
         "tier": "10pm+",
         "when": "Fri-Sat till 11pm"
       },
-      "website": "https://artistea.shop/"
+      "website": "https://artistea.shop/",
+      "placeId": "ChIJdxfDGwCj9YgRRsPBQ0bbuoY"
     },
     {
       "name": "Hayat Coffee",
@@ -1695,9 +1721,9 @@
       "lat": 0,
       "lng": 0,
       "category": "Coffee",
-      "rating": 4.7,
-      "ratingCount": "25+",
-      "ratingNum": 25,
+      "rating": 4.8,
+      "ratingCount": "268",
+      "ratingNum": 268,
       "hours": "Sun-Thu 7am-1am \u00b7 Fri-Sat 7am-2am",
       "usp": "Locally-owned Arab coffeehouse celebrating cardamom-spiced brews in a 3,600 sqft family-friendly lounge \u2014 open past midnight every night.",
       "loved": [
@@ -1719,7 +1745,8 @@
         "tier": "midnight",
         "when": "Fri-Sat till 2am; rest of week till 1am"
       },
-      "website": "https://www.instagram.com/hayatcoffee.co/"
+      "website": "https://www.instagram.com/hayatcoffee.co/",
+      "placeId": "ChIJ40mavlCZ9YgRgIZo_llTLng"
     },
     {
       "name": "Cafe Flat",
@@ -1727,9 +1754,9 @@
       "lat": 0,
       "lng": 0,
       "category": "Coffee",
-      "rating": 4.7,
-      "ratingCount": "350+",
-      "ratingNum": 350,
+      "rating": 4.8,
+      "ratingCount": "309",
+      "ratingNum": 309,
       "hours": "Sun-Thu 9am-9pm \u00b7 Fri-Sat 9am-10pm",
       "usp": "Locally-roasted craft coffee with viral Korean-style croffles in a sleek, study-friendly space at Hwy 120 & Boggs Rd.",
       "loved": [
@@ -1751,7 +1778,8 @@
         "tier": "10pm+",
         "when": "Fri-Sat till 10pm"
       },
-      "website": "https://joe.coffee/locations/ga/duluth/cafe-flat-duluth/"
+      "website": "https://joe.coffee/locations/ga/duluth/cafe-flat-duluth/",
+      "placeId": "ChIJfXyu1CW99YgRFSK7wAfjrvE"
     },
     {
       "name": "Glaze Tea Duluth",
@@ -1760,8 +1788,8 @@
       "lng": 0,
       "category": "Tea/Boba",
       "rating": 4.5,
-      "ratingCount": "60+",
-      "ratingNum": 60,
+      "ratingCount": "316",
+      "ratingNum": 316,
       "hours": "Mon-Thu 12pm-11pm \u00b7 Fri-Sat 12pm-12am \u00b7 Sun 12pm-11pm",
       "usp": "Traditional Chinese tea craftsmanship meets modern boba \u2014 handcrafted milk teas with premium loose-leaf and a signature milk-tea hot pot.",
       "loved": [
@@ -1783,7 +1811,8 @@
         "tier": "midnight",
         "when": "Fri-Sat till midnight; rest till 11pm"
       },
-      "website": "https://www.glazetea.com/"
+      "website": "https://www.glazetea.com/",
+      "placeId": "ChIJRbBAjPqj9YgRe-0PebEu1CU"
     },
     {
       "name": "Break Coffee Roasters",
@@ -1792,8 +1821,8 @@
       "lng": 0,
       "category": "Coffee",
       "rating": 4.6,
-      "ratingCount": "355+",
-      "ratingNum": 355,
+      "ratingCount": "313",
+      "ratingNum": 313,
       "hours": "Mon-Thu 7am-5pm \u00b7 Fri 7am-6pm \u00b7 Sat 8am-6pm \u00b7 Sun 9am-6pm",
       "usp": "In-house small-batch roastery in walkable downtown Duluth \u2014 patio seating, outlets, and fresh pastries.",
       "loved": [
@@ -1812,7 +1841,8 @@
         "hasMeetingRoom": false,
         "meetingRoomNote": ""
       },
-      "website": "https://breakroasters.com"
+      "website": "https://breakroasters.com",
+      "placeId": "ChIJIR5xg8qj9YgRnSZmGjwPVWo"
     },
     {
       "name": "Cafe Soon",
@@ -1820,9 +1850,9 @@
       "lat": 0,
       "lng": 0,
       "category": "Bakery+Cafe",
-      "rating": 4.2,
-      "ratingCount": "22+",
-      "ratingNum": 22,
+      "rating": 4.5,
+      "ratingCount": "119",
+      "ratingNum": 119,
       "hours": "Mon-Sat 10am-9pm \u00b7 Sun 1pm-9pm",
       "usp": "Sister caf\u00e9 of Soon's Bakery \u2014 mini cakes, Cloud drink series, and salt-bread sandwiches.",
       "loved": [
@@ -1841,7 +1871,8 @@
         "hasMeetingRoom": false,
         "meetingRoomNote": ""
       },
-      "website": "https://www.cafesoonatl.com"
+      "website": "https://www.cafesoonatl.com",
+      "placeId": "ChIJOUHmGDKZ9YgRvrV_yjGfpoQ"
     },
     {
       "name": "Arwa Specialty Coffee",
@@ -1849,9 +1880,9 @@
       "lat": 0,
       "lng": 0,
       "category": "Coffee",
-      "rating": null,
-      "ratingCount": "\u2014",
-      "ratingNum": 0,
+      "rating": 4.8,
+      "ratingCount": "164",
+      "ratingNum": 164,
       "hours": "Sun-Thu 9am-10pm \u00b7 Fri-Sat 9am-12am",
       "usp": "First Georgia outpost of the Texas-born Yemeni coffee franchise \u2014 cardamom-forward brews and honeycomb bread in a lounge built for long stays.",
       "loved": [
@@ -1873,7 +1904,8 @@
         "tier": "midnight",
         "when": "Fri-Sat till midnight; rest till 10pm"
       },
-      "website": "https://arwacoffee.com"
+      "website": "https://arwacoffee.com",
+      "placeId": "ChIJY__FfiiZ9YgR27_N9gonM04"
     },
     {
       "name": "Eleva Cafe",
@@ -1882,8 +1914,8 @@
       "lng": 0,
       "category": "Specialty",
       "rating": 4.7,
-      "ratingCount": "175+",
-      "ratingNum": 175,
+      "ratingCount": "295",
+      "ratingNum": 295,
       "hours": "Daily 9am-4pm",
       "usp": "Halal, Arabian-inspired breakfast caf\u00e9 \u2014 hummus and falafel plates, waffles and crepes, espresso drinks \u2014 in a modern, upscale room.",
       "loved": [
@@ -1901,7 +1933,8 @@
         "note": "Free Wi-Fi and sit-down tables; daytime only (closes 4pm).",
         "hasMeetingRoom": false
       },
-      "website": "https://elevacafe.com"
+      "website": "https://elevacafe.com",
+      "placeId": "ChIJFw-g73Oj9YgRdcdTujlyYZ8"
     }
   ],
   "addr": {
