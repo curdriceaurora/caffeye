@@ -101,6 +101,9 @@ Expected output: `{ visibleLabels: N, labelLabel: 0, labelCluster: 0 }`.
 | T5.3 | R5.2 | `js> Math.abs(SHOPS.filter(s=>typeof s.rating==='number').reduce((a,s)=>a+s.rating,0)/SHOPS.filter(s=>typeof s.rating==='number').length - 4.5) < 0.1` | `true` (C ≈ 4.5) |
 | T5.4 | R5.3 | `js> SHOPS.filter(s => s.rating == null).every(s => typeof s.weightedRating === 'number')` | `true` (vacuously true while every shop is rated — as of Sept 2026 none is null; the branch is exercised whenever one is) |
 | T5.5 | R5.4 | Inspect any list item. | Shows: colored circular icon tile, name, meta row, ≤ 3 tags. |
+| T5.5b | R5.4 | Hard reload, no chips, no search (all shops in viewport). `js> document.querySelector('.shop-item .score').textContent === '◆ ' + Math.max(...SHOPS.map(s => s.weightedRating)).toFixed(1)` | `true` |
+| T5.5c | R5.4 | `js> [...document.querySelectorAll('.shop-item .score')].map(e => +e.textContent.slice(2)).every((v, i, a) => i === 0 \|\| a[i-1] >= v)` | `true` — displayed scores never increase down the list (order uses full precision, display rounds). |
+| T5.5d | R5.4 | `js> [...document.querySelectorAll('.shop-meta')].every(m => !m.innerHTML.includes('★')) && document.querySelector('.results-meta .score-legend').textContent === '◆ = weighted score'` | `true` — no ★ anywhere on a card (attributes included); the legend is present. |
 | T5.6 | R5.5 | `js> document.querySelector('.shop-item').style.borderLeftColor` | Non-empty (a category color). |
 | T5.7 | R5.6 | Filter to "Meeting room". `js> document.getElementById('resultsCount').textContent` | `"4"` |
 | T5.7b | R5.6 | Hard reload (all shops in viewport). `js> document.getElementById('resultsLabel').textContent` | `" spots"` |
@@ -116,7 +119,7 @@ Expected output: `{ visibleLabels: N, labelLabel: 0, labelCluster: 0 }`.
 |---|---|---|---|
 | T6.1 | R6.1 | Click any list item. | Detail card slides in from the right while list slides left; no jump/flash. |
 | T6.10 | R6.1 | While detail is open: `js> getComputedStyle(document.querySelector('.list-view')).opacity` | `"0"` (compositor-hidden, not `display:none`) |
-| T6.2 | R6.2 | Inspect a high-rated shop card (e.g. Bread Museum). | Shows category + neighborhood badge, name as `<h2>`, star rating, USP paragraph. |
+| T6.2 | R6.2 | Inspect a high-rated shop card (e.g. Bread Museum). | Shows category + neighborhood badge, name as `<h2>`, a large `◆ n.n` with the label "weighted score", a muted line `Google ★ n.n · N reviews` beneath it (always one decimal, exact count, no `+`), USP paragraph. |
 | T6.3 | R6.3 | Open Cafe Rothem. | "Best for" pills include 💻 Work and 🤝 Meetings. |
 | T6.4 | R6.3 | Open Hayat Coffee. | "Best for" includes 💻 Work and 🦉 Until midnight. |
 | T6.5 | R6.4 | Every detail view has a "Known for" pill row and a "Try the **X**" line. | True for every shop. |

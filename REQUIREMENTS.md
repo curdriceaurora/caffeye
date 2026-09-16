@@ -61,7 +61,7 @@ Functional and non-functional requirements for the current state of the page. Ea
 | R5.1 | Displays the subset of shops that pass all active chip filters AND lie inside the current map viewport AND match the search query. | Show what's available |
 | R5.2 | Sort is fixed: descending Bayesian weighted rating `WR = (v/(v+m))·R + (m/(v+m))·C`, where `C` is the mean rating across rated shops and `m` is the median review count, computed at page load. | The right default |
 | R5.3 | Shops with no rating use `C` (the global mean) as `R` in the formula. | — |
-| R5.4 | Each list item shows: a small (22 px) category-color circular emoji tile, the shop name, a meta row (category · ★ rating (count) · neighborhood), and up to three compact tags. | Playfulness is information |
+| R5.4 | Each list item shows: a small (22 px) category-color circular emoji tile, the shop name, a meta row (category · ◆ score · neighborhood), and up to three compact tags. The ◆ score is the Bayesian weighted rating from R5.2 rounded to 1 decimal — the number the list is ordered by — never Google's raw star. The results bar carries the legend `◆ = weighted score` at every breakpoint (tooltips don't fire on touch). Unrated shops show "no rating". | Playfulness is information; Labels must never lie |
 | R5.5 | Each list item has a left border in the category color. | — |
 | R5.6 | The results header shows the live filtered count. When the viewport is the active constraint (list count < global-filter count), the label reads **"X in view"**; otherwise **"X spots"**. | Show what's available |
 | R5.7 | The shop list scrolls vertically inside its panel; the rest of the layout does not scroll. | Density on phones |
@@ -73,7 +73,7 @@ Functional and non-functional requirements for the current state of the page. Ea
 | ID | Requirement | Principle |
 |---|---|---|
 | R6.1 | Shown when a shop is selected, replacing the list view via a compositor-only crossfade (list slides left + fades; detail slides in from right + fades). No layout shift. | One tap to the answer |
-| R6.2 | Top section: category + neighborhood, shop name (heading), star rating with review count, USP description. | — |
+| R6.2 | Top section: category + neighborhood, shop name (heading), the ◆ score (large, labelled "score") with Google's raw ★ rating and review count in muted text directly beneath it, USP description. This is the only place Google's raw rating is shown. | Labels must never lie |
 | R6.3 | "Best for" pills auto-derived from CWS / LATE data: 💻 Work, 🤝 Meetings, 🌙 Open late, 🦉 Until midnight. | — |
 | R6.4 | "Known for" pills (the loved-items list) plus a "Try the **{signature}**" line. | — |
 | R6.5 | Location & hours section with the full street address and weekly hours. | — |
