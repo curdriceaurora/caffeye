@@ -36,7 +36,7 @@ Sorting controls force the user to decide what they want before they know what's
 
 → Removed the sort dropdown entirely. The list opens in the best-overall order. Anyone who wants to slice the data can use the category and feature chips.
 
-→ The weighted score is the number the page shows — `◆ 4.6` on every card and large on the detail card — because a ranking you can't see isn't opinionated, it's hidden. Google's raw star and review count sit under the score on the detail card as provenance, and nowhere else. A ◆ is never a ★: the score is ours and is labelled as such.
+→ The weighted score is the number the page shows — `◆ 4.6` on every card and large on the detail card — because a ranking you can't see isn't opinionated, it's hidden. Google's raw star and review count sit under the score on the detail card as provenance, and nowhere else. A ◆ is never a ★: the score is ours and is labelled as such — the results bar reads `◆ = weighted score` at every breakpoint, including phones, where the footer is hidden.
 
 ### §3. Show what the user can see
 
