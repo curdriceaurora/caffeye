@@ -9,7 +9,14 @@ Two steps — audit, then write exactly what was audited:
     python3 scripts/refresh_ratings.py --replay scratch/ratings-<date>.json --write
         re-scores the dumped responses (no API calls) and writes public/shops.json.
 
+For multi-county workflows, run per-county and specify --county to filter:
+
+    python3 scripts/refresh_ratings.py --county fulton
+    python3 scripts/refresh_ratings.py --county dekalb --replay scratch/ratings-2026-09-17.json --write
+
 Options:
+    --county CODE    filter to shops in this county (fulton, dekalb, forsyth, gwinnett).
+                     Omit to process all shops (default Duluth for backward compat).
     --only TEXT      limit to shops whose name contains TEXT (case-insensitive)
     --raw PATH       dump path (default scratch/ratings-<date>.json). Merged into, never truncated.
     --replay PATH    re-use dumped responses instead of calling the API. Required for --write.
@@ -44,6 +51,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 SHOPS_PATH = ROOT / "public" / "shops.json"
 SCRATCH = ROOT / "scratch"
+COUNTY_BOUNDS_PATH = Path(__file__).resolve().parent / "county_bounds.json"
 SEARCH_URL = "https://places.googleapis.com/v1/places:searchText"
 DETAILS_URL = "https://places.googleapis.com/v1/places/{id}"
 PLACE_FIELDS = [
@@ -304,6 +312,12 @@ def main() -> int:
         "--write", action="store_true", help="write public/shops.json (needs --replay)"
     )
     ap.add_argument(
+        "--county",
+        default="",
+        choices=["", "fulton", "dekalb", "forsyth", "gwinnett"],
+        help="filter to shops in this county (default: all)",
+    )
+    ap.add_argument(
         "--only", default="", help="only shops whose name contains this text"
     )
     ap.add_argument(
@@ -343,6 +357,10 @@ def main() -> int:
     data = json.loads(SHOPS_PATH.read_text())
     addr = data["addr"]
     shops = [s for s in data["shops"] if args.only.lower() in s["name"].lower()]
+    if args.county:
+        shops = [s for s in shops if s.get("county", "").lower() == args.county.lower()]
+        if not shops:
+            sys.exit(f"no shops match --county {args.county}")
     if not shops:
         sys.exit("no shops match --only")
 

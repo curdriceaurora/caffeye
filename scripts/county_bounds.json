@@ -1,0 +1,26 @@
+{
+  "fulton": {
+    "name": "Fulton County",
+    "lat": [33.88, 34.02],
+    "lng": [-84.55, -84.05],
+    "center": [33.95, -84.30]
+  },
+  "dekalb": {
+    "name": "DeKalb County",
+    "lat": [33.64, 33.88],
+    "lng": [-84.48, -84.05],
+    "center": [33.76, -84.27]
+  },
+  "forsyth": {
+    "name": "Forsyth County",
+    "lat": [34.02, 34.15],
+    "lng": [-84.65, -84.10],
+    "center": [34.085, -84.38]
+  },
+  "gwinnett": {
+    "name": "Gwinnett County",
+    "lat": [33.88, 34.08],
+    "lng": [-84.32, -83.95],
+    "center": [33.98, -84.14]
+  }
+}
