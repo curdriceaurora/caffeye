@@ -51,6 +51,7 @@ Local: `python3 -m http.server 8765` in the project root, open `http://127.0.0.1
 | T3.2b | R3.2 | `js> map.setView([33.972, -84.142], 13); map.getContainer().classList.contains('with-labels')` then in 500 ms | `true` |
 | T3.3-7 | R3.3–R3.7 | At zoom 17, run the no-overlap script (below). | All counts `0`. |
 | T3.8 | R3.8 | Click a category chip to filter, then re-check. | Labels stay valid (no orphaned labels for hidden pins). |
+| T3.9 | R3.9 | Run the label-safety-cap script (below). | `{ over: true, atCap: false }` |
 
 **No-overlap script:**
 
@@ -79,6 +80,44 @@ Local: `python3 -m http.server 8765` in the project root, open `http://127.0.0.1
 
 Expected output: `{ visibleLabels: N, labelLabel: 0, labelCluster: 0 }`.
 
+**Label-safety-cap script:** a real integration test of `placeLabels()`'s 300-pin
+guard (R3.9) — genuine DOM writes to genuine label elements, positioned on a grid
+wide enough that the normal collision pass would actually succeed for most of
+them, so "not all hidden" at 300 is a meaningful recovery signal and not just the
+absence of the guard. `placeLabels()` accepts an item-list override for exactly
+this: constructing 301 real shops simultaneously unclustered on one screen isn't
+practical in any current fixture (see T3.9's old wording, replaced by this).
+
+```js
+(function () {
+  function makeItem(i) {
+    const pin = document.createElement('div');
+    const label = document.createElement('div');
+    pin.style.cssText = `position:fixed;left:${(i % 20) * 60}px;top:${Math.floor(i / 20) * 60}px;width:10px;height:10px;`;
+    label.style.cssText = 'position:fixed;left:0;top:0;width:40px;height:14px;';
+    document.body.appendChild(pin);
+    document.body.appendChild(label);
+    return { pin, label, shop: { id: 'test-' + i, weightedRating: i } };
+  }
+  const items301 = Array.from({ length: 301 }, (_, i) => makeItem(i));
+  placeLabels(items301);
+  const over = items301.every(it => it.label.style.visibility === 'hidden');
+
+  const items300 = items301.slice(0, 300);
+  items300.forEach(it => { it.label.style.visibility = ''; it.label.style.transform = ''; });
+  placeLabels(items300);
+  const atCap = items300.every(it => it.label.style.visibility === 'hidden');
+
+  items301.forEach(it => { it.pin.remove(); it.label.remove(); }); // cleanup
+  console.log({ over, atCap });
+})();
+```
+
+Expected output: `{ over: true, atCap: false }` — 301 unclustered pins forces every
+label hidden without running the collision pass; 300 does not (at least some of
+the grid-spaced items find a placement), proving the guard's threshold and its
+recovery, not just the threshold function in isolation.
+
 ## T4. Filter chips (R4)
 
 | ID | Trace | Test | Pass |
@@ -91,6 +130,10 @@ Expected output: `{ visibleLabels: N, labelLabel: 0, labelCluster: 0 }`.
 | T4.6 | R4.4 | Click "Coffee" then "Work-friendly". `js> document.querySelectorAll('.shop-item').length` | Returns count of Coffee × Work-friendly intersection. |
 | T4.7 | R4.5 | Search the page DOM for "Past midnight". | Returns no matches. |
 | T4.8 | R4.6 | `js> !document.getElementById('sortSelect')` | `true` |
+| T4.9 | R4.7 | `js> COUNTIES.length` on single-region data (no `county` field on any shop). | `0` — county chips absent, `#locationRow` shows City chips only (or hides entirely on today's single-city Duluth data, since `showCityRow` is also false). |
+| T4.10 | R4.7 | On multi-county data with no county selected: `js> document.querySelectorAll('#locationChips .chip').length` | Equals `COUNTIES.length + 1` (just the county chips: "All counties" + one per county) — City chips are not shown yet. County ⊇ City, so showing every city across every county at the same time as every county is redundant, and was measured to cost mobile a visible card (see T8.x). |
+| T4.11 | R4.7 | `js> selectCounty('Gwinnett'); document.getElementById('resultsCount').textContent === String(SHOPS.filter(s => s.county === 'Gwinnett').length)` | `true` — and City chips now appear (drilled down to Gwinnett's cities only), separated from the county chips by a `.chip-divider`. |
+| T4.12 | R4.7 | County and City chips are both children of one `#locationChips` container (a single flex-wrap sequence), not two separately-wrapping sub-containers. | Splitting one row's width between two independently-wrapping boxes was measured to wrap *more* than the combined content needs (74px vs. 48px tall at 375px, same chip set) — packing them as one sequence fixes it. |
 
 ## T5. Right-side list (R5)
 
@@ -112,6 +155,10 @@ Expected output: `{ visibleLabels: N, labelLabel: 0, labelCluster: 0 }`.
 | T5.9 | R5.8 | Set zoom 18 in an empty area + search "xyzqwerty". | Empty state reads: "Nothing here — try zooming out or clearing a filter." |
 | T5.10 | R5.9 | Open DevTools → Elements. After any pan/zoom, inspect first `.shop-item`. | Has `animation-delay` inline style ≥ 0ms and CSS animation `itemEnter`. |
 | T5.11 | R5.9 | After a viewport-triggered list refresh, inspect `.results-meta`. | Briefly has class `viewport-flash`, then class is removed after `transitionend`. |
+| T5.12 | R5.10 | On data with > 200 matching shops (e.g. all-counties view, no filters): `js> document.querySelectorAll('.shop-item').length` | `200`, plus one `.load-more-btn` reading "Load N more (N left)". |
+| T5.13 | R5.10 | Click `.load-more-btn` repeatedly until it disappears. | `js> document.querySelectorAll('.shop-item').length === document.getElementById('resultsCount').textContent - 0` — all matches eventually render; scores stay monotonic across the full list (T5.5c still holds). |
+| T5.14 | R5.10 | With the list paginated (> 200 matches), type in the search box. | List resets to the first page of the new result set — no stale "Load more" pointing at the old filter's remainder. |
+| T5.15 | R5.10 | `js> document.querySelector('.load-more-btn').click(); document.activeElement.tagName === 'LI' && document.activeElement.dataset.id && [...document.querySelectorAll('.shop-item')].indexOf(document.activeElement) === 200` | `true` — activating "Load more" (`renderList()` rebuilds the whole `<ul>`, which would otherwise drop focus to `<body>`) moves focus to the first newly-revealed card, not off the list entirely. Real keyboard users trigger this via Enter/Space on the focused button, which the browser turns into the same `click` event this test fires directly. |
 
 ## T6. Detail card (R6)
 
@@ -145,7 +192,8 @@ Expected output: `{ visibleLabels: N, labelLabel: 0, labelCluster: 0 }`.
 | T8.2 | R8.2 | Width 390 px (mobile). | Column layout: map on top (220 px), panel below filling remainder. |
 | T8.3 | R8.3 | At 390 px width, chip computed font-size. | `11.5px`. |
 | T8.4 | R8.4 | At 390 px width: `js> getComputedStyle(document.querySelector('footer')).display` | `"none"`. |
-| T8.5 | R8.5 | Mobile, ~750 px viewport height. Count visible cards in panel before any scroll. | `≥ 5`. |
+| T8.5 | R8.5 | Mobile, 375×812 viewport, single-region data (`#locationRow` hidden — true of every dataset shipped today). Count *fully* visible cards (not merely intersecting the viewport): `js> (() => { const r = document.getElementById('shopList').getBoundingClientRect(); return [...document.querySelectorAll('.shop-item')].filter(li => { const cr = li.getBoundingClientRect(); return cr.top >= r.top - 0.5 && cr.bottom <= r.bottom + 0.5; }).length; })()` | `5` (measured: 356 px available ÷ 68.64 px/card). |
+| T8.5b | R8.5 | Same viewport and card-count snippet, with multi-county data so `#locationRow` is showing. | `4` (measured: 308 px available ÷ 68.64 px/card — the row itself is ~48 px, not clawed back from card spacing shared with T8.5's baseline). A looser "any pixel intersects the viewport" count would read 5 here too and hide this; T8.5/T8.5b must both use the strict full-visibility definition to be comparable. |
 
 ## T9. Performance & errors (R9)
 

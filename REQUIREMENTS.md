@@ -42,6 +42,7 @@ Functional and non-functional requirements for the current state of the page. Ea
 | R3.6 | A label position is rejected if it collides with: any other already-placed label, any visible pin (own pin excluded by geometry), or any cluster bubble. | Labels must not lie |
 | R3.7 | If no angle works, the label is hidden via `visibility: hidden`; the pin itself remains visible. | — |
 | R3.8 | Labels reflow on `zoomend`, `moveend`, cluster `animationend`, and after any filter changes the visible-marker set. | — |
+| R3.9 | Above 300 simultaneously-visible (non-clustered) pins, the collision pass is skipped and all their labels are hidden, rather than running the O(pins × angles × obstacles) placer against a pin count that large. | Bound label-placement cost at multi-county scale without blocking the main thread |
 
 ## R4. Filter bar
 
@@ -53,6 +54,7 @@ Functional and non-functional requirements for the current state of the page. Ea
 | R4.4 | Category and feature chips are toggleable independently; multiple can be active. | — |
 | R4.5 | "Until midnight" is the wording (not "Past midnight") — accurate for shops closing *at* 12 am. | Truth in labeling |
 | R4.6 | Sort controls are intentionally absent. The list is always ordered by Bayesian weighted rating, descending. | The right default |
+| R4.7 | When shops span more than one county, a County chip row filters by county; picking a county narrows the City row to that county's cities and clears any active city. Picking a city clears the active county. County and City chips share a single filter-bar row (not two) so multi-county data doesn't cost mobile an extra row of vertical space. Both rows (or the whole shared row, if neither applies) are hidden when the data has only one value — no behavior change for single-region data. | Show what's available; density on phones |
 
 ## R5. Right-side list
 
@@ -67,6 +69,7 @@ Functional and non-functional requirements for the current state of the page. Ea
 | R5.7 | The shop list scrolls vertically inside its panel; the rest of the layout does not scroll. | Density on phones |
 | R5.8 | Empty state copy hints at zooming out or clearing filters. | — |
 | R5.9 | On every list refresh, items animate in with a staggered fade + translateY (28 ms per item, max 140 ms total delay). When triggered by a viewport change, the results-meta bar briefly flashes `--accent-soft` to signal "the map caused this". | Show what's available |
+| R5.10 | When the current filter set (chips + search + viewport) matches more than 200 shops, only the first 200 render by default; a "Load N more" row grows the visible window by 200 on click, and clicking through to the end does render the full matched set (this bounds the *default* render, not an absolute maximum — see CLAUDE.md). Any new filter, search, or viewport change resets the window back to 200. Loading more must not lose keyboard focus: activating "Load more" moves focus to the first newly-revealed item. Below 200 matches, behavior is unchanged (all render at once) — this is the case for every single-region dataset today. | Bounds the common-case render cost at multi-county scale without changing today's behavior, and without breaking keyboard navigation |
 
 ## R6. Detail card
 
@@ -98,7 +101,7 @@ Functional and non-functional requirements for the current state of the page. Ea
 | R8.2 | Mobile (≤ 820 px): single column. Map height fixed at 220 px (min 180), panel takes remaining vertical space. | Density on phones |
 | R8.3 | On mobile, filter chips compress (padding 2 × 7 px, 11.5 px font); freshness/brand shrink. | — |
 | R8.4 | On mobile, the footer disclaimer is hidden. | — |
-| R8.5 | On mobile at iPhone 14 Pro viewport (~750 px usable), at least 5 list cards are visible above the fold. | Density on phones |
+| R8.5 | On mobile at iPhone 14 Pro viewport (~750 px usable), at least 5 list cards are fully visible above the fold on single-region data (no County/City filter row shown — true of every dataset shipped today). When the County/City row is also shown (multi-county data), this relaxes to 4: that row is itself ~48 px, and card height (~69 px) wasn't reduced to compensate, since doing so would also shrink cards on the already-correct 5-card single-region case. | Density on phones; don't trade a validated baseline for an unshipped feature's density |
 
 ## R9. Performance & errors
 

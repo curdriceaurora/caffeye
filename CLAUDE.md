@@ -58,6 +58,7 @@ The schema:
     {
       "name": "...",
       "city": "Duluth",
+      "county": "Fulton",        // optional; omit for single-region data. Drives the County chip row.
       "addrKey": "duluth-2180-pleasanthill",  // city-prefixed to prevent cross-city collisions
       "address": "...",          // full text address
       "category": "...",         // must exist in CATS in index.html
@@ -83,7 +84,13 @@ The schema:
 1. Append a shop object to `shops`. Include `city`, the new compound `addrKey`, and the inline `cw` / `late?` / `website` blocks. No more separate CWS / LATE / WEBSITES tables — that pattern collided when the same brand opened in two cities.
 2. If it's a new building, add a `"{city}-{num}-{streetslug}": {lat, lng}` entry to `addr` and a matching `neighborhoods` entry. Coords **must** come from an authoritative geocoder (Apple Maps via `CLGeocoder` is the standard — see `outputs/apple_geocode.swift` in scratch). Do not approximate. A wrong coord that lands a shop in a residential subdivision was the bug that triggered the geocoding QA pass.
 3. Bump nothing else — the header freshness count is computed at runtime from `SHOPS.length` scoped to the active city.
-4. If you're adding the first shop in a new city, append the city to `cities`. Once `cities.length > 1`, the City chip row appears automatically.
+4. If you're adding the first shop in a new city, append the city to `cities`. Once `cities.length > 1`, the City chip row appears automatically. Same for `county` — the County chip row appears once more than one distinct `county` value exists across `shops`, and shares a filter-bar row with City (not a separate one) so it doesn't cost mobile an extra line.
+
+**Multi-county expansion (in progress, `feat/north-atlanta-expansion`):** `public/shops.json` on this branch is the real, unmodified 61-shop Duluth data — byte-identical to `main`. It is NOT the 244-shop (now 198-shop) placeholder fixture; that only ever lives at `scratch/shops-multicounty-test.json` (gitignored), generated on demand by `scripts/bootstrap_multicount.py` and never written to `public/`. To try it locally: `cp scratch/shops-multicounty-test.json public/shops.json`, and revert before committing anything — never let that copy reach a commit.
+
+Most of real Duluth is in Gwinnett County, but not all of it: 3 of the 61 shops have Johns Creek addresses and are actually in Fulton (Georgia postal cities and county lines don't reliably align — a `city` of "Duluth" doesn't imply `county: "Gwinnett"`). `scripts/refresh_ratings.py --county <fulton|dekalb|forsyth|gwinnett>` filters an *existing* `shops` array to audit/refresh one county at a time (it does not discover new shops); a shop's own `county` tag wins if present, otherwise its coordinates are tested against that county's real boundary polygon in `scripts/county_boundaries.geojson` (fetched from OpenStreetMap, not hand-drawn — a simple rectangle cannot represent Fulton, which is long, irregular, and extends much further east at its northern tip near Johns Creek than near Atlanta). Real per-county curated data should eventually replace today's single-region file.
+
+At real multi-county scale (~1,500–2,000 shops), revisit `shops.json`'s minification (numeric category/neighborhood keys, abbreviated addresses) — the 100 KB budget below is for `index.html` only, but `shops.json` compounds with shop count and should stay gzip-friendly.
 
 **To refresh ratings** (`rating` / `ratingCount` / `ratingNum` drive the Bayesian ranking, so they must all come from one source — Google, via the Places API):
 
@@ -119,7 +126,10 @@ These are decisions, not accidents — don't undo them without reading the linke
 | **16-angle label placer.** Labels prefer cardinal angles, fall back through diagonals + in-betweens; obstacles are other labels, all pins, all `.coffee-cluster` bubbles. Higher-weighted shops claim space first. | Labels must never lie. | §7 |
 | **Label threshold is `LABEL_MIN_ZOOM = 13`** (the default fit-bounds zoom), so labels show on first paint. | — | — |
 | **Bayesian weighted rating** formula `WR = (v/(v+m))·R + (m/(v+m))·C` — `C` = mean rating, `m` = median review count, both computed at load. | Trustworthy ranking. | §2 |
-| **Mobile: map fixed at 220 px**, panel takes the rest, footer hidden. | Density on phones — iPhone 14 Pro target = 5 cards visible. | §4 |
+| **County and City chips share one filter-bar row** (`#locationRow`), never two. Adding a full second row cost mobile a visible card (measured: 5 → 4 at 375px). | Density on phones. | §4 |
+| **List pagination bounds the *default* render at 200 items** (`LIST_PAGE_SIZE`), not an absolute ceiling — clicking "Load more" repeatedly grows `state.listLimit` and re-renders the whole list each time, so the DOM does grow past 200 if a user pages through everything. Any filter/search/viewport change resets the window back to 200. Below 200 matches — every single-region dataset today — this is a no-op. A true hard cap would need list virtualization (windowed/spacer rendering with recycled DOM nodes), deliberately not implemented here — it needs fixed-row-height CSS and risks breaking the assumption elsewhere that every filtered `.shop-item` is in the DOM. | Bound the common case cheaply; don't take on virtualization's complexity until real usage shows it's needed. | §9 |
+| **`placeLabels()`'s 300-simultaneously-visible-pin safety cap** hides labels above that count rather than running its O(items × angles × obstacles) collision pass — untested against real data today (clustering keeps counts well below 300 in practice, including on the 244-shop test fixture), verify the 300/301 boundary directly per TESTS.md T3.x before relying on it. | Guard the pathological case instead of claiming it's exercised by ordinary use. | §7 |
+| **Mobile: map fixed at 220 px**, panel takes the rest, footer hidden. | Density on phones — iPhone 14 Pro target = 5 cards visible on single-region data; 4 when the County/City row is also shown (see R8.5) — that row costs ~48 px, deliberately not clawed back from card spacing shared with the 5-card baseline. | §4 |
 | **"Until midnight"** is the label for the midnight tier — not "Past midnight" (most close at 12am sharp). | Truth in labeling. | — |
 
 ## Working with the user (Rahul)
