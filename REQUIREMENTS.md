@@ -101,7 +101,7 @@ Functional and non-functional requirements for the current state of the page. Ea
 | R8.2 | Mobile (≤ 820 px): single column. Map height fixed at 220 px (min 180), panel takes remaining vertical space. | Density on phones |
 | R8.3 | On mobile, filter chips compress (padding 2 × 7 px, 11.5 px font); freshness/brand shrink. | — |
 | R8.4 | On mobile, the footer disclaimer is hidden. | — |
-| R8.5 | On mobile at iPhone 14 Pro viewport (~750 px usable), at least 5 list cards are visible above the fold. | Density on phones |
+| R8.5 | On mobile at iPhone 14 Pro viewport (~750 px usable), at least 5 list cards are fully visible above the fold on single-region data (no County/City filter row shown — true of every dataset shipped today). When the County/City row is also shown (multi-county data), this relaxes to 4: that row is itself ~48 px, and card height (~69 px) wasn't reduced to compensate, since doing so would also shrink cards on the already-correct 5-card single-region case. | Density on phones; don't trade a validated baseline for an unshipped feature's density |
 
 ## R9. Performance & errors
 

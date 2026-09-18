@@ -3,19 +3,27 @@
 pagination at scale. NEVER writes to public/ — output is a scratch file, gitignored,
 that a developer can manually copy over public/shops.json for local testing only.
 
-Duluth is real data and actually sits in Gwinnett County (not Fulton — an earlier
-version of this script got that wrong). It's used as-is as the Gwinnett fixture.
-Each shop is translated by (real reference-city coords - real Duluth coords) to
-synthesize plausible-looking placements in the other 3 counties — real coordinates
-for real, well-known cities in each county, not the county_bounds.json box centers
-(a long thin county like Fulton has no single "center" that's a safe offset anchor).
-These are NOT real shops: names, ratings, addresses, and placeIds are all copied
-from Duluth and do not correspond to real businesses at the shifted coordinates.
+Duluth is real data and mostly sits in Gwinnett County — a handful of its 61 real
+shops have Johns Creek addresses and are actually in Fulton (Georgia postal cities
+and county lines don't always align; see refresh_ratings.in_county()'s docstring).
+It's used as-is as the Gwinnett fixture. Each shop is translated by (this county's
+real center - Gwinnett's real center), using the representative center point each
+county's real OpenStreetMap boundary carries in county_boundaries.geojson, to
+synthesize plausible-looking placements in the other 3 counties. These are NOT
+real shops: names, ratings, addresses, and placeIds are all copied from Duluth and
+do not correspond to real businesses at the shifted coordinates.
 
-After generating, every shifted shop is checked against county_bounds.json — via
-the same in_county() logic refresh_ratings.py uses — to confirm it actually lands
-in its assigned county's box and nowhere else. This catches box/offset mismatches
-before they become a silently-wrong fixture.
+Every shifted shop is checked against county_boundaries.geojson — via the same
+in_county() point-in-polygon logic refresh_ratings.py uses — before being
+included. Translating a ~0.11x0.09 degree cluster by a fixed offset does not
+reliably land every point inside a real, irregularly-shaped county polygon (a
+notably imperfect fit for Fulton, which is long and notched); shops that miss
+their target county after translation are dropped rather than included with
+wrong coordinates. This is expected to drop a meaningful fraction (observed:
+roughly 15-25%) per synthetic county, which is fine for a scale-testing
+fixture. A county whose survival rate is suspiciously low likely means its
+reference offset needs to move, not that this threshold needs raising — see
+MIN_SURVIVAL_FRACTION below.
 
 Always reads Duluth's shops from the `main` branch via git, never from whatever is
 currently in public/shops.json on the working tree — running this after
@@ -52,10 +60,6 @@ COUNTIES = [
 ]
 
 
-def box_center(box: dict) -> tuple:
-    return ((box["lat"][0] + box["lat"][1]) / 2, (box["lng"][0] + box["lng"][1]) / 2)
-
-
 def load_seed(source: str | None) -> dict:
     if source:
         return json.loads(Path(source).read_text())
@@ -68,34 +72,21 @@ def load_seed(source: str | None) -> dict:
     return json.loads(proc.stdout)
 
 
-def verify(all_shops: list, all_addr: dict, bounds: dict) -> list:
-    """Return descriptions of any shop that isn't in its assigned county's box,
-    or that ambiguously also falls inside a different county's box."""
-    problems = []
-    for shop in all_shops:
-        coords = all_addr.get(shop["addrKey"])
-        if not coords:
-            continue
-        own = shop["county"].lower()
-        # Check geographically (ignore the shop's own `county` tag, which
-        # would trivially "pass" — that's exactly the tag in_county() would
-        # trust instead of computing).
-        untagged = {**shop, "county": ""}
-        in_own = rr.in_county(untagged, all_addr, own, bounds)
-        if not in_own:
-            problems.append(
-                f"{shop['name']} ({shop['addrKey']}) tagged {own} but coords fall outside {own}'s box"
-            )
-        others = [
-            c
-            for c in bounds
-            if c != own and rr.in_county(untagged, all_addr, c, bounds)
-        ]
-        if others:
-            problems.append(
-                f"{shop['name']} ({shop['addrKey']}) tagged {own} but ALSO matches {others}"
-            )
-    return problems
+MIN_SURVIVAL_FRACTION = 0.5  # below this, the offset is wrong, not just imprecise
+
+
+def fits_county(shop: dict, addr: dict, county: str, bounds: dict) -> bool:
+    """True iff shop's coordinates land inside `county`'s real boundary and no
+    other county's (an ambiguous double-match is as wrong as a miss here)."""
+    # Check geographically — ignore the shop's own `county` tag, which would
+    # trivially "pass" (that's exactly the tag in_county() would trust instead
+    # of computing).
+    untagged = {**shop, "county": ""}
+    if not rr.in_county(untagged, addr, county, bounds):
+        return False
+    return not any(
+        c != county and rr.in_county(untagged, addr, c, bounds) for c in bounds
+    )
 
 
 def main():
@@ -119,58 +110,58 @@ def main():
             "pass --source pointing at a single-region seed, not fixture output."
         )
     bounds = rr.load_county_bounds()
-    gwinnett_center = box_center(bounds["gwinnett"])
+    gwinnett_center = bounds["gwinnett"]["center"]
 
     all_shops, all_addr, all_neighborhoods = [], {}, {}
     per_county_count = {}
 
     for county_code, county_name, sample_city in COUNTIES:
-        # Offset by (this county's box center - Gwinnett's box center), so the
-        # translated cluster lands centered in its target box regardless of how
-        # large Duluth's own real spread is. Using the *sample city's* real
-        # coordinates instead (an earlier version of this script did) put the
-        # translated cluster's edge outside its own box whenever the real
-        # distance between two sample cities was smaller than Duluth's own
-        # ~0.1°x0.1° spread — exactly what happened between Sandy Springs and
-        # Decatur. The boxes above are pairwise disjoint (checked below), so
-        # centering in the box guarantees no cross-county ambiguity.
-        target_center = box_center(bounds[county_code])
+        # Offset by (this county's real center - Gwinnett's real center). Zero
+        # for Gwinnett itself, so its shops keep their real coordinates.
+        target_center = bounds[county_code]["center"]
         lat_offset = target_center[0] - gwinnett_center[0]
         lng_offset = target_center[1] - gwinnett_center[1]
-        count = 0
 
+        candidates, candidate_addr, neighborhood_of = [], {}, {}
         for shop in data["shops"]:
+            old_key = shop["addrKey"]
+            if old_key not in data["addr"]:
+                continue
             new_shop = json.loads(json.dumps(shop))  # deep copy
             new_shop["city"] = sample_city
             new_shop["county"] = county_name
-
-            old_key = shop["addrKey"]
             new_key = re.sub(r"^[a-z]+-", f"{county_code}-", old_key)
             new_shop["addrKey"] = new_key
 
-            if old_key in data["addr"]:
-                old = data["addr"][old_key]
-                all_addr[new_key] = {
-                    "lat": round(old["lat"] + lat_offset, 5),
-                    "lng": round(old["lng"] + lng_offset, 5),
-                }
-            all_neighborhoods[new_key] = data["neighborhoods"].get(old_key, sample_city)
-            all_shops.append(new_shop)
-            count += 1
+            old = data["addr"][old_key]
+            candidate_addr[new_key] = {
+                "lat": round(old["lat"] + lat_offset, 5),
+                "lng": round(old["lng"] + lng_offset, 5),
+            }
+            neighborhood_of[new_key] = data["neighborhoods"].get(old_key, sample_city)
+            candidates.append(new_shop)
 
-        per_county_count[county_name] = count
-
-    problems = verify(all_shops, all_addr, bounds)
-    if problems:
+        kept = [
+            s for s in candidates if fits_county(s, candidate_addr, county_code, bounds)
+        ]
+        survival = len(kept) / len(candidates)
+        if survival < MIN_SURVIVAL_FRACTION:
+            raise SystemExit(
+                f"{county_name}: only {len(kept)}/{len(candidates)} shops "
+                f"({survival:.0%}) landed inside its real boundary after translation "
+                f"— below the {MIN_SURVIVAL_FRACTION:.0%} sanity floor. The offset "
+                f"(from {county_code}'s real center) is likely wrong, not just imprecise; "
+                "pick a different reference point, don't raise this threshold."
+            )
         print(
-            f"REFUSING to write — {len(problems)} shop(s) don't geographically match their county tag:",
-            file=sys.stderr,
+            f"{county_name}: kept {len(kept)}/{len(candidates)} ({survival:.0%}) after real-boundary check"
         )
-        for p in problems[:10]:
-            print(f"  {p}", file=sys.stderr)
-        raise SystemExit(
-            "Fix scripts/county_bounds.json or the reference coordinates above, then rerun."
-        )
+
+        for shop in kept:
+            all_shops.append(shop)
+            all_addr[shop["addrKey"]] = candidate_addr[shop["addrKey"]]
+            all_neighborhoods[shop["addrKey"]] = neighborhood_of[shop["addrKey"]]
+        per_county_count[county_name] = len(kept)
 
     data["shops"] = all_shops
     data["addr"] = all_addr
@@ -181,7 +172,9 @@ def main():
     out_path = Path(args.out)
     out_path.parent.mkdir(parents=True, exist_ok=True)
     out_path.write_text(json.dumps(data, indent=2))
-    print("Verified: every shop's coordinates match its county tag, unambiguously.")
+    print(
+        "Every included shop's coordinates verified against its county's real boundary, unambiguously."
+    )
     print(
         f"Wrote {len(all_shops)} shops ({', '.join(f'{k}={v}' for k, v in per_county_count.items())}) -> {out_path}"
     )

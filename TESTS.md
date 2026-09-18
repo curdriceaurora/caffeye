@@ -51,7 +51,7 @@ Local: `python3 -m http.server 8765` in the project root, open `http://127.0.0.1
 | T3.2b | R3.2 | `js> map.setView([33.972, -84.142], 13); map.getContainer().classList.contains('with-labels')` then in 500 ms | `true` |
 | T3.3-7 | R3.3–R3.7 | At zoom 17, run the no-overlap script (below). | All counts `0`. |
 | T3.8 | R3.8 | Click a category chip to filter, then re-check. | Labels stay valid (no orphaned labels for hidden pins). |
-| T3.9 | R3.9 | `js> exceedsLabelSafetyCap(300) === false && exceedsLabelSafetyCap(301) === true` | `true` — this is a boundary check on the guard's threshold function only. It does not exercise the full `placeLabels()` hide-and-return path, which would need 301 real shops simultaneously unclustered at one zoom level to trigger organically; not constructed by the 244-shop test fixture (widely spread across 4 counties) or by production Duluth data (61 shops). |
+| T3.9 | R3.9 | Run the label-safety-cap script (below). | `{ over: true, atCap: false }` |
 
 **No-overlap script:**
 
@@ -79,6 +79,44 @@ Local: `python3 -m http.server 8765` in the project root, open `http://127.0.0.1
 ```
 
 Expected output: `{ visibleLabels: N, labelLabel: 0, labelCluster: 0 }`.
+
+**Label-safety-cap script:** a real integration test of `placeLabels()`'s 300-pin
+guard (R3.9) — genuine DOM writes to genuine label elements, positioned on a grid
+wide enough that the normal collision pass would actually succeed for most of
+them, so "not all hidden" at 300 is a meaningful recovery signal and not just the
+absence of the guard. `placeLabels()` accepts an item-list override for exactly
+this: constructing 301 real shops simultaneously unclustered on one screen isn't
+practical in any current fixture (see T3.9's old wording, replaced by this).
+
+```js
+(function () {
+  function makeItem(i) {
+    const pin = document.createElement('div');
+    const label = document.createElement('div');
+    pin.style.cssText = `position:fixed;left:${(i % 20) * 60}px;top:${Math.floor(i / 20) * 60}px;width:10px;height:10px;`;
+    label.style.cssText = 'position:fixed;left:0;top:0;width:40px;height:14px;';
+    document.body.appendChild(pin);
+    document.body.appendChild(label);
+    return { pin, label, shop: { id: 'test-' + i, weightedRating: i } };
+  }
+  const items301 = Array.from({ length: 301 }, (_, i) => makeItem(i));
+  placeLabels(items301);
+  const over = items301.every(it => it.label.style.visibility === 'hidden');
+
+  const items300 = items301.slice(0, 300);
+  items300.forEach(it => { it.label.style.visibility = ''; it.label.style.transform = ''; });
+  placeLabels(items300);
+  const atCap = items300.every(it => it.label.style.visibility === 'hidden');
+
+  items301.forEach(it => { it.pin.remove(); it.label.remove(); }); // cleanup
+  console.log({ over, atCap });
+})();
+```
+
+Expected output: `{ over: true, atCap: false }` — 301 unclustered pins forces every
+label hidden without running the collision pass; 300 does not (at least some of
+the grid-spaced items find a placement), proving the guard's threshold and its
+recovery, not just the threshold function in isolation.
 
 ## T4. Filter chips (R4)
 
@@ -154,7 +192,8 @@ Expected output: `{ visibleLabels: N, labelLabel: 0, labelCluster: 0 }`.
 | T8.2 | R8.2 | Width 390 px (mobile). | Column layout: map on top (220 px), panel below filling remainder. |
 | T8.3 | R8.3 | At 390 px width, chip computed font-size. | `11.5px`. |
 | T8.4 | R8.4 | At 390 px width: `js> getComputedStyle(document.querySelector('footer')).display` | `"none"`. |
-| T8.5 | R8.5 | Mobile, ~750 px viewport height. Count visible cards in panel before any scroll. | `≥ 5`. |
+| T8.5 | R8.5 | Mobile, 375×812 viewport, single-region data (`#locationRow` hidden — true of every dataset shipped today). Count *fully* visible cards (not merely intersecting the viewport): `js> (() => { const r = document.getElementById('shopList').getBoundingClientRect(); return [...document.querySelectorAll('.shop-item')].filter(li => { const cr = li.getBoundingClientRect(); return cr.top >= r.top - 0.5 && cr.bottom <= r.bottom + 0.5; }).length; })()` | `5` (measured: 356 px available ÷ 68.64 px/card). |
+| T8.5b | R8.5 | Same viewport and card-count snippet, with multi-county data so `#locationRow` is showing. | `4` (measured: 308 px available ÷ 68.64 px/card — the row itself is ~48 px, not clawed back from card spacing shared with T8.5's baseline). A looser "any pixel intersects the viewport" count would read 5 here too and hide this; T8.5/T8.5b must both use the strict full-visibility definition to be comparable. |
 
 ## T9. Performance & errors (R9)
 

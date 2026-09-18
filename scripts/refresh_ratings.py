@@ -17,9 +17,10 @@ For multi-county workflows, run per-county and specify --county to filter:
 Options:
     --county CODE    filter to shops in this county (fulton, dekalb, forsyth, gwinnett).
                      A shop's own `county` tag wins if present; otherwise its stored
-                     coordinates are checked against that county's box in
-                     county_bounds.json — so this works even on today's untagged,
-                     single-region shops.json. Omit to process all shops.
+                     coordinates are tested against that county's real boundary
+                     polygon (see county_boundaries.geojson, from OpenStreetMap) —
+                     so this works even on today's untagged, single-region
+                     shops.json. Omit to process all shops.
     --only TEXT      limit to shops whose name contains TEXT (case-insensitive)
     --raw PATH       dump path (default scratch/ratings-<date>.json). Merged into, never truncated.
     --replay PATH    re-use dumped responses instead of calling the API. Required for --write.
@@ -54,7 +55,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 SHOPS_PATH = ROOT / "public" / "shops.json"
 SCRATCH = ROOT / "scratch"
-COUNTY_BOUNDS_PATH = Path(__file__).resolve().parent / "county_bounds.json"
+COUNTY_BOUNDARIES_PATH = Path(__file__).resolve().parent / "county_boundaries.geojson"
 SEARCH_URL = "https://places.googleapis.com/v1/places:searchText"
 DETAILS_URL = "https://places.googleapis.com/v1/places/{id}"
 PLACE_FIELDS = [
@@ -135,23 +136,54 @@ def load_key() -> str:
 
 
 def load_county_bounds() -> dict:
-    return json.loads(COUNTY_BOUNDS_PATH.read_text())
+    """{county_code: {"name": ..., "center": [lat, lng], "ring": [[lng, lat], ...]}}
+    from real OpenStreetMap county boundaries (see county_boundaries.geojson's
+    _source field) — not a hand-drawn approximation. A simple axis-aligned box
+    cannot represent Fulton County (a long, irregular north-south county whose
+    real eastern edge is much further east at its northern tip, near Johns
+    Creek, than near Atlanta) without either excluding real Fulton territory or
+    swallowing neighboring counties at other latitudes; that's what the
+    previous rectangle-based version of this function got wrong."""
+    fc = json.loads(COUNTY_BOUNDARIES_PATH.read_text())
+    return {
+        f["properties"]["county"]: {
+            "name": f["properties"]["name"],
+            "center": f["properties"]["center"],
+            "ring": f["geometry"]["coordinates"][0],
+        }
+        for f in fc["features"]
+    }
+
+
+def _point_in_ring(lat: float, lng: float, ring: list) -> bool:
+    """Standard ray-casting point-in-polygon test. `ring` is a list of
+    [lng, lat] pairs (GeoJSON coordinate order), first == last."""
+    inside = False
+    n = len(ring)
+    j = n - 1
+    for i in range(n):
+        xi, yi = ring[i]
+        xj, yj = ring[j]
+        if (yi > lat) != (yj > lat):
+            x_at_lat = (xj - xi) * (lat - yi) / (yj - yi) + xi
+            if lng < x_at_lat:
+                inside = not inside
+        j = i
+    return inside
 
 
 def in_county(shop: dict, addr: dict, county: str, bounds: dict) -> bool:
     """A shop belongs to `county` if its own `county` tag says so, or — when
     untagged, which is every shop in a single-region shops.json — its stored
-    coordinates fall inside that county's bounding box from county_bounds.json."""
+    coordinates fall inside that county's real boundary polygon."""
     tagged = shop.get("county", "").lower()
     if tagged:
         return tagged == county.lower()
-    box = bounds.get(county.lower())
+    entry = bounds.get(county.lower())
     c = addr.get(shop.get("addrKey"))
-    if not box or not c:
+    if not entry or not c:
         return False
-    lat_lo, lat_hi = box["lat"]
-    lng_lo, lng_hi = box["lng"]
-    return lat_lo <= c["lat"] <= lat_hi and lng_lo <= c["lng"] <= lng_hi
+    return _point_in_ring(c["lat"], c["lng"], entry["ring"])
 
 
 def haversine_m(lat1, lng1, lat2, lng2) -> float:

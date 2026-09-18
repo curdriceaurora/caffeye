@@ -138,12 +138,6 @@
     padding: 10px 16px;
     border-bottom: 1px solid var(--border);
     cursor: pointer; transition: background 150ms var(--ease-out);
-    /* Skip layout/paint for rows scrolled out of view — a big win once a
-       filtered list runs into the hundreds (multi-county), free on the
-       61-shop single-county case. Purely a rendering optimization: degrades
-       to normal rendering on browsers without support, no functional change. */
-    content-visibility: auto;
-    contain-intrinsic-size: auto 80px;
   }
   .load-more {
     padding: 0; border-bottom: none;
@@ -611,8 +605,12 @@ function boot() {
     // multi-county fixture, was 11 chips wide enough to cost mobile a card:
     // three-line filter row instead of one). Single-dimension data (only city,
     // no county — today's production Duluth) is unaffected: showCountyRow is
-    // false, so this drill-down gate never applies.
-    const showCityChipsNow = showCityRow && (!showCountyRow || state.activeCounty);
+    // false, so this drill-down gate never applies. Also show them whenever a
+    // city is already active regardless of county — selectCity() no longer
+    // clears activeCounty, so this normally can't diverge, but a specific
+    // city selected via any other path (e.g. the exposed window.selectCity)
+    // must still show its own clear/switch control, not disappear.
+    const showCityChipsNow = showCityRow && (!showCountyRow || state.activeCounty || state.activeCity);
 
     if (showCountyRow && showCityChipsNow) {
       const divider = document.createElement('span');
@@ -783,11 +781,18 @@ function boot() {
   // T3.9) without fabricating 301 simultaneously-unclustered real map markers.
   function exceedsLabelSafetyCap(n) { return n > LABEL_SAFETY_CAP; }
 
-  function placeLabels() {
-    const enabled = map.getZoom() >= LABEL_MIN_ZOOM;
+  // overrideItems (test-only, see TESTS.md T3.9): when passed, use these
+  // {pin, label, shop} entries instead of deriving them from `markers`/the
+  // real map state. Lets the 300-pin safety cap run as a genuine integration
+  // test — real collision pass, real DOM writes to real label elements —
+  // without needing 301 real shops simultaneously unclustered on one screen,
+  // which the current test fixture (198 shops spread across 4 counties) and
+  // production data (61 shops) both fall well short of.
+  function placeLabels(overrideItems) {
+    const enabled = overrideItems ? true : map.getZoom() >= LABEL_MIN_ZOOM;
     // Gather visible (non-clustered) pin labels
-    const items = [];
-    markers.forEach(m => {
+    const items = overrideItems || [];
+    if (!overrideItems) markers.forEach(m => {
       if (!m._icon) return;
       const pin = m._icon.querySelector('.pin');
       const label = m._icon.querySelector('.pin-label');
@@ -1178,9 +1183,12 @@ function boot() {
 
   function selectCity(city) {
     state.activeCity = city;
-    // Picking a specific city is more precise than the active county filter —
-    // clear it rather than risk a combination with zero results.
-    if (city) state.activeCounty = null;
+    // Deliberately does NOT touch activeCounty: the City chips a user can
+    // actually click are already scoped to citiesInScope (the active county's
+    // own cities, see renderChips), so a picked city can never conflict with
+    // the active county. Clearing it here previously hid the whole City row
+    // (and the county's own active-chip highlight) the instant a city was
+    // picked, right when the user most needed to see what was selected.
     // If a detail card is open and the chosen city doesn't include that shop, close it.
     if (state.selected && city && state.selected.city !== city) {
       deselectShop();
@@ -1248,7 +1256,7 @@ function boot() {
   render();
 
   // Expose key globals for console testing and the test suite in TESTS.md.
-  Object.assign(window, { SHOPS, ADDR, NEIGHBORHOODS, CATS, CITIES, COUNTIES, REGION_LABEL, map, markers, clusterGroup, selectCity, selectCounty, exceedsLabelSafetyCap });
+  Object.assign(window, { SHOPS, ADDR, NEIGHBORHOODS, CATS, CITIES, COUNTIES, REGION_LABEL, map, markers, clusterGroup, selectCity, selectCounty, exceedsLabelSafetyCap, placeLabels });
 }
 
 </script>
