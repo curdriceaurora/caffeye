@@ -137,7 +137,24 @@
     padding: 10px 16px;
     border-bottom: 1px solid var(--border);
     cursor: pointer; transition: background 150ms var(--ease-out);
+    /* Skip layout/paint for rows scrolled out of view — a big win once a
+       filtered list runs into the hundreds (multi-county), free on the
+       61-shop single-county case. Purely a rendering optimization: degrades
+       to normal rendering on browsers without support, no functional change. */
+    content-visibility: auto;
+    contain-intrinsic-size: auto 80px;
   }
+  .load-more {
+    padding: 0; border-bottom: none;
+  }
+  .load-more-btn {
+    width: 100%; padding: 12px 16px;
+    background: var(--surface-alt); border: none; border-top: 1px solid var(--border);
+    font-family: inherit; font-size: 12.5px; font-weight: 600; color: var(--accent);
+    cursor: pointer; text-align: center;
+    transition: background 150ms var(--ease-out);
+  }
+  .load-more-btn:hover { background: var(--accent-soft); }
   .shop-item:hover { background: var(--surface-alt); }
   .shop-item.active { background: var(--accent-soft); }
   .shop-name {
@@ -340,8 +357,9 @@
   </header>
 
   <div class="filter-bar">
-    <div class="filter-row">
-      <span class="filter-label">City</span>
+    <div class="filter-row" id="locationRow">
+      <span class="filter-label">Where</span>
+      <div id="countyChips"></div>
       <div id="cityChips"></div>
     </div>
     <div class="filter-row">
@@ -382,7 +400,7 @@ const CATS = {
   "Specialty":    { hex: "#7b6cb8", icon: "✦"  }
 };
 
-let SHOPS, ADDR, NEIGHBORHOODS, CITIES, REGION_LABEL, CHECKED_MONTH;
+let SHOPS, ADDR, NEIGHBORHOODS, CITIES, COUNTIES, REGION_LABEL, CHECKED_MONTH;
 
 fetch('./shops.json')
   .then(r => r.json())
@@ -391,6 +409,9 @@ fetch('./shops.json')
     ADDR = data.addr;
     NEIGHBORHOODS = data.neighborhoods;
     CITIES = data.cities || ['Duluth'];
+    // Counties are optional (older single-region datasets omit them); derive
+    // from the shops themselves so a `counties` array in shops.json isn't required.
+    COUNTIES = data.counties || Array.from(new Set(SHOPS.map(s => s.county).filter(Boolean))).sort();
     REGION_LABEL = data.regionLabel || (CITIES.length === 1 ? CITIES[0] : 'Duluth & Nearby');
     CHECKED_MONTH = data.checkedMonth || '';
     boot();
@@ -495,24 +516,36 @@ function boot() {
   }
 
   // STATE
+  const LIST_PAGE_SIZE = 200; // cap initial DOM nodes; "Load more" grows this
   const state = {
+    activeCounty: null,          // null = All counties; otherwise the county name
     activeCity: null,            // null = All cities; otherwise the city name
     categories: new Set(),
     features: new Set(),
     search: '',
-    selected: null
+    selected: null,
+    listLimit: LIST_PAGE_SIZE
   };
 
   // FILTER CHIPS
+  const countyChipsEl = document.getElementById('countyChips');
   const cityChipsEl = document.getElementById('cityChips');
   const catChipsEl = document.getElementById('categoryChips');
   const featChipsEl = document.getElementById('featureChips');
   const catCounts = SHOPS.reduce((acc, s) => { acc[s.category] = (acc[s.category]||0)+1; return acc; }, {});
   const cityCounts = SHOPS.reduce((acc, s) => { acc[s.city] = (acc[s.city]||0)+1; return acc; }, {});
-  // Hide the City row entirely when there's only one city in the data.
+  const countyCounts = SHOPS.reduce((acc, s) => { if (s.county) acc[s.county] = (acc[s.county]||0)+1; return acc; }, {});
+  // County and City share one row (locationRow) so multi-county data doesn't cost
+  // mobile an extra filter-bar line — that would shrink the visible card count
+  // below the iPhone 14 Pro target of 5. Each chip group hides independently when
+  // it has only one value; the whole row hides only when neither applies (today's
+  // single-city Duluth data).
+  const showCountyRow = (COUNTIES && COUNTIES.length > 1);
   const showCityRow = (CITIES && CITIES.length > 1);
-  if (!showCityRow) {
-    const row = cityChipsEl && cityChipsEl.closest('.filter-row');
+  if (!showCountyRow) countyChipsEl.style.display = 'none';
+  if (!showCityRow) cityChipsEl.style.display = 'none';
+  if (!showCountyRow && !showCityRow) {
+    const row = document.getElementById('locationRow');
     if (row) row.style.display = 'none';
   }
 
@@ -555,17 +588,41 @@ function boot() {
   }
 
   function renderChips() {
+    if (showCountyRow) {
+      countyChipsEl.innerHTML = '';
+      countyChipsEl.style.display = 'inline-flex';
+      countyChipsEl.style.gap = '6px';
+      countyChipsEl.style.flexWrap = 'wrap';
+      countyChipsEl.appendChild(makeChip({
+        label: 'All counties', count: SHOPS.length,
+        onClick: () => { selectCounty(null); },
+        isActive: state.activeCounty === null
+      }));
+      COUNTIES.forEach(county => {
+        countyChipsEl.appendChild(makeChip({
+          label: county, count: countyCounts[county] || 0,
+          onClick: () => { selectCounty(state.activeCounty === county ? null : county); },
+          isActive: state.activeCounty === county
+        }));
+      });
+    }
+
     if (showCityRow) {
+      // Within an active county, only offer that county's cities — picking a
+      // city that isn't in the selected county would always yield zero results.
+      const citiesInScope = state.activeCounty
+        ? CITIES.filter(city => SHOPS.some(s => s.city === city && s.county === state.activeCounty))
+        : CITIES;
       cityChipsEl.innerHTML = '';
       cityChipsEl.style.display = 'inline-flex';
       cityChipsEl.style.gap = '6px';
       cityChipsEl.style.flexWrap = 'wrap';
       cityChipsEl.appendChild(makeChip({
-        label: 'All cities', count: SHOPS.length,
+        label: 'All cities', count: state.activeCounty ? (countyCounts[state.activeCounty]||0) : SHOPS.length,
         onClick: () => { selectCity(null); },
         isActive: state.activeCity === null
       }));
-      CITIES.forEach(city => {
+      citiesInScope.forEach(city => {
         cityChipsEl.appendChild(makeChip({
           label: city, count: cityCounts[city] || 0,
           onClick: () => { selectCity(state.activeCity === city ? null : city); },
@@ -730,6 +787,15 @@ function boot() {
       });
       return;
     }
+    // The collision pass below is O(items × angles × obstacles). Clustering keeps
+    // this small in practice (dense areas collapse into cluster bubbles), but
+    // guard the pathological case — many shops simultaneously unclustered at a
+    // zoom level dense enough to matter — rather than block the main thread.
+    const LABEL_SAFETY_CAP = 300;
+    if (items.length > LABEL_SAFETY_CAP) {
+      items.forEach(it => { it.label.style.visibility = 'hidden'; });
+      return;
+    }
     // Reset transforms to base centered, measure
     // Batch all CSS writes (resets of transform and visibility) to prevent layout thrashing
     items.forEach(it => {
@@ -845,6 +911,7 @@ function boot() {
   // Global filters (city / category / feature / search) — these gate BOTH map markers and the list.
   function passesGlobalFilters(s) {
     const term = state.search.toLowerCase().trim();
+    if (state.activeCounty && s.county !== state.activeCounty) return false;
     if (state.activeCity && s.city !== state.activeCity) return false;
     if (state.categories.size && !state.categories.has(s.category)) return false;
     const cw = s.cw || {};
@@ -891,6 +958,10 @@ function boot() {
   }
 
   function renderList(source) {
+    // A fresh filter/search/viewport context starts back at the top of the list;
+    // only an explicit "Load more" click should grow the visible window.
+    if (source !== 'loadmore') state.listLimit = LIST_PAGE_SIZE;
+
     // Map cluster membership tracks global filters only — viewport filtering must not
     // shrink clusterGroup.getBounds() (otherwise later fitBounds calls fit to a tiny set).
     const mapSet = new Set(filteredForMap());
@@ -900,6 +971,7 @@ function boot() {
       else if (!onMap && clusterGroup.hasLayer(m)) clusterGroup.removeLayer(m);
     });
     const filtered = sortShops(filteredForList());
+    const shown = filtered.slice(0, state.listLimit);
     const isViewportFiltering = filtered.length < mapSet.size;
 
     // Count pop when number changes
@@ -930,7 +1002,7 @@ function boot() {
       empty.textContent = 'Nothing here — try zooming out or clearing a filter.';
       shopListEl.appendChild(empty);
     }
-    filtered.forEach((shop, i) => {
+    shown.forEach((shop, i) => {
       const li = document.createElement('li');
       li.className = 'shop-item' + (state.selected && state.selected.id === shop.id ? ' active' : '');
       li.style.animationDelay = `${Math.min(i * 28, 140)}ms`;
@@ -968,6 +1040,18 @@ function boot() {
       
       shopListEl.appendChild(li);
     });
+    if (filtered.length > shown.length) {
+      const more = document.createElement('li');
+      more.className = 'load-more';
+      const remaining = filtered.length - shown.length;
+      const nextBatch = Math.min(remaining, LIST_PAGE_SIZE);
+      more.innerHTML = `<button type="button" class="load-more-btn">Load ${nextBatch} more (${remaining} left)</button>`;
+      more.querySelector('button').addEventListener('click', () => {
+        state.listLimit += LIST_PAGE_SIZE;
+        renderList('loadmore');
+      });
+      shopListEl.appendChild(more);
+    }
     if (typeof scheduleLabels === 'function') scheduleLabels();
   }
 
@@ -1060,8 +1144,23 @@ function boot() {
     }
   }
 
+  function selectCounty(county) {
+    state.activeCounty = county;
+    state.activeCity = null; // a coarser scope change starts fresh at the city level
+    if (state.selected && county && state.selected.county !== county) {
+      deselectShop();
+    }
+    render();
+    if (clusterGroup.getLayers().length) {
+      map.fitBounds(clusterGroup.getBounds(), { padding: [40, 40], animate: true });
+    }
+  }
+
   function selectCity(city) {
     state.activeCity = city;
+    // Picking a specific city is more precise than the active county filter —
+    // clear it rather than risk a combination with zero results.
+    if (city) state.activeCounty = null;
     // If a detail card is open and the chosen city doesn't include that shop, close it.
     if (state.selected && city && state.selected.city !== city) {
       deselectShop();
@@ -1102,9 +1201,11 @@ function boot() {
   const brandEl = document.querySelector('.brand');
   const freshnessEl = document.querySelector('.freshness');
   function updateHeader() {
-    const scope = state.activeCity || REGION_LABEL;
+    const scope = state.activeCity || state.activeCounty || REGION_LABEL;
     const count = state.activeCity
       ? SHOPS.filter(s => s.city === state.activeCity).length
+      : state.activeCounty
+      ? SHOPS.filter(s => s.county === state.activeCounty).length
       : SHOPS.length;
     const title = 'Coffee in ' + scope;
     document.title = title;
@@ -1127,7 +1228,7 @@ function boot() {
   render();
 
   // Expose key globals for console testing and the test suite in TESTS.md.
-  Object.assign(window, { SHOPS, ADDR, NEIGHBORHOODS, CATS, CITIES, REGION_LABEL, map, markers, clusterGroup, selectCity });
+  Object.assign(window, { SHOPS, ADDR, NEIGHBORHOODS, CATS, CITIES, COUNTIES, REGION_LABEL, map, markers, clusterGroup, selectCity, selectCounty });
 }
 
 </script>

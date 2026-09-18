@@ -53,6 +53,7 @@ Functional and non-functional requirements for the current state of the page. Ea
 | R4.4 | Category and feature chips are toggleable independently; multiple can be active. | — |
 | R4.5 | "Until midnight" is the wording (not "Past midnight") — accurate for shops closing *at* 12 am. | Truth in labeling |
 | R4.6 | Sort controls are intentionally absent. The list is always ordered by Bayesian weighted rating, descending. | The right default |
+| R4.7 | When shops span more than one county, a County chip row filters by county; picking a county narrows the City row to that county's cities and clears any active city. Picking a city clears the active county. County and City chips share a single filter-bar row (not two) so multi-county data doesn't cost mobile an extra row of vertical space. Both rows (or the whole shared row, if neither applies) are hidden when the data has only one value — no behavior change for single-region data. | Show what's available; density on phones |
 
 ## R5. Right-side list
 
@@ -67,6 +68,7 @@ Functional and non-functional requirements for the current state of the page. Ea
 | R5.7 | The shop list scrolls vertically inside its panel; the rest of the layout does not scroll. | Density on phones |
 | R5.8 | Empty state copy hints at zooming out or clearing filters. | — |
 | R5.9 | On every list refresh, items animate in with a staggered fade + translateY (28 ms per item, max 140 ms total delay). When triggered by a viewport change, the results-meta bar briefly flashes `--accent-soft` to signal "the map caused this". | Show what's available |
+| R5.10 | When the current filter set (chips + search + viewport) matches more than 200 shops, only the first 200 render; a "Load N more" row grows the visible window by 200 on click. Any new filter, search, or viewport change resets the window back to 200. Below 200 matches, behavior is unchanged (all render at once) — this is the case for every single-region dataset today. | Bounds worst-case render cost at multi-county scale without changing today's behavior |
 
 ## R6. Detail card
 

@@ -91,6 +91,9 @@ Expected output: `{ visibleLabels: N, labelLabel: 0, labelCluster: 0 }`.
 | T4.6 | R4.4 | Click "Coffee" then "Work-friendly". `js> document.querySelectorAll('.shop-item').length` | Returns count of Coffee × Work-friendly intersection. |
 | T4.7 | R4.5 | Search the page DOM for "Past midnight". | Returns no matches. |
 | T4.8 | R4.6 | `js> !document.getElementById('sortSelect')` | `true` |
+| T4.9 | R4.7 | `js> COUNTIES.length` on single-region data (no `county` field on any shop). | `0` — county chips hidden, `#locationRow` shows city chips only (or hides entirely on today's single-city Duluth data). |
+| T4.10 | R4.7 | On multi-county data: `js> selectCounty('Gwinnett'); document.getElementById('resultsCount').textContent === String(SHOPS.filter(s => s.county === 'Gwinnett').length)` | `true` — and the City row now lists only cities within Gwinnett. |
+| T4.11 | R4.7 | County and City chips share one `.filter-row` (`#locationRow`), not two. | On mobile (≤ 820px), this keeps the filter-bar to 3 rows even with county data active, preserving the 5-cards-visible target (T8.x). |
 
 ## T5. Right-side list (R5)
 
@@ -112,6 +115,9 @@ Expected output: `{ visibleLabels: N, labelLabel: 0, labelCluster: 0 }`.
 | T5.9 | R5.8 | Set zoom 18 in an empty area + search "xyzqwerty". | Empty state reads: "Nothing here — try zooming out or clearing a filter." |
 | T5.10 | R5.9 | Open DevTools → Elements. After any pan/zoom, inspect first `.shop-item`. | Has `animation-delay` inline style ≥ 0ms and CSS animation `itemEnter`. |
 | T5.11 | R5.9 | After a viewport-triggered list refresh, inspect `.results-meta`. | Briefly has class `viewport-flash`, then class is removed after `transitionend`. |
+| T5.12 | R5.10 | On data with > 200 matching shops (e.g. all-counties view, no filters): `js> document.querySelectorAll('.shop-item').length` | `200`, plus one `.load-more-btn` reading "Load N more (N left)". |
+| T5.13 | R5.10 | Click `.load-more-btn` repeatedly until it disappears. | `js> document.querySelectorAll('.shop-item').length === document.getElementById('resultsCount').textContent - 0` — all matches eventually render; scores stay monotonic across the full list (T5.5c still holds). |
+| T5.14 | R5.10 | With the list paginated (> 200 matches), type in the search box. | List resets to the first page of the new result set — no stale "Load more" pointing at the old filter's remainder. |
 
 ## T6. Detail card (R6)
 
