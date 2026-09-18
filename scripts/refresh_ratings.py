@@ -16,7 +16,10 @@ For multi-county workflows, run per-county and specify --county to filter:
 
 Options:
     --county CODE    filter to shops in this county (fulton, dekalb, forsyth, gwinnett).
-                     Omit to process all shops (default Duluth for backward compat).
+                     A shop's own `county` tag wins if present; otherwise its stored
+                     coordinates are checked against that county's box in
+                     county_bounds.json — so this works even on today's untagged,
+                     single-region shops.json. Omit to process all shops.
     --only TEXT      limit to shops whose name contains TEXT (case-insensitive)
     --raw PATH       dump path (default scratch/ratings-<date>.json). Merged into, never truncated.
     --replay PATH    re-use dumped responses instead of calling the API. Required for --write.
@@ -129,6 +132,26 @@ def load_key() -> str:
             "No API key. Set GOOGLE_MAPS_API_KEY or create ~/.config/caffeye/google_maps_key"
         )
     return key
+
+
+def load_county_bounds() -> dict:
+    return json.loads(COUNTY_BOUNDS_PATH.read_text())
+
+
+def in_county(shop: dict, addr: dict, county: str, bounds: dict) -> bool:
+    """A shop belongs to `county` if its own `county` tag says so, or — when
+    untagged, which is every shop in a single-region shops.json — its stored
+    coordinates fall inside that county's bounding box from county_bounds.json."""
+    tagged = shop.get("county", "").lower()
+    if tagged:
+        return tagged == county.lower()
+    box = bounds.get(county.lower())
+    c = addr.get(shop.get("addrKey"))
+    if not box or not c:
+        return False
+    lat_lo, lat_hi = box["lat"]
+    lng_lo, lng_hi = box["lng"]
+    return lat_lo <= c["lat"] <= lat_hi and lng_lo <= c["lng"] <= lng_hi
 
 
 def haversine_m(lat1, lng1, lat2, lng2) -> float:
@@ -358,7 +381,8 @@ def main() -> int:
     addr = data["addr"]
     shops = [s for s in data["shops"] if args.only.lower() in s["name"].lower()]
     if args.county:
-        shops = [s for s in shops if s.get("county", "").lower() == args.county.lower()]
+        bounds = load_county_bounds()
+        shops = [s for s in shops if in_county(s, addr, args.county, bounds)]
         if not shops:
             sys.exit(f"no shops match --county {args.county}")
     if not shops:

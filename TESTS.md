@@ -51,6 +51,7 @@ Local: `python3 -m http.server 8765` in the project root, open `http://127.0.0.1
 | T3.2b | R3.2 | `js> map.setView([33.972, -84.142], 13); map.getContainer().classList.contains('with-labels')` then in 500 ms | `true` |
 | T3.3-7 | R3.3–R3.7 | At zoom 17, run the no-overlap script (below). | All counts `0`. |
 | T3.8 | R3.8 | Click a category chip to filter, then re-check. | Labels stay valid (no orphaned labels for hidden pins). |
+| T3.9 | R3.9 | `js> exceedsLabelSafetyCap(300) === false && exceedsLabelSafetyCap(301) === true` | `true` — this is a boundary check on the guard's threshold function only. It does not exercise the full `placeLabels()` hide-and-return path, which would need 301 real shops simultaneously unclustered at one zoom level to trigger organically; not constructed by the 244-shop test fixture (widely spread across 4 counties) or by production Duluth data (61 shops). |
 
 **No-overlap script:**
 
@@ -91,9 +92,10 @@ Expected output: `{ visibleLabels: N, labelLabel: 0, labelCluster: 0 }`.
 | T4.6 | R4.4 | Click "Coffee" then "Work-friendly". `js> document.querySelectorAll('.shop-item').length` | Returns count of Coffee × Work-friendly intersection. |
 | T4.7 | R4.5 | Search the page DOM for "Past midnight". | Returns no matches. |
 | T4.8 | R4.6 | `js> !document.getElementById('sortSelect')` | `true` |
-| T4.9 | R4.7 | `js> COUNTIES.length` on single-region data (no `county` field on any shop). | `0` — county chips hidden, `#locationRow` shows city chips only (or hides entirely on today's single-city Duluth data). |
-| T4.10 | R4.7 | On multi-county data: `js> selectCounty('Gwinnett'); document.getElementById('resultsCount').textContent === String(SHOPS.filter(s => s.county === 'Gwinnett').length)` | `true` — and the City row now lists only cities within Gwinnett. |
-| T4.11 | R4.7 | County and City chips share one `.filter-row` (`#locationRow`), not two. | On mobile (≤ 820px), this keeps the filter-bar to 3 rows even with county data active, preserving the 5-cards-visible target (T8.x). |
+| T4.9 | R4.7 | `js> COUNTIES.length` on single-region data (no `county` field on any shop). | `0` — county chips absent, `#locationRow` shows City chips only (or hides entirely on today's single-city Duluth data, since `showCityRow` is also false). |
+| T4.10 | R4.7 | On multi-county data with no county selected: `js> document.querySelectorAll('#locationChips .chip').length` | Equals `COUNTIES.length + 1` (just the county chips: "All counties" + one per county) — City chips are not shown yet. County ⊇ City, so showing every city across every county at the same time as every county is redundant, and was measured to cost mobile a visible card (see T8.x). |
+| T4.11 | R4.7 | `js> selectCounty('Gwinnett'); document.getElementById('resultsCount').textContent === String(SHOPS.filter(s => s.county === 'Gwinnett').length)` | `true` — and City chips now appear (drilled down to Gwinnett's cities only), separated from the county chips by a `.chip-divider`. |
+| T4.12 | R4.7 | County and City chips are both children of one `#locationChips` container (a single flex-wrap sequence), not two separately-wrapping sub-containers. | Splitting one row's width between two independently-wrapping boxes was measured to wrap *more* than the combined content needs (74px vs. 48px tall at 375px, same chip set) — packing them as one sequence fixes it. |
 
 ## T5. Right-side list (R5)
 
@@ -118,6 +120,7 @@ Expected output: `{ visibleLabels: N, labelLabel: 0, labelCluster: 0 }`.
 | T5.12 | R5.10 | On data with > 200 matching shops (e.g. all-counties view, no filters): `js> document.querySelectorAll('.shop-item').length` | `200`, plus one `.load-more-btn` reading "Load N more (N left)". |
 | T5.13 | R5.10 | Click `.load-more-btn` repeatedly until it disappears. | `js> document.querySelectorAll('.shop-item').length === document.getElementById('resultsCount').textContent - 0` — all matches eventually render; scores stay monotonic across the full list (T5.5c still holds). |
 | T5.14 | R5.10 | With the list paginated (> 200 matches), type in the search box. | List resets to the first page of the new result set — no stale "Load more" pointing at the old filter's remainder. |
+| T5.15 | R5.10 | `js> document.querySelector('.load-more-btn').click(); document.activeElement.tagName === 'LI' && document.activeElement.dataset.id && [...document.querySelectorAll('.shop-item')].indexOf(document.activeElement) === 200` | `true` — activating "Load more" (`renderList()` rebuilds the whole `<ul>`, which would otherwise drop focus to `<body>`) moves focus to the first newly-revealed card, not off the list entirely. Real keyboard users trigger this via Enter/Space on the focused button, which the browser turns into the same `click` event this test fires directly. |
 
 ## T6. Detail card (R6)
 

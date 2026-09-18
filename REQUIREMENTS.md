@@ -42,6 +42,7 @@ Functional and non-functional requirements for the current state of the page. Ea
 | R3.6 | A label position is rejected if it collides with: any other already-placed label, any visible pin (own pin excluded by geometry), or any cluster bubble. | Labels must not lie |
 | R3.7 | If no angle works, the label is hidden via `visibility: hidden`; the pin itself remains visible. | — |
 | R3.8 | Labels reflow on `zoomend`, `moveend`, cluster `animationend`, and after any filter changes the visible-marker set. | — |
+| R3.9 | Above 300 simultaneously-visible (non-clustered) pins, the collision pass is skipped and all their labels are hidden, rather than running the O(pins × angles × obstacles) placer against a pin count that large. | Bound label-placement cost at multi-county scale without blocking the main thread |
 
 ## R4. Filter bar
 
@@ -68,7 +69,7 @@ Functional and non-functional requirements for the current state of the page. Ea
 | R5.7 | The shop list scrolls vertically inside its panel; the rest of the layout does not scroll. | Density on phones |
 | R5.8 | Empty state copy hints at zooming out or clearing filters. | — |
 | R5.9 | On every list refresh, items animate in with a staggered fade + translateY (28 ms per item, max 140 ms total delay). When triggered by a viewport change, the results-meta bar briefly flashes `--accent-soft` to signal "the map caused this". | Show what's available |
-| R5.10 | When the current filter set (chips + search + viewport) matches more than 200 shops, only the first 200 render; a "Load N more" row grows the visible window by 200 on click. Any new filter, search, or viewport change resets the window back to 200. Below 200 matches, behavior is unchanged (all render at once) — this is the case for every single-region dataset today. | Bounds worst-case render cost at multi-county scale without changing today's behavior |
+| R5.10 | When the current filter set (chips + search + viewport) matches more than 200 shops, only the first 200 render by default; a "Load N more" row grows the visible window by 200 on click, and clicking through to the end does render the full matched set (this bounds the *default* render, not an absolute maximum — see CLAUDE.md). Any new filter, search, or viewport change resets the window back to 200. Loading more must not lose keyboard focus: activating "Load more" moves focus to the first newly-revealed item. Below 200 matches, behavior is unchanged (all render at once) — this is the case for every single-region dataset today. | Bounds the common-case render cost at multi-county scale without changing today's behavior, and without breaking keyboard navigation |
 
 ## R6. Detail card
 

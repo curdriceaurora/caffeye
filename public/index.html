@@ -86,6 +86,7 @@
   .chip.active .num { color: rgba(255,255,255,0.6); }
   .chip.themed .num { color: inherit; opacity: 0.65; }
   .chip.themed.active .num { color: rgba(255,255,255,0.7); opacity: 1; }
+  .chip-divider { width: 1px; align-self: stretch; background: var(--border-strong); margin: 2px 2px; }
 
 
   .layout { flex: 1; display: flex; min-height: 0; }
@@ -359,8 +360,7 @@
   <div class="filter-bar">
     <div class="filter-row" id="locationRow">
       <span class="filter-label">Where</span>
-      <div id="countyChips"></div>
-      <div id="cityChips"></div>
+      <div id="locationChips"></div>
     </div>
     <div class="filter-row">
       <span class="filter-label">Type</span>
@@ -528,22 +528,20 @@ function boot() {
   };
 
   // FILTER CHIPS
-  const countyChipsEl = document.getElementById('countyChips');
-  const cityChipsEl = document.getElementById('cityChips');
+  const locationChipsEl = document.getElementById('locationChips');
   const catChipsEl = document.getElementById('categoryChips');
   const featChipsEl = document.getElementById('featureChips');
   const catCounts = SHOPS.reduce((acc, s) => { acc[s.category] = (acc[s.category]||0)+1; return acc; }, {});
   const cityCounts = SHOPS.reduce((acc, s) => { acc[s.city] = (acc[s.city]||0)+1; return acc; }, {});
   const countyCounts = SHOPS.reduce((acc, s) => { if (s.county) acc[s.county] = (acc[s.county]||0)+1; return acc; }, {});
-  // County and City share one row (locationRow) so multi-county data doesn't cost
-  // mobile an extra filter-bar line — that would shrink the visible card count
-  // below the iPhone 14 Pro target of 5. Each chip group hides independently when
-  // it has only one value; the whole row hides only when neither applies (today's
-  // single-city Duluth data).
+  // County and City chips are siblings in ONE flex-wrap sequence (#locationChips),
+  // not two independently-wrapping sub-groups. Splitting the row's width between
+  // two separately-wrapping boxes made each wrap MORE (less width per group before
+  // it wraps), measured 48px -> 74px tall at 375px — worse than either the old
+  // single-group row or this fix. One shared wrap sequence packs chips across the
+  // full row width, so it wraps only as much as the un-split content would.
   const showCountyRow = (COUNTIES && COUNTIES.length > 1);
   const showCityRow = (CITIES && CITIES.length > 1);
-  if (!showCountyRow) countyChipsEl.style.display = 'none';
-  if (!showCityRow) cityChipsEl.style.display = 'none';
   if (!showCountyRow && !showCityRow) {
     const row = document.getElementById('locationRow');
     if (row) row.style.display = 'none';
@@ -588,18 +586,18 @@ function boot() {
   }
 
   function renderChips() {
+    locationChipsEl.innerHTML = '';
+    locationChipsEl.style.display = 'inline-flex';
+    locationChipsEl.style.gap = '6px';
+    locationChipsEl.style.flexWrap = 'wrap';
     if (showCountyRow) {
-      countyChipsEl.innerHTML = '';
-      countyChipsEl.style.display = 'inline-flex';
-      countyChipsEl.style.gap = '6px';
-      countyChipsEl.style.flexWrap = 'wrap';
-      countyChipsEl.appendChild(makeChip({
+      locationChipsEl.appendChild(makeChip({
         label: 'All counties', count: SHOPS.length,
         onClick: () => { selectCounty(null); },
         isActive: state.activeCounty === null
       }));
       COUNTIES.forEach(county => {
-        countyChipsEl.appendChild(makeChip({
+        locationChipsEl.appendChild(makeChip({
           label: county, count: countyCounts[county] || 0,
           onClick: () => { selectCounty(state.activeCounty === county ? null : county); },
           isActive: state.activeCounty === county
@@ -607,23 +605,35 @@ function boot() {
       });
     }
 
-    if (showCityRow) {
+    // County ⊇ city, so with both dimensions in play, show City chips only once
+    // a county narrows the choice — showing all cities across every county at
+    // the same time as all counties is redundant (and, measured on a real
+    // multi-county fixture, was 11 chips wide enough to cost mobile a card:
+    // three-line filter row instead of one). Single-dimension data (only city,
+    // no county — today's production Duluth) is unaffected: showCountyRow is
+    // false, so this drill-down gate never applies.
+    const showCityChipsNow = showCityRow && (!showCountyRow || state.activeCounty);
+
+    if (showCountyRow && showCityChipsNow) {
+      const divider = document.createElement('span');
+      divider.className = 'chip-divider';
+      divider.setAttribute('aria-hidden', 'true');
+      locationChipsEl.appendChild(divider);
+    }
+
+    if (showCityChipsNow) {
       // Within an active county, only offer that county's cities — picking a
       // city that isn't in the selected county would always yield zero results.
       const citiesInScope = state.activeCounty
         ? CITIES.filter(city => SHOPS.some(s => s.city === city && s.county === state.activeCounty))
         : CITIES;
-      cityChipsEl.innerHTML = '';
-      cityChipsEl.style.display = 'inline-flex';
-      cityChipsEl.style.gap = '6px';
-      cityChipsEl.style.flexWrap = 'wrap';
-      cityChipsEl.appendChild(makeChip({
+      locationChipsEl.appendChild(makeChip({
         label: 'All cities', count: state.activeCounty ? (countyCounts[state.activeCounty]||0) : SHOPS.length,
         onClick: () => { selectCity(null); },
         isActive: state.activeCity === null
       }));
       citiesInScope.forEach(city => {
-        cityChipsEl.appendChild(makeChip({
+        locationChipsEl.appendChild(makeChip({
           label: city, count: cityCounts[city] || 0,
           onClick: () => { selectCity(state.activeCity === city ? null : city); },
           isActive: state.activeCity === city
@@ -768,6 +778,10 @@ function boot() {
     112.5, 67.5, 157.5, 202.5
   ];
   const LABEL_GAP = 4;
+  const LABEL_SAFETY_CAP = 300;
+  // Named and exposed separately so the 300/301 boundary is testable (see TESTS.md
+  // T3.9) without fabricating 301 simultaneously-unclustered real map markers.
+  function exceedsLabelSafetyCap(n) { return n > LABEL_SAFETY_CAP; }
 
   function placeLabels() {
     const enabled = map.getZoom() >= LABEL_MIN_ZOOM;
@@ -791,8 +805,7 @@ function boot() {
     // this small in practice (dense areas collapse into cluster bubbles), but
     // guard the pathological case — many shops simultaneously unclustered at a
     // zoom level dense enough to matter — rather than block the main thread.
-    const LABEL_SAFETY_CAP = 300;
-    if (items.length > LABEL_SAFETY_CAP) {
+    if (exceedsLabelSafetyCap(items.length)) {
       items.forEach(it => { it.label.style.visibility = 'hidden'; });
       return;
     }
@@ -1047,8 +1060,15 @@ function boot() {
       const nextBatch = Math.min(remaining, LIST_PAGE_SIZE);
       more.innerHTML = `<button type="button" class="load-more-btn">Load ${nextBatch} more (${remaining} left)</button>`;
       more.querySelector('button').addEventListener('click', () => {
+        // renderList() rebuilds the whole <ul>, which would otherwise drop focus
+        // to <body> on keyboard activation. Move it to the first newly-revealed
+        // card instead, so keyboard/screen-reader users land where new content
+        // starts rather than losing their place entirely.
+        const firstNewIndex = shown.length;
         state.listLimit += LIST_PAGE_SIZE;
         renderList('loadmore');
+        const firstNew = shopListEl.querySelectorAll('.shop-item')[firstNewIndex];
+        if (firstNew) firstNew.focus();
       });
       shopListEl.appendChild(more);
     }
@@ -1228,7 +1248,7 @@ function boot() {
   render();
 
   // Expose key globals for console testing and the test suite in TESTS.md.
-  Object.assign(window, { SHOPS, ADDR, NEIGHBORHOODS, CATS, CITIES, COUNTIES, REGION_LABEL, map, markers, clusterGroup, selectCity, selectCounty });
+  Object.assign(window, { SHOPS, ADDR, NEIGHBORHOODS, CATS, CITIES, COUNTIES, REGION_LABEL, map, markers, clusterGroup, selectCity, selectCounty, exceedsLabelSafetyCap });
 }
 
 </script>
