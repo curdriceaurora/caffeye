@@ -1,0 +1,385 @@
+{
+  "version": 1,
+  "description": "Curated qualitative intelligence (coworking tiers, meeting rooms, signature items, and USPs) overlaid onto discovered and curated places.",
+  "places": {
+    "ChIJG1KP8qDq9YgReCfFZvohgwo": {
+      "name": "TradeWind Coffee Co.",
+      "city": "Dacula",
+      "county": "Gwinnett",
+      "cw": {
+        "tier": "excellent",
+        "note": "Spacious community tables, fast Wi-Fi, ample power outlets, and a dedicated reservable conference room.",
+        "hasMeetingRoom": true,
+        "meetingRoomNote": "The Chart Room: private conference room with table seating up to 10, whiteboard, and presentation screen."
+      },
+      "usp": "Specialty roastery and cafe built for community and remote work with house-roasted beans and fresh bakery fare.",
+      "loved": [
+        "house cold brew",
+        "honey lavender latte",
+        "cinnamon rolls"
+      ],
+      "signature": "Cinnamon Vanilla Latte"
+    },
+    "ChIJx0OOzEqU9YgR3t9VxlMXUK0": {
+      "name": "Boulder Creek Coffee",
+      "city": "Lawrenceville",
+      "county": "Gwinnett",
+      "cw": {
+        "tier": "excellent",
+        "note": "Two-story historic brick building with upstairs study nooks, fast Wi-Fi, and multiple meeting areas.",
+        "hasMeetingRoom": true,
+        "meetingRoomNote": "Private meeting rooms and upstairs gathering spaces available for study groups and business meetings."
+      },
+      "usp": "Multi-level historic coffeehouse offering quiet workspaces, artisanal coffee, and local bakery treats.",
+      "loved": [
+        "pourovers",
+        "iced caramel macchiato",
+        "blueberry scones"
+      ],
+      "signature": "Boulder Creek Signature Mocha"
+    },
+    "ChIJ3e9qeAiw9YgR1l3IDi6RjwQ": {
+      "name": "Alcove Coffeehouse & Lakefront Patio",
+      "city": "Lilburn",
+      "county": "Gwinnett",
+      "cw": {
+        "tier": "excellent",
+        "note": "Quiet lakeside setting with comfortable tables, fast Wi-Fi, outlets, and scenic patio.",
+        "hasMeetingRoom": false
+      },
+      "usp": "Scenic lakefront cafe with artisan coffee and tranquil spaces for working or reading.",
+      "loved": [
+        "lakefront latte",
+        "avocado toast",
+        "matcha latte"
+      ],
+      "signature": "Lakefront Honey Latte"
+    },
+    "ChIJp4_m_jqX9YgRvE9wxzyXmp0": {
+      "name": "Warm Waves Coffee Roasters",
+      "city": "Suwanee",
+      "county": "Gwinnett",
+      "cw": {
+        "tier": "excellent",
+        "note": "Roastery with airy modern seating, fast Wi-Fi, and an inviting atmosphere for remote workers.",
+        "hasMeetingRoom": false
+      },
+      "usp": "Local craft roastery showcasing light roast profiles and mindful, welcoming hospitality.",
+      "loved": [
+        "cortado",
+        "cappuccino",
+        "scones"
+      ],
+      "signature": "Seasonal Single Origin Pour Over"
+    },
+    "ChIJNfDXtVNz9YgRhKlE7GaAsbs": {
+      "name": "Crazy Love Coffee House",
+      "city": "Roswell",
+      "county": "Fulton",
+      "cw": {
+        "tier": "excellent",
+        "note": "Massive historic house with multiple work-friendly rooms, high-speed Wi-Fi, and abundant seating.",
+        "hasMeetingRoom": true,
+        "meetingRoomNote": "Private conference/meeting room available for reservation (ideal for 6-10 people)."
+      },
+      "usp": "Historic Roswell landmark featuring homemade Liege waffles, craft espresso, and expansive work rooms.",
+      "loved": [
+        "liege waffles",
+        "honey lavender latte",
+        "cinnamon rolls"
+      ],
+      "signature": "Liege Waffle with Strawberries & Cream"
+    },
+    "ChIJW4UxMCh9X4gRsCdux2ZKFZ4": {
+      "name": "Valor Coffee",
+      "city": "Alpharetta",
+      "county": "Fulton",
+      "cw": {
+        "tier": "excellent",
+        "note": "Vibrant specialty roastery with communal work tables, fast Wi-Fi, and friendly counter service.",
+        "hasMeetingRoom": false
+      },
+      "usp": "Nationally acclaimed craft coffee roaster with playful hospitality and precision espresso.",
+      "loved": [
+        "freckled cold brew",
+        "lavender latte",
+        "fresh pastries"
+      ],
+      "signature": "The Freckled Cold Brew (with sweet cream & cinnamon)"
+    },
+    "ChIJM-FdL9QN9YgRTu5fvjDMj04": {
+      "name": "Land Of A Thousand Hills Coffee",
+      "city": "Roswell",
+      "county": "Fulton",
+      "cw": {
+        "tier": "excellent",
+        "note": "Cottage setting with multiple rooms, wrap-around porch, fast Wi-Fi, and quiet corners for laptops.",
+        "hasMeetingRoom": false
+      },
+      "usp": "Direct-trade Rwandan coffeehouse supporting farming communities with extensive cottage seating.",
+      "loved": [
+        "rwandan pourover",
+        "caramel macchiato",
+        "chicken salad croissant"
+      ],
+      "signature": "Kizi Rift Single Origin Pourover"
+    },
+    "ChIJH4Tz37R19YgRMb1rXwvp8EA": {
+      "name": "Pop's Coffee Co.",
+      "city": "Roswell",
+      "county": "Fulton",
+      "cw": {
+        "tier": "excellent",
+        "note": "Spacious industrial cafe with wide wooden work tables, plenty of power outlets, and solid Wi-Fi.",
+        "hasMeetingRoom": false
+      },
+      "usp": "Industrial garage-themed specialty cafe known for wide work tables and top-tier cold brew.",
+      "loved": [
+        "nitro cold brew",
+        "cuban latte",
+        "breakfast burritos"
+      ],
+      "signature": "Nitro Draft Cold Brew"
+    },
+    "ChIJt0s62q919YgR0Tfo28NAnkI": {
+      "name": "Warm Waves Coffee House",
+      "city": "Alpharetta",
+      "county": "Fulton",
+      "cw": {
+        "tier": "excellent",
+        "note": "Calm and bright atmosphere, dependable Wi-Fi, and cozy seating for remote focus work.",
+        "hasMeetingRoom": false
+      },
+      "usp": "Specialty coffeehouse roasting single-origin beans with a focus on mindful hospitality.",
+      "loved": [
+        "flat white",
+        "golden milk latte",
+        "matcha"
+      ],
+      "signature": "Single Origin Espresso"
+    },
+    "ChIJqYkLfpN19YgRh_faIXBZ08w": {
+      "name": "967 Coffee Co",
+      "city": "Roswell",
+      "county": "Fulton",
+      "cw": {
+        "tier": "excellent",
+        "note": "Open until midnight daily with comfortable seating, fast Wi-Fi, and late-night study atmosphere.",
+        "hasMeetingRoom": false
+      },
+      "usp": "Late-night coffeehouse open until midnight offering craft coffee, desserts, and study spaces.",
+      "loved": [
+        "caramel latte",
+        "croissants",
+        "iced mocha"
+      ],
+      "signature": "Midnight Mocha"
+    },
+    "ChIJs4bixtuZ9YgRcBUpzOKEtmg": {
+      "name": "Divine Coffee",
+      "city": "Johns Creek",
+      "county": "Fulton",
+      "cw": {
+        "tier": "good",
+        "note": "Friendly neighborhood cafe with comfortable seating, Wi-Fi, and light breakfast options.",
+        "hasMeetingRoom": false
+      },
+      "usp": "Cozy local Johns Creek cafe serving fresh baked goods and comforting espresso drinks.",
+      "loved": [
+        "vanilla latte",
+        "breakfast croissant",
+        "cinnamon roll"
+      ],
+      "signature": "Divine House Blend"
+    },
+    "ChIJZ2cBOSGF9YgRad4GxftgEzc": {
+      "name": "Community Cup",
+      "city": "Cumming",
+      "county": "Forsyth",
+      "cw": {
+        "tier": "excellent",
+        "note": "Forsyth's community hub with large wooden work tables, fast Wi-Fi, and a reservable group room.",
+        "hasMeetingRoom": true,
+        "meetingRoomNote": "Meeting and gathering room available for community groups, business meetings, and study sessions."
+      },
+      "usp": "Community-centered Cumming coffeehouse supporting local causes with comfortable group tables.",
+      "loved": [
+        "pourovers",
+        "iced chai latte",
+        "muffins"
+      ],
+      "signature": "Community Blend Drip & Pour Over"
+    },
+    "ChIJWzrpmNqc9YgRv95EjNGPuQw": {
+      "name": "Nido Cafe",
+      "city": "Cumming",
+      "county": "Forsyth",
+      "cw": {
+        "tier": "good",
+        "note": "Pleasant European cafe ambiance with outdoor courtyard seating, Wi-Fi, and specialty tapas.",
+        "hasMeetingRoom": false
+      },
+      "usp": "European cafe and chocolate shop nestled in Vickery Village with fondue, churros, and espresso.",
+      "loved": [
+        "churros con chocolate",
+        "cortado",
+        "spanish latte"
+      ],
+      "signature": "Authentic Churros & Thick Hot Chocolate"
+    },
+    "ChIJ85zzSgCf9YgRZrJkGLeQgG8": {
+      "name": "MOTW Coffee and Pastries",
+      "city": "Alpharetta",
+      "county": "Forsyth",
+      "cw": {
+        "tier": "excellent",
+        "note": "Spacious modern interior with high ceilings, large communal work tables, Wi-Fi, and outlets.",
+        "hasMeetingRoom": false
+      },
+      "usp": "Muslim-owned modern coffee house celebrating global stories through specialty coffee and French pastries.",
+      "loved": [
+        "aden tea",
+        "pistachio latte",
+        "croissants"
+      ],
+      "signature": "Yemeni Adeni Chai Tea"
+    },
+    "ChIJ0yHhkIyb9YgR0zStslnML8s": {
+      "name": "The Bagel Hole",
+      "city": "Cumming",
+      "county": "Forsyth",
+      "cw": {
+        "tier": "limited",
+        "note": "Fast-paced morning bagel spot with casual counter seating; better for quick bites than long work sessions.",
+        "hasMeetingRoom": false
+      },
+      "usp": "Old-fashioned New York-style bagel shop boiling and baking kettle bagels daily.",
+      "loved": [
+        "everything bagel",
+        "nova lox spread",
+        "breakfast sandwich"
+      ],
+      "signature": "Everything Bagel with Jalapeño Cream Cheese"
+    },
+    "ChIJxcJCHi4L9YgRS3JJyrVlxH0": {
+      "name": "Valor Coffee",
+      "city": "Dunwoody",
+      "county": "DeKalb",
+      "cw": {
+        "tier": "excellent",
+        "note": "Spacious Dunwoody Village location with long banquette seating, power outlets, and reliable Wi-Fi.",
+        "hasMeetingRoom": false
+      },
+      "usp": "Acclaimed specialty roaster in Dunwoody Village known for vibrant coffees, food menu, and upbeat hospitality.",
+      "loved": [
+        "freckled cold brew",
+        "breakfast sandwich",
+        "seasonal tonic"
+      ],
+      "signature": "The Freckled Cold Brew"
+    },
+    "ChIJJ3-1iEgK9YgRaZeLBAD9xUA": {
+      "name": "Crema Espresso Gourmet",
+      "city": "Dunwoody",
+      "county": "DeKalb",
+      "cw": {
+        "tier": "good",
+        "note": "Cozy European ambiance with indoor cafe tables, dependable Wi-Fi, and Italian espresso.",
+        "hasMeetingRoom": false
+      },
+      "usp": "European cafe featuring authentic Italian espresso, paninis, and artisanal gelato.",
+      "loved": [
+        "cappuccino",
+        "prosciutto panini",
+        "gelato"
+      ],
+      "signature": "Authentic Italian Espresso"
+    },
+    "ChIJPyGZr2oJ9YgRhdh74RLlHkM": {
+      "name": "Ark Coffeehaus",
+      "city": "Atlanta",
+      "county": "DeKalb",
+      "cw": {
+        "tier": "excellent",
+        "note": "Spacious and peaceful environment with dedicated work tables, strong Wi-Fi, and plenty of power outlets.",
+        "hasMeetingRoom": false
+      },
+      "usp": "Specialty coffeehaus dedicated to community fellowship with peaceful study areas.",
+      "loved": [
+        "caramel macchiato",
+        "drip coffee",
+        "pastries"
+      ],
+      "signature": "Ark House Blend"
+    },
+    "ChIJwcB6n6MJ9YgRZaM-QuLrB_U": {
+      "name": "Lucky Goat Coffee",
+      "city": "Dunwoody",
+      "county": "DeKalb",
+      "cw": {
+        "tier": "excellent",
+        "note": "Quiet roastery tasting room with comfortable work tables, fast Wi-Fi, and cold brew on tap.",
+        "hasMeetingRoom": false
+      },
+      "usp": "Craft coffee tasting room specializing in micro-roasted coffees and cold brew growlers.",
+      "loved": [
+        "cold brew",
+        "goat tracks latte",
+        "baked goods"
+      ],
+      "signature": "Goat Tracks Latte (Mocha & Caramel)"
+    },
+    "ChIJv7ytaAAJ9YgRAe5TNfDtYGM": {
+      "name": "Postern Coffee",
+      "city": "Doraville",
+      "county": "DeKalb",
+      "cw": {
+        "tier": "good",
+        "note": "Minimalist specialty coffee bar with quiet corners, Wi-Fi, and focused vibe.",
+        "hasMeetingRoom": false
+      },
+      "usp": "Minimalist neighborhood coffee shop serving carefully sourced single-origin pour overs.",
+      "loved": [
+        "pourover",
+        "espresso tonic",
+        "cookies"
+      ],
+      "signature": "Single Origin Ethiopian Pourover"
+    },
+    "ChIJa_I0FcoJ9YgR-JfyzTI-sL0": {
+      "name": "Tom N Toms Coffee Doraville",
+      "city": "Doraville",
+      "county": "DeKalb",
+      "cw": {
+        "tier": "excellent",
+        "note": "Large Korean coffeehouse with fast Wi-Fi, power outlets at most booths, and dedicated private study rooms.",
+        "hasMeetingRoom": true,
+        "meetingRoomNote": "Private enclosed study/meeting rooms available for small group work and discussions."
+      },
+      "usp": "Late-night Korean coffeehouse featuring freshly baked specialty pretzels and private study rooms.",
+      "loved": [
+        "cinnamon sugar pretzel",
+        "tomncino",
+        "sweet potato latte"
+      ],
+      "signature": "Fresh Baked Pepperoni Pretzel & Tomncino"
+    },
+    "ChIJO73vPTgJ9YgRshzpN7C7w1w": {
+      "name": "Foxtail Coffee - Ashford Lane",
+      "city": "Atlanta",
+      "county": "DeKalb",
+      "cw": {
+        "tier": "excellent",
+        "note": "Expansive modern coffee bar with high-top work tables, abundant power outlets, and fast Wi-Fi.",
+        "hasMeetingRoom": false
+      },
+      "usp": "Spacious rustic-chic coffee bar in Ashford Lane serving craft cold brews and Kelly's homemade ice cream.",
+      "loved": [
+        "caramel cold brew",
+        "cuban coffee",
+        "breakfast sandwich"
+      ],
+      "signature": "Vanilla Caramel Cold Brew"
+    }
+  }
+}

@@ -341,7 +341,19 @@
    "ratingCount": "538",
    "hours": "Mon Closed · Tue-Fri 6:30am-2pm · Sat-Sun 7am-2pm",
    "website": "http://thebagelhole.com/",
-   "googleUrl": "https://maps.google.com/?cid=14641145599226623187&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=14641145599226623187&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "limited",
+    "note": "Fast-paced morning bagel spot with casual counter seating; better for quick bites than long work sessions.",
+    "hasMeetingRoom": false
+   },
+   "usp": "Old-fashioned New York-style bagel shop boiling and baking kettle bagels daily.",
+   "loved": [
+    "everything bagel",
+    "nova lox spread",
+    "breakfast sandwich"
+   ],
+   "signature": "Everything Bagel with Jalapeño Cream Cheese"
   },
   {
    "placeId": "ChIJ0z5JQgef9YgRW1gLcWoky8w",
@@ -824,7 +836,19 @@
    "ratingCount": "857",
    "hours": "Mon-Fri 8am-5pm · Sat-Sun 9am-3pm",
    "website": "http://alcovecoffeehouse.com/",
-   "googleUrl": "https://maps.google.com/?cid=328640924823870934&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=328640924823870934&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "excellent",
+    "note": "Quiet lakeside setting with comfortable tables, fast Wi-Fi, outlets, and scenic patio.",
+    "hasMeetingRoom": false
+   },
+   "usp": "Scenic lakefront cafe with artisan coffee and tranquil spaces for working or reading.",
+   "loved": [
+    "lakefront latte",
+    "avocado toast",
+    "matcha latte"
+   ],
+   "signature": "Lakefront Honey Latte"
   },
   {
    "placeId": "ChIJ3z-yvMGV9YgRvkFMwHmawzI",
@@ -1627,7 +1651,19 @@
     "when": "Fri-Sat till 1am; rest of week till 11pm"
    },
    "website": "https://motw.coffee/",
-   "googleUrl": "https://maps.google.com/?cid=8034580851291632230&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=8034580851291632230&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "excellent",
+    "note": "Spacious modern interior with high ceilings, large communal work tables, Wi-Fi, and outlets.",
+    "hasMeetingRoom": false
+   },
+   "usp": "Muslim-owned modern coffee house celebrating global stories through specialty coffee and French pastries.",
+   "loved": [
+    "aden tea",
+    "pistachio latte",
+    "croissants"
+   ],
+   "signature": "Yemeni Adeni Chai Tea"
   },
   {
    "placeId": "ChIJ87KOhv8L9YgRNv5BO_eMyGY",
@@ -3064,7 +3100,20 @@
    "ratingCount": "731",
    "hours": "Mon-Sat 7am-8pm · Sun 8am-7pm",
    "website": "http://www.tradewindcoffee.com/",
-   "googleUrl": "https://maps.google.com/?cid=757486521678112632&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=757486521678112632&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "excellent",
+    "note": "Spacious community tables, fast Wi-Fi, ample power outlets, and a dedicated reservable conference room.",
+    "hasMeetingRoom": true,
+    "meetingRoomNote": "The Chart Room: private conference room with table seating up to 10, whiteboard, and presentation screen."
+   },
+   "usp": "Specialty roastery and cafe built for community and remote work with house-roasted beans and fresh bakery fare.",
+   "loved": [
+    "house cold brew",
+    "honey lavender latte",
+    "cinnamon rolls"
+   ],
+   "signature": "Cinnamon Vanilla Latte"
   },
   {
    "placeId": "ChIJGQRQBu2m9YgRBAKewzQ6ZII",
@@ -3212,7 +3261,19 @@
    "ratingCount": "678",
    "hours": "Mon-Sat 7am-6pm · Sun 9am-3pm",
    "website": "https://popscoffeeco.com/",
-   "googleUrl": "https://maps.google.com/?cid=4679496247892753713&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=4679496247892753713&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "excellent",
+    "note": "Spacious industrial cafe with wide wooden work tables, plenty of power outlets, and solid Wi-Fi.",
+    "hasMeetingRoom": false
+   },
+   "usp": "Industrial garage-themed specialty cafe known for wide work tables and top-tier cold brew.",
+   "loved": [
+    "nitro cold brew",
+    "cuban latte",
+    "breakfast burritos"
+   ],
+   "signature": "Nitro Draft Cold Brew"
   },
   {
    "placeId": "ChIJH5Nofoi59YgRwY-P0orAfK4",
@@ -3636,7 +3697,19 @@
    "ratingCount": "980",
    "hours": "Mon-Sun 7:30am-4pm",
    "website": "http://www.cremaespressogourmet.com/",
-   "googleUrl": "https://maps.google.com/?cid=4667414765357471593&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=4667414765357471593&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "good",
+    "note": "Cozy European ambiance with indoor cafe tables, dependable Wi-Fi, and Italian espresso.",
+    "hasMeetingRoom": false
+   },
+   "usp": "European cafe featuring authentic Italian espresso, paninis, and artisanal gelato.",
+   "loved": [
+    "cappuccino",
+    "prosciutto panini",
+    "gelato"
+   ],
+   "signature": "Authentic Italian Espresso"
   },
   {
    "placeId": "ChIJJTYPZACZ9YgRIALYhJPxTRw",
@@ -4119,7 +4192,19 @@
    "ratingCount": "1,469",
    "hours": "Mon-Sat 7am-6pm · Sun 7am-5pm",
    "website": "https://landofathousandhills.com/pages/roswell",
-   "googleUrl": "https://maps.google.com/?cid=5660967766352457294&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=5660967766352457294&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "excellent",
+    "note": "Cottage setting with multiple rooms, wrap-around porch, fast Wi-Fi, and quiet corners for laptops.",
+    "hasMeetingRoom": false
+   },
+   "usp": "Direct-trade Rwandan coffeehouse supporting farming communities with extensive cottage seating.",
+   "loved": [
+    "rwandan pourover",
+    "caramel macchiato",
+    "chicken salad croissant"
+   ],
+   "signature": "Kizi Rift Single Origin Pourover"
   },
   {
    "placeId": "ChIJM0Pbh7u_9YgRjIockT9LKLU",
@@ -4430,7 +4515,20 @@
    "ratingCount": "1,050",
    "hours": "Mon-Fri 7:30am-5pm · Sat 8am-5pm · Sun Closed",
    "website": "https://www.crazylove.coffee/",
-   "googleUrl": "https://maps.google.com/?cid=13524732335509252484&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=13524732335509252484&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "excellent",
+    "note": "Massive historic house with multiple work-friendly rooms, high-speed Wi-Fi, and abundant seating.",
+    "hasMeetingRoom": true,
+    "meetingRoomNote": "Private conference/meeting room available for reservation (ideal for 6-10 people)."
+   },
+   "usp": "Historic Roswell landmark featuring homemade Liege waffles, craft espresso, and expansive work rooms.",
+   "loved": [
+    "liege waffles",
+    "honey lavender latte",
+    "cinnamon rolls"
+   ],
+   "signature": "Liege Waffle with Strawberries & Cream"
   },
   {
    "placeId": "ChIJNwxC4OCZ9YgR_qAUvBwDExc",
@@ -4589,7 +4687,19 @@
    "ratingCount": "283",
    "hours": "Sun-Thu 6:30am-9pm · Fri-Sat 6:30am-9:30pm",
    "website": "https://www.foxtailcoffee.com/",
-   "googleUrl": "https://maps.google.com/?cid=6684392637474610354&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=6684392637474610354&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "excellent",
+    "note": "Expansive modern coffee bar with high-top work tables, abundant power outlets, and fast Wi-Fi.",
+    "hasMeetingRoom": false
+   },
+   "usp": "Spacious rustic-chic coffee bar in Ashford Lane serving craft cold brews and Kelly's homemade ice cream.",
+   "loved": [
+    "caramel cold brew",
+    "cuban coffee",
+    "breakfast sandwich"
+   ],
+   "signature": "Vanilla Caramel Cold Brew"
   },
   {
    "placeId": "ChIJO9PiyNmZ9YgRiPq-xRQAViA",
@@ -5029,7 +5139,19 @@
    "ratingCount": "299",
    "hours": "Mon-Sat 7am-4pm · Sun Closed",
    "website": "http://arkcoffeehaus.com/",
-   "googleUrl": "https://maps.google.com/?cid=4836554919097653381&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=4836554919097653381&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "excellent",
+    "note": "Spacious and peaceful environment with dedicated work tables, strong Wi-Fi, and plenty of power outlets.",
+    "hasMeetingRoom": false
+   },
+   "usp": "Specialty coffeehaus dedicated to community fellowship with peaceful study areas.",
+   "loved": [
+    "caramel macchiato",
+    "drip coffee",
+    "pastries"
+   ],
+   "signature": "Ark House Blend"
   },
   {
    "placeId": "ChIJQ-JiIMK49YgRpgF4NQ9lrlQ",
@@ -6408,7 +6530,19 @@
    "ratingCount": "961",
    "hours": "Mon-Fri 7am-5pm · Sat-Sun 8am-5pm",
    "website": "http://valor.coffee/",
-   "googleUrl": "https://maps.google.com/?cid=11391092637796542384&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=11391092637796542384&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "excellent",
+    "note": "Vibrant specialty roastery with communal work tables, fast Wi-Fi, and friendly counter service.",
+    "hasMeetingRoom": false
+   },
+   "usp": "Nationally acclaimed craft coffee roaster with playful hospitality and precision espresso.",
+   "loved": [
+    "freckled cold brew",
+    "lavender latte",
+    "fresh pastries"
+   ],
+   "signature": "The Freckled Cold Brew (with sweet cream & cinnamon)"
   },
   {
    "placeId": "ChIJW5VaTCuj9YgRZyX6oiCueQ8",
@@ -6640,7 +6774,19 @@
    "ratingCount": "610",
    "hours": "Mon-Fri 7:30am-3pm · Sat-Sun 8:30am-3pm",
    "website": "http://www.nidocafevickery.com/",
-   "googleUrl": "https://maps.google.com/?cid=916922129310867135&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=916922129310867135&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "good",
+    "note": "Pleasant European cafe ambiance with outdoor courtyard seating, Wi-Fi, and specialty tapas.",
+    "hasMeetingRoom": false
+   },
+   "usp": "European cafe and chocolate shop nestled in Vickery Village with fondue, churros, and espresso.",
+   "loved": [
+    "churros con chocolate",
+    "cortado",
+    "spanish latte"
+   ],
+   "signature": "Authentic Churros & Thick Hot Chocolate"
   },
   {
    "placeId": "ChIJX-HBLYGn9YgRT-zxGdntBq0",
@@ -7213,7 +7359,20 @@
    "ratingCount": "590",
    "hours": "Mon-Fri 6:30am-6:30pm · Sat-Sun 8am-3pm",
    "website": "http://www.communitycupga.com/",
-   "googleUrl": "https://maps.google.com/?cid=3968622331102158441&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=3968622331102158441&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "excellent",
+    "note": "Forsyth's community hub with large wooden work tables, fast Wi-Fi, and a reservable group room.",
+    "hasMeetingRoom": true,
+    "meetingRoomNote": "Meeting and gathering room available for community groups, business meetings, and study sessions."
+   },
+   "usp": "Community-centered Cumming coffeehouse supporting local causes with comfortable group tables.",
+   "loved": [
+    "pourovers",
+    "iced chai latte",
+    "muffins"
+   ],
+   "signature": "Community Blend Drip & Pour Over"
   },
   {
    "placeId": "ChIJZ6ITXQCb9YgRgtZd65tnT1I",
@@ -7753,7 +7912,20 @@
     "when": "Daily till 11pm"
    },
    "website": "https://www.tomntomsdoraville.com/",
-   "googleUrl": "https://maps.google.com/?cid=13668493256993970168&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=13668493256993970168&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "excellent",
+    "note": "Large Korean coffeehouse with fast Wi-Fi, power outlets at most booths, and dedicated private study rooms.",
+    "hasMeetingRoom": true,
+    "meetingRoomNote": "Private enclosed study/meeting rooms available for small group work and discussions."
+   },
+   "usp": "Late-night Korean coffeehouse featuring freshly baked specialty pretzels and private study rooms.",
+   "loved": [
+    "cinnamon sugar pretzel",
+    "tomncino",
+    "sweet potato latte"
+   ],
+   "signature": "Fresh Baked Pepperoni Pretzel & Tomncino"
   },
   {
    "placeId": "ChIJabFsXU279YgRTs6mJTryNO0",
@@ -10315,7 +10487,19 @@
    "ratingCount": "130",
    "hours": "Mon-Fri 7am-4pm · Sat-Sun 8am-4pm",
    "website": "https://warmwavescoffee.com/",
-   "googleUrl": "https://maps.google.com/?cid=11356555697667985340&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=11356555697667985340&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "excellent",
+    "note": "Roastery with airy modern seating, fast Wi-Fi, and an inviting atmosphere for remote workers.",
+    "hasMeetingRoom": false
+   },
+   "usp": "Local craft roastery showcasing light roast profiles and mindful, welcoming hospitality.",
+   "loved": [
+    "cortado",
+    "cappuccino",
+    "scones"
+   ],
+   "signature": "Seasonal Single Origin Pour Over"
   },
   {
    "placeId": "ChIJpQR3kt0M9YgRt3o-wzDJfWE",
@@ -10693,7 +10877,19 @@
     "when": "Daily till 2am"
    },
    "website": "http://www.967coffeeco.com/",
-   "googleUrl": "https://maps.google.com/?cid=14759238741962454919&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=14759238741962454919&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "excellent",
+    "note": "Open until midnight daily with comfortable seating, fast Wi-Fi, and late-night study atmosphere.",
+    "hasMeetingRoom": false
+   },
+   "usp": "Late-night coffeehouse open until midnight offering craft coffee, desserts, and study spaces.",
+   "loved": [
+    "caramel latte",
+    "croissants",
+    "iced mocha"
+   ],
+   "signature": "Midnight Mocha"
   },
   {
    "placeId": "ChIJqbv5bJ519YgR_hemdLeCKy0",
@@ -11032,7 +11228,19 @@
    "ratingCount": "812",
    "hours": "Mon-Sat 7am-9pm · Sun 8am-9pm",
    "website": "https://www.atlantacoffeeshops.com/divine-coffee",
-   "googleUrl": "https://maps.google.com/?cid=7545364335328564592&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=7545364335328564592&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "good",
+    "note": "Friendly neighborhood cafe with comfortable seating, Wi-Fi, and light breakfast options.",
+    "hasMeetingRoom": false
+   },
+   "usp": "Cozy local Johns Creek cafe serving fresh baked goods and comforting espresso drinks.",
+   "loved": [
+    "vanilla latte",
+    "breakfast croissant",
+    "cinnamon roll"
+   ],
+   "signature": "Divine House Blend"
   },
   {
    "placeId": "ChIJs77PuG6n9YgRMz2-XaFWE0s",
@@ -11229,7 +11437,19 @@
    "ratingCount": "311",
    "hours": "Mon-Fri 7am-5pm · Sat-Sun 8am-5pm",
    "website": "https://warmwavescoffee.com/",
-   "googleUrl": "https://maps.google.com/?cid=4800345462775756753&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=4800345462775756753&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "excellent",
+    "note": "Calm and bright atmosphere, dependable Wi-Fi, and cozy seating for remote focus work.",
+    "hasMeetingRoom": false
+   },
+   "usp": "Specialty coffeehouse roasting single-origin beans with a focus on mindful hospitality.",
+   "loved": [
+    "flat white",
+    "golden milk latte",
+    "matcha"
+   ],
+   "signature": "Single Origin Espresso"
   },
   {
    "placeId": "ChIJt1oLdEid9YgR4w3UiBmhF9c",
@@ -11635,7 +11855,19 @@
    "ratingCount": "206",
    "hours": "Mon-Fri 7am-4pm · Sat-Sun 9am-4pm",
    "website": "http://posterncoffee.com/",
-   "googleUrl": "https://maps.google.com/?cid=7160985023461715457&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=7160985023461715457&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "good",
+    "note": "Minimalist specialty coffee bar with quiet corners, Wi-Fi, and focused vibe.",
+    "hasMeetingRoom": false
+   },
+   "usp": "Minimalist neighborhood coffee shop serving carefully sourced single-origin pour overs.",
+   "loved": [
+    "pourover",
+    "espresso tonic",
+    "cookies"
+   ],
+   "signature": "Single Origin Ethiopian Pourover"
   },
   {
    "placeId": "ChIJv9KBM8119YgRfzdEvHEYemc",
@@ -11802,7 +12034,19 @@
    "ratingCount": "207",
    "hours": "Mon-Sat 7am-6pm · Sun 8am-6pm",
    "website": "https://luckygoatcoffee.com/pages/dunwoody-park",
-   "googleUrl": "https://maps.google.com/?cid=17656340221135856485&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=17656340221135856485&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "excellent",
+    "note": "Quiet roastery tasting room with comfortable work tables, fast Wi-Fi, and cold brew on tap.",
+    "hasMeetingRoom": false
+   },
+   "usp": "Craft coffee tasting room specializing in micro-roasted coffees and cold brew growlers.",
+   "loved": [
+    "cold brew",
+    "goat tracks latte",
+    "baked goods"
+   ],
+   "signature": "Goat Tracks Latte (Mocha & Caramel)"
   },
   {
    "placeId": "ChIJwf3fVO-f9YgRhgzeTc7kZ7Q",
@@ -11872,7 +12116,20 @@
    "ratingCount": "1,161",
    "hours": "Mon-Thu 9am-8pm · Fri-Sat 9am-9pm · Sun Closed",
    "website": "https://bouldercreekcoffee.com/",
-   "googleUrl": "https://maps.google.com/?cid=12488507415275626462&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=12488507415275626462&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "excellent",
+    "note": "Two-story historic brick building with upstairs study nooks, fast Wi-Fi, and multiple meeting areas.",
+    "hasMeetingRoom": true,
+    "meetingRoomNote": "Private meeting rooms and upstairs gathering spaces available for study groups and business meetings."
+   },
+   "usp": "Multi-level historic coffeehouse offering quiet workspaces, artisanal coffee, and local bakery treats.",
+   "loved": [
+    "pourovers",
+    "iced caramel macchiato",
+    "blueberry scones"
+   ],
+   "signature": "Boulder Creek Signature Mocha"
   },
   {
    "placeId": "ChIJx0uk0Yqj9YgRSADpy4VNZ6g",
@@ -12000,7 +12257,19 @@
    "ratingCount": "477",
    "hours": "Mon-Fri 7am-5pm · Sat-Sun 8am-5pm",
    "website": "http://valor.coffee/",
-   "googleUrl": "https://maps.google.com/?cid=9062480181633577547&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=9062480181633577547&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "excellent",
+    "note": "Spacious Dunwoody Village location with long banquette seating, power outlets, and reliable Wi-Fi.",
+    "hasMeetingRoom": false
+   },
+   "usp": "Acclaimed specialty roaster in Dunwoody Village known for vibrant coffees, food menu, and upbeat hospitality.",
+   "loved": [
+    "freckled cold brew",
+    "breakfast sandwich",
+    "seasonal tonic"
+   ],
+   "signature": "The Freckled Cold Brew"
   },
   {
    "placeId": "ChIJxzOTb1UJ9YgR-xlY2P8f-R8",

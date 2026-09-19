@@ -107,6 +107,21 @@ The paid pass refuses to start when `~/.config/caffeye/places_usage.json` shows 
 
 Coordinates for discovered shops are Google's place pin; Apple `CLGeocoder` remains the rule for hand-added curated shops.
 
+### Curation Engine — `scripts/curations.json` & `scripts/curate_places.py`
+
+Google Places API provides operational data (hours, lat/lng, rating), but lacks editorial intelligence on coworking suitability (`cw: { tier, note, hasMeetingRoom, meetingRoomNote }`), USPs, and meeting room details. The Curation Engine bridges this gap by maintaining verified editorial overlays in `scripts/curations.json`.
+
+`scripts/discover_places.py` automatically injects `curations.json` during crawls or replays, matching by `placeId` (or fuzzy `name` + `city`).
+
+To audit, apply, or research curations:
+
+```sh
+python3 scripts/curate_places.py --audit              # audits coworking & meeting room coverage across counties
+python3 scripts/curate_places.py --apply              # merges scripts/curations.json into public/places.json
+python3 scripts/curate_places.py --research <url>     # inspects a shop website for meeting room & Wi-Fi signals
+python3 -m unittest scripts/test_curate_places.py    # runs curation engine unit tests
+```
+
 **To refresh ratings** (`rating` / `ratingCount` / `ratingNum` drive the Bayesian ranking, so they must all come from one source — Google, via the Places API):
 
 ```sh

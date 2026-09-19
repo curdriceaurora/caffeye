@@ -52,6 +52,7 @@ from refresh_ratings import (  # noqa: E402
 
 PLACES_PATH = ROOT / "public" / "places.json"
 EXCLUDE_PATH = ROOT / "scripts" / "places_exclude.json"
+CURATIONS_PATH = ROOT / "scripts" / "curations.json"
 
 REGION = {
     "label": "North Atlanta",
@@ -458,7 +459,7 @@ def late_for(periods):
     return {"tier": "midnight" if midnight else "10pm+", "when": when}
 
 
-def to_record(place: dict, brand_counts=None):
+def to_record(place: dict, brand_counts=None, curations=None):
     """(record, None) for an in-scope place, else (None, reason)."""
     status = place.get("businessStatus") or "OPERATIONAL"
     if status != "OPERATIONAL":
@@ -517,11 +518,30 @@ def to_record(place: dict, brand_counts=None):
         rec["late"] = late
     rec["website"] = place.get("websiteUri")
     rec["googleUrl"] = place.get("googleMapsUri")
+    if curations and place.get("id") in curations:
+        cur = curations[place["id"]]
+        if "cw" in cur:
+            rec["cw"] = cur["cw"]
+        if "usp" in cur:
+            rec["usp"] = cur["usp"]
+        if "loved" in cur:
+            rec["loved"] = cur["loved"]
+        if "signature" in cur:
+            rec["signature"] = cur["signature"]
     return rec, None
 
 
-def build_places(raw: dict, exclude_ids=frozenset()):
+def load_curations() -> dict:
+    if not CURATIONS_PATH.exists():
+        return {}
+    data = json.loads(CURATIONS_PATH.read_text())
+    return data.get("places", {})
+
+
+def build_places(raw: dict, exclude_ids=frozenset(), curations=None):
     """raw: {placeId: place} -> (records sorted by placeId, stats)."""
+    if curations is None:
+        curations = load_curations()
     brand_counts = Counter(
         clean_brand((p.get("displayName") or {}).get("text", ""))
         for p in raw.values()
@@ -531,7 +551,7 @@ def build_places(raw: dict, exclude_ids=frozenset()):
         if pid in exclude_ids:
             dropped["excluded"] += 1
             continue
-        rec, reason = to_record(place, brand_counts)
+        rec, reason = to_record(place, brand_counts, curations)
         if rec is None:
             dropped[reason] += 1
             continue
@@ -660,6 +680,9 @@ def report(recs, stats, curated, raw) -> None:
     )
     by_model = Counter(r["model"] for r in recs)
     print(f"models: {by_model.get('independent', 0)} independent · {by_model.get('franchise', 0)} franchise")
+    cur_work = sum(1 for r in recs if (r.get("cw") or {}).get("tier") == "excellent")
+    cur_meeting = sum(1 for r in recs if (r.get("cw") or {}).get("hasMeetingRoom"))
+    print(f"curated info: {cur_work} work-friendly · {cur_meeting} meeting rooms")
     seen = set(raw)
     unseen = [
         s["name"] for s in curated if s.get("placeId") and s["placeId"] not in seen
