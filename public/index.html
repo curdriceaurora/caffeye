@@ -692,7 +692,11 @@ function boot() {
 
   // MAP
   const map = L.map('map', { zoomControl: true }).setView([33.972, -84.142], 13); // initial view; refit to markers below
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+  // CARTO's raster basemaps now require a (free, no-account) API key — unauthenticated
+  // requests still return 200 but the tile itself is watermarked "API key required".
+  // This key is meant to be public client-side, same model as a Google Maps JS key;
+  // the security boundary is the fair-use limit + required attribution, not secrecy.
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png?key=cb1_3qiv_1_0583eea1ec1b7dd298410338', {
     attribution: '&copy; OpenStreetMap &copy; CARTO',
     subdomains: 'abcd', maxZoom: 19
   }).addTo(map);
