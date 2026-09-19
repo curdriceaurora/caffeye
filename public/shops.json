@@ -1,5 +1,5 @@
 {
-  "version": 4,
+  "version": 5,
   "checkedMonth": "September 2026",
   "shops": [
     {
@@ -36,7 +36,8 @@
       "website": "https://www.sweethutbakery.com",
       "placeId": "ChIJq48l3QSj9YgRTgBKaRBsqdU",
       "curated": true,
-      "county": "Gwinnett"
+      "county": "Gwinnett",
+      "model": "franchise"
     },
     {
       "name": "Cafe Mozart Bakery",
@@ -71,7 +72,8 @@
       "website": "https://www.cafemozartbakery.com",
       "placeId": "ChIJ8cuxMhCj9YgRuq3-mrvbrp0",
       "curated": true,
-      "county": "Gwinnett"
+      "county": "Gwinnett",
+      "model": "franchise"
     },
     {
       "name": "TwoHa's Cafe",
@@ -106,7 +108,8 @@
       "website": "https://www.twohascafe.com",
       "placeId": "ChIJndytoJyj9YgRFU8Kx1lknJc",
       "curated": true,
-      "county": "Gwinnett"
+      "county": "Gwinnett",
+      "model": "independent"
     },
     {
       "name": "White Windmill Bakery & Cafe",
@@ -142,7 +145,8 @@
       "website": "https://www.whitewbakerycafe.com",
       "placeId": "ChIJh5FTqAa99YgRp6nWVT1BBL0",
       "curated": true,
-      "county": "Gwinnett"
+      "county": "Gwinnett",
+      "model": "franchise"
     },
     {
       "name": "Land of a Thousand Hills Coffee",
@@ -173,7 +177,8 @@
       "website": "https://landofathousandhills.com/pages/location-duluth-georgia",
       "placeId": "ChIJt5QVXM6j9YgRVn73gMkySMo",
       "curated": true,
-      "county": "Gwinnett"
+      "county": "Gwinnett",
+      "model": "franchise"
     },
     {
       "name": "Alchemist on the Divide",
@@ -204,7 +209,8 @@
       "website": "https://alchemist-on-the-divide.grubbio.com",
       "placeId": "ChIJ81YdKhCj9YgRvlohaZgCq1Y",
       "curated": true,
-      "county": "Gwinnett"
+      "county": "Gwinnett",
+      "model": "independent"
     },
     {
       "name": "The Cream",
@@ -239,7 +245,8 @@
       "website": "https://www.thecreambakery.com",
       "placeId": "ChIJzZj65uWj9YgRUCFRjhq_jas",
       "curated": true,
-      "county": "Gwinnett"
+      "county": "Gwinnett",
+      "model": "independent"
     },
     {
       "name": "Ginkgo Bakery & Cafe",
@@ -270,7 +277,8 @@
       "website": "https://www.ginkgobakery.com",
       "placeId": "ChIJzXDncDOj9YgRB2UWXEWX18w",
       "curated": true,
-      "county": "Gwinnett"
+      "county": "Gwinnett",
+      "model": "independent"
     },
     {
       "name": "Coffee That Matters",
@@ -301,7 +309,8 @@
       "website": "https://phoenixroasters.coffee",
       "placeId": "ChIJx0uk0Yqj9YgRSADpy4VNZ6g",
       "curated": true,
-      "county": "Gwinnett"
+      "county": "Gwinnett",
+      "model": "independent"
     },
     {
       "name": "The Coffee By Hand",
@@ -336,7 +345,8 @@
       "website": "https://www.instagram.com/thecoffeebyhandatl",
       "placeId": "ChIJy83g5wSj9YgR_7QRo2QKmLA",
       "curated": true,
-      "county": "Gwinnett"
+      "county": "Gwinnett",
+      "model": "independent"
     },
     {
       "name": "OneZo Boba Tea",
@@ -371,7 +381,8 @@
       "website": "https://www.onezo.us",
       "placeId": "ChIJQ_0PG8Oj9YgR4VT_WcsEdrI",
       "curated": true,
-      "county": "Gwinnett"
+      "county": "Gwinnett",
+      "model": "franchise"
     },
     {
       "name": "Molly Tea",
@@ -406,7 +417,8 @@
       "website": "https://mollyteaatl.com",
       "placeId": "ChIJpblW6cSj9YgRg_xfxrqorhU",
       "curated": true,
-      "county": "Gwinnett"
+      "county": "Gwinnett",
+      "model": "franchise"
     },
     {
       "name": "ChiCha San Chen",
@@ -441,7 +453,8 @@
       "website": "https://chichasanchenusa.com",
       "placeId": "ChIJzSbcDeyj9YgRvGFxBuHeXQA",
       "curated": true,
-      "county": "Gwinnett"
+      "county": "Gwinnett",
+      "model": "franchise"
     },
     {
       "name": "Matcha Cafe Maiko",
@@ -476,7 +489,8 @@
       "website": "https://www.matchacafeatl.com",
       "placeId": "ChIJK98kSIOj9YgRt3772mDpL_A",
       "curated": true,
-      "county": "Gwinnett"
+      "county": "Gwinnett",
+      "model": "franchise"
     },
     {
       "name": "Hiro Tea Bar",
@@ -511,7 +525,8 @@
       "website": "https://www.hiroteabar.com",
       "placeId": "ChIJSwPoW0Gj9YgRP-LI4n5RcI8",
       "curated": true,
-      "county": "Gwinnett"
+      "county": "Gwinnett",
+      "model": "independent"
     },
     {
       "name": "Ding Tea",
@@ -546,7 +561,8 @@
       "website": "https://www.instagram.com/dingteaduluth",
       "placeId": "ChIJRRacWxWj9YgRZT9YxK4Qs4Q",
       "curated": true,
-      "county": "Gwinnett"
+      "county": "Gwinnett",
+      "model": "franchise"
     },
     {
       "name": "Tiger Sugar",
@@ -581,7 +597,8 @@
       "website": "https://en.tigersugar.com",
       "placeId": "ChIJRfiUQtOj9YgRyiMsgL9WRCo",
       "curated": true,
-      "county": "Gwinnett"
+      "county": "Gwinnett",
+      "model": "franchise"
     },
     {
       "name": "Xing Fu Tang",
@@ -616,7 +633,8 @@
       "website": "https://www.xingfutangga.com",
       "placeId": "ChIJ-y0J-Iyj9YgR41wD64_AeXM",
       "curated": true,
-      "county": "Gwinnett"
+      "county": "Gwinnett",
+      "model": "franchise"
     },
     {
       "name": "Goodwin Tea House & More",
@@ -651,7 +669,8 @@
       "website": "https://www.goodwinteahouse.com",
       "placeId": "ChIJ-XYPlKyj9YgRk8laEZCDT88",
       "curated": true,
-      "county": "Gwinnett"
+      "county": "Gwinnett",
+      "model": "independent"
     },
     {
       "name": "The Bep Teahouse",
@@ -686,7 +705,8 @@
       "website": "https://thebepteahouse.com/locations/the-bep-teahouse-duluth/",
       "placeId": "ChIJi3EKOwCj9YgRGA6cVxHttL0",
       "curated": true,
-      "county": "Gwinnett"
+      "county": "Gwinnett",
+      "model": "independent"
     },
     {
       "name": "Paris Baguette",
@@ -717,7 +737,8 @@
       "website": "https://parisbaguette.com/locations/ga/duluth/3492-satellite-boulevard/",
       "placeId": "ChIJj4NlQBuj9YgRWKbr7eZKsLU",
       "curated": true,
-      "county": "Gwinnett"
+      "county": "Gwinnett",
+      "model": "franchise"
     },
     {
       "name": "Bread Museum Bakery & Cafe",
@@ -752,7 +773,8 @@
       "website": "https://thebreadmuseum.com",
       "placeId": "ChIJNaJX212j9YgRYTgmGuxK67M",
       "curated": true,
-      "county": "Gwinnett"
+      "county": "Gwinnett",
+      "model": "independent"
     },
     {
       "name": "Tous Les Jours",
@@ -783,7 +805,8 @@
       "website": "https://tljus.com/stores/duluth-2550-pleasant-hill-rd",
       "placeId": "ChIJiWdFPACj9YgR12Cmx4EHKqM",
       "curated": true,
-      "county": "Gwinnett"
+      "county": "Gwinnett",
+      "model": "franchise"
     },
     {
       "name": "Tree Story Bakery & Cafe",
@@ -818,7 +841,8 @@
       "website": "https://www.facebook.com/TreeStoryCafe/",
       "placeId": "ChIJKwxu1qCk4RQRV1Ie0BA26bk",
       "curated": true,
-      "county": "Gwinnett"
+      "county": "Gwinnett",
+      "model": "independent"
     },
     {
       "name": "Vincent Bakery & Cafe",
@@ -849,7 +873,8 @@
       "website": "https://www.instagram.com/vincentbakeryofficial",
       "placeId": "ChIJ-5BW-gCj9YgRydc8vJNauKM",
       "curated": true,
-      "county": "Gwinnett"
+      "county": "Gwinnett",
+      "model": "franchise"
     },
     {
       "name": "Hansel & Gretel Bakery Cafe",
@@ -884,7 +909,8 @@
       "website": "https://www.instagram.com/hanselgretel.bakery",
       "placeId": "ChIJcdUtPw6j9YgRVLVnRHS0JVE",
       "curated": true,
-      "county": "Gwinnett"
+      "county": "Gwinnett",
+      "model": "franchise"
     },
     {
       "name": "Georgia French Bakery & Cafe",
@@ -915,7 +941,8 @@
       "website": "https://georgiafrenchbakerycafe.com",
       "placeId": "ChIJpadk2Bqj9YgRaJhkGNYMsrU",
       "curated": true,
-      "county": "Gwinnett"
+      "county": "Gwinnett",
+      "model": "independent"
     },
     {
       "name": "Mai Bakery",
@@ -946,7 +973,8 @@
       "website": null,
       "placeId": "ChIJBZCgZgOj9YgRAgvSfyGFbN0",
       "curated": true,
-      "county": "Gwinnett"
+      "county": "Gwinnett",
+      "model": "independent"
     },
     {
       "name": "The Patio Cafe & Bakery",
@@ -977,7 +1005,8 @@
       "website": "https://www.patiocafebakery.com/",
       "placeId": "ChIJS-L0ef-h9YgRE_2f231k7Ww",
       "curated": true,
-      "county": "Fulton"
+      "county": "Fulton",
+      "model": "independent"
     },
     {
       "name": "Shokku Bakery",
@@ -1008,7 +1037,8 @@
       "website": "https://www.instagram.com/shokkubakery/",
       "placeId": "ChIJPcS5YACj9YgR74NNBnXaVGw",
       "curated": true,
-      "county": "Gwinnett"
+      "county": "Gwinnett",
+      "model": "independent"
     },
     {
       "name": "Forest Cafe",
@@ -1043,7 +1073,8 @@
       "website": "https://www.instagram.com/forest_cafe_ga/",
       "placeId": "ChIJ1ee7vEWj9YgRuakY6y4vmBc",
       "curated": true,
-      "county": "Gwinnett"
+      "county": "Gwinnett",
+      "model": "independent"
     },
     {
       "name": "Cafe 104",
@@ -1078,7 +1109,8 @@
       "website": "https://www.cafe104duluth.com/",
       "placeId": "ChIJjRDCjXWj9YgRP6O-zrRHR50",
       "curated": true,
-      "county": "Gwinnett"
+      "county": "Gwinnett",
+      "model": "independent"
     },
     {
       "name": "Boba Mocha",
@@ -1113,7 +1145,8 @@
       "website": "https://www.bobamochaonline.com/",
       "placeId": "ChIJWbYMlFSi9YgReTXKTrCaHUM",
       "curated": true,
-      "county": "Gwinnett"
+      "county": "Gwinnett",
+      "model": "independent"
     },
     {
       "name": "Incha Duluth (Duck Ink + Boba)",
@@ -1144,7 +1177,8 @@
       "website": "https://www.instagram.com/inchaduckink/",
       "placeId": "ChIJt6u5LoWj9YgR12fpaUNj6g8",
       "curated": true,
-      "county": "Gwinnett"
+      "county": "Gwinnett",
+      "model": "independent"
     },
     {
       "name": "Orange Coffee Bar",
@@ -1179,7 +1213,8 @@
       "website": "https://www.instagram.com/orangecoffeebar.duluth/",
       "placeId": "ChIJpxdHHgOj9YgRT2TKHqAJu88",
       "curated": true,
-      "county": "Gwinnett"
+      "county": "Gwinnett",
+      "model": "independent"
     },
     {
       "name": "Tom N Toms Coffee Black",
@@ -1215,7 +1250,8 @@
       "website": "https://www.tomntomsatlanta.com/",
       "placeId": "ChIJ_S2mIQCj9YgRKDjTjwQxiQs",
       "curated": true,
-      "county": "Gwinnett"
+      "county": "Gwinnett",
+      "model": "franchise"
     },
     {
       "name": "Gonggan ATL",
@@ -1250,7 +1286,8 @@
       "website": "https://www.instagram.com/gonggan.atl/",
       "placeId": "ChIJlwQvQf-j9YgRbt4L-yPzGjQ",
       "curated": true,
-      "county": "Gwinnett"
+      "county": "Gwinnett",
+      "model": "independent"
     },
     {
       "name": "Kafeiin",
@@ -1285,7 +1322,8 @@
       "website": "https://www.instagram.com/kafeiin.coffee/",
       "placeId": "ChIJ0-b3MwCj9YgRFVVeq4bS0Nc",
       "curated": true,
-      "county": "Gwinnett"
+      "county": "Gwinnett",
+      "model": "independent"
     },
     {
       "name": "Fujiissa",
@@ -1316,7 +1354,8 @@
       "website": "https://fujiissa.com/",
       "placeId": "ChIJXSooIACj9YgRpyWAqRTwF5c",
       "curated": true,
-      "county": "Gwinnett"
+      "county": "Gwinnett",
+      "model": "independent"
     },
     {
       "name": "Yezi Coconut Dessert",
@@ -1347,7 +1386,8 @@
       "website": "https://www.yezicoconutatl.com/",
       "placeId": "ChIJsb_4QUSj9YgRDhbbvw5cgpU",
       "curated": true,
-      "county": "Gwinnett"
+      "county": "Gwinnett",
+      "model": "independent"
     },
     {
       "name": "Fluffy Fluffy Dessert Cafe",
@@ -1382,7 +1422,8 @@
       "website": "https://www.fluffyfluffy.com/locations/duluth",
       "placeId": "ChIJDxYx1SCj9YgRtkcQ-5-k5Pc",
       "curated": true,
-      "county": "Gwinnett"
+      "county": "Gwinnett",
+      "model": "franchise"
     },
     {
       "name": "Qamaria Yemeni Coffee Co.",
@@ -1417,7 +1458,8 @@
       "website": "https://www.instagram.com/qamariacoffeeatl/",
       "placeId": "ChIJh4jIqNyj9YgRu1_QcC8GzmA",
       "curated": true,
-      "county": "Gwinnett"
+      "county": "Gwinnett",
+      "model": "franchise"
     },
     {
       "name": "Yibna Cafe",
@@ -1448,7 +1490,8 @@
       "website": "https://yibnacafe.com/",
       "placeId": "ChIJC3WdtKij9YgRW4poSauN8aE",
       "curated": true,
-      "county": "Gwinnett"
+      "county": "Gwinnett",
+      "model": "independent"
     },
     {
       "name": "El Cafe by La Abuela",
@@ -1483,7 +1526,8 @@
       "website": "https://www.elcafebylaabuela.com/",
       "placeId": "ChIJXTE1tmqj9YgRCR9QgRZ09EM",
       "curated": true,
-      "county": "Gwinnett"
+      "county": "Gwinnett",
+      "model": "independent"
     },
     {
       "name": "Date un Gusto",
@@ -1518,7 +1562,8 @@
       "website": "https://www.instagram.com/dateungusto.atl/",
       "placeId": "ChIJCRoynPqj9YgRDsoE_v7XnAM",
       "curated": true,
-      "county": "Gwinnett"
+      "county": "Gwinnett",
+      "model": "independent"
     },
     {
       "name": "7 Leaves Cafe",
@@ -1553,7 +1598,8 @@
       "website": "https://7leavescafe.com/locations/satellite/",
       "placeId": "ChIJeVScd9Wj9YgRPvfMkoImdOw",
       "curated": true,
-      "county": "Gwinnett"
+      "county": "Gwinnett",
+      "model": "franchise"
     },
     {
       "name": "The Quynh Cafe",
@@ -1584,7 +1630,8 @@
       "website": "https://www.facebook.com/theQuynhCafe/",
       "placeId": "ChIJp65w1S-j9YgRE9o1oSp-FYQ",
       "curated": true,
-      "county": "Gwinnett"
+      "county": "Gwinnett",
+      "model": "independent"
     },
     {
       "name": "Lemon Sweets Bakery & Cafe",
@@ -1615,7 +1662,8 @@
       "website": "https://www.lemonsweetsbakery.com/",
       "placeId": "ChIJqysGDoij9YgR4N7l5zw0c4o",
       "curated": true,
-      "county": "Gwinnett"
+      "county": "Gwinnett",
+      "model": "independent"
     },
     {
       "name": "Wich Tea",
@@ -1646,7 +1694,8 @@
       "website": "https://linktr.ee/wichteabanhmi",
       "placeId": "ChIJ_f0IFwWj9YgRT8ZnfvUKpYk",
       "curated": true,
-      "county": "Gwinnett"
+      "county": "Gwinnett",
+      "model": "independent"
     },
     {
       "name": "Tea Drip",
@@ -1681,7 +1730,8 @@
       "website": "https://www.instagram.com/teadrip.duluth/",
       "placeId": "ChIJTZQTrZWj9YgR7yCPR1mlVJ0",
       "curated": true,
-      "county": "Gwinnett"
+      "county": "Gwinnett",
+      "model": "independent"
     },
     {
       "name": "Cuckoo's Cafe",
@@ -1716,7 +1766,8 @@
       "website": "https://cuckooscafeduluth.com/",
       "placeId": "ChIJ6eLU5JOj9YgRlxEb8l9aaYs",
       "curated": true,
-      "county": "Gwinnett"
+      "county": "Gwinnett",
+      "model": "franchise"
     },
     {
       "name": "Chuchat",
@@ -1751,7 +1802,8 @@
       "website": "https://www.chuchatusa.com/",
       "placeId": "ChIJPR5SJL-f9YgRF4jcZyLZtrk",
       "curated": true,
-      "county": "Fulton"
+      "county": "Fulton",
+      "model": "independent"
     },
     {
       "name": "Art's Bakery & Cafe",
@@ -1786,7 +1838,8 @@
       "website": "https://www.facebook.com/artsbakeryandcafe/",
       "placeId": "ChIJ23zF_pOj9YgR6dfuviJItdg",
       "curated": true,
-      "county": "Gwinnett"
+      "county": "Gwinnett",
+      "model": "independent"
     },
     {
       "name": "Artistea",
@@ -1821,7 +1874,8 @@
       "website": "https://artistea.shop/",
       "placeId": "ChIJdxfDGwCj9YgRRsPBQ0bbuoY",
       "curated": true,
-      "county": "Gwinnett"
+      "county": "Gwinnett",
+      "model": "independent"
     },
     {
       "name": "Hayat Coffee",
@@ -1856,7 +1910,8 @@
       "website": "https://www.instagram.com/hayatcoffee.co/",
       "placeId": "ChIJ40mavlCZ9YgRgIZo_llTLng",
       "curated": true,
-      "county": "Gwinnett"
+      "county": "Gwinnett",
+      "model": "independent"
     },
     {
       "name": "Cafe Flat",
@@ -1891,7 +1946,8 @@
       "website": "https://joe.coffee/locations/ga/duluth/cafe-flat-duluth/",
       "placeId": "ChIJfXyu1CW99YgRFSK7wAfjrvE",
       "curated": true,
-      "county": "Gwinnett"
+      "county": "Gwinnett",
+      "model": "independent"
     },
     {
       "name": "Glaze Tea Duluth",
@@ -1926,7 +1982,8 @@
       "website": "https://www.glazetea.com/",
       "placeId": "ChIJRbBAjPqj9YgRe-0PebEu1CU",
       "curated": true,
-      "county": "Gwinnett"
+      "county": "Gwinnett",
+      "model": "independent"
     },
     {
       "name": "Break Coffee Roasters",
@@ -1958,7 +2015,8 @@
       "website": "https://breakroasters.com",
       "placeId": "ChIJIR5xg8qj9YgRnSZmGjwPVWo",
       "curated": true,
-      "county": "Gwinnett"
+      "county": "Gwinnett",
+      "model": "independent"
     },
     {
       "name": "Cafe Soon",
@@ -1990,7 +2048,8 @@
       "website": "https://www.cafesoonatl.com",
       "placeId": "ChIJOUHmGDKZ9YgRvrV_yjGfpoQ",
       "curated": true,
-      "county": "Gwinnett"
+      "county": "Gwinnett",
+      "model": "independent"
     },
     {
       "name": "Arwa Specialty Coffee",
@@ -2025,7 +2084,8 @@
       "website": "https://arwacoffee.com",
       "placeId": "ChIJY__FfiiZ9YgR27_N9gonM04",
       "curated": true,
-      "county": "Fulton"
+      "county": "Fulton",
+      "model": "independent"
     },
     {
       "name": "Eleva Cafe",
@@ -2056,7 +2116,8 @@
       "website": "https://elevacafe.com",
       "placeId": "ChIJFw-g73Oj9YgRdcdTujlyYZ8",
       "curated": true,
-      "county": "Gwinnett"
+      "county": "Gwinnett",
+      "model": "independent"
     }
   ],
   "addr": {

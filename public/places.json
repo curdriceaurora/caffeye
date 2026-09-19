@@ -22,6 +22,7 @@
    "lat": 34.071389,
    "lng": -84.276698,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "cafe"
    ],
@@ -45,6 +46,7 @@
    "lat": 34.060206,
    "lng": -84.243058,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery",
     "dessert_shop"
@@ -65,6 +67,7 @@
    "lat": 34.093238,
    "lng": -83.938073,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "donut_shop",
     "cafe",
@@ -86,6 +89,7 @@
    "lat": 33.927219,
    "lng": -84.381105,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bagel_shop",
     "bakery"
@@ -106,6 +110,7 @@
    "lat": 34.026626,
    "lng": -84.360738,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -125,6 +130,7 @@
    "lat": 33.943863,
    "lng": -83.992756,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -149,6 +155,7 @@
    "lat": 34.11078,
    "lng": -84.223702,
    "category": "Coffee",
+   "model": "franchise",
    "types": [
     "coffee_shop",
     "cafe"
@@ -170,6 +177,7 @@
    "lat": 33.941632,
    "lng": -84.127827,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -189,6 +197,7 @@
    "lat": 33.966656,
    "lng": -84.033522,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery",
     "bagel_shop",
@@ -211,6 +220,7 @@
    "lat": 33.85936,
    "lng": -83.953851,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "cafe",
     "bakery"
@@ -231,6 +241,7 @@
    "lat": 33.969074,
    "lng": -83.994323,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -251,6 +262,7 @@
    "lat": 33.908819,
    "lng": -84.288311,
    "category": "Tea/Boba",
+   "model": "franchise",
    "types": [
     "tea_house"
    ],
@@ -274,6 +286,7 @@
    "lat": 33.976445,
    "lng": -84.081912,
    "category": "Dessert Cafe",
+   "model": "independent",
    "types": [
     "dessert_shop"
    ],
@@ -293,6 +306,7 @@
    "lat": 34.055929,
    "lng": -84.229265,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -317,6 +331,7 @@
    "lat": 34.117935,
    "lng": -84.17619,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bagel_shop",
     "bakery"
@@ -337,6 +352,7 @@
    "lat": 34.05112,
    "lng": -84.225206,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -356,6 +372,7 @@
    "lat": 33.957412,
    "lng": -83.989011,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -375,6 +392,7 @@
    "lat": 33.906304,
    "lng": -84.112124,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -394,6 +412,7 @@
    "lat": 34.150837,
    "lng": -84.172249,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "donut_shop",
     "coffee_shop",
@@ -416,6 +435,7 @@
    "lat": 33.956187,
    "lng": -83.988612,
    "category": "Tea/Boba",
+   "model": "independent",
    "types": [
     "tea_house"
    ],
@@ -436,6 +456,7 @@
    "lat": 33.961291,
    "lng": -84.144255,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -460,6 +481,7 @@
    "lat": 34.061203,
    "lng": -84.158145,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery",
     "cafe"
@@ -480,6 +502,7 @@
    "lat": 33.952212,
    "lng": -84.235832,
    "category": "Tea/Boba",
+   "model": "franchise",
    "types": [
     "tea_house"
    ],
@@ -499,6 +522,7 @@
    "lat": 34.070048,
    "lng": -83.979896,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "dessert_shop",
     "bakery"
@@ -523,6 +547,7 @@
    "lat": 33.942466,
    "lng": -84.159268,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery",
     "coffee_shop",
@@ -549,6 +574,7 @@
    "lat": 34.216835,
    "lng": -84.145826,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "tea_house",
@@ -570,6 +596,7 @@
    "lat": 34.058801,
    "lng": -84.285894,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -589,6 +616,7 @@
    "lat": 34.107288,
    "lng": -84.02894,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -609,6 +637,7 @@
    "lat": 33.928987,
    "lng": -84.351914,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bagel_shop",
     "bakery"
@@ -629,6 +658,7 @@
    "lat": 34.093073,
    "lng": -84.282328,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "dessert_shop",
@@ -652,6 +682,7 @@
    "lat": 34.049595,
    "lng": -84.175284,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "donut_shop",
@@ -675,6 +706,7 @@
    "lat": 33.969134,
    "lng": -84.2086,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -695,6 +727,7 @@
    "lat": 34.160081,
    "lng": -84.157057,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -714,6 +747,7 @@
    "lat": 34.067785,
    "lng": -84.28157,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -738,6 +772,7 @@
    "lat": 34.064977,
    "lng": -84.073872,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "donut_shop",
     "bakery",
@@ -759,6 +794,7 @@
    "lat": 34.060478,
    "lng": -84.244281,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -778,6 +814,7 @@
    "lat": 33.831859,
    "lng": -84.090537,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -798,6 +835,7 @@
    "lat": 34.068147,
    "lng": -83.981265,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -818,6 +856,7 @@
    "lat": 33.976838,
    "lng": -84.211897,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery"
    ],
@@ -837,6 +876,7 @@
    "lat": 34.042707,
    "lng": -84.315189,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery"
    ],
@@ -856,6 +896,7 @@
    "lat": 34.091122,
    "lng": -84.283433,
    "category": "Coffee",
+   "model": "franchise",
    "types": [
     "coffee_shop",
     "cafe"
@@ -876,6 +917,7 @@
    "lat": 34.122057,
    "lng": -84.0767,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery",
     "bagel_shop",
@@ -898,6 +940,7 @@
    "lat": 34.168229,
    "lng": -84.275472,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -918,6 +961,7 @@
    "lat": 33.947457,
    "lng": -84.336539,
    "category": "Coffee",
+   "model": "franchise",
    "types": [
     "coffee_shop",
     "cafe"
@@ -938,6 +982,7 @@
    "lat": 33.871963,
    "lng": -84.015001,
    "category": "Coffee",
+   "model": "franchise",
    "types": [
     "coffee_shop",
     "cafe"
@@ -958,6 +1003,7 @@
    "lat": 33.892453,
    "lng": -83.958959,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -978,6 +1024,7 @@
    "lat": 33.886121,
    "lng": -84.134873,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -998,6 +1045,7 @@
    "lat": 34.047303,
    "lng": -84.178973,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery"
    ],
@@ -1017,6 +1065,7 @@
    "lat": 33.921932,
    "lng": -84.299711,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -1037,6 +1086,7 @@
    "lat": 33.983121,
    "lng": -84.349358,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -1056,6 +1106,7 @@
    "lat": 34.020765,
    "lng": -84.270796,
    "category": "Tea/Boba",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "tea_house",
@@ -1081,6 +1132,7 @@
    "lat": 34.011658,
    "lng": -83.937162,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -1102,6 +1154,7 @@
    "lat": 33.921311,
    "lng": -84.350924,
    "category": "Coffee",
+   "model": "franchise",
    "types": [
     "cafe",
     "coffee_shop"
@@ -1122,6 +1175,7 @@
    "lat": 34.095838,
    "lng": -84.2759,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery",
     "dessert_shop"
@@ -1142,6 +1196,7 @@
    "lat": 33.970975,
    "lng": -84.345909,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -1161,6 +1216,7 @@
    "lat": 34.061606,
    "lng": -84.224719,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -1181,6 +1237,7 @@
    "lat": 33.98051,
    "lng": -84.218335,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -1200,6 +1257,7 @@
    "lat": 34.205261,
    "lng": -84.119529,
    "category": "Coffee",
+   "model": "franchise",
    "types": [
     "coffee_shop",
     "cafe"
@@ -1221,6 +1279,7 @@
    "lat": 33.966272,
    "lng": -84.13426,
    "category": "Tea/Boba",
+   "model": "franchise",
    "types": [
     "tea_house",
     "cafe"
@@ -1245,6 +1304,7 @@
    "lat": 33.941714,
    "lng": -84.160853,
    "category": "Tea/Boba",
+   "model": "independent",
    "types": [
     "tea_house"
    ],
@@ -1269,6 +1329,7 @@
    "lat": 33.95816,
    "lng": -84.141357,
    "category": "Tea/Boba",
+   "model": "franchise",
    "types": [
     "tea_house"
    ],
@@ -1292,6 +1353,7 @@
    "lat": 34.299269,
    "lng": -84.153612,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -1315,6 +1377,7 @@
    "lat": 34.03931,
    "lng": -84.053827,
    "category": "Tea/Boba",
+   "model": "independent",
    "types": [
     "tea_house"
    ],
@@ -1338,6 +1401,7 @@
    "lat": 34.108348,
    "lng": -84.202395,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bagel_shop",
     "cafe",
@@ -1359,6 +1423,7 @@
    "lat": 33.98115,
    "lng": -84.078412,
    "category": "Tea/Boba",
+   "model": "franchise",
    "types": [
     "tea_house"
    ],
@@ -1378,6 +1443,7 @@
    "lat": 34.072871,
    "lng": -83.980839,
    "category": "Coffee",
+   "model": "franchise",
    "types": [
     "cafe"
    ],
@@ -1397,6 +1463,7 @@
    "lat": 34.014604,
    "lng": -84.362597,
    "category": "Coffee",
+   "model": "franchise",
    "types": [
     "coffee_shop",
     "cafe"
@@ -1417,6 +1484,7 @@
    "lat": 34.024938,
    "lng": -84.043764,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -1437,6 +1505,7 @@
    "lat": 34.058852,
    "lng": -84.078419,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery"
    ],
@@ -1461,6 +1530,7 @@
    "lat": 33.947457,
    "lng": -84.336539,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "cafe"
    ],
@@ -1480,6 +1550,7 @@
    "lat": 33.90307,
    "lng": -84.110196,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -1501,6 +1572,7 @@
    "lat": 33.907031,
    "lng": -84.349451,
    "category": "Coffee",
+   "model": "franchise",
    "types": [
     "cafe"
    ],
@@ -1520,6 +1592,7 @@
    "lat": 34.003718,
    "lng": -84.144972,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -1540,6 +1613,7 @@
    "lat": 34.092366,
    "lng": -84.205919,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -1564,6 +1638,7 @@
    "lat": 33.960775,
    "lng": -84.301102,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery",
     "bagel_shop",
@@ -1586,6 +1661,7 @@
    "lat": 34.019851,
    "lng": -84.15827,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -1605,6 +1681,7 @@
    "lat": 34.045699,
    "lng": -84.221195,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "cafe"
    ],
@@ -1625,6 +1702,7 @@
    "lat": 33.954589,
    "lng": -84.132698,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery",
     "coffee_shop",
@@ -1651,6 +1729,7 @@
    "lat": 34.023019,
    "lng": -84.271609,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery",
     "bagel_shop",
@@ -1673,6 +1752,7 @@
    "lat": 33.920293,
    "lng": -84.381396,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery",
     "bagel_shop",
@@ -1695,6 +1775,7 @@
    "lat": 34.022006,
    "lng": -84.044618,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery",
     "coffee_shop",
@@ -1717,6 +1798,7 @@
    "lat": 34.072119,
    "lng": -84.296526,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "donut_shop",
     "coffee_shop",
@@ -1739,6 +1821,7 @@
    "lat": 33.827329,
    "lng": -84.095304,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -1758,6 +1841,7 @@
    "lat": 34.019188,
    "lng": -83.984005,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -1777,6 +1861,7 @@
    "lat": 34.050024,
    "lng": -84.225121,
    "category": "Dessert Cafe",
+   "model": "independent",
    "types": [
     "dessert_shop",
     "coffee_shop",
@@ -1800,6 +1885,7 @@
    "lat": 34.153122,
    "lng": -84.173166,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery",
     "dessert_shop"
@@ -1824,6 +1910,7 @@
    "lat": 33.924969,
    "lng": -84.009537,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -1843,6 +1930,7 @@
    "lat": 33.910816,
    "lng": -84.264498,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery"
    ],
@@ -1866,6 +1954,7 @@
    "lat": 34.066993,
    "lng": -83.952272,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -1886,6 +1975,7 @@
    "lat": 33.841104,
    "lng": -83.911062,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery",
     "bagel_shop",
@@ -1912,6 +2002,7 @@
    "lat": 33.947489,
    "lng": -84.142009,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery"
    ],
@@ -1932,6 +2023,7 @@
    "lat": 33.916903,
    "lng": -84.354615,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe",
@@ -1953,6 +2045,7 @@
    "lat": 34.022812,
    "lng": -84.329688,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -1976,6 +2069,7 @@
    "lat": 34.049336,
    "lng": -84.281243,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery"
    ],
@@ -1995,6 +2089,7 @@
    "lat": 33.999777,
    "lng": -84.169436,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery",
     "cafe"
@@ -2016,6 +2111,7 @@
    "lat": 33.909205,
    "lng": -84.204231,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -2035,6 +2131,7 @@
    "lat": 33.904327,
    "lng": -84.121406,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery"
    ],
@@ -2054,6 +2151,7 @@
    "lat": 33.969887,
    "lng": -84.096943,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "cafe",
     "coffee_shop"
@@ -2074,6 +2172,7 @@
    "lat": 33.937508,
    "lng": -84.087796,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery",
     "coffee_shop",
@@ -2095,6 +2194,7 @@
    "lat": 34.025273,
    "lng": -84.045753,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -2119,6 +2219,7 @@
    "lat": 33.909117,
    "lng": -84.20428,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -2138,6 +2239,7 @@
    "lat": 33.905611,
    "lng": -84.26992,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe",
@@ -2164,6 +2266,7 @@
    "lat": 33.963795,
    "lng": -84.135142,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -2183,6 +2286,7 @@
    "lat": 33.944738,
    "lng": -84.250315,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -2206,6 +2310,7 @@
    "lat": 33.969999,
    "lng": -83.992674,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "cafe"
    ],
@@ -2229,6 +2334,7 @@
    "lat": 33.936478,
    "lng": -84.092229,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -2249,6 +2355,7 @@
    "lat": 33.945661,
    "lng": -84.128024,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "cafe",
     "coffee_shop"
@@ -2270,6 +2377,7 @@
    "lat": 33.919792,
    "lng": -84.351098,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery",
     "dessert_restaurant",
@@ -2295,6 +2403,7 @@
    "lat": 34.250864,
    "lng": -84.091232,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery",
     "bagel_shop",
@@ -2317,6 +2426,7 @@
    "lat": 33.969674,
    "lng": -84.222793,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -2336,6 +2446,7 @@
    "lat": 33.984979,
    "lng": -83.985142,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "donut_shop",
     "bakery"
@@ -2356,6 +2467,7 @@
    "lat": 34.054829,
    "lng": -84.064505,
    "category": "Tea/Boba",
+   "model": "independent",
    "types": [
     "tea_house"
    ],
@@ -2379,6 +2491,7 @@
    "lat": 33.940321,
    "lng": -84.083023,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery",
     "bagel_shop",
@@ -2401,6 +2514,7 @@
    "lat": 34.039139,
    "lng": -84.344406,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery",
     "dessert_shop",
@@ -2423,6 +2537,7 @@
    "lat": 33.947716,
    "lng": -84.12318,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -2442,6 +2557,7 @@
    "lat": 33.967435,
    "lng": -84.068918,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -2461,6 +2577,7 @@
    "lat": 33.905525,
    "lng": -84.153725,
    "category": "Tea/Boba",
+   "model": "independent",
    "types": [
     "tea_house"
    ],
@@ -2484,6 +2601,7 @@
    "lat": 34.019491,
    "lng": -84.190315,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "donut_shop",
     "bakery"
@@ -2504,6 +2622,7 @@
    "lat": 34.115094,
    "lng": -84.011642,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -2524,6 +2643,7 @@
    "lat": 33.870611,
    "lng": -84.015909,
    "category": "Coffee",
+   "model": "franchise",
    "types": [
     "cafe"
    ],
@@ -2547,6 +2667,7 @@
    "lat": 34.016434,
    "lng": -84.162886,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery",
     "coffee_shop",
@@ -2568,6 +2689,7 @@
    "lat": 34.023049,
    "lng": -84.252267,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "dessert_shop",
     "bakery"
@@ -2592,6 +2714,7 @@
    "lat": 34.011952,
    "lng": -84.284883,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -2611,6 +2734,7 @@
    "lat": 34.106364,
    "lng": -84.000943,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -2631,6 +2755,7 @@
    "lat": 34.122184,
    "lng": -84.168923,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery",
     "bagel_shop",
@@ -2653,6 +2778,7 @@
    "lat": 34.002896,
    "lng": -84.144789,
    "category": "Dessert Cafe",
+   "model": "independent",
    "types": [
     "dessert_shop",
     "coffee_shop",
@@ -2675,6 +2801,7 @@
    "lat": 33.913681,
    "lng": -84.261276,
    "category": "Tea/Boba",
+   "model": "franchise",
    "types": [
     "tea_house",
     "cafe"
@@ -2699,6 +2826,7 @@
    "lat": 34.260774,
    "lng": -84.192282,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -2718,6 +2846,7 @@
    "lat": 34.026731,
    "lng": -84.358648,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "donut_shop",
     "bakery"
@@ -2739,6 +2868,7 @@
    "lat": 33.948695,
    "lng": -84.334735,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery"
    ],
@@ -2758,6 +2888,7 @@
    "lat": 33.914174,
    "lng": -84.375549,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "cafe"
    ],
@@ -2777,6 +2908,7 @@
    "lat": 34.05017,
    "lng": -83.929616,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "donut_shop",
     "bakery"
@@ -2797,6 +2929,7 @@
    "lat": 33.82056,
    "lng": -84.112071,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "cafe"
    ],
@@ -2816,6 +2949,7 @@
    "lat": 34.090325,
    "lng": -84.017715,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -2835,6 +2969,7 @@
    "lat": 33.89671,
    "lng": -84.196517,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -2854,6 +2989,7 @@
    "lat": 33.969678,
    "lng": -84.015338,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "dessert_shop",
     "bakery"
@@ -2878,6 +3014,7 @@
    "lat": 34.01433,
    "lng": -84.164811,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "cafe"
    ],
@@ -2897,6 +3034,7 @@
    "lat": 34.033958,
    "lng": -84.186405,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "cafe"
    ],
@@ -2916,6 +3054,7 @@
    "lat": 34.004444,
    "lng": -83.914444,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -2937,6 +3076,7 @@
    "lat": 33.897391,
    "lng": -84.209476,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -2956,6 +3096,7 @@
    "lat": 34.089517,
    "lng": -84.344078,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -2976,6 +3117,7 @@
    "lat": 34.0708,
    "lng": -84.277172,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -2995,6 +3137,7 @@
    "lat": 34.214619,
    "lng": -84.138443,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "donut_shop",
     "coffee_shop",
@@ -3017,6 +3160,7 @@
    "lat": 33.914164,
    "lng": -84.311869,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -3036,6 +3180,7 @@
    "lat": 34.033924,
    "lng": -84.34945,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery",
     "dessert_restaurant",
@@ -3057,6 +3202,7 @@
    "lat": 34.055827,
    "lng": -84.329439,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -3077,6 +3223,7 @@
    "lat": 33.877629,
    "lng": -84.014507,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "dessert_shop",
     "bakery"
@@ -3102,6 +3249,7 @@
    "lat": 33.924126,
    "lng": -84.341314,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -3121,6 +3269,7 @@
    "lat": 34.048034,
    "lng": -84.295587,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery"
    ],
@@ -3141,6 +3290,7 @@
    "lat": 33.961247,
    "lng": -84.142194,
    "category": "Tea/Boba",
+   "model": "franchise",
    "types": [
     "cafe",
     "tea_house"
@@ -3165,6 +3315,7 @@
    "lat": 34.005147,
    "lng": -84.08351,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -3189,6 +3340,7 @@
    "lat": 34.003359,
    "lng": -84.14583,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "tea_house",
@@ -3211,6 +3363,7 @@
    "lat": 33.923882,
    "lng": -84.340714,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery"
    ],
@@ -3231,6 +3384,7 @@
    "lat": 33.9438,
    "lng": -84.204516,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -3250,6 +3404,7 @@
    "lat": 33.961212,
    "lng": -83.972843,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "donut_shop",
     "dessert_shop",
@@ -3271,6 +3426,7 @@
    "lat": 33.87742,
    "lng": -84.021204,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -3291,6 +3447,7 @@
    "lat": 34.006186,
    "lng": -83.906041,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -3310,6 +3467,7 @@
    "lat": 34.121425,
    "lng": -84.003563,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -3330,6 +3488,7 @@
    "lat": 33.982451,
    "lng": -84.216011,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery",
     "dessert_shop"
@@ -3350,6 +3509,7 @@
    "lat": 34.236311,
    "lng": -84.228301,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -3369,6 +3529,7 @@
    "lat": 33.983724,
    "lng": -84.081099,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -3394,6 +3555,7 @@
    "lat": 33.960019,
    "lng": -84.139129,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -3417,6 +3579,7 @@
    "lat": 34.002958,
    "lng": -84.171997,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -3440,6 +3603,7 @@
    "lat": 33.837366,
    "lng": -84.130999,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -3460,6 +3624,7 @@
    "lat": 33.957934,
    "lng": -84.302287,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe",
@@ -3482,6 +3647,7 @@
    "lat": 34.021941,
    "lng": -84.149465,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -3501,6 +3667,7 @@
    "lat": 34.110726,
    "lng": -84.182488,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "cafe"
    ],
@@ -3520,6 +3687,7 @@
    "lat": 34.054196,
    "lng": -84.328893,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -3539,6 +3707,7 @@
    "lat": 33.98153,
    "lng": -84.213256,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "bakery",
@@ -3560,6 +3729,7 @@
    "lat": 34.027146,
    "lng": -84.358144,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -3581,6 +3751,7 @@
    "lat": 33.956737,
    "lng": -84.134681,
    "category": "Dessert Cafe",
+   "model": "franchise",
    "types": [
     "dessert_shop",
     "tea_house",
@@ -3606,6 +3777,7 @@
    "lat": 33.979456,
    "lng": -84.214367,
    "category": "Tea/Boba",
+   "model": "independent",
    "types": [
     "tea_house"
    ],
@@ -3629,6 +3801,7 @@
    "lat": 34.051494,
    "lng": -83.93033,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery",
     "dessert_shop",
@@ -3651,6 +3824,7 @@
    "lat": 34.07129,
    "lng": -84.300836,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -3671,6 +3845,7 @@
    "lat": 33.964249,
    "lng": -84.007163,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery"
    ],
@@ -3690,6 +3865,7 @@
    "lat": 34.024256,
    "lng": -84.362585,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "cafe"
    ],
@@ -3710,6 +3886,7 @@
    "lat": 33.925175,
    "lng": -84.335488,
    "category": "Tea/Boba",
+   "model": "independent",
    "types": [
     "tea_house"
    ],
@@ -3730,6 +3907,7 @@
    "lat": 33.932947,
    "lng": -84.361023,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -3749,6 +3927,7 @@
    "lat": 33.895555,
    "lng": -84.141164,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -3773,6 +3952,7 @@
    "lat": 34.029915,
    "lng": -84.336078,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -3792,6 +3972,7 @@
    "lat": 33.969267,
    "lng": -84.1426,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -3815,6 +3996,7 @@
    "lat": 34.057057,
    "lng": -84.38033,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "cafe",
     "coffee_shop",
@@ -3836,6 +4018,7 @@
    "lat": 34.021769,
    "lng": -84.26799,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery",
     "bagel_shop"
@@ -3856,6 +4039,7 @@
    "lat": 34.070778,
    "lng": -84.277764,
    "category": "Coffee",
+   "model": "franchise",
    "types": [
     "cafe",
     "dessert_restaurant",
@@ -3881,6 +4065,7 @@
    "lat": 34.124365,
    "lng": -84.223241,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "cafe",
     "coffee_shop",
@@ -3902,6 +4087,7 @@
    "lat": 33.991261,
    "lng": -83.896789,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "tea_house",
@@ -3923,6 +4109,7 @@
    "lat": 34.008348,
    "lng": -84.360204,
    "category": "Coffee",
+   "model": "franchise",
    "types": [
     "coffee_shop",
     "cafe"
@@ -3943,6 +4130,7 @@
    "lat": 33.929207,
    "lng": -84.014464,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -3962,6 +4150,7 @@
    "lat": 34.016427,
    "lng": -84.192337,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -3982,6 +4171,7 @@
    "lat": 33.916757,
    "lng": -84.163339,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -4001,6 +4191,7 @@
    "lat": 33.969263,
    "lng": -84.190857,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -4020,6 +4211,7 @@
    "lat": 33.917599,
    "lng": -84.379923,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery"
    ],
@@ -4039,6 +4231,7 @@
    "lat": 33.944322,
    "lng": -83.994648,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -4059,6 +4252,7 @@
    "lat": 34.029073,
    "lng": -84.043202,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery",
     "cafe"
@@ -4083,6 +4277,7 @@
    "lat": 34.052212,
    "lng": -83.992525,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "dessert_shop",
     "bakery"
@@ -4103,6 +4298,7 @@
    "lat": 34.072763,
    "lng": -83.984884,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery"
    ],
@@ -4127,6 +4323,7 @@
    "lat": 33.929056,
    "lng": -84.348217,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery",
     "dessert_shop"
@@ -4152,6 +4349,7 @@
    "lat": 33.954053,
    "lng": -84.133733,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -4177,6 +4375,7 @@
    "lat": 33.966254,
    "lng": -84.133553,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery",
     "cafe"
@@ -4201,6 +4400,7 @@
    "lat": 34.071111,
    "lng": -84.278327,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -4220,6 +4420,7 @@
    "lat": 34.028268,
    "lng": -84.361777,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -4240,6 +4441,7 @@
    "lat": 34.069226,
    "lng": -84.169319,
    "category": "Tea/Boba",
+   "model": "independent",
    "types": [
     "tea_house"
    ],
@@ -4259,6 +4461,7 @@
    "lat": 33.907378,
    "lng": -84.287411,
    "category": "Dessert Cafe",
+   "model": "independent",
    "types": [
     "dessert_shop",
     "tea_house"
@@ -4283,6 +4486,7 @@
    "lat": 34.093186,
    "lng": -83.937853,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery",
     "bagel_shop",
@@ -4305,6 +4509,7 @@
    "lat": 33.858409,
    "lng": -84.019144,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "donut_shop",
     "bakery"
@@ -4325,6 +4530,7 @@
    "lat": 33.918002,
    "lng": -84.381552,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "dessert_shop",
     "bakery"
@@ -4349,6 +4555,7 @@
    "lat": 34.113889,
    "lng": -84.155277,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "donut_shop",
     "coffee_shop",
@@ -4372,6 +4579,7 @@
    "lat": 33.929455,
    "lng": -84.343066,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -4392,6 +4600,7 @@
    "lat": 34.022077,
    "lng": -84.15103,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "cafe",
     "dessert_restaurant",
@@ -4413,6 +4622,7 @@
    "lat": 34.015271,
    "lng": -84.163858,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -4432,6 +4642,7 @@
    "lat": 34.110408,
    "lng": -84.218728,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery",
     "cafe"
@@ -4452,6 +4663,7 @@
    "lat": 33.847009,
    "lng": -83.977611,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -4471,6 +4683,7 @@
    "lat": 34.06328,
    "lng": -84.212372,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "cafe"
    ],
@@ -4490,6 +4703,7 @@
    "lat": 34.078136,
    "lng": -83.918759,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "donut_shop",
@@ -4514,6 +4728,7 @@
    "lat": 34.044203,
    "lng": -84.22433,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -4534,6 +4749,7 @@
    "lat": 34.063754,
    "lng": -83.985447,
    "category": "Tea/Boba",
+   "model": "franchise",
    "types": [
     "tea_house"
    ],
@@ -4554,6 +4770,7 @@
    "lat": 33.914439,
    "lng": -84.341356,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -4574,6 +4791,7 @@
    "lat": 34.024469,
    "lng": -84.045431,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe",
@@ -4600,6 +4818,7 @@
    "lat": 33.922634,
    "lng": -84.315928,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery",
     "bagel_shop",
@@ -4622,6 +4841,7 @@
    "lat": 34.032884,
    "lng": -84.187774,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "cafe"
    ],
@@ -4646,6 +4866,7 @@
    "lat": 33.919253,
    "lng": -84.351002,
    "category": "Coffee",
+   "model": "franchise",
    "types": [
     "coffee_shop",
     "cafe"
@@ -4666,6 +4887,7 @@
    "lat": 33.824315,
    "lng": -84.109041,
    "category": "Coffee",
+   "model": "franchise",
    "types": [
     "coffee_shop",
     "cafe"
@@ -4686,6 +4908,7 @@
    "lat": 33.824814,
    "lng": -84.033182,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery",
     "dessert_shop",
@@ -4709,6 +4932,7 @@
    "lat": 33.923813,
    "lng": -84.34098,
    "category": "Tea/Boba",
+   "model": "franchise",
    "types": [
     "tea_house"
    ],
@@ -4728,6 +4952,7 @@
    "lat": 34.039092,
    "lng": -84.054727,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "donut_shop",
     "bakery"
@@ -4749,6 +4974,7 @@
    "lat": 33.908704,
    "lng": -84.349449,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -4773,6 +4999,7 @@
    "lat": 33.960915,
    "lng": -84.004472,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -4792,6 +5019,7 @@
    "lat": 33.925141,
    "lng": -84.282974,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -4812,6 +5040,7 @@
    "lat": 33.895561,
    "lng": -83.958598,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery",
     "cafe"
@@ -4832,6 +5061,7 @@
    "lat": 34.063249,
    "lng": -84.396069,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "bakery",
@@ -4854,6 +5084,7 @@
    "lat": 34.013248,
    "lng": -84.196252,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -4874,6 +5105,7 @@
    "lat": 33.949319,
    "lng": -83.985504,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -4897,6 +5129,7 @@
    "lat": 34.0902,
    "lng": -84.198583,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "donut_shop",
     "coffee_shop",
@@ -4920,6 +5153,7 @@
    "lat": 34.013198,
    "lng": -84.183878,
    "category": "Coffee",
+   "model": "franchise",
    "types": [
     "coffee_shop",
     "cafe"
@@ -4941,6 +5175,7 @@
    "lat": 33.949025,
    "lng": -84.334288,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "cafe"
    ],
@@ -4960,6 +5195,7 @@
    "lat": 33.908038,
    "lng": -84.266789,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -4979,6 +5215,7 @@
    "lat": 33.987321,
    "lng": -83.984022,
    "category": "Coffee",
+   "model": "franchise",
    "types": [
     "coffee_shop",
     "cafe"
@@ -5000,6 +5237,7 @@
    "lat": 33.949786,
    "lng": -84.127032,
    "category": "Tea/Boba",
+   "model": "independent",
    "types": [
     "tea_house"
    ],
@@ -5023,6 +5261,7 @@
    "lat": 34.045631,
    "lng": -84.083339,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -5043,6 +5282,7 @@
    "lat": 33.869035,
    "lng": -83.995695,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -5063,6 +5303,7 @@
    "lat": 33.960459,
    "lng": -84.133987,
    "category": "Tea/Boba",
+   "model": "franchise",
    "types": [
     "tea_house"
    ],
@@ -5086,6 +5327,7 @@
    "lat": 34.083601,
    "lng": -84.355589,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery",
     "dessert_restaurant",
@@ -5108,6 +5350,7 @@
    "lat": 34.067744,
    "lng": -84.259982,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -5128,6 +5371,7 @@
    "lat": 34.070871,
    "lng": -84.202615,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -5152,6 +5396,7 @@
    "lat": 33.960626,
    "lng": -84.137578,
    "category": "Tea/Boba",
+   "model": "franchise",
    "types": [
     "tea_house"
    ],
@@ -5175,6 +5420,7 @@
    "lat": 33.969059,
    "lng": -83.994307,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -5195,6 +5441,7 @@
    "lat": 34.069394,
    "lng": -84.278439,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery"
    ],
@@ -5214,6 +5461,7 @@
    "lat": 33.969202,
    "lng": -84.144873,
    "category": "Tea/Boba",
+   "model": "franchise",
    "types": [
     "tea_house",
     "cafe"
@@ -5238,6 +5486,7 @@
    "lat": 34.019459,
    "lng": -84.19119,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -5258,6 +5507,7 @@
    "lat": 34.108101,
    "lng": -84.000113,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "donut_shop",
     "bakery"
@@ -5278,6 +5528,7 @@
    "lat": 34.201079,
    "lng": -84.135068,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -5297,6 +5548,7 @@
    "lat": 33.93509,
    "lng": -84.364874,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "donut_shop",
     "bakery"
@@ -5322,6 +5574,7 @@
    "lat": 33.960604,
    "lng": -84.125867,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -5341,6 +5594,7 @@
    "lat": 34.03411,
    "lng": -84.049419,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery",
     "coffee_shop",
@@ -5368,6 +5622,7 @@
    "lat": 33.95683,
    "lng": -84.136619,
    "category": "Tea/Boba",
+   "model": "independent",
    "types": [
     "tea_house"
    ],
@@ -5392,6 +5647,7 @@
    "lat": 33.906526,
    "lng": -84.220656,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -5411,6 +5667,7 @@
    "lat": 34.076123,
    "lng": -83.919866,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -5431,6 +5688,7 @@
    "lat": 33.917415,
    "lng": -84.11597,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -5450,6 +5708,7 @@
    "lat": 34.13109,
    "lng": -84.25377,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery",
     "dessert_shop"
@@ -5470,6 +5729,7 @@
    "lat": 33.949475,
    "lng": -84.199018,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -5489,6 +5749,7 @@
    "lat": 34.057873,
    "lng": -84.286619,
    "category": "Coffee",
+   "model": "franchise",
    "types": [
     "cafe"
    ],
@@ -5508,6 +5769,7 @@
    "lat": 33.943016,
    "lng": -83.992274,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "cafe"
    ],
@@ -5531,6 +5793,7 @@
    "lat": 33.951749,
    "lng": -83.987375,
    "category": "Tea/Boba",
+   "model": "franchise",
    "types": [
     "dessert_shop",
     "tea_house"
@@ -5552,6 +5815,7 @@
    "lat": 33.959392,
    "lng": -84.13574,
    "category": "Tea/Boba",
+   "model": "independent",
    "types": [
     "tea_house"
    ],
@@ -5575,6 +5839,7 @@
    "lat": 34.068452,
    "lng": -84.281323,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -5594,6 +5859,7 @@
    "lat": 33.90056,
    "lng": -84.131351,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -5613,6 +5879,7 @@
    "lat": 34.062711,
    "lng": -83.99402,
    "category": "Tea/Boba",
+   "model": "independent",
    "types": [
     "tea_house"
    ],
@@ -5636,6 +5903,7 @@
    "lat": 33.882813,
    "lng": -84.007898,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery",
     "bagel_shop",
@@ -5658,6 +5926,7 @@
    "lat": 34.066672,
    "lng": -84.261324,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -5682,6 +5951,7 @@
    "lat": 33.965998,
    "lng": -84.176689,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery",
     "cafe",
@@ -5703,6 +5973,7 @@
    "lat": 33.784101,
    "lng": -84.010227,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -5722,6 +5993,7 @@
    "lat": 34.028155,
    "lng": -84.305734,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -5741,6 +6013,7 @@
    "lat": 34.181644,
    "lng": -84.133681,
    "category": "Tea/Boba",
+   "model": "franchise",
    "types": [
     "coffee_shop",
     "cafe",
@@ -5767,6 +6040,7 @@
    "lat": 33.946093,
    "lng": -84.123455,
    "category": "Tea/Boba",
+   "model": "franchise",
    "types": [
     "tea_house"
    ],
@@ -5790,6 +6064,7 @@
    "lat": 34.030427,
    "lng": -84.188079,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery",
     "coffee_shop",
@@ -5811,6 +6086,7 @@
    "lat": 34.287122,
    "lng": -83.991703,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -5830,6 +6106,7 @@
    "lat": 34.102951,
    "lng": -84.002485,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery",
     "coffee_shop",
@@ -5852,6 +6129,7 @@
    "lat": 34.035056,
    "lng": -84.050433,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe",
@@ -5877,6 +6155,7 @@
    "lat": 34.048597,
    "lng": -84.294182,
    "category": "Tea/Boba",
+   "model": "franchise",
    "types": [
     "tea_house"
    ],
@@ -5896,6 +6175,7 @@
    "lat": 34.067994,
    "lng": -84.166883,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "donut_shop",
     "bakery"
@@ -5916,6 +6196,7 @@
    "lat": 33.859868,
    "lng": -84.015827,
    "category": "Dessert Cafe",
+   "model": "independent",
    "types": [
     "dessert_shop"
    ],
@@ -5936,6 +6217,7 @@
    "lat": 33.961934,
    "lng": -84.134825,
    "category": "Tea/Boba",
+   "model": "independent",
    "types": [
     "tea_house",
     "dessert_restaurant",
@@ -5961,6 +6243,7 @@
    "lat": 33.943376,
    "lng": -83.991545,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -5981,6 +6264,7 @@
    "lat": 33.808084,
    "lng": -84.046643,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery",
     "dessert_shop",
@@ -6006,6 +6290,7 @@
    "lat": 34.035851,
    "lng": -83.911269,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "donut_shop",
     "bakery"
@@ -6026,6 +6311,7 @@
    "lat": 33.92549,
    "lng": -84.383647,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "cafe",
     "bakery"
@@ -6046,6 +6332,7 @@
    "lat": 33.914707,
    "lng": -84.002443,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -6066,6 +6353,7 @@
    "lat": 33.849447,
    "lng": -83.918542,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery",
     "coffee_shop",
@@ -6087,6 +6375,7 @@
    "lat": 34.152383,
    "lng": -84.285974,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "donut_shop",
     "coffee_shop",
@@ -6109,6 +6398,7 @@
    "lat": 34.075503,
    "lng": -84.295998,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -6129,6 +6419,7 @@
    "lat": 33.969481,
    "lng": -84.147517,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -6148,6 +6439,7 @@
    "lat": 34.016968,
    "lng": -84.193115,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "tea_house",
@@ -6170,6 +6462,7 @@
    "lat": 34.033056,
    "lng": -84.185,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery"
    ],
@@ -6189,6 +6482,7 @@
    "lat": 34.024543,
    "lng": -84.361353,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "cafe"
    ],
@@ -6212,6 +6506,7 @@
    "lat": 34.012926,
    "lng": -84.18625,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -6232,6 +6527,7 @@
    "lat": 34.072189,
    "lng": -84.205468,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "cafe",
     "coffee_shop",
@@ -6257,6 +6553,7 @@
    "lat": 34.004718,
    "lng": -84.085115,
    "category": "Tea/Boba",
+   "model": "franchise",
    "types": [
     "tea_house"
    ],
@@ -6280,6 +6577,7 @@
    "lat": 33.971516,
    "lng": -84.147644,
    "category": "Tea/Boba",
+   "model": "independent",
    "types": [
     "tea_house",
     "coffee_shop",
@@ -6305,6 +6603,7 @@
    "lat": 33.985496,
    "lng": -84.270427,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -6330,6 +6629,7 @@
    "lat": 34.18354,
    "lng": -84.218643,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "cafe",
     "coffee_shop",
@@ -6351,6 +6651,7 @@
    "lat": 33.904089,
    "lng": -84.198722,
    "category": "Tea/Boba",
+   "model": "franchise",
    "types": [
     "tea_house"
    ],
@@ -6374,6 +6675,7 @@
    "lat": 34.047957,
    "lng": -84.295635,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -6393,6 +6695,7 @@
    "lat": 34.010184,
    "lng": -84.015666,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -6412,6 +6715,7 @@
    "lat": 34.051089,
    "lng": -84.176194,
    "category": "Tea/Boba",
+   "model": "franchise",
    "types": [
     "tea_house"
    ],
@@ -6435,6 +6739,7 @@
    "lat": 33.901164,
    "lng": -84.015152,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -6454,6 +6759,7 @@
    "lat": 33.907407,
    "lng": -84.287573,
    "category": "Tea/Boba",
+   "model": "franchise",
    "types": [
     "tea_house"
    ],
@@ -6477,6 +6783,7 @@
    "lat": 34.155593,
    "lng": -84.143796,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -6497,6 +6804,7 @@
    "lat": 33.945605,
    "lng": -84.124473,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "cafe",
     "coffee_shop",
@@ -6523,6 +6831,7 @@
    "lat": 34.030348,
    "lng": -83.986934,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -6543,6 +6852,7 @@
    "lat": 34.045266,
    "lng": -84.178885,
    "category": "Tea/Boba",
+   "model": "franchise",
    "types": [
     "tea_house"
    ],
@@ -6566,6 +6876,7 @@
    "lat": 34.07265,
    "lng": -83.982569,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery"
    ],
@@ -6585,6 +6896,7 @@
    "lat": 34.069482,
    "lng": -84.294973,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery",
     "dessert_shop"
@@ -6605,6 +6917,7 @@
    "lat": 33.987405,
    "lng": -83.89312,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -6628,6 +6941,7 @@
    "lat": 33.980403,
    "lng": -84.080306,
    "category": "Coffee",
+   "model": "franchise",
    "types": [
     "coffee_shop",
     "cafe"
@@ -6648,6 +6962,7 @@
    "lat": 33.89305,
    "lng": -83.955836,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -6667,6 +6982,7 @@
    "lat": 34.028288,
    "lng": -84.358292,
    "category": "Coffee",
+   "model": "franchise",
    "types": [
     "coffee_shop",
     "cafe"
@@ -6687,6 +7003,7 @@
    "lat": 34.029572,
    "lng": -84.337759,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -6707,6 +7024,7 @@
    "lat": 34.145069,
    "lng": -84.249836,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery",
     "bagel_shop",
@@ -6730,6 +7048,7 @@
    "lat": 33.941663,
    "lng": -84.2131,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -6750,6 +7069,7 @@
    "lat": 34.05366,
    "lng": -84.175288,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -6775,6 +7095,7 @@
    "lat": 33.908071,
    "lng": -84.355981,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "cafe"
    ],
@@ -6794,6 +7115,7 @@
    "lat": 33.917415,
    "lng": -84.11597,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -6815,6 +7137,7 @@
    "lat": 33.920252,
    "lng": -84.211371,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "donut_shop",
     "coffee_shop",
@@ -6838,6 +7161,7 @@
    "lat": 34.033235,
    "lng": -84.341955,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "donut_shop",
     "bakery"
@@ -6859,6 +7183,7 @@
    "lat": 33.948314,
    "lng": -84.135529,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery"
    ],
@@ -6878,6 +7203,7 @@
    "lat": 34.208862,
    "lng": -84.139704,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -6898,6 +7224,7 @@
    "lat": 34.165908,
    "lng": -84.111293,
    "category": "Tea/Boba",
+   "model": "independent",
    "types": [
     "tea_house"
    ],
@@ -6917,6 +7244,7 @@
    "lat": 34.003807,
    "lng": -84.083332,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery",
     "cafe"
@@ -6942,6 +7270,7 @@
    "lat": 33.950358,
    "lng": -84.136753,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery"
    ],
@@ -6961,6 +7290,7 @@
    "lat": 34.154219,
    "lng": -84.176957,
    "category": "Tea/Boba",
+   "model": "franchise",
    "types": [
     "tea_house"
    ],
@@ -6984,6 +7314,7 @@
    "lat": 34.039002,
    "lng": -84.054156,
    "category": "Tea/Boba",
+   "model": "independent",
    "types": [
     "tea_house"
    ],
@@ -7003,6 +7334,7 @@
    "lat": 34.080327,
    "lng": -84.357261,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -7022,6 +7354,7 @@
    "lat": 34.261552,
    "lng": -84.241865,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -7041,6 +7374,7 @@
    "lat": 34.048842,
    "lng": -84.310694,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "cafe"
    ],
@@ -7060,6 +7394,7 @@
    "lat": 33.868201,
    "lng": -84.095069,
    "category": "Tea/Boba",
+   "model": "franchise",
    "types": [
     "tea_house"
    ],
@@ -7084,6 +7419,7 @@
    "lat": 33.966112,
    "lng": -84.134469,
    "category": "Coffee",
+   "model": "franchise",
    "types": [
     "coffee_shop",
     "bakery",
@@ -7110,6 +7446,7 @@
    "lat": 34.004001,
    "lng": -84.083135,
    "category": "Tea/Boba",
+   "model": "franchise",
    "types": [
     "tea_house"
    ],
@@ -7133,6 +7470,7 @@
    "lat": 33.820755,
    "lng": -84.113833,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -7153,6 +7491,7 @@
    "lat": 34.090381,
    "lng": -84.277169,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery"
    ],
@@ -7172,6 +7511,7 @@
    "lat": 34.060553,
    "lng": -84.304973,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -7191,6 +7531,7 @@
    "lat": 33.885993,
    "lng": -84.008021,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery",
     "bagel_shop",
@@ -7216,6 +7557,7 @@
    "lat": 33.903508,
    "lng": -84.109869,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery",
     "bagel_shop",
@@ -7237,6 +7579,7 @@
    "lat": 33.911867,
    "lng": -84.160949,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery",
     "cafe"
@@ -7257,6 +7600,7 @@
    "lat": 33.825874,
    "lng": -84.119313,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -7276,6 +7620,7 @@
    "lat": 34.039412,
    "lng": -83.92915,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -7295,6 +7640,7 @@
    "lat": 34.063735,
    "lng": -84.252401,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery",
     "dessert_shop"
@@ -7319,6 +7665,7 @@
    "lat": 34.024183,
    "lng": -84.045347,
    "category": "Tea/Boba",
+   "model": "franchise",
    "types": [
     "tea_house"
    ],
@@ -7343,6 +7690,7 @@
    "lat": 33.946272,
    "lng": -84.126838,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -7363,6 +7711,7 @@
    "lat": 33.925116,
    "lng": -84.335822,
    "category": "Coffee",
+   "model": "franchise",
    "types": [
     "cafe",
     "coffee_shop",
@@ -7388,6 +7737,7 @@
    "lat": 33.908473,
    "lng": -84.288454,
    "category": "Coffee",
+   "model": "franchise",
    "types": [
     "coffee_shop",
     "cafe",
@@ -7414,6 +7764,7 @@
    "lat": 33.845702,
    "lng": -84.054454,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -7438,6 +7789,7 @@
    "lat": 34.071452,
    "lng": -84.169231,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery",
     "dessert_shop"
@@ -7458,6 +7810,7 @@
    "lat": 33.976077,
    "lng": -84.217653,
    "category": "Tea/Boba",
+   "model": "independent",
    "types": [
     "tea_house"
    ],
@@ -7482,6 +7835,7 @@
    "lat": 33.927428,
    "lng": -84.348618,
    "category": "Coffee",
+   "model": "franchise",
    "types": [
     "cafe"
    ],
@@ -7501,6 +7855,7 @@
    "lat": 33.947886,
    "lng": -84.083215,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -7524,6 +7879,7 @@
    "lat": 34.024621,
    "lng": -84.361288,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -7544,6 +7900,7 @@
    "lat": 33.925024,
    "lng": -84.346305,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -7563,6 +7920,7 @@
    "lat": 34.038442,
    "lng": -84.342199,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -7583,6 +7941,7 @@
    "lat": 33.908667,
    "lng": -84.353605,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "cafe"
    ],
@@ -7602,6 +7961,7 @@
    "lat": 33.908799,
    "lng": -84.288371,
    "category": "Dessert Cafe",
+   "model": "franchise",
    "types": [
     "dessert_restaurant",
     "coffee_shop",
@@ -7627,6 +7987,7 @@
    "lat": 34.030846,
    "lng": -83.922276,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -7646,6 +8007,7 @@
    "lat": 34.030145,
    "lng": -84.35596,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -7666,6 +8028,7 @@
    "lat": 33.850344,
    "lng": -83.924654,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -7686,6 +8049,7 @@
    "lat": 33.954368,
    "lng": -84.134126,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery",
     "coffee_shop",
@@ -7712,6 +8076,7 @@
    "lat": 34.125022,
    "lng": -84.169102,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -7732,6 +8097,7 @@
    "lat": 34.07177,
    "lng": -83.984966,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -7751,6 +8117,7 @@
    "lat": 33.957773,
    "lng": -83.98989,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe",
@@ -7772,6 +8139,7 @@
    "lat": 34.0491,
    "lng": -84.093334,
    "category": "Coffee",
+   "model": "franchise",
    "types": [
     "coffee_shop",
     "tea_house",
@@ -7793,6 +8161,7 @@
    "lat": 34.074196,
    "lng": -83.986638,
    "category": "Tea/Boba",
+   "model": "franchise",
    "types": [
     "coffee_shop",
     "dessert_shop",
@@ -7820,6 +8189,7 @@
    "lat": 33.929004,
    "lng": -84.33531,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "cafe"
    ],
@@ -7839,6 +8209,7 @@
    "lat": 34.049648,
    "lng": -84.222868,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery",
     "bagel_shop",
@@ -7861,6 +8232,7 @@
    "lat": 33.917153,
    "lng": -84.379877,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "cafe",
     "coffee_shop",
@@ -7886,6 +8258,7 @@
    "lat": 34.002593,
    "lng": -84.171439,
    "category": "Tea/Boba",
+   "model": "independent",
    "types": [
     "tea_house"
    ],
@@ -7909,6 +8282,7 @@
    "lat": 34.003903,
    "lng": -84.085478,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery",
     "coffee_shop",
@@ -7935,6 +8309,7 @@
    "lat": 34.085888,
    "lng": -84.356814,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery",
     "dessert_shop",
@@ -7957,6 +8332,7 @@
    "lat": 34.044909,
    "lng": -84.178319,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery",
     "coffee_shop",
@@ -7979,6 +8355,7 @@
    "lat": 33.95337,
    "lng": -84.235429,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery"
    ],
@@ -8002,6 +8379,7 @@
    "lat": 33.93362,
    "lng": -84.222426,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -8022,6 +8400,7 @@
    "lat": 34.072658,
    "lng": -84.164628,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -8042,6 +8421,7 @@
    "lat": 33.950952,
    "lng": -84.14639,
    "category": "Tea/Boba",
+   "model": "franchise",
    "types": [
     "coffee_shop",
     "cafe",
@@ -8067,6 +8447,7 @@
    "lat": 34.218067,
    "lng": -84.091983,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -8086,6 +8467,7 @@
    "lat": 34.092312,
    "lng": -84.169762,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "bakery",
@@ -8112,6 +8494,7 @@
    "lat": 33.925136,
    "lng": -84.275439,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -8131,6 +8514,7 @@
    "lat": 33.97736,
    "lng": -84.099426,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "cafe",
     "coffee_shop"
@@ -8155,6 +8539,7 @@
    "lat": 33.852923,
    "lng": -84.034306,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery"
    ],
@@ -8174,6 +8559,7 @@
    "lat": 34.075117,
    "lng": -84.361342,
    "category": "Coffee",
+   "model": "franchise",
    "types": [
     "coffee_shop",
     "cafe"
@@ -8194,6 +8580,7 @@
    "lat": 33.925163,
    "lng": -84.381713,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "cafe",
     "tea_house",
@@ -8216,6 +8603,7 @@
    "lat": 34.003332,
    "lng": -84.076189,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -8235,6 +8623,7 @@
    "lat": 33.953079,
    "lng": -84.235773,
    "category": "Dessert Cafe",
+   "model": "independent",
    "types": [
     "dessert_shop"
    ],
@@ -8258,6 +8647,7 @@
    "lat": 34.165154,
    "lng": -84.175719,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery",
     "coffee_shop",
@@ -8280,6 +8670,7 @@
    "lat": 34.069467,
    "lng": -84.278409,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -8300,6 +8691,7 @@
    "lat": 34.002369,
    "lng": -84.075768,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -8321,6 +8713,7 @@
    "lat": 33.914904,
    "lng": -84.361121,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "cafe"
    ],
@@ -8340,6 +8733,7 @@
    "lat": 34.0452,
    "lng": -84.178746,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery"
    ],
@@ -8363,6 +8757,7 @@
    "lat": 34.05149,
    "lng": -83.992115,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery",
     "coffee_shop",
@@ -8389,6 +8784,7 @@
    "lat": 33.975816,
    "lng": -84.159379,
    "category": "Coffee",
+   "model": "franchise",
    "types": [
     "coffee_shop",
     "cafe"
@@ -8414,6 +8810,7 @@
    "lat": 33.916502,
    "lng": -84.349666,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "cafe"
    ],
@@ -8433,6 +8830,7 @@
    "lat": 33.978477,
    "lng": -84.097633,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery"
    ],
@@ -8456,6 +8854,7 @@
    "lat": 34.030563,
    "lng": -84.35373,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery",
     "dessert_shop",
@@ -8478,6 +8877,7 @@
    "lat": 33.908137,
    "lng": -84.363608,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "donut_shop",
     "coffee_shop",
@@ -8501,6 +8901,7 @@
    "lat": 33.940786,
    "lng": -84.361516,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "cafe"
    ],
@@ -8520,6 +8921,7 @@
    "lat": 34.038338,
    "lng": -84.047851,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -8541,6 +8943,7 @@
    "lat": 33.909411,
    "lng": -84.204316,
    "category": "Tea/Boba",
+   "model": "independent",
    "types": [
     "tea_house"
    ],
@@ -8560,6 +8963,7 @@
    "lat": 34.073876,
    "lng": -84.297207,
    "category": "Tea/Boba",
+   "model": "independent",
    "types": [
     "tea_house",
     "coffee_shop",
@@ -8581,6 +8985,7 @@
    "lat": 34.037391,
    "lng": -84.09954,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery"
    ],
@@ -8601,6 +9006,7 @@
    "lat": 33.959699,
    "lng": -84.126396,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -8620,6 +9026,7 @@
    "lat": 34.148318,
    "lng": -84.174019,
    "category": "Coffee",
+   "model": "franchise",
    "types": [
     "coffee_shop",
     "cafe"
@@ -8640,6 +9047,7 @@
    "lat": 33.954553,
    "lng": -84.243408,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -8660,6 +9068,7 @@
    "lat": 33.960703,
    "lng": -84.133883,
    "category": "Tea/Boba",
+   "model": "independent",
    "types": [
     "tea_house"
    ],
@@ -8683,6 +9092,7 @@
    "lat": 33.910348,
    "lng": -84.42486,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "cafe"
    ],
@@ -8702,6 +9112,7 @@
    "lat": 34.074533,
    "lng": -84.293402,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -8722,6 +9133,7 @@
    "lat": 34.069152,
    "lng": -84.297882,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "dessert_shop",
@@ -8749,6 +9161,7 @@
    "lat": 33.969502,
    "lng": -84.14289,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery",
     "coffee_shop",
@@ -8771,6 +9184,7 @@
    "lat": 33.887754,
    "lng": -84.062837,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "bakery",
@@ -8793,6 +9207,7 @@
    "lat": 34.104836,
    "lng": -84.211878,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery",
     "dessert_shop"
@@ -8814,6 +9229,7 @@
    "lat": 33.962144,
    "lng": -84.131705,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery",
     "coffee_shop",
@@ -8836,6 +9252,7 @@
    "lat": 33.986318,
    "lng": -83.98518,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -8855,6 +9272,7 @@
    "lat": 34.022192,
    "lng": -84.149535,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -8874,6 +9292,7 @@
    "lat": 33.92177,
    "lng": -84.383473,
    "category": "Coffee",
+   "model": "franchise",
    "types": [
     "coffee_shop",
     "cafe"
@@ -8894,6 +9313,7 @@
    "lat": 34.185407,
    "lng": -84.14419,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "dessert_shop",
@@ -8915,6 +9335,7 @@
    "lat": 34.09796,
    "lng": -84.17543,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery",
     "cafe"
@@ -8939,6 +9360,7 @@
    "lat": 33.812017,
    "lng": -84.041555,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -8963,6 +9385,7 @@
    "lat": 34.300361,
    "lng": -84.153386,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -8982,6 +9405,7 @@
    "lat": 33.916396,
    "lng": -84.380373,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "cafe"
    ],
@@ -9002,6 +9426,7 @@
    "lat": 33.930816,
    "lng": -84.341615,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery"
    ],
@@ -9021,6 +9446,7 @@
    "lat": 33.963953,
    "lng": -84.03636,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -9040,6 +9466,7 @@
    "lat": 34.027231,
    "lng": -84.042662,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery",
     "cafe"
@@ -9060,6 +9487,7 @@
    "lat": 34.022034,
    "lng": -84.136735,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -9079,6 +9507,7 @@
    "lat": 34.070689,
    "lng": -84.294818,
    "category": "Coffee",
+   "model": "franchise",
    "types": [
     "cafe",
     "coffee_shop",
@@ -9101,6 +9530,7 @@
    "lat": 34.020435,
    "lng": -84.272288,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "donut_shop",
     "coffee_shop",
@@ -9125,6 +9555,7 @@
    "lat": 33.952227,
    "lng": -84.141586,
    "category": "Tea/Boba",
+   "model": "franchise",
    "types": [
     "dessert_shop",
     "tea_house"
@@ -9146,6 +9577,7 @@
    "lat": 33.96079,
    "lng": -84.133928,
    "category": "Tea/Boba",
+   "model": "independent",
    "types": [
     "tea_house"
    ],
@@ -9169,6 +9601,7 @@
    "lat": 34.028155,
    "lng": -84.360104,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "cafe"
    ],
@@ -9188,6 +9621,7 @@
    "lat": 34.043333,
    "lng": -84.053814,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "dessert_restaurant",
@@ -9213,6 +9647,7 @@
    "lat": 33.981123,
    "lng": -84.079502,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery",
     "dessert_shop"
@@ -9233,6 +9668,7 @@
    "lat": 33.927204,
    "lng": -84.381104,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -9252,6 +9688,7 @@
    "lat": 34.03472,
    "lng": -84.184941,
    "category": "Tea/Boba",
+   "model": "independent",
    "types": [
     "tea_house"
    ],
@@ -9272,6 +9709,7 @@
    "lat": 33.918259,
    "lng": -84.200787,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -9291,6 +9729,7 @@
    "lat": 33.910565,
    "lng": -84.380222,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -9310,6 +9749,7 @@
    "lat": 33.906365,
    "lng": -84.292262,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "cafe"
    ],
@@ -9329,6 +9769,7 @@
    "lat": 34.055761,
    "lng": -84.063198,
    "category": "Coffee",
+   "model": "franchise",
    "types": [
     "cafe",
     "dessert_shop"
@@ -9349,6 +9790,7 @@
    "lat": 33.956132,
    "lng": -83.987715,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery",
     "dessert_shop"
@@ -9369,6 +9811,7 @@
    "lat": 33.95858,
    "lng": -83.997826,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -9388,6 +9831,7 @@
    "lat": 33.855058,
    "lng": -84.022329,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -9407,6 +9851,7 @@
    "lat": 33.908056,
    "lng": -84.288056,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery",
     "coffee_shop",
@@ -9429,6 +9874,7 @@
    "lat": 33.889435,
    "lng": -84.00805,
    "category": "Coffee",
+   "model": "franchise",
    "types": [
     "cafe"
    ],
@@ -9448,6 +9894,7 @@
    "lat": 34.004859,
    "lng": -84.083446,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery"
    ],
@@ -9467,6 +9914,7 @@
    "lat": 34.059924,
    "lng": -84.2369,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bagel_shop",
     "coffee_shop",
@@ -9489,6 +9937,7 @@
    "lat": 33.841177,
    "lng": -84.133052,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery",
     "dessert_shop",
@@ -9511,6 +9960,7 @@
    "lat": 34.03917,
    "lng": -84.344404,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -9530,6 +9980,7 @@
    "lat": 34.265184,
    "lng": -84.090918,
    "category": "Coffee",
+   "model": "franchise",
    "types": [
     "coffee_shop",
     "tea_house",
@@ -9551,6 +10002,7 @@
    "lat": 33.921217,
    "lng": -84.010091,
    "category": "Tea/Boba",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe",
@@ -9577,6 +10029,7 @@
    "lat": 33.933026,
    "lng": -84.181516,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -9596,6 +10049,7 @@
    "lat": 33.869923,
    "lng": -83.959438,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -9615,6 +10069,7 @@
    "lat": 34.021644,
    "lng": -84.363712,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "cafe"
    ],
@@ -9635,6 +10090,7 @@
    "lat": 33.946904,
    "lng": -84.123253,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -9655,6 +10111,7 @@
    "lat": 34.021195,
    "lng": -84.317074,
    "category": "Coffee",
+   "model": "franchise",
    "types": [
     "cafe"
    ],
@@ -9678,6 +10135,7 @@
    "lat": 34.169551,
    "lng": -84.185401,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery",
     "bagel_shop",
@@ -9700,6 +10158,7 @@
    "lat": 33.966972,
    "lng": -84.037105,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -9719,6 +10178,7 @@
    "lat": 34.004002,
    "lng": -84.293721,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -9740,6 +10200,7 @@
    "lat": 33.935128,
    "lng": -84.338836,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bagel_shop",
     "bakery"
@@ -9761,6 +10222,7 @@
    "lat": 33.963903,
    "lng": -84.137505,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -9780,6 +10242,7 @@
    "lat": 33.832597,
    "lng": -83.973513,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -9800,6 +10263,7 @@
    "lat": 33.94195,
    "lng": -84.120907,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -9820,6 +10284,7 @@
    "lat": 33.923296,
    "lng": -84.342451,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -9840,6 +10305,7 @@
    "lat": 34.053067,
    "lng": -84.068918,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -9860,6 +10326,7 @@
    "lat": 34.003997,
    "lng": -84.389475,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery",
     "bagel_shop",
@@ -9882,6 +10349,7 @@
    "lat": 34.059226,
    "lng": -84.233872,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "dessert_shop",
     "bakery"
@@ -9906,6 +10374,7 @@
    "lat": 33.921774,
    "lng": -84.378706,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -9927,6 +10396,7 @@
    "lat": 33.960668,
    "lng": -84.132222,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery",
     "cafe"
@@ -9948,6 +10418,7 @@
    "lat": 33.956544,
    "lng": -84.13491,
    "category": "Tea/Boba",
+   "model": "franchise",
    "types": [
     "tea_house"
    ],
@@ -9972,6 +10443,7 @@
    "lat": 33.966042,
    "lng": -84.134429,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -9996,6 +10468,7 @@
    "lat": 34.16472,
    "lng": -84.118931,
    "category": "Coffee",
+   "model": "franchise",
    "types": [
     "coffee_shop",
     "tea_house",
@@ -10018,6 +10491,7 @@
    "lat": 33.962312,
    "lng": -84.135093,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery",
     "coffee_shop",
@@ -10046,6 +10520,7 @@
    "lat": 34.040356,
    "lng": -84.383137,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery",
     "dessert_shop"
@@ -10066,6 +10541,7 @@
    "lat": 34.045252,
    "lng": -84.333482,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery",
     "bagel_shop",
@@ -10091,6 +10567,7 @@
    "lat": 33.890413,
    "lng": -84.007034,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery"
    ],
@@ -10111,6 +10588,7 @@
    "lat": 33.928658,
    "lng": -84.35556,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery"
    ],
@@ -10130,6 +10608,7 @@
    "lat": 34.069408,
    "lng": -84.165612,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery",
     "bagel_shop",
@@ -10152,6 +10631,7 @@
    "lat": 33.943315,
    "lng": -83.990949,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "donut_shop",
     "bakery",
@@ -10173,6 +10653,7 @@
    "lat": 33.916353,
    "lng": -84.380026,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "cafe"
    ],
@@ -10196,6 +10677,7 @@
    "lat": 34.054678,
    "lng": -84.328849,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "dessert_restaurant",
@@ -10222,6 +10704,7 @@
    "lat": 34.073216,
    "lng": -84.29379,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery"
    ],
@@ -10242,6 +10725,7 @@
    "lat": 33.91829,
    "lng": -84.342538,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -10262,6 +10746,7 @@
    "lat": 34.00292,
    "lng": -84.170365,
    "category": "Dessert Cafe",
+   "model": "independent",
    "types": [
     "dessert_shop",
     "tea_house",
@@ -10283,6 +10768,7 @@
    "lat": 33.897682,
    "lng": -83.977691,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -10302,6 +10788,7 @@
    "lat": 34.090985,
    "lng": -84.275067,
    "category": "Tea/Boba",
+   "model": "independent",
    "types": [
     "tea_house"
    ],
@@ -10322,6 +10809,7 @@
    "lat": 33.963289,
    "lng": -84.125076,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery"
    ],
@@ -10346,6 +10834,7 @@
    "lat": 33.940523,
    "lng": -84.213832,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -10366,6 +10855,7 @@
    "lat": 34.071883,
    "lng": -84.168513,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -10386,6 +10876,7 @@
    "lat": 34.060912,
    "lng": -84.389787,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -10406,6 +10897,7 @@
    "lat": 34.048961,
    "lng": -84.340648,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -10425,6 +10917,7 @@
    "lat": 33.918548,
    "lng": -84.255878,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -10444,6 +10937,7 @@
    "lat": 34.023063,
    "lng": -84.044789,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery"
    ],
@@ -10467,6 +10961,7 @@
    "lat": 33.897251,
    "lng": -84.005152,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery"
    ],
@@ -10486,6 +10981,7 @@
    "lat": 34.065841,
    "lng": -84.212114,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery",
     "dessert_restaurant"
@@ -10506,6 +11002,7 @@
    "lat": 33.840964,
    "lng": -84.033636,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -10525,6 +11022,7 @@
    "lat": 34.055642,
    "lng": -84.131115,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -10545,6 +11043,7 @@
    "lat": 33.90105,
    "lng": -84.255817,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -10564,6 +11063,7 @@
    "lat": 34.018008,
    "lng": -84.193174,
    "category": "Tea/Boba",
+   "model": "franchise",
    "types": [
     "tea_house"
    ],
@@ -10587,6 +11087,7 @@
    "lat": 34.052946,
    "lng": -84.122779,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery"
    ],
@@ -10606,6 +11107,7 @@
    "lat": 33.943517,
    "lng": -83.99125,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "cafe"
    ],
@@ -10630,6 +11132,7 @@
    "lat": 33.960078,
    "lng": -84.134353,
    "category": "Dessert Cafe",
+   "model": "independent",
    "types": [
     "dessert_shop"
    ],
@@ -10654,6 +11157,7 @@
    "lat": 33.95127,
    "lng": -84.337532,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery",
     "dessert_shop"
@@ -10674,6 +11178,7 @@
    "lat": 34.17032,
    "lng": -84.181922,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bagel_shop",
     "bakery"
@@ -10694,6 +11199,7 @@
    "lat": 34.020447,
    "lng": -84.273191,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery"
    ],
@@ -10713,6 +11219,7 @@
    "lat": 34.076966,
    "lng": -84.294831,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -10733,6 +11240,7 @@
    "lat": 34.125183,
    "lng": -84.224987,
    "category": "Coffee",
+   "model": "franchise",
    "types": [
     "coffee_shop",
     "tea_house",
@@ -10754,6 +11262,7 @@
    "lat": 34.022593,
    "lng": -83.883524,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -10773,6 +11282,7 @@
    "lat": 33.886666,
    "lng": -84.125349,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -10792,6 +11302,7 @@
    "lat": 34.001442,
    "lng": -84.146361,
    "category": "Coffee",
+   "model": "franchise",
    "types": [
     "coffee_shop",
     "cafe"
@@ -10813,6 +11324,7 @@
    "lat": 33.9565,
    "lng": -84.12836,
    "category": "Tea/Boba",
+   "model": "independent",
    "types": [
     "dessert_restaurant",
     "tea_house"
@@ -10837,6 +11349,7 @@
    "lat": 33.798389,
    "lng": -83.967239,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "cafe"
    ],
@@ -10856,6 +11369,7 @@
    "lat": 34.032412,
    "lng": -84.35172,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -10875,6 +11389,7 @@
    "lat": 34.087577,
    "lng": -84.266607,
    "category": "Tea/Boba",
+   "model": "independent",
    "types": [
     "tea_house"
    ],
@@ -10898,6 +11413,7 @@
    "lat": 34.015657,
    "lng": -84.362984,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "cafe"
    ],
@@ -10917,6 +11433,7 @@
    "lat": 34.074789,
    "lng": -84.292857,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -10936,6 +11453,7 @@
    "lat": 34.023007,
    "lng": -84.251985,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -10955,6 +11473,7 @@
    "lat": 34.075434,
    "lng": -84.295805,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery",
     "coffee_shop",
@@ -10977,6 +11496,7 @@
    "lat": 34.057188,
    "lng": -84.233977,
    "category": "Tea/Boba",
+   "model": "franchise",
    "types": [
     "tea_house"
    ],
@@ -10996,6 +11516,7 @@
    "lat": 33.882357,
    "lng": -83.978433,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -11015,6 +11536,7 @@
    "lat": 34.049682,
    "lng": -83.991831,
    "category": "Tea/Boba",
+   "model": "franchise",
    "types": [
     "tea_house"
    ],
@@ -11038,6 +11560,7 @@
    "lat": 33.93503,
    "lng": -84.377799,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery"
    ],
@@ -11061,6 +11584,7 @@
    "lat": 34.015467,
    "lng": -84.189991,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery",
     "dessert_shop"
@@ -11081,6 +11605,7 @@
    "lat": 33.937526,
    "lng": -84.087981,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -11100,6 +11625,7 @@
    "lat": 33.919332,
    "lng": -84.281967,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -11120,6 +11646,7 @@
    "lat": 34.068225,
    "lng": -84.311751,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "cafe"
    ],
@@ -11139,6 +11666,7 @@
    "lat": 34.033856,
    "lng": -84.349644,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -11158,6 +11686,7 @@
    "lat": 33.94309,
    "lng": -83.991244,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -11177,6 +11706,7 @@
    "lat": 33.964605,
    "lng": -84.16607,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery",
     "dessert_shop"
@@ -11197,6 +11727,7 @@
    "lat": 33.955294,
    "lng": -84.052723,
    "category": "Tea/Boba",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "tea_house",
@@ -11218,6 +11749,7 @@
    "lat": 33.946751,
    "lng": -84.081812,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -11237,6 +11769,7 @@
    "lat": 34.096132,
    "lng": -84.277869,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery",
     "dessert_shop",
@@ -11259,6 +11792,7 @@
    "lat": 33.923404,
    "lng": -84.311516,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -11279,6 +11813,7 @@
    "lat": 34.060205,
    "lng": -84.242583,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "cafe",
     "coffee_shop",
@@ -11306,6 +11841,7 @@
    "lat": 33.963793,
    "lng": -84.119976,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery"
    ],
@@ -11325,6 +11861,7 @@
    "lat": 33.956679,
    "lng": -83.986996,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe",
@@ -11346,6 +11883,7 @@
    "lat": 34.007737,
    "lng": -84.128918,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -11366,6 +11904,7 @@
    "lat": 34.064897,
    "lng": -83.984623,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery"
    ],
@@ -11385,6 +11924,7 @@
    "lat": 34.064107,
    "lng": -83.985568,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -11404,6 +11944,7 @@
    "lat": 34.02094,
    "lng": -84.162508,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -11423,6 +11964,7 @@
    "lat": 34.047924,
    "lng": -84.179158,
    "category": "Tea/Boba",
+   "model": "franchise",
    "types": [
     "tea_house",
     "cafe"
@@ -11448,6 +11990,7 @@
    "lat": 33.949157,
    "lng": -84.334178,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -11469,6 +12012,7 @@
    "lat": 33.933947,
    "lng": -84.352858,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -11489,6 +12033,7 @@
    "lat": 34.236262,
    "lng": -84.228193,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -11508,6 +12053,7 @@
    "lat": 33.956155,
    "lng": -83.988828,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -11528,6 +12074,7 @@
    "lat": 33.890972,
    "lng": -84.119709,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -11547,6 +12094,7 @@
    "lat": 34.012883,
    "lng": -84.183771,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery"
    ],
@@ -11567,6 +12115,7 @@
    "lat": 33.960045,
    "lng": -84.134418,
    "category": "Tea/Boba",
+   "model": "franchise",
    "types": [
     "tea_house"
    ],
@@ -11590,6 +12139,7 @@
    "lat": 34.031588,
    "lng": -84.36101,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -11611,6 +12161,7 @@
    "lat": 33.929071,
    "lng": -84.343083,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery",
     "coffee_shop",
@@ -11633,6 +12184,7 @@
    "lat": 34.099153,
    "lng": -84.2716,
    "category": "Coffee",
+   "model": "franchise",
    "types": [
     "coffee_shop",
     "cafe"
@@ -11653,6 +12205,7 @@
    "lat": 34.056719,
    "lng": -84.128627,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -11673,6 +12226,7 @@
    "lat": 34.0048,
    "lng": -83.986318,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery",
     "dessert_shop",
@@ -11695,6 +12249,7 @@
    "lat": 34.003712,
    "lng": -84.144793,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery",
     "cafe"
@@ -11715,6 +12270,7 @@
    "lat": 33.801777,
    "lng": -84.043864,
    "category": "Bakery+Cafe",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -11734,6 +12290,7 @@
    "lat": 33.897174,
    "lng": -83.961883,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery",
     "dessert_shop",
@@ -11756,6 +12313,7 @@
    "lat": 34.23844,
    "lng": -84.193063,
    "category": "Bakery+Cafe",
+   "model": "franchise",
    "types": [
     "bakery",
     "bagel_shop",
@@ -11778,6 +12336,7 @@
    "lat": 33.877482,
    "lng": -84.021917,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -11798,6 +12357,7 @@
    "lat": 34.030513,
    "lng": -84.188229,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "cafe"
    ],
@@ -11818,6 +12378,7 @@
    "lat": 33.90968,
    "lng": -84.354839,
    "category": "Coffee",
+   "model": "independent",
    "types": [
     "cafe",
     "coffee_shop",
@@ -11840,6 +12401,7 @@
    "lat": 34.00553,
    "lng": -84.297088,
    "category": "Coffee",
+   "model": "franchise",
    "types": [
     "coffee_shop",
     "cafe",

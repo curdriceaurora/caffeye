@@ -215,6 +215,148 @@ def is_chain(name: str) -> bool:
     return any(re.search(r"\b" + re.escape(c) + r"\b", n) for c in CHAINS)
 
 
+# ---- franchise / independent classification ---------------------------------
+LOCATIONS = (
+    "duluth", "alpharetta", "johns creek", "suwanee", "roswell", "sandy springs",
+    "dunwoody", "norcross", "lilburn", "lawrenceville", "snellville", "sugarloaf",
+    "perimeter", "haynes bridge", "buford", "peachtree", "georgia", "ga", "cumming",
+    "doraville", "chamblee", "milton", "crabapple", "loganville", "dacula", "marietta",
+    "woodstock", "canton", "avalon", "sugarloaf plaza", "town center", "drive thru",
+)
+
+FRANCHISE_KEYWORDS = (
+    # Supermarkets / Big box / Grocery in-store bakeries
+    r"\bkroger\b",
+    r"\bwalmart\b",
+    r"\bsam\s*s?\s*club\b",
+    r"\bcostco\b",
+    r"\bwhole foods\b",
+    r"\bpublix\b",
+    r"\btarget\b",
+    r"\bsprouts\b",
+    r"\bh\s*mart\b",
+    r"\btrader joe",
+    r"\bfresh market\b",
+    r"\bingles\b",
+    r"\blidl\b",
+    r"\baldi\b",
+    r"\bbj\s*s\s*wholesale\b",
+    # Coffee franchises / national & regional chains
+    r"\bcaribou\b",
+    r"\b(the\s+)?human bean\b",
+    r"\bellianos\b",
+    r"\b7\s*brew\b",
+    r"\bjust love coffee\b",
+    r"\bscooter\s*s?\b",
+    r"\bdutch bros\b",
+    r"\bbiggby\b",
+    r"\bbad ass coffee\b",
+    r"\bpj\s*s\s*coffee\b",
+    r"\bsummit coffee\b",
+    r"\baroma espresso\b",
+    r"\bdunkin\b",
+    r"\bstarbucks\b",
+    r"\btim hortons\b",
+    r"\bpanera\b",
+    r"\beinstein bros\b",
+    r"\bpeet\s*s\b",
+    r"\bblack rifle\b",
+    r"\bziggi\s*s\b",
+    r"\bland of a thousand hills\b",
+    r"\bqamaria\b",
+    r"\btom n toms\b",
+    r"\bcafe intermezzo\b",
+    # Bakery / treat franchises / chains
+    r"\bcrumbl\b",
+    r"\bparis baguette\b",
+    r"\btous les jours\b",
+    r"\bcinnabon\b",
+    r"\bgreat harvest\b",
+    r"\bjeff\s*s?\s*bagel\b",
+    r"\bduck donuts\b",
+    r"\bmochinut\b",
+    r"\bnothing bundt\b",
+    r"\bwetzel\s*s?\b",
+    r"\bauntie anne\b",
+    r"\bshipley\b",
+    r"\ble macaron\b",
+    r"\bbeard papa\b",
+    r"\bfluffy fluffy\b",
+    r"\bsmallcakes\b",
+    r"\bcinnaholic\b",
+    r"\btiff\s*s?\s*treats\b",
+    r"\brising roll\b",
+    r"\bda\s*vinci\s*s?\s*donuts\b",
+    r"\batlanta bread\b",
+    r"\bcorner bakery\b",
+    r"\byonutz\b",
+    # Tea / Boba franchises & chains
+    r"\bkung fu tea\b",
+    r"\bgong cha\b",
+    r"\bsharetea\b",
+    r"\btiger sugar\b",
+    r"\bding tea\b",
+    r"\bhappy lemon\b",
+    r"\bt[\s-]?swirl\b",
+    r"\bonezo\b",
+    r"\bchicha san chen\b",
+    r"\bxing fu tang\b",
+    r"\bmatcha cafe maiko\b",
+    r"\bkokee\b",
+    r"\bquickly\s*s?\b",
+    r"\bchatime\b",
+    r"\bvivi bubble tea\b",
+    r"\bteaspoon\b",
+    r"\bfeng cha\b",
+    r"\bmeet fresh\b",
+    r"\bmolly tea\b",
+    r"\b7 leaves\b",
+    r"\bbobaology\b",
+    r"\bbubbleology\b",
+    r"\bzero\s*degrees\b",
+    r"\btapioca express\b",
+    r"\bit\s*s boba time\b",
+    r"\bboba time\b",
+    r"\byifang\b",
+    r"\bhey\s*tea\b",
+    r"\bsunright\b",
+    r"\btaichi bubble tea\b",
+    r"\btea top\b",
+    r"\bkomma tea\b",
+    # Regional GA chains / multi-unit bakery cafes
+    r"\bsweet hut\b",
+    r"\b(cafe\s+)?mozart\b",
+    r"\bhansel\b.*\bgretel\b",
+    r"\bwhite windmill\b",
+    r"\bcuckoo\s*s?\b",
+    r"\bvincent bakery\b",
+    r"\bbagel boys\b",
+    r"\b101 bagel\b",
+    r"\bsarah\s*s?\s*donuts?\b",
+    r"\bsara\s*s?\s*donuts?\b",
+    r"\bpearl\s*s?\s*tea\b",
+)
+
+
+def clean_brand(name: str) -> str:
+    n = norm(name)
+    n = re.sub(r"\b\d+\b", "", n)
+    for loc in LOCATIONS:
+        n = re.sub(r"\b" + re.escape(loc) + r"\b", "", n)
+    return re.sub(r"\s+", " ", n).strip()
+
+
+def model_for(name: str, brand_counts=None) -> str:
+    """'franchise' for national/regional chains and multi-location brands, else 'independent'."""
+    n = norm(name)
+    for pat in FRANCHISE_KEYWORDS:
+        if re.search(pat, n):
+            return "franchise"
+    if brand_counts and brand_counts.get(clean_brand(name), 0) >= 3:
+        return "franchise"
+    return "independent"
+
+
 # ---- derived fields ---------------------------------------------------------
 _AMPM = re.compile(r"(\d{1,2})(?::(\d{2}))?\s*(AM|PM)", re.I)
 
@@ -316,7 +458,7 @@ def late_for(periods):
     return {"tier": "midnight" if midnight else "10pm+", "when": when}
 
 
-def to_record(place: dict):
+def to_record(place: dict, brand_counts=None):
     """(record, None) for an in-scope place, else (None, reason)."""
     status = place.get("businessStatus") or "OPERATIONAL"
     if status != "OPERATIONAL":
@@ -360,6 +502,7 @@ def to_record(place: dict):
             "lat": round(float(lat), 6),
             "lng": round(float(lng), 6),
             "category": category,
+            "model": model_for(name, brand_counts),
             "types": [t for t in place.get("types") or [] if t in CATEGORY_BY_PRIMARY],
             "rating": round(float(place["rating"]), 1)
             if place.get("rating") is not None
@@ -379,12 +522,16 @@ def to_record(place: dict):
 
 def build_places(raw: dict, exclude_ids=frozenset()):
     """raw: {placeId: place} -> (records sorted by placeId, stats)."""
+    brand_counts = Counter(
+        clean_brand((p.get("displayName") or {}).get("text", ""))
+        for p in raw.values()
+    )
     recs, dropped = [], Counter()
     for pid, place in raw.items():
         if pid in exclude_ids:
             dropped["excluded"] += 1
             continue
-        rec, reason = to_record(place)
+        rec, reason = to_record(place, brand_counts)
         if rec is None:
             dropped[reason] += 1
             continue
@@ -511,6 +658,8 @@ def report(recs, stats, curated, raw) -> None:
     print(
         f"\nkept {stats['kept']}; dropped: {json.dumps(stats['dropped'], sort_keys=True)}"
     )
+    by_model = Counter(r["model"] for r in recs)
+    print(f"models: {by_model.get('independent', 0)} independent · {by_model.get('franchise', 0)} franchise")
     seen = set(raw)
     unseen = [
         s["name"] for s in curated if s.get("placeId") and s["placeId"] not in seen

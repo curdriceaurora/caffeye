@@ -125,8 +125,8 @@ recovery, not just the threshold function in isolation.
 | T4.1 | R4.1 | `js> document.querySelectorAll('#categoryChips .chip').length` | `6` (All + 5 categories) |
 | T4.2 | R4.1 | Each category chip displays its emoji + label + count; sum of category counts = `SHOPS.length`. | Recount per the live build; the five counts must sum to `SHOPS.length` (61 as of Sept 2026). |
 | T4.3 | R4.2 | Click "All". `js> [...document.querySelectorAll('#categoryChips .chip')][0].classList.contains('active')` | `true` |
-| T4.4 | R4.3 | `js> document.querySelectorAll('#featureChips .chip').length` | `4` |
-| T4.5 | R4.3 | Feature chip text matches `['💻Work-friendly{n}', '🤝Meeting room{n}', '🌙Open late{n}', '🦉Until midnight{n}']` (spaces normalized). | All four present. |
+| T4.4 | R4.3 | `js> document.querySelectorAll('#featureChips .chip').length` | `6` (Indie, Franchise, plus 4 features) |
+| T4.5 | R4.3 | Feature chip text matches `['🌱Indie{n}', '🏢Franchise{n}', '💻Work-friendly{n}', '🤝Meeting room{n}', '🌙Open late{n}', '🦉Until midnight{n}']` (spaces normalized). | All six present. |
 | T4.6 | R4.4 | Click "Coffee" then "Work-friendly". `js> document.querySelectorAll('.shop-item').length` | Returns count of Coffee × Work-friendly intersection. |
 | T4.7 | R4.5 | Search the page DOM for "Past midnight". | Returns no matches. |
 | T4.8 | R4.6 | `js> !document.getElementById('sortSelect')` | `true` |
@@ -134,6 +134,8 @@ recovery, not just the threshold function in isolation.
 | T4.10 | R4.7 | On multi-county data with no county selected: `js> document.querySelectorAll('#locationChips .chip').length` | Equals `COUNTIES.length + 1` (just the county chips: "All counties" + one per county) — City chips are not shown yet. County ⊇ City, so showing every city across every county at the same time as every county is redundant, and was measured to cost mobile a visible card (see T8.x). |
 | T4.11 | R4.7 | `js> selectCounty('Gwinnett'); document.getElementById('resultsCount').textContent === String(SHOPS.filter(s => s.county === 'Gwinnett').length)` | `true` — and City chips now appear (drilled down to Gwinnett's cities only), separated from the county chips by a `.chip-divider`. |
 | T4.12 | R4.7 | County and City chips are both children of one `#locationChips` container (a single flex-wrap sequence), not two separately-wrapping sub-containers. | Splitting one row's width between two independently-wrapping boxes was measured to wrap *more* than the combined content needs (74px vs. 48px tall at 375px, same chip set) — packing them as one sequence fixes it. |
+| T4.13 | R4.8 | Click "🌱 Indie". Check `document.querySelectorAll('.shop-item').length`. | Matches count on Indie chip; all rendered cards have `.model-tag.indie`. |
+| T4.14 | R4.8 | Click "🏢 Franchise". Check `document.querySelectorAll('.shop-item').length`. | Matches count on Franchise chip; all rendered cards have `.model-tag.franchise`. |
 
 ## T5. Right-side list (R5)
 

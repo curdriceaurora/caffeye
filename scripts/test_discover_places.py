@@ -134,6 +134,40 @@ class LateTests(unittest.TestCase):
         self.assertIsNone(D.late_for([]))
 
 
+class ModelTests(unittest.TestCase):
+    def test_national_and_regional_franchises_identified(self):
+        self.assertEqual(D.model_for("Sweet Hut Bakery & Cafe"), "franchise")
+        self.assertEqual(D.model_for("Cafe Mozart Bakery"), "franchise")
+        self.assertEqual(D.model_for("Paris Baguette"), "franchise")
+        self.assertEqual(D.model_for("TOUS les JOURS Bakery Café - Doraville"), "franchise")
+        self.assertEqual(D.model_for("Kung Fu Tea"), "franchise")
+        self.assertEqual(D.model_for("Ding Tea Duluth"), "franchise")
+        self.assertEqual(D.model_for("Crumbl Cookies"), "franchise")
+        self.assertEqual(D.model_for("Kroger Bakery"), "franchise")
+        self.assertEqual(D.model_for("Sam's Club Bakery"), "franchise")
+        self.assertEqual(D.model_for("The Human Bean"), "franchise")
+        self.assertEqual(D.model_for("Hansel & Gretel Bakery Cafe"), "franchise")
+        self.assertEqual(D.model_for("White Windmill Bakery & Cafe"), "franchise")
+        self.assertEqual(D.model_for("Land of a Thousand Hills Coffee"), "franchise")
+
+    def test_independent_cafes_identified(self):
+        self.assertEqual(D.model_for("TwoHa's Cafe"), "independent")
+        self.assertEqual(D.model_for("Yibna Cafe"), "independent")
+        self.assertEqual(D.model_for("The Cream"), "independent")
+        self.assertEqual(D.model_for("Alchemist On the Divide"), "independent")
+        self.assertEqual(D.model_for("Ginkgo Bakery & Cafe"), "independent")
+        self.assertEqual(D.model_for("Boba Mocha"), "independent")
+
+    def test_multi_location_brand_frequency(self):
+        brand_counts = Counter({"tier couture bakery": 3, "valor coffee": 2})
+        # 3 locations -> franchise
+        self.assertEqual(
+            D.model_for("Tier Couture Bakery Norcross", brand_counts), "franchise"
+        )
+        # 2 locations without franchise keyword -> independent
+        self.assertEqual(D.model_for("Valor Coffee", brand_counts), "independent")
+
+
 class RecordTests(unittest.TestCase):
     def test_sweet_hut_record(self):
         rec, reason = D.to_record(BY_NAME["Sweet Hut Bakery & Cafe"])
@@ -143,6 +177,7 @@ class RecordTests(unittest.TestCase):
         self.assertEqual(rec["city"], "Duluth")
         self.assertEqual(rec["county"], "Gwinnett")
         self.assertEqual(rec["category"], "Bakery+Cafe")
+        self.assertEqual(rec["model"], "franchise")
         self.assertEqual(rec["rating"], 4.5)
         self.assertEqual(rec["ratingNum"], 3767)
         self.assertEqual(rec["ratingCount"], "3,767")
@@ -163,6 +198,7 @@ class RecordTests(unittest.TestCase):
                 "lat",
                 "lng",
                 "category",
+                "model",
                 "types",
                 "rating",
                 "ratingNum",
@@ -177,6 +213,7 @@ class RecordTests(unittest.TestCase):
     def test_boba_mocha_is_tea(self):
         rec, _ = D.to_record(BY_NAME["Boba Mocha"])
         self.assertEqual(rec["category"], "Tea/Boba")
+        self.assertEqual(rec["model"], "independent")
 
     def test_brunch_restaurant_dropped(self):
         rec, reason = D.to_record(BY_NAME["Cafe 104"])

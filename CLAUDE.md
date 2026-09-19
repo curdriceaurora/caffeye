@@ -44,13 +44,13 @@ wrangler deploy
 
 ## Editing the data
 
-All curated data lives in `public/shops.json` (v4 schema). `index.html` only carries the rendering shell — it fetches `shops.json` on boot and hydrates the in-memory globals.
+All curated data lives in `public/shops.json` (v5 schema). `index.html` only carries the rendering shell — it fetches `shops.json` on boot and hydrates the in-memory globals.
 
 The schema:
 
 ```jsonc
 {
-  "version": 4,
+  "version": 5,
   "regionLabel": "Duluth",       // shown when no single city is active
   "checkedMonth": "May 2026",
   "cities": ["Duluth"],          // list grows as new cities are added
@@ -59,6 +59,7 @@ The schema:
       "name": "...",
       "city": "Duluth",
       "county": "Fulton",        // optional; omit for single-region data. Drives the County chip row.
+      "model": "independent|franchise", // independent local spot or franchise/chain location
       "addrKey": "duluth-2180-pleasanthill",  // city-prefixed to prevent cross-city collisions
       "address": "...",          // full text address
       "category": "...",         // must exist in CATS in index.html
