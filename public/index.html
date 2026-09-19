@@ -168,6 +168,7 @@
   .shop-meta .score { color: var(--accent); font-weight: 600; }
   .shop-tags { font-size: 11.5px; color: var(--muted); line-height: 1.4; }
   .shop-tags .tag-sep { color: var(--border-strong); margin: 0 4px; }
+  .curated-tag { color: var(--c-work); font-weight: 600; white-space: nowrap; }
 
   .detail-view {
     position: absolute; inset: 0;
@@ -396,23 +397,50 @@ const CATS = {
 
 let SHOPS, ADDR, NEIGHBORHOODS, CITIES, COUNTIES, REGION_LABEL, CHECKED_MONTH;
 
-fetch('./shops.json')
-  .then(r => r.json())
-  .then(data => {
-    SHOPS = data.shops;
-    ADDR = data.addr;
-    NEIGHBORHOODS = data.neighborhoods;
-    CITIES = data.cities || ['Duluth'];
-    // Counties are optional (older single-region datasets omit them); derive
-    // from the shops themselves so a `counties` array in shops.json isn't required.
-    COUNTIES = data.counties || Array.from(new Set(SHOPS.map(s => s.county).filter(Boolean))).sort();
-    REGION_LABEL = data.regionLabel || (CITIES.length === 1 ? CITIES[0] : 'Duluth & Nearby');
-    CHECKED_MONTH = data.checkedMonth || '';
-    boot();
-  })
-  .catch(err => {
-    document.body.innerHTML = '<div style="padding:40px;font-family:Inter,sans-serif;color:#1f1f1f">Failed to load shop data. Try refreshing.<br><br><code>' + (err && err.message ? err.message : err) + '</code></div>';
-  });
+Promise.allSettled([
+  fetch('./shops.json').then(r => {
+    if (!r.ok) throw new Error('Failed to load shops.json: ' + r.status);
+    return r.json();
+  }),
+  fetch('./places.json').then(r => {
+    if (!r.ok) return null;
+    return r.json();
+  }).catch(() => null)
+])
+.then(([shopsRes, placesRes]) => {
+  const shopsData = shopsRes.status === 'fulfilled' ? shopsRes.value : null;
+  const placesData = placesRes.status === 'fulfilled' ? placesRes.value : null;
+  if (!shopsData && !placesData) throw new Error('Failed to load shop data.');
+
+  SHOPS = (shopsData && shopsData.shops) ? shopsData.shops.map(s => ({ ...s, curated: s.curated !== false })) : [];
+  ADDR = (shopsData && shopsData.addr) ? { ...shopsData.addr } : {};
+  NEIGHBORHOODS = (shopsData && shopsData.neighborhoods) ? { ...shopsData.neighborhoods } : {};
+
+  const seenPlaceIds = new Set(SHOPS.map(s => s.placeId).filter(Boolean));
+
+  if (placesData && Array.isArray(placesData.places)) {
+    placesData.places.forEach(p => {
+      if (p.placeId && seenPlaceIds.has(p.placeId)) return;
+      const addrKey = `place-${p.placeId}`;
+      ADDR[addrKey] = { lat: p.lat, lng: p.lng };
+      NEIGHBORHOODS[addrKey] = p.neighborhood || p.city;
+      SHOPS.push({
+        ...p,
+        addrKey: addrKey,
+        curated: false
+      });
+    });
+  }
+
+  CITIES = Array.from(new Set(SHOPS.map(s => s.city).filter(Boolean))).sort();
+  COUNTIES = (placesData && placesData.region && placesData.region.counties) || (shopsData && shopsData.counties) || Array.from(new Set(SHOPS.map(s => s.county).filter(Boolean))).sort();
+  REGION_LABEL = (placesData && placesData.region && placesData.region.label) || (shopsData && shopsData.regionLabel) || (CITIES.length === 1 ? CITIES[0] : 'North Atlanta');
+  CHECKED_MONTH = (shopsData && shopsData.checkedMonth) || (placesData && placesData.checkedMonth) || '';
+  boot();
+})
+.catch(err => {
+  document.body.innerHTML = '<div style="padding:40px;font-family:Inter,sans-serif;color:#1f1f1f">Failed to load shop data. Try refreshing.<br><br><code>' + (err && err.message ? err.message : err) + '</code></div>';
+});
 
 function boot() {
   // DERIVED
@@ -422,8 +450,8 @@ function boot() {
     if (key && ADDR[key]) { s.lat = ADDR[key].lat; s.lng = ADDR[key].lng; }
     // Include city slug in the id so the same shop name in two cities
     // never collides on DOM data-id or selection lookups.
-    s.id = slug(s.city || 'duluth') + '-' + slug(s.name);
-    s.neighborhood = NEIGHBORHOODS[key] || s.city || "Duluth";
+    s.id = s.placeId || (slug(s.city || 'duluth') + '-' + slug(s.name));
+    s.neighborhood = s.neighborhood || NEIGHBORHOODS[key] || s.city || "Duluth";
   });
 
   // Multiple shops can sit at the exact same building. Without offsetting,
@@ -1045,9 +1073,10 @@ function boot() {
       const ratingHtml = shop.rated
         ? `<span class="score">◆ ${shop.scoreText}</span>`
         : `<span class="muted">no rating</span>`;
+      const curatedTag = shop.curated ? ' · <span class="curated-tag">✔ curated</span>' : '';
       li.innerHTML = `
-        <div class="shop-name"><span class="shop-icon-tile" style="background:${catColor}">${catIcon}</span>${shop.name}</div>
-        <div class="shop-meta">${shop.category.replace('+', ' & ')} · ${ratingHtml} · ${shop.neighborhood}</div>
+        <div class="shop-name"><span class="shop-icon-tile" style="background:${catColor}">${catIcon}</span>${escapeHtml(shop.name)}</div>
+        <div class="shop-meta">${shop.category.replace('+', ' & ')} · ${ratingHtml} · ${escapeHtml(shop.neighborhood)}${curatedTag}</div>
         <div class="shop-tags">${tagsHtml}</div>
       `;
       
@@ -1090,51 +1119,59 @@ function boot() {
 
   function renderDetail(shop) {
     const cat = CATS[shop.category] || {};
-    const cw = shop.cw;
+    const cw = shop.cw && shop.cw.tier ? shop.cw : null;
     const ln = shop.late;
     const site = shop.website;
     const host = websiteHost(site);
     const bft = bestForTags(shop);
+    const loved = shop.loved || [];
     const ratingHtml = shop.rated
       ? `<span class="score">◆ ${shop.scoreText}</span><span class="score-label">weighted score</span>` +
-        `<span class="google">Google <span class="star">★</span> ${shop.ratingText} · ${shop.ratingCount} reviews</span>`
+        `<span class="google">Google <span class="star">★</span> ${shop.ratingText}${shop.ratingCount ? ' · ' + shop.ratingCount + ' reviews' : ''}</span>`
       : `<span class="muted">No public rating yet</span>`;
+    const curatedTag = shop.curated ? ' · <span class="curated-tag">✔ curated</span>' : '';
 
     let html = `
       <button class="back-btn" id="backBtn">← Back to list</button>
       <div class="detail-header">
-        <div class="detail-cat"><span class="dot" style="background:${cat.hex}"></span>${shop.category.replace('+',' & ')} · ${shop.neighborhood}</div>
-        <h2 class="detail-name">${shop.name}</h2>
+        <div class="detail-cat"><span class="dot" style="background:${cat.hex || '#999'}"></span>${shop.category.replace('+',' & ')} · ${escapeHtml(shop.neighborhood)}${curatedTag}</div>
+        <h2 class="detail-name">${escapeHtml(shop.name)}</h2>
         <div class="detail-rating">${ratingHtml}</div>
       </div>
-      <div class="detail-section">
-        <div class="detail-text">${shop.usp}</div>
-      </div>
     `;
+    if (shop.usp) {
+      html += `
+        <div class="detail-section">
+          <div class="detail-text">${escapeHtml(shop.usp)}</div>
+        </div>
+      `;
+    }
     if (bft.length) {
       html += `<div class="detail-section">
         <div class="detail-section-label">Best for</div>
         <div class="tag-row">${bft.map(t => `<span class="pill-tag feature ${t.cls}">${t.icon ? t.icon + ' ' : ''}${t.label}</span>`).join('')}</div>
       </div>`;
     }
-    html += `<div class="detail-section">
-      <div class="detail-section-label">Known for</div>
-      <div class="tag-row">${(shop.loved || []).map(l => `<span class="pill-tag">${l}</span>`).join('')}</div>
-      <div class="detail-text-muted" style="margin-top:8px;">Try the <b>${shop.signature}</b>.</div>
-    </div>`;
+    if (loved.length || shop.signature) {
+      html += `<div class="detail-section">
+        <div class="detail-section-label">Known for</div>
+        ${loved.length ? `<div class="tag-row">${loved.map(l => `<span class="pill-tag">${escapeHtml(l)}</span>`).join('')}</div>` : ''}
+        ${shop.signature ? `<div class="detail-text-muted" style="margin-top:8px;">Try the <b>${escapeHtml(shop.signature)}</b>.</div>` : ''}
+      </div>`;
+    }
     html += `<div class="detail-section">
       <div class="detail-section-label">Location & hours</div>
-      <div class="detail-text-muted">${shop.address}</div>
-      <div class="detail-text-muted" style="margin-top:4px;">${shop.hours}</div>
+      <div class="detail-text-muted">${escapeHtml(shop.address || '')}</div>
+      ${shop.hours ? `<div class="detail-text-muted" style="margin-top:4px;">${escapeHtml(shop.hours)}</div>` : ''}
     </div>`;
     if (cw) {
       const tierLabel = { excellent: 'Coworking-ready', good: 'Workable', limited: 'Quick-grab' }[cw.tier];
       html += `<div class="detail-section">
         <div class="detail-section-label">Coworking</div>
-        <div class="detail-text"><b>${tierLabel}.</b> ${cw.note}</div>
+        <div class="detail-text"><b>${tierLabel}.</b> ${escapeHtml(cw.note || '')}</div>
         ${cw.hasMeetingRoom ? `<div class="callout">
           <div class="callout-label">Meeting room</div>
-          <div class="callout-text">${cw.meetingRoomNote || 'Private/meeting room available on demand'}</div>
+          <div class="callout-text">${escapeHtml(cw.meetingRoomNote || 'Private/meeting room available on demand')}</div>
         </div>` : ''}
       </div>`;
     }
@@ -1142,14 +1179,16 @@ function boot() {
       const lnLabel = ln.tier === 'midnight' ? 'Open until midnight' : 'Open till 10pm+';
       html += `<div class="detail-section">
         <div class="detail-section-label">Late-night</div>
-        <div class="detail-text"><b>${lnLabel}.</b> ${ln.when}</div>
+        <div class="detail-text"><b>${lnLabel}.</b> ${escapeHtml(ln.when || '')}</div>
       </div>`;
     }
-    html += `<div class="actions">
-      <a class="action-btn" href="${shop.googleUrl}" target="_blank" rel="noopener">Google Maps</a>
-      <a class="action-btn" href="${shop.yelpUrl}" target="_blank" rel="noopener">Yelp</a>
-      ${site ? `<a class="action-btn" href="${site}" target="_blank" rel="noopener">${host}</a>` : ''}
-    </div>`;
+    const actions = [];
+    if (shop.googleUrl) actions.push(`<a class="action-btn" href="${shop.googleUrl}" target="_blank" rel="noopener">Google Maps</a>`);
+    if (shop.yelpUrl) actions.push(`<a class="action-btn" href="${shop.yelpUrl}" target="_blank" rel="noopener">Yelp</a>`);
+    if (site) actions.push(`<a class="action-btn" href="${site}" target="_blank" rel="noopener">${host}</a>`);
+    if (actions.length) {
+      html += `<div class="actions">${actions.join('')}</div>`;
+    }
     detailEl.innerHTML = html;
     document.getElementById('backBtn').addEventListener('click', deselectShop);
   }

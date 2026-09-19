@@ -1,0 +1,821 @@
+{
+ "places": [
+  {
+   "id": "ChIJq48l3QSj9YgRTgBKaRBsqdU",
+   "displayName": {
+    "text": "Sweet Hut Bakery & Cafe",
+    "languageCode": "en"
+   },
+   "formattedAddress": "Beechwood Promenade, 2180 Pleasant Hill Rd Suite 18, Duluth, GA 30096, USA",
+   "addressComponents": [
+    {
+     "longText": "Beechwood Promenade",
+     "languageCode": "en"
+    },
+    {
+     "longText": "Suite 18",
+     "shortText": "Suite 18",
+     "types": [
+      "subpremise"
+     ],
+     "languageCode": "en"
+    },
+    {
+     "longText": "2180",
+     "shortText": "2180",
+     "types": [
+      "street_number"
+     ],
+     "languageCode": "en-US"
+    },
+    {
+     "longText": "Pleasant Hill Road",
+     "shortText": "Pleasant Hill Rd",
+     "types": [
+      "route"
+     ],
+     "languageCode": "en"
+    },
+    {
+     "longText": "Gwinnett Place",
+     "shortText": "Gwinnett Place",
+     "types": [
+      "neighborhood",
+      "political"
+     ],
+     "languageCode": "en"
+    },
+    {
+     "longText": "Duluth",
+     "shortText": "Duluth",
+     "types": [
+      "locality",
+      "political"
+     ],
+     "languageCode": "en"
+    },
+    {
+     "longText": "Gwinnett County",
+     "shortText": "Gwinnett County",
+     "types": [
+      "administrative_area_level_2",
+      "political"
+     ],
+     "languageCode": "en"
+    },
+    {
+     "longText": "Georgia",
+     "shortText": "GA",
+     "types": [
+      "administrative_area_level_1",
+      "political"
+     ],
+     "languageCode": "en"
+    },
+    {
+     "longText": "United States",
+     "shortText": "US",
+     "types": [
+      "country",
+      "political"
+     ],
+     "languageCode": "en"
+    },
+    {
+     "longText": "30096",
+     "shortText": "30096",
+     "types": [
+      "postal_code"
+     ],
+     "languageCode": "en-US"
+    }
+   ],
+   "location": {
+    "latitude": 33.962312499999996,
+    "longitude": -84.1350932
+   },
+   "primaryType": "bakery",
+   "types": [
+    "bakery",
+    "donut_shop",
+    "tea_house",
+    "sandwich_shop",
+    "coffee_shop",
+    "cafe",
+    "dessert_shop",
+    "confectionery",
+    "food_store",
+    "store",
+    "restaurant",
+    "food",
+    "point_of_interest",
+    "establishment"
+   ],
+   "rating": 4.5,
+   "userRatingCount": 3767,
+   "regularOpeningHours": {
+    "openNow": true,
+    "periods": [
+     {
+      "open": {
+       "day": 0,
+       "hour": 10,
+       "minute": 0
+      },
+      "close": {
+       "day": 0,
+       "hour": 22,
+       "minute": 0
+      }
+     },
+     {
+      "open": {
+       "day": 1,
+       "hour": 10,
+       "minute": 0
+      },
+      "close": {
+       "day": 1,
+       "hour": 22,
+       "minute": 0
+      }
+     },
+     {
+      "open": {
+       "day": 2,
+       "hour": 10,
+       "minute": 0
+      },
+      "close": {
+       "day": 2,
+       "hour": 22,
+       "minute": 0
+      }
+     },
+     {
+      "open": {
+       "day": 3,
+       "hour": 10,
+       "minute": 0
+      },
+      "close": {
+       "day": 3,
+       "hour": 22,
+       "minute": 0
+      }
+     },
+     {
+      "open": {
+       "day": 4,
+       "hour": 10,
+       "minute": 0
+      },
+      "close": {
+       "day": 4,
+       "hour": 22,
+       "minute": 0
+      }
+     },
+     {
+      "open": {
+       "day": 5,
+       "hour": 10,
+       "minute": 0
+      },
+      "close": {
+       "day": 5,
+       "hour": 23,
+       "minute": 0
+      }
+     },
+     {
+      "open": {
+       "day": 6,
+       "hour": 10,
+       "minute": 0
+      },
+      "close": {
+       "day": 6,
+       "hour": 23,
+       "minute": 0
+      }
+     }
+    ],
+    "weekdayDescriptions": [
+     "Monday: 10:00 AM – 10:00 PM",
+     "Tuesday: 10:00 AM – 10:00 PM",
+     "Wednesday: 10:00 AM – 10:00 PM",
+     "Thursday: 10:00 AM – 10:00 PM",
+     "Friday: 10:00 AM – 11:00 PM",
+     "Saturday: 10:00 AM – 11:00 PM",
+     "Sunday: 10:00 AM – 10:00 PM"
+    ],
+    "nextCloseTime": "2026-09-17T02:00:00Z"
+   },
+   "websiteUri": "https://www.sweethutbakery.com/locations/duluth",
+   "googleMapsUri": "https://maps.google.com/?cid=15395955618884485198&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "businessStatus": "OPERATIONAL"
+  },
+  {
+   "id": "ChIJWbYMlFSi9YgReTXKTrCaHUM",
+   "displayName": {
+    "text": "Boba Mocha",
+    "languageCode": "en"
+   },
+   "formattedAddress": "2628 Pleasant Hill Rd #100, Duluth, GA 30096, USA",
+   "addressComponents": [
+    {
+     "longText": "100",
+     "shortText": "100",
+     "types": [
+      "subpremise"
+     ],
+     "languageCode": "en"
+    },
+    {
+     "longText": "2628",
+     "shortText": "2628",
+     "types": [
+      "street_number"
+     ],
+     "languageCode": "en-US"
+    },
+    {
+     "longText": "Pleasant Hill Road",
+     "shortText": "Pleasant Hill Rd",
+     "types": [
+      "route"
+     ],
+     "languageCode": "en"
+    },
+    {
+     "longText": "Duluth",
+     "shortText": "Duluth",
+     "types": [
+      "locality",
+      "political"
+     ],
+     "languageCode": "en"
+    },
+    {
+     "longText": "Gwinnett County",
+     "shortText": "Gwinnett County",
+     "types": [
+      "administrative_area_level_2",
+      "political"
+     ],
+     "languageCode": "en"
+    },
+    {
+     "longText": "Georgia",
+     "shortText": "GA",
+     "types": [
+      "administrative_area_level_1",
+      "political"
+     ],
+     "languageCode": "en"
+    },
+    {
+     "longText": "United States",
+     "shortText": "US",
+     "types": [
+      "country",
+      "political"
+     ],
+     "languageCode": "en"
+    },
+    {
+     "longText": "30096",
+     "shortText": "30096",
+     "types": [
+      "postal_code"
+     ],
+     "languageCode": "en-US"
+    }
+   ],
+   "location": {
+    "latitude": 33.9715156,
+    "longitude": -84.1476436
+   },
+   "primaryType": "tea_house",
+   "types": [
+    "tea_house",
+    "coffee_shop",
+    "cafe",
+    "food_store",
+    "store",
+    "food",
+    "point_of_interest",
+    "establishment"
+   ],
+   "rating": 4.6,
+   "userRatingCount": 1065,
+   "regularOpeningHours": {
+    "openNow": true,
+    "periods": [
+     {
+      "open": {
+       "day": 0,
+       "hour": 11,
+       "minute": 0
+      },
+      "close": {
+       "day": 0,
+       "hour": 22,
+       "minute": 30
+      }
+     },
+     {
+      "open": {
+       "day": 1,
+       "hour": 11,
+       "minute": 0
+      },
+      "close": {
+       "day": 1,
+       "hour": 22,
+       "minute": 30
+      }
+     },
+     {
+      "open": {
+       "day": 2,
+       "hour": 11,
+       "minute": 0
+      },
+      "close": {
+       "day": 2,
+       "hour": 22,
+       "minute": 30
+      }
+     },
+     {
+      "open": {
+       "day": 3,
+       "hour": 11,
+       "minute": 0
+      },
+      "close": {
+       "day": 3,
+       "hour": 22,
+       "minute": 30
+      }
+     },
+     {
+      "open": {
+       "day": 4,
+       "hour": 11,
+       "minute": 0
+      },
+      "close": {
+       "day": 4,
+       "hour": 22,
+       "minute": 30
+      }
+     },
+     {
+      "open": {
+       "day": 5,
+       "hour": 11,
+       "minute": 0
+      },
+      "close": {
+       "day": 5,
+       "hour": 23,
+       "minute": 0
+      }
+     },
+     {
+      "open": {
+       "day": 6,
+       "hour": 11,
+       "minute": 0
+      },
+      "close": {
+       "day": 6,
+       "hour": 23,
+       "minute": 0
+      }
+     }
+    ],
+    "weekdayDescriptions": [
+     "Monday: 11:00 AM – 10:30 PM",
+     "Tuesday: 11:00 AM – 10:30 PM",
+     "Wednesday: 11:00 AM – 10:30 PM",
+     "Thursday: 11:00 AM – 10:30 PM",
+     "Friday: 11:00 AM – 11:00 PM",
+     "Saturday: 11:00 AM – 11:00 PM",
+     "Sunday: 11:00 AM – 10:30 PM"
+    ],
+    "nextCloseTime": "2026-09-17T02:30:00Z"
+   },
+   "websiteUri": "http://bobamochaonline.com/",
+   "googleMapsUri": "https://maps.google.com/?cid=4836191656892577145&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "businessStatus": "OPERATIONAL"
+  },
+  {
+   "id": "ChIJjRDCjXWj9YgRP6O-zrRHR50",
+   "displayName": {
+    "text": "Cafe 104",
+    "languageCode": "en"
+   },
+   "formattedAddress": "3705 Old Norcross Rd, Duluth, GA 30096, USA",
+   "addressComponents": [
+    {
+     "longText": "3705",
+     "shortText": "3705",
+     "types": [
+      "street_number"
+     ],
+     "languageCode": "en-US"
+    },
+    {
+     "longText": "Old Norcross Road",
+     "shortText": "Old Norcross Rd",
+     "types": [
+      "route"
+     ],
+     "languageCode": "en"
+    },
+    {
+     "longText": "Gwinnett Place",
+     "shortText": "Gwinnett Place",
+     "types": [
+      "neighborhood",
+      "political"
+     ],
+     "languageCode": "en"
+    },
+    {
+     "longText": "Duluth",
+     "shortText": "Duluth",
+     "types": [
+      "locality",
+      "political"
+     ],
+     "languageCode": "en"
+    },
+    {
+     "longText": "Gwinnett County",
+     "shortText": "Gwinnett County",
+     "types": [
+      "administrative_area_level_2",
+      "political"
+     ],
+     "languageCode": "en"
+    },
+    {
+     "longText": "Georgia",
+     "shortText": "GA",
+     "types": [
+      "administrative_area_level_1",
+      "political"
+     ],
+     "languageCode": "en"
+    },
+    {
+     "longText": "United States",
+     "shortText": "US",
+     "types": [
+      "country",
+      "political"
+     ],
+     "languageCode": "en"
+    },
+    {
+     "longText": "30096",
+     "shortText": "30096",
+     "types": [
+      "postal_code"
+     ],
+     "languageCode": "en-US"
+    }
+   ],
+   "location": {
+    "latitude": 33.9636478,
+    "longitude": -84.14149359999999
+   },
+   "primaryType": "brunch_restaurant",
+   "types": [
+    "brunch_restaurant",
+    "dessert_restaurant",
+    "coffee_shop",
+    "cafe",
+    "food_store",
+    "store",
+    "restaurant",
+    "food",
+    "point_of_interest",
+    "establishment"
+   ],
+   "rating": 4.2,
+   "userRatingCount": 503,
+   "regularOpeningHours": {
+    "openNow": true,
+    "periods": [
+     {
+      "open": {
+       "day": 0,
+       "hour": 10,
+       "minute": 0
+      },
+      "close": {
+       "day": 0,
+       "hour": 23,
+       "minute": 0
+      }
+     },
+     {
+      "open": {
+       "day": 1,
+       "hour": 10,
+       "minute": 0
+      },
+      "close": {
+       "day": 1,
+       "hour": 23,
+       "minute": 0
+      }
+     },
+     {
+      "open": {
+       "day": 2,
+       "hour": 10,
+       "minute": 0
+      },
+      "close": {
+       "day": 2,
+       "hour": 23,
+       "minute": 0
+      }
+     },
+     {
+      "open": {
+       "day": 3,
+       "hour": 10,
+       "minute": 0
+      },
+      "close": {
+       "day": 3,
+       "hour": 23,
+       "minute": 0
+      }
+     },
+     {
+      "open": {
+       "day": 4,
+       "hour": 10,
+       "minute": 0
+      },
+      "close": {
+       "day": 4,
+       "hour": 23,
+       "minute": 0
+      }
+     },
+     {
+      "open": {
+       "day": 5,
+       "hour": 10,
+       "minute": 0
+      },
+      "close": {
+       "day": 6,
+       "hour": 0,
+       "minute": 0
+      }
+     },
+     {
+      "open": {
+       "day": 6,
+       "hour": 10,
+       "minute": 0
+      },
+      "close": {
+       "day": 0,
+       "hour": 0,
+       "minute": 0
+      }
+     }
+    ],
+    "weekdayDescriptions": [
+     "Monday: 10:00 AM – 11:00 PM",
+     "Tuesday: 10:00 AM – 11:00 PM",
+     "Wednesday: 10:00 AM – 11:00 PM",
+     "Thursday: 10:00 AM – 11:00 PM",
+     "Friday: 10:00 AM – 12:00 AM",
+     "Saturday: 10:00 AM – 12:00 AM",
+     "Sunday: 10:00 AM – 11:00 PM"
+    ],
+    "nextCloseTime": "2026-09-17T03:00:00Z"
+   },
+   "websiteUri": "http://www.cafe104duluth.com/",
+   "googleMapsUri": "https://maps.google.com/?cid=11333105829189428031&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "businessStatus": "OPERATIONAL"
+  },
+  {
+   "id": "ChIJt5QVXM6j9YgRVn73gMkySMo",
+   "displayName": {
+    "text": "Land of a Thousand Hills Coffee",
+    "languageCode": "en"
+   },
+   "formattedAddress": "3176 Main St Ste 200, Duluth, GA 30096, USA",
+   "addressComponents": [
+    {
+     "longText": "Suite 200",
+     "shortText": "Ste 200",
+     "types": [
+      "subpremise"
+     ],
+     "languageCode": "en"
+    },
+    {
+     "longText": "3176",
+     "shortText": "3176",
+     "types": [
+      "street_number"
+     ],
+     "languageCode": "en-US"
+    },
+    {
+     "longText": "Main Street",
+     "shortText": "Main St",
+     "types": [
+      "route"
+     ],
+     "languageCode": "en"
+    },
+    {
+     "longText": "Duluth",
+     "shortText": "Duluth",
+     "types": [
+      "locality",
+      "political"
+     ],
+     "languageCode": "en"
+    },
+    {
+     "longText": "Gwinnett County",
+     "shortText": "Gwinnett County",
+     "types": [
+      "administrative_area_level_2",
+      "political"
+     ],
+     "languageCode": "en"
+    },
+    {
+     "longText": "Georgia",
+     "shortText": "GA",
+     "types": [
+      "administrative_area_level_1",
+      "political"
+     ],
+     "languageCode": "en"
+    },
+    {
+     "longText": "United States",
+     "shortText": "US",
+     "types": [
+      "country",
+      "political"
+     ],
+     "languageCode": "en"
+    },
+    {
+     "longText": "30096",
+     "shortText": "30096",
+     "types": [
+      "postal_code"
+     ],
+     "languageCode": "en-US"
+    },
+    {
+     "longText": "3262",
+     "shortText": "3262",
+     "types": [
+      "postal_code_suffix"
+     ],
+     "languageCode": "en-US"
+    }
+   ],
+   "location": {
+    "latitude": 34.001442,
+    "longitude": -84.1463605
+   },
+   "primaryType": "coffee_shop",
+   "types": [
+    "coffee_shop",
+    "cafe",
+    "food_store",
+    "store",
+    "food",
+    "point_of_interest",
+    "establishment"
+   ],
+   "rating": 4.8,
+   "userRatingCount": 144,
+   "regularOpeningHours": {
+    "openNow": true,
+    "periods": [
+     {
+      "open": {
+       "day": 0,
+       "hour": 9,
+       "minute": 0
+      },
+      "close": {
+       "day": 0,
+       "hour": 18,
+       "minute": 0
+      }
+     },
+     {
+      "open": {
+       "day": 1,
+       "hour": 7,
+       "minute": 30
+      },
+      "close": {
+       "day": 1,
+       "hour": 20,
+       "minute": 0
+      }
+     },
+     {
+      "open": {
+       "day": 2,
+       "hour": 7,
+       "minute": 30
+      },
+      "close": {
+       "day": 2,
+       "hour": 20,
+       "minute": 0
+      }
+     },
+     {
+      "open": {
+       "day": 3,
+       "hour": 7,
+       "minute": 30
+      },
+      "close": {
+       "day": 3,
+       "hour": 20,
+       "minute": 0
+      }
+     },
+     {
+      "open": {
+       "day": 4,
+       "hour": 7,
+       "minute": 30
+      },
+      "close": {
+       "day": 4,
+       "hour": 20,
+       "minute": 0
+      }
+     },
+     {
+      "open": {
+       "day": 5,
+       "hour": 7,
+       "minute": 30
+      },
+      "close": {
+       "day": 5,
+       "hour": 21,
+       "minute": 30
+      }
+     },
+     {
+      "open": {
+       "day": 6,
+       "hour": 8,
+       "minute": 0
+      },
+      "close": {
+       "day": 6,
+       "hour": 21,
+       "minute": 30
+      }
+     }
+    ],
+    "weekdayDescriptions": [
+     "Monday: 7:30 AM – 8:00 PM",
+     "Tuesday: 7:30 AM – 8:00 PM",
+     "Wednesday: 7:30 AM – 8:00 PM",
+     "Thursday: 7:30 AM – 8:00 PM",
+     "Friday: 7:30 AM – 9:30 PM",
+     "Saturday: 8:00 AM – 9:30 PM",
+     "Sunday: 9:00 AM – 6:00 PM"
+    ],
+    "nextCloseTime": "2026-09-17T00:00:00Z"
+   },
+   "websiteUri": "https://landofathousandhills.com/",
+   "googleMapsUri": "https://maps.google.com/?cid=14575956035018128982&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "businessStatus": "OPERATIONAL"
+  }
+ ]
+}

@@ -11,7 +11,7 @@
       "rating": 4.5,
       "ratingCount": "3,767",
       "ratingNum": 3767,
-      "hours": "Sun-Thu 10am-10pm \u00b7 Fri-Sat 10am-11pm",
+      "hours": "Sun-Thu 10am-10pm · Fri-Sat 10am-11pm",
       "usp": "Asian-American bakery known for endless pastry trays, large seating, and bubble tea.",
       "loved": [
         "mozzarella buns",
@@ -25,16 +25,18 @@
       "addrKey": "duluth-2180-pleasanthill",
       "cw": {
         "tier": "excellent",
-        "note": "Large seating, Wi-Fi, outlets \u2014 popular student spot.",
+        "note": "Large seating, Wi-Fi, outlets — popular student spot.",
         "hasMeetingRoom": true,
-        "meetingRoomNote": "Private meeting room \u2014 contact catering@sweethut.com"
+        "meetingRoomNote": "Private meeting room — contact catering@sweethut.com"
       },
       "late": {
         "tier": "10pm+",
         "when": "Fri-Sat until 11pm; weekdays till 10pm"
       },
       "website": "https://www.sweethutbakery.com",
-      "placeId": "ChIJq48l3QSj9YgRTgBKaRBsqdU"
+      "placeId": "ChIJq48l3QSj9YgRTgBKaRBsqdU",
+      "curated": true,
+      "county": "Gwinnett"
     },
     {
       "name": "Cafe Mozart Bakery",
@@ -45,7 +47,7 @@
       "rating": 4.3,
       "ratingCount": "1,207",
       "ratingNum": 1207,
-      "hours": "Sun-Thu 8am-10pm \u00b7 Fri-Sat 8am-12am",
+      "hours": "Sun-Thu 8am-10pm · Fri-Sat 8am-12am",
       "usp": "The original Korean bakery of Pleasant Hill K-town, family-run for 20+ years.",
       "loved": [
         "mocha buns",
@@ -67,7 +69,9 @@
         "when": "Fri-Sat till midnight; weekdays till 10pm"
       },
       "website": "https://www.cafemozartbakery.com",
-      "placeId": "ChIJ8cuxMhCj9YgRuq3-mrvbrp0"
+      "placeId": "ChIJ8cuxMhCj9YgRuq3-mrvbrp0",
+      "curated": true,
+      "county": "Gwinnett"
     },
     {
       "name": "TwoHa's Cafe",
@@ -78,7 +82,7 @@
       "rating": 4.2,
       "ratingCount": "594",
       "ratingNum": 594,
-      "hours": "Sun-Thu 11am-12am \u00b7 Fri-Sat 11am-1am",
+      "hours": "Sun-Thu 11am-12am · Fri-Sat 11am-1am",
       "usp": "Second-floor Korean dessert cafe open past midnight, popular for matcha and bingsoo.",
       "loved": [
         "strawberry matcha latte",
@@ -100,7 +104,9 @@
         "when": "Fri-Sat till 1am; rest of week till midnight"
       },
       "website": "https://www.twohascafe.com",
-      "placeId": "ChIJndytoJyj9YgRFU8Kx1lknJc"
+      "placeId": "ChIJndytoJyj9YgRFU8Kx1lknJc",
+      "curated": true,
+      "county": "Gwinnett"
     },
     {
       "name": "White Windmill Bakery & Cafe",
@@ -111,7 +117,7 @@
       "rating": 4.3,
       "ratingCount": "342",
       "ratingNum": 342,
-      "hours": "Sun-Thu 7:30am-10pm \u00b7 Fri-Sat 7:30am-11pm",
+      "hours": "Sun-Thu 7:30am-10pm · Fri-Sat 7:30am-11pm",
       "usp": "Korean bakery favored for milk bread and croissant sandwiches; quiet enough to study.",
       "loved": [
         "milk bread",
@@ -134,7 +140,9 @@
         "when": "Fri-Sat till 11pm; weekdays till 10pm"
       },
       "website": "https://www.whitewbakerycafe.com",
-      "placeId": "ChIJh5FTqAa99YgRp6nWVT1BBL0"
+      "placeId": "ChIJh5FTqAa99YgRp6nWVT1BBL0",
+      "curated": true,
+      "county": "Gwinnett"
     },
     {
       "name": "Land of a Thousand Hills Coffee",
@@ -145,7 +153,7 @@
       "rating": 4.8,
       "ratingCount": "144",
       "ratingNum": 144,
-      "hours": "Mon-Thu 7:30am-8pm \u00b7 Fri 7:30am-9:30pm \u00b7 Sat 8am-9:30pm \u00b7 Sun 9am-6pm",
+      "hours": "Mon-Thu 7:30am-8pm · Fri 7:30am-9:30pm · Sat 8am-9:30pm · Sun 9am-6pm",
       "usp": "Direct-trade Rwandan specialty coffee shop on the downtown square; profits fund farming communities in Rwanda.",
       "loved": [
         "Rwandan single-origin",
@@ -163,7 +171,9 @@
         "hasMeetingRoom": false
       },
       "website": "https://landofathousandhills.com/pages/location-duluth-georgia",
-      "placeId": "ChIJt5QVXM6j9YgRVn73gMkySMo"
+      "placeId": "ChIJt5QVXM6j9YgRVn73gMkySMo",
+      "curated": true,
+      "county": "Gwinnett"
     },
     {
       "name": "Alchemist on the Divide",
@@ -192,7 +202,9 @@
         "hasMeetingRoom": false
       },
       "website": "https://alchemist-on-the-divide.grubbio.com",
-      "placeId": "ChIJ81YdKhCj9YgRvlohaZgCq1Y"
+      "placeId": "ChIJ81YdKhCj9YgRvlohaZgCq1Y",
+      "curated": true,
+      "county": "Gwinnett"
     },
     {
       "name": "The Cream",
@@ -203,7 +215,7 @@
       "rating": 4.6,
       "ratingCount": "499",
       "ratingNum": 499,
-      "hours": "Sun-Thu 10am-10pm \u00b7 Fri-Sat 10am-11pm",
+      "hours": "Sun-Thu 10am-10pm · Fri-Sat 10am-11pm",
       "usp": "Korean shaved ice and cake in a sleek modern setting near downtown.",
       "loved": [
         "mango bingsu",
@@ -225,7 +237,9 @@
         "when": "Fri-Sat till 11pm; weekdays till 10pm"
       },
       "website": "https://www.thecreambakery.com",
-      "placeId": "ChIJzZj65uWj9YgRUCFRjhq_jas"
+      "placeId": "ChIJzZj65uWj9YgRUCFRjhq_jas",
+      "curated": true,
+      "county": "Gwinnett"
     },
     {
       "name": "Ginkgo Bakery & Cafe",
@@ -236,7 +250,7 @@
       "rating": 4.6,
       "ratingCount": "76",
       "ratingNum": 76,
-      "hours": "Tue-Thu 8am-6pm \u00b7 Fri-Sat 8am-7pm \u00b7 Sun 8am-4pm \u00b7 Closed Mon",
+      "hours": "Tue-Thu 8am-6pm · Fri-Sat 8am-7pm · Sun 8am-4pm · Closed Mon",
       "usp": "Downtown Duluth bakery blending Taiwanese and American flavors, with viral Dubai chocolate.",
       "loved": [
         "egg tarts",
@@ -254,7 +268,9 @@
         "hasMeetingRoom": false
       },
       "website": "https://www.ginkgobakery.com",
-      "placeId": "ChIJzXDncDOj9YgRB2UWXEWX18w"
+      "placeId": "ChIJzXDncDOj9YgRB2UWXEWX18w",
+      "curated": true,
+      "county": "Gwinnett"
     },
     {
       "name": "Coffee That Matters",
@@ -265,7 +281,7 @@
       "rating": 4.7,
       "ratingCount": "236",
       "ratingNum": 236,
-      "hours": "Mon-Fri 7am-5pm \u00b7 Sat 8am-4pm \u00b7 Sun 1pm-5pm",
+      "hours": "Mon-Fri 7am-5pm · Sat 8am-4pm · Sun 1pm-5pm",
       "usp": "Mission-driven specialty roaster with a drive-thru; profits fund Phoenix Roasters Foundation anti-trafficking work.",
       "loved": [
         "White Lightning Bird iced",
@@ -283,7 +299,9 @@
         "hasMeetingRoom": false
       },
       "website": "https://phoenixroasters.coffee",
-      "placeId": "ChIJx0uk0Yqj9YgRSADpy4VNZ6g"
+      "placeId": "ChIJx0uk0Yqj9YgRSADpy4VNZ6g",
+      "curated": true,
+      "county": "Gwinnett"
     },
     {
       "name": "The Coffee By Hand",
@@ -294,7 +312,7 @@
       "rating": 4.4,
       "ratingCount": "879",
       "ratingNum": 879,
-      "hours": "Sun-Thu 11am-11pm \u00b7 Fri-Sat 11am-12am",
+      "hours": "Sun-Thu 11am-11pm · Fri-Sat 11am-12am",
       "usp": "Korean K-town dessert cafe with a dried-tree centerpiece and private nooks for croffles and lattes.",
       "loved": [
         "honey croffle",
@@ -316,7 +334,9 @@
         "when": "Fri-Sat till midnight; rest till 11pm"
       },
       "website": "https://www.instagram.com/thecoffeebyhandatl",
-      "placeId": "ChIJy83g5wSj9YgR_7QRo2QKmLA"
+      "placeId": "ChIJy83g5wSj9YgR_7QRo2QKmLA",
+      "curated": true,
+      "county": "Gwinnett"
     },
     {
       "name": "OneZo Boba Tea",
@@ -327,7 +347,7 @@
       "rating": 4.7,
       "ratingCount": "469",
       "ratingNum": 469,
-      "hours": "Sun-Thu 12pm-10:30pm \u00b7 Fri-Sat 12pm-11:30pm",
+      "hours": "Sun-Thu 12pm-10:30pm · Fri-Sat 12pm-11:30pm",
       "usp": "First bubble-tea brand to make fresh handmade boba pearls in-store every day.",
       "loved": [
         "soft fresh in-house boba",
@@ -349,7 +369,9 @@
         "when": "Fri-Sun till 11:30pm"
       },
       "website": "https://www.onezo.us",
-      "placeId": "ChIJQ_0PG8Oj9YgR4VT_WcsEdrI"
+      "placeId": "ChIJQ_0PG8Oj9YgR4VT_WcsEdrI",
+      "curated": true,
+      "county": "Gwinnett"
     },
     {
       "name": "Molly Tea",
@@ -382,7 +404,9 @@
         "when": "Daily till 10:10pm"
       },
       "website": "https://mollyteaatl.com",
-      "placeId": "ChIJpblW6cSj9YgRg_xfxrqorhU"
+      "placeId": "ChIJpblW6cSj9YgRg_xfxrqorhU",
+      "curated": true,
+      "county": "Gwinnett"
     },
     {
       "name": "ChiCha San Chen",
@@ -393,7 +417,7 @@
       "rating": 4.7,
       "ratingCount": "995",
       "ratingNum": 995,
-      "hours": "Sun-Thu 12pm-9pm \u00b7 Fri-Sat 12pm-10pm",
+      "hours": "Sun-Thu 12pm-9pm · Fri-Sat 12pm-10pm",
       "usp": "Michelin-Plate Taiwanese tea house pouring some of the world's most expensive oolongs.",
       "loved": [
         "Lishan oolong",
@@ -415,7 +439,9 @@
         "when": "Fri-Sat till 10pm"
       },
       "website": "https://chichasanchenusa.com",
-      "placeId": "ChIJzSbcDeyj9YgRvGFxBuHeXQA"
+      "placeId": "ChIJzSbcDeyj9YgRvGFxBuHeXQA",
+      "curated": true,
+      "county": "Gwinnett"
     },
     {
       "name": "Matcha Cafe Maiko",
@@ -426,7 +452,7 @@
       "rating": 4.5,
       "ratingCount": "587",
       "ratingNum": 587,
-      "hours": "Sun-Thu 1pm-10pm \u00b7 Fri-Sat 1pm-10:30pm",
+      "hours": "Sun-Thu 1pm-10pm · Fri-Sat 1pm-10:30pm",
       "usp": "Hawaii-born matcha cafe serving Uji matcha lattes, soft serve, and Japanese parfaits.",
       "loved": [
         "matcha latte with almond milk",
@@ -448,7 +474,9 @@
         "when": "Fri-Sat till 10:30pm"
       },
       "website": "https://www.matchacafeatl.com",
-      "placeId": "ChIJK98kSIOj9YgRt3772mDpL_A"
+      "placeId": "ChIJK98kSIOj9YgRt3772mDpL_A",
+      "curated": true,
+      "county": "Gwinnett"
     },
     {
       "name": "Hiro Tea Bar",
@@ -459,8 +487,8 @@
       "rating": 4.1,
       "ratingCount": "139",
       "ratingNum": 139,
-      "hours": "Sun-Thu 10am-9pm \u00b7 Fri-Sat 10am-10pm",
-      "usp": "Boba cooked fresh every 2 hours and 100% real fruit cut daily \u2014 no syrup.",
+      "hours": "Sun-Thu 10am-9pm · Fri-Sat 10am-10pm",
+      "usp": "Boba cooked fresh every 2 hours and 100% real fruit cut daily — no syrup.",
       "loved": [
         "orange green tea",
         "fresh-cooked boba",
@@ -481,7 +509,9 @@
         "when": "Fri-Sat till 10pm"
       },
       "website": "https://www.hiroteabar.com",
-      "placeId": "ChIJSwPoW0Gj9YgRP-LI4n5RcI8"
+      "placeId": "ChIJSwPoW0Gj9YgRP-LI4n5RcI8",
+      "curated": true,
+      "county": "Gwinnett"
     },
     {
       "name": "Ding Tea",
@@ -514,7 +544,9 @@
         "when": "Daily till 10pm"
       },
       "website": "https://www.instagram.com/dingteaduluth",
-      "placeId": "ChIJRRacWxWj9YgRZT9YxK4Qs4Q"
+      "placeId": "ChIJRRacWxWj9YgRZT9YxK4Qs4Q",
+      "curated": true,
+      "county": "Gwinnett"
     },
     {
       "name": "Tiger Sugar",
@@ -525,7 +557,7 @@
       "rating": 4.2,
       "ratingCount": "459",
       "ratingNum": 459,
-      "hours": "Sun-Thu 12pm-10pm \u00b7 Fri-Sat 12pm-11pm",
+      "hours": "Sun-Thu 12pm-10pm · Fri-Sat 12pm-11pm",
       "usp": "Originator of the 'tiger stripes' brown sugar milk, with 8-hour-cooked pearls.",
       "loved": [
         "tiger-striped cups",
@@ -547,7 +579,9 @@
         "when": "Fri-Sat till 11pm"
       },
       "website": "https://en.tigersugar.com",
-      "placeId": "ChIJRfiUQtOj9YgRyiMsgL9WRCo"
+      "placeId": "ChIJRfiUQtOj9YgRyiMsgL9WRCo",
+      "curated": true,
+      "county": "Gwinnett"
     },
     {
       "name": "Xing Fu Tang",
@@ -558,7 +592,7 @@
       "rating": 4.7,
       "ratingCount": "526",
       "ratingNum": 526,
-      "hours": "Sun-Thu 12pm-9:30pm \u00b7 Fri-Sat 12pm-10:30pm",
+      "hours": "Sun-Thu 12pm-9:30pm · Fri-Sat 12pm-10:30pm",
       "usp": "Taiwanese chain that stir-fries fresh tapioca pearls in brown sugar in front of you.",
       "loved": [
         "wok-fried pearls",
@@ -580,7 +614,9 @@
         "when": "Fri-Sat till 10:30pm"
       },
       "website": "https://www.xingfutangga.com",
-      "placeId": "ChIJ-y0J-Iyj9YgR41wD64_AeXM"
+      "placeId": "ChIJ-y0J-Iyj9YgR41wD64_AeXM",
+      "curated": true,
+      "county": "Gwinnett"
     },
     {
       "name": "Goodwin Tea House & More",
@@ -591,7 +627,7 @@
       "rating": 4.5,
       "ratingCount": "110",
       "ratingNum": 110,
-      "hours": "Tue-Sun 11:30am-10pm \u00b7 Closed Mon",
+      "hours": "Tue-Sun 11:30am-10pm · Closed Mon",
       "usp": "Taiwanese tea house pairing taro and mango bubble teas with small plates and noodle bowls.",
       "loved": [
         "taro tea",
@@ -613,7 +649,9 @@
         "when": "Tue-Sun till 10pm"
       },
       "website": "https://www.goodwinteahouse.com",
-      "placeId": "ChIJ-XYPlKyj9YgRk8laEZCDT88"
+      "placeId": "ChIJ-XYPlKyj9YgRk8laEZCDT88",
+      "curated": true,
+      "county": "Gwinnett"
     },
     {
       "name": "The Bep Teahouse",
@@ -624,7 +662,7 @@
       "rating": 4.6,
       "ratingCount": "143",
       "ratingNum": 143,
-      "hours": "Sun-Thu 10am-11pm \u00b7 Fri-Sat 10am-12am",
+      "hours": "Sun-Thu 10am-11pm · Fri-Sat 10am-12am",
       "usp": "Vietnamese-owned teahouse with organic milk, loose-leaf tea, and 100+ drinks.",
       "loved": [
         "organic milk teas",
@@ -646,7 +684,9 @@
         "when": "Fri-Sat till midnight; rest till 11pm"
       },
       "website": "https://thebepteahouse.com/locations/the-bep-teahouse-duluth/",
-      "placeId": "ChIJi3EKOwCj9YgRGA6cVxHttL0"
+      "placeId": "ChIJi3EKOwCj9YgRGA6cVxHttL0",
+      "curated": true,
+      "county": "Gwinnett"
     },
     {
       "name": "Paris Baguette",
@@ -675,7 +715,9 @@
         "hasMeetingRoom": false
       },
       "website": "https://parisbaguette.com/locations/ga/duluth/3492-satellite-boulevard/",
-      "placeId": "ChIJj4NlQBuj9YgRWKbr7eZKsLU"
+      "placeId": "ChIJj4NlQBuj9YgRWKbr7eZKsLU",
+      "curated": true,
+      "county": "Gwinnett"
     },
     {
       "name": "Bread Museum Bakery & Cafe",
@@ -686,7 +728,7 @@
       "rating": 4.9,
       "ratingCount": "274",
       "ratingNum": 274,
-      "hours": "Mon-Tue 10:30am-7pm \u00b7 Thu 10:30am-7:30pm \u00b7 Fri-Sat to 10pm \u00b7 Sun to 7:30pm \u00b7 Closed Wed",
+      "hours": "Mon-Tue 10:30am-7pm · Thu 10:30am-7:30pm · Fri-Sat to 10pm · Sun to 7:30pm · Closed Wed",
       "usp": "Boutique French-Korean bakery focused on less-sweet, scratch-made breads.",
       "loved": [
         "salt bread",
@@ -708,7 +750,9 @@
         "when": "Fri-Sat till 10pm"
       },
       "website": "https://thebreadmuseum.com",
-      "placeId": "ChIJNaJX212j9YgRYTgmGuxK67M"
+      "placeId": "ChIJNaJX212j9YgRYTgmGuxK67M",
+      "curated": true,
+      "county": "Gwinnett"
     },
     {
       "name": "Tous Les Jours",
@@ -737,7 +781,9 @@
         "hasMeetingRoom": false
       },
       "website": "https://tljus.com/stores/duluth-2550-pleasant-hill-rd",
-      "placeId": "ChIJiWdFPACj9YgR12Cmx4EHKqM"
+      "placeId": "ChIJiWdFPACj9YgR12Cmx4EHKqM",
+      "curated": true,
+      "county": "Gwinnett"
     },
     {
       "name": "Tree Story Bakery & Cafe",
@@ -748,7 +794,7 @@
       "rating": 4.3,
       "ratingCount": "548",
       "ratingNum": 548,
-      "hours": "Sun-Thu 8am-9pm \u00b7 Fri-Sat 8am-10pm",
+      "hours": "Sun-Thu 8am-9pm · Fri-Sat 8am-10pm",
       "usp": "Korean dessert cafe serving cream-filled breads and bingsu in a calm modern space.",
       "loved": [
         "tiramisu bingsu",
@@ -770,7 +816,9 @@
         "when": "Fri-Sat till 10pm"
       },
       "website": "https://www.facebook.com/TreeStoryCafe/",
-      "placeId": "ChIJKwxu1qCk4RQRV1Ie0BA26bk"
+      "placeId": "ChIJKwxu1qCk4RQRV1Ie0BA26bk",
+      "curated": true,
+      "county": "Gwinnett"
     },
     {
       "name": "Vincent Bakery & Cafe",
@@ -799,7 +847,9 @@
         "hasMeetingRoom": false
       },
       "website": "https://www.instagram.com/vincentbakeryofficial",
-      "placeId": "ChIJ-5BW-gCj9YgRydc8vJNauKM"
+      "placeId": "ChIJ-5BW-gCj9YgRydc8vJNauKM",
+      "curated": true,
+      "county": "Gwinnett"
     },
     {
       "name": "Hansel & Gretel Bakery Cafe",
@@ -810,7 +860,7 @@
       "rating": 4.2,
       "ratingCount": "1,290",
       "ratingNum": 1290,
-      "hours": "Sun-Thu 8am-11pm \u00b7 Fri-Sat 8am-12am",
+      "hours": "Sun-Thu 8am-11pm · Fri-Sat 8am-12am",
       "usp": "Late-night Korean bakery with fresh cream cakes and a fairy-tale theme.",
       "loved": [
         "fresh cream cakes",
@@ -824,7 +874,7 @@
       "addrKey": "duluth-2131-pleasanthill",
       "cw": {
         "tier": "excellent",
-        "note": "Spacious, charging spots, open late \u2014 can be noisy.",
+        "note": "Spacious, charging spots, open late — can be noisy.",
         "hasMeetingRoom": false
       },
       "late": {
@@ -832,7 +882,9 @@
         "when": "Fri-Sat till midnight; rest till 11pm"
       },
       "website": "https://www.instagram.com/hanselgretel.bakery",
-      "placeId": "ChIJcdUtPw6j9YgRVLVnRHS0JVE"
+      "placeId": "ChIJcdUtPw6j9YgRVLVnRHS0JVE",
+      "curated": true,
+      "county": "Gwinnett"
     },
     {
       "name": "Georgia French Bakery & Cafe",
@@ -843,7 +895,7 @@
       "rating": 4.8,
       "ratingCount": "854",
       "ratingNum": 854,
-      "hours": "Tue-Fri 7:30am-3pm \u00b7 Sat 9am-3pm \u00b7 Closed Sun-Mon",
+      "hours": "Tue-Fri 7:30am-3pm · Sat 9am-3pm · Closed Sun-Mon",
       "usp": "Family-run French bakery with scratch-made croissants and baguettes by a Paris-trained baker.",
       "loved": [
         "crispy baguettes",
@@ -861,7 +913,9 @@
         "hasMeetingRoom": false
       },
       "website": "https://georgiafrenchbakerycafe.com",
-      "placeId": "ChIJpadk2Bqj9YgRaJhkGNYMsrU"
+      "placeId": "ChIJpadk2Bqj9YgRaJhkGNYMsrU",
+      "curated": true,
+      "county": "Gwinnett"
     },
     {
       "name": "Mai Bakery",
@@ -890,7 +944,9 @@
         "hasMeetingRoom": false
       },
       "website": null,
-      "placeId": "ChIJBZCgZgOj9YgRAgvSfyGFbN0"
+      "placeId": "ChIJBZCgZgOj9YgRAgvSfyGFbN0",
+      "curated": true,
+      "county": "Gwinnett"
     },
     {
       "name": "The Patio Cafe & Bakery",
@@ -901,7 +957,7 @@
       "rating": 4.5,
       "ratingCount": "281",
       "ratingNum": 281,
-      "hours": "Mon-Thu 9am-7pm \u00b7 Fri-Sat 9am-4pm \u00b7 Closed Sun",
+      "hours": "Mon-Thu 9am-7pm · Fri-Sat 9am-4pm · Closed Sun",
       "usp": "American scratch kitchen and bakery making soups, sandwiches, and cookies from scratch daily.",
       "loved": [
         "Philly cheesesteak",
@@ -919,7 +975,9 @@
         "hasMeetingRoom": false
       },
       "website": "https://www.patiocafebakery.com/",
-      "placeId": "ChIJS-L0ef-h9YgRE_2f231k7Ww"
+      "placeId": "ChIJS-L0ef-h9YgRE_2f231k7Ww",
+      "curated": true,
+      "county": "Fulton"
     },
     {
       "name": "Shokku Bakery",
@@ -948,7 +1006,9 @@
         "hasMeetingRoom": false
       },
       "website": "https://www.instagram.com/shokkubakery/",
-      "placeId": "ChIJPcS5YACj9YgR74NNBnXaVGw"
+      "placeId": "ChIJPcS5YACj9YgR74NNBnXaVGw",
+      "curated": true,
+      "county": "Gwinnett"
     },
     {
       "name": "Forest Cafe",
@@ -981,7 +1041,9 @@
         "when": "Daily till 11pm"
       },
       "website": "https://www.instagram.com/forest_cafe_ga/",
-      "placeId": "ChIJ1ee7vEWj9YgRuakY6y4vmBc"
+      "placeId": "ChIJ1ee7vEWj9YgRuakY6y4vmBc",
+      "curated": true,
+      "county": "Gwinnett"
     },
     {
       "name": "Cafe 104",
@@ -1006,7 +1068,7 @@
       "addrKey": "duluth-3705-oldnorcross",
       "cw": {
         "tier": "excellent",
-        "note": "Wi-Fi, outlets, open till 11pm \u2014 top-cited Duluth study spot.",
+        "note": "Wi-Fi, outlets, open till 11pm — top-cited Duluth study spot.",
         "hasMeetingRoom": false
       },
       "late": {
@@ -1014,7 +1076,9 @@
         "when": "Daily till 11pm"
       },
       "website": "https://www.cafe104duluth.com/",
-      "placeId": "ChIJjRDCjXWj9YgRP6O-zrRHR50"
+      "placeId": "ChIJjRDCjXWj9YgRP6O-zrRHR50",
+      "curated": true,
+      "county": "Gwinnett"
     },
     {
       "name": "Boba Mocha",
@@ -1025,7 +1089,7 @@
       "rating": 4.6,
       "ratingCount": "1,065",
       "ratingNum": 1065,
-      "hours": "Sun-Thu 11am-10pm \u00b7 Fri-Sat 11am-11pm",
+      "hours": "Sun-Thu 11am-10pm · Fri-Sat 11am-11pm",
       "usp": "Longtime Duluth boba favorite with handmade Taiwanese teas, popping boba, and board games.",
       "loved": [
         "light-up boba cup",
@@ -1047,7 +1111,9 @@
         "when": "Fri-Sat till 11pm"
       },
       "website": "https://www.bobamochaonline.com/",
-      "placeId": "ChIJWbYMlFSi9YgReTXKTrCaHUM"
+      "placeId": "ChIJWbYMlFSi9YgReTXKTrCaHUM",
+      "curated": true,
+      "county": "Gwinnett"
     },
     {
       "name": "Incha Duluth (Duck Ink + Boba)",
@@ -1076,7 +1142,9 @@
         "hasMeetingRoom": false
       },
       "website": "https://www.instagram.com/inchaduckink/",
-      "placeId": "ChIJt6u5LoWj9YgR12fpaUNj6g8"
+      "placeId": "ChIJt6u5LoWj9YgR12fpaUNj6g8",
+      "curated": true,
+      "county": "Gwinnett"
     },
     {
       "name": "Orange Coffee Bar",
@@ -1101,7 +1169,7 @@
       "addrKey": "duluth-3473-oldnorcross",
       "cw": {
         "tier": "excellent",
-        "note": "Quiet, Wi-Fi, ample parking \u2014 recommended for working.",
+        "note": "Quiet, Wi-Fi, ample parking — recommended for working.",
         "hasMeetingRoom": false
       },
       "late": {
@@ -1109,7 +1177,9 @@
         "when": "Daily till 10pm"
       },
       "website": "https://www.instagram.com/orangecoffeebar.duluth/",
-      "placeId": "ChIJpxdHHgOj9YgRT2TKHqAJu88"
+      "placeId": "ChIJpxdHHgOj9YgRT2TKHqAJu88",
+      "curated": true,
+      "county": "Gwinnett"
     },
     {
       "name": "Tom N Toms Coffee Black",
@@ -1121,7 +1191,7 @@
       "ratingCount": "332",
       "ratingNum": 332,
       "hours": "Daily 8am-10pm",
-      "usp": "Korean coffee chain's Black-label flagship \u2014 2 stories with an upstairs study area.",
+      "usp": "Korean coffee chain's Black-label flagship — 2 stories with an upstairs study area.",
       "loved": [
         "pretzel breads",
         "specialty espresso",
@@ -1136,14 +1206,16 @@
         "tier": "excellent",
         "note": "Huge 2-story cafe with upstairs study area.",
         "hasMeetingRoom": true,
-        "meetingRoomNote": "Private rooms upstairs \u2014 bookable via info@tomntomsatlanta.com"
+        "meetingRoomNote": "Private rooms upstairs — bookable via info@tomntomsatlanta.com"
       },
       "late": {
         "tier": "10pm+",
         "when": "Daily till 10pm"
       },
       "website": "https://www.tomntomsatlanta.com/",
-      "placeId": "ChIJ_S2mIQCj9YgRKDjTjwQxiQs"
+      "placeId": "ChIJ_S2mIQCj9YgRKDjTjwQxiQs",
+      "curated": true,
+      "county": "Gwinnett"
     },
     {
       "name": "Gonggan ATL",
@@ -1154,7 +1226,7 @@
       "rating": 4.4,
       "ratingCount": "103",
       "ratingNum": 103,
-      "hours": "Fri-Sun 11am-11pm \u00b7 Closed Mon-Thu",
+      "hours": "Fri-Sun 11am-11pm · Closed Mon-Thu",
       "usp": "NYC/LA Korean cafe brand's first Atlanta outpost, weekends only, South Korean roasters.",
       "loved": [
         "dark green matcha",
@@ -1168,7 +1240,7 @@
       "addrKey": "duluth-2645-nberkeley",
       "cw": {
         "tier": "good",
-        "note": "Minimalist study spot \u2014 only Fri-Sun.",
+        "note": "Minimalist study spot — only Fri-Sun.",
         "hasMeetingRoom": false
       },
       "late": {
@@ -1176,7 +1248,9 @@
         "when": "Fri-Sun till 11pm"
       },
       "website": "https://www.instagram.com/gonggan.atl/",
-      "placeId": "ChIJlwQvQf-j9YgRbt4L-yPzGjQ"
+      "placeId": "ChIJlwQvQf-j9YgRbt4L-yPzGjQ",
+      "curated": true,
+      "county": "Gwinnett"
     },
     {
       "name": "Kafeiin",
@@ -1187,7 +1261,7 @@
       "rating": 4.1,
       "ratingCount": "389",
       "ratingNum": 389,
-      "hours": "Sun-Thu 9/10am-10pm \u00b7 Fri-Sat 9am-11pm",
+      "hours": "Sun-Thu 9/10am-10pm · Fri-Sat 9am-11pm",
       "usp": "Independent Korean specialty cafe with playful lattes like corn and banana matcha.",
       "loved": [
         "corn latte",
@@ -1209,7 +1283,9 @@
         "when": "Fri-Sat till 11pm"
       },
       "website": "https://www.instagram.com/kafeiin.coffee/",
-      "placeId": "ChIJ0-b3MwCj9YgRFVVeq4bS0Nc"
+      "placeId": "ChIJ0-b3MwCj9YgRFVVeq4bS0Nc",
+      "curated": true,
+      "county": "Gwinnett"
     },
     {
       "name": "Fujiissa",
@@ -1220,8 +1296,8 @@
       "rating": 4.6,
       "ratingCount": "163",
       "ratingNum": 163,
-      "hours": "Mon-Fri 11:30am-8pm \u00b7 Sat-Sun 11am-8pm",
-      "usp": "Japanese matcha dessert counter inside Tokyo Kuma food court \u2014 authentic uji matcha.",
+      "hours": "Mon-Fri 11:30am-8pm · Sat-Sun 11am-8pm",
+      "usp": "Japanese matcha dessert counter inside Tokyo Kuma food court — authentic uji matcha.",
       "loved": [
         "matcha soft serve",
         "Fujisa Special parfait",
@@ -1238,7 +1314,9 @@
         "hasMeetingRoom": false
       },
       "website": "https://fujiissa.com/",
-      "placeId": "ChIJXSooIACj9YgRpyWAqRTwF5c"
+      "placeId": "ChIJXSooIACj9YgRpyWAqRTwF5c",
+      "curated": true,
+      "county": "Gwinnett"
     },
     {
       "name": "Yezi Coconut Dessert",
@@ -1263,11 +1341,13 @@
       "addrKey": "duluth-2174-pleasanthill",
       "cw": {
         "tier": "limited",
-        "note": "Small dessert shop \u2014 not a sit-and-work spot.",
+        "note": "Small dessert shop — not a sit-and-work spot.",
         "hasMeetingRoom": false
       },
       "website": "https://www.yezicoconutatl.com/",
-      "placeId": "ChIJsb_4QUSj9YgRDhbbvw5cgpU"
+      "placeId": "ChIJsb_4QUSj9YgRDhbbvw5cgpU",
+      "curated": true,
+      "county": "Gwinnett"
     },
     {
       "name": "Fluffy Fluffy Dessert Cafe",
@@ -1278,7 +1358,7 @@
       "rating": 4.4,
       "ratingCount": "1,053",
       "ratingNum": 1053,
-      "hours": "Mon-Fri 11am-10pm \u00b7 Sat-Sun 9am-10pm",
+      "hours": "Mon-Fri 11am-10pm · Sat-Sun 9am-10pm",
       "usp": "Japanese souffle pancakes hand-whipped to order.",
       "loved": [
         "jiggly pancakes",
@@ -1300,7 +1380,9 @@
         "when": "Daily till 10pm"
       },
       "website": "https://www.fluffyfluffy.com/locations/duluth",
-      "placeId": "ChIJDxYx1SCj9YgRtkcQ-5-k5Pc"
+      "placeId": "ChIJDxYx1SCj9YgRtkcQ-5-k5Pc",
+      "curated": true,
+      "county": "Gwinnett"
     },
     {
       "name": "Qamaria Yemeni Coffee Co.",
@@ -1311,7 +1393,7 @@
       "rating": 4.5,
       "ratingCount": "251",
       "ratingNum": 251,
-      "hours": "Sun-Thu 12pm-11pm \u00b7 Fri-Sat 12pm-12am",
+      "hours": "Sun-Thu 12pm-11pm · Fri-Sat 12pm-12am",
       "usp": "Late-night Yemeni coffeehouse pouring adeni, mofawar, and qishr brews with cardamom and saffron.",
       "loved": [
         "adeni chai",
@@ -1325,7 +1407,7 @@
       "addrKey": "duluth-2645-nberkeley",
       "cw": {
         "tier": "excellent",
-        "note": "3,600 sqft, ~140 seats, open till late \u2014 built for studying.",
+        "note": "3,600 sqft, ~140 seats, open till late — built for studying.",
         "hasMeetingRoom": false
       },
       "late": {
@@ -1333,7 +1415,9 @@
         "when": "Fri-Sat till midnight; rest till 11pm"
       },
       "website": "https://www.instagram.com/qamariacoffeeatl/",
-      "placeId": "ChIJh4jIqNyj9YgRu1_QcC8GzmA"
+      "placeId": "ChIJh4jIqNyj9YgRu1_QcC8GzmA",
+      "curated": true,
+      "county": "Gwinnett"
     },
     {
       "name": "Yibna Cafe",
@@ -1344,7 +1428,7 @@
       "rating": 5.0,
       "ratingCount": "620",
       "ratingNum": 620,
-      "hours": "Mon-Fri 8am-6pm \u00b7 Sat 8am-3pm \u00b7 Closed Sun",
+      "hours": "Mon-Fri 8am-6pm · Sat 8am-3pm · Closed Sun",
       "usp": "Drive-thru Mediterranean-fusion coffee shop with Yemeni and Middle Eastern flavors.",
       "loved": [
         "matcha lattes",
@@ -1362,7 +1446,9 @@
         "hasMeetingRoom": false
       },
       "website": "https://yibnacafe.com/",
-      "placeId": "ChIJC3WdtKij9YgRW4poSauN8aE"
+      "placeId": "ChIJC3WdtKij9YgRW4poSauN8aE",
+      "curated": true,
+      "county": "Gwinnett"
     },
     {
       "name": "El Cafe by La Abuela",
@@ -1373,7 +1459,7 @@
       "rating": 4.4,
       "ratingCount": "1,016",
       "ratingNum": 1016,
-      "hours": "Mon-Thu 10:30am-9pm \u00b7 Fri-Sun 10am-11pm",
+      "hours": "Mon-Thu 10:30am-9pm · Fri-Sun 10am-11pm",
       "usp": "Colombian-rooted dessert cafe with crepes, waffles, milkshakes, and banana splits.",
       "loved": [
         "towering milkshakes",
@@ -1395,7 +1481,9 @@
         "when": "Fri-Sat & Sun till 11pm"
       },
       "website": "https://www.elcafebylaabuela.com/",
-      "placeId": "ChIJXTE1tmqj9YgRCR9QgRZ09EM"
+      "placeId": "ChIJXTE1tmqj9YgRCR9QgRZ09EM",
+      "curated": true,
+      "county": "Gwinnett"
     },
     {
       "name": "Date un Gusto",
@@ -1406,7 +1494,7 @@
       "rating": 4.6,
       "ratingCount": "133",
       "ratingNum": 133,
-      "hours": "Sun-Thu 8am-10pm \u00b7 Fri-Sat 8am-11pm",
+      "hours": "Sun-Thu 8am-10pm · Fri-Sat 8am-11pm",
       "usp": "Venezuelan-Colombian bakery-cafe with arepas, cachapas, tres-leches, and South American coffee.",
       "loved": [
         "fresh arepas",
@@ -1428,7 +1516,9 @@
         "when": "Fri-Sat till 11pm"
       },
       "website": "https://www.instagram.com/dateungusto.atl/",
-      "placeId": "ChIJCRoynPqj9YgRDsoE_v7XnAM"
+      "placeId": "ChIJCRoynPqj9YgRDsoE_v7XnAM",
+      "curated": true,
+      "county": "Gwinnett"
     },
     {
       "name": "7 Leaves Cafe",
@@ -1439,8 +1529,8 @@
       "rating": 4.6,
       "ratingCount": "218",
       "ratingNum": 218,
-      "hours": "Mon-Thu 10am-8pm \u00b7 Fri-Sat 10am-10pm \u00b7 Sun 10am-9pm",
-      "usp": "Vietnamese-American tea chain with childhood flavors like mung bean and Thai tea \u2014 drive-thru.",
+      "hours": "Mon-Thu 10am-8pm · Fri-Sat 10am-10pm · Sun 10am-9pm",
+      "usp": "Vietnamese-American tea chain with childhood flavors like mung bean and Thai tea — drive-thru.",
       "loved": [
         "mung bean milk tea",
         "jasmine macchiato",
@@ -1461,7 +1551,9 @@
         "when": "Fri-Sat till 10pm"
       },
       "website": "https://7leavescafe.com/locations/satellite/",
-      "placeId": "ChIJeVScd9Wj9YgRPvfMkoImdOw"
+      "placeId": "ChIJeVScd9Wj9YgRPvfMkoImdOw",
+      "curated": true,
+      "county": "Gwinnett"
     },
     {
       "name": "The Quynh Cafe",
@@ -1472,14 +1564,14 @@
       "rating": 4.3,
       "ratingCount": "319",
       "ratingNum": 319,
-      "hours": "Mon, Wed-Sun 10am-8pm \u00b7 Closed Tue",
-      "usp": "Modern Vietnamese cafe celebrating ch\u00e8 and phin-dripped robusta coffee.",
+      "hours": "Mon, Wed-Sun 10am-8pm · Closed Tue",
+      "usp": "Modern Vietnamese cafe celebrating chè and phin-dripped robusta coffee.",
       "loved": [
         "Vietnamese coffee",
-        "ch\u00e8 desserts",
+        "chè desserts",
         "natural light"
       ],
-      "signature": "Ch\u00e8 Th\u00e1i (Vietnamese Fruit Dessert Soup)",
+      "signature": "Chè Thái (Vietnamese Fruit Dessert Soup)",
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=The%20Quynh%20Cafe%203665%20Club%20Dr%20Duluth%20GA",
       "yelpUrl": "https://www.yelp.com/biz/the-quynh-cafe-duluth",
       "city": "Duluth",
@@ -1490,7 +1582,9 @@
         "hasMeetingRoom": false
       },
       "website": "https://www.facebook.com/theQuynhCafe/",
-      "placeId": "ChIJp65w1S-j9YgRE9o1oSp-FYQ"
+      "placeId": "ChIJp65w1S-j9YgRE9o1oSp-FYQ",
+      "curated": true,
+      "county": "Gwinnett"
     },
     {
       "name": "Lemon Sweets Bakery & Cafe",
@@ -1501,7 +1595,7 @@
       "rating": 4.7,
       "ratingCount": "239",
       "ratingNum": 239,
-      "hours": "Mon, Wed-Thu, Sun 10:30am-8:30pm \u00b7 Fri-Sat to 9:30pm \u00b7 Closed Tue",
+      "hours": "Mon, Wed-Thu, Sun 10:30am-8:30pm · Fri-Sat to 9:30pm · Closed Tue",
       "usp": "Asian-owned bakery and boba shop blending Vietnamese, Chinese, and Korean pastries.",
       "loved": [
         "mango bingsu",
@@ -1519,7 +1613,9 @@
         "hasMeetingRoom": false
       },
       "website": "https://www.lemonsweetsbakery.com/",
-      "placeId": "ChIJqysGDoij9YgR4N7l5zw0c4o"
+      "placeId": "ChIJqysGDoij9YgR4N7l5zw0c4o",
+      "curated": true,
+      "county": "Gwinnett"
     },
     {
       "name": "Wich Tea",
@@ -1530,7 +1626,7 @@
       "rating": 4.8,
       "ratingCount": "468",
       "ratingNum": 468,
-      "hours": "Mon, Wed-Thu 9am-7:30pm \u00b7 Fri-Sat 10am-9pm \u00b7 Sun 10am-7:30pm \u00b7 Closed Tue",
+      "hours": "Mon, Wed-Thu 9am-7:30pm · Fri-Sat 10am-9pm · Sun 10am-7:30pm · Closed Tue",
       "usp": "Family-run Vietnamese cafe with in-house-baked banh mi and Vietnamese coffee.",
       "loved": [
         "fresh-baked bread",
@@ -1548,7 +1644,9 @@
         "hasMeetingRoom": false
       },
       "website": "https://linktr.ee/wichteabanhmi",
-      "placeId": "ChIJ_f0IFwWj9YgRT8ZnfvUKpYk"
+      "placeId": "ChIJ_f0IFwWj9YgRT8ZnfvUKpYk",
+      "curated": true,
+      "county": "Gwinnett"
     },
     {
       "name": "Tea Drip",
@@ -1559,7 +1657,7 @@
       "rating": 4.6,
       "ratingCount": "243",
       "ratingNum": 243,
-      "hours": "Sun-Thu 10am-9pm \u00b7 Fri-Sat 10am-10pm",
+      "hours": "Sun-Thu 10am-9pm · Fri-Sat 10am-10pm",
       "usp": "Vietnamese drip coffee bar pairing Dalat coffee with Japanese matcha and real-ingredient boba.",
       "loved": [
         "real taro paste",
@@ -1581,7 +1679,9 @@
         "when": "Fri-Sat till 10pm"
       },
       "website": "https://www.instagram.com/teadrip.duluth/",
-      "placeId": "ChIJTZQTrZWj9YgR7yCPR1mlVJ0"
+      "placeId": "ChIJTZQTrZWj9YgR7yCPR1mlVJ0",
+      "curated": true,
+      "county": "Gwinnett"
     },
     {
       "name": "Cuckoo's Cafe",
@@ -1592,7 +1692,7 @@
       "rating": 4.5,
       "ratingCount": "471",
       "ratingNum": 471,
-      "hours": "Mon-Tue, Thu-Sun 12pm-11pm \u00b7 Closed Wed",
+      "hours": "Mon-Tue, Thu-Sun 12pm-11pm · Closed Wed",
       "usp": "Late-night Taiwanese hangout with boba, tea cocktails, and Taiwanese street snacks.",
       "loved": [
         "Taiwanese chicken nuggets",
@@ -1614,7 +1714,9 @@
         "when": "Mon-Tue, Thu-Sun till 11pm"
       },
       "website": "https://cuckooscafeduluth.com/",
-      "placeId": "ChIJ6eLU5JOj9YgRlxEb8l9aaYs"
+      "placeId": "ChIJ6eLU5JOj9YgRlxEb8l9aaYs",
+      "curated": true,
+      "county": "Gwinnett"
     },
     {
       "name": "Chuchat",
@@ -1647,7 +1749,9 @@
         "when": "Daily till 10pm"
       },
       "website": "https://www.chuchatusa.com/",
-      "placeId": "ChIJPR5SJL-f9YgRF4jcZyLZtrk"
+      "placeId": "ChIJPR5SJL-f9YgRF4jcZyLZtrk",
+      "curated": true,
+      "county": "Fulton"
     },
     {
       "name": "Art's Bakery & Cafe",
@@ -1658,7 +1762,7 @@
       "rating": 4.8,
       "ratingCount": "266",
       "ratingNum": 266,
-      "hours": "Wed-Thu 11am-8pm \u00b7 Fri-Sat 11am-10pm \u00b7 Sun 12pm-8pm \u00b7 Closed Mon-Tue",
+      "hours": "Wed-Thu 11am-8pm · Fri-Sat 11am-10pm · Sun 12pm-8pm · Closed Mon-Tue",
       "usp": "International bakery combining French technique with Middle Eastern pastries and custom cakes.",
       "loved": [
         "pistachio & cashew baklava",
@@ -1680,7 +1784,9 @@
         "when": "Fri-Sat till 10pm"
       },
       "website": "https://www.facebook.com/artsbakeryandcafe/",
-      "placeId": "ChIJ23zF_pOj9YgR6dfuviJItdg"
+      "placeId": "ChIJ23zF_pOj9YgR6dfuviJItdg",
+      "curated": true,
+      "county": "Gwinnett"
     },
     {
       "name": "Artistea",
@@ -1691,7 +1797,7 @@
       "rating": 4.8,
       "ratingCount": "264",
       "ratingNum": 264,
-      "hours": "Sun-Tue, Thu 11am-10pm \u00b7 Fri-Sat 11am-11pm \u00b7 Closed Wed",
+      "hours": "Sun-Tue, Thu 11am-10pm · Fri-Sat 11am-11pm · Closed Wed",
       "usp": "Boba and Korean-bagel cafe doubling as a craft studio for ceramic painting and plush-making.",
       "loved": [
         "banana pudding matcha",
@@ -1713,7 +1819,9 @@
         "when": "Fri-Sat till 11pm"
       },
       "website": "https://artistea.shop/",
-      "placeId": "ChIJdxfDGwCj9YgRRsPBQ0bbuoY"
+      "placeId": "ChIJdxfDGwCj9YgRRsPBQ0bbuoY",
+      "curated": true,
+      "county": "Gwinnett"
     },
     {
       "name": "Hayat Coffee",
@@ -1724,8 +1832,8 @@
       "rating": 4.8,
       "ratingCount": "268",
       "ratingNum": 268,
-      "hours": "Sun-Thu 7am-1am \u00b7 Fri-Sat 7am-2am",
-      "usp": "Locally-owned Arab coffeehouse celebrating cardamom-spiced brews in a 3,600 sqft family-friendly lounge \u2014 open past midnight every night.",
+      "hours": "Sun-Thu 7am-1am · Fri-Sat 7am-2am",
+      "usp": "Locally-owned Arab coffeehouse celebrating cardamom-spiced brews in a 3,600 sqft family-friendly lounge — open past midnight every night.",
       "loved": [
         "kanafeh",
         "saffron milk cake",
@@ -1746,7 +1854,9 @@
         "when": "Fri-Sat till 2am; rest of week till 1am"
       },
       "website": "https://www.instagram.com/hayatcoffee.co/",
-      "placeId": "ChIJ40mavlCZ9YgRgIZo_llTLng"
+      "placeId": "ChIJ40mavlCZ9YgRgIZo_llTLng",
+      "curated": true,
+      "county": "Gwinnett"
     },
     {
       "name": "Cafe Flat",
@@ -1757,7 +1867,7 @@
       "rating": 4.8,
       "ratingCount": "309",
       "ratingNum": 309,
-      "hours": "Sun-Thu 9am-9pm \u00b7 Fri-Sat 9am-10pm",
+      "hours": "Sun-Thu 9am-9pm · Fri-Sat 9am-10pm",
       "usp": "Locally-roasted craft coffee with viral Korean-style croffles in a sleek, study-friendly space at Hwy 120 & Boggs Rd.",
       "loved": [
         "Dirty Chai Latte",
@@ -1779,7 +1889,9 @@
         "when": "Fri-Sat till 10pm"
       },
       "website": "https://joe.coffee/locations/ga/duluth/cafe-flat-duluth/",
-      "placeId": "ChIJfXyu1CW99YgRFSK7wAfjrvE"
+      "placeId": "ChIJfXyu1CW99YgRFSK7wAfjrvE",
+      "curated": true,
+      "county": "Gwinnett"
     },
     {
       "name": "Glaze Tea Duluth",
@@ -1790,8 +1902,8 @@
       "rating": 4.5,
       "ratingCount": "316",
       "ratingNum": 316,
-      "hours": "Mon-Thu 12pm-11pm \u00b7 Fri-Sat 12pm-12am \u00b7 Sun 12pm-11pm",
-      "usp": "Traditional Chinese tea craftsmanship meets modern boba \u2014 handcrafted milk teas with premium loose-leaf and a signature milk-tea hot pot.",
+      "hours": "Mon-Thu 12pm-11pm · Fri-Sat 12pm-12am · Sun 12pm-11pm",
+      "usp": "Traditional Chinese tea craftsmanship meets modern boba — handcrafted milk teas with premium loose-leaf and a signature milk-tea hot pot.",
       "loved": [
         "Camellia Milk Tea",
         "milk tea hot pot",
@@ -1812,7 +1924,9 @@
         "when": "Fri-Sat till midnight; rest till 11pm"
       },
       "website": "https://www.glazetea.com/",
-      "placeId": "ChIJRbBAjPqj9YgRe-0PebEu1CU"
+      "placeId": "ChIJRbBAjPqj9YgRe-0PebEu1CU",
+      "curated": true,
+      "county": "Gwinnett"
     },
     {
       "name": "Break Coffee Roasters",
@@ -1823,8 +1937,8 @@
       "rating": 4.6,
       "ratingCount": "313",
       "ratingNum": 313,
-      "hours": "Mon-Thu 7am-5pm \u00b7 Fri 7am-6pm \u00b7 Sat 8am-6pm \u00b7 Sun 9am-6pm",
-      "usp": "In-house small-batch roastery in walkable downtown Duluth \u2014 patio seating, outlets, and fresh pastries.",
+      "hours": "Mon-Thu 7am-5pm · Fri 7am-6pm · Sat 8am-6pm · Sun 9am-6pm",
+      "usp": "In-house small-batch roastery in walkable downtown Duluth — patio seating, outlets, and fresh pastries.",
       "loved": [
         "house-roasted pour-over",
         "vanilla latte",
@@ -1837,12 +1951,14 @@
       "addrKey": "duluth-3122-hillst",
       "cw": {
         "tier": "good",
-        "note": "Outlets, varied seating, patio \u2014 popular student spot in downtown.",
+        "note": "Outlets, varied seating, patio — popular student spot in downtown.",
         "hasMeetingRoom": false,
         "meetingRoomNote": ""
       },
       "website": "https://breakroasters.com",
-      "placeId": "ChIJIR5xg8qj9YgRnSZmGjwPVWo"
+      "placeId": "ChIJIR5xg8qj9YgRnSZmGjwPVWo",
+      "curated": true,
+      "county": "Gwinnett"
     },
     {
       "name": "Cafe Soon",
@@ -1853,26 +1969,28 @@
       "rating": 4.5,
       "ratingCount": "119",
       "ratingNum": 119,
-      "hours": "Mon-Sat 10am-9pm \u00b7 Sun 1pm-9pm",
-      "usp": "Sister caf\u00e9 of Soon's Bakery \u2014 mini cakes, Cloud drink series, and salt-bread sandwiches.",
+      "hours": "Mon-Sat 10am-9pm · Sun 1pm-9pm",
+      "usp": "Sister café of Soon's Bakery — mini cakes, Cloud drink series, and salt-bread sandwiches.",
       "loved": [
         "Cloud Matcha",
         "Cloud Espresso",
         "mini cakes"
       ],
-      "signature": "Cloud Matcha \u2014 signature layered cloud drink",
+      "signature": "Cloud Matcha — signature layered cloud drink",
       "googleUrl": "https://www.google.com/maps/search/?api=1&query=Cafe%20Soon%203300%20Peachtree%20Industrial%20Blvd%20Duluth%20GA",
       "yelpUrl": "https://www.yelp.com/biz/cafe-soon-duluth",
       "city": "Duluth",
       "addrKey": "duluth-3300-peachtreeindustrial",
       "cw": {
         "tier": "limited",
-        "note": "Caf\u00e9 seating; no dedicated work zone noted.",
+        "note": "Café seating; no dedicated work zone noted.",
         "hasMeetingRoom": false,
         "meetingRoomNote": ""
       },
       "website": "https://www.cafesoonatl.com",
-      "placeId": "ChIJOUHmGDKZ9YgRvrV_yjGfpoQ"
+      "placeId": "ChIJOUHmGDKZ9YgRvrV_yjGfpoQ",
+      "curated": true,
+      "county": "Gwinnett"
     },
     {
       "name": "Arwa Specialty Coffee",
@@ -1883,8 +2001,8 @@
       "rating": 4.8,
       "ratingCount": "164",
       "ratingNum": 164,
-      "hours": "Sun-Thu 9am-10pm \u00b7 Fri-Sat 9am-12am",
-      "usp": "First Georgia outpost of the Texas-born Yemeni coffee franchise \u2014 cardamom-forward brews and honeycomb bread in a lounge built for long stays.",
+      "hours": "Sun-Thu 9am-10pm · Fri-Sat 9am-12am",
+      "usp": "First Georgia outpost of the Texas-born Yemeni coffee franchise — cardamom-forward brews and honeycomb bread in a lounge built for long stays.",
       "loved": [
         "date latte",
         "honeycomb bread",
@@ -1905,7 +2023,9 @@
         "when": "Fri-Sat till midnight; rest till 10pm"
       },
       "website": "https://arwacoffee.com",
-      "placeId": "ChIJY__FfiiZ9YgR27_N9gonM04"
+      "placeId": "ChIJY__FfiiZ9YgR27_N9gonM04",
+      "curated": true,
+      "county": "Fulton"
     },
     {
       "name": "Eleva Cafe",
@@ -1917,7 +2037,7 @@
       "ratingCount": "295",
       "ratingNum": 295,
       "hours": "Daily 9am-4pm",
-      "usp": "Halal, Arabian-inspired breakfast caf\u00e9 \u2014 hummus and falafel plates, waffles and crepes, espresso drinks \u2014 in a modern, upscale room.",
+      "usp": "Halal, Arabian-inspired breakfast café — hummus and falafel plates, waffles and crepes, espresso drinks — in a modern, upscale room.",
       "loved": [
         "falafel breakfast plate",
         "hummus bowls",
@@ -1934,7 +2054,9 @@
         "hasMeetingRoom": false
       },
       "website": "https://elevacafe.com",
-      "placeId": "ChIJFw-g73Oj9YgRdcdTujlyYZ8"
+      "placeId": "ChIJFw-g73Oj9YgRdcdTujlyYZ8",
+      "curated": true,
+      "county": "Gwinnett"
     }
   ],
   "addr": {

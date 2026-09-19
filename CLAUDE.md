@@ -92,6 +92,20 @@ Most of real Duluth is in Gwinnett County, but not all of it: 3 of the 61 shops 
 
 At real multi-county scale (~1,500–2,000 shops), revisit `shops.json`'s minification (numeric category/neighborhood keys, abbreviated addresses) — the 100 KB budget below is for `index.html` only, but `shops.json` compounds with shop count and should stay gzip-friendly.
 
+### Discovered shops — `public/places.json`
+
+Generated, never hand-edited. Region, query types, category mapping and the chain list are constants at the top of `scripts/discover_places.py`. To re-run (on demand only — nothing is scheduled):
+
+```sh
+python3 scripts/discover_places.py --dry-run          # free: prints the exact paid-call count
+python3 scripts/discover_places.py                    # gated paid pass → scratch/places-<date>.json + report
+python3 scripts/discover_places.py --replay scratch/places-<date>.json --write
+```
+
+The paid pass refuses to start when `~/.config/caffeye/places_usage.json` shows ≥ 500 Enterprise calls this month or the run would exceed 900 (flags `--usage-threshold`, `--max-paid-calls`). `python3 scripts/places_ledger.py` prints the ledger. To drop a discovered place (relisted duplicate of a curated shop, a restaurant that slipped through the `cafe` type), add its `placeId` and a reason to `scripts/places_exclude.json` and replay. A curated shop always wins over a discovered twin with the same `placeId`.
+
+Coordinates for discovered shops are Google's place pin; Apple `CLGeocoder` remains the rule for hand-added curated shops.
+
 **To refresh ratings** (`rating` / `ratingCount` / `ratingNum` drive the Bayesian ranking, so they must all come from one source — Google, via the Places API):
 
 ```sh
