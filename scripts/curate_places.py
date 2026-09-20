@@ -27,7 +27,7 @@ SHOPS_PATH = ROOT / "public" / "shops.json"
 CURATIONS_PATH = ROOT / "scripts" / "curations.json"
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from refresh_ratings import norm
+from refresh_ratings import norm  # noqa: E402
 
 
 def load_curations(path=CURATIONS_PATH) -> dict:

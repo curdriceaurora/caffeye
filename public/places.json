@@ -10114,7 +10114,7 @@
    "lat": 33.949786,
    "lng": -84.127032,
    "category": "Tea/Boba",
-   "model": "independent",
+   "model": "franchise",
    "types": [
     "tea_house"
    ],
@@ -10398,7 +10398,7 @@
    "lat": 33.960626,
    "lng": -84.137578,
    "category": "Tea/Boba",
-   "model": "franchise",
+   "model": "independent",
    "types": [
     "tea_house"
    ],
@@ -21148,7 +21148,7 @@
    "lat": 34.049682,
    "lng": -83.991831,
    "category": "Tea/Boba",
-   "model": "franchise",
+   "model": "independent",
    "types": [
     "tea_house"
    ],

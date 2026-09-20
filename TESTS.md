@@ -126,29 +126,29 @@ recovery, not just the threshold function in isolation.
 | ID | Trace | Test | Pass |
 |---|---|---|---|
 | T4.1 | R4.1 | `js> document.querySelectorAll('#categoryChips .chip').length` | `6` (All + 5 categories) |
-| T4.2 | R4.1 | Each category chip displays its emoji + label + count; sum of category counts = inScope.length. | Five category counts sum to inScope.length matching the franchise toggle state (571 indie shops when toggle OFF; 1,034 total shops when toggle ON). |
+| T4.2 | R4.1 | Each category chip displays its emoji + label + count; sum of category counts = inScope.length. | Five category counts sum to inScope.length matching the franchise toggle state (572 indie shops when toggle OFF; 1,034 total shops when toggle ON). |
 | T4.3 | R4.2 | Click "All". `js> [...document.querySelectorAll('#categoryChips .chip')][0].classList.contains('active')` | `true` |
 | T4.4 | R4.3 | `js> document.querySelectorAll('#featureChips .chip').length` | `4` (Work-friendly, Meeting room, Open late, Until midnight) |
 | T4.5 | R4.3 | Feature chip text matches `['💻Work-friendly{n}', '🤝Meeting room{n}', '🌙Open late{n}', '🦉Until midnight{n}']` (spaces normalized). | All four present. |
 | T4.6 | R4.4 | Click "Coffee" then "Work-friendly". `js> document.querySelectorAll('.shop-item').length` | Returns count of Coffee × Work-friendly intersection. |
 | T4.7 | R4.5 | Search the page DOM for "Past midnight". | Returns no matches. |
 | T4.8 | R4.6 | `js> !document.getElementById('sortSelect')` | `true` |
-| T4.9 | R4.7 | `js> getComputedStyle(document.getElementById('locationRow')).display` | `'none'` — county filter row removed per user preference. |
-| T4.10 | R4.7 | Filter bar presentation: | Only Type and Useful For rows are displayed, maximizing mobile density. |
-| T4.11 | R4.7 | Programmatic county scoping: `js> selectCounty('Gwinnett'); document.getElementById('resultsCount').textContent === String(SHOPS.filter(s => s.county === 'Gwinnett' && (!state.includeFranchises ? s.model !== 'franchise' : true)).length)` | `true` |
-| T4.12 | R4.7 | Filter bar row spacing: `.filter-row[style*="display: none"] + .filter-row` has `margin-top: 0` so the Type row sits flush against the top padding. | `true` |
+| T4.9 | R4.7 | `js> !document.getElementById('locationRow')` | `true` — location/county row omitted from DOM per user preference. |
+| T4.10 | R4.7 | `js> document.querySelectorAll('.filter-bar .filter-row').length` | `2` (Type and Useful for rows only, maximizing mobile density). |
+| T4.11 | R4.7 | List card tags and category names are safely escaped via `escapeHtml()`. | `true` — no unescaped markup in `tagsHtml`. |
+| T4.12 | R4.7 | Filter bar layout: `.filter-row:first-of-type` sits flush with `margin-top: 0`. | `true` |
 | T4.13 | R4.8 | On load, Indie-only is active by default: `js> state.includeFranchises === false && !document.getElementById('franchiseToggle').checked`. | `true`; all initially rendered cards have `.model-tag.indie`. |
 | T4.14 | R4.8 | Flip top-right toggle `#franchiseToggle` (Include franchise stores). Check `document.querySelectorAll('.shop-item').length`. | Matches total shop count (indie + franchise); franchise cards appear with `.model-tag.franchise`. |
-| T4.15 | R4.9 | `js> COUNTIES.length === 8 && ['Gwinnett', 'Fulton', 'Forsyth', 'DeKalb', 'Cobb', 'Cherokee', 'Hall', 'Dawson'].every(c => COUNTIES.includes(c))` | `true` (all 8 North Atlanta & North Georgia counties present) |
-| T4.16 | R4.9 | Programmatic county filter: `js> selectCounty('Cherokee'); state.activeCounty === 'Cherokee' && document.querySelectorAll('.shop-item').length > 0` | `true` (Cherokee places rendered; category counts scoped) |
+| T4.15 | R4.9 | `js> REGION_LABEL === 'North Atlanta'` | `true` (unified 8-county North Atlanta region). |
+| T4.16 | R4.9 | `js> SHOPS.length === 1034` | `true` (1,034 total venues across North Atlanta & North Georgia). |
 
 ## T5. Right-side list (R5)
 
 | ID | Trace | Test | Pass |
 |---|---|---|---|
-| T5.1 | R5.1 | Hard reload, after settle: `js> document.querySelectorAll('.shop-item').length` | Count of independent shops in scope (386 indie spots on boot) |
-| T5.2 | R5.2 | First 3 list items by name. | Top of list reflects weighted-rating order (Yibna Cafe, Incha Duluth, Georgia French Bakery as of Sept 2026). |
-| T5.3 | R5.2 | `js> Math.abs(SHOPS.filter(s=>typeof s.rating==='number').reduce((a,s)=>a+s.rating,0)/SHOPS.filter(s=>typeof s.rating==='number').length - 4.5) < 0.1` | `true` (C ≈ 4.5) |
+| T5.1 | R5.1 | Hard reload, after settle: `js> document.querySelectorAll('.shop-item').length` | Count of independent shops in scope (572 indie spots on boot) |
+| T5.2 | R5.2 | First 3 list items by name. | Top of list reflects weighted-rating order (Douceur De France, Yibna Cafe, Lumier's Chimney Cake as of Sept 2026). |
+| T5.3 | R5.2 | `js> Math.abs(SHOPS.filter(s=>typeof s.rating==='number').reduce((a,s)=>a+s.rating,0)/SHOPS.filter(s=>typeof s.rating==='number').length - 4.36) < 0.1` | `true` (C ≈ 4.36 across 990 rated shops) |
 | T5.4 | R5.3 | `js> SHOPS.filter(s => s.rating == null).every(s => typeof s.weightedRating === 'number')` | `true` (vacuously true while every shop is rated — as of Sept 2026 none is null; the branch is exercised whenever one is) |
 | T5.5 | R5.4 | Inspect any list item. | Shows: colored circular icon tile, name, meta row, ≤ 3 tags. |
 | T5.5b | R5.4 | Hard reload, no chips, no search (all shops in viewport). `js> document.querySelector('.shop-item .score').textContent === '◆ ' + Math.max(...SHOPS.map(s => s.weightedRating)).toFixed(1)` | `true` |

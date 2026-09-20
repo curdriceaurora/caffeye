@@ -14,16 +14,17 @@
 <meta name="description" content="A local with an eye for good spots. Curated coffee, bakeries & tea across North Atlanta.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Caffeye">
+<meta property="og:url" content="https://duluth-coffee-shoppes.sra-e69.workers.dev/">
 <meta property="og:title" content="Caffeye — We know a spot.">
 <meta property="og:description" content="A local with an eye for good spots. Curated coffee, bakeries & tea across North Atlanta.">
-<meta property="og:image" content="./brand/social/caffeye-share-1200x630.png">
+<meta property="og:image" content="https://duluth-coffee-shoppes.sra-e69.workers.dev/brand/social/caffeye-share-1200x630.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Caffeye. We know a spot. Coffee, bakeries and tea.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Caffeye — We know a spot.">
 <meta name="twitter:description" content="A local with an eye for good spots. Curated coffee, bakeries & tea across North Atlanta.">
-<meta name="twitter:image" content="./brand/social/caffeye-share-1200x630.png">
+<meta name="twitter:image" content="https://duluth-coffee-shoppes.sra-e69.workers.dev/brand/social/caffeye-share-1200x630.png">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
 <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
 <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
@@ -169,7 +170,6 @@
   }
   .filter-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
   .filter-row + .filter-row { margin-top: 6px; }
-  .filter-row[style*="display: none"] + .filter-row { margin-top: 0; }
   .filter-label {
     font-size: 11px; color: var(--muted);
     text-transform: uppercase; letter-spacing: 0.06em;
@@ -447,7 +447,6 @@
     .toggle-text-mobile { display: inline; }
     .filter-bar { padding: 4px 12px 5px; }
     .filter-row + .filter-row { margin-top: 3px; }
-    .filter-row[style*="display: none"] + .filter-row { margin-top: 0; }
     .filter-label { display: none; }
     .filter-row { gap: 5px; overflow-x: auto; flex-wrap: nowrap; padding-bottom: 2px; }
     .filter-row::-webkit-scrollbar { display: none; }
@@ -490,10 +489,6 @@
   </header>
 
   <div class="filter-bar">
-    <div class="filter-row" id="locationRow" style="display: none;">
-      <span class="filter-label">Where</span>
-      <div id="locationChips"></div>
-    </div>
     <div class="filter-row">
       <span class="filter-label">Type</span>
       <div id="categoryChips"></div>
@@ -547,7 +542,7 @@ Promise.allSettled([
 .then(([shopsRes, placesRes]) => {
   const shopsData = shopsRes.status === 'fulfilled' ? shopsRes.value : null;
   const placesData = placesRes.status === 'fulfilled' ? placesRes.value : null;
-  if (!shopsData && !placesData) throw new Error('Failed to load shop data.');
+  if (!shopsData) throw new Error('Failed to load baseline shop data (shops.json).');
 
   SHOPS = (shopsData && shopsData.shops) ? shopsData.shops.map(s => ({ ...s, curated: s.curated !== false })) : [];
   ADDR = (shopsData && shopsData.addr) ? { ...shopsData.addr } : {};
@@ -678,8 +673,6 @@ function boot() {
   // STATE
   const LIST_PAGE_SIZE = 200; // cap initial DOM nodes; "Load more" grows this
   const state = {
-    activeCounty: null,          // null = All counties; otherwise the county name
-    activeCity: null,            // null = All cities; otherwise the city name
     includeFranchises: false,    // Default to Indie only; true = Include franchises
     categories: new Set(),
     features: new Set(),
@@ -689,14 +682,8 @@ function boot() {
   };
 
   // FILTER CHIPS
-  const locationChipsEl = document.getElementById('locationChips');
   const catChipsEl = document.getElementById('categoryChips');
   const featChipsEl = document.getElementById('featureChips');
-  // Location / county filter row is removed per user request
-  const showCountyRow = false;
-  const showCityRow = false;
-  const locationRowEl = document.getElementById('locationRow');
-  if (locationRowEl) locationRowEl.style.display = 'none';
 
   function makeChip({ label, count, color, icon, themeColor, onClick, isActive }) {
     const b = document.createElement('button');
@@ -737,14 +724,7 @@ function boot() {
   }
 
   function renderChips() {
-    if (locationChipsEl) locationChipsEl.innerHTML = '';
-
-    const inScope = (state.activeCity
-      ? SHOPS.filter(s => s.city === state.activeCity)
-      : state.activeCounty
-      ? SHOPS.filter(s => s.county === state.activeCounty)
-      : SHOPS).filter(s => state.includeFranchises || s.model !== 'franchise');
-
+    const inScope = SHOPS.filter(s => state.includeFranchises || s.model !== 'franchise');
     const catCounts = inScope.reduce((acc, s) => { acc[s.category] = (acc[s.category]||0)+1; return acc; }, {});
 
     catChipsEl.innerHTML = '';
@@ -809,11 +789,14 @@ function boot() {
     maxBounds: ATL_BOUNDS,
     maxBoundsViscosity: 1.0
   }).setView([33.972, -84.142], 13); // initial view; refit to markers below
-  // CARTO's raster basemaps now require a (free, no-account) API key — unauthenticated
-  // requests still return 200 but the tile itself is watermarked "API key required".
-  // This key is meant to be public client-side, same model as a Google Maps JS key;
-  // the security boundary is the fair-use limit + required attribution, not secrecy.
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png?key=cb1_3qiv_1_0583eea1ec1b7dd298410338', {
+  // CARTO's raster basemaps require an authorized API key in production, which is
+  // domain-restricted to the Cloudflare Workers origin. On localhost / file: protocol,
+  // omit the key query parameter to prevent 403s during local dev and automated tests.
+  const isLocalHost = location.hostname === 'localhost' || location.hostname === '127.0.0.1' || location.protocol === 'file:';
+  const cartoTileUrl = isLocalHost
+    ? 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png'
+    : 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png?key=cb1_3qiv_1_0583eea1ec1b7dd298410338';
+  L.tileLayer(cartoTileUrl, {
     attribution: '&copy; OpenStreetMap &copy; CARTO',
     subdomains: 'abcd',
     minZoom: 8,
@@ -1051,11 +1034,9 @@ function boot() {
   const resultsMetaEl  = document.getElementById('resultsMeta');
   const searchInput = document.getElementById('searchInput');
 
-  // Global filters (city / category / feature / search) — these gate BOTH map markers and the list.
+  // Global filters (category / feature / search / franchise) — these gate BOTH map markers and the list.
   function passesGlobalFilters(s) {
     const term = state.search.toLowerCase().trim();
-    if (state.activeCounty && s.county !== state.activeCounty) return false;
-    if (state.activeCity && s.city !== state.activeCity) return false;
     if (state.categories.size && !state.categories.has(s.category)) return false;
     if (!state.includeFranchises && s.model === 'franchise') return false;
     const cw = s.cw || {};
@@ -1160,7 +1141,8 @@ function boot() {
       const catColor = cat.hex || '#999';
       const catIcon = cat.icon || '';
       const tags = compactTags(shop);
-      const tagsHtml = tags.map((t, i) => (i > 0 ? '<span class="tag-sep">·</span>' : '') + t).join('');
+      const tagsHtml = tags.map((t, i) => (i > 0 ? '<span class="tag-sep">·</span>' : '') + escapeHtml(t)).join('');
+      const catLabel = escapeHtml(shop.category.replace('+', ' & '));
       // The headline number is OUR score (Bayesian-weighted), not Google's star —
       // it is what the list is ordered by. Google's raw rating lives only on the
       // detail card; the results-bar legend explains ◆ (tooltips don't fire on touch).
@@ -1173,7 +1155,7 @@ function boot() {
       const curatedTag = shop.curated ? ' · <span class="curated-tag">✔ curated</span>' : '';
       li.innerHTML = `
         <div class="shop-name"><span class="shop-icon-tile" style="background:${catColor}">${catIcon}</span>${escapeHtml(shop.name)}</div>
-        <div class="shop-meta">${shop.category.replace('+', ' & ')} · ${ratingHtml} · ${escapeHtml(shop.neighborhood)}${modelTag}${curatedTag}</div>
+        <div class="shop-meta">${catLabel} · ${ratingHtml} · ${escapeHtml(shop.neighborhood)}${modelTag}${curatedTag}</div>
         <div class="shop-tags">${tagsHtml}</div>
       `;
       
@@ -1234,7 +1216,7 @@ function boot() {
     let html = `
       <button class="back-btn" id="backBtn">← Back to list</button>
       <div class="detail-header">
-        <div class="detail-cat"><span class="dot" style="background:${cat.hex || '#999'}"></span>${shop.category.replace('+',' & ')} · ${escapeHtml(shop.neighborhood)}${modelTag}${curatedTag}</div>
+        <div class="detail-cat"><span class="dot" style="background:${cat.hex || '#999'}"></span>${escapeHtml(shop.category.replace('+',' & '))} · ${escapeHtml(shop.neighborhood)}${modelTag}${curatedTag}</div>
         <h2 class="detail-name">${escapeHtml(shop.name)}</h2>
         <div class="detail-rating">${ratingHtml}</div>
       </div>
@@ -1312,36 +1294,7 @@ function boot() {
     }
   }
 
-  function selectCounty(county) {
-    state.activeCounty = county;
-    state.activeCity = null; // a coarser scope change starts fresh at the city level
-    if (state.selected && county && state.selected.county !== county) {
-      deselectShop();
-    }
-    render();
-    if (clusterGroup.getLayers().length) {
-      map.fitBounds(clusterGroup.getBounds(), { padding: [40, 40], animate: true });
-    }
-  }
 
-  function selectCity(city) {
-    state.activeCity = city;
-    // Deliberately does NOT touch activeCounty: the City chips a user can
-    // actually click are already scoped to citiesInScope (the active county's
-    // own cities, see renderChips), so a picked city can never conflict with
-    // the active county. Clearing it here previously hid the whole City row
-    // (and the county's own active-chip highlight) the instant a city was
-    // picked, right when the user most needed to see what was selected.
-    // If a detail card is open and the chosen city doesn't include that shop, close it.
-    if (state.selected && city && state.selected.city !== city) {
-      deselectShop();
-    }
-    render();
-    // Refit the map to whatever's now on it (clusterGroup reflects the new filter).
-    if (clusterGroup.getLayers().length) {
-      map.fitBounds(clusterGroup.getBounds(), { padding: [40, 40], animate: true });
-    }
-  }
 
   function deselectShop() {
     const lastSelectedId = state.selected ? state.selected.id : null;
@@ -1372,18 +1325,13 @@ function boot() {
   const brandEl = document.querySelector('.brand');
   const freshnessEl = document.querySelector('.freshness');
   function updateHeader() {
-    const scope = state.activeCity || state.activeCounty || REGION_LABEL;
-    const inScope = (state.activeCity
-      ? SHOPS.filter(s => s.city === state.activeCity)
-      : state.activeCounty
-      ? SHOPS.filter(s => s.county === state.activeCounty)
-      : SHOPS).filter(s => state.includeFranchises || s.model !== 'franchise');
+    const inScope = SHOPS.filter(s => state.includeFranchises || s.model !== 'franchise');
     const count = inScope.length;
-    const title = 'Coffee in ' + scope;
+    const title = 'Coffee in ' + REGION_LABEL;
     document.title = title;
     if (brandEl) brandEl.textContent = title;
     if (freshnessEl) {
-      freshnessEl.textContent = count + ' spots in ' + scope
+      freshnessEl.textContent = count + ' spots in ' + REGION_LABEL
         + (CHECKED_MONTH ? ' · verified ' + CHECKED_MONTH : '');
     }
   }
@@ -1395,7 +1343,12 @@ function boot() {
     renderList();
   }
 
-  searchInput.addEventListener('input', e => { state.search = e.target.value; renderList(); });
+  let searchTimer = null;
+  searchInput.addEventListener('input', e => {
+    state.search = e.target.value;
+    clearTimeout(searchTimer);
+    searchTimer = setTimeout(() => { renderList(); }, 80);
+  });
 
   const franchiseToggle = document.getElementById('franchiseToggle');
   if (franchiseToggle) {
@@ -1413,8 +1366,6 @@ function boot() {
   if (brandHomeBtn) {
     const resetAll = (e) => {
       e.preventDefault();
-      selectCounty(null);
-      selectCity(null);
       state.includeFranchises = false;
       if (franchiseToggle) franchiseToggle.checked = false;
       state.categories.clear();
@@ -1431,7 +1382,7 @@ function boot() {
   render();
 
   // Expose key globals for console testing and the test suite in TESTS.md.
-  Object.assign(window, { state, SHOPS, ADDR, NEIGHBORHOODS, CATS, CITIES, COUNTIES, REGION_LABEL, map, markers, clusterGroup, selectCity, selectCounty, exceedsLabelSafetyCap, placeLabels, ATL_BOUNDS });
+  Object.assign(window, { state, SHOPS, ADDR, NEIGHBORHOODS, CATS, REGION_LABEL, map, markers, clusterGroup, exceedsLabelSafetyCap, placeLabels, ATL_BOUNDS, escapeHtml });
 }
 
 </script>

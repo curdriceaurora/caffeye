@@ -381,7 +381,15 @@ FRANCHISE_KEYWORDS = (
     r"\bsarah\s*s?\s*donuts?\b",
     r"\bsara\s*s?\s*donuts?\b",
     r"\bpearl\s*s?\s*tea\b",
+    r"\bone\s*zo\b",
 )
+
+BRAND_OVERRIDES = {
+    "glaze tea": "independent",
+    "onezo": "franchise",
+    "one zo": "franchise",
+    "one zo boba": "franchise",
+}
 
 
 def clean_brand(name: str) -> str:
@@ -394,11 +402,14 @@ def clean_brand(name: str) -> str:
 
 def model_for(name: str, brand_counts=None) -> str:
     """'franchise' for national/regional chains and multi-location brands, else 'independent'."""
+    cb = clean_brand(name)
+    if cb in BRAND_OVERRIDES:
+        return BRAND_OVERRIDES[cb]
     n = norm(name)
     for pat in FRANCHISE_KEYWORDS:
         if re.search(pat, n):
             return "franchise"
-    if brand_counts and brand_counts.get(clean_brand(name), 0) >= 3:
+    if brand_counts and brand_counts.get(cb, 0) >= 3:
         return "franchise"
     return "independent"
 
@@ -632,8 +643,6 @@ class Client:
 
     def __call__(self, body: dict, mask: str, sku: str) -> dict:
         for attempt in range(4):
-            ledger.record(sku)
-            self.calls[sku] += 1
             try:
                 res = _request(self.key, SEARCH_URL, body, mask)
             except FatalApiError as e:
@@ -641,6 +650,8 @@ class Client:
                     time.sleep(2 ** (attempt + 1))
                     continue
                 raise
+            ledger.record(sku)
+            self.calls[sku] += 1
             time.sleep(self.sleep)
             if "error" in res:
                 raise FatalApiError(res["error"])
