@@ -139,6 +139,8 @@ recovery, not just the threshold function in isolation.
 | T4.12 | R4.7 | County and City chips are both children of one `#locationChips` container (a single flex-wrap sequence), not two separately-wrapping sub-containers. | Splitting one row's width between two independently-wrapping boxes was measured to wrap *more* than the combined content needs (74px vs. 48px tall at 375px, same chip set) — packing them as one sequence fixes it. |
 | T4.13 | R4.8 | On load, Indie-only is active by default: `js> state.includeFranchises === false && !document.getElementById('franchiseToggle').checked`. | `true`; all initially rendered cards have `.model-tag.indie`. |
 | T4.14 | R4.8 | Flip top-right toggle `#franchiseToggle` (Include franchise stores). Check `document.querySelectorAll('.shop-item').length`. | Matches total shop count (indie + franchise); franchise cards appear with `.model-tag.franchise`. |
+| T4.15 | R4.9 | `js> COUNTIES.length === 5 && COUNTIES.includes('Cobb')` | `true` (Gwinnett, Fulton, Forsyth, DeKalb, Cobb) |
+| T4.16 | R4.9 | `js> selectCounty('Cobb'); state.activeCounty === 'Cobb' && document.querySelectorAll('.shop-item').length > 0` | `true` (Cobb places rendered; city drill-down active) |
 
 ## T5. Right-side list (R5)
 

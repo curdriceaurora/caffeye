@@ -259,7 +259,7 @@
         "nova lox spread",
         "breakfast sandwich"
       ],
-      "signature": "Everything Bagel with Jalapeño Cream Cheese"
+      "signature": "Everything Bagel with Jalape\u00f1o Cream Cheese"
     },
     "ChIJxcJCHi4L9YgRS3JJyrVlxH0": {
       "name": "Valor Coffee",
@@ -380,6 +380,145 @@
         "breakfast sandwich"
       ],
       "signature": "Vanilla Caramel Cold Brew"
+    },
+    "ChIJD8gatsMQ9YgRTueabDLTpAw": {
+      "name": "Rev Coffee",
+      "city": "Smyrna",
+      "county": "Cobb",
+      "cw": {
+        "tier": "excellent",
+        "note": "Spacious roastery in a converted garage with communal work tables, fast Wi-Fi, abundant outlets, and a dedicated back room.",
+        "hasMeetingRoom": true,
+        "meetingRoomNote": "Private back meeting room and event space available for reservation for teams and study groups."
+      },
+      "usp": "Smyrna's flagship artisan roastery and community workspace roasting specialty beans on site.",
+      "loved": [
+        "cappuccino",
+        "lavender vanilla latte",
+        "fresh baked scones"
+      ],
+      "signature": "Spring Road Mocha"
+    },
+    "ChIJY6T74yQU9YgRxJGHa_pLOcE": {
+      "name": "Cool Beans Coffee Roasters",
+      "city": "Marietta",
+      "county": "Cobb",
+      "cw": {
+        "tier": "excellent",
+        "note": "Historic Marietta Square coffeehouse with outdoor patio tables, study seating, fast Wi-Fi, and small-batch roasting on site.",
+        "hasMeetingRoom": false
+      },
+      "usp": "Landmark Marietta Square roaster serving freshly roasted single-origin coffees and espresso since 2001.",
+      "loved": [
+        "single-origin pour over",
+        "cold brew",
+        "muffins"
+      ],
+      "signature": "Marietta Square Espresso Blend"
+    },
+    "ChIJHdL7-dIR9YgR_vIuc67Dle4": {
+      "name": "Chattahoochee Coffee Company - Riverside",
+      "city": "Atlanta",
+      "county": "Cobb",
+      "cw": {
+        "tier": "excellent",
+        "note": "World-class riverside setting along the Chattahoochee River with scenic patio tables, quiet study spots, fast Wi-Fi, and Counter Culture coffee.",
+        "hasMeetingRoom": false
+      },
+      "usp": "Unmatched riverfront sanctuary perched right on the banks of the Chattahoochee with lush nature views.",
+      "loved": [
+        "cortado",
+        "iced vanilla latte",
+        "avocado toast"
+      ],
+      "signature": "Chattahoochee Riverfront Cold Brew"
+    },
+    "ChIJR0p26m4Q9YgRw1qv6jQcG4k": {
+      "name": "Read Shop by The Merchant",
+      "city": "Atlanta",
+      "county": "Cobb",
+      "cw": {
+        "tier": "good",
+        "note": "Intimate bookstore cafe in Vinings Jubilee with cozy seating, Stumptown coffee, and a quiet curated atmosphere.",
+        "hasMeetingRoom": false
+      },
+      "usp": "Charming Vinings bookstore and espresso bar pairing specialty roasts with curated literary titles.",
+      "loved": [
+        "stumptown drip",
+        "matcha latte",
+        "croissants"
+      ],
+      "signature": "Paces Ferry Vanilla Latte"
+    },
+    "ChIJpSzr2h8R9YgRakJbxJUmC-Y": {
+      "name": "Hermanas Caf\u00e9 at the battery",
+      "city": "Atlanta",
+      "county": "Cobb",
+      "cw": {
+        "tier": "excellent",
+        "note": "Modern Latin coffeehouse at The Battery Atlanta with communal workspaces, fast Wi-Fi, outdoor tables, and authentic Latin espresso drinks.",
+        "hasMeetingRoom": true,
+        "meetingRoomNote": "Mezzanine and group conference seating reservable for business meetings and private gatherings."
+      },
+      "usp": "Vibrant Latin specialty coffee bar and workspace steps from Truist Park at The Battery.",
+      "loved": [
+        "cortadito",
+        "horchata iced latte",
+        "empanadas"
+      ],
+      "signature": "Tres Leches Latte"
+    },
+    "ChIJsR9XoFEV9YgRmU6p54PizJA": {
+      "name": "Baladi Coffee",
+      "city": "Kennesaw",
+      "county": "Cobb",
+      "cw": {
+        "tier": "excellent",
+        "note": "Mediterranean-inspired coffeehouse with ample tables, reliable Wi-Fi, power outlets, and authentic Arabic and specialty coffee preparations.",
+        "hasMeetingRoom": false
+      },
+      "usp": "Authentic Middle Eastern and specialty coffee bar featuring cardamom-infused Arabic coffee and handmade baklava.",
+      "loved": [
+        "arabic coffee with cardamom",
+        "baklava",
+        "pistachio latte"
+      ],
+      "signature": "Baladi Cardamom Latte"
+    },
+    "ChIJO2oqUPM_9YgRWerZBQCCBe4": {
+      "name": "The Local Doe Coffee House",
+      "city": "Kennesaw",
+      "county": "Cobb",
+      "cw": {
+        "tier": "excellent",
+        "note": "Cozy historic home in downtown Kennesaw with study nooks, community tables, fast Wi-Fi, and friendly hospitality.",
+        "hasMeetingRoom": true,
+        "meetingRoomNote": "Private study and meeting room available for reservation for up to 8 people."
+      },
+      "usp": "Historic downtown Kennesaw gathering spot with home-style comfort, house-baked goods, and craft espresso.",
+      "loved": [
+        "chai latte",
+        "cinnamon rolls",
+        "vanilla bean latte"
+      ],
+      "signature": "Downtown Kennesaw House Drip"
+    },
+    "ChIJlfl41t0T9YgRUBKuyhYmlTM": {
+      "name": "Marietta Coffee Company",
+      "city": "Marietta",
+      "county": "Cobb",
+      "cw": {
+        "tier": "excellent",
+        "note": "Spacious neighborhood coffeehouse on Roswell Rd with drive-thru, plenty of study tables, fast Wi-Fi, and power outlets.",
+        "hasMeetingRoom": false
+      },
+      "usp": "Community-first neighborhood coffee hub known for friendly baristas, fast drive-thru, and abundant seating.",
+      "loved": [
+        "iced mocha",
+        "breakfast burrito",
+        "cinnamon swirl pastry"
+      ],
+      "signature": "Marietta Caramel Crunch"
     }
   }
 }

@@ -15,7 +15,7 @@ For multi-county workflows, run per-county and specify --county to filter:
     python3 scripts/refresh_ratings.py --county dekalb --replay scratch/ratings-2026-09-17.json --write
 
 Options:
-    --county CODE    filter to shops in this county (fulton, dekalb, forsyth, gwinnett).
+    --county CODE    filter to shops in this county (fulton, dekalb, forsyth, gwinnett, cobb).
                      A shop's own `county` tag wins if present; otherwise its stored
                      coordinates are tested against that county's real boundary
                      polygon (see county_boundaries.geojson, from OpenStreetMap) —
@@ -369,7 +369,7 @@ def main() -> int:
     ap.add_argument(
         "--county",
         default="",
-        choices=["", "fulton", "dekalb", "forsyth", "gwinnett"],
+        choices=["", "fulton", "dekalb", "forsyth", "gwinnett", "cobb"],
         help="filter to shops in this county (default: all)",
     )
     ap.add_argument(

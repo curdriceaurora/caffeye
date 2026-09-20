@@ -8,9 +8,10 @@
    "Gwinnett",
    "Fulton",
    "Forsyth",
-   "DeKalb"
+   "DeKalb",
+   "Cobb"
   ],
-  "note": "For Fulton and DeKalb only the part north of the top-end Perimeter (I-285) is included: Sandy Springs, Dunwoody, Doraville, Roswell, Alpharetta, Johns Creek and Milton."
+  "note": "For Fulton, DeKalb, and Cobb only the part north of the top-end Perimeter (I-285) is included: Sandy Springs, Dunwoody, Doraville, Roswell, Alpharetta, Johns Creek, Milton, Vinings, Smyrna, Marietta, Kennesaw, and Acworth."
  },
  "places": [
   {
@@ -102,6 +103,26 @@
    "googleUrl": "https://maps.google.com/?cid=10771714039449200353&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJ-5T2Ld449YgRbypaVIdJfrQ",
+   "name": "Reveille Cafe",
+   "address": "5330 Brookstone Dr NW #210, Acworth, GA 30101, USA",
+   "city": "Acworth",
+   "county": "Cobb",
+   "lat": 33.998452,
+   "lng": -84.707008,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "cafe"
+   ],
+   "rating": 4.6,
+   "ratingNum": 1409,
+   "ratingCount": "1,409",
+   "hours": "Mon-Sun 7am-2pm",
+   "website": "http://reveillecafe.com/",
+   "googleUrl": "https://maps.google.com/?cid=13005913619477178991&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJ-S1UC1Nz9YgRgOh38yOvHl8",
    "name": "The Pie Hole",
    "address": "1025 Canton St, Roswell, GA 30075, USA",
@@ -145,6 +166,27 @@
    },
    "website": "http://www.facebook.com/aroma.lawrenceville",
    "googleUrl": "https://maps.google.com/?cid=3415170142128104368&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJ-_3ODoh1NoQRqgT6dDQOC4A",
+   "name": "Bonnin's Bakery",
+   "address": "4200 Wade Green Rd #136, Kennesaw, GA 30144, USA",
+   "city": "Kennesaw",
+   "county": "Cobb",
+   "lat": 34.058296,
+   "lng": -84.590575,
+   "category": "Bakery+Cafe",
+   "model": "independent",
+   "types": [
+    "bakery",
+    "cafe"
+   ],
+   "rating": 4.9,
+   "ratingNum": 266,
+   "ratingCount": "266",
+   "hours": "Mon Closed · Tue-Sat 7:30am-4:30pm · Sun 9am-3pm",
+   "website": "https://www.bonninsbakery.com/",
+   "googleUrl": "https://maps.google.com/?cid=9226483880062223530&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJ-wZ1GACd9YgRlv0OOCW3obU",
@@ -262,6 +304,59 @@
    "googleUrl": "https://maps.google.com/?cid=7100488343411842778&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJ0TIj4mkV9YgRrtnWWBGDTuA",
+   "name": "Crumbl Cookies",
+   "address": "1300 Ernest W Barrett Pkwy NW Unit 11, Kennesaw, GA 30144, USA",
+   "city": "Kennesaw",
+   "county": "Cobb",
+   "lat": 33.998424,
+   "lng": -84.590368,
+   "category": "Bakery+Cafe",
+   "model": "franchise",
+   "types": [
+    "dessert_shop",
+    "bakery"
+   ],
+   "rating": 4.8,
+   "ratingNum": 5744,
+   "ratingCount": "5,744",
+   "hours": "Mon-Thu 8am-10pm · Fri-Sat 8am-11pm · Sun Closed",
+   "late": {
+    "tier": "10pm+",
+    "when": "Mon-Sat till 11pm"
+   },
+   "website": "https://crumblcookies.com/",
+   "googleUrl": "https://maps.google.com/?cid=16163000223207446958&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJ0WE1DNoV9YgRp5Oxf4vRauA",
+   "name": "Dunkin'",
+   "address": "751 Whitlock Ave SW, Marietta, GA 30064, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 33.951639,
+   "lng": -84.575093,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "donut_shop",
+    "cafe",
+    "bakery"
+   ],
+   "rating": 3.5,
+   "ratingNum": 535,
+   "ratingCount": "535",
+   "hours": "Mon-Thu 5am-9pm · Fri 5am-10pm · Sat 5am-9pm · Sun 6am-9pm",
+   "late": {
+    "tier": "10pm+",
+    "when": "Fri till 10pm"
+   },
+   "website": "https://www.dunkindonuts.com/locations/us/ga/marietta/751-whitlock-ave-sw/store-356161/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=356161&y_source=1_MTIxMDk1MzAtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=16170967809100190631&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJ0WPQhUq_9YgRxjiD1JtjbdI",
    "name": "Cafe N Chill",
    "address": "100 Hurricane Shoals Rd NW D, Lawrenceville, GA 30046, USA",
@@ -325,6 +420,49 @@
    "hours": "Mon-Sun 8am-9pm",
    "website": null,
    "googleUrl": "https://maps.google.com/?cid=14811768158450578598&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJ0cNGKQAR9YgRv1uwoQwzknI",
+   "name": "360 Café",
+   "address": "360 Interstate N Pkwy, Atlanta, GA 30339, USA",
+   "city": "Atlanta",
+   "county": "Cobb",
+   "neighborhood": "Cumberland",
+   "lat": 33.895255,
+   "lng": -84.460992,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": null,
+   "ratingNum": 0,
+   "ratingCount": "0",
+   "hours": "Mon-Fri 8:00-10am, 11am-2pm · Sat-Sun Closed",
+   "website": null,
+   "googleUrl": "https://maps.google.com/?cid=8255717196268854207&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJ0dyV-Y8R9YgR2TdlQxtcsWg",
+   "name": "Kokee Tea - Cumberland Mall",
+   "address": "2860 Cumberland Mall #1208, Atlanta, GA 30339, USA",
+   "city": "Atlanta",
+   "county": "Cobb",
+   "neighborhood": "Cumberland",
+   "lat": 33.87999,
+   "lng": -84.46747,
+   "category": "Tea/Boba",
+   "model": "franchise",
+   "types": [
+    "tea_house"
+   ],
+   "rating": 4.7,
+   "ratingNum": 38,
+   "ratingCount": "38",
+   "hours": "Mon-Sat 11am-8pm · Sun 12:00-6pm",
+   "website": "http://kokeetea.com/",
+   "googleUrl": "https://maps.google.com/?cid=7543912122986870745&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJ0y2xJiqf9YgR2Fa8aaGKRFA",
@@ -444,6 +582,51 @@
    "hours": "Mon-Sat 9am-4pm · Sun Closed",
    "website": "http://blueroosterbakeshops.com/",
    "googleUrl": "https://maps.google.com/?cid=508158176502384847&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJ16uuGdhs9YgRaKBb1APKiC8",
+   "name": "Dunkin'",
+   "address": "2378 Shallowford Rd, Marietta, GA 30066, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 34.041373,
+   "lng": -84.481397,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "donut_shop",
+    "cafe",
+    "bakery"
+   ],
+   "rating": 4.0,
+   "ratingNum": 603,
+   "ratingCount": "603",
+   "hours": "Mon-Sun 5am-9pm",
+   "website": "https://www.dunkindonuts.com/locations/us/ga/marietta/2378-shallowford-rd/store-353902/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=353902&y_source=1_MTIxMDk1NTktNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=3425209634411749480&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJ17HNocQN9YgRikve26rP4lk",
+   "name": "Starbucks Coffee Company",
+   "address": "31 A Johnson Ferry Rd, Marietta, GA 30068, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 33.95005,
+   "lng": -84.41183,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.4,
+   "ratingNum": 391,
+   "ratingCount": "391",
+   "hours": "Mon-Sun 5am-8pm",
+   "website": "https://www.starbucks.com/store-locator/store/15320/",
+   "googleUrl": "https://maps.google.com/?cid=6476967546852363146&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJ1Q7elSS_9YgRy5tABzHWDGg",
@@ -598,6 +781,49 @@
    "googleUrl": "https://maps.google.com/?cid=10708544947578425544&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJ1xgMHscT9YgR8JrmnWVg_WI",
+   "name": "Cafe Rivkah",
+   "address": "2100 Roswell Rd #2104, Marietta, GA 30062, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 33.968895,
+   "lng": -84.487397,
+   "category": "Coffee",
+   "model": "independent",
+   "types": [
+    "cafe",
+    "coffee_shop",
+    "bakery"
+   ],
+   "rating": 4.7,
+   "ratingNum": 392,
+   "ratingCount": "392",
+   "hours": "Mon-Tue Closed · Wed-Sun 8am-3pm",
+   "website": "https://www.caferivkah.com/",
+   "googleUrl": "https://maps.google.com/?cid=7132963374381832944&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJ2-mFzGY_9YgRLZrEgBtE-QI",
+   "name": "The Coffee Pot",
+   "address": "3330 Cobb Pkwy NW Ste 336, Acworth, GA 30101, USA",
+   "city": "Acworth",
+   "county": "Cobb",
+   "lat": 34.035889,
+   "lng": -84.675933,
+   "category": "Coffee",
+   "model": "independent",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.9,
+   "ratingNum": 168,
+   "ratingCount": "168",
+   "hours": "Mon-Tue 8:30am-3pm · Wed-Fri 8:30am-6:30pm · Sat-Sun 9:30am-6pm",
+   "website": null,
+   "googleUrl": "https://maps.google.com/?cid=214277342191983149&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJ2-rjPhSh9YgRd1XuY42ooNE",
    "name": "Taichi Bubble Tea, Ramen & Poke Bowl",
    "address": "6135 Peachtree Pkwy NW Ste 200, Peachtree Corners, GA 30092, USA",
@@ -732,6 +958,73 @@
    "googleUrl": "https://maps.google.com/?cid=11122326909191030316&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJ29pMHZwV9YgR1w0bo9LFnmg",
+   "name": "Kokee Tea - Town Center at Cobb",
+   "address": "400 Ernest W Barrett Pkwy NW #173A, Kennesaw, GA 30144, USA",
+   "city": "Kennesaw",
+   "county": "Cobb",
+   "neighborhood": "Town Center",
+   "lat": 34.018025,
+   "lng": -84.563789,
+   "category": "Tea/Boba",
+   "model": "franchise",
+   "types": [
+    "tea_house"
+   ],
+   "rating": 3.4,
+   "ratingNum": 100,
+   "ratingCount": "100",
+   "hours": "Mon-Thu 11am-8pm · Fri-Sat 10am-9pm · Sun 12:00-6pm",
+   "website": "http://www.kokeetea.com/",
+   "googleUrl": "https://maps.google.com/?cid=7538680334735052247&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJ2QAb8p4V9YgRXrfosiK1lpk",
+   "name": "Kung Fu Tea",
+   "address": "2505 Chastain Meadows Pkwy NW #115, Marietta, GA 30066, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "neighborhood": "Town Center",
+   "lat": 34.016185,
+   "lng": -84.556239,
+   "category": "Tea/Boba",
+   "model": "franchise",
+   "types": [
+    "cafe",
+    "tea_house"
+   ],
+   "rating": 3.9,
+   "ratingNum": 358,
+   "ratingCount": "358",
+   "hours": "Mon-Thu 11:30am-8pm · Fri-Sun 11:30am-8:30pm",
+   "website": "https://kungfutea.com/",
+   "googleUrl": "https://maps.google.com/?cid=11067232294944683870&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJ2TAFTIZH9YgRHg4zhC86e0g",
+   "name": "Dunkin'",
+   "address": "4395 Acworth Dallas Rd NW Ste 100, Acworth, GA 30101, USA",
+   "city": "Acworth",
+   "county": "Cobb",
+   "lat": 34.063408,
+   "lng": -84.724666,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "donut_shop",
+    "cafe",
+    "bakery"
+   ],
+   "rating": 3.8,
+   "ratingNum": 384,
+   "ratingCount": "384",
+   "hours": "Mon-Sat 5am-9pm · Sun 6am-9pm",
+   "website": "https://www.dunkindonuts.com/locations/us/ga/acworth/4395-acworth-dallas-rd/store-358013/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=358013&y_source=1_MTIxMTIwOTItNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=5222832168622034462&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJ2UapqMaa9YgR81Nm9OanexQ",
    "name": "Dunkin'",
    "address": "1165 Buford Hwy, Cumming, GA 30041, USA",
@@ -800,6 +1093,76 @@
    "hours": "Mon-Sat 5am-9pm · Sun 6am-9pm",
    "website": "https://www.dunkindonuts.com/locations/us/ga/braselton/2630-old-winder-highway/store-355335/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=355335&y_source=1_MTIxMTQxMjMtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
    "googleUrl": "https://maps.google.com/?cid=12999342785379421241&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJ2erFTP4V9YgRkWOlJ04Elbo",
+   "name": "Queen Tea （Kennesaw)",
+   "address": "425 Ernest W Barrett Pkwy NW #1080, Kennesaw, GA 30144, USA",
+   "city": "Kennesaw",
+   "county": "Cobb",
+   "neighborhood": "Town Center",
+   "lat": 34.011143,
+   "lng": -84.562735,
+   "category": "Tea/Boba",
+   "model": "independent",
+   "types": [
+    "coffee_shop",
+    "tea_house",
+    "cafe"
+   ],
+   "rating": 4.4,
+   "ratingNum": 653,
+   "ratingCount": "653",
+   "hours": "Sun-Thu 11am-12am · Fri-Sat 11am-12:30am",
+   "late": {
+    "tier": "midnight",
+    "when": "Daily till 12:30am"
+   },
+   "website": "https://www.queenteaboba.com/",
+   "googleUrl": "https://maps.google.com/?cid=13444656996303594385&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJ2fIABgAR9YgRd7NtT7UXmo4",
+   "name": "COFFEE BOX",
+   "address": "440 Interstate N Pkwy, Atlanta, GA 30339, USA",
+   "city": "Atlanta",
+   "county": "Cobb",
+   "neighborhood": "Cumberland",
+   "lat": 33.894807,
+   "lng": -84.454759,
+   "category": "Coffee",
+   "model": "independent",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.9,
+   "ratingNum": 41,
+   "ratingCount": "41",
+   "hours": "Mon-Fri 8am-1:30pm · Sat-Sun Closed",
+   "website": "https://www.instagram.com/coffee.box.atl/",
+   "googleUrl": "https://maps.google.com/?cid=10275551567288316791&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJ2z9QfnkV9YgRzZS7cIjD10A",
+   "name": "Café Clément",
+   "address": "1438 Canton Rd, Marietta, GA 30066, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 33.986778,
+   "lng": -84.532474,
+   "category": "Coffee",
+   "model": "independent",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.8,
+   "ratingNum": 481,
+   "ratingCount": "481",
+   "hours": "Mon-Fri 7am-3:30pm · Sat 8am-3:30pm · Sun Closed",
+   "website": "http://www.cafeclement.com/",
+   "googleUrl": "https://maps.google.com/?cid=4672418129194489037&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJ3-qNe1MJ9YgRcgVaBvoNc8A",
@@ -935,6 +1298,27 @@
    "googleUrl": "https://maps.google.com/?cid=9440401105894328069&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJ38IbXs4Q9YgRkj9yGQaGulM",
+   "name": "Cafe Lucia",
+   "address": "1260 W Spring St B, Smyrna, GA 30080, USA",
+   "city": "Smyrna",
+   "county": "Cobb",
+   "lat": 33.884181,
+   "lng": -84.515624,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "cafe",
+    "coffee_shop"
+   ],
+   "rating": 3.9,
+   "ratingNum": 736,
+   "ratingCount": "736",
+   "hours": "Mon-Fri 7am-8pm · Sat 8am-8pm · Sun 8am-7pm",
+   "website": null,
+   "googleUrl": "https://maps.google.com/?cid=6033282011571044242&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJ39U644V19YgR3fCrKr8_8pk",
    "name": "Cork & Kale",
    "address": "Alpharetta, GA 30009, USA",
@@ -980,6 +1364,26 @@
    "hours": "Mon Closed · Tue-Sun 6am-1pm",
    "website": "https://www.jandjdonuts.com/",
    "googleUrl": "https://maps.google.com/?cid=7827540432086111644&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJ3TF_UE4N9YgRtxOjAxdr1Gg",
+   "name": "Giulia Italian Bakery - East Cobb",
+   "address": "4475 Roswell Rd Ste E-1410, Marietta, GA 30062, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 33.988125,
+   "lng": -84.420622,
+   "category": "Bakery+Cafe",
+   "model": "independent",
+   "types": [
+    "bakery"
+   ],
+   "rating": 4.0,
+   "ratingNum": 98,
+   "ratingCount": "98",
+   "hours": "Mon-Sun 8am-5pm",
+   "website": "https://www.giuliabakery.com/",
+   "googleUrl": "https://maps.google.com/?cid=7553780221596603319&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJ3cYTIrSf9YgRwQe4Eg7Y-dI",
@@ -1076,6 +1480,31 @@
    "googleUrl": "https://maps.google.com/?cid=10999088687519649169&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJ47kAxysW9YgR3ZA7SBn1kt4",
+   "name": "Starbucks Coffee Company",
+   "address": "Battlefield Village, 1721 Powder Springs Rd SW, Marietta, GA 30064, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 33.90594,
+   "lng": -84.6026,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.1,
+   "ratingNum": 836,
+   "ratingCount": "836",
+   "hours": "Mon-Fri 4:30am-10pm · Sat-Sun 5am-9:30pm",
+   "late": {
+    "tier": "10pm+",
+    "when": "Weekdays till 10pm"
+   },
+   "website": "https://www.starbucks.com/store-locator/store/8910/",
+   "googleUrl": "https://maps.google.com/?cid=16038150711954608349&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJ4QvFBAB19YgRV4ajpaTirO4",
    "name": "Just Love Coffee Cafe Alpharetta",
    "address": "735 N Main St Ste 100, Alpharetta, GA 30009, USA",
@@ -1095,6 +1524,30 @@
    "hours": "Mon-Sun 7am-5pm",
    "website": "https://justlovecoffeecafe.com/ga-alpharetta/",
    "googleUrl": "https://maps.google.com/?cid=17198370273802552919&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJ4UulDK859YgRNPYJN8mlFfQ",
+   "name": "Duck Donuts",
+   "address": "1720 Mars Hill Rd #7, Acworth, GA 30101, USA",
+   "city": "Acworth",
+   "county": "Cobb",
+   "lat": 33.996239,
+   "lng": -84.70459,
+   "category": "Bakery+Cafe",
+   "model": "franchise",
+   "types": [
+    "donut_shop",
+    "coffee_shop",
+    "cafe",
+    "dessert_shop",
+    "bakery"
+   ],
+   "rating": 4.7,
+   "ratingNum": 163,
+   "ratingCount": "163",
+   "hours": "Mon-Fri 6:30am-7pm · Sat-Sun 7am-7pm",
+   "website": "https://www.duckdonuts.com/acworth",
+   "googleUrl": "https://maps.google.com/?cid=17588146203395749428&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJ4Vkk5ohz9YgRNDvJBRINBuk",
@@ -1207,6 +1660,26 @@
    "googleUrl": "https://maps.google.com/?cid=13192848057351515081&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJ4f6BnWdr9YgRajQY6OoSem0",
+   "name": "Rose's Brazilian Bakery",
+   "address": "3349 Canton Rd Ste 219, Marietta, GA 30066, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 34.032536,
+   "lng": -84.528383,
+   "category": "Bakery+Cafe",
+   "model": "independent",
+   "types": [
+    "bakery"
+   ],
+   "rating": 4.6,
+   "ratingNum": 236,
+   "ratingCount": "236",
+   "hours": "Mon-Sat 7am-8pm · Sun 8am-6pm",
+   "website": "https://instagram.com/rosesbbakery",
+   "googleUrl": "https://maps.google.com/?cid=7888638497418392682&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJ4ycpL1uU9YgRDRHuAKqQkQI",
    "name": "Starbucks Coffee Company",
    "address": "3333 Buford Dr, Buford, GA 30519, USA",
@@ -1269,6 +1742,94 @@
    "hours": "Mon-Sun 6am-6pm",
    "website": "https://locations.cariboucoffee.com/us/ga/snellville/1947-scenic-highway-north",
    "googleUrl": "https://maps.google.com/?cid=9748457693303277383&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJ55SWLH4R9YgRhN7rDWCiskk",
+   "name": "Dunkin'",
+   "address": "860 Rossbacher Wy, Marietta, GA 30060, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 33.941294,
+   "lng": -84.519896,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "donut_shop",
+    "cafe",
+    "bakery"
+   ],
+   "rating": 3.0,
+   "ratingNum": 8,
+   "ratingCount": "8",
+   "hours": "Mon-Thu 7:30am-6pm · Fri 7:30am-2pm · Sat-Sun Closed",
+   "website": "https://www.dunkindonuts.com/locations/us/ga/marietta/860-rossbacher-way/store-363810/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=363810&y_source=1_NTYxNjQ0ODctNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=5310485444057357956&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJ560RsPMR9YgR6AXMwh8ylD8",
+   "name": "Riverline Coffee",
+   "address": "2778 Cumberland Blvd SE, Smyrna, GA 30080, USA",
+   "city": "Smyrna",
+   "county": "Cobb",
+   "lat": 33.885343,
+   "lng": -84.477822,
+   "category": "Coffee",
+   "model": "independent",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.8,
+   "ratingNum": 44,
+   "ratingCount": "44",
+   "hours": "Mon Closed · Tue-Fri 8am-7pm · Sat 9am-7pm · Sun 9am-4pm",
+   "website": "http://www.riverlinecoffee.com/",
+   "googleUrl": "https://maps.google.com/?cid=4581341832936162792&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJ56ertxkV9YgRqqigh7G-oTk",
+   "name": "Starbucks Coffee Company",
+   "address": "740 Earnest, Ernest W Barrett Pkwy NW, Kennesaw, GA 30144, USA",
+   "city": "Kennesaw",
+   "county": "Cobb",
+   "neighborhood": "Town Center",
+   "lat": 34.00818,
+   "lng": -84.57316,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 3.9,
+   "ratingNum": 74,
+   "ratingCount": "74",
+   "hours": "Mon-Sun 8am-8pm",
+   "website": "https://www.starbucks.com/store-locator/store/9920",
+   "googleUrl": "https://maps.google.com/?cid=4152810001106249898&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJ57fE26kX9YgRToQtQ9DgoZs",
+   "name": "Smyrna Coffee",
+   "address": "2264 Atlanta Rd SE Suite 103, Smyrna, GA 30080, USA",
+   "city": "Smyrna",
+   "county": "Cobb",
+   "lat": 33.897666,
+   "lng": -84.52263,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.7,
+   "ratingNum": 305,
+   "ratingCount": "305",
+   "hours": "Mon-Fri 7am-6pm · Sat-Sun 8am-5pm",
+   "website": "http://smyrnacoffee.com/",
+   "googleUrl": "https://maps.google.com/?cid=11214491732214121550&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJ5RRQ7m659YgRKbUMsITgUCA",
@@ -1571,6 +2132,34 @@
    "googleUrl": "https://maps.google.com/?cid=1885761544717610416&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJ6R8SJOvi9IgREfadNF3atvc",
+   "name": "Dunkin'",
+   "address": "2651 Cobb Pkwy SE, Atlanta, GA 30339, USA",
+   "city": "Atlanta",
+   "county": "Cobb",
+   "lat": 33.888467,
+   "lng": -84.473168,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "donut_shop",
+    "cafe",
+    "bakery"
+   ],
+   "rating": 4.1,
+   "ratingNum": 688,
+   "ratingCount": "688",
+   "hours": "Mon-Sat 5am-11pm · Sun 6am-11pm",
+   "late": {
+    "tier": "10pm+",
+    "when": "Daily till 11pm"
+   },
+   "website": "https://www.dunkindonuts.com/locations/us/ga/atlanta/2651-cobb-pky-se/store-302140/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=302140&y_source=1_MTIxMDYzMTItNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=17849694266979120657&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJ6RA52rK99YgRFA0e-l41qSw",
    "name": "Panera Bread",
    "address": "4875 Sugarloaf Pkwy, Lawrenceville, GA 30045, USA",
@@ -1678,6 +2267,26 @@
    "googleUrl": "https://maps.google.com/?cid=15176474223453509063&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJ6V3XzEs79YgR41D5jVloIpg",
+   "name": "RK Corner Cafe",
+   "address": "4665 Macland Rd Building 100, Powder Springs, GA 30127, USA",
+   "city": "Powder Springs",
+   "county": "Cobb",
+   "lat": 33.900234,
+   "lng": -84.691435,
+   "category": "Coffee",
+   "model": "independent",
+   "types": [
+    "cafe"
+   ],
+   "rating": 1.0,
+   "ratingNum": 1,
+   "ratingCount": "1",
+   "hours": null,
+   "website": "https://www.roastedknives.com/?utm_source=google&utm_medium=wix_google_business_profile&utm_campaign=10139764838787279244",
+   "googleUrl": "https://maps.google.com/?cid=10962439176816513251&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJ6YTLPAOj9YgRIbjCKiTp2hM",
    "name": "Kung Fu Tea",
    "address": "3473 Old Norcross Rd Ste 202, Duluth, GA 30096, USA",
@@ -1751,6 +2360,31 @@
    },
    "website": "https://www.cuckooscafeduluth.com/",
    "googleUrl": "https://maps.google.com/?cid=10045659811956855191&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJ6zDWQMkR9YgRa0i3EJn28DA",
+   "name": "Dunkin'",
+   "address": "2022 Powers Ferry Rd Suite 100, Atlanta, GA 30339, USA",
+   "city": "Atlanta",
+   "county": "Cobb",
+   "neighborhood": "Cumberland",
+   "lat": 33.90184,
+   "lng": -84.454538,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "donut_shop",
+    "cafe",
+    "bakery"
+   ],
+   "rating": 3.6,
+   "ratingNum": 594,
+   "ratingCount": "594",
+   "hours": "Mon-Sat 5am-9pm · Sun 6am-9pm",
+   "website": "https://www.dunkindonuts.com/locations/us/ga/atlanta/2022-powers-ferry-rd/store-347022/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=347022&y_source=1_MTIxMDc2MzktNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=3526589645501974635&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJ70RRXf-H9YgRep_AReQsMNc",
@@ -1848,6 +2482,31 @@
    "googleUrl": "https://maps.google.com/?cid=3420657925189496484&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJ71YaWQ9r9YgRbhzNuhHEJu0",
+   "name": "Starbucks Coffee Company",
+   "address": "4383 Wade Green Rd NW, Kennesaw, GA 30144, USA",
+   "city": "Kennesaw",
+   "county": "Cobb",
+   "lat": 34.059522,
+   "lng": -84.593093,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.3,
+   "ratingNum": 331,
+   "ratingCount": "331",
+   "hours": "Mon-Fri 4:30am-10pm · Sat-Sun 5am-10pm",
+   "late": {
+    "tier": "10pm+",
+    "when": "Daily till 10pm"
+   },
+   "website": "https://www.starbucks.com/store-locator/store/1027761",
+   "googleUrl": "https://maps.google.com/?cid=17088561416531418222&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJ72v465O59YgR2q0r1i_ZBd0",
    "name": "Dunkin'",
    "address": "2115 Main St E E, Snellville, GA 30078, USA",
@@ -1872,6 +2531,55 @@
    "googleUrl": "https://maps.google.com/?cid=15926374456745504218&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJ74OJbHQN9YgRBdBM_XPPEaI",
+   "name": "Smallcakes Cupcakery Marietta - East Cobb",
+   "address": "4475 Roswell Rd Ste 1550, Marietta, GA 30062, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 33.98789,
+   "lng": -84.422516,
+   "category": "Bakery+Cafe",
+   "model": "franchise",
+   "types": [
+    "bakery",
+    "dessert_shop"
+   ],
+   "rating": 4.7,
+   "ratingNum": 382,
+   "ratingCount": "382",
+   "hours": "Mon-Sat 10am-9pm · Sun 12:00-6pm",
+   "website": "https://smallcakes-marietta-eastcobb.square.site/",
+   "googleUrl": "https://maps.google.com/?cid=11678343405826265093&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJ74SF-joT9YgRUFQejCJly_I",
+   "name": "Dunkin'",
+   "address": "2765 Sandy Plains Rd, Marietta, GA 30066, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 34.016831,
+   "lng": -84.492953,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "donut_shop",
+    "cafe",
+    "bakery"
+   ],
+   "rating": 3.1,
+   "ratingNum": 397,
+   "ratingCount": "397",
+   "hours": "Mon-Thu 5am-10pm · Fri 5am-11pm · Sat 5am-9pm · Sun 6am-10pm",
+   "late": {
+    "tier": "10pm+",
+    "when": "Sun-Fri till 11pm"
+   },
+   "website": "https://www.dunkindonuts.com/locations/us/ga/marietta/2765-sandy-plains-rd/store-304785/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=304785&y_source=1_MTIxMDYzNDItNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=17495188376504915024&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJ75nio1K99YgRQqhYzYeYepk",
    "name": "Komma Tea - Sugarloaf",
    "address": "5900 Sugarloaf Pkwy, Lawrenceville, GA 30043, USA",
@@ -1890,6 +2598,26 @@
    "hours": "Mon-Thu 10am-8pm · Fri-Sat 10am-9pm · Sun 11am-7pm",
    "website": "https://www.simon.com/mall/sugarloaf-mills/stores/komma-tea",
    "googleUrl": "https://maps.google.com/?cid=11059319543994820674&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJ762ZQR8X9YgRQba522mO3sY",
+   "name": "La Suprema Bakery",
+   "address": "461 Windy Hill Rd SE, Marietta, GA 30060, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 33.89503,
+   "lng": -84.544179,
+   "category": "Bakery+Cafe",
+   "model": "independent",
+   "types": [
+    "bakery"
+   ],
+   "rating": 4.0,
+   "ratingNum": 195,
+   "ratingCount": "195",
+   "hours": "Mon-Sun 8am-9pm",
+   "website": "http://la-suprema-bakery-marietta.poi.place/",
+   "googleUrl": "https://maps.google.com/?cid=14330047649648588353&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJ775UqR-e9YgRY4jnkmDLuGI",
@@ -1913,6 +2641,26 @@
    "hours": "Mon-Fri 5:30am-2pm · Sat-Sun 6am-2pm",
    "website": "https://locations.einsteinbros.com/us/ga/alpharetta/5530-windward-pkwy?y_source=1_OTA0OTk5NS03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
    "googleUrl": "https://maps.google.com/?cid=7113659227073644643&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJ78aGSuYX9YgR0eoUPeIQW6U",
+   "name": "Cafecito Bar",
+   "address": "250 Windy Hill Rd Ste 160, Marietta, GA 30060, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 33.893591,
+   "lng": -84.55244,
+   "category": "Coffee",
+   "model": "independent",
+   "types": [
+    "cafe"
+   ],
+   "rating": null,
+   "ratingNum": 0,
+   "ratingCount": "0",
+   "hours": "Mon-Fri 8:00-11:30am, 6:00-8:30pm · Sat 8:00-11:30am · Sun Closed",
+   "website": null,
+   "googleUrl": "https://maps.google.com/?cid=11915135803012213457&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJ7RSeuHeb9YgRAhA9V4aXr38",
@@ -2138,6 +2886,29 @@
    "googleUrl": "https://maps.google.com/?cid=8817554034584364855&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJ83ku-pQ-9YgRDyTM15UrK_0",
+   "name": "Great Harvest Bakery-Cafe, Marietta, Ga",
+   "address": "3894 Due W Rd NW, Marietta, GA 30064, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 33.968849,
+   "lng": -84.665256,
+   "category": "Bakery+Cafe",
+   "model": "franchise",
+   "types": [
+    "bakery",
+    "coffee_shop",
+    "dessert_shop",
+    "cafe"
+   ],
+   "rating": 4.5,
+   "ratingNum": 255,
+   "ratingCount": "255",
+   "hours": "Mon-Fri 7am-6pm · Sat 8am-2pm · Sun Closed",
+   "website": "http://greatharvest.com/",
+   "googleUrl": "https://maps.google.com/?cid=18242722638164927503&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJ85zzSgCf9YgRZrJkGLeQgG8",
    "name": "MOTW Coffee and Pastries",
    "address": "5202 McGinnis Ferry Rd, Alpharetta, GA 30005, USA",
@@ -2243,6 +3014,47 @@
    "googleUrl": "https://maps.google.com/?cid=11362260508708089274&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJ8ycPplsV9YgRRhitfBXutxI",
+   "name": "Marietta Perks",
+   "address": "800 Whitlock Ave NW Unit 116, Marietta, GA 30064, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 33.952932,
+   "lng": -84.576948,
+   "category": "Coffee",
+   "model": "independent",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.4,
+   "ratingNum": 455,
+   "ratingCount": "455",
+   "hours": "Mon-Fri 6am-6pm · Sat-Sun 8am-4pm",
+   "website": "https://mariettaperks.com/",
+   "googleUrl": "https://maps.google.com/?cid=1348808389474195526&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJ9-Uu5U0N9YgRO4NqCknlOZg",
+   "name": "Fat Lady Baker",
+   "address": "2995 Johnson Ferry Rd Ste 420, Marietta, GA 30062, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 34.022149,
+   "lng": -84.427952,
+   "category": "Bakery+Cafe",
+   "model": "independent",
+   "types": [
+    "bakery"
+   ],
+   "rating": 4.8,
+   "ratingNum": 55,
+   "ratingCount": "55",
+   "hours": "Sun-Mon Closed · Tue-Fri 11am-5pm · Sat 8am-1pm",
+   "website": "http://www.fatladybaker.com/",
+   "googleUrl": "https://maps.google.com/?cid=10969050469307679547&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJ93EwdzuW9YgR-xlG9PfZ6JI",
    "name": "TOUS les JOURS Bakery Café - Suwanee",
    "address": "2700 Lawrenceville-Suwanee Rd, Suwanee, GA 30024, USA",
@@ -2337,6 +3149,46 @@
    "googleUrl": "https://maps.google.com/?cid=6569030318540268440&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJ9TCqLQZuqIwRL__fkzvsQ9s",
+   "name": "Tropicups - Vegan Bakery",
+   "address": "2525 Shallowford Rd Ste 100, Marietta, GA 30066, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 34.041954,
+   "lng": -84.477735,
+   "category": "Bakery+Cafe",
+   "model": "independent",
+   "types": [
+    "bakery"
+   ],
+   "rating": 5.0,
+   "ratingNum": 87,
+   "ratingCount": "87",
+   "hours": "Sun-Mon Closed · Tue-Sat 12:00-6pm",
+   "website": "http://www.tropicups.com/",
+   "googleUrl": "https://maps.google.com/?cid=15799731658373988143&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJ9W6P090Q9YgR0dhDs28vJV8",
+   "name": "Cuppy Cakes",
+   "address": "1675 Roswell St SE, Smyrna, GA 30080, USA",
+   "city": "Smyrna",
+   "county": "Cobb",
+   "lat": 33.891515,
+   "lng": -84.504468,
+   "category": "Bakery+Cafe",
+   "model": "independent",
+   "types": [
+    "bakery"
+   ],
+   "rating": 5.0,
+   "ratingNum": 2,
+   "ratingCount": "2",
+   "hours": "Mon 10am-6pm · Tue-Sat 8am-6pm · Sun 11am-3:30pm",
+   "website": null,
+   "googleUrl": "https://maps.google.com/?cid=6855938164536891601&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJ9adANQCV9YgRV0YU8lMSq-s",
    "name": "Sovereign Delights Bakery LLC",
    "address": "1858 Azalea Dr, Lawrenceville, GA 30043, USA",
@@ -2426,6 +3278,26 @@
    "googleUrl": "https://maps.google.com/?cid=11593835241820234540&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJ9xZjlM9B9YgRxElroDDtcQw",
+   "name": "Zinnia Cafe & Market",
+   "address": "4491 S Main St, Acworth, GA 30101, USA",
+   "city": "Acworth",
+   "county": "Cobb",
+   "lat": 34.063646,
+   "lng": -84.667391,
+   "category": "Coffee",
+   "model": "independent",
+   "types": [
+    "cafe"
+   ],
+   "rating": 5.0,
+   "ratingNum": 1,
+   "ratingCount": "1",
+   "hours": "Mon-Fri 8am-3pm · Sat 8am-1pm · Sun Closed",
+   "website": null,
+   "googleUrl": "https://maps.google.com/?cid=896758593929038276&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJA0-40F2n9YgRBeywsjw5YCA",
    "name": "White Windmill Bakery & Cafe",
    "address": "5881 Buford Hwy NE, Doraville, GA 30340, USA",
@@ -2471,6 +3343,31 @@
    "googleUrl": "https://maps.google.com/?cid=9005993026413183821&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJA6H5-Tdt9YgRWmYkmTOunCM",
+   "name": "Starbucks Coffee Company",
+   "address": "3631 Sandy Plains Rd, Marietta, GA 30066, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 34.03961,
+   "lng": -84.45985,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.3,
+   "ratingNum": 573,
+   "ratingCount": "573",
+   "hours": "Mon-Sun 5am-10pm",
+   "late": {
+    "tier": "10pm+",
+    "when": "Daily till 10pm"
+   },
+   "website": "https://www.starbucks.com/store-locator/store/1015648",
+   "googleUrl": "https://maps.google.com/?cid=2566117424330204762&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJAWPnybQO9YgRmyd2qe6xVWY",
    "name": "Concourse Coffee Station",
    "address": "5 Concourse Pkwy #135, Atlanta, GA 30328, USA",
@@ -2492,6 +3389,30 @@
    "hours": "Mon 7am-4pm · Tue 7am-3pm · Wed-Fri 7am-4pm · Sat-Sun Closed",
    "website": null,
    "googleUrl": "https://maps.google.com/?cid=7373995603492480923&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJA_zTolIS9YgR0LszJejybtw",
+   "name": "Dunkin'",
+   "address": "980 E Piedmont Rd, Marietta, GA 30062, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 33.97466,
+   "lng": -84.479035,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "donut_shop",
+    "cafe",
+    "bakery"
+   ],
+   "rating": 3.9,
+   "ratingNum": 615,
+   "ratingCount": "615",
+   "hours": "Mon-Sun 5am-9pm",
+   "website": "https://www.dunkindonuts.com/locations/us/ga/marietta/980-e-piedmont-rd/store-348449/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=348449&y_source=1_MTIxMDc0MjUtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=15883900014652799952&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJAcCmL8t09YgR7FGU2D24KSg",
@@ -2826,6 +3747,27 @@
    "googleUrl": "https://maps.google.com/?cid=8872187292100890114&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJBfzAGgAV9YgRHnbRW0iX4h0",
+   "name": "Ezra Coffee Company",
+   "address": "1831 W Oak Pkwy, Marietta, GA 30062, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 33.988882,
+   "lng": -84.525158,
+   "category": "Coffee",
+   "model": "independent",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": null,
+   "ratingNum": 0,
+   "ratingCount": "0",
+   "hours": null,
+   "website": null,
+   "googleUrl": "https://maps.google.com/?cid=2153449908870411806&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJC-gxIom99YgRsd5QU1ZQsWU",
    "name": "Keidy’s fits bakery",
    "address": "1041 Park Creek Cir, Lawrenceville, GA 30044, USA",
@@ -2844,6 +3786,30 @@
    "hours": null,
    "website": null,
    "googleUrl": "https://maps.google.com/?cid=7327726400403726001&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJC2bKKZdq9YgRUHeUjerKphE",
+   "name": "Dunkin'",
+   "address": "4443 Wade Green Rd NW Suite 116, Kennesaw, GA 30144, USA",
+   "city": "Kennesaw",
+   "county": "Cobb",
+   "lat": 34.061833,
+   "lng": -84.593057,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "donut_shop",
+    "bakery",
+    "cafe"
+   ],
+   "rating": 3.7,
+   "ratingNum": 492,
+   "ratingCount": "492",
+   "hours": "Mon-Sat 5am-9pm · Sun 6am-9pm",
+   "website": "https://www.dunkindonuts.com/locations/us/ga/kennesaw/4443-wade-green-rd-nw/store-353605/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=353605&y_source=1_MTIxMTA0MTMtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=1271927053525219152&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJC3WdtKij9YgRW4poSauN8aE",
@@ -2934,6 +3900,27 @@
    "hours": "Mon-Thu 7:30am-6pm · Fri 7:30am-3pm · Sat-Sun Closed",
    "website": "https://www.starbucks.com/store-locator/store/1009839",
    "googleUrl": "https://maps.google.com/?cid=15684240975820664484&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJCd4g8n0V9YgR5q-vQP4ZB-U",
+   "name": "Moge Tee X Uni Rice",
+   "address": "440 Ernest W Barrett Pkwy NW #12, Kennesaw, GA 30144, USA",
+   "city": "Kennesaw",
+   "county": "Cobb",
+   "neighborhood": "Town Center",
+   "lat": 34.013057,
+   "lng": -84.564041,
+   "category": "Tea/Boba",
+   "model": "independent",
+   "types": [
+    "tea_house"
+   ],
+   "rating": 4.7,
+   "ratingNum": 24,
+   "ratingCount": "24",
+   "hours": "Sun-Thu 11am-9pm · Fri-Sat 11am-9:30pm",
+   "website": "https://pos.chowbus.com/online-ordering/store/Moge-TeeKennesaw/50065",
+   "googleUrl": "https://maps.google.com/?cid=16503187939320115174&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJCyl-9De-9YgRZbx_5Gjv3Ok",
@@ -3048,6 +4035,70 @@
    "googleUrl": "https://maps.google.com/?cid=12787833382878122284&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJD8gatsMQ9YgRTueabDLTpAw",
+   "name": "Rev Coffee",
+   "address": "1680 Spring Rd SE B, Smyrna, GA 30080, USA",
+   "city": "Smyrna",
+   "county": "Cobb",
+   "lat": 33.882146,
+   "lng": -84.504237,
+   "category": "Coffee",
+   "model": "independent",
+   "types": [
+    "coffee_shop",
+    "cafe",
+    "tea_house",
+    "bakery"
+   ],
+   "rating": 4.7,
+   "ratingNum": 2644,
+   "ratingCount": "2,644",
+   "hours": "Mon-Fri 6am-10pm · Sat-Sun 7am-10pm",
+   "late": {
+    "tier": "10pm+",
+    "when": "Daily till 10pm"
+   },
+   "website": "http://www.revcoffee.com/",
+   "googleUrl": "https://maps.google.com/?cid=911085238159599438&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "excellent",
+    "note": "Spacious roastery in a converted garage with communal work tables, fast Wi-Fi, abundant outlets, and a dedicated back room.",
+    "hasMeetingRoom": true,
+    "meetingRoomNote": "Private back meeting room and event space available for reservation for teams and study groups."
+   },
+   "usp": "Smyrna's flagship artisan roastery and community workspace roasting specialty beans on site.",
+   "loved": [
+    "cappuccino",
+    "lavender vanilla latte",
+    "fresh baked scones"
+   ],
+   "signature": "Spring Road Mocha"
+  },
+  {
+   "placeId": "ChIJD9A-4bQT9YgR30Lo_OPmWew",
+   "name": "Taichi Bubble Tea, Ramen and Poke Bowl - Marietta",
+   "address": "2100 Roswell Rd #2148, Marietta, GA 30062, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 33.967183,
+   "lng": -84.488448,
+   "category": "Tea/Boba",
+   "model": "franchise",
+   "types": [
+    "tea_house"
+   ],
+   "rating": 4.7,
+   "ratingNum": 170,
+   "ratingCount": "170",
+   "hours": "Sun-Thu 11am-9:30pm · Fri-Sat 11am-10pm",
+   "late": {
+    "tier": "10pm+",
+    "when": "Fri-Sat till 10pm"
+   },
+   "website": "https://taichibubbletea.com/",
+   "googleUrl": "https://maps.google.com/?cid=17030897332753285855&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJDRn7aqGR9YgRyTDJXonxBdA",
    "name": "Einstein Bros. Bagels",
    "address": "5965 Cumming Hwy NE Ste 320, Sugar Hill, GA 30518, USA",
@@ -3158,6 +4209,31 @@
    "googleUrl": "https://maps.google.com/?cid=8215924965954475003&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJDz_P0JsN9YgRRjv1-_rAZ74",
+   "name": "Crumbl Cookies",
+   "address": "640 Johnson Ferry Rd #110, Marietta, GA 30068, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 33.964418,
+   "lng": -84.411209,
+   "category": "Bakery+Cafe",
+   "model": "franchise",
+   "types": [
+    "dessert_shop",
+    "bakery"
+   ],
+   "rating": 4.7,
+   "ratingNum": 522,
+   "ratingCount": "522",
+   "hours": "Mon-Thu 8am-10pm · Fri-Sat 8am-12am · Sun Closed",
+   "late": {
+    "tier": "midnight",
+    "when": "Fri-Sat till midnight; rest of week till 10pm"
+   },
+   "website": "https://crumblcookies.com/",
+   "googleUrl": "https://maps.google.com/?cid=13720146974009015110&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJE0cfSFSf9YgRwzmj4QLjoQk",
    "name": "Sara Donuts",
    "address": "9760 Medlock Bridge Rd, Duluth, GA 30097, USA",
@@ -3177,6 +4253,30 @@
    "hours": "Mon Closed · Tue-Sun 5am-12pm",
    "website": "https://www.facebook.com/SarahDonuts/",
    "googleUrl": "https://maps.google.com/?cid=694085419106777539&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJE1-48-wV9YgR352ESWHDH4s",
+   "name": "Pie Bar (Marietta)",
+   "address": "60 Powder Springs St SW, Marietta, GA 30064, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 33.950484,
+   "lng": -84.550403,
+   "category": "Bakery+Cafe",
+   "model": "independent",
+   "types": [
+    "bakery",
+    "coffee_shop",
+    "dessert_restaurant",
+    "dessert_shop",
+    "cafe"
+   ],
+   "rating": 4.8,
+   "ratingNum": 274,
+   "ratingCount": "274",
+   "hours": "Mon-Thu 11am-7pm · Fri-Sat 11am-9pm · Sun 12:00-6pm",
+   "website": "http://orderpiebar.com/",
+   "googleUrl": "https://maps.google.com/?cid=10024946118162685407&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJE1d0yXaT9YgRg5SE8bBRrCs",
@@ -3336,6 +4436,52 @@
    "googleUrl": "https://maps.google.com/?cid=2167112395324098062&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJEX9AFWMQ9YgR1QyBpicDTWY",
+   "name": "Einstein Bros. Bagels",
+   "address": "2460 Cumberland Pkwy SE Ste 1701, Atlanta, GA 30339, USA",
+   "city": "Atlanta",
+   "county": "Cobb",
+   "neighborhood": "Cumberland",
+   "lat": 33.864149,
+   "lng": -84.476316,
+   "category": "Bakery+Cafe",
+   "model": "franchise",
+   "types": [
+    "bagel_shop",
+    "coffee_shop",
+    "cafe",
+    "bakery"
+   ],
+   "rating": 4.1,
+   "ratingNum": 669,
+   "ratingCount": "669",
+   "hours": "Mon-Fri 5:30am-2pm · Sat-Sun 6am-2pm",
+   "website": "https://locations.einsteinbros.com/us/ga/atlanta/2460-cumberland-pkwy-se?y_source=1_OTA0OTc3OC03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+   "googleUrl": "https://maps.google.com/?cid=7371551633907453141&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJEaPqZAZr9YgRRKxi2rb4_2A",
+   "name": "Coffee",
+   "address": "300 Townpark Dr, Kennesaw, GA 30144, USA",
+   "city": "Kennesaw",
+   "county": "Cobb",
+   "neighborhood": "Town Center",
+   "lat": 34.042889,
+   "lng": -84.572117,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": null,
+   "ratingNum": 0,
+   "ratingCount": "0",
+   "hours": null,
+   "website": null,
+   "googleUrl": "https://maps.google.com/?cid=6989578610933935172&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJEbRk2mKi9YgRs0wfwnNCb34",
    "name": "Crave Pie Studio",
    "address": "3107 Main St, Duluth, GA 30096, USA",
@@ -3382,6 +4528,26 @@
    },
    "website": "https://www.pearlstea.com/doraville",
    "googleUrl": "https://maps.google.com/?cid=6061720457358304623&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJEwupYXcR9YgRqdajk2Vfqu0",
+   "name": "Goianao Brazilian Bakery",
+   "address": "1475 Terrell Mill Rd Ste 116, Marietta, GA 30067, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 33.915767,
+   "lng": -84.468864,
+   "category": "Bakery+Cafe",
+   "model": "independent",
+   "types": [
+    "bakery"
+   ],
+   "rating": 4.3,
+   "ratingNum": 38,
+   "ratingCount": "38",
+   "hours": "Mon-Sat 6am-8pm · Sun 8am-4pm",
+   "website": "https://goianao.com/bakery/",
+   "googleUrl": "https://maps.google.com/?cid=17125605422903056041&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJF-kelxCD9YgRVSNpO87Vah4",
@@ -3863,6 +5029,28 @@
    "googleUrl": "https://maps.google.com/?cid=15196748219731855011&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJH0I1Z0YR9YgRgcB8m8Xy76Y",
+   "name": "Jacobs Java Chicago Food & Drive Thru",
+   "address": "1350 Terrell Mill Rd, Marietta, GA 30067, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 33.919321,
+   "lng": -84.465856,
+   "category": "Coffee",
+   "model": "independent",
+   "types": [
+    "coffee_shop",
+    "cafe",
+    "dessert_shop"
+   ],
+   "rating": 4.9,
+   "ratingNum": 564,
+   "ratingCount": "564",
+   "hours": "Sun-Mon Closed · Tue-Fri 10:30am-7pm · Sat 10:30am-5pm",
+   "website": "https://www.jacobsjava932.com/",
+   "googleUrl": "https://maps.google.com/?cid=12029100060261007489&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJH4Tz37R19YgRMb1rXwvp8EA",
    "name": "Pop's Coffee Co.",
    "address": "11444 Alpharetta Hwy, Roswell, GA 30076, USA",
@@ -3894,6 +5082,31 @@
     "breakfast burritos"
    ],
    "signature": "Nitro Draft Cold Brew"
+  },
+  {
+   "placeId": "ChIJH4Vh_NJq9YgRIeYqEfFvHyE",
+   "name": "Dunkin'",
+   "address": "741 Townpark Ln, Kennesaw, GA 30144, USA",
+   "city": "Kennesaw",
+   "county": "Cobb",
+   "neighborhood": "Town Center",
+   "lat": 34.035988,
+   "lng": -84.572107,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "donut_shop",
+    "bakery",
+    "cafe"
+   ],
+   "rating": 3.9,
+   "ratingNum": 691,
+   "ratingCount": "691",
+   "hours": "Mon-Sun Open 24 hours",
+   "website": "https://www.dunkindonuts.com/locations/us/ga/kennesaw/741-townpark-ln-nw/store-336381/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=336381&y_source=1_MTIxMDc2MzMtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=2386749408695477793&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJH4WEs6Gc9YgRIYHElouv9qo",
@@ -4011,6 +5224,40 @@
    "googleUrl": "https://maps.google.com/?cid=17012805597891820110&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJHdL7-dIR9YgR_vIuc67Dle4",
+   "name": "Chattahoochee Coffee Company - Riverside",
+   "address": "2281 Akers Mill Rd, Atlanta, GA 30339, USA",
+   "city": "Atlanta",
+   "county": "Cobb",
+   "neighborhood": "Cumberland",
+   "lat": 33.896575,
+   "lng": -84.445159,
+   "category": "Coffee",
+   "model": "independent",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.3,
+   "ratingNum": 1752,
+   "ratingCount": "1,752",
+   "hours": "Mon-Fri 8am-6pm · Sat-Sun Closed",
+   "website": "http://www.chattahoocheecoffee.com/",
+   "googleUrl": "https://maps.google.com/?cid=17191862306580919038&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "excellent",
+    "note": "World-class riverside setting along the Chattahoochee River with scenic patio tables, quiet study spots, fast Wi-Fi, and Counter Culture coffee.",
+    "hasMeetingRoom": false
+   },
+   "usp": "Unmatched riverfront sanctuary perched right on the banks of the Chattahoochee with lush nature views.",
+   "loved": [
+    "cortado",
+    "iced vanilla latte",
+    "avocado toast"
+   ],
+   "signature": "Chattahoochee Riverfront Cold Brew"
+  },
+  {
    "placeId": "ChIJHd_hdAej9YgR6lZtgCt-XIQ",
    "name": "Quickly",
    "address": "3780 Old Norcross Rd #304, Duluth, GA 30096, USA",
@@ -4037,6 +5284,28 @@
    "googleUrl": "https://maps.google.com/?cid=9537636836167210730&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJHfRXj2sU9YgRFwsCt6P-nTg",
+   "name": "Tip Top Donuts",
+   "address": "745 Cobb Pkwy N, Marietta, GA 30062, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 33.968983,
+   "lng": -84.538313,
+   "category": "Bakery+Cafe",
+   "model": "independent",
+   "types": [
+    "bakery",
+    "bagel_shop",
+    "donut_shop"
+   ],
+   "rating": 4.7,
+   "ratingNum": 895,
+   "ratingCount": "895",
+   "hours": "Mon-Sat 5am-3pm · Sun 5am-2pm",
+   "website": "http://tiptopdonuts.com/",
+   "googleUrl": "https://maps.google.com/?cid=4079696816571026199&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJI5y5ImC99YgRwPoOYRgVp0U",
    "name": "Arte",
    "address": "1291 Old Peachtree Rd NW #210, Suwanee, GA 30024, USA",
@@ -4060,6 +5329,30 @@
    },
    "website": "http://www.artesuwanee.com/",
    "googleUrl": "https://maps.google.com/?cid=5019003504179477184&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJI75mmew_9YgRdnE2cFJCvAg",
+   "name": "Queen Tea (The Avenue West Cobb)",
+   "address": "3625 Dallas Hwy #770, Marietta, GA 30064, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 33.952386,
+   "lng": -84.656794,
+   "category": "Tea/Boba",
+   "model": "independent",
+   "types": [
+    "tea_house"
+   ],
+   "rating": 4.1,
+   "ratingNum": 365,
+   "ratingCount": "365",
+   "hours": "Sun-Thu 11am-11pm · Fri-Sat 11am-12am",
+   "late": {
+    "tier": "midnight",
+    "when": "Fri-Sat till midnight; rest of week till 11pm"
+   },
+   "website": "http://www.queenteaboba.com/",
+   "googleUrl": "https://maps.google.com/?cid=629450969762394486&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJIR5xg8qj9YgRnSZmGjwPVWo",
@@ -4344,6 +5637,26 @@
    "googleUrl": "https://maps.google.com/?cid=3509902959842224795&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJIwQavqo49YgRVyycYvkC8ds",
+   "name": "Art's Bagel & More",
+   "address": "3451 Cobb Pkwy NW, Acworth, GA 30101, USA",
+   "city": "Acworth",
+   "county": "Cobb",
+   "lat": 34.037717,
+   "lng": -84.690943,
+   "category": "Bakery+Cafe",
+   "model": "independent",
+   "types": [
+    "bakery"
+   ],
+   "rating": 4.8,
+   "ratingNum": 820,
+   "ratingCount": "820",
+   "hours": "Mon Closed · Tue-Fri 6am-2pm · Sat-Sun 7am-2pm",
+   "website": "http://artsbagelsga.com/",
+   "googleUrl": "https://maps.google.com/?cid=15848451833818000471&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJIweX_p6j9YgRohKnFpOvv6o",
    "name": "Hong Kong Bakery & Dimsum Duluth",
    "address": "2255 Pleasant Hill Rd #205, Duluth, GA 30096, USA",
@@ -4414,6 +5727,47 @@
    "googleUrl": "https://maps.google.com/?cid=1429132813705915429&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJIz2WWZhr9YgR8pKaPuSTlFc",
+   "name": "Shannon Turner Cakes",
+   "address": "4840 Ridgewood Creek Dr NW, Acworth, GA 30102, USA",
+   "city": "Acworth",
+   "county": "Cobb",
+   "lat": 34.06986,
+   "lng": -84.556113,
+   "category": "Bakery+Cafe",
+   "model": "independent",
+   "types": [
+    "dessert_shop",
+    "bakery"
+   ],
+   "rating": 5.0,
+   "ratingNum": 56,
+   "ratingCount": "56",
+   "hours": "Mon-Sat 9am-5pm · Sun Closed",
+   "website": "http://www.shannonturnercakes.com/",
+   "googleUrl": "https://maps.google.com/?cid=6310831586365051634&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJIzDS5MMC5acRlSRIB6sLDl4",
+   "name": "Schmoo.Pies",
+   "address": "3783 Brown Owl Ct NE, Marietta, GA 30062, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 33.981567,
+   "lng": -84.438946,
+   "category": "Bakery+Cafe",
+   "model": "independent",
+   "types": [
+    "bakery"
+   ],
+   "rating": 5.0,
+   "ratingNum": 21,
+   "ratingCount": "21",
+   "hours": "Mon-Fri 10am-5pm · Sat 11am-3pm · Sun Closed",
+   "website": "http://www.schmoo-pies.com/",
+   "googleUrl": "https://maps.google.com/?cid=6777367318428656789&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJJ3-1iEgK9YgRaZeLBAD9xUA",
    "name": "Crema Espresso Gourmet",
    "address": "2458 Mt Vernon Rd, Dunwoody, GA 30338, USA",
@@ -4449,6 +5803,32 @@
    "signature": "Authentic Italian Espresso"
   },
   {
+   "placeId": "ChIJJTGHWicV9YgREMqp1ZmfJz8",
+   "name": "Terminus 72",
+   "address": "46 Polk St NW, Marietta, GA 30064, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 33.955877,
+   "lng": -84.552744,
+   "category": "Coffee",
+   "model": "independent",
+   "types": [
+    "coffee_shop",
+    "cafe",
+    "tea_house"
+   ],
+   "rating": 4.6,
+   "ratingNum": 52,
+   "ratingCount": "52",
+   "hours": "Sun-Mon Closed · Tue-Sat 9pm-5am",
+   "late": {
+    "tier": "midnight",
+    "when": "Tue-Sat till 5am"
+   },
+   "website": "https://www.facebook.com/terminus72cafe",
+   "googleUrl": "https://maps.google.com/?cid=4550781431544662544&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJJTYPZACZ9YgRIALYhJPxTRw",
    "name": "MESA 58 | Restaurant & Cafe",
    "address": "2870 Peachtree Industrial Blvd STE F & K, Duluth, GA 30097, USA",
@@ -4467,6 +5847,26 @@
    "hours": "Mon-Sat 8am-9pm · Sun 8:30am-7pm",
    "website": null,
    "googleUrl": "https://maps.google.com/?cid=2039551822159938080&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJJaYjEC1H9YgRoFWx7JLXtcw",
+   "name": "Fredi‘s Bakery LLC",
+   "address": "3739 Summit Dr NW, Acworth, GA 30101, USA",
+   "city": "Acworth",
+   "county": "Cobb",
+   "lat": 34.046489,
+   "lng": -84.702634,
+   "category": "Bakery+Cafe",
+   "model": "independent",
+   "types": [
+    "bakery"
+   ],
+   "rating": 5.0,
+   "ratingNum": 3,
+   "ratingCount": "3",
+   "hours": "Sat-Thu Closed · Fri 1:00-5pm",
+   "website": "https://app.simply-bread.co/fredisbakery",
+   "googleUrl": "https://maps.google.com/?cid=14750933180558169504&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJJbA2Lvmb9YgR0oldOryKXY0",
@@ -4509,6 +5909,27 @@
    "hours": "Mon-Sun 5am-8pm",
    "website": "https://www.starbucks.com/store-locator/store/8781/",
    "googleUrl": "https://maps.google.com/?cid=12486560003535843682&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJJdJ_A-kR9YgRU9sM5TG0Uno",
+   "name": "Aether Coffee",
+   "address": "976 Cobb Pkwy SE, Marietta, GA 30060, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 33.928925,
+   "lng": -84.509131,
+   "category": "Coffee",
+   "model": "independent",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": null,
+   "ratingNum": 0,
+   "ratingCount": "0",
+   "hours": null,
+   "website": null,
+   "googleUrl": "https://maps.google.com/?cid=8814305547106704211&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJJeGpFFyD9YgRSCpd8amjYkE",
@@ -4762,6 +6183,28 @@
    "googleUrl": "https://maps.google.com/?cid=17822294277431786527&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJKTur9dIV9YgRAwNfGf8iYCQ",
+   "name": "Mr. Tombstone’s Coffee Emporium - Kennesaw",
+   "address": "1133 Chastain Rd NW, Kennesaw, GA 30144, USA",
+   "city": "Kennesaw",
+   "county": "Cobb",
+   "neighborhood": "Town Center",
+   "lat": 34.030265,
+   "lng": -84.582522,
+   "category": "Coffee",
+   "model": "independent",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.6,
+   "ratingNum": 39,
+   "ratingCount": "39",
+   "hours": "Mon-Fri 7am-5pm · Sat-Sun 9am-5pm",
+   "website": "https://www.mrtombstones.com/",
+   "googleUrl": "https://maps.google.com/?cid=2621133462167290627&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJKWDucfV19YgR_Gx75XRIPaQ",
    "name": "Dunkin'",
    "address": "670 N Main St, Alpharetta, GA 30009, USA",
@@ -4847,6 +6290,31 @@
    "googleUrl": "https://maps.google.com/?cid=9637901325458131989&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJKZuo8hNt9YgRTPuvEIpdbBE",
+   "name": "Crumbl Cookies",
+   "address": "3460 Sandy Plains Rd Ste 510, Marietta, GA 30066, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 34.034086,
+   "lng": -84.462416,
+   "category": "Bakery+Cafe",
+   "model": "franchise",
+   "types": [
+    "bakery",
+    "dessert_shop"
+   ],
+   "rating": 4.8,
+   "ratingNum": 3295,
+   "ratingCount": "3,295",
+   "hours": "Mon-Sat 8am-10pm · Sun Closed",
+   "late": {
+    "tier": "10pm+",
+    "when": "Mon-Sat till 10pm"
+   },
+   "website": "https://crumblcookies.com/",
+   "googleUrl": "https://maps.google.com/?cid=1255481243696364364&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJKcIa5YwP9YgR450X58tPHVo",
    "name": "Makeda's Cookies - Sandy Springs",
    "address": "901 Abernathy Rd NE Apt 400, Sandy Springs, GA 30328, USA",
@@ -4913,6 +6381,27 @@
    "googleUrl": "https://maps.google.com/?cid=11616957987810222726&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJKwMCekI99YgROyyUzQyPsqk",
+   "name": "Lunas Cafe and Fit Dance",
+   "address": "2200 Powder Springs Rd SW Ste 180, Marietta, GA 30064, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 33.882936,
+   "lng": -84.620216,
+   "category": "Coffee",
+   "model": "independent",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.4,
+   "ratingNum": 7,
+   "ratingCount": "7",
+   "hours": "Mon 8:00-11:30am · Tue-Fri 8:30-11:30am · Sat-Sun Closed",
+   "website": "https://teresalunas.vidadivina.com/",
+   "googleUrl": "https://maps.google.com/?cid=12227993223415737403&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJKwxu1qCk4RQRV1Ie0BA26bk",
    "name": "Tree Story Bakery & Cafe",
    "address": "2550 Pleasant Hill Rd #415, Duluth, GA 30096, USA",
@@ -4935,6 +6424,28 @@
    },
    "website": null,
    "googleUrl": "https://maps.google.com/?cid=13396298012429275735&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJKzNaW3sR9YgRLASak27lN3w",
+   "name": "Nom Station",
+   "address": "3000 Windy Hill Rd SE #176, Marietta, GA 30067, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "neighborhood": "Cumberland",
+   "lat": 33.904375,
+   "lng": -84.466404,
+   "category": "Tea/Boba",
+   "model": "independent",
+   "types": [
+    "tea_house",
+    "dessert_shop"
+   ],
+   "rating": 4.2,
+   "ratingNum": 189,
+   "ratingCount": "189",
+   "hours": "Mon-Fri 7am-6pm · Sat 8am-6pm · Sun 9am-6pm",
+   "website": null,
+   "googleUrl": "https://maps.google.com/?cid=8950875047507657772&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJL0zVDC1z9YgRx800Xdpk6YU",
@@ -5049,6 +6560,51 @@
    "googleUrl": "https://maps.google.com/?cid=16996812149808947394&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJL8l_U0hB9YgR4okkwuWtKP0",
+   "name": "mocca coffee",
+   "address": "4283 Brighton Way NW, Kennesaw, GA 30144, USA",
+   "city": "Kennesaw",
+   "county": "Cobb",
+   "lat": 34.05943,
+   "lng": -84.633537,
+   "category": "Coffee",
+   "model": "independent",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": null,
+   "ratingNum": 0,
+   "ratingCount": "0",
+   "hours": "Mon-Fri 8am-9pm · Sat 8am-10pm · Sun 3:00-9pm",
+   "late": {
+    "tier": "10pm+",
+    "when": "Sat till 10pm"
+   },
+   "website": null,
+   "googleUrl": "https://maps.google.com/?cid=18242021492980484578&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJLSW7kjkU9YgRR4rPVqqdVPs",
+   "name": "Sessions Stand",
+   "address": "397 Sessions St NW #200, Marietta, GA 30060, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 33.961228,
+   "lng": -84.55315,
+   "category": "Coffee",
+   "model": "independent",
+   "types": [
+    "cafe"
+   ],
+   "rating": 4.6,
+   "ratingNum": 583,
+   "ratingCount": "583",
+   "hours": "Mon-Tue 7am-5pm · Wed-Thu 7am-8pm · Fri 7am-9pm · Sat 7:30am-9pm · Sun 7:30am-5pm",
+   "website": "https://sessions-stand.square.site/",
+   "googleUrl": "https://maps.google.com/?cid=18110273356490050119&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJLXRen3x19YgR4VcCZnYc9RY",
    "name": "Starbucks Coffee Company",
    "address": "6000 North Point Pkwy, Alpharetta, GA 30022, USA",
@@ -5095,6 +6651,54 @@
    "googleUrl": "https://maps.google.com/?cid=11152335592133932915&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJLZYilhhr9YgR-mZ59mtvhCI",
+   "name": "Dunkin'",
+   "address": "4311 Bells Ferry Rd Ste A, Kennesaw, GA 30144, USA",
+   "city": "Kennesaw",
+   "county": "Cobb",
+   "lat": 34.055981,
+   "lng": -84.557563,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "donut_shop",
+    "bakery",
+    "cafe"
+   ],
+   "rating": 4.0,
+   "ratingNum": 557,
+   "ratingCount": "557",
+   "hours": "Mon-Sun Open 24 hours",
+   "website": "https://www.dunkindonuts.com/locations/us/ga/kennesaw/4311-bells-ferry-rd/store-310096/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=310096&y_source=1_MTIxMTIwNzItNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=2487235403702691578&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJLahgYVkV9YgRSnfyLtZydPM",
+   "name": "Einstein Bros. Bagels",
+   "address": "1155 Ernest W Barrett Pkwy NW Ste 104, Kennesaw, GA 30144, USA",
+   "city": "Kennesaw",
+   "county": "Cobb",
+   "neighborhood": "Town Center",
+   "lat": 34.0002,
+   "lng": -84.582893,
+   "category": "Bakery+Cafe",
+   "model": "franchise",
+   "types": [
+    "bagel_shop",
+    "coffee_shop",
+    "bakery",
+    "cafe"
+   ],
+   "rating": 3.7,
+   "ratingNum": 194,
+   "ratingCount": "194",
+   "hours": "Mon-Sun 6am-2pm",
+   "website": "https://locations.einsteinbros.com/us/ga/kennesaw/1155-ernest-barrett-pkwy-suite-104?y_source=1_MTA3ODc4NjkxOS03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+   "googleUrl": "https://maps.google.com/?cid=17542772712751134538&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJLbgzaADB9YgRa-g7bd6krEE",
    "name": "Sun & Bloom Cafe",
    "address": "164 Dacula Rd, Dacula, GA 30019, USA",
@@ -5115,6 +6719,28 @@
    "hours": "Mon-Fri 8am-8pm · Sat-Sun 9am-8pm",
    "website": "http://www.sunbloomflowercafe.com/",
    "googleUrl": "https://maps.google.com/?cid=4732338583681886315&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJLfRFf_dz9YgRu7l_2iPXVJU",
+   "name": "RISE coffee & tea",
+   "address": "4651 Sandy Plains Rd #116, Roswell, GA 30075, USA",
+   "city": "Roswell",
+   "county": "Cobb",
+   "lat": 34.064205,
+   "lng": -84.425898,
+   "category": "Coffee",
+   "model": "independent",
+   "types": [
+    "coffee_shop",
+    "dessert_shop",
+    "cafe"
+   ],
+   "rating": 5.0,
+   "ratingNum": 331,
+   "ratingCount": "331",
+   "hours": "Mon-Sun 8am-4pm",
+   "website": "https://rise-coffeetea.com/",
+   "googleUrl": "https://maps.google.com/?cid=10760461958684588475&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJM-FdL9QN9YgRTu5fvjDMj04",
@@ -5255,6 +6881,26 @@
    "googleUrl": "https://maps.google.com/?cid=15425966704167788485&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJMRz4dMZA9YgRqNNMXZnj5pg",
+   "name": "COMMUNITY COFFEE",
+   "address": "Acworth, GA 30101, USA",
+   "city": "Acworth",
+   "county": "Cobb",
+   "lat": 34.065832,
+   "lng": -84.677826,
+   "category": "Coffee",
+   "model": "independent",
+   "types": [
+    "cafe"
+   ],
+   "rating": null,
+   "ratingNum": 0,
+   "ratingCount": "0",
+   "hours": null,
+   "website": null,
+   "googleUrl": "https://maps.google.com/?cid=11017743786243314600&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJMTO6OOu-9YgR9I4fu6ogx0Q",
    "name": "Coffee Shop As",
    "address": "155 Gwinnett Dr, Lawrenceville, GA 30046, USA",
@@ -5363,6 +7009,52 @@
    "hours": "Mon-Sun 8am-8pm",
    "website": "https://www.starbucks.com/store-locator",
    "googleUrl": "https://maps.google.com/?cid=10712556214297632354&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJMeIXDyUU9YgRxlDnsfnlodQ",
+   "name": "Starbucks Coffee Company",
+   "address": "30 Whitlock Ave NW, Marietta, GA 30064, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 33.952647,
+   "lng": -84.551747,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.1,
+   "ratingNum": 1331,
+   "ratingCount": "1,331",
+   "hours": "Mon-Sun 4:30am-10pm",
+   "late": {
+    "tier": "10pm+",
+    "when": "Daily till 10pm"
+   },
+   "website": "https://www.starbucks.com/store-locator/store/116479/",
+   "googleUrl": "https://maps.google.com/?cid=15321780267885482182&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJN0SqDMQW9YgRzhg8ChALpv8",
+   "name": "Bernhard's German Bakery & Deli",
+   "address": "1592 Atlanta Rd SE #110, Marietta, GA 30060, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 33.914184,
+   "lng": -84.537659,
+   "category": "Bakery+Cafe",
+   "model": "independent",
+   "types": [
+    "bakery",
+    "dessert_shop"
+   ],
+   "rating": 4.7,
+   "ratingNum": 971,
+   "ratingCount": "971",
+   "hours": "Mon-Fri 8am-6pm · Sat 8am-4pm · Sun Closed",
+   "website": "http://www.bernhardsgermanbakery.com/",
+   "googleUrl": "https://maps.google.com/?cid=18421423489324685518&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJN0rf2oZ19YgRNczch7zU2Pc",
@@ -5608,6 +7300,40 @@
    "googleUrl": "https://maps.google.com/?cid=18138282962236954508&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJO2oqUPM_9YgRWerZBQCCBe4",
+   "name": "The Local Doe Coffee House",
+   "address": "3070 N Main St, Kennesaw, GA 30144, USA",
+   "city": "Kennesaw",
+   "county": "Cobb",
+   "lat": 34.029759,
+   "lng": -84.626451,
+   "category": "Coffee",
+   "model": "independent",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.8,
+   "ratingNum": 835,
+   "ratingCount": "835",
+   "hours": "Mon-Fri 7am-3pm · Sat 8am-3pm · Sun Closed",
+   "website": null,
+   "googleUrl": "https://maps.google.com/?cid=17151257692520180313&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "excellent",
+    "note": "Cozy historic home in downtown Kennesaw with study nooks, community tables, fast Wi-Fi, and friendly hospitality.",
+    "hasMeetingRoom": true,
+    "meetingRoomNote": "Private study and meeting room available for reservation for up to 8 people."
+   },
+   "usp": "Historic downtown Kennesaw gathering spot with home-style comfort, house-baked goods, and craft espresso.",
+   "loved": [
+    "chai latte",
+    "cinnamon rolls",
+    "vanilla bean latte"
+   ],
+   "signature": "Downtown Kennesaw House Drip"
+  },
+  {
    "placeId": "ChIJO5KR1ia69YgRsCUUkFYU2QI",
    "name": "Donut King",
    "address": "2250 Scenic Hwy S, Snellville, GA 30078, USA",
@@ -5627,6 +7353,28 @@
    "hours": "Mon Closed · Tue-Sun 5:30am-1pm",
    "website": null,
    "googleUrl": "https://maps.google.com/?cid=205217620039050672&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJO6Bu6aEW9YgROazj5lci390",
+   "name": "Douceur De France - Bakery & Brunch",
+   "address": "277 South Marietta Pkwy SW, Marietta, GA 30064, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 33.948169,
+   "lng": -84.54994,
+   "category": "Bakery+Cafe",
+   "model": "independent",
+   "types": [
+    "bakery",
+    "cafe",
+    "dessert_shop"
+   ],
+   "rating": 4.9,
+   "ratingNum": 19856,
+   "ratingCount": "19,856",
+   "hours": "Mon-Sat 7am-6pm · Sun 9am-3:30pm",
+   "website": "http://www.douceurdefrance.com/?utm_source=google&utm_medium=organic&utm_campaign=gmb",
+   "googleUrl": "https://maps.google.com/?cid=15987534963119729721&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJO6JKnxwP9YgRg-Rn-rE8ZTg",
@@ -5777,6 +7525,28 @@
    "googleUrl": "https://maps.google.com/?cid=9558502295340037566&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJOUhoUq4U9YgRyBAyFo0UVzw",
+   "name": "Scooter's Coffee",
+   "address": "2943 Canton Rd #1600, Marietta, GA 30066, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "neighborhood": "Addison Heights",
+   "lat": 34.024131,
+   "lng": -84.528949,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.5,
+   "ratingNum": 411,
+   "ratingCount": "411",
+   "hours": "Mon-Sun 6am-8pm",
+   "website": "https://scooterscoffee.com/",
+   "googleUrl": "https://maps.google.com/?cid=4347966561444827336&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJOYMTz2eU9YgR4HdekqpEB_o",
    "name": "Starbucks Coffee Company",
    "address": "3380 Buford Dr, Buford, GA 30519, USA",
@@ -5796,6 +7566,27 @@
    "hours": "Mon-Thu 5am-8pm · Fri-Sun 5am-9pm",
    "website": "https://www.starbucks.com/store-locator/store/6457/",
    "googleUrl": "https://maps.google.com/?cid=18016444333709752288&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJO_IX9LQN9YgREnIncAXzdCg",
+   "name": "Provision Cafe",
+   "address": "955 Johnson Ferry Rd, Marietta, GA 30068, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 33.971828,
+   "lng": -84.414943,
+   "category": "Coffee",
+   "model": "independent",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.7,
+   "ratingNum": 92,
+   "ratingCount": "92",
+   "hours": "Mon-Fri 7am-8pm · Sat 8am-2pm · Sun 8am-1pm",
+   "website": "http://provisioncafe.com/",
+   "googleUrl": "https://maps.google.com/?cid=2915222063497572882&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJOa5vXQCd9YgRgr2eK5diI00",
@@ -6110,6 +7901,27 @@
    "googleUrl": "https://maps.google.com/?cid=9085728053572401465&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJPX6Ob_8_9YgRhppL7FZTovs",
+   "name": "Lazy Labrador Coffee House",
+   "address": "2886 Cherokee St NW, Kennesaw, GA 30144, USA",
+   "city": "Kennesaw",
+   "county": "Cobb",
+   "lat": 34.023714,
+   "lng": -84.612794,
+   "category": "Coffee",
+   "model": "independent",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.5,
+   "ratingNum": 707,
+   "ratingCount": "707",
+   "hours": "Mon-Sat 7am-5pm · Sun 9am-5pm",
+   "website": "https://www.lazylabradorcoffee.com/",
+   "googleUrl": "https://maps.google.com/?cid=18132146682543708806&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJPXlI1o6v9YgRw_W8oxPwE5A",
    "name": "Caribou Coffee",
    "address": "5181 Stone Mountain Hwy Ste 100, Stone Mountain, GA 30087, USA",
@@ -6171,6 +7983,27 @@
    "hours": "Mon-Sat 5:30am-2pm · Sun Closed",
    "website": "https://www.sarahdonuts.com/",
    "googleUrl": "https://maps.google.com/?cid=11421555170483637678&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJPdNdsUI_9YgR9bhO0EgdRf4",
+   "name": "Marietta Donuts #2",
+   "address": "2953 Cobb Pkwy NW, Kennesaw, GA 30152, USA",
+   "city": "Kennesaw",
+   "county": "Cobb",
+   "lat": 34.025942,
+   "lng": -84.637133,
+   "category": "Bakery+Cafe",
+   "model": "independent",
+   "types": [
+    "donut_shop",
+    "bakery"
+   ],
+   "rating": 4.8,
+   "ratingNum": 272,
+   "ratingCount": "272",
+   "hours": "Mon-Sun 6am-2pm",
+   "website": null,
+   "googleUrl": "https://maps.google.com/?cid=18322082857596401909&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJPdhv2RFz9YgRm5b67IzkxTM",
@@ -6294,6 +8127,30 @@
    "googleUrl": "https://maps.google.com/?cid=6101925661129572774&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJQ0AjTrEV9YgRC0mbIsA_FUo",
+   "name": "Yummy Paradise - Town Center At Cobb",
+   "address": "400 Ernest W Barrett Pkwy NW #119, Kennesaw, GA 30144, USA",
+   "city": "Kennesaw",
+   "county": "Cobb",
+   "neighborhood": "Town Center",
+   "lat": 34.018025,
+   "lng": -84.563789,
+   "category": "Dessert Cafe",
+   "model": "independent",
+   "types": [
+    "dessert_shop",
+    "coffee_shop",
+    "bakery",
+    "cafe"
+   ],
+   "rating": 4.8,
+   "ratingNum": 174,
+   "ratingCount": "174",
+   "hours": "Mon-Thu 11am-8pm · Fri-Sat 10am-9pm · Sun 12:00-6pm",
+   "website": "http://www.yummyparadise.com/",
+   "googleUrl": "https://maps.google.com/?cid=5338243027764463883&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJQ1iGXoQK32oRBV4KNLyzP8A",
    "name": "Doodle Pies",
    "address": "1105 Woodstock Rd Ste 140, Roswell, GA 30075, USA",
@@ -6380,6 +8237,32 @@
    "hours": "Mon-Sun 6am-2pm",
    "website": "https://locations.einsteinbros.com/us/ga/duluth/3455-peachtree-industrial-blvd?y_source=1_MjAwNTYwNjcwMy03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
    "googleUrl": "https://maps.google.com/?cid=1338173637336473718&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJQ627BBoV9YgR3rH97Liwd9I",
+   "name": "Starbucks Coffee Company",
+   "address": "815 Ernest W Barrett Pkwy NW, Kennesaw, GA 30144, USA",
+   "city": "Kennesaw",
+   "county": "Cobb",
+   "neighborhood": "Town Center",
+   "lat": 34.00557,
+   "lng": -84.57402,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.3,
+   "ratingNum": 755,
+   "ratingCount": "755",
+   "hours": "Mon-Sat 4:30am-10pm · Sun 5am-10pm",
+   "late": {
+    "tier": "10pm+",
+    "when": "Daily till 10pm"
+   },
+   "website": "https://www.starbucks.com/store-locator/store/12848/",
+   "googleUrl": "https://maps.google.com/?cid=15165784578489954782&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJQ7rRNkm_9YgRdUCVBf73cgc",
@@ -6607,6 +8490,39 @@
    "googleUrl": "https://maps.google.com/?cid=17275964219212134239&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJR0p26m4Q9YgRw1qv6jQcG4k",
+   "name": "Read Shop by The Merchant",
+   "address": "4300 Paces Ferry Rd SE ste 125, Atlanta, GA 30339, USA",
+   "city": "Atlanta",
+   "county": "Cobb",
+   "lat": 33.865319,
+   "lng": -84.466987,
+   "category": "Coffee",
+   "model": "independent",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.6,
+   "ratingNum": 594,
+   "ratingCount": "594",
+   "hours": "Mon-Fri 7am-7pm · Sat 8am-7pm · Sun 8am-6pm",
+   "website": "http://www.readshopatl.com/",
+   "googleUrl": "https://maps.google.com/?cid=9879521221168552643&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "good",
+    "note": "Intimate bookstore cafe in Vinings Jubilee with cozy seating, Stumptown coffee, and a quiet curated atmosphere.",
+    "hasMeetingRoom": false
+   },
+   "usp": "Charming Vinings bookstore and espresso bar pairing specialty roasts with curated literary titles.",
+   "loved": [
+    "stumptown drip",
+    "matcha latte",
+    "croissants"
+   ],
+   "signature": "Paces Ferry Vanilla Latte"
+  },
+  {
    "placeId": "ChIJR520zn2X9YgRwRSGbTBp7Fs",
    "name": "Zoom Coffee Roasters",
    "address": "960 Scales Rd Ste 110, Suwanee, GA 30024, USA",
@@ -6765,6 +8681,27 @@
    "googleUrl": "https://maps.google.com/?cid=17394338469727456976&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJRZjMRr0R9YgRhR2r08J3QHc",
+   "name": "Starbucks Coffee Company",
+   "address": "1453 Terrell Mill Road SE, Marietta, GA 30067, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 33.916578,
+   "lng": -84.46684,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.0,
+   "ratingNum": 496,
+   "ratingCount": "496",
+   "hours": "Mon-Sun 5am-8pm",
+   "website": "https://www.starbucks.com/store-locator/store/116502/",
+   "googleUrl": "https://maps.google.com/?cid=8592999767681473925&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJRbBAjPqj9YgRe-0PebEu1CU",
    "name": "Glaze Tea Duluth",
    "address": "2205 Pleasant Hill Rd #125, Duluth, GA 30096, USA",
@@ -6809,6 +8746,32 @@
    "hours": "Mon 7:00-10am, 6:00-9pm · Tue-Wed 7:00-10am, 6:30-9pm · Thu-Sat 7:00-10am, 6:00-9pm · Sun 6:00-9pm",
    "website": "http://bayronperez.goherbalife.com/",
    "googleUrl": "https://maps.google.com/?cid=808375601349223901&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJRdtkaxIV9YgRKbEEW8egU3U",
+   "name": "7 Brew Coffee",
+   "address": "853 Ernest W Barrett Pkwy NW, Kennesaw, GA 30144, USA",
+   "city": "Kennesaw",
+   "county": "Cobb",
+   "neighborhood": "Town Center",
+   "lat": 34.004332,
+   "lng": -84.575828,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.4,
+   "ratingNum": 282,
+   "ratingCount": "282",
+   "hours": "Mon-Sun 5:30am-11pm",
+   "late": {
+    "tier": "10pm+",
+    "when": "Daily till 11pm"
+   },
+   "website": "https://locations.7brew.com/ga/kennesaw/853-ernest-w-barrett-parkway-northwest",
+   "googleUrl": "https://maps.google.com/?cid=8454277703590523177&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJRege7bx09YgRQlv9kYx4xkY",
@@ -6885,6 +8848,27 @@
    "googleUrl": "https://maps.google.com/?cid=2185684829019484726&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJRzLnelxt9YgRh-lXudOUN9M",
+   "name": "Baladi Coffee Marietta (Grab N Go)",
+   "address": "3460 Sandy Plains Rd Ste 600, Marietta, GA 30066, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 34.0335,
+   "lng": -84.46353,
+   "category": "Coffee",
+   "model": "independent",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.9,
+   "ratingNum": 74,
+   "ratingCount": "74",
+   "hours": "Mon-Sun 7am-8pm",
+   "website": "https://order.toasttab.com/online/baladi-coffee-3-3460-sandy-plains-road",
+   "googleUrl": "https://maps.google.com/?cid=15219797102790437255&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJS2c9WiAM9YgRutuVaReeIUg",
    "name": "Starbucks Coffee Company",
    "address": "Abernathy Square, 6681 Roswell Rd, Sandy Springs, GA 30328, USA",
@@ -6906,6 +8890,53 @@
    "googleUrl": "https://maps.google.com/?cid=5197609268355128250&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJS3dPmgYR9YgRsj6ngUVYUaY",
+   "name": "Dunkin'",
+   "address": "2340 Windy Hill Rd SE, Marietta, GA 30067, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 33.903028,
+   "lng": -84.484542,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "donut_shop",
+    "cafe",
+    "bakery"
+   ],
+   "rating": 3.3,
+   "ratingNum": 868,
+   "ratingCount": "868",
+   "hours": "Mon-Sun 5am-9pm",
+   "website": "https://www.dunkindonuts.com/locations/us/ga/marietta/2340-windy-hill-rd-se/store-351894/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=351894&y_source=1_MTIxMTM5NjktNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=11984457138960809650&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJS5OEcRk_9YgRKITOQIfr6pc",
+   "name": "Jeff's Bagel Run",
+   "address": "3485 Acworth Due West Rd, Acworth, GA 30101, USA",
+   "city": "Acworth",
+   "county": "Cobb",
+   "lat": 34.038106,
+   "lng": -84.675787,
+   "category": "Bakery+Cafe",
+   "model": "franchise",
+   "types": [
+    "bagel_shop",
+    "coffee_shop",
+    "cafe",
+    "bakery"
+   ],
+   "rating": 4.7,
+   "ratingNum": 524,
+   "ratingCount": "524",
+   "hours": "Mon-Sun 6:30am-2pm",
+   "website": null,
+   "googleUrl": "https://maps.google.com/?cid=10946820810417800232&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJSQHyHYC59YgR3jgJeaRw0Vg",
    "name": "Starbucks Coffee Company",
    "address": "1905 Scenic Hwy N, Snellville, GA 30078, USA",
@@ -6925,6 +8956,31 @@
    "hours": "Mon-Sun 8am-8pm",
    "website": "https://www.starbucks.com/store-locator/store/9721",
    "googleUrl": "https://maps.google.com/?cid=6400020397177780446&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJSQSAZq8U9YgRfmw5JtBvO7o",
+   "name": "Dunkin'",
+   "address": "2885 Canton Rd, Marietta, GA 30066, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "neighborhood": "Addison Heights",
+   "lat": 34.021232,
+   "lng": -84.52905,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "donut_shop",
+    "cafe",
+    "bakery"
+   ],
+   "rating": 3.9,
+   "ratingNum": 470,
+   "ratingCount": "470",
+   "hours": "Mon-Sat 5am-9pm · Sun 6am-9pm",
+   "website": "https://www.dunkindonuts.com/locations/us/ga/marietta/2885-canton-hwy/store-308655/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=308655&y_source=1_MTIxMDU4OTMtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=13419442454465703038&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJSSq0WtmT9YgRQHMErfA80sU",
@@ -6993,6 +9049,27 @@
    "googleUrl": "https://maps.google.com/?cid=3766503140941283451&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJSa-0QQAV9YgRCkWqRJJE87E",
+   "name": "Valley's Bakery",
+   "address": "3205 Canton Rd #133, Marietta, GA 30066, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "neighborhood": "Addison Heights",
+   "lat": 34.029986,
+   "lng": -84.528468,
+   "category": "Bakery+Cafe",
+   "model": "independent",
+   "types": [
+    "bakery"
+   ],
+   "rating": 5.0,
+   "ratingNum": 225,
+   "ratingCount": "225",
+   "hours": "Sun-Mon Closed · Tue-Sat 8am-4pm",
+   "website": "https://valleysbakery.com/",
+   "googleUrl": "https://maps.google.com/?cid=12822667959061857546&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJSbpmDBmj9YgRJlgyWz5RFhY",
    "name": "La La's Bakery",
    "address": "Duluth, GA 30096, USA",
@@ -7039,6 +9116,27 @@
    },
    "website": "http://www.vincentbakeryofficial.com/",
    "googleUrl": "https://maps.google.com/?cid=15601806752208535195&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJSfdLpnE_9YgRr8bwriULV_w",
+   "name": "Caribou Coffee",
+   "address": "2705 Cobb Pkwy NW, Kennesaw, GA 30152, USA",
+   "city": "Kennesaw",
+   "county": "Cobb",
+   "lat": 34.019444,
+   "lng": -84.621383,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.5,
+   "ratingNum": 48,
+   "ratingCount": "48",
+   "hours": "Mon-Fri 6am-6pm · Sat-Sun 7am-6pm",
+   "website": "https://locations.cariboucoffee.com/us/ga/kennesaw/2705-cobb-parkway-northwest",
+   "googleUrl": "https://maps.google.com/?cid=18183014277008377519&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJSwPoW0Gj9YgRP-LI4n5RcI8",
@@ -7235,6 +9333,30 @@
    "googleUrl": "https://maps.google.com/?cid=7290362154133585216&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJTTGlVXg_9YgRaz-8tDLoyUo",
+   "name": "Dunkin'",
+   "address": "2462 Kennesaw Due West Rd NW, Kennesaw, GA 30152, USA",
+   "city": "Kennesaw",
+   "county": "Cobb",
+   "lat": 34.013903,
+   "lng": -84.614771,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "donut_shop",
+    "bakery",
+    "cafe"
+   ],
+   "rating": 3.1,
+   "ratingNum": 516,
+   "ratingCount": "516",
+   "hours": "Mon-Sat 5am-9pm · Sun 6am-9pm",
+   "website": "https://www.dunkindonuts.com/locations/us/ga/kennesaw/2462-kennesaw-due-west-rd-nw/store-356296/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=356296&y_source=1_MTIxMDkxMzktNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=5389093733603753835&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJTU3hhkyY9YgRFKzTM7PSo9A",
    "name": "Dunkin'",
    "address": "7810 McGinnis Ferry Rd Ste 101, Suwanee, GA 30024, USA",
@@ -7283,6 +9405,34 @@
    "googleUrl": "https://maps.google.com/?cid=16649437485526651831&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJTUnh4lca9YgRUlR0ASpAYZs",
+   "name": "Dunkin'",
+   "address": "3300 S Cobb Dr, Smyrna, GA 30080, USA",
+   "city": "Smyrna",
+   "county": "Cobb",
+   "lat": 33.873387,
+   "lng": -84.530957,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "donut_shop",
+    "bakery",
+    "cafe"
+   ],
+   "rating": 3.8,
+   "ratingNum": 839,
+   "ratingCount": "839",
+   "hours": "Mon-Sat 5am-10pm · Sun 6am-10pm",
+   "late": {
+    "tier": "10pm+",
+    "when": "Daily till 10pm"
+   },
+   "website": "https://www.dunkindonuts.com/locations/us/ga/smyrna/3300-s-cobb-dr/store-302925/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=302925&y_source=1_MTIxMDc3MTItNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=11196300697776968786&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJTVEecl6_9YgR_kw4iyQtZjc",
    "name": "Pearl's Tea - Lawrenceville",
    "address": "30 S Clayton St Ste 500, Lawrenceville, GA 30046, USA",
@@ -7302,6 +9452,28 @@
    "hours": "Mon-Sun 11am-9pm",
    "website": "https://www.pearlstea.com/lawrenceville",
    "googleUrl": "https://maps.google.com/?cid=3991927754688318718&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJTXiZnN8U9YgRLg2uH6c9txw",
+   "name": "Sunny's Bagel & Deli",
+   "address": "440 Ernest W Barrett Pkwy NW, Kennesaw, GA 30144, USA",
+   "city": "Kennesaw",
+   "county": "Cobb",
+   "neighborhood": "Town Center",
+   "lat": 34.012983,
+   "lng": -84.564139,
+   "category": "Bakery+Cafe",
+   "model": "independent",
+   "types": [
+    "bagel_shop",
+    "bakery"
+   ],
+   "rating": 4.4,
+   "ratingNum": 629,
+   "ratingCount": "629",
+   "hours": "Mon-Thu 6am-2:30pm · Fri 6am-4pm · Sat-Sun 7am-4pm",
+   "website": "http://sunnysbagelsdeli.com/",
+   "googleUrl": "https://maps.google.com/?cid=2069190341800365358&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJTZQTrZWj9YgR7yCPR1mlVJ0",
@@ -7347,6 +9519,28 @@
    "hours": "Mon-Fri 10am-6pm · Sat 10am-5pm · Sun Closed",
    "website": "http://www.southernbakedpie.com/",
    "googleUrl": "https://maps.google.com/?cid=3091845833704732727&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJTbcY8SQU9YgRlcI2_opw3TI",
+   "name": "Tiny Bubbles Tea Bar and Gift Shop",
+   "address": "21 W Park Square, Marietta, GA 30060, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 33.952534,
+   "lng": -84.550352,
+   "category": "Tea/Boba",
+   "model": "independent",
+   "types": [
+    "coffee_shop",
+    "cafe",
+    "tea_house"
+   ],
+   "rating": 4.7,
+   "ratingNum": 1471,
+   "ratingCount": "1,471",
+   "hours": "Mon-Sun 11am-9pm",
+   "website": "http://www.tinybubblesteabar.com/",
+   "googleUrl": "https://maps.google.com/?cid=3665209414022251157&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJTdORqWSl9YgR0ni3I7Lkkhk",
@@ -7412,6 +9606,51 @@
    "googleUrl": "https://maps.google.com/?cid=15302542248463266318&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJTwsKolZH9YgRoNcGCwtgiIQ",
+   "name": "Starbucks Coffee Company",
+   "address": "3622 Cobb Pkwy NW, Acworth, GA 30101, USA",
+   "city": "Acworth",
+   "county": "Cobb",
+   "lat": 34.044487,
+   "lng": -84.695627,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.4,
+   "ratingNum": 701,
+   "ratingCount": "701",
+   "hours": "Mon-Fri 4:30am-10pm · Sat-Sun 5am-10pm",
+   "late": {
+    "tier": "10pm+",
+    "when": "Daily till 10pm"
+   },
+   "website": "https://www.starbucks.com/store-locator/store/17280/",
+   "googleUrl": "https://maps.google.com/?cid=9549988610385041312&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJTxXURxIR9YgR4JeGKnIHtbQ",
+   "name": "FAD CLASSIC BAKERY",
+   "address": "3691 Atlanta Rd SE, Smyrna, GA 30080, USA",
+   "city": "Smyrna",
+   "county": "Cobb",
+   "lat": 33.863235,
+   "lng": -84.491377,
+   "category": "Bakery+Cafe",
+   "model": "independent",
+   "types": [
+    "bakery"
+   ],
+   "rating": 5.0,
+   "ratingNum": 115,
+   "ratingCount": "115",
+   "hours": "Mon-Sat 7:30am-7pm · Sun Closed",
+   "website": "https://www.fadbakery.com/",
+   "googleUrl": "https://maps.google.com/?cid=13021322084532787168&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJTxvALJWV9YgRvdcIyLGGBro",
    "name": "Q6 Society",
    "address": "1680 Mall of Georgia Blvd #1740, Buford, GA 30519, USA",
@@ -7434,6 +9673,27 @@
    },
    "website": null,
    "googleUrl": "https://maps.google.com/?cid=13404549439038216125&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJU1dlee4N9YgRFlWeVUdpXaQ",
+   "name": "Toastique",
+   "address": "4250 Roswell Rd #510, Marietta, GA 30062, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 33.98296,
+   "lng": -84.426119,
+   "category": "Coffee",
+   "model": "independent",
+   "types": [
+    "cafe",
+    "coffee_shop"
+   ],
+   "rating": 4.8,
+   "ratingNum": 173,
+   "ratingCount": "173",
+   "hours": "Mon-Sun 7am-5pm",
+   "website": "https://toastique.com/pages/east-cobb",
+   "googleUrl": "https://maps.google.com/?cid=11843738350154306838&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJU67XsNKf9YgRNqYv9RjRqjc",
@@ -7572,6 +9832,26 @@
    },
    "website": "http://gongchatea.com/",
    "googleUrl": "https://maps.google.com/?cid=5184994877825592175&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJUT24O0NB9YgRIAf6Z453QAo",
+   "name": "Macchi House LLC",
+   "address": "208 Windcroft Ct NW, Acworth, GA 30101, USA",
+   "city": "Acworth",
+   "county": "Cobb",
+   "lat": 34.068969,
+   "lng": -84.654887,
+   "category": "Bakery+Cafe",
+   "model": "independent",
+   "types": [
+    "bakery"
+   ],
+   "rating": 5.0,
+   "ratingNum": 4,
+   "ratingCount": "4",
+   "hours": null,
+   "website": "https://macchihouse.com/",
+   "googleUrl": "https://maps.google.com/?cid=738721792402261792&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJUUkDKgCf9YgRyAmhaivUHOk",
@@ -7848,6 +10128,30 @@
    "googleUrl": "https://maps.google.com/?cid=14305177982154017116&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJVX9_6uE99YgRf2RJOpsxxwk",
+   "name": "Dunkin'",
+   "address": "2475 Dallas Hwy, Marietta, GA 30064, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 33.945697,
+   "lng": -84.622921,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "cafe",
+    "donut_shop",
+    "bakery"
+   ],
+   "rating": 4.1,
+   "ratingNum": 467,
+   "ratingCount": "467",
+   "hours": "Mon-Fri 5am-9pm · Sat-Sun 6am-9pm",
+   "website": "https://www.dunkindonuts.com/locations/us/ga/marietta/2475-dallas-hwy-sw/store-310095/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=310095&y_source=1_MTIxMDcwNzEtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=704586409474352255&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJVXikeJAO9YgRNi4NCARKD4U",
    "name": "Breadwinner",
    "address": "220 Sandy Springs Cir, Sandy Springs, GA 30328, USA",
@@ -7888,6 +10192,26 @@
    "hours": null,
    "website": "https://www.qbe.coffee/",
    "googleUrl": "https://maps.google.com/?cid=84596511433661025&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJVx9KHoYW9YgRfltuzVX_CO0",
+   "name": "Leche y Miel Bakeries",
+   "address": "803 Powder Springs St SW, Marietta, GA 30064, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 33.933085,
+   "lng": -84.560046,
+   "category": "Bakery+Cafe",
+   "model": "independent",
+   "types": [
+    "bakery"
+   ],
+   "rating": 3.8,
+   "ratingNum": 60,
+   "ratingCount": "60",
+   "hours": "Mon-Sat 6am-9pm · Sun 7am-9pm",
+   "website": null,
+   "googleUrl": "https://maps.google.com/?cid=17080182330786470782&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJW-SAG5PH9YgR-mQcH498zOw",
@@ -8229,6 +10553,30 @@
    "googleUrl": "https://maps.google.com/?cid=7293311345355028175&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJWzo-Vt099YgRWhwhPE3aNLA",
+   "name": "Dunkin'",
+   "address": "3721 Tramore Pointe Pkwy, Austell, GA 30106, USA",
+   "city": "Austell",
+   "county": "Cobb",
+   "lat": 33.863663,
+   "lng": -84.622925,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "cafe",
+    "donut_shop",
+    "bakery"
+   ],
+   "rating": 3.5,
+   "ratingNum": 411,
+   "ratingCount": "411",
+   "hours": "Mon-Sat 5am-9pm · Sun 6am-9pm",
+   "website": "https://www.dunkindonuts.com/locations/us/ga/austell/3721-tramore-pointe-pkwy/store-359966/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=359966&y_source=1_MjA0MzE1NzEtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=12697013274720410714&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJWzrpmNqc9YgRv95EjNGPuQw",
    "name": "Nido Cafe",
    "address": "5755 Clarion St, Cumming, GA 30040, USA",
@@ -8350,6 +10698,31 @@
    },
    "website": "http://pearlstea.com/",
    "googleUrl": "https://maps.google.com/?cid=16329729741144324512&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJX5udrQsV9YgRE7TXKPHOQiw",
+   "name": "Cinnabon Swirl",
+   "address": "1925 Cobb Pkwy NW #120, Kennesaw, GA 30152, USA",
+   "city": "Kennesaw",
+   "county": "Cobb",
+   "lat": 33.998914,
+   "lng": -84.589253,
+   "category": "Dessert Cafe",
+   "model": "franchise",
+   "types": [
+    "dessert_shop",
+    "bakery"
+   ],
+   "rating": 4.4,
+   "ratingNum": 37,
+   "ratingCount": "37",
+   "hours": "Sun-Thu 12:00-9pm · Fri-Sat 12:00-10pm",
+   "late": {
+    "tier": "10pm+",
+    "when": "Fri-Sat till 10pm"
+   },
+   "website": "http://cinnabonswirl.com/",
+   "googleUrl": "https://maps.google.com/?cid=3189339021299397651&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJX7xOUayf9YgRqviOnv4dAj4",
@@ -8625,6 +10998,39 @@
    "googleUrl": "https://maps.google.com/?cid=4706405876365389022&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJY6T74yQU9YgRxJGHa_pLOcE",
+   "name": "Cool Beans Coffee Roasters",
+   "address": "31 Mill St, Marietta, GA 30060, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 33.953127,
+   "lng": -84.55073,
+   "category": "Coffee",
+   "model": "independent",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.7,
+   "ratingNum": 1920,
+   "ratingCount": "1,920",
+   "hours": "Mon-Sat 7am-8pm · Sun 9am-8pm",
+   "website": "http://www.coolbeanscoffeeroasters.com/",
+   "googleUrl": "https://maps.google.com/?cid=13923243261910553028&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "excellent",
+    "note": "Historic Marietta Square coffeehouse with outdoor patio tables, study seating, fast Wi-Fi, and small-batch roasting on site.",
+    "hasMeetingRoom": false
+   },
+   "usp": "Landmark Marietta Square roaster serving freshly roasted single-origin coffees and espresso since 2001.",
+   "loved": [
+    "single-origin pour over",
+    "cold brew",
+    "muffins"
+   ],
+   "signature": "Marietta Square Espresso Blend"
+  },
+  {
    "placeId": "ChIJY9P99Yu59YgR1saCV7bFg5U",
    "name": "The Buttery Nutt",
    "address": "2132 Britt St Ste 211, Grayson, GA 30017, USA",
@@ -8753,6 +11159,49 @@
    },
    "website": "https://arwacoffee.com/",
    "googleUrl": "https://maps.google.com/?cid=5634890486814457819&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJYbm1Y8AV9YgRw8Y3sywRMDA",
+   "name": "Tuesday Coffee + Shoppe",
+   "address": "137 Church St, Marietta, GA 30060, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 33.954972,
+   "lng": -84.550459,
+   "category": "Coffee",
+   "model": "independent",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.7,
+   "ratingNum": 304,
+   "ratingCount": "304",
+   "hours": "Mon-Fri 7am-4pm · Sat-Sun 8am-4pm",
+   "website": "http://tuesdaysinmarietta.com/",
+   "googleUrl": "https://maps.google.com/?cid=3472294196385662659&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJYdmKMIM-9YgRXlq7Ou6mmA8",
+   "name": "Panera Bread",
+   "address": "3625 Dallas Hwy, Marietta, GA 30064, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 33.952043,
+   "lng": -84.660179,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "cafe",
+    "coffee_shop",
+    "bakery"
+   ],
+   "rating": 3.7,
+   "ratingNum": 755,
+   "ratingCount": "755",
+   "hours": "Mon-Fri 6:30am-9pm · Sat-Sun 7am-9pm",
+   "website": "https://www.panerabread.com/en-us/cafe/locations/ga/marietta/3625-dallas-highway?utm_medium=local&utm_source=google&utm_campaign=dpm-dist&utm_term=202593&utm_content=main",
+   "googleUrl": "https://maps.google.com/?cid=1123831649146722910&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJYfZm6z279YgRBONq2fyjQ_4",
@@ -8943,6 +11392,26 @@
    "signature": "Community Blend Drip & Pour Over"
   },
   {
+   "placeId": "ChIJZ5VgBcMN9YgRh3vzWQko2Bk",
+   "name": "Sugar Benders Bakery",
+   "address": "1592 Atlanta Rd SE Ste 130, Marietta, GA 30060, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 33.914184,
+   "lng": -84.537659,
+   "category": "Bakery+Cafe",
+   "model": "independent",
+   "types": [
+    "bakery"
+   ],
+   "rating": 4.1,
+   "ratingNum": 141,
+   "ratingCount": "141",
+   "hours": "Sun-Mon Closed · Tue-Fri 9am-4pm · Sat 9am-2pm",
+   "website": "https://sugarbendersbakery.com/",
+   "googleUrl": "https://maps.google.com/?cid=1862282466546645895&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJZ6ITXQCb9YgRgtZd65tnT1I",
    "name": "Erick casa nueva",
    "address": "4030 Prescott Ct, Cumming, GA 30041, USA",
@@ -9031,6 +11500,27 @@
    },
    "website": "https://www.pearlstea.com/",
    "googleUrl": "https://maps.google.com/?cid=13098297453555503107&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJZfG3sY1y9YgR1OlrQxTdo0g",
+   "name": "Starbucks Coffee Company",
+   "address": "4646 Woodstock Rd, Roswell, GA 30075, USA",
+   "city": "Roswell",
+   "county": "Cobb",
+   "lat": 34.062644,
+   "lng": -84.420468,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.1,
+   "ratingNum": 312,
+   "ratingCount": "312",
+   "hours": "Mon-Sun 5am-8pm",
+   "website": "https://www.starbucks.com/store-locator/store/6613/",
+   "googleUrl": "https://maps.google.com/?cid=5234270271034878420&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJZzJTJKeX9YgR5b7YlZrY3B0",
@@ -9155,6 +11645,26 @@
    "hours": "Mon-Tue 7:30am-5pm · Wed-Sat 8am-6pm · Sun 11am-3pm",
    "website": null,
    "googleUrl": "https://maps.google.com/?cid=117191294924807730&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJ_5WZ4YI-9YgRUbsw4BNU1MU",
+   "name": "Starbucks BN Cafe",
+   "address": "3625 Dallas Hwy #400, Marietta, GA 30064, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 33.951315,
+   "lng": -84.657168,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "cafe"
+   ],
+   "rating": 4.4,
+   "ratingNum": 18,
+   "ratingCount": "18",
+   "hours": "Mon-Thu 9am-8pm · Fri-Sat 9am-9pm · Sun 11am-8pm",
+   "website": "https://m.barnesandnoble.com/h/cafe",
+   "googleUrl": "https://maps.google.com/?cid=14255111164876864337&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJ_5rODIi79YgR06myZ4AhB4I",
@@ -9518,6 +12028,27 @@
    "googleUrl": "https://maps.google.com/?cid=6794410851851672128&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJaejm73899YgREijlAtQgsp0",
+   "name": "Dev's Donuts",
+   "address": "1812 Powder Springs Rd SW #2115, Marietta, GA 30064, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 33.901077,
+   "lng": -84.606768,
+   "category": "Bakery+Cafe",
+   "model": "independent",
+   "types": [
+    "donut_shop",
+    "bakery"
+   ],
+   "rating": 4.8,
+   "ratingNum": 499,
+   "ratingCount": "499",
+   "hours": "Mon Closed · Tue 6am-3pm · Wed 5am-5pm · Thu-Sun 6am-3pm",
+   "website": null,
+   "googleUrl": "https://maps.google.com/?cid=11363180904762910738&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJaevs7WeU9YgR2cekuffZWKQ",
    "name": "Krispy Kreme",
    "address": "3387 Buford Dr, Buford, GA 30519, USA",
@@ -9570,6 +12101,48 @@
    "googleUrl": "https://maps.google.com/?cid=8974226112130970560&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJb2PupR9r9YgRcQEXkrsYykI",
+   "name": "Porch Light Coffeehouse",
+   "address": "3895 Cherokee St NW #623, Kennesaw, GA 30144, USA",
+   "city": "Kennesaw",
+   "county": "Cobb",
+   "lat": 34.04818,
+   "lng": -84.601219,
+   "category": "Coffee",
+   "model": "independent",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": null,
+   "ratingNum": 0,
+   "ratingCount": "0",
+   "hours": null,
+   "website": null,
+   "googleUrl": "https://maps.google.com/?cid=4812686345687728497&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJb3h431AQ9YgRU7d8M5bCq0A",
+   "name": "Starbucks Coffee Company",
+   "address": "Cumberland Marketplace, 2680 Cobb Pkwy SE, Smyrna, GA 30080, USA",
+   "city": "Smyrna",
+   "county": "Cobb",
+   "lat": 33.88754,
+   "lng": -84.47386,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.0,
+   "ratingNum": 995,
+   "ratingCount": "995",
+   "hours": "Mon-Fri 4:30am-9pm · Sat-Sun 5am-9pm",
+   "website": "https://www.starbucks.com/store-locator/store/13470/",
+   "googleUrl": "https://maps.google.com/?cid=4660032189809604435&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJb3rrIFOV9YgRGXF84KHZKgI",
    "name": "Dunkin'",
    "address": "3687 Buford Dr, Buford, GA 30519, USA",
@@ -9616,6 +12189,30 @@
    "googleUrl": "https://maps.google.com/?cid=14718142181008957559&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJb5wD0Y1y9YgRaeZRsEU7wHc",
+   "name": "Dunkin'",
+   "address": "4691 Woodstock Rd, Roswell, GA 30075, USA",
+   "city": "Roswell",
+   "county": "Cobb",
+   "lat": 34.062679,
+   "lng": -84.42228,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "donut_shop",
+    "cafe",
+    "bakery"
+   ],
+   "rating": 3.5,
+   "ratingNum": 412,
+   "ratingCount": "412",
+   "hours": "Mon-Sun 5am-9pm",
+   "website": "https://www.dunkindonuts.com/locations/us/ga/roswell/4691-woodstock-rd/store-353213/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=353213&y_source=1_MTIxMTIxODEtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=8628962056538809961&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJbQYT4-WZ9YgRTgreSk34W28",
    "name": "World Class Luxury Desserts LLC",
    "address": "3630 Peachtree Pkwy, Suwanee, GA 30024, USA",
@@ -9635,6 +12232,27 @@
    "hours": null,
    "website": "https://www.worldclassluxurydesserts.com/",
    "googleUrl": "https://maps.google.com/?cid=8024280171942906446&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJbRZUS-sT9YgRQ1kgQ58bRrI",
+   "name": "Belen de la Cruz - Empanadas & Pastries - Marietta",
+   "address": "1050 E Piedmont Rd, Marietta, GA 30062, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 33.975574,
+   "lng": -84.478608,
+   "category": "Bakery+Cafe",
+   "model": "independent",
+   "types": [
+    "bakery",
+    "dessert_restaurant"
+   ],
+   "rating": 4.9,
+   "ratingNum": 241,
+   "ratingCount": "241",
+   "hours": "Mon-Sat 11:30am-7pm · Sun Closed",
+   "website": "https://belendelacruz.com/",
+   "googleUrl": "https://maps.google.com/?cid=12845985357960862019&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJbV7Zgi2h9YgRXuOcmuvSX8c",
@@ -9680,6 +12298,28 @@
    "hours": "Mon-Fri 8am-3pm · Sat-Sun Closed",
    "website": "https://www.risingroll.com/",
    "googleUrl": "https://maps.google.com/?cid=17106409739530876060&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJbWzS0VU_9YgRNVAZj0_Ivsg",
+   "name": "Panera Bread",
+   "address": "3384 Cobb Pkwy NW Ste 160, Acworth, GA 30101, USA",
+   "city": "Acworth",
+   "county": "Cobb",
+   "lat": 34.037746,
+   "lng": -84.685478,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "cafe",
+    "coffee_shop",
+    "bakery"
+   ],
+   "rating": 3.7,
+   "ratingNum": 530,
+   "ratingCount": "530",
+   "hours": "Mon-Fri 6:30am-9pm · Sat-Sun 7am-9pm",
+   "website": "https://www.panerabread.com/en-us/cafe/locations/ga/acworth/3384-cobb-pkwy?utm_medium=local&utm_source=google&utm_campaign=dpm-dist&utm_term=202573&utm_content=main",
+   "googleUrl": "https://maps.google.com/?cid=14465219297189384245&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJb_bBeeq99YgRcOWGFPP-02g",
@@ -9747,6 +12387,50 @@
    "googleUrl": "https://maps.google.com/?cid=15818110945000889575&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJbeFheOU_9YgRTAU_mShcE-w",
+   "name": "Honeysuckle Biscuits & Bakery Kennesaw",
+   "address": "2825 S Main St #100A, Kennesaw, GA 30144, USA",
+   "city": "Kennesaw",
+   "county": "Cobb",
+   "lat": 34.021735,
+   "lng": -84.615534,
+   "category": "Bakery+Cafe",
+   "model": "independent",
+   "types": [
+    "bakery",
+    "coffee_shop",
+    "dessert_shop",
+    "cafe"
+   ],
+   "rating": 4.6,
+   "ratingNum": 1132,
+   "ratingCount": "1,132",
+   "hours": "Mon-Sun 7:30am-5pm",
+   "website": "http://www.honeysucklebiscuits.com/",
+   "googleUrl": "https://maps.google.com/?cid=17011041546947986764&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJbwqAE9o_9YgR2bZ-8lnKnWM",
+   "name": "Coffee Shop COFY",
+   "address": "1600 Kennesaw Due West Rd NW #307, Kennesaw, GA 30152, USA",
+   "city": "Kennesaw",
+   "county": "Cobb",
+   "lat": 33.992768,
+   "lng": -84.627575,
+   "category": "Coffee",
+   "model": "independent",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.7,
+   "ratingNum": 155,
+   "ratingCount": "155",
+   "hours": "Mon-Fri 8am-4pm · Sat-Sun 9am-4pm",
+   "website": "https://colcofy.com/",
+   "googleUrl": "https://maps.google.com/?cid=7178115868767729369&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJby2DrtUPpAcR3Q8awI_V9Wc",
    "name": "The Dessert Nest",
    "address": "Located inside of the Westside Market, 606 Holcomb Bridge Rd Booth 706, Roswell, GA 30076, USA",
@@ -9812,6 +12496,30 @@
    },
    "website": "https://www.fluffyfluffy.com/",
    "googleUrl": "https://maps.google.com/?cid=14449522809505132608&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJc1A0OQAV9YgRrBRpT2bA2NQ",
+   "name": "Paris Baguette",
+   "address": "425 Ernest W Barrett Pkwy NW Ste 4020, Kennesaw, GA 30144, USA",
+   "city": "Kennesaw",
+   "county": "Cobb",
+   "neighborhood": "Town Center",
+   "lat": 34.012602,
+   "lng": -84.560847,
+   "category": "Bakery+Cafe",
+   "model": "franchise",
+   "types": [
+    "bakery",
+    "coffee_shop",
+    "dessert_shop",
+    "cafe"
+   ],
+   "rating": 4.6,
+   "ratingNum": 911,
+   "ratingCount": "911",
+   "hours": "Mon-Sun 6am-9pm",
+   "website": "https://parisbaguette.com/locations/ga/kennesaw/425-ernest-w-barrett-pkwy-nw",
+   "googleUrl": "https://maps.google.com/?cid=15337220076661707948&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJc2tUZ0vr9YgRA9vFf08HdFc",
@@ -9894,6 +12602,28 @@
    "hours": "Mon-Fri 10am-3pm · Sat-Sun Closed",
    "website": null,
    "googleUrl": "https://maps.google.com/?cid=9945820306985548222&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJcYexfaUR9YgRGWPkiIrpVLo",
+   "name": "Ruby's Coffee & Cream",
+   "address": "1625 Roswell St SE Ste 300, Smyrna, GA 30080, USA",
+   "city": "Smyrna",
+   "county": "Cobb",
+   "neighborhood": "Williams Park",
+   "lat": 33.890507,
+   "lng": -84.506078,
+   "category": "Coffee",
+   "model": "independent",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.8,
+   "ratingNum": 20,
+   "ratingCount": "20",
+   "hours": "Sun-Thu 7am-8pm · Fri-Sat 7am-9pm",
+   "website": null,
+   "googleUrl": "https://maps.google.com/?cid=13426613170309718809&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJcdUtPw6j9YgRVLVnRHS0JVE",
@@ -10032,6 +12762,26 @@
    "googleUrl": "https://maps.google.com/?cid=12142828233077538959&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJdYTjZ9oV9YgRLvokPPZLGVA",
+   "name": "Gabriel's Southern Bakery and Kitchen",
+   "address": "800 Whitlock Ave NW Unit 135, Marietta, GA 30064, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 33.952908,
+   "lng": -84.576049,
+   "category": "Bakery+Cafe",
+   "model": "independent",
+   "types": [
+    "bakery"
+   ],
+   "rating": 4.3,
+   "ratingNum": 687,
+   "ratingCount": "687",
+   "hours": "Sun-Mon Closed · Tue-Sat 11am-6pm",
+   "website": "https://www.gabrielsdesserts.com/",
+   "googleUrl": "https://maps.google.com/?cid=5771727918395095598&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJdYry-MCX9YgRzlSg4jWRwU8",
    "name": "The Human Bean",
    "address": "1085 Peachtree Industrial Blvd, Suwanee, GA 30024, USA",
@@ -10100,6 +12850,30 @@
    "hours": "Mon-Fri 8am-2pm · Sat-Sun Closed",
    "website": null,
    "googleUrl": "https://maps.google.com/?cid=3872559897768675806&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJd_bj6FsX9YgRVxBmd9WV_hk",
+   "name": "Dunkin'",
+   "address": "1101 Powder Springs St SW, Marietta, GA 30064, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 33.926387,
+   "lng": -84.571024,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "donut_shop",
+    "cafe",
+    "bakery"
+   ],
+   "rating": 3.4,
+   "ratingNum": 286,
+   "ratingCount": "286",
+   "hours": "Mon-Sat 5am-9pm · Sun 6am-9pm",
+   "website": "https://www.dunkindonuts.com/locations/us/ga/marietta/1101-powder-springs-st/store-359775/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=359775&y_source=1_MTgxMjk0MzEtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=1873099239096455255&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJdf_oeZMO9YgRoAONkbM1Kh0",
@@ -10272,6 +13046,27 @@
    "googleUrl": "https://maps.google.com/?cid=4798454461409509711&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJe8kptcMU9YgRJX1c1o0qNVI",
+   "name": "Carol's Cafe",
+   "address": "2543 Bells Ferry Rd #50, Marietta, GA 30066, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "neighborhood": "Town Center",
+   "lat": 34.013638,
+   "lng": -84.549358,
+   "category": "Coffee",
+   "model": "independent",
+   "types": [
+    "cafe"
+   ],
+   "rating": 4.6,
+   "ratingNum": 424,
+   "ratingCount": "424",
+   "hours": "Mon-Fri 6:30am-3pm · Sat 7am-3pm · Sun 7:30am-2pm",
+   "website": null,
+   "googleUrl": "https://maps.google.com/?cid=5923687673550896421&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJe9X6bDCZ9YgRQqAsJDu1-Uo",
    "name": "Mits Creamy Creations",
    "address": "4195 Roseman Bridge Ct, Suwanee, GA 30024, USA",
@@ -10290,6 +13085,34 @@
    "hours": "Mon Closed · Tue-Sun 10am-8pm",
    "website": "http://www.mitscreamycreations.com/",
    "googleUrl": "https://maps.google.com/?cid=5402548493622222914&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJeQjSd_4T9YgRvDdn7jBm9-Q",
+   "name": "Krispy Kreme",
+   "address": "299 Cobb Pkwy SE, Marietta, GA 30060, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 33.944951,
+   "lng": -84.51688,
+   "category": "Bakery+Cafe",
+   "model": "franchise",
+   "types": [
+    "donut_shop",
+    "coffee_shop",
+    "cafe",
+    "dessert_shop",
+    "bakery"
+   ],
+   "rating": 4.3,
+   "ratingNum": 2478,
+   "ratingCount": "2,478",
+   "hours": "Sun-Thu 6am-10pm · Fri-Sat 6am-11pm",
+   "late": {
+    "tier": "10pm+",
+    "when": "Daily till 11pm"
+   },
+   "website": "https://site.krispykreme.com/ga/marietta/299-cobb-parkway-s?y_source=1_MTE4OTgwNjQtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=16498768120239306684&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJeR0zXAmk9YgRFYos-PYngRs",
@@ -10408,6 +13231,27 @@
    "googleUrl": "https://maps.google.com/?cid=6632584818307556011&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJf16cl_MX9YgRdunDArVQkL0",
+   "name": "Scooter's Coffee",
+   "address": "761 Powder Springs St SW, Marietta, GA 30064, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 33.93409,
+   "lng": -84.558265,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.5,
+   "ratingNum": 121,
+   "ratingCount": "121",
+   "hours": "Mon-Fri 5am-8pm · Sat-Sun 6am-8pm",
+   "website": "https://scooterscoffee.com/",
+   "googleUrl": "https://maps.google.com/?cid=13659506408180410742&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJf5i23bi59YgR80K6nHdMd1U",
    "name": "Krispy Kreme",
    "address": "1635 Scenic Hwy N, Snellville, GA 30078, USA",
@@ -10434,6 +13278,53 @@
    },
    "website": "https://site.krispykreme.com/ga/snellville/1635-scenic-highway?y_source=1_MTYyNDE0MTktNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
    "googleUrl": "https://maps.google.com/?cid=6158475092066714355&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJf6R4WgA99YgRFzTvsWU6s1o",
+   "name": "7 Brew Coffee",
+   "address": "3570 Old Anderson Farm Rd, Austell, GA 30106, USA",
+   "city": "Austell",
+   "county": "Cobb",
+   "lat": 33.866089,
+   "lng": -84.633134,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.4,
+   "ratingNum": 405,
+   "ratingCount": "405",
+   "hours": "Mon-Sun 5:30am-11pm",
+   "late": {
+    "tier": "10pm+",
+    "when": "Daily till 11pm"
+   },
+   "website": "https://7brew.com/",
+   "googleUrl": "https://maps.google.com/?cid=6535631692696073239&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJf6dsA2MQ9YgRJTjGzuXEXac",
+   "name": "Starbucks Coffee Company",
+   "address": "2495 Cumberland Pkwy SE, Atlanta, GA 30339, USA",
+   "city": "Atlanta",
+   "county": "Cobb",
+   "neighborhood": "Cumberland",
+   "lat": 33.864873,
+   "lng": -84.477455,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.0,
+   "ratingNum": 1191,
+   "ratingCount": "1,191",
+   "hours": "Mon-Fri 4:30am-9:30pm · Sat-Sun 5am-9:30pm",
+   "website": "https://www.starbucks.com/store-locator/store/6366/",
+   "googleUrl": "https://maps.google.com/?cid=12060011868463708197&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJf7GNJMiZ9YgRbie0TKkUg3o",
@@ -10483,6 +13374,28 @@
    "googleUrl": "https://maps.google.com/?cid=7248706157390136781&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJfXcwodQV9YgRS_RyJ5Imfdo",
+   "name": "Caribou Coffee",
+   "address": "3280 Barrett Lakes Blvd, Kennesaw, GA 30144, USA",
+   "city": "Kennesaw",
+   "county": "Cobb",
+   "neighborhood": "Town Center",
+   "lat": 34.032411,
+   "lng": -84.578764,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.4,
+   "ratingNum": 263,
+   "ratingCount": "263",
+   "hours": "Mon-Sun 6am-7pm",
+   "website": "https://locations.cariboucoffee.com/us/ga/kennesaw/3280-barrett-lakes-blvd-nw",
+   "googleUrl": "https://maps.google.com/?cid=15743782281526047819&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJfXyu1CW99YgRFSK7wAfjrvE",
    "name": "Cafe Flat",
    "address": "2227 Duluth Hwy #109, Duluth, GA 30097, USA",
@@ -10506,6 +13419,27 @@
    },
    "website": "https://www.atlantacoffeeshops.com/cafe-flat",
    "googleUrl": "https://maps.google.com/?cid=17415106431526052373&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJfc4n-eQ99YgRylXj9i57MPo",
+   "name": "Starbucks Coffee Company",
+   "address": "2535 Dallas Hwy, Marietta, GA 30064, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 33.94451,
+   "lng": -84.62614,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.3,
+   "ratingNum": 8,
+   "ratingCount": "8",
+   "hours": "Mon-Sun 8am-8pm",
+   "website": "https://www.starbucks.com/store-locator/store/1005240",
+   "googleUrl": "https://maps.google.com/?cid=18028044750004901322&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJfd7JAn5z9YgRSE14j1l7AfQ",
@@ -10570,6 +13504,27 @@
    "hours": "Mon-Sat 10am-5pm · Sun Closed",
    "website": null,
    "googleUrl": "https://maps.google.com/?cid=12975455822040154500&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJg50TPr8R9YgRmEnh3K8z9Is",
+   "name": "Wildwood Cafe",
+   "address": "3200 Windy Hill Rd SE #150, Atlanta, GA 30339, USA",
+   "city": "Atlanta",
+   "county": "Cobb",
+   "neighborhood": "Cumberland",
+   "lat": 33.913655,
+   "lng": -84.461082,
+   "category": "Coffee",
+   "model": "independent",
+   "types": [
+    "cafe"
+   ],
+   "rating": 3.6,
+   "ratingNum": 34,
+   "ratingCount": "34",
+   "hours": "Mon-Fri 7am-3pm · Sat-Sun Closed",
+   "website": "http://www.toasttab.com/wildwood_cafe",
+   "googleUrl": "https://maps.google.com/?cid=10084742296007428504&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJg5NPAUyh9YgRiSuO-Bm_Lio",
@@ -10661,6 +13616,26 @@
    "googleUrl": "https://maps.google.com/?cid=12969473041194495229&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJgWePyD499YgRthmTIysINh4",
+   "name": "2Bruhz Bakery & Eatery",
+   "address": "207 Mulkey Rd, Marietta, GA 30008, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 33.860379,
+   "lng": -84.607447,
+   "category": "Bakery+Cafe",
+   "model": "independent",
+   "types": [
+    "bakery"
+   ],
+   "rating": 4.0,
+   "ratingNum": 2,
+   "ratingCount": "2",
+   "hours": null,
+   "website": null,
+   "googleUrl": "https://maps.google.com/?cid=2176936451253672374&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJgWkaVCyn9YgROyKi-jGaGLc",
    "name": "Dil Bahar Cafe & Market",
    "address": "5825 Glenridge Dr Building 2 Suite 115, Sandy Springs, GA 30328, USA",
@@ -10706,6 +13681,29 @@
    "googleUrl": "https://maps.google.com/?cid=14122491561446964686&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJgem-RdRq9YgREEovQn07v4s",
+   "name": "Panera Bread",
+   "address": "600 Chastain Rd NW, Kennesaw, GA 30144, USA",
+   "city": "Kennesaw",
+   "county": "Cobb",
+   "neighborhood": "Town Center",
+   "lat": 34.037166,
+   "lng": -84.568842,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "cafe",
+    "coffee_shop",
+    "bakery"
+   ],
+   "rating": 3.9,
+   "ratingNum": 892,
+   "ratingCount": "892",
+   "hours": "Mon-Fri 6:30am-9pm · Sat-Sun 7am-9pm",
+   "website": "https://www.panerabread.com/en-us/cafe/locations/ga/kennesaw/600-chastain-road-nw?utm_medium=local&utm_source=google&utm_campaign=dpm-dist&utm_term=202594&utm_content=main",
+   "googleUrl": "https://maps.google.com/?cid=10069832700991064592&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJgwkW6z-V9YgRHgBE37-CGzs",
    "name": "Paris Baguette",
    "address": "2925 Buford Dr #200, Buford, GA 30519, USA",
@@ -10731,6 +13729,27 @@
    },
    "website": "https://parisbaguette.com/locations/ga/buford/2925-buford-drive/",
    "googleUrl": "https://maps.google.com/?cid=4259141633205075998&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJgyT9X60T9YgRV3EQ2yzWp7I",
+   "name": "Starbucks Coffee Company",
+   "address": "2424 Roswell Rd, Marietta, GA 30062, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 33.97354,
+   "lng": -84.48053,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.2,
+   "ratingNum": 569,
+   "ratingCount": "569",
+   "hours": "Mon-Sun 5am-9pm",
+   "website": "https://www.starbucks.com/store-locator/store/9296/",
+   "googleUrl": "https://maps.google.com/?cid=12873493548004045143&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJh4jIqNyj9YgRu1_QcC8GzmA",
@@ -10801,6 +13820,26 @@
    },
    "website": "http://www.whitewbakerycafe.com/",
    "googleUrl": "https://maps.google.com/?cid=13620082904764164519&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJh6hKJcAW9YgRbf38Jx0wSJE",
+   "name": "Salazar's Bakery",
+   "address": "1368 Atlanta Rd SE, Marietta, GA 30060, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 33.919637,
+   "lng": -84.542704,
+   "category": "Bakery+Cafe",
+   "model": "independent",
+   "types": [
+    "bakery"
+   ],
+   "rating": 4.3,
+   "ratingNum": 211,
+   "ratingCount": "211",
+   "hours": "Mon-Sun 6am-9pm",
+   "website": null,
+   "googleUrl": "https://maps.google.com/?cid=10468670235605794157&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJh8T65al09YgR9F7Z_odg7dg",
@@ -10933,6 +13972,27 @@
    "googleUrl": "https://maps.google.com/?cid=12781470148973811321&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJhb67L_UT9YgRSVwIa19dHGQ",
+   "name": "Mr. Tombstone’s Coffee Emporium",
+   "address": "1087 South Marietta Pkwy SE, Marietta, GA 30060, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 33.942523,
+   "lng": -84.520929,
+   "category": "Coffee",
+   "model": "independent",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.7,
+   "ratingNum": 493,
+   "ratingCount": "493",
+   "hours": "Mon-Fri 6:30am-6pm · Sat-Sun 8am-6pm",
+   "website": "http://mrtombstones.com/",
+   "googleUrl": "https://maps.google.com/?cid=7213743367539678281&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJhcePAdV19YgRRZaTDok5vM4",
    "name": "The Ginger Room",
    "address": "61 Roswell St, Alpharetta, GA 30009, USA",
@@ -11042,6 +14102,32 @@
    "googleUrl": "https://maps.google.com/?cid=13669811427716369944&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJi6OS2dJq9YgR8qdRqmrOZdg",
+   "name": "Starbucks Coffee Company",
+   "address": "745 Chastain Rd NW, Kennesaw, GA 30144, USA",
+   "city": "Kennesaw",
+   "county": "Cobb",
+   "neighborhood": "Town Center",
+   "lat": 34.03513,
+   "lng": -84.57096,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.2,
+   "ratingNum": 837,
+   "ratingCount": "837",
+   "hours": "Mon-Sun 5am-10pm",
+   "late": {
+    "tier": "10pm+",
+    "when": "Daily till 10pm"
+   },
+   "website": "https://www.starbucks.com/store-locator/store/17309/",
+   "googleUrl": "https://maps.google.com/?cid=15593096242359543794&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJi8-d9Pxy9YgRaPE8JW5uI_s",
    "name": "Panera Bread",
    "address": "1195 Woodstock Rd, Roswell, GA 30075, USA",
@@ -11103,6 +14189,26 @@
    "hours": "Mon-Fri 8am-3pm · Sat-Sun Closed",
    "website": "https://thedupree.org/cafe",
    "googleUrl": "https://maps.google.com/?cid=3119014148363311627&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJiSwG4d4N9YgRUI8Ugy9q7Ts",
+   "name": "J'mz Bowls | Acai, Coffee & Custard",
+   "address": "4400 Roswell Rd #136, Marietta, GA 30062, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 33.98476,
+   "lng": -84.422119,
+   "category": "Coffee",
+   "model": "independent",
+   "types": [
+    "cafe"
+   ],
+   "rating": 5.0,
+   "ratingNum": 305,
+   "ratingCount": "305",
+   "hours": "Mon-Thu 7am-8pm · Fri 7am-9pm · Sat 8am-9pm · Sun 8am-8pm",
+   "website": "https://jmzhub.com/",
+   "googleUrl": "https://maps.google.com/?cid=4318224370013343568&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJiVQ3AQd19YgRIDRUbqMy7Kg",
@@ -11177,6 +14283,27 @@
    "googleUrl": "https://maps.google.com/?cid=11757218031185846487&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJiX4gc54N9YgRMvLi0bG6xB8",
+   "name": "Bagelicious",
+   "address": "1255 Johnson Ferry Rd, Marietta, GA 30068, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 33.979109,
+   "lng": -84.423785,
+   "category": "Bakery+Cafe",
+   "model": "independent",
+   "types": [
+    "bagel_shop",
+    "bakery"
+   ],
+   "rating": 4.5,
+   "ratingNum": 718,
+   "ratingCount": "718",
+   "hours": "Mon-Sun 6am-3pm",
+   "website": null,
+   "googleUrl": "https://maps.google.com/?cid=2289159783504343602&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJiY6Amwi79YgRlu9LlJzP3Hc",
    "name": "Beans and Butter Coffeehouse",
    "address": "River Oak Plaza, 851 Oak Rd SW #1, Lawrenceville, GA 30044, USA",
@@ -11219,6 +14346,31 @@
    "hours": "Mon-Fri 9:30am-4:30pm · Sat-Sun Closed",
    "website": "https://www.heidisheavenlycookies.com/",
    "googleUrl": "https://maps.google.com/?cid=7306205762589706618&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJj2DwTHIV9YgRik9qWb1hl9g",
+   "name": "Starbucks Coffee Company",
+   "address": "1955 Cobb Pkwy NW, Kennesaw, GA 30152, USA",
+   "city": "Kennesaw",
+   "county": "Cobb",
+   "lat": 33.99954,
+   "lng": -84.59032,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.5,
+   "ratingNum": 616,
+   "ratingCount": "616",
+   "hours": "Mon-Fri 4:30am-10pm · Sat-Sun 5am-10pm",
+   "late": {
+    "tier": "10pm+",
+    "when": "Daily till 10pm"
+   },
+   "website": "https://www.starbucks.com/store-locator/store/1016016/",
+   "googleUrl": "https://maps.google.com/?cid=15607050499552595850&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJj4NlQBuj9YgRWKbr7eZKsLU",
@@ -11378,6 +14530,28 @@
    "googleUrl": "https://maps.google.com/?cid=502618888164106175&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJjx6T3bAR9YgR4mqQSGM9TrE",
+   "name": "Perks Coffee",
+   "address": "3000 Windy Hill Rd SE #176, Marietta, GA 30067, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "neighborhood": "Cumberland",
+   "lat": 33.904375,
+   "lng": -84.466404,
+   "category": "Coffee",
+   "model": "independent",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.1,
+   "ratingNum": 376,
+   "ratingCount": "376",
+   "hours": "Mon-Fri 7am-6pm · Sat 8am-6pm · Sun 9am-6pm",
+   "website": null,
+   "googleUrl": "https://maps.google.com/?cid=12776216689525156578&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJjyYejn6hcWERLxGE0w5rsWs",
    "name": "Scout's Sourdough",
    "address": "5535 Bannister Rd, Cumming, GA 30028, USA",
@@ -11436,6 +14610,30 @@
    "hours": "Mon-Sat 8am-8pm · Sun Closed",
    "website": "https://www.clover.com/online-ordering/el-salvador-bakery-ii-lawrenceville-2",
    "googleUrl": "https://maps.google.com/?cid=7391071117727934059&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJk5mS3z0V9YgRlppbiFXgKs0",
+   "name": "Tiny Bubbles Tea Bar at the Marietta Square Market",
+   "address": "68 North Marietta Pkwy NW, Marietta, GA 30060, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 33.954041,
+   "lng": -84.551582,
+   "category": "Tea/Boba",
+   "model": "independent",
+   "types": [
+    "tea_house"
+   ],
+   "rating": 4.2,
+   "ratingNum": 225,
+   "ratingCount": "225",
+   "hours": "Sun-Thu 11am-9pm · Fri-Sat 11am-10pm",
+   "late": {
+    "tier": "10pm+",
+    "when": "Fri-Sat till 10pm"
+   },
+   "website": "http://tinybubblesteabar.com/",
+   "googleUrl": "https://maps.google.com/?cid=14783875384761621142&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJk7Yx7EyX9YgRLvSNtjXCk5k",
@@ -11593,6 +14791,27 @@
    "googleUrl": "https://maps.google.com/?cid=17770449973555895897&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJkbIBo7YV9YgRS2Ki3BTLuaM",
+   "name": "soluna bakery",
+   "address": "594 Jackson Ridge Dr NW, Kennesaw, GA 30144, USA",
+   "city": "Kennesaw",
+   "county": "Cobb",
+   "neighborhood": "Town Center",
+   "lat": 33.999857,
+   "lng": -84.568601,
+   "category": "Bakery+Cafe",
+   "model": "independent",
+   "types": [
+    "bakery"
+   ],
+   "rating": null,
+   "ratingNum": 0,
+   "ratingCount": "0",
+   "hours": null,
+   "website": null,
+   "googleUrl": "https://maps.google.com/?cid=11797683989335138891&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJkzWckImX9YgRa9Q7nXG3NOI",
    "name": "Tada Coffee and Dessert",
    "address": "3463 Lawrenceville-Suwanee Rd #117 Suwanee, GA 30024, USA",
@@ -11705,6 +14924,47 @@
    "googleUrl": "https://maps.google.com/?cid=15278539839794867927&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJl2cLvflB9YgREt5q1jeyKC0",
+   "name": "Donut Lane",
+   "address": "2639, unit 170 Hickory Grove Rd NW, Acworth, GA 30101, USA",
+   "city": "Acworth",
+   "county": "Cobb",
+   "lat": 34.064652,
+   "lng": -84.624998,
+   "category": "Bakery+Cafe",
+   "model": "independent",
+   "types": [
+    "donut_shop",
+    "bakery"
+   ],
+   "rating": 4.8,
+   "ratingNum": 441,
+   "ratingCount": "441",
+   "hours": "Mon-Sat 6am-3pm · Sun 6am-2pm",
+   "website": "https://donutlane.com/",
+   "googleUrl": "https://maps.google.com/?cid=3254046683665456658&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJl3SGasoQ9YgRIzKrcwc4P14",
+   "name": "McEntyre's Bakery",
+   "address": "1184 Concord Rd SE Unit 1, Smyrna, GA 30080, USA",
+   "city": "Smyrna",
+   "county": "Cobb",
+   "lat": 33.877167,
+   "lng": -84.518351,
+   "category": "Bakery+Cafe",
+   "model": "independent",
+   "types": [
+    "bakery"
+   ],
+   "rating": 4.5,
+   "ratingNum": 660,
+   "ratingCount": "660",
+   "hours": "Sun-Mon Closed · Tue-Fri 6:30am-6pm · Sat 6:30am-5pm",
+   "website": "http://www.mcentyresbakery.com/",
+   "googleUrl": "https://maps.google.com/?cid=6791208367754523171&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJl83IG_6f9YgRras0qKuZv7E",
    "name": "Starbucks Coffee Company",
    "address": "9925 Haynes Bridge Rd, Johns Creek, GA 30022, USA",
@@ -11807,6 +15067,60 @@
    "googleUrl": "https://maps.google.com/?cid=12797420160757484839&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJlb9wErwN9YgRQB6pb-KGxoo",
+   "name": "New Age Cupcakes",
+   "address": "1592 Atlanta Rd SE Ste 130, Marietta, GA 30060, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 33.914184,
+   "lng": -84.537659,
+   "category": "Bakery+Cafe",
+   "model": "independent",
+   "types": [
+    "bakery"
+   ],
+   "rating": 4.6,
+   "ratingNum": 72,
+   "ratingCount": "72",
+   "hours": "Sun-Mon Closed · Tue-Wed 9am-4pm · Thu 10:30am-4pm · Fri 9am-4pm · Sat 9am-2pm",
+   "website": "http://newagecupcakes.com/",
+   "googleUrl": "https://maps.google.com/?cid=9999828329716850240&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJlfl41t0T9YgRUBKuyhYmlTM",
+   "name": "Marietta Coffee Company",
+   "address": "1598 Roswell Rd, Marietta, GA 30062, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 33.952837,
+   "lng": -84.505391,
+   "category": "Coffee",
+   "model": "independent",
+   "types": [
+    "coffee_shop",
+    "cafe",
+    "dessert_shop"
+   ],
+   "rating": 4.5,
+   "ratingNum": 914,
+   "ratingCount": "914",
+   "hours": "Mon-Sun 7am-9pm",
+   "website": "http://www.mariettacoffeeco.com/",
+   "googleUrl": "https://maps.google.com/?cid=3716918946795754064&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "excellent",
+    "note": "Spacious neighborhood coffeehouse on Roswell Rd with drive-thru, plenty of study tables, fast Wi-Fi, and power outlets.",
+    "hasMeetingRoom": false
+   },
+   "usp": "Community-first neighborhood coffee hub known for friendly baristas, fast drive-thru, and abundant seating.",
+   "loved": [
+    "iced mocha",
+    "breakfast burrito",
+    "cinnamon swirl pastry"
+   ],
+   "signature": "Marietta Caramel Crunch"
+  },
+  {
    "placeId": "ChIJlxsXTC6X9YgRDdvGo5qVsCw",
    "name": "Cafe Amico",
    "address": "320 Town Center Ave #9A, Suwanee, GA 30024, USA",
@@ -11868,6 +15182,31 @@
    "hours": null,
    "website": "https://www.tiercouturebakery.com/",
    "googleUrl": "https://maps.google.com/?cid=3296440840284460749&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJm59aKu5B9YgRTsJFnkJdWfY",
+   "name": "Parallel Coffee & Biscuits",
+   "address": "4443 Cherokee St, Acworth, GA 30101, USA",
+   "city": "Acworth",
+   "county": "Cobb",
+   "lat": 34.067463,
+   "lng": -84.676944,
+   "category": "Coffee",
+   "model": "independent",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.3,
+   "ratingNum": 16,
+   "ratingCount": "16",
+   "hours": "Mon-Thu 7am-9pm · Fri-Sat 7am-10pm · Sun 8am-8pm",
+   "late": {
+    "tier": "10pm+",
+    "when": "Fri-Sat till 10pm"
+   },
+   "website": "http://gotab.io/loc/taptown/menu/breakfast?from=q1S1%257EGpxxmSJtudn",
+   "googleUrl": "https://maps.google.com/?cid=17751321946962117198&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJm6i-5uOg9YgRWoEjmhTvbwQ",
@@ -12001,6 +15340,27 @@
    "googleUrl": "https://maps.google.com/?cid=3831797962074749128&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJmcD6MnUT9YgRN7QaG2qfxzM",
+   "name": "Raider Joe's Coffee",
+   "address": "1590 Bill Murdock Rd 1st Floor, Marietta, GA 30062, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 33.989084,
+   "lng": -84.440075,
+   "category": "Coffee",
+   "model": "independent",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.5,
+   "ratingNum": 6,
+   "ratingCount": "6",
+   "hours": null,
+   "website": null,
+   "googleUrl": "https://maps.google.com/?cid=3731126094369829943&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJmefb8sAJ9YgRqhELiGuzLKE",
    "name": "TOUS les JOURS Bakery Café - Doraville",
    "address": "6035 Peachtree Rd Bldg b, Doraville, GA 30360, USA",
@@ -12087,6 +15447,31 @@
    "googleUrl": "https://maps.google.com/?cid=11643796903127883880&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJn5UW1k479YgRNpKWDy2WZ8Q",
+   "name": "Crumbl Cookies",
+   "address": "3330 Cobb Pkwy NW Ste 14C, Acworth, GA 30101, USA",
+   "city": "Acworth",
+   "county": "Cobb",
+   "lat": 34.035917,
+   "lng": -84.676332,
+   "category": "Bakery+Cafe",
+   "model": "franchise",
+   "types": [
+    "dessert_shop",
+    "bakery"
+   ],
+   "rating": 4.7,
+   "ratingNum": 993,
+   "ratingCount": "993",
+   "hours": "Mon-Sat 8am-10pm · Sun Closed",
+   "late": {
+    "tier": "10pm+",
+    "when": "Mon-Sat till 10pm"
+   },
+   "website": "https://crumblcookies.com/",
+   "googleUrl": "https://maps.google.com/?cid=14152445474314293814&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJn7bV252P9YgR3yLZQ-EwBk0",
    "name": "The Human Bean",
    "address": "3670 Browns Bridge Rd, Cumming, GA 30028, USA",
@@ -12158,6 +15543,30 @@
    },
    "website": "https://locations.7brew.com/ga/lawrenceville/1073-scenic-highway-south",
    "googleUrl": "https://maps.google.com/?cid=6310750679916172610&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJn_xoYgAT9YgR2WeG5Fzzrz0",
+   "name": "Panaderia y Pasteleria El sol",
+   "address": "270 Cobb Pkwy SE Unit 50, Marietta, GA 30060, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 33.945308,
+   "lng": -84.518839,
+   "category": "Bakery+Cafe",
+   "model": "independent",
+   "types": [
+    "bakery"
+   ],
+   "rating": 4.6,
+   "ratingNum": 66,
+   "ratingCount": "66",
+   "hours": "Mon-Thu 8am-9pm · Fri-Sun 7am-10pm",
+   "late": {
+    "tier": "10pm+",
+    "when": "Fri-Sun till 10pm"
+   },
+   "website": null,
+   "googleUrl": "https://maps.google.com/?cid=4445038937534523353&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJnbAcaMSj9YgR6i4B6bPkSu0",
@@ -12247,6 +15656,50 @@
    "googleUrl": "https://maps.google.com/?cid=10225691878942583249&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJo0YCMa1B9YgRc85_ncHy9pY",
+   "name": "Cranes Coffee",
+   "address": "3960 Southside Dr Suite 200, Acworth, GA 30101, USA",
+   "city": "Acworth",
+   "county": "Cobb",
+   "lat": 34.064988,
+   "lng": -84.665873,
+   "category": "Coffee",
+   "model": "independent",
+   "types": [
+    "coffee_shop",
+    "bakery",
+    "dessert_shop",
+    "cafe"
+   ],
+   "rating": 4.8,
+   "ratingNum": 238,
+   "ratingCount": "238",
+   "hours": "Mon-Fri 7am-5pm · Sat-Sun 8am-4pm",
+   "website": "https://www.cranescoffee.com/",
+   "googleUrl": "https://maps.google.com/?cid=10878148863345020531&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJo1awOAAR9YgRYxAXRhqyO0o",
+   "name": "Life U Brew",
+   "address": "1269 Barclay Cir, Marietta, GA 30060, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 33.932474,
+   "lng": -84.513397,
+   "category": "Coffee",
+   "model": "independent",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": null,
+   "ratingNum": 0,
+   "ratingCount": "0",
+   "hours": null,
+   "website": null,
+   "googleUrl": "https://maps.google.com/?cid=5349064808347406435&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJo3xeThWj9YgR7Km7kZp_d4Q",
    "name": "Hat Nang Coffee & Bida",
    "address": "1630 Pleasant Hill Rd #100A, Duluth, GA 30096, USA",
@@ -12319,6 +15772,48 @@
    "hours": "Mon-Sun 5am-9pm",
    "website": "https://www.dunkindonuts.com/locations/us/ga/sugar-hill/220-peachtree-industrial-blvd/store-359157/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=359157&y_source=1_MTUwMTk0MzEtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
    "googleUrl": "https://maps.google.com/?cid=15643574509515625299&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJo4VTfZw-9YgRTlFeCRr_f7Y",
+   "name": "Smallcakes Cupcakery Marietta/West Cobb",
+   "address": "3718 Dallas Hwy #8, Marietta, GA 30064, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 33.953523,
+   "lng": -84.661012,
+   "category": "Bakery+Cafe",
+   "model": "franchise",
+   "types": [
+    "bakery"
+   ],
+   "rating": 4.8,
+   "ratingNum": 612,
+   "ratingCount": "612",
+   "hours": "Mon-Thu 10am-8pm · Fri-Sat 10am-9pm · Sun 12:00-5pm",
+   "website": "http://www.smallcakesmarietta.com/",
+   "googleUrl": "https://maps.google.com/?cid=13150509924236546382&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJo4s42LMX9YgRQPTdc6BHU0A",
+   "name": "Bolivar Coffee",
+   "address": "1651 Powder Springs Rd SW #1, Marietta, GA 30064, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 33.907647,
+   "lng": -84.600885,
+   "category": "Coffee",
+   "model": "independent",
+   "types": [
+    "coffee_shop",
+    "cafe",
+    "bakery"
+   ],
+   "rating": 4.9,
+   "ratingNum": 88,
+   "ratingCount": "88",
+   "hours": "Mon-Fri 7am-6pm · Sat-Sun 8am-5pm",
+   "website": "https://bolivarcoffee.com/smyrna?utm_source=google",
+   "googleUrl": "https://maps.google.com/?cid=4635127195958637632&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJo5h9e6QL9YgRX03Mu5MqfUo",
@@ -12429,6 +15924,30 @@
    "hours": "Mon-Fri 6:30am-7pm · Sat 7am-6pm · Sun 8am-3pm",
    "website": "https://www.atlantacoffeeshops.com/cafe-au-lait",
    "googleUrl": "https://maps.google.com/?cid=4220920727332390776&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJoWZ953YV9YgRQISDDw5BXy0",
+   "name": "Dunkin'",
+   "address": "1610 Ridenour Blvd #101, Kennesaw, GA 30152, USA",
+   "city": "Kennesaw",
+   "county": "Cobb",
+   "lat": 33.994889,
+   "lng": -84.590943,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "donut_shop",
+    "bakery",
+    "cafe"
+   ],
+   "rating": 3.9,
+   "ratingNum": 521,
+   "ratingCount": "521",
+   "hours": "Mon-Sat 5am-9pm · Sun 6am-9pm",
+   "website": "https://www.dunkindonuts.com/locations/us/ga/kennesaw/1610-ridenour-blvd-nw/store-345878/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=345878&y_source=1_MTIxMDgwNDEtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=3269403383139894336&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJoXhYKcYL9YgRJytmkbWJRQ8",
@@ -12570,6 +16089,73 @@
    "signature": "Seasonal Single Origin Pour Over"
   },
   {
+   "placeId": "ChIJp4n-96cW9YgRFopUvySwmkk",
+   "name": "Dunkin'",
+   "address": "670 South Marietta Pkwy SE, Marietta, GA 30060, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 33.94268,
+   "lng": -84.533515,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "donut_shop",
+    "cafe",
+    "bakery"
+   ],
+   "rating": 3.8,
+   "ratingNum": 846,
+   "ratingCount": "846",
+   "hours": "Mon-Sun 5am-9pm",
+   "website": "https://www.dunkindonuts.com/locations/us/ga/marietta/670-s-marietta-pkwy/store-307688/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=307688&y_source=1_MTIxMDgwMzUtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=5303745183057480214&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJp5s-piEN9YgRjll84qNI_FE",
+   "name": "Mzizi Coffee Roaster",
+   "address": "2995 Johnson Ferry Rd #220, Marietta, GA 30062, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 34.022156,
+   "lng": -84.427127,
+   "category": "Coffee",
+   "model": "independent",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.8,
+   "ratingNum": 408,
+   "ratingCount": "408",
+   "hours": "Mon-Thu 8am-4pm · Fri 8am-5pm · Sat 9am-5pm · Sun 9am-4pm",
+   "website": "http://mzizicoffeeroaster.com/",
+   "googleUrl": "https://maps.google.com/?cid=5907676679919917454&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJp9MBeIJs9YgRyKXZ9e9dnxA",
+   "name": "Ray's Donut Shop",
+   "address": "4805 Canton Rd, Marietta, GA 30066, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 34.068327,
+   "lng": -84.522174,
+   "category": "Bakery+Cafe",
+   "model": "independent",
+   "types": [
+    "donut_shop",
+    "bakery",
+    "dessert_shop"
+   ],
+   "rating": 4.8,
+   "ratingNum": 1122,
+   "ratingCount": "1,122",
+   "hours": "Mon 5am-12pm · Tue-Sat 5am-3pm · Sun 6am-2pm",
+   "website": "https://facebook.com/RaysDonutsMarietta/",
+   "googleUrl": "https://maps.google.com/?cid=1197779311107089864&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJpSs0e2qj9YgRCCmLcVjFNU0",
    "name": "Starbucks Coffee Company",
    "address": "1550 Pleasant Hill Rd, Duluth, GA 30096, USA",
@@ -12590,6 +16176,40 @@
    "hours": "Mon-Fri 5am-9pm · Sat-Sun 5am-8:30pm",
    "website": "https://www.starbucks.com/store-locator/store/1014999",
    "googleUrl": "https://maps.google.com/?cid=5563569898338855176&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJpSzr2h8R9YgRakJbxJUmC-Y",
+   "name": "Hermanas Café at the battery",
+   "address": "950 Battery Ave SE, Atlanta, GA 30339, USA",
+   "city": "Atlanta",
+   "county": "Cobb",
+   "lat": 33.887682,
+   "lng": -84.471601,
+   "category": "Coffee",
+   "model": "independent",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.8,
+   "ratingNum": 23,
+   "ratingCount": "23",
+   "hours": "Sat-Thu 7am-9pm · Fri 7:30am-9pm",
+   "website": "https://hermanascafe.com/",
+   "googleUrl": "https://maps.google.com/?cid=16576385278153540202&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "excellent",
+    "note": "Modern Latin coffeehouse at The Battery Atlanta with communal workspaces, fast Wi-Fi, outdoor tables, and authentic Latin espresso drinks.",
+    "hasMeetingRoom": true,
+    "meetingRoomNote": "Mezzanine and group conference seating reservable for business meetings and private gatherings."
+   },
+   "usp": "Vibrant Latin specialty coffee bar and workspace steps from Truist Park at The Battery.",
+   "loved": [
+    "cortadito",
+    "horchata iced latte",
+    "empanadas"
+   ],
+   "signature": "Tres Leches Latte"
   },
   {
    "placeId": "ChIJpTBSVVKf9YgRLo_nC6mMYxo",
@@ -12615,6 +16235,31 @@
    },
    "website": "https://crumblcookies.com/",
    "googleUrl": "https://maps.google.com/?cid=1901518125357567790&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJpYh-pns_9YgR5ko__0WhTYw",
+   "name": "Starbucks Coffee Company",
+   "address": "3103 Cobb Pkwy NW, Kennesaw, GA 30152, USA",
+   "city": "Kennesaw",
+   "county": "Cobb",
+   "lat": 34.02985,
+   "lng": -84.65545,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.3,
+   "ratingNum": 515,
+   "ratingCount": "515",
+   "hours": "Mon-Sun 5am-10pm",
+   "late": {
+    "tier": "10pm+",
+    "when": "Daily till 10pm"
+   },
+   "website": "https://www.starbucks.com/store-locator/store/9220/",
+   "googleUrl": "https://maps.google.com/?cid=10109914060523784934&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJpaZ-8iIP9YgRLumC85XKjIM",
@@ -12685,6 +16330,27 @@
    "googleUrl": "https://maps.google.com/?cid=1562371640889703555&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJpe_6gUYU9YgR7-xw_gsqiIE",
+   "name": "Starbucks Coffee Company",
+   "address": "811 Church St, Marietta, GA 30060, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 33.97181,
+   "lng": -84.55128,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.2,
+   "ratingNum": 863,
+   "ratingCount": "863",
+   "hours": "Mon-Fri 4:30am-8pm · Sat-Sun 5am-8pm",
+   "website": "https://www.starbucks.com/store-locator/store/10691/",
+   "googleUrl": "https://maps.google.com/?cid=9333756458727173359&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJpxdHHgOj9YgRT2TKHqAJu88",
    "name": "Orange Coffee Bar",
    "address": "3473 Old Norcross Rd #107, Duluth, GA 30096, USA",
@@ -12709,6 +16375,28 @@
    },
    "website": "http://orangecoffeebar.com/",
    "googleUrl": "https://maps.google.com/?cid=14968568369811973199&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJq-lnztoU9YgR5sEP1sDBMV8",
+   "name": "Sweet Hut Bakery & Cafe",
+   "address": "2795 Chastain Meadows Pkwy NW #900, Marietta, GA 30066, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "neighborhood": "Town Center",
+   "lat": 34.019836,
+   "lng": -84.554156,
+   "category": "Bakery+Cafe",
+   "model": "franchise",
+   "types": [
+    "bakery",
+    "cafe"
+   ],
+   "rating": 4.5,
+   "ratingNum": 2397,
+   "ratingCount": "2,397",
+   "hours": "Mon-Sun 9am-9pm",
+   "website": "https://www.sweethutbakery.com/locations/marietta",
+   "googleUrl": "https://maps.google.com/?cid=6859476741431214566&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJq2s4WrCb9YgRgHaofr5HRHI",
@@ -12784,6 +16472,27 @@
    "googleUrl": "https://maps.google.com/?cid=3042637825477854999&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJq6Huu50N9YgRMvaaIZ6dM88",
+   "name": "Marietta Donuts (Johnson Ferry Rd, Marietta)",
+   "address": "1282 Johnson Ferry Rd #109, Marietta, GA 30068, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 33.980825,
+   "lng": -84.423672,
+   "category": "Bakery+Cafe",
+   "model": "independent",
+   "types": [
+    "donut_shop",
+    "bakery"
+   ],
+   "rating": 4.8,
+   "ratingNum": 387,
+   "ratingCount": "387",
+   "hours": "Mon-Fri 6am-1pm · Sat-Sun 6am-2pm",
+   "website": null,
+   "googleUrl": "https://maps.google.com/?cid=14930450492157523506&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJqT8rzuu-9YgR_gs8ycsAC7Q",
    "name": "Ray's Donuts",
    "address": "257 Scenic Hwy S, Lawrenceville, GA 30046, USA",
@@ -12851,6 +16560,31 @@
    "googleUrl": "https://maps.google.com/?cid=8206941553656863866&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJqXTXlFA59YgRXwKnKKQ43zE",
+   "name": "Starbucks",
+   "address": "1805 Dennis Kemp Ln NW, Kennesaw, GA 30152, USA",
+   "city": "Kennesaw",
+   "county": "Cobb",
+   "lat": 33.99913,
+   "lng": -84.70427,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.4,
+   "ratingNum": 246,
+   "ratingCount": "246",
+   "hours": "Mon-Sun 5am-10pm",
+   "late": {
+    "tier": "10pm+",
+    "when": "Daily till 10pm"
+   },
+   "website": "https://www.starbucks.com/store-locator/store/1027052",
+   "googleUrl": "https://maps.google.com/?cid=3593653305372770911&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJqYkLfpN19YgRh_faIXBZ08w",
    "name": "967 Coffee Co",
    "address": "11235 Alpharetta Hwy Ste 136, Roswell, GA 30076, USA",
@@ -12888,6 +16622,70 @@
     "iced mocha"
    ],
    "signature": "Midnight Mocha"
+  },
+  {
+   "placeId": "ChIJq_XV82sX9YgRU9PBVGU_2IU",
+   "name": "Jay'Rayes Cafe",
+   "address": "461 Windy Hill Rd SE, Marietta, GA 30060, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 33.895018,
+   "lng": -84.54421,
+   "category": "Coffee",
+   "model": "independent",
+   "types": [
+    "cafe"
+   ],
+   "rating": 3.0,
+   "ratingNum": 2,
+   "ratingCount": "2",
+   "hours": "Mon-Sat 12:00-8pm · Sun Closed",
+   "website": "https://www.jayrayescafe.com/?fbclid=PAAabJYTo_Yycd_tYhL4kQcOD2dMT5U95jtRaLh0zX0KdpTF1I4IVrs2Ih7Tk_aem_AWmsGBMmvXoMf6gCAwFHffj750faCD0dn_AWUFEYgKzy-MHXg5pxdby5_jzNMcHrROU",
+   "googleUrl": "https://maps.google.com/?cid=9644528306460152659&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJqaWWzr4N9YgRfXTcKIjfsO8",
+   "name": "Dunkin'",
+   "address": "611 Johnson Ferry Rd, Marietta, GA 30068, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 33.963592,
+   "lng": -84.412163,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "donut_shop",
+    "cafe",
+    "bakery"
+   ],
+   "rating": 3.6,
+   "ratingNum": 496,
+   "ratingCount": "496",
+   "hours": "Mon-Sun 5am-9pm",
+   "website": "https://www.dunkindonuts.com/locations/us/ga/marietta/611-johnson-ferry-rd/store-347021/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=347021&y_source=1_MTIxMDc2NDktNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=17271550346859934845&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJqfDWFQFt9YgR7PP9DtqwEoY",
+   "name": "Black Moon Bakery",
+   "address": "3475 Winter Hill Dr, Marietta, GA 30062, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 34.036333,
+   "lng": -84.44792,
+   "category": "Bakery+Cafe",
+   "model": "independent",
+   "types": [
+    "bakery"
+   ],
+   "rating": 5.0,
+   "ratingNum": 27,
+   "ratingCount": "27",
+   "hours": "Mon-Sat Closed · Sun 10am-5pm",
+   "website": "http://blackmoonbread.com/",
+   "googleUrl": "https://maps.google.com/?cid=9660978601264018412&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJqfp0XgAJ9YgRmFgnueckyrg",
@@ -12974,6 +16772,34 @@
    "googleUrl": "https://maps.google.com/?cid=4377327006176758191&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJr31kHVw_9YgROvMqqzoKrRg",
+   "name": "Dunkin'",
+   "address": "3139 Cobb Pkwy NW Ste 100, Kennesaw, GA 30152, USA",
+   "city": "Kennesaw",
+   "county": "Cobb",
+   "lat": 34.032851,
+   "lng": -84.671445,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "donut_shop",
+    "cafe",
+    "bakery"
+   ],
+   "rating": 3.8,
+   "ratingNum": 439,
+   "ratingCount": "439",
+   "hours": "Sun-Fri 5am-10pm · Sat 5am-9pm",
+   "late": {
+    "tier": "10pm+",
+    "when": "Sun-Fri till 10pm"
+   },
+   "website": "https://www.dunkindonuts.com/locations/us/ga/kennesaw/3139-cobb-pkwy-nw/store-349086/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=349086&y_source=1_MTIxMDkzNDMtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=1778088674977313594&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJr364d_uj9YgRzhfH88MEtYI",
    "name": "Confections Bakery & Cafe - Duluth",
    "address": "3330 Satellite Blvd NW #2, Duluth, GA 30096, USA",
@@ -13043,6 +16869,28 @@
    "hours": "Mon-Sat 5am-9pm · Sun 6am-9pm",
    "website": "https://www.dunkindonuts.com/locations/us/ga/lawrenceville/551-w-pike-st/store-353927/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=353927&y_source=1_MTIxMDkyNTAtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
    "googleUrl": "https://maps.google.com/?cid=7009891640843829819&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJr74Qw0YU9YgRlpSe8cC4QpA",
+   "name": "Panera Bread",
+   "address": "732 Cherokee St NE, Marietta, GA 30060, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 33.969597,
+   "lng": -84.549521,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "cafe",
+    "coffee_shop",
+    "bakery"
+   ],
+   "rating": 3.8,
+   "ratingNum": 652,
+   "ratingCount": "652",
+   "hours": "Mon-Fri 6:30am-8pm · Sat-Sun 7am-8pm",
+   "website": "https://www.panerabread.com/en-us/cafe/locations/ga/marietta/732-cherokee-st?utm_medium=local&utm_source=google&utm_campaign=dpm-dist&utm_term=202601&utm_content=main",
+   "googleUrl": "https://maps.google.com/?cid=10395074028751459478&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJr8ussOOZ9YgRz6kth9hMDQ4",
@@ -13280,6 +17128,30 @@
    "googleUrl": "https://maps.google.com/?cid=5963732777860077603&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJs31HEpcR9YgRN-ygaPsvwh4",
+   "name": "Brazilian Bakery Cafe",
+   "address": "1260 Powers Ferry Rd A, Marietta, GA 30067, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 33.921516,
+   "lng": -84.468249,
+   "category": "Bakery+Cafe",
+   "model": "independent",
+   "types": [
+    "bakery"
+   ],
+   "rating": 4.5,
+   "ratingNum": 2359,
+   "ratingCount": "2,359",
+   "hours": "Mon-Sat 6:30am-10pm · Sun 8am-10pm",
+   "late": {
+    "tier": "10pm+",
+    "when": "Daily till 10pm"
+   },
+   "website": "http://brazilianbakerycafe.com/",
+   "googleUrl": "https://maps.google.com/?cid=2216386723458378807&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJs48T57m59YgRAuRCOdW5IY8",
    "name": "Kakes4U",
    "address": "2585 Highpoint Rd Ste-B, Snellville, GA 30078, USA",
@@ -13397,6 +17269,29 @@
    "googleUrl": "https://maps.google.com/?cid=6886167849927321772&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJsQgZPeIN9YgRDOn5Fgo4YI0",
+   "name": "Einstein Bros. Bagels",
+   "address": "4101 Roswell Rd #801, Marietta, GA 30062, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 33.982147,
+   "lng": -84.430457,
+   "category": "Bakery+Cafe",
+   "model": "franchise",
+   "types": [
+    "bagel_shop",
+    "coffee_shop",
+    "cafe",
+    "bakery"
+   ],
+   "rating": 4.2,
+   "ratingNum": 120,
+   "ratingCount": "120",
+   "hours": "Mon-Sun 6am-2pm",
+   "website": "https://locations.einsteinbros.com/us/ga/marietta/4101-roswell-road?y_source=1_MTA5ODc1NDE3MS03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+   "googleUrl": "https://maps.google.com/?cid=10187203973098367244&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJsQlzZOm-9YgRvcg9bP8ah2A",
    "name": "Cafe Nirvana",
    "address": "239 Scenic Hwy S, Lawrenceville, GA 30046, USA",
@@ -13419,6 +17314,68 @@
    },
    "website": null,
    "googleUrl": "https://maps.google.com/?cid=6955557833831991485&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJsR9XoFEV9YgRmU6p54PizJA",
+   "name": "Baladi Coffee",
+   "address": "3061 George Busbee Pkwy NW Ste 2000, Kennesaw, GA 30144, USA",
+   "city": "Kennesaw",
+   "county": "Cobb",
+   "neighborhood": "Town Center",
+   "lat": 34.02775,
+   "lng": -84.568874,
+   "category": "Coffee",
+   "model": "independent",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.8,
+   "ratingNum": 985,
+   "ratingCount": "985",
+   "hours": "Mon-Sun 7am-10pm",
+   "late": {
+    "tier": "10pm+",
+    "when": "Daily till 10pm"
+   },
+   "website": "https://www.baladi.coffee/",
+   "googleUrl": "https://maps.google.com/?cid=10433963492865822361&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "excellent",
+    "note": "Mediterranean-inspired coffeehouse with ample tables, reliable Wi-Fi, power outlets, and authentic Arabic and specialty coffee preparations.",
+    "hasMeetingRoom": false
+   },
+   "usp": "Authentic Middle Eastern and specialty coffee bar featuring cardamom-infused Arabic coffee and handmade baklava.",
+   "loved": [
+    "arabic coffee with cardamom",
+    "baklava",
+    "pistachio latte"
+   ],
+   "signature": "Baladi Cardamom Latte"
+  },
+  {
+   "placeId": "ChIJsW31xJ4_9YgRZCg7UQ3j16k",
+   "name": "Wiggin Espresso",
+   "address": "3345 Cobb Pkwy NW, Acworth, GA 30101, USA",
+   "city": "Acworth",
+   "county": "Cobb",
+   "lat": 34.035301,
+   "lng": -84.68492,
+   "category": "Coffee",
+   "model": "independent",
+   "types": [
+    "cafe"
+   ],
+   "rating": null,
+   "ratingNum": 0,
+   "ratingCount": "0",
+   "hours": "Mon Open 24 hours · Tue-Sun Closed",
+   "late": {
+    "tier": "midnight",
+    "when": "Mon till midnight"
+   },
+   "website": null,
+   "googleUrl": "https://maps.google.com/?cid=12238500158739523684&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJsZqTDQe79YgRpaXF0T78veY",
@@ -13720,6 +17677,26 @@
    "googleUrl": "https://maps.google.com/?cid=14840620923674777357&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJt9wVzaET9YgR56hbSFcA7lA",
+   "name": "Rumtastic Gourmet Rum Cakes",
+   "address": "1422 Roswell Rd, Marietta, GA 30062, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 33.95031,
+   "lng": -84.510995,
+   "category": "Bakery+Cafe",
+   "model": "independent",
+   "types": [
+    "bakery"
+   ],
+   "rating": 4.7,
+   "ratingNum": 65,
+   "ratingCount": "65",
+   "hours": "Mon-Fri 9am-5pm · Sat 10am-1pm · Sun Closed",
+   "website": "https://www.rumtastic.com/",
+   "googleUrl": "https://maps.google.com/?cid=5831598942367492327&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJtS6IB5t19YgRUM9Drftglh4",
    "name": "Don Mariano Bakery",
    "address": "1234 Alpharetta St, Roswell, GA 30075, USA",
@@ -13784,6 +17761,31 @@
    "googleUrl": "https://maps.google.com/?cid=3711430461158396689&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJtTud2H4V9YgRWtaeLec9YZE",
+   "name": "Dunkin'",
+   "address": "2525 Barrett Creek Blvd, Marietta, GA 30066, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "neighborhood": "Town Center",
+   "lat": 34.013321,
+   "lng": -84.554844,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "donut_shop",
+    "bakery",
+    "cafe"
+   ],
+   "rating": 3.5,
+   "ratingNum": 275,
+   "ratingCount": "275",
+   "hours": "Mon-Sun 5am-9pm",
+   "website": "https://www.dunkindonuts.com/locations/us/ga/marietta/2525-barrett-creek-blvd/store-359977/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=359977&y_source=1_MjAzMzc0MTItNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=10475722271352608346&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJtUxLNACd9YgRYG1h2BZ8EPo",
    "name": "Tim Hortons",
    "address": "4938 Atlanta Hwy, Alpharetta, GA 30004, USA",
@@ -13803,6 +17805,49 @@
    "hours": "Mon-Sun 5am-8pm",
    "website": "https://locations.timhortons.com/en/ga/alpharetta/4938-atlanta-hwy/",
    "googleUrl": "https://maps.google.com/?cid=18019038546670742880&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJtVTQ1-sX9YgRRWSIrwVRGL0",
+   "name": "Dough In The Box DONUTS - Marietta",
+   "address": "3184 Austell Rd SW, Marietta, GA 30008, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 33.87556,
+   "lng": -84.590276,
+   "category": "Bakery+Cafe",
+   "model": "independent",
+   "types": [
+    "donut_shop",
+    "bakery"
+   ],
+   "rating": 4.7,
+   "ratingNum": 975,
+   "ratingCount": "975",
+   "hours": "Mon Closed · Tue-Sat 5am-2pm · Sun 6am-2pm",
+   "website": "http://doughinthebox.com/index.html",
+   "googleUrl": "https://maps.google.com/?cid=13625729757471073349&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJtWWRVnsR9YgRE_zC67k-1Ts",
+   "name": "Cafe Comma - Vinings",
+   "address": "3621 Vinings Slope SE Unit 4150, Atlanta, GA 30339, USA",
+   "city": "Atlanta",
+   "county": "Cobb",
+   "lat": 33.865229,
+   "lng": -84.471628,
+   "category": "Coffee",
+   "model": "independent",
+   "types": [
+    "coffee_shop",
+    "cafe",
+    "bakery"
+   ],
+   "rating": 4.3,
+   "ratingNum": 617,
+   "ratingCount": "617",
+   "hours": "Mon-Fri 8am-6pm · Sat-Sun 9am-7pm",
+   "website": "https://www.atlcafecomma.com/",
+   "googleUrl": "https://maps.google.com/?cid=4311421186522414099&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJt_GpU9ex9YgRQt9LxVAiKxs",
@@ -13869,6 +17914,50 @@
    "googleUrl": "https://maps.google.com/?cid=6173072997503417171&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJtwzKWVAT9YgRkarOIOe4aLw",
+   "name": "Marietta Donuts ( E Piedmont Rd)",
+   "address": "2520 E Piedmont Rd #122, Marietta, GA 30062, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 34.01311,
+   "lng": -84.49295,
+   "category": "Bakery+Cafe",
+   "model": "independent",
+   "types": [
+    "bakery"
+   ],
+   "rating": 4.7,
+   "ratingNum": 68,
+   "ratingCount": "68",
+   "hours": "Mon-Sun 6am-3pm",
+   "website": null,
+   "googleUrl": "https://maps.google.com/?cid=13576304379535731345&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJtyF_O4o89YgR54fwWMwPwZ0",
+   "name": "Dunkin'",
+   "address": "4100 Macland Rd, Powder Springs, GA 30127, USA",
+   "city": "Powder Springs",
+   "county": "Cobb",
+   "lat": 33.902931,
+   "lng": -84.673295,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "donut_shop",
+    "cafe",
+    "bakery"
+   ],
+   "rating": 3.2,
+   "ratingNum": 792,
+   "ratingCount": "792",
+   "hours": "Mon-Sat 5am-9pm · Sun 6am-9pm",
+   "website": "https://www.dunkindonuts.com/locations/us/ga/powder-springs/4100-macland-rd/store-355732/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=355732&y_source=1_MTIxMTI1NzctNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=11367384304799746023&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJu4AWXaN19YgRfRijcLCRTDY",
    "name": "Argentis Gluten-Free Bakery",
    "address": "42 Milton Ave Ste. B, Alpharetta, GA 30009, USA",
@@ -13890,6 +17979,27 @@
    "hours": "Mon-Sun 8am-5pm",
    "website": "https://www.argentisbakery.com/",
    "googleUrl": "https://maps.google.com/?cid=3912662363268126845&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJu5LSvJU-9YgRUugyLb1ALAU",
+   "name": "Daily Grind - Teacher's Lunch Box",
+   "address": "3960 Mary Eliza Trace NW, Marietta, GA 30064, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 33.967407,
+   "lng": -84.66762,
+   "category": "Coffee",
+   "model": "independent",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.5,
+   "ratingNum": 658,
+   "ratingCount": "658",
+   "hours": "Mon-Fri 6am-9pm · Sat 7am-9pm · Sun 8am-6pm",
+   "website": "http://www.dailygrindmarietta.com/",
+   "googleUrl": "https://maps.google.com/?cid=372744050416216146&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJu70h0qif9YgRIjmuuLlQYCM",
@@ -14047,6 +18157,30 @@
    "googleUrl": "https://maps.google.com/?cid=7013249806636296801&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJuy_IZQAV9YgRBnoRuO7GVx4",
+   "name": "Sweet Living Bakery",
+   "address": "999 Whitlock Ave NW #4, Marietta, GA 30064, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 33.95083,
+   "lng": -84.57953,
+   "category": "Bakery+Cafe",
+   "model": "independent",
+   "types": [
+    "bakery",
+    "coffee_shop",
+    "dessert_shop",
+    "cafe",
+    "donut_shop"
+   ],
+   "rating": 4.8,
+   "ratingNum": 235,
+   "ratingCount": "235",
+   "hours": "Sun-Mon Closed · Tue-Fri 7am-5pm · Sat 8am-2pm",
+   "website": "https://www.sweetlivingbakery.com/",
+   "googleUrl": "https://maps.google.com/?cid=2186434872704334342&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJv7ytaAAJ9YgRAe5TNfDtYGM",
    "name": "Postern Coffee",
    "address": "2421 Van Fleet Cir Ste 124, Doraville, GA 30360, USA",
@@ -14098,6 +18232,33 @@
    "hours": "Mon-Fri Closed · Sat-Sun 7am-7pm",
    "website": null,
    "googleUrl": "https://maps.google.com/?cid=7456299009834235775&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJvSSCuXYV9YgRN_sb4RJDrSA",
+   "name": "Sugar Shane's Gourmet Bakery",
+   "address": "1635 Old 41 Hwy NW #107, Kennesaw, GA 30152, USA",
+   "city": "Kennesaw",
+   "county": "Cobb",
+   "lat": 33.992975,
+   "lng": -84.599425,
+   "category": "Dessert Cafe",
+   "model": "independent",
+   "types": [
+    "dessert_shop",
+    "coffee_shop",
+    "bakery",
+    "cafe"
+   ],
+   "rating": 4.7,
+   "ratingNum": 185,
+   "ratingCount": "185",
+   "hours": "Mon-Thu 11am-9pm · Fri-Sat 9am-10pm · Sun 11am-8pm",
+   "late": {
+    "tier": "10pm+",
+    "when": "Fri-Sat till 10pm"
+   },
+   "website": "https://www.toasttab.com/local/order/sugar-shanes-kennesaw",
+   "googleUrl": "https://maps.google.com/?cid=2354611928549817143&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJv_izHwB19YgR4SnpIH9wcos",
@@ -14161,6 +18322,26 @@
    "googleUrl": "https://maps.google.com/?cid=8408515160472219510&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJvyQVb9sV9YgRIZYHotbNFOY",
+   "name": "Calm Water Cafe",
+   "address": "320 Kennestone Hospital Blvd, Marietta, GA 30060, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 33.969018,
+   "lng": -84.552931,
+   "category": "Coffee",
+   "model": "independent",
+   "types": [
+    "cafe"
+   ],
+   "rating": 5.0,
+   "ratingNum": 1,
+   "ratingCount": "1",
+   "hours": "Mon-Fri 8:30am-3pm · Sat-Sun Closed",
+   "website": null,
+   "googleUrl": "https://maps.google.com/?cid=16579102449982740001&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJw-xQBe1z9YgRhKAixguhOIY",
    "name": "Dunkin'",
    "address": "295 Rucker Rd, Alpharetta, GA 30004, USA",
@@ -14207,6 +18388,52 @@
    "googleUrl": "https://maps.google.com/?cid=4298882725149905201&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJw6Zx12QX9YgRNDIsaZhr_qg",
+   "name": "Caribou Coffee",
+   "address": "2410 S Cobb Dr SE, Smyrna, GA 30080, USA",
+   "city": "Smyrna",
+   "county": "Cobb",
+   "lat": 33.89407,
+   "lng": -84.538972,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.4,
+   "ratingNum": 82,
+   "ratingCount": "82",
+   "hours": "Mon-Fri 5:30am-6pm · Sat-Sun 6am-6pm",
+   "website": "https://locations.cariboucoffee.com/us/ga/smyrna/2410-south-cobb-drive-southeast",
+   "googleUrl": "https://maps.google.com/?cid=12177288744800105012&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJw8MU4N899YgROXAxiOahxb0",
+   "name": "Starbucks Coffee Company",
+   "address": "2535 Dallas Hwy, Marietta, GA 30064, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 33.94585,
+   "lng": -84.62706,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.1,
+   "ratingNum": 738,
+   "ratingCount": "738",
+   "hours": "Mon-Fri 4:30am-10pm · Sat-Sun 5am-10pm",
+   "late": {
+    "tier": "10pm+",
+    "when": "Daily till 10pm"
+   },
+   "website": "https://www.starbucks.com/store-locator/store/15352/",
+   "googleUrl": "https://maps.google.com/?cid=13674513855079870521&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJwQ7FTsC89YgRsIDLIcDecvQ",
    "name": "La Victoria Bakery",
    "address": "1108 Herrington Rd #2, Lawrenceville, GA 30044, USA",
@@ -14225,6 +18452,26 @@
    "hours": "Mon-Sat 6:30am-6pm · Sun 7am-2pm",
    "website": null,
    "googleUrl": "https://maps.google.com/?cid=17614386009381503152&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJwYr-_-oN9YgRhN0JIQW_8Ts",
+   "name": "Tea Time Marietta",
+   "address": "3162 Johnson Ferry Rd Ste 116, Marietta, GA 30062, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 34.025409,
+   "lng": -84.423263,
+   "category": "Tea/Boba",
+   "model": "independent",
+   "types": [
+    "tea_house"
+   ],
+   "rating": 4.5,
+   "ratingNum": 101,
+   "ratingCount": "101",
+   "hours": "Mon Closed · Tue-Sun 12:00-8pm",
+   "website": "http://teatimega.com/",
+   "googleUrl": "https://maps.google.com/?cid=4319443546375052676&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJwcB6n6MJ9YgRZaM-QuLrB_U",
@@ -14258,6 +18505,26 @@
     "baked goods"
    ],
    "signature": "Goat Tracks Latte (Mocha & Caramel)"
+  },
+  {
+   "placeId": "ChIJwd88NAQU9YgRK7oV9hQgtOE",
+   "name": "La Suprema Bakery & Panaderia",
+   "address": "12 Cobb Pkwy SE, Marietta, GA 30060, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 33.95049,
+   "lng": -84.521096,
+   "category": "Bakery+Cafe",
+   "model": "independent",
+   "types": [
+    "bakery"
+   ],
+   "rating": 4.3,
+   "ratingNum": 930,
+   "ratingCount": "930",
+   "hours": "Mon-Sun 8am-9pm",
+   "website": "https://lasupremabakerypanaderia.shop/",
+   "googleUrl": "https://maps.google.com/?cid=16263659428741757483&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJwehsoBZ19YgRpN_mcic_zdo",
@@ -14327,6 +18594,27 @@
    "hours": "Mon-Sun 8am-8pm",
    "website": "http://www.tiercouturebakery.com/",
    "googleUrl": "https://maps.google.com/?cid=9613689394485633906&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJwyAdfiQU9YgRUdbgXknnERc",
+   "name": "Warm Hugs",
+   "address": "156 Roswell St NE, Marietta, GA 30060, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 33.952033,
+   "lng": -84.54865,
+   "category": "Bakery+Cafe",
+   "model": "independent",
+   "types": [
+    "bakery",
+    "dessert_shop"
+   ],
+   "rating": 4.4,
+   "ratingNum": 184,
+   "ratingCount": "184",
+   "hours": "Sun-Mon Closed · Tue-Sat 11am-7pm",
+   "website": "https://warmhugsbakery.com/",
+   "googleUrl": "https://maps.google.com/?cid=1662364039786845777&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJwzjsNEO59YgRyPck_0Nf7B4",
@@ -14430,6 +18718,27 @@
    "googleUrl": "https://maps.google.com/?cid=12134752958020124744&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJx2WNVkgQ9YgRBfmy4BlxskY",
+   "name": "Gorin's Cafe At Galleria On The Park",
+   "address": "400 Galleria Pkwy 180 Bldg 400, Atlanta, GA 30339, USA",
+   "city": "Atlanta",
+   "county": "Cobb",
+   "neighborhood": "Cumberland",
+   "lat": 33.886443,
+   "lng": -84.461652,
+   "category": "Coffee",
+   "model": "independent",
+   "types": [
+    "cafe"
+   ],
+   "rating": 3.9,
+   "ratingNum": 20,
+   "ratingCount": "20",
+   "hours": "Mon-Fri 8am-2pm · Sat-Sun Closed",
+   "website": "https://gorincafe.com/",
+   "googleUrl": "https://maps.google.com/?cid=5094258484467398917&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJx3dqKVuU9YgRW6JudAua5j8",
    "name": "Cinnabon",
    "address": "3333 Buford Dr, Buford, GA 30519, USA",
@@ -14475,6 +18784,51 @@
    "googleUrl": "https://maps.google.com/?cid=2568899752483329218&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJx6yzfYIU9YgRXJAHfDAPxmg",
+   "name": "Hoboken Bread & Bagel Co",
+   "address": "1033 Sandy Plains Rd Ste, Marietta, GA 30066, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 33.995218,
+   "lng": -84.522471,
+   "category": "Bakery+Cafe",
+   "model": "independent",
+   "types": [
+    "bakery"
+   ],
+   "rating": 4.7,
+   "ratingNum": 513,
+   "ratingCount": "513",
+   "hours": "Mon-Fri 7am-2pm · Sat 7am-12pm · Sun Closed",
+   "website": "http://www.hobokenbreadandbagel.com/",
+   "googleUrl": "https://maps.google.com/?cid=7549738526246932572&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJx9Ngk6Rq9YgRmlRUUY2gu8s",
+   "name": "Starbucks Coffee Company",
+   "address": "4069 Cherokee St NW, Kennesaw, GA 30144, USA",
+   "city": "Kennesaw",
+   "county": "Cobb",
+   "lat": 34.050196,
+   "lng": -84.597259,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.2,
+   "ratingNum": 945,
+   "ratingCount": "945",
+   "hours": "Mon-Sat 4:30am-10pm · Sun 5am-10pm",
+   "late": {
+    "tier": "10pm+",
+    "when": "Daily till 10pm"
+   },
+   "website": "https://www.starbucks.com/store-locator/store/10344/",
+   "googleUrl": "https://maps.google.com/?cid=14680503939159577754&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJxQArrbS-9YgRtn7Hhe22Clk",
    "name": "Dunkin'",
    "address": "845 Scenic Hwy S Bldg E, Lawrenceville, GA 30046, USA",
@@ -14497,6 +18851,51 @@
    "hours": "Mon-Sun 5am-9pm",
    "website": "https://www.dunkindonuts.com/locations/us/ga/lawrenceville/845-scenic-hwy/store-349930/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=349930&y_source=1_MTIxMTIyNjMtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
    "googleUrl": "https://maps.google.com/?cid=6416141750410641078&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJxT18M6oR9YgRBkvlti0BYeM",
+   "name": "Starbucks Coffee Company",
+   "address": "2580 Windy Hill Rd SE, Marietta, GA 30067, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 33.90062,
+   "lng": -84.47777,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 3.9,
+   "ratingNum": 578,
+   "ratingCount": "578",
+   "hours": "Mon-Fri 4:30am-9pm · Sat-Sun 5am-9pm",
+   "website": "https://www.starbucks.com/store-locator/store/6639/",
+   "googleUrl": "https://maps.google.com/?cid=16384378215204211462&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJxTZHvRxA9YgRRA0t3oIE5Q4",
+   "name": "Dunkin'",
+   "address": "4100 Jiles Rd Ste 100, Kennesaw, GA 30144, USA",
+   "city": "Kennesaw",
+   "county": "Cobb",
+   "lat": 34.047689,
+   "lng": -84.61023,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "donut_shop",
+    "bakery",
+    "cafe"
+   ],
+   "rating": 3.4,
+   "ratingNum": 390,
+   "ratingCount": "390",
+   "hours": "Mon-Sat 5am-9pm · Sun 6am-9pm",
+   "website": "https://www.dunkindonuts.com/locations/us/ga/kennesaw/4100-jiles-rd-nw/store-349401/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=349401&y_source=1_MTIxMTQ2NTEtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=1073269046317485380&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJxThB5GCV9YgRYdU4kSAgRZ4",
@@ -14537,6 +18936,52 @@
    "hours": "Sun-Mon Closed · Tue-Fri 10am-6pm · Sat 9am-6pm",
    "website": "http://www.antoniofamilyfoods.com/",
    "googleUrl": "https://maps.google.com/?cid=1970374270011667668&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJxZbIXycV9YgRyhuofJtUUX0",
+   "name": "Cinnabon",
+   "address": "400 Ernest W Barrett Pkwy NW, Kennesaw, GA 30144, USA",
+   "city": "Kennesaw",
+   "county": "Cobb",
+   "neighborhood": "Town Center",
+   "lat": 34.018025,
+   "lng": -84.563789,
+   "category": "Bakery+Cafe",
+   "model": "franchise",
+   "types": [
+    "bakery"
+   ],
+   "rating": 2.2,
+   "ratingNum": 73,
+   "ratingCount": "73",
+   "hours": "Mon-Thu 11am-8pm · Fri-Sat 10am-9pm · Sun 12:00-6pm",
+   "website": "https://locations.cinnabon.com/ga/kennesaw/400-ernest-w-barrett-pkwy-nw?utm_source=google&utm_medium=organic&utm_campaign=locations_partner",
+   "googleUrl": "https://maps.google.com/?cid=9030091754642611146&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJxZeFFjdr9YgR57Oz0Me9PPw",
+   "name": "Starbucks",
+   "address": "4241 Bells Ferry Rd, Kennesaw, GA 30144, USA",
+   "city": "Kennesaw",
+   "county": "Cobb",
+   "lat": 34.0544,
+   "lng": -84.55713,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.4,
+   "ratingNum": 373,
+   "ratingCount": "373",
+   "hours": "Mon-Sun 5am-10pm",
+   "late": {
+    "tier": "10pm+",
+    "when": "Daily till 10pm"
+   },
+   "website": "https://www.starbucks.com/store-locator/store/1023886",
+   "googleUrl": "https://maps.google.com/?cid=18175610862058058727&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJxaALlMSZ9YgRSyQclifsW60",
@@ -14598,6 +19043,32 @@
    "signature": "The Freckled Cold Brew"
   },
   {
+   "placeId": "ChIJxyIjjSMV9YgRjBGX8VAEfHs",
+   "name": "Tea Leaf and Creamery (Kennesaw)",
+   "address": "2769 Chastain Meadows Pkwy NW #30, Marietta, GA 30066, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "neighborhood": "Town Center",
+   "lat": 34.01719,
+   "lng": -84.55602,
+   "category": "Tea/Boba",
+   "model": "franchise",
+   "types": [
+    "dessert_shop",
+    "tea_house"
+   ],
+   "rating": 4.8,
+   "ratingNum": 256,
+   "ratingCount": "256",
+   "hours": "Mon-Sat 12:00-11pm · Sun 12:00-10pm",
+   "late": {
+    "tier": "10pm+",
+    "when": "Daily till 11pm"
+   },
+   "website": "https://www.tealeafandcreamery.com/",
+   "googleUrl": "https://maps.google.com/?cid=8897991709474361740&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJxzOTb1UJ9YgR-xlY2P8f-R8",
    "name": "The Bean Counter Northpark",
    "address": "1100 Abernathy Rd NE Building 500, Floor 3, Suit 345, Sandy Springs, GA 30328, USA",
@@ -14641,6 +19112,26 @@
    "googleUrl": "https://maps.google.com/?cid=10334900429402751800&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJy6XK9SQU9YgRr0xBd1PvNIc",
+   "name": "Australian Bakery Cafe",
+   "address": "48 S Park Square NE, Marietta, GA 30060, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 33.95211,
+   "lng": -84.549906,
+   "category": "Bakery+Cafe",
+   "model": "independent",
+   "types": [
+    "bakery"
+   ],
+   "rating": 4.6,
+   "ratingNum": 805,
+   "ratingCount": "805",
+   "hours": "Mon-Sat 8am-4pm · Sun 9am-3pm",
+   "website": "https://australianbakerycafe.com/",
+   "googleUrl": "https://maps.google.com/?cid=9742675035671317679&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJyQidFACb9YgR_VuvmyzKKDI",
    "name": "Dunkin'",
    "address": "651 Atlanta Hwy, Cumming, GA 30040, USA",
@@ -14663,6 +19154,27 @@
    "hours": "Mon-Sun 5am-9pm",
    "website": "https://www.dunkindonuts.com/locations/us/ga/cumming/651-atlanta-highway/store-365203/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=365203&y_source=1_MjAyODExMTA2My03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
    "googleUrl": "https://maps.google.com/?cid=3614360993904155645&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJySZCqiFB9YgRysGHzJXFX3s",
+   "name": "Cafe Coco Coffee",
+   "address": "4721 S Main St, Acworth, GA 30101, USA",
+   "city": "Acworth",
+   "county": "Cobb",
+   "lat": 34.064534,
+   "lng": -84.674312,
+   "category": "Coffee",
+   "model": "independent",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.6,
+   "ratingNum": 138,
+   "ratingCount": "138",
+   "hours": "Mon-Fri 7am-4pm · Sat 8am-4pm · Sun Closed",
+   "website": "http://instagram.com/cafecococoffee",
+   "googleUrl": "https://maps.google.com/?cid=8890041436624896458&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJyUDzRqq79YgR-Kp9fgpoNJg",
@@ -14727,6 +19239,33 @@
    "googleUrl": "https://maps.google.com/?cid=18233837215552986798&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJyY2B_mcV9YgRAR51jHJdZHE",
+   "name": "Tiger Sugar",
+   "address": "840 Ernest W Barrett Pkwy NW #300, Kennesaw, GA 30144, USA",
+   "city": "Kennesaw",
+   "county": "Cobb",
+   "neighborhood": "Town Center",
+   "lat": 34.007685,
+   "lng": -84.576495,
+   "category": "Tea/Boba",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "tea_house",
+    "cafe"
+   ],
+   "rating": 4.3,
+   "ratingNum": 353,
+   "ratingCount": "353",
+   "hours": "Mon-Thu 12:00-9pm · Fri-Sun 12:00-10pm",
+   "late": {
+    "tier": "10pm+",
+    "when": "Fri-Sun till 10pm"
+   },
+   "website": "https://en.tigersugar.com/",
+   "googleUrl": "https://maps.google.com/?cid=8170758370521062913&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJye9VAHmh9YgRHv_igPiECTE",
    "name": "Starbucks Coffee Company",
    "address": "4895 Peachtree Industrial Blvd, Norcross, GA 30092, USA",
@@ -14746,6 +19285,28 @@
    "hours": "Mon-Sat 5am-9pm · Sun 5am-8:30pm",
    "website": "https://www.starbucks.com/store-locator/store/10461/",
    "googleUrl": "https://maps.google.com/?cid=3533501585497980702&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJywh7BXQN9YgRZKlI-Am_Ebo",
+   "name": "Panera Bread",
+   "address": "4475 Roswell Rd, Marietta, GA 30062, USA",
+   "city": "Marietta",
+   "county": "Cobb",
+   "lat": 33.987772,
+   "lng": -84.422256,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "cafe",
+    "coffee_shop",
+    "bakery"
+   ],
+   "rating": 3.3,
+   "ratingNum": 580,
+   "ratingCount": "580",
+   "hours": "Mon-Fri 6:30am-9pm · Sat-Sun 7am-9pm",
+   "website": "https://www.panerabread.com/en-us/cafe/locations/ga/marietta/4475-roswell-road?utm_medium=local&utm_source=google&utm_campaign=dpm-dist&utm_term=202590&utm_content=main",
+   "googleUrl": "https://maps.google.com/?cid=13407707615199799652&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJyzlI-kuj9YgRvPslnFd8YH0",
@@ -14790,6 +19351,27 @@
    "hours": "Mon-Sun 5am-9pm",
    "website": "https://www.dunkindonuts.com/locations/us/ga/alpharetta/3630-old-milton-pkwy/store-332379/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=332379&y_source=1_MTIxMDg2NTAtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
    "googleUrl": "https://maps.google.com/?cid=8623223631187711758&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJzRMeRgAX9YgRBmuZcKaToBk",
+   "name": "Cabello",
+   "address": "188 Smyrna Powder Springs Rd SE, Smyrna, GA 30082, USA",
+   "city": "Smyrna",
+   "county": "Cobb",
+   "lat": 33.888392,
+   "lng": -84.547138,
+   "category": "Coffee",
+   "model": "independent",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": null,
+   "ratingNum": 0,
+   "ratingCount": "0",
+   "hours": null,
+   "website": null,
+   "googleUrl": "https://maps.google.com/?cid=1846638190284860166&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJzSbcDeyj9YgRvGFxBuHeXQA",

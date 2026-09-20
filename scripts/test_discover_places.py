@@ -73,16 +73,22 @@ class FilterTests(unittest.TestCase):
         self.assertEqual(D.county_label(c, 33.95), "Gwinnett")
         c = [comp("Forsyth County", "administrative_area_level_2")]
         self.assertEqual(D.county_label(c, 34.20), "Forsyth")
+        c = [comp("Cobb County", "administrative_area_level_2")]
+        self.assertEqual(D.county_label(c, 33.95), "Cobb")
         c = [comp("Hall County", "administrative_area_level_2")]
         self.assertIsNone(D.county_label(c, 34.20))
 
-    def test_fulton_and_dekalb_need_the_latitude_cut(self):
+    def test_fulton_dekalb_and_cobb_need_the_latitude_cut(self):
         fulton = [comp("Fulton County", "administrative_area_level_2")]
         self.assertEqual(D.county_label(fulton, 33.95), "Fulton")
         self.assertIsNone(D.county_label(fulton, 33.85))
         dekalb = [comp("DeKalb County", "administrative_area_level_2")]
         self.assertEqual(D.county_label(dekalb, 33.95), "DeKalb")
         self.assertIsNone(D.county_label(dekalb, 33.85))
+        cobb = [comp("Cobb County", "administrative_area_level_2")]
+        self.assertEqual(D.county_label(cobb, 33.95), "Cobb")
+        self.assertEqual(D.county_label(cobb, 33.87), "Cobb")  # north of 33.86
+        self.assertIsNone(D.county_label(cobb, 33.80))         # south of 33.86
 
 
 class HoursTests(unittest.TestCase):

@@ -64,10 +64,11 @@ REGION = {
         {"api": "Fulton County", "label": "Fulton", "min_lat": 33.90},
         {"api": "Forsyth County", "label": "Forsyth"},
         {"api": "DeKalb County", "label": "DeKalb", "min_lat": 33.90},
+        {"api": "Cobb County", "label": "Cobb", "min_lat": 33.86},
     ],
     "note": (
-        "For Fulton and DeKalb only the part north of the top-end Perimeter (I-285) is included: "
-        "Sandy Springs, Dunwoody, Doraville, Roswell, Alpharetta, Johns Creek and Milton."
+        "For Fulton, DeKalb, and Cobb only the part north of the top-end Perimeter (I-285) is included: "
+        "Sandy Springs, Dunwoody, Doraville, Roswell, Alpharetta, Johns Creek, Milton, Vinings, Smyrna, Marietta, Kennesaw, and Acworth."
     ),
 }
 # (includedType, textQuery). Pass 1 is free, so every in-scope type is queried.
@@ -260,6 +261,7 @@ LOCATIONS = (
     "dunwoody", "norcross", "lilburn", "lawrenceville", "snellville", "sugarloaf",
     "perimeter", "haynes bridge", "buford", "peachtree", "georgia", "ga", "cumming",
     "doraville", "chamblee", "milton", "crabapple", "loganville", "dacula", "marietta",
+    "kennesaw", "acworth", "smyrna", "vinings", "cumberland", "east cobb",
     "woodstock", "canton", "avalon", "sugarloaf plaza", "town center", "drive thru",
 )
 
