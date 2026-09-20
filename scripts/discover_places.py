@@ -720,7 +720,20 @@ def write_dump(path: Path, dump: dict) -> None:
 def load_exclusions() -> set:
     if not EXCLUDE_PATH.exists():
         return set()
-    return {e["placeId"] for e in json.loads(EXCLUDE_PATH.read_text())}
+    try:
+        data = json.loads(EXCLUDE_PATH.read_text())
+        if isinstance(data, dict) and "exclusions" in data:
+            data = data["exclusions"]
+        exclusions = set()
+        for e in data:
+            if isinstance(e, str):
+                exclusions.add(e)
+            elif isinstance(e, dict) and "placeId" in e:
+                exclusions.add(e["placeId"])
+        return exclusions
+    except Exception as e:
+        print(f"Warning: failed to parse {EXCLUDE_PATH}: {e}")
+        return set()
 
 
 # ---- report -----------------------------------------------------------------
@@ -758,13 +771,26 @@ def report(recs, stats, curated, raw) -> None:
                 haversine_m(r["lat"], r["lng"], s["lat"], s["lng"]) <= 60
                 and name_overlap(s["name"], r["name"])[0] > 0
             ):
-                dupes.append(f"{r['name']} ~ {s['name']} ({r['placeId']})")
+                dupes.append({"discovered": r["name"], "curated": s["name"], "placeId": r["placeId"]})
     print(
         f"discovered within 60 m of a curated shop with an overlapping name "
         f"(candidates for scripts/places_exclude.json): {len(dupes)}"
     )
     for d in dupes:
-        print("  ", d)
+        print(f"   {d['discovered']} ~ {d['curated']} ({d['placeId']})")
+
+    # Persist QA leads to scratch for actionable review (F7)
+    qa_leads_path = ROOT / "scratch" / "curated_qa_leads.json"
+    try:
+        qa_leads_path.parent.mkdir(parents=True, exist_ok=True)
+        qa_leads_path.write_text(json.dumps({
+            "unseen_curated_count": len(unseen),
+            "unseen_curated_names": unseen,
+            "near_dupes_count": len(dupes),
+            "near_dupes": dupes
+        }, indent=2))
+    except Exception:
+        pass
 
 
 def curated_with_coords() -> list:

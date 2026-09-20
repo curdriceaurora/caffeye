@@ -181,7 +181,7 @@ The official Caffeye brand is **The Bean Eye v1.0** — an organic coffee bean s
   - `public/brand/logos/`: Vector mark locks (`caffeye-symbol-forest.svg`, `caffeye-horizontal-forest.svg`, `caffeye-symbol-micro.svg`). Header uses `caffeye-symbol-forest.svg` as a clean typographic partner.
 - **Header & Reset-to-Home**:
   - The top bar pairs the Bean Eye mark (`#brandHomeBtn`) at 22px height (17px on mobile) with the dynamic region title (`.brand`).
-  - Clicking `#brandHomeBtn` resets all filters back to default (clears county/city selection, resets search, restores Indie-only default view).
+  - Clicking `#brandHomeBtn` resets all filters back to default (clears category/feature chips, resets search, restores Indie-only default view).
 
 ## Key conventions to preserve
 
@@ -197,7 +197,7 @@ These are decisions, not accidents — don't undo them without reading the linke
 | **16-angle label placer.** Labels prefer cardinal angles, fall back through diagonals + in-betweens; obstacles are other labels, all pins, all `.coffee-cluster` bubbles. Higher-weighted shops claim space first. | Labels must never lie. | §7 |
 | **Label threshold is `LABEL_MIN_ZOOM = 13`** (the default fit-bounds zoom), so labels show on first paint. | — | — |
 | **Bayesian weighted rating** formula `WR = (v/(v+m))·R + (m/(v+m))·C` — `C` = mean rating, `m` = median review count, both computed at load. | Trustworthy ranking. | §2 |
-| **County filter row removed** (`#locationRow` hidden). Type and Useful For rows provide clean categorization while matching the top-right franchise toggle state; preserves 5 visible cards on mobile at 375px. | Density on phones & simplified regional navigation. | §4 |
+| **County filter row removed** (`#locationRow` removed). Type and Useful For rows provide clean categorization while matching the top-right franchise toggle state; preserves 5 visible cards on mobile at 375px. | Density on phones & simplified regional navigation. | §4 |
 | **List pagination bounds the *default* render at 200 items** (`LIST_PAGE_SIZE`), not an absolute ceiling — clicking "Load more" repeatedly grows `state.listLimit` and re-renders the whole list each time, so the DOM does grow past 200 if a user pages through everything. Any filter/search/viewport change resets the window back to 200. Below 200 matches — every single-region dataset today — this is a no-op. A true hard cap would need list virtualization (windowed/spacer rendering with recycled DOM nodes), deliberately not implemented here — it needs fixed-row-height CSS and risks breaking the assumption elsewhere that every filtered `.shop-item` is in the DOM. | Bound the common case cheaply; don't take on virtualization's complexity until real usage shows it's needed. | §9 |
 | **`placeLabels()`'s 300-simultaneously-visible-pin safety cap** hides labels above that count rather than running its O(items × angles × obstacles) collision pass — untested against real data today (clustering keeps counts well below 300 in practice, including on the 244-shop test fixture), verify the 300/301 boundary directly per TESTS.md T3.x before relying on it. | Guard the pathological case instead of claiming it's exercised by ordinary use. | §7 |
 | **Mobile: map fixed at 220 px**, panel takes the rest, footer hidden. | Density on phones — iPhone 14 Pro target = 5 cards visible on single-region data; 4 when the County/City row is also shown (see R8.5) — that row costs ~48 px, deliberately not clawed back from card spacing shared with the 5-card baseline. | §4 |

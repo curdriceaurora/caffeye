@@ -52,7 +52,13 @@ def apply_curation_to_place(place: dict, cur: dict) -> dict:
 
 
 def apply_curations(places: list, curations: dict) -> tuple:
-    """(updated_places, applied_count). Matches by placeId first, then norm(name)+city."""
+    """(updated_places, applied_count). Matches by placeId first, then unambiguous norm(name)+city."""
+    # Count how many places share each (name, city) key to detect ambiguity
+    place_key_counts = Counter(
+        (norm(p.get("name", "")), norm(p.get("city", "")))
+        for p in places
+    )
+
     by_name_city = {}
     for pid, c in curations.items():
         key = (norm(c.get("name", "")), norm(c.get("city", "")))
@@ -65,7 +71,17 @@ def apply_curations(places: list, curations: dict) -> tuple:
         cur = curations.get(pid)
         if not cur:
             key = (norm(p.get("name", "")), norm(p.get("city", "")))
-            cur = by_name_city.get(key)
+            # If multiple venues exist with this name and city (e.g. multi-unit chains),
+            # do not decorate without a placeId or matching address
+            if place_key_counts.get(key, 0) == 1:
+                cur = by_name_city.get(key)
+            elif place_key_counts.get(key, 0) > 1 and key in by_name_city:
+                c_cand = by_name_city.get(key)
+                if c_cand and c_cand.get("address") and p.get("address"):
+                    if norm(c_cand["address"]) in norm(p["address"]) or norm(p["address"]) in norm(c_cand["address"]):
+                        cur = c_cand
+                if not cur:
+                    print(f"curate: ambiguous name+city fallback skipped for {p.get('name')} in {p.get('city')}")
 
         if cur:
             updated.append(apply_curation_to_place(p, cur))
@@ -157,7 +173,10 @@ def research_website(url: str, timeout: float = 6.0) -> dict:
     )
     try:
         with urllib.request.urlopen(req, timeout=timeout) as resp:
-            content = resp.read().decode("utf-8", errors="ignore")
+            content_type = resp.headers.get("Content-Type", "").lower()
+            if content_type and "text" not in content_type and "html" not in content_type:
+                return {"url": url, "ok": False, "error": f"non-html content-type: {content_type}"}
+            content = resp.read(1_000_000).decode("utf-8", errors="ignore")
         return {"url": url, "ok": True, **extract_signals_from_text(content)}
     except Exception as e:
         return {"url": url, "ok": False, "error": str(e)}

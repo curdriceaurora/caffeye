@@ -145,10 +145,14 @@
   }
   #franchiseToggle {
     position: absolute;
-    opacity: 0;
-    width: 0;
-    height: 0;
-    pointer-events: none;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
   }
   #franchiseToggle:checked + .toggle-switch {
     background: var(--caffeye-forest);
@@ -256,6 +260,7 @@
   }
   .load-more-btn:hover { background: var(--accent-soft); }
   .shop-item:hover { background: var(--surface-alt); }
+  .shop-item:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; background: var(--surface-alt); }
   .shop-item.active { background: var(--accent-soft); }
   .shop-name {
     font-weight: 600; font-size: 14px;
@@ -577,14 +582,17 @@ Promise.allSettled([
 function boot() {
   // DERIVED
   const slug = s => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-  SHOPS.forEach(s => {
+  SHOPS = SHOPS.filter(s => {
     const key = s.addrKey;
     if (key && ADDR[key]) { s.lat = ADDR[key].lat; s.lng = ADDR[key].lng; }
-    // Include city slug in the id so the same shop name in two cities
-    // never collides on DOM data-id or selection lookups.
+    if (!s.lat || !s.lng || (s.lat === 0 && s.lng === 0)) {
+      console.warn('Skipping shop with invalid coordinates:', s.name);
+      return false;
+    }
     s.id = s.placeId || (slug(s.city || 'duluth') + '-' + slug(s.name));
     s.neighborhood = s.neighborhood || NEIGHBORHOODS[key] || s.city || "Duluth";
     s.model = s.model || 'independent';
+    return true;
   });
 
   // Multiple shops can sit at the exact same building. Without offsetting,
@@ -1114,10 +1122,10 @@ function boot() {
       resultsMetaEl.classList.remove('viewport-flash');
       void resultsMetaEl.offsetWidth;
       resultsMetaEl.classList.add('viewport-flash');
-      // Remove class after transition so it can re-trigger next pan
-      resultsMetaEl.addEventListener('transitionend', () => {
+      clearTimeout(resultsMetaEl._flashTimer);
+      resultsMetaEl._flashTimer = setTimeout(() => {
         resultsMetaEl.classList.remove('viewport-flash');
-      }, { once: true });
+      }, 300);
     }
 
     shopListEl.innerHTML = '';

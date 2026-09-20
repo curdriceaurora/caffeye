@@ -59,6 +59,24 @@ class CuratePlacesTests(unittest.TestCase):
         self.assertEqual(updated[0]["cw"]["tier"], "excellent")
         self.assertTrue(updated[0]["cw"]["hasMeetingRoom"])
 
+    def test_ambiguous_name_city_fallback_skipped(self):
+        # Two Starbucks in Marietta with no placeId match should not be decorated
+        places = [
+            {"placeId": "p_marietta_1", "name": "Starbucks", "city": "Marietta", "address": "100 Main St"},
+            {"placeId": "p_marietta_2", "name": "Starbucks", "city": "Marietta", "address": "200 South Rd"},
+        ]
+        curations = {
+            "unmatched_pid": {
+                "name": "Starbucks",
+                "city": "Marietta",
+                "cw": {"tier": "excellent", "hasMeetingRoom": True}
+            }
+        }
+        updated, count = CP.apply_curations(places, curations)
+        self.assertEqual(count, 0)
+        self.assertNotIn("cw", updated[0])
+        self.assertNotIn("cw", updated[1])
+
     def test_audit_computation(self):
         places = [
             {"name": "P1", "county": "Fulton", "cw": {"tier": "excellent", "hasMeetingRoom": True}},

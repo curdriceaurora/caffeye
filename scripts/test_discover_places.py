@@ -349,6 +349,20 @@ class CrawlTests(unittest.TestCase):
         self.assertEqual(len(raw), 25)
         self.assertEqual(fake.calls[D.SKU_FULL], 4)
 
+    def test_load_exclusions_supports_strings_and_dicts(self):
+        import tempfile
+        with tempfile.NamedTemporaryFile("w", delete=False) as tf:
+            json.dump([{"placeId": "ChIJ111"}, "ChIJ222"], tf)
+            tf_path = Path(tf.name)
+        try:
+            orig = D.EXCLUDE_PATH
+            D.EXCLUDE_PATH = tf_path
+            exclusions = D.load_exclusions()
+            self.assertEqual(exclusions, {"ChIJ111", "ChIJ222"})
+        finally:
+            D.EXCLUDE_PATH = orig
+            tf_path.unlink(missing_ok=True)
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -52,6 +52,14 @@ import urllib.request
 from datetime import date
 from pathlib import Path
 
+try:
+    import places_ledger
+except ImportError:
+    try:
+        from . import places_ledger
+    except Exception:
+        places_ledger = None
+
 ROOT = Path(__file__).resolve().parent.parent
 SHOPS_PATH = ROOT / "public" / "shops.json"
 SCRATCH = ROOT / "scratch"
@@ -227,7 +235,14 @@ def _request(key: str, url: str, body, mask: str) -> dict:
     for attempt in (1, 2):  # one retry, for transient failures only
         try:
             with urllib.request.urlopen(req, timeout=25) as r:
-                return json.load(r)
+                data = json.load(r)
+                if places_ledger:
+                    sku = "text_search_enterprise" if body is not None else "place_details_enterprise"
+                    try:
+                        places_ledger.record(sku)
+                    except Exception:
+                        pass
+                return data
         except urllib.error.HTTPError as e:
             msg = e.read().decode(errors="replace").replace(key, "<key>")[:400]
             if e.code in FATAL_HTTP:

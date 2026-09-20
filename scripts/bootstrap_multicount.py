@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
-"""Generate a multi-county TEST FIXTURE for exercising the county filter and list
-pagination at scale. NEVER writes to public/ — output is a scratch file, gitignored,
-that a developer can manually copy over public/shops.json for local testing only.
+"""[HISTORICAL TOOLING] Generate a multi-county TEST FIXTURE for exercising the county filter
+and list pagination at scale (superseded by discover_places.py and real multi-county crawls).
+NEVER writes to public/ — output is a scratch file, gitignored, that a developer can manually
+copy over public/shops.json for local testing only.
 
 Duluth is real data and mostly sits in Gwinnett County — a handful of its 61 real
 shops have Johns Creek addresses and are actually in Fulton (Georgia postal cities
