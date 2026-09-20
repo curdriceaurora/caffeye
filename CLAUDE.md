@@ -172,12 +172,13 @@ The official Caffeye brand is **The Bean Eye v1.0** — an organic coffee bean s
   - Display / Brand Wordmark: *Fraunces* (800 weight, optical size 144, soft 100)
   - UI / Body: *Inter*
 - **Brand Assets & Favicons (`public/brand/`)**:
-  - `public/favicon.ico`: 32×32 multi-resolution browser fallback icon.
-  - `public/brand/icons/favicon.svg`: Vector favicon with adaptive dark mode support (`@media (prefers-color-scheme: dark)` flips mark to `#F4F3ED`).
+  - `public/favicon.ico`: 16/32/48 multi-resolution browser fallback icon.
+  - `public/brand/icons/favicon.svg`: High-contrast vector seal favicon (Forest `#293F34` disc + Gold `#DCAF59` perimeter ring + Paper `#F4F3ED` Bean Eye), fully visible on both dark-mode and light-mode browser tab themes.
+  - `public/brand/icons/favicon-{16,32,48}.png`: Raster favicons with matching high-contrast seal treatment.
   - `public/brand/icons/apple-touch-icon.png`: 180×180 iOS home-screen bookmark icon.
   - `public/brand/icons/icon-192.png` & `icon-512.png`: PWA manifest icons referenced in `public/manifest.webmanifest`.
   - `public/brand/social/caffeye-share-1200x630.png`: High-resolution OpenGraph and Twitter summary social preview card.
-  - `public/brand/logos/`: Vector mark locks (`caffeye-symbol-forest.svg`, `caffeye-horizontal-forest.svg`, `caffeye-symbol-micro.svg`).
+  - `public/brand/logos/`: Vector mark locks (`caffeye-symbol-forest.svg`, `caffeye-horizontal-forest.svg`, `caffeye-symbol-micro.svg`). Header uses `caffeye-symbol-forest.svg` as a clean typographic partner.
 - **Header & Reset-to-Home**:
   - The top bar pairs the Bean Eye mark (`#brandHomeBtn`) at 22px height (17px on mobile) with the dynamic region title (`.brand`).
   - Clicking `#brandHomeBtn` resets all filters back to default (clears county/city selection, resets search, restores Indie-only default view).

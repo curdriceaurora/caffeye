@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Coffee in Duluth</title>
-<link rel="icon" type="image/svg+xml" href="./brand/icons/favicon.svg">
+<link rel="icon" type="image/svg+xml" sizes="any" href="./brand/icons/favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="./brand/icons/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="./brand/icons/favicon-16.png">
 <link rel="icon" href="./favicon.ico">
@@ -404,7 +404,7 @@
 <div class="app">
   <header>
     <div class="brand-group" id="brandHomeBtn" role="button" tabindex="0" title="Caffeye — Reset filters" aria-label="Caffeye — Reset filters">
-      <img src="./brand/icons/favicon.svg" alt="Caffeye" class="brand-logo" width="22" height="22">
+      <img src="./brand/logos/caffeye-symbol-forest.svg" alt="Caffeye" class="brand-logo" width="22" height="22">
       <div class="brand">Coffee in Duluth</div>
     </div>
     <div class="freshness">Loading spots…</div>
@@ -1145,7 +1145,7 @@ function boot() {
     if (filtered.length === 0) {
       const empty = document.createElement('li');
       empty.className = 'empty-state';
-      empty.innerHTML = '<img src="./brand/icons/favicon.svg" alt="" width="28" height="28" style="opacity:0.35;display:block;margin:0 auto 8px;">Nothing here — try zooming out or clearing a filter.';
+      empty.innerHTML = '<img src="./brand/logos/caffeye-symbol-forest.svg" alt="" width="28" height="28" style="opacity:0.35;display:block;margin:0 auto 8px;">Nothing here — try zooming out or clearing a filter.';
       shopListEl.appendChild(empty);
     }
     shown.forEach((shop, i) => {
