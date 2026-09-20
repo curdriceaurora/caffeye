@@ -11,12 +11,23 @@ For product principles and design rationale, read `PRODUCT.md` first.
 ## File layout
 
 ```
-public/index.html # the entire app (~91 KB) — the ONLY file Cloudflare publishes
-wrangler.jsonc    # Cloudflare deploy config; assets.directory = ./public
-PRODUCT.md        # principles + design rationale (single source of truth)
-REQUIREMENTS.md   # numbered requirements (R1.x – R10.x)
-TESTS.md          # tests traced to requirement IDs
-README.md         # public-facing overview
+public/
+  index.html          # the entire app shell (~95 KB)
+  shops.json          # curated shop data (Duluth baseline)
+  places.json         # discovered places across North Atlanta
+  favicon.ico         # root browser favicon fallback
+  manifest.webmanifest # PWA web manifest
+  brand/              # Bean Eye v1.0 brand assets
+    icons/            # favicon.svg, PNG favicons, apple-touch-icon, PWA icons
+    logos/            # vector symbols & horizontal wordmark locks
+    social/           # OpenGraph / Twitter share cards (1200x630)
+    tokens/           # brand color & typography reference tokens
+wrangler.jsonc        # Cloudflare deploy config; assets.directory = ./public
+brand/                # raw source brand packages (caffeye-v1)
+PRODUCT.md            # principles + design rationale (single source of truth)
+REQUIREMENTS.md       # numbered requirements (R1.x – R10.x)
+TESTS.md              # tests traced to requirement IDs
+README.md             # public-facing overview
 ```
 
 ## Run locally
@@ -31,7 +42,7 @@ python3 -m http.server 8765
 
 The Cloudflare Worker `duluth-coffee-shoppes` is connected to the GitHub repo `curdriceaurora/caffeye`. **Pushing to `main` triggers an automatic deploy.** No `wrangler deploy` needed in the normal flow.
 
-The repo layout is designed so wrangler can't accidentally publish secrets: `assets.directory` points to `./public/`, and only `index.html` lives in there. Everything else (README, docs, `.git/`, `.wrangler/` cache) is outside the published tree.
+The repo layout is designed so wrangler can't accidentally publish secrets: `assets.directory` points to `./public/`, which contains only client-safe static assets (`index.html`, data json files, brand media, favicons, manifest). Everything else (scripts, private keys, README, docs, `.git/`, `.wrangler/` cache) is outside the published tree.
 
 For manual hotfix deploys:
 
@@ -40,7 +51,7 @@ For manual hotfix deploys:
 wrangler deploy
 ```
 
-`wrangler login` is set up; tokens are stored in the user's keyring. If a fresh login is needed, OAuth opens in the default browser — the user clicks "Allow" once. **Never** add files to `public/` other than `index.html` — anything you drop there is publicly served.
+`wrangler login` is set up; tokens are stored in the user's keyring. If a fresh login is needed, OAuth opens in the default browser — the user clicks "Allow" once. Do not add sensitive credentials or scratch files to `public/` — anything dropped there is publicly served.
 
 ## Editing the data
 
@@ -146,6 +157,30 @@ SHOPS.filter(s => !CATS[s.category]);                      // must be []
 SHOPS.filter(s => !s.addrKey || !ADDR[s.addrKey]);         // must be []
 SHOPS.filter(s => !s.addrKey.startsWith(s.city.toLowerCase() + '-'));  // must be []
 ```
+
+### Brand Identity & Design System (`brand/caffeye-v1/` & `public/brand/`)
+
+The official Caffeye brand is **The Bean Eye v1.0** — an organic coffee bean silhouette enclosing a focused pupil with radiant brows.
+
+- **Color Palette Tokens**:
+  - Forest (Primary / Accent): `#293F34` (P3: `color(display-p3 0.161 0.247 0.204)`)
+  - Paper (Canvas / Light text): `#F4F3ED`
+  - Gold (Accent / Warmth): `#DCAF59`
+  - Ink (Body / Text): `#222721`
+  - Muted (Subtitles / Borders): `#60645F` / `#E5E3D8`
+- **Typography**:
+  - Display / Brand Wordmark: *Fraunces* (800 weight, optical size 144, soft 100)
+  - UI / Body: *Inter*
+- **Brand Assets & Favicons (`public/brand/`)**:
+  - `public/favicon.ico`: 32×32 multi-resolution browser fallback icon.
+  - `public/brand/icons/favicon.svg`: Vector favicon with adaptive dark mode support (`@media (prefers-color-scheme: dark)` flips mark to `#F4F3ED`).
+  - `public/brand/icons/apple-touch-icon.png`: 180×180 iOS home-screen bookmark icon.
+  - `public/brand/icons/icon-192.png` & `icon-512.png`: PWA manifest icons referenced in `public/manifest.webmanifest`.
+  - `public/brand/social/caffeye-share-1200x630.png`: High-resolution OpenGraph and Twitter summary social preview card.
+  - `public/brand/logos/`: Vector mark locks (`caffeye-symbol-forest.svg`, `caffeye-horizontal-forest.svg`, `caffeye-symbol-micro.svg`).
+- **Header & Reset-to-Home**:
+  - The top bar pairs the Bean Eye mark (`#brandHomeBtn`) at 22px height (17px on mobile) with the dynamic region title (`.brand`).
+  - Clicking `#brandHomeBtn` resets all filters back to default (clears county/city selection, resets search, restores Indie-only default view).
 
 ## Key conventions to preserve
 

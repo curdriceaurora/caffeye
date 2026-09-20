@@ -4,6 +4,26 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Coffee in Duluth</title>
+<link rel="icon" type="image/svg+xml" href="./brand/icons/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="./brand/icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="./brand/icons/favicon-16.png">
+<link rel="icon" href="./favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="./brand/icons/apple-touch-icon.png">
+<link rel="manifest" href="./manifest.webmanifest">
+<meta name="theme-color" content="#293F34">
+<meta name="description" content="A local with an eye for good spots. Curated coffee, bakeries & tea across North Atlanta.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Caffeye">
+<meta property="og:title" content="Caffeye — We know a spot.">
+<meta property="og:description" content="A local with an eye for good spots. Curated coffee, bakeries & tea across North Atlanta.">
+<meta property="og:image" content="./brand/social/caffeye-share-1200x630.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Caffeye. We know a spot. Coffee, bakeries and tea.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Caffeye — We know a spot.">
+<meta name="twitter:description" content="A local with an eye for good spots. Curated coffee, bakeries & tea across North Atlanta.">
+<meta name="twitter:image" content="./brand/social/caffeye-share-1200x630.png">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
 <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
 <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
@@ -27,6 +47,12 @@
     --c-specialty: #7b6cb8;
     --c-late: #3f4f8a;
     --c-work: #2e7d4f;
+    /* Caffeye brand tokens */
+    --caffeye-forest: #293F34;
+    --caffeye-gold: #DCAF59;
+    --caffeye-paper: #F4F3ED;
+    --caffeye-ink: #222721;
+    --caffeye-muted: #60645F;
   }
   * { box-sizing: border-box; }
   html, body { margin: 0; padding: 0; height: 100%; }
@@ -41,12 +67,27 @@
   .app { display: flex; flex-direction: column; height: 100vh; }
 
   header {
-    padding: 14px 20px 12px;
+    padding: 12px 20px 10px;
     background: var(--surface);
     border-bottom: 1px solid var(--border);
     display: flex;
-    align-items: baseline;
+    align-items: center;
     gap: 14px;
+    flex-shrink: 0;
+  }
+  .brand-group {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    user-select: none;
+    text-decoration: none;
+    color: inherit;
+  }
+  .brand-logo {
+    width: 22px;
+    height: 22px;
+    display: block;
     flex-shrink: 0;
   }
   .brand {
@@ -54,6 +95,7 @@
     font-weight: 800;
     font-size: 22px;
     letter-spacing: -0.015em;
+    color: var(--caffeye-forest);
   }
   .freshness { font-size: 12px; color: var(--muted); }
 
@@ -311,6 +353,12 @@
     padding: 8px 20px; font-size: 11px; color: var(--muted);
     flex-shrink: 0; text-align: center;
   }
+  .footer-brand {
+    font-family: 'Fraunces', serif;
+    font-weight: 800;
+    color: var(--caffeye-forest);
+    letter-spacing: -0.01em;
+  }
   .empty-state { padding: 32px 20px; text-align: center; color: var(--muted); font-size: 13px; }
 
   @media (prefers-reduced-motion: reduce) {
@@ -323,6 +371,8 @@
 
   @media (max-width: 820px) {
     header { padding: 6px 14px 5px; flex-wrap: wrap; gap: 4px; }
+    .brand-group { gap: 7px; }
+    .brand-logo { width: 17px; height: 17px; }
     .brand { font-size: 16px; }
     .freshness { font-size: 10.5px; }
     .filter-bar { padding: 4px 12px 5px; }
@@ -353,7 +403,10 @@
 <body>
 <div class="app">
   <header>
-    <div class="brand">Coffee in Duluth</div>
+    <div class="brand-group" id="brandHomeBtn" role="button" tabindex="0" title="Caffeye — Reset filters" aria-label="Caffeye — Reset filters">
+      <img src="./brand/icons/favicon.svg" alt="Caffeye" class="brand-logo" width="22" height="22">
+      <div class="brand">Coffee in Duluth</div>
+    </div>
     <div class="freshness">Loading spots…</div>
   </header>
 
@@ -386,7 +439,7 @@
     </aside>
   </div>
 
-  <footer>Ratings, hours, and addresses change. Verify before visiting.</footer>
+  <footer><span class="footer-brand">caffeye</span> · We know a spot. · Ratings, hours, and addresses change. Verify before visiting.</footer>
 </div>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
@@ -1092,7 +1145,7 @@ function boot() {
     if (filtered.length === 0) {
       const empty = document.createElement('li');
       empty.className = 'empty-state';
-      empty.textContent = 'Nothing here — try zooming out or clearing a filter.';
+      empty.innerHTML = '<img src="./brand/icons/favicon.svg" alt="" width="28" height="28" style="opacity:0.35;display:block;margin:0 auto 8px;">Nothing here — try zooming out or clearing a filter.';
       shopListEl.appendChild(empty);
     }
     shown.forEach((shop, i) => {
@@ -1344,6 +1397,24 @@ function boot() {
   }
 
   searchInput.addEventListener('input', e => { state.search = e.target.value; renderList(); });
+
+  const brandHomeBtn = document.getElementById('brandHomeBtn');
+  if (brandHomeBtn) {
+    const resetAll = (e) => {
+      e.preventDefault();
+      selectCounty(null);
+      selectCity(null);
+      state.activeModel = 'independent';
+      state.categories.clear();
+      state.features.clear();
+      state.search = '';
+      if (searchInput) searchInput.value = '';
+      deselectShop();
+      render();
+    };
+    brandHomeBtn.addEventListener('click', resetAll);
+    brandHomeBtn.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') resetAll(e); });
+  }
 
   render();
 
