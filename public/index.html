@@ -558,6 +558,18 @@ Promise.allSettled([
   if (placesData && Array.isArray(placesData.places)) {
     placesData.places.forEach(p => {
       if (p.placeId && seenPlaceIds.has(p.placeId)) return;
+      // Guard against relisted duplicate of a curated shop (<60m and shared non-generic name token)
+      const isRelistedDupe = SHOPS.some(s => {
+        if (!s.curated) return false;
+        const c = ADDR[s.addrKey] || s;
+        if (!c.lat || !c.lng || !p.lat || !p.lng) return false;
+        if (Math.abs(p.lat - c.lat) > 0.0006 || Math.abs(p.lng - c.lng) > 0.0006) return false;
+        const pTokens = (p.name || '').toLowerCase().split(/[^a-z0-9]+/).filter(t => t.length >= 3 && !['cafe', 'coffee', 'bakery', 'tea'].includes(t));
+        const sTokens = (s.name || '').toLowerCase().split(/[^a-z0-9]+/).filter(t => t.length >= 3 && !['cafe', 'coffee', 'bakery', 'tea'].includes(t));
+        return pTokens.some(t => sTokens.includes(t));
+      });
+      if (isRelistedDupe) return;
+
       const addrKey = `place-${p.placeId}`;
       ADDR[addrKey] = { lat: p.lat, lng: p.lng };
       NEIGHBORHOODS[addrKey] = p.neighborhood || p.city;
