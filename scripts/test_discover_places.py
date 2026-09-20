@@ -29,11 +29,24 @@ class FilterTests(unittest.TestCase):
         self.assertTrue(D.is_chain("Dunkin"))
         self.assertTrue(D.is_chain("Krispy Kreme"))
         self.assertTrue(D.is_chain("Panera Bread"))
-        self.assertTrue(D.is_chain("McDonald's"))
+        self.assertTrue(D.is_chain("Tim Hortons"))
+        self.assertTrue(D.is_chain("7 Brew Coffee"))
         self.assertFalse(D.is_chain("Land of a Thousand Hills Coffee"))
         self.assertFalse(D.is_chain("Sweet Hut Bakery & Cafe"))
         self.assertFalse(D.is_chain("Paris Baguette"))  # in curated Duluth set
         self.assertFalse(D.is_chain("Tous Les Jours"))  # in curated Duluth set
+
+    def test_grocery_and_fast_food_identified(self):
+        self.assertTrue(D.is_grocery("Kroger Bakery"))
+        self.assertTrue(D.is_grocery("Costco Bakery"))
+        self.assertTrue(D.is_grocery("Whole Foods Market"))
+        self.assertTrue(D.is_grocery("Sam's Club Cafe"))
+        self.assertFalse(D.is_grocery("Starbucks"))
+        self.assertFalse(D.is_grocery("Valor Coffee"))
+        self.assertTrue(D.is_fast_food("McDonald's"))
+        self.assertTrue(D.is_fast_food("McCafe"))
+        self.assertTrue(D.is_fast_food("Burger King"))
+        self.assertFalse(D.is_fast_food("Caribou Coffee"))
 
     def test_category_by_primary_type(self):
         self.assertEqual(D.category_for({"primaryType": "coffee_shop"}), "Coffee")
@@ -224,7 +237,7 @@ class RecordTests(unittest.TestCase):
         rec, _ = D.to_record(BY_NAME["Land of a Thousand Hills Coffee"])
         self.assertNotIn("late", rec)
 
-    def test_closed_and_out_of_region_and_chain_dropped(self):
+    def test_closed_and_out_of_region_and_grocery_dropped(self):
         p = json.loads(json.dumps(BY_NAME["Sweet Hut Bakery & Cafe"]))
         p["businessStatus"] = "CLOSED_TEMPORARILY"
         self.assertEqual(D.to_record(p)[1], "status:CLOSED_TEMPORARILY")
@@ -232,8 +245,17 @@ class RecordTests(unittest.TestCase):
         p["addressComponents"] = [comp("Hall County", "administrative_area_level_2")]
         self.assertEqual(D.to_record(p)[1], "county")
         p = json.loads(json.dumps(BY_NAME["Sweet Hut Bakery & Cafe"]))
-        p["displayName"]["text"] = "Starbucks"
-        self.assertEqual(D.to_record(p)[1], "chain")
+        p["displayName"]["text"] = "Kroger Bakery"
+        self.assertEqual(D.to_record(p)[1], "grocery")
+        p = json.loads(json.dumps(BY_NAME["Sweet Hut Bakery & Cafe"]))
+        p["displayName"]["text"] = "McDonald's"
+        self.assertEqual(D.to_record(p)[1], "fast_food")
+        # Chains like Starbucks or Tim Hortons are NOT dropped; they are kept as franchise
+        p = json.loads(json.dumps(BY_NAME["Sweet Hut Bakery & Cafe"]))
+        p["displayName"]["text"] = "Tim Hortons"
+        rec, reason = D.to_record(p)
+        self.assertIsNone(reason)
+        self.assertEqual(rec["model"], "franchise")
 
 
 class BuildTests(unittest.TestCase):

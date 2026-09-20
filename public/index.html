@@ -548,7 +548,7 @@ function boot() {
   const state = {
     activeCounty: null,          // null = All counties; otherwise the county name
     activeCity: null,            // null = All cities; otherwise the city name
-    activeModel: null,           // null = All models; 'independent' or 'franchise'
+    activeModel: 'independent',  // Default to Indie only; null = All models; 'independent' or 'franchise'
     categories: new Set(),
     features: new Set(),
     search: '',
@@ -1348,7 +1348,7 @@ function boot() {
   render();
 
   // Expose key globals for console testing and the test suite in TESTS.md.
-  Object.assign(window, { SHOPS, ADDR, NEIGHBORHOODS, CATS, CITIES, COUNTIES, REGION_LABEL, map, markers, clusterGroup, selectCity, selectCounty, exceedsLabelSafetyCap, placeLabels });
+  Object.assign(window, { state, SHOPS, ADDR, NEIGHBORHOODS, CATS, CITIES, COUNTIES, REGION_LABEL, map, markers, clusterGroup, selectCity, selectCounty, exceedsLabelSafetyCap, placeLabels });
 }
 
 </script>

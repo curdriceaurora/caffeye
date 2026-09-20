@@ -189,27 +189,56 @@
    "googleUrl": "https://maps.google.com/?cid=17524120320631649283&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
-   "placeId": "ChIJ04MhEsu99YgRsFH_gw_BmUI",
-   "name": "Kroger Bakery",
-   "address": "2100 Riverside Pkwy, Lawrenceville, GA 30043, USA",
-   "city": "Lawrenceville",
-   "county": "Gwinnett",
-   "lat": 33.966656,
-   "lng": -84.033522,
-   "category": "Bakery+Cafe",
+   "placeId": "ChIJ06gED38L9YgRE8BB4eAXQpU",
+   "name": "Dunkin'",
+   "address": "8290 Roswell Rd NE Suite D, Atlanta, GA 30350, USA",
+   "city": "Atlanta",
+   "county": "Fulton",
+   "lat": 33.98115,
+   "lng": -84.350805,
+   "category": "Coffee",
    "model": "franchise",
    "types": [
-    "bakery",
+    "coffee_shop",
     "bagel_shop",
+    "cafe",
     "donut_shop",
-    "dessert_shop"
+    "bakery"
    ],
-   "rating": 3.8,
-   "ratingNum": 4,
-   "ratingCount": "4",
-   "hours": null,
-   "website": "https://www.kroger.com/d/bakery?cid=loc_01100374B_gmb",
-   "googleUrl": "https://maps.google.com/?cid=4799079150323192240&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "rating": 3.6,
+   "ratingNum": 698,
+   "ratingCount": "698",
+   "hours": "Mon-Sun 5am-9pm",
+   "website": "https://www.dunkindonuts.com/locations/us/ga/atlanta/8290-roswell-rd/store-301667/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=301667&y_source=1_MTIxMDc3NjctNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=10755185114733461523&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJ07x97P-T9YgRBaY6g3xWqxY",
+   "name": "Dunkin'",
+   "address": "4450K Nelson Brogdon Blvd, Sugar Hill, GA 30518, USA",
+   "city": "Sugar Hill",
+   "county": "Gwinnett",
+   "lat": 34.09652,
+   "lng": -84.015327,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "cafe",
+    "donut_shop",
+    "bakery"
+   ],
+   "rating": 3.5,
+   "ratingNum": 672,
+   "ratingCount": "672",
+   "hours": "Mon-Thu 4am-10pm · Fri 4am-11pm · Sat 6am-11pm · Sun 6am-10pm",
+   "late": {
+    "tier": "10pm+",
+    "when": "Daily till 11pm"
+   },
+   "website": "https://www.dunkindonuts.com/locations/us/ga/sugar-hill/4450k-nelson-blogden-blvd/store-332011/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=332011&y_source=1_MTIxMDk4NzQtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=1633494382629529093&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJ0SzvPgC59YgR2l7dQIcAimI",
@@ -376,6 +405,27 @@
    "googleUrl": "https://maps.google.com/?cid=14756928643591264347&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJ13gBop119YgResMqoUpbLfE",
+   "name": "Starbucks Coffee Company",
+   "address": "11740 Haynes Bridge Rd, Alpharetta, GA 30009, USA",
+   "city": "Alpharetta",
+   "county": "Fulton",
+   "lat": 34.06811,
+   "lng": -84.29417,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.4,
+   "ratingNum": 140,
+   "ratingCount": "140",
+   "hours": "Mon-Sun 5am-8pm",
+   "website": "https://www.starbucks.com/store-locator/store/1026798/",
+   "googleUrl": "https://maps.google.com/?cid=17378646913182253946&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJ13gKx_a-9YgRz4giUCtXDQc",
    "name": "Blue Rooster Bake Shop & Eatery",
    "address": "169 W Pike St, Lawrenceville, GA 30046, USA",
@@ -394,6 +444,27 @@
    "hours": "Mon-Sat 9am-4pm · Sun Closed",
    "website": "http://blueroosterbakeshops.com/",
    "googleUrl": "https://maps.google.com/?cid=508158176502384847&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJ1Q7elSS_9YgRy5tABzHWDGg",
+   "name": "Starbucks",
+   "address": "665 Duluth Hwy, Lawrenceville, GA 30046, USA",
+   "city": "Lawrenceville",
+   "county": "Gwinnett",
+   "lat": 33.96619,
+   "lng": -84.00901,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.2,
+   "ratingNum": 360,
+   "ratingCount": "360",
+   "hours": "Mon-Sun 5am-8pm",
+   "website": "https://www.starbucks.com/store-locator/store/1028636",
+   "googleUrl": "https://maps.google.com/?cid=7497602985728449483&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJ1Uqy_Lmk9YgRItQ9QkMEyHQ",
@@ -437,6 +508,27 @@
    "hours": "Mon Closed · Tue-Sun 7am-2pm",
    "website": "http://www.dutchmonkeydoughnuts.com/",
    "googleUrl": "https://maps.google.com/?cid=8473580126009422112&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJ1VzqTIOX9YgRc-mB21uH4_Y",
+   "name": "Starbucks Coffee Company",
+   "address": "1041 Peachtree Industrial Blvd, Suwanee, GA 30024, USA",
+   "city": "Suwanee",
+   "county": "Gwinnett",
+   "lat": 34.05131,
+   "lng": -84.09081,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.2,
+   "ratingNum": 848,
+   "ratingCount": "848",
+   "hours": "Mon-Sun 5am-9pm",
+   "website": "https://www.starbucks.com/store-locator/store/18113/",
+   "googleUrl": "https://maps.google.com/?cid=17790211781638089075&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJ1Wgmq9e_9YgRruf4PSrfnb4",
@@ -640,6 +732,76 @@
    "googleUrl": "https://maps.google.com/?cid=11122326909191030316&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJ2UapqMaa9YgR81Nm9OanexQ",
+   "name": "Dunkin'",
+   "address": "1165 Buford Hwy, Cumming, GA 30041, USA",
+   "city": "Cumming",
+   "county": "Forsyth",
+   "lat": 34.174795,
+   "lng": -84.127392,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "cafe",
+    "donut_shop",
+    "bakery"
+   ],
+   "rating": 3.7,
+   "ratingNum": 616,
+   "ratingCount": "616",
+   "hours": "Mon-Sun 5am-9pm",
+   "website": "https://www.dunkindonuts.com/locations/us/ga/cumming/1165-buford-hwy/store-331009/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=331009&y_source=1_MTIxMDg2OTQtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=1475957913278632947&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJ2ZxKLhV19YgRMqYUFjAPMb4",
+   "name": "Panera Bread",
+   "address": "6480 North Point Pkwy #1130, Alpharetta, GA 30022, USA",
+   "city": "Alpharetta",
+   "county": "Fulton",
+   "lat": 34.044324,
+   "lng": -84.293375,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "cafe",
+    "coffee_shop",
+    "bakery"
+   ],
+   "rating": 4.0,
+   "ratingNum": 1155,
+   "ratingCount": "1,155",
+   "hours": "Mon-Fri 6:30am-9pm · Sat-Sun 7am-9pm",
+   "website": "https://www.panerabread.com/en-us/cafe/locations/ga/alpharetta/6480-north-point-pkwy?utm_medium=local&utm_source=google&utm_campaign=dpm-dist&utm_term=202570&utm_content=main",
+   "googleUrl": "https://maps.google.com/?cid=13704751840268428850&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJ2_5OX43u9YgROcwTzGPxZrQ",
+   "name": "Dunkin'",
+   "address": "2630 Old Winder Hwy, Braselton, GA 30517, USA",
+   "city": "Braselton",
+   "county": "Gwinnett",
+   "lat": 34.120748,
+   "lng": -83.827234,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "donut_shop",
+    "cafe",
+    "bakery"
+   ],
+   "rating": 3.3,
+   "ratingNum": 559,
+   "ratingCount": "559",
+   "hours": "Mon-Sat 5am-9pm · Sun 6am-9pm",
+   "website": "https://www.dunkindonuts.com/locations/us/ga/braselton/2630-old-winder-highway/store-355335/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=355335&y_source=1_MTIxMTQxMjMtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=12999342785379421241&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJ3-qNe1MJ9YgRcgVaBvoNc8A",
    "name": "Bagel Boys Cafe - Perimeter",
    "address": "6355 Peachtree Dunwoody Rd NE, Sandy Springs, GA 30328, USA",
@@ -684,6 +846,28 @@
    "hours": "Mon-Fri 7am-3pm · Sat 8am-3pm · Sun 9am-2pm",
    "website": "http://fuelatl.com/",
    "googleUrl": "https://maps.google.com/?cid=3156037175856074691&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJ32YUaEwJ9YgRdz0I_Rphvcc",
+   "name": "Starbucks Coffee Company",
+   "address": "6001 Peachtree Dunwoody Rd NE, Atlanta, GA 30328, USA",
+   "city": "Atlanta",
+   "county": "Fulton",
+   "neighborhood": "Perimeter Center",
+   "lat": 33.91818,
+   "lng": -84.35086,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.1,
+   "ratingNum": 1131,
+   "ratingCount": "1,131",
+   "hours": "Mon-Sun 5am-8pm",
+   "website": "https://www.starbucks.com/store-locator/store/1015646/",
+   "googleUrl": "https://maps.google.com/?cid=14392766752688192887&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJ32mtN7-Z9YgRXBrwWz_5Rhs",
@@ -892,26 +1076,6 @@
    "googleUrl": "https://maps.google.com/?cid=10999088687519649169&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
-   "placeId": "ChIJ44lVMd509YgREoJOJscZgwY",
-   "name": "Sam's Club Bakery",
-   "address": "10600 Davis Dr, Alpharetta, GA 30009, USA",
-   "city": "Alpharetta",
-   "county": "Fulton",
-   "lat": 34.042707,
-   "lng": -84.315189,
-   "category": "Bakery+Cafe",
-   "model": "franchise",
-   "types": [
-    "bakery"
-   ],
-   "rating": 4.4,
-   "ratingNum": 8,
-   "ratingCount": "8",
-   "hours": "Mon-Sun 9am-8pm",
-   "website": "https://www.samsclub.com/club/6646-alpharetta-ga/bakery",
-   "googleUrl": "https://maps.google.com/?cid=469247129308529170&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
    "placeId": "ChIJ4QvFBAB19YgRV4ajpaTirO4",
    "name": "Just Love Coffee Cafe Alpharetta",
    "address": "735 N Main St Ste 100, Alpharetta, GA 30009, USA",
@@ -933,27 +1097,94 @@
    "googleUrl": "https://maps.google.com/?cid=17198370273802552919&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
-   "placeId": "ChIJ4_ASduqQ9YgRlmIeXFrixio",
-   "name": "Kroger Bakery",
-   "address": "6001 Cumming Hwy NE, Sugar Hill, GA 30518, USA",
-   "city": "Sugar Hill",
-   "county": "Gwinnett",
-   "lat": 34.122057,
-   "lng": -84.0767,
-   "category": "Bakery+Cafe",
+   "placeId": "ChIJ4Vkk5ohz9YgRNDvJBRINBuk",
+   "name": "Starbucks Coffee Company",
+   "address": "12330 Crabapple Rd, Alpharetta, GA 30004, USA",
+   "city": "Alpharetta",
+   "county": "Fulton",
+   "lat": 34.081658,
+   "lng": -84.357942,
+   "category": "Coffee",
    "model": "franchise",
    "types": [
-    "bakery",
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.2,
+   "ratingNum": 346,
+   "ratingCount": "346",
+   "hours": "Mon-Sun 5am-8pm",
+   "website": "https://www.starbucks.com/store-locator/store/10348/",
+   "googleUrl": "https://maps.google.com/?cid=16791122631755119412&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJ4YRMO_uv9YgRAuDrrY15w4M",
+   "name": "Dunkin'",
+   "address": "5161 US-78, Stone Mountain, GA 30087, USA",
+   "city": "Stone Mountain",
+   "county": "Gwinnett",
+   "lat": 33.824379,
+   "lng": -84.10857,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
     "bagel_shop",
     "donut_shop",
-    "dessert_shop"
+    "bakery",
+    "cafe"
    ],
-   "rating": 3.4,
-   "ratingNum": 5,
-   "ratingCount": "5",
-   "hours": null,
-   "website": "https://www.kroger.com/d/bakery?cid=loc_01100687B_gmb",
-   "googleUrl": "https://maps.google.com/?cid=3082399872702112406&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "rating": 3.7,
+   "ratingNum": 784,
+   "ratingCount": "784",
+   "hours": "Mon-Sun Open 24 hours",
+   "website": "https://www.dunkindonuts.com/locations/us/ga/stone-mountain/5161-highway-78/store-302851/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=302851&y_source=1_MTIxMDc4OTAtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=9494566088842403842&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJ4_zrUyLG9YgRynUzJz0p74Q",
+   "name": "Dunkin'",
+   "address": "4152 Atlanta Hwy, Loganville, GA 30052, USA",
+   "city": "Loganville",
+   "county": "Gwinnett",
+   "lat": 33.8438,
+   "lng": -83.908488,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "cafe",
+    "donut_shop",
+    "bakery"
+   ],
+   "rating": 3.6,
+   "ratingNum": 842,
+   "ratingCount": "842",
+   "hours": "Mon-Sat 5am-9pm · Sun 6am-9pm",
+   "website": "https://www.dunkindonuts.com/locations/us/ga/loganville/4152-atlanta-hwy/store-338629/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=338629&y_source=1_MTIxMDU1ODUtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=9578920275067762122&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJ4aehhpoP9YgRw9_kXwqeIwA",
+   "name": "Starbucks Coffee Company",
+   "address": "5840 Roswell Rd, Atlanta, GA 30328, USA",
+   "city": "Atlanta",
+   "county": "Fulton",
+   "lat": 33.91493,
+   "lng": -84.37953,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 3.6,
+   "ratingNum": 512,
+   "ratingCount": "512",
+   "hours": "Mon-Sun 5am-9pm",
+   "website": "https://www.starbucks.com/store-locator/store/1021671",
+   "googleUrl": "https://maps.google.com/?cid=10025391580569539&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJ4cjtPSJ39YgRyasj0mhpFrc",
@@ -974,6 +1205,27 @@
    "hours": "Mon-Fri 6am-6pm · Sat 7am-4pm · Sun 8am-2pm",
    "website": "https://somethingnicebakery.com/",
    "googleUrl": "https://maps.google.com/?cid=13192848057351515081&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJ4ycpL1uU9YgRDRHuAKqQkQI",
+   "name": "Starbucks Coffee Company",
+   "address": "3333 Buford Dr, Buford, GA 30519, USA",
+   "city": "Buford",
+   "county": "Gwinnett",
+   "lat": 34.0653,
+   "lng": -83.98436,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.0,
+   "ratingNum": 650,
+   "ratingCount": "650",
+   "hours": "Mon-Thu 9am-8pm · Fri-Sat 9am-9pm · Sun 11am-7pm",
+   "website": "https://www.starbucks.com/store-locator/store/8956/",
+   "googleUrl": "https://maps.google.com/?cid=185088119533342989&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJ52QN5kQL9YgRFFRhpkGbVmw",
@@ -1040,6 +1292,48 @@
    "googleUrl": "https://maps.google.com/?cid=2328607867844474153&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJ5U0jbQCV9YgRfLBl_lj7b6g",
+   "name": "Dunkin' Donuts",
+   "address": "2515 Gravel Springs Rd, Buford, GA 30519, USA",
+   "city": "Buford",
+   "county": "Gwinnett",
+   "lat": 34.062141,
+   "lng": -83.944613,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 5.0,
+   "ratingNum": 2,
+   "ratingCount": "2",
+   "hours": null,
+   "website": null,
+   "googleUrl": "https://maps.google.com/?cid=12137195880430547068&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJ5U1fzXkJ9YgReSLuXVWSYQg",
+   "name": "Starbucks Coffee Company",
+   "address": "4468 Chamblee Dunwoody Rd, Dunwoody, GA 30338, USA",
+   "city": "Dunwoody",
+   "county": "DeKalb",
+   "lat": 33.92145,
+   "lng": -84.31485,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.0,
+   "ratingNum": 502,
+   "ratingCount": "502",
+   "hours": "Mon-Sun 5am-8pm",
+   "website": "https://www.starbucks.com/store-locator/store/1017327/",
+   "googleUrl": "https://maps.google.com/?cid=603924720390120057&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJ5WNvr_Ol9YgRMt7KCQHUgq8",
    "name": "Haven Bodega",
    "address": "95 Main St NW, Lilburn, GA 30047, USA",
@@ -1100,6 +1394,27 @@
    "hours": "Mon-Fri 7:30am-4:30pm · Sat Closed · Sun 7am-2pm",
    "website": null,
    "googleUrl": "https://maps.google.com/?cid=2775176398035543272&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJ5_oTffR19YgRfWW8S1ZoRwg",
+   "name": "Starbucks Coffee Company",
+   "address": "5325 Windward Pkwy, Alpharetta, GA 30004, USA",
+   "city": "Alpharetta",
+   "county": "Fulton",
+   "lat": 34.089,
+   "lng": -84.27449,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.3,
+   "ratingNum": 850,
+   "ratingCount": "850",
+   "hours": "Mon-Sun 5am-8pm",
+   "website": "https://www.starbucks.com/store-locator/store/1014694",
+   "googleUrl": "https://maps.google.com/?cid=596560195496994173&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJ5aPcu1oL9YgRVNkFlz8YS_A",
@@ -1212,6 +1527,30 @@
    "googleUrl": "https://maps.google.com/?cid=10181565695830729817&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJ60n2fyic9YgRR_q_T1IhMK8",
+   "name": "Dunkin'",
+   "address": "1610 Oak Farm Dr, Alpharetta, GA 30005, USA",
+   "city": "Alpharetta",
+   "county": "Forsyth",
+   "lat": 34.109097,
+   "lng": -84.217396,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "cafe",
+    "donut_shop",
+    "bakery"
+   ],
+   "rating": 3.7,
+   "ratingNum": 505,
+   "ratingCount": "505",
+   "hours": "Mon-Sun 5am-9pm",
+   "website": "https://www.dunkindonuts.com/locations/us/ga/alpharetta/1610-oak-farm-dr/store-356177/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=356177&y_source=1_MTIxMDk1NzUtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=12623626392928516679&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJ6150zN0L9YgRsC38OyKSKxo",
    "name": "Sprinkle Some Joy Sweets",
    "address": "824 Stratford Ct, Atlanta, GA 30350, USA",
@@ -1230,6 +1569,28 @@
    "hours": null,
    "website": null,
    "googleUrl": "https://maps.google.com/?cid=1885761544717610416&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJ6RA52rK99YgRFA0e-l41qSw",
+   "name": "Panera Bread",
+   "address": "4875 Sugarloaf Pkwy, Lawrenceville, GA 30045, USA",
+   "city": "Lawrenceville",
+   "county": "Gwinnett",
+   "lat": 33.95574,
+   "lng": -84.054852,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "cafe",
+    "coffee_shop",
+    "bakery"
+   ],
+   "rating": 3.7,
+   "ratingNum": 629,
+   "ratingCount": "629",
+   "hours": "Mon-Fri 6:30am-9pm · Sat-Sun 7am-9pm",
+   "website": "https://www.panerabread.com/en-us/cafe/locations/ga/lawrenceville/4875-sugarloaf-pkwy?utm_medium=local&utm_source=google&utm_campaign=dpm-dist&utm_term=202585&utm_content=main",
+   "googleUrl": "https://maps.google.com/?cid=3218162090772401428&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJ6SXdJACf9YgR5RpztNDxIcI",
@@ -1292,6 +1653,29 @@
    "hours": "Mon-Fri 6am-7pm · Sat 7am-7pm · Sun 8am-6pm",
    "website": "https://www.ellianos.com/locations/cumming-ga/",
    "googleUrl": "https://maps.google.com/?cid=5469931091214365869&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJ6UOShyeZ9YgRx5XR1-WqndI",
+   "name": "Einstein Bros. Bagels",
+   "address": "11600 Medlock Bridge Rd #120, Duluth, GA 30097, USA",
+   "city": "Duluth",
+   "county": "Fulton",
+   "lat": 34.064023,
+   "lng": -84.171681,
+   "category": "Bakery+Cafe",
+   "model": "franchise",
+   "types": [
+    "bagel_shop",
+    "coffee_shop",
+    "bakery",
+    "cafe"
+   ],
+   "rating": 4.1,
+   "ratingNum": 396,
+   "ratingCount": "396",
+   "hours": "Mon-Fri 5:30am-2pm · Sat-Sun 6am-2pm",
+   "website": "https://locations.einsteinbros.com/us/ga/duluth/11600-medlock-bridge-rd?y_source=1_OTA0OTU1OC03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+   "googleUrl": "https://maps.google.com/?cid=15176474223453509063&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJ6YTLPAOj9YgRIbjCKiTp2hM",
@@ -1417,6 +1801,31 @@
    "googleUrl": "https://maps.google.com/?cid=14896548377275604377&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJ713obugL9YgRgu6qIW_o05k",
+   "name": "Dunkin'",
+   "address": "1594 Mt Vernon Rd, Dunwoody, GA 30338, USA",
+   "city": "Dunwoody",
+   "county": "DeKalb",
+   "neighborhood": "Dunwoody Village",
+   "lat": 33.946212,
+   "lng": -84.335004,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "cafe",
+    "donut_shop",
+    "bakery"
+   ],
+   "rating": 4.1,
+   "ratingNum": 576,
+   "ratingCount": "576",
+   "hours": "Mon-Sun 5am-9pm",
+   "website": "https://www.dunkindonuts.com/locations/us/ga/dunwoody/1594-mount-vernon-rd/store-304875/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=304875&y_source=1_MTIxMDYyOTMtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=11084458671892786818&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJ71QZYQif9YgRpG4LcUKeeC8",
    "name": "BB's Bagels",
    "address": "6835 Shiloh Rd E C5, Alpharetta, GA 30005, USA",
@@ -1439,6 +1848,30 @@
    "googleUrl": "https://maps.google.com/?cid=3420657925189496484&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJ72v465O59YgR2q0r1i_ZBd0",
+   "name": "Dunkin'",
+   "address": "2115 Main St E E, Snellville, GA 30078, USA",
+   "city": "Snellville",
+   "county": "Gwinnett",
+   "lat": 33.856206,
+   "lng": -84.001899,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "cafe",
+    "donut_shop",
+    "bakery"
+   ],
+   "rating": 3.4,
+   "ratingNum": 721,
+   "ratingCount": "721",
+   "hours": "Mon-Fri 5am-9pm · Sat-Sun 6am-9pm",
+   "website": "https://www.dunkindonuts.com/locations/us/ga/snellville/2115-e-main-st/store-331152/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=331152&y_source=1_MTIxMDU1MTctNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=15926374456745504218&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJ75nio1K99YgRQqhYzYeYepk",
    "name": "Komma Tea - Sugarloaf",
    "address": "5900 Sugarloaf Pkwy, Lawrenceville, GA 30043, USA",
@@ -1459,24 +1892,51 @@
    "googleUrl": "https://maps.google.com/?cid=11059319543994820674&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
-   "placeId": "ChIJ7SF6Xq-V9YgR7K_leHqApeI",
-   "name": "Sam's Club Cafe",
-   "address": "3383 Buford Dr, Buford, GA 30519, USA",
-   "city": "Buford",
-   "county": "Gwinnett",
-   "lat": 34.072871,
-   "lng": -83.980839,
+   "placeId": "ChIJ775UqR-e9YgRY4jnkmDLuGI",
+   "name": "Einstein Bros. Bagels",
+   "address": "5530 Windward Pkwy #400, Alpharetta, GA 30004, USA",
+   "city": "Alpharetta",
+   "county": "Fulton",
+   "lat": 34.087727,
+   "lng": -84.267273,
+   "category": "Bakery+Cafe",
+   "model": "franchise",
+   "types": [
+    "bagel_shop",
+    "coffee_shop",
+    "cafe",
+    "bakery"
+   ],
+   "rating": 3.8,
+   "ratingNum": 686,
+   "ratingCount": "686",
+   "hours": "Mon-Fri 5:30am-2pm · Sat-Sun 6am-2pm",
+   "website": "https://locations.einsteinbros.com/us/ga/alpharetta/5530-windward-pkwy?y_source=1_OTA0OTk5NS03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+   "googleUrl": "https://maps.google.com/?cid=7113659227073644643&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJ7RSeuHeb9YgRAhA9V4aXr38",
+   "name": "Dunkin'",
+   "address": "521 Peachtree Pkwy, Cumming, GA 30041, USA",
+   "city": "Cumming",
+   "county": "Forsyth",
+   "lat": 34.149767,
+   "lng": -84.172796,
    "category": "Coffee",
    "model": "franchise",
    "types": [
-    "cafe"
+    "coffee_shop",
+    "bagel_shop",
+    "donut_shop",
+    "cafe",
+    "bakery"
    ],
-   "rating": 3.0,
-   "ratingNum": 7,
-   "ratingCount": "7",
-   "hours": "Mon-Sun 10am-8pm",
-   "website": "https://www.samsclub.com/club/4780-buford-ga?CAF=aL",
-   "googleUrl": "https://maps.google.com/?cid=16331600887231655916&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "rating": 3.9,
+   "ratingNum": 526,
+   "ratingCount": "526",
+   "hours": "Mon-Sun 5am-9pm",
+   "website": "https://www.dunkindonuts.com/locations/us/ga/cumming/521-peachtree-pkwy/store-350745/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=350745&y_source=1_MTIxMDc1NjgtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=9200739166986244098&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJ7TNDXecN9YgRuc0tikYa__Q",
@@ -1587,6 +2047,34 @@
    "googleUrl": "https://maps.google.com/?cid=7256011812360163568&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJ7zII37mk9YgR6vCoCffMpgI",
+   "name": "Dunkin'",
+   "address": "3935 Lawrenceville Hwy, Lilburn, GA 30047, USA",
+   "city": "Lilburn",
+   "county": "Gwinnett",
+   "lat": 33.906093,
+   "lng": -84.112182,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "donut_shop",
+    "bakery",
+    "cafe"
+   ],
+   "rating": 3.9,
+   "ratingNum": 792,
+   "ratingCount": "792",
+   "hours": "Mon-Fri 5am-10pm · Sat-Sun 6am-10pm",
+   "late": {
+    "tier": "10pm+",
+    "when": "Daily till 10pm"
+   },
+   "website": "https://www.dunkindonuts.com/locations/us/ga/lilburn/3935-lawrenceville-hwy/store-335411/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=335411&y_source=1_MTIxMDcwMDgtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=191065395600879850&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJ80G28DMJ9YgRk3Ofa2rVKkQ",
    "name": "Cafe 400",
    "address": "1100 Johnson Ferry Rd NE Unit 135, Atlanta, GA 30342, USA",
@@ -1629,6 +2117,27 @@
    "googleUrl": "https://maps.google.com/?cid=6245088161901402814&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJ82zs_8-a9YgRN6c2U60-Xno",
+   "name": "Starbucks Coffee Company",
+   "address": "906 Buford Hwy, Cumming, GA 30041, USA",
+   "city": "Cumming",
+   "county": "Forsyth",
+   "lat": 34.18,
+   "lng": -84.13289,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.0,
+   "ratingNum": 883,
+   "ratingCount": "883",
+   "hours": "Mon-Fri 4:30am-9pm · Sat-Sun 5am-9pm",
+   "website": "https://www.starbucks.com/store-locator/store/12847/",
+   "googleUrl": "https://maps.google.com/?cid=8817554034584364855&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJ85zzSgCf9YgRZrJkGLeQgG8",
    "name": "MOTW Coffee and Pastries",
    "address": "5202 McGinnis Ferry Rd, Alpharetta, GA 30005, USA",
@@ -1664,29 +2173,6 @@
     "croissants"
    ],
    "signature": "Yemeni Adeni Chai Tea"
-  },
-  {
-   "placeId": "ChIJ87KOhv8L9YgRNv5BO_eMyGY",
-   "name": "Kroger Bakery",
-   "address": "2090 Dunwoody Club Dr, Atlanta, GA 30350, USA",
-   "city": "Atlanta",
-   "county": "Fulton",
-   "lat": 33.960775,
-   "lng": -84.301102,
-   "category": "Bakery+Cafe",
-   "model": "franchise",
-   "types": [
-    "bakery",
-    "bagel_shop",
-    "donut_shop",
-    "dessert_shop"
-   ],
-   "rating": 5.0,
-   "ratingNum": 3,
-   "ratingCount": "3",
-   "hours": null,
-   "website": "https://www.kroger.com/d/bakery?cid=loc_01100324B_gmb",
-   "googleUrl": "https://maps.google.com/?cid=7406324580689772086&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJ87MnGAWZ9YgR8TiVqULzV9A",
@@ -1757,52 +2243,6 @@
    "googleUrl": "https://maps.google.com/?cid=11362260508708089274&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
-   "placeId": "ChIJ8wNEplV19YgRQD-yD2Y74pc",
-   "name": "Kroger Bakery",
-   "address": "3000 Old Alabama Rd, Alpharetta, GA 30022, USA",
-   "city": "Alpharetta",
-   "county": "Fulton",
-   "lat": 34.023019,
-   "lng": -84.271609,
-   "category": "Bakery+Cafe",
-   "model": "franchise",
-   "types": [
-    "bakery",
-    "bagel_shop",
-    "donut_shop",
-    "dessert_shop"
-   ],
-   "rating": 3.3,
-   "ratingNum": 3,
-   "ratingCount": "3",
-   "hours": null,
-   "website": "https://www.kroger.com/d/bakery?cid=loc_01100344B_gmb",
-   "googleUrl": "https://maps.google.com/?cid=10944375353999769408&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
-   "placeId": "ChIJ8yHKRJEO9YgR5UfAZXtFewA",
-   "name": "Kroger Bakery",
-   "address": "227 Sandy Springs Pl NE, Sandy Springs, GA 30328, USA",
-   "city": "Sandy Springs",
-   "county": "Fulton",
-   "lat": 33.920293,
-   "lng": -84.381396,
-   "category": "Bakery+Cafe",
-   "model": "franchise",
-   "types": [
-    "bakery",
-    "bagel_shop",
-    "donut_shop",
-    "dessert_shop"
-   ],
-   "rating": 4.0,
-   "ratingNum": 4,
-   "ratingCount": "4",
-   "hours": null,
-   "website": "https://www.kroger.com/d/bakery?cid=loc_01100467B_gmb",
-   "googleUrl": "https://maps.google.com/?cid=34697818425804773&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
    "placeId": "ChIJ93EwdzuW9YgR-xlG9PfZ6JI",
    "name": "TOUS les JOURS Bakery Café - Suwanee",
    "address": "2700 Lawrenceville-Suwanee Rd, Suwanee, GA 30024, USA",
@@ -1847,6 +2287,34 @@
    "hours": "Mon Closed · Tue-Sat 7am-4pm · Sun 7am-1pm",
    "website": "http://www.davincisdonuts.com/",
    "googleUrl": "https://maps.google.com/?cid=4153158768229651428&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJ9QDDJiDA9YgR-gQ2nS-2Pbw",
+   "name": "Dunkin'",
+   "address": "557 Dacula Rd, Dacula, GA 30019, USA",
+   "city": "Dacula",
+   "county": "Gwinnett",
+   "lat": 34.000469,
+   "lng": -83.909046,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "cafe",
+    "donut_shop",
+    "bakery"
+   ],
+   "rating": 3.2,
+   "ratingNum": 540,
+   "ratingCount": "540",
+   "hours": "Mon-Sat 5am-10pm · Sun 6am-10pm",
+   "late": {
+    "tier": "10pm+",
+    "when": "Daily till 10pm"
+   },
+   "website": "https://www.dunkindonuts.com/locations/us/ga/dacula/557-dacula-rd/store-354365/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=354365&y_source=1_MTIxMTI3OTUtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=13564197968327083258&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJ9S2XBRqv9YgRmCNdP0XiKVs",
@@ -2003,53 +2471,6 @@
    "googleUrl": "https://maps.google.com/?cid=9005993026413183821&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
-   "placeId": "ChIJAQAA_enH9YgRWF6OEnuVkDI",
-   "name": "Walmart Bakery",
-   "address": "4221 Atlanta Hwy, Loganville, GA 30052, USA",
-   "city": "Loganville",
-   "county": "Gwinnett",
-   "lat": 33.841104,
-   "lng": -83.911062,
-   "category": "Bakery+Cafe",
-   "model": "franchise",
-   "types": [
-    "bakery",
-    "bagel_shop",
-    "dessert_shop"
-   ],
-   "rating": 5.0,
-   "ratingNum": 1,
-   "ratingCount": "1",
-   "hours": "Mon-Sun 7am-10pm",
-   "late": {
-    "tier": "10pm+",
-    "when": "Daily till 10pm"
-   },
-   "website": "https://www.walmart.com/store/5252-loganville-ga/bakery/?veh=seo_loc",
-   "googleUrl": "https://maps.google.com/?cid=3643576454367567448&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
-   "placeId": "ChIJAQCMGaCj9YgRfV-M2oDIoEo",
-   "name": "Costco Bakery",
-   "address": "3980 Venture Dr, Duluth, GA 30096, USA",
-   "city": "Duluth",
-   "county": "Gwinnett",
-   "neighborhood": "Gwinnett Place",
-   "lat": 33.947489,
-   "lng": -84.142009,
-   "category": "Bakery+Cafe",
-   "model": "franchise",
-   "types": [
-    "bakery"
-   ],
-   "rating": 4.5,
-   "ratingNum": 12,
-   "ratingCount": "12",
-   "hours": "Sun-Mon 6am-1pm · Tue-Sat 6am-7pm",
-   "website": "https://www.costco.com/warehouse-locations/gwinnett-duluth-ga-187.html",
-   "googleUrl": "https://maps.google.com/?cid=5377518410828373885&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
    "placeId": "ChIJAWPnybQO9YgRmyd2qe6xVWY",
    "name": "Concourse Coffee Station",
    "address": "5 Concourse Pkwy #135, Atlanta, GA 30328, USA",
@@ -2117,6 +2538,27 @@
    "googleUrl": "https://maps.google.com/?cid=7644723359017417278&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJAe2ufQCf9YgRHikABX9UM9I",
+   "name": "Tim Hortons",
+   "address": "10710 State Bridge Rd, Johns Creek, GA 30022, USA",
+   "city": "Johns Creek",
+   "county": "Fulton",
+   "lat": 34.04164,
+   "lng": -84.219367,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.3,
+   "ratingNum": 198,
+   "ratingCount": "198",
+   "hours": "Mon-Sun 5am-4pm",
+   "website": "https://locations.timhortons.com/en/ga/johns-creek/10710-state20bridgerd/",
+   "googleUrl": "https://maps.google.com/?cid=15146542876298586398&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJAfxbSWqj9YgRbxzv74WA5ck",
    "name": "Hansel & Gretel Bakery Cafe - Peachtree",
    "address": "3585 Peachtree Industrial Blvd #166, Duluth, GA 30096, USA",
@@ -2157,26 +2599,6 @@
    "hours": "Sun-Thu 9am-6:30pm · Fri-Sat 9am-7:30pm",
    "website": null,
    "googleUrl": "https://maps.google.com/?cid=12250460664234128037&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
-   "placeId": "ChIJB0lUy7-k9YgRGWMmioI8ovI",
-   "name": "Kroger Bakery",
-   "address": "361 Marble Springs Rd NW, Lilburn, GA 30047, USA",
-   "city": "Lilburn",
-   "county": "Gwinnett",
-   "lat": 33.904327,
-   "lng": -84.121406,
-   "category": "Bakery+Cafe",
-   "model": "franchise",
-   "types": [
-    "bakery"
-   ],
-   "rating": 5.0,
-   "ratingNum": 3,
-   "ratingCount": "3",
-   "hours": null,
-   "website": "https://www.kroger.com/topic/deli-and-bakery",
-   "googleUrl": "https://maps.google.com/?cid=17483603234766873369&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJB6_vKKG99YgRstt9tuW7Dzk",
@@ -2244,6 +2666,27 @@
    },
    "website": null,
    "googleUrl": "https://maps.google.com/?cid=6112895139193931991&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJBRe1siHA9YgRtglZ-sfcIaM",
+   "name": "Starbucks Coffee Company",
+   "address": "505 Dacula Rd, Dacula, GA 30019, USA",
+   "city": "Dacula",
+   "county": "Gwinnett",
+   "lat": 34.00101,
+   "lng": -83.90588,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 3.8,
+   "ratingNum": 156,
+   "ratingCount": "156",
+   "hours": "Mon-Sun 6am-6pm",
+   "website": "https://www.starbucks.com/store-locator/store/20020",
+   "googleUrl": "https://maps.google.com/?cid=11754919253870447030&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJBSbPg7-m9YgRTDHkTRq4oPA",
@@ -2362,6 +2805,27 @@
    "googleUrl": "https://maps.google.com/?cid=5679532432603281428&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJBcSw_qSP9YgRAo5o1lVXIHs",
+   "name": "Starbucks Coffee Company",
+   "address": "3630 Browns Bridge Rd, Cumming, GA 30028, USA",
+   "city": "Cumming",
+   "county": "Forsyth",
+   "lat": 34.2661,
+   "lng": -84.09193,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.4,
+   "ratingNum": 259,
+   "ratingCount": "259",
+   "hours": "Mon-Sun 4:30am-9pm",
+   "website": "https://www.starbucks.ca/store-locator/store/1033542/ga-400-browns-bridge-3630-browns-bridge-rd-cumming-ga-30028-us",
+   "googleUrl": "https://maps.google.com/?cid=8872187292100890114&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJC-gxIom99YgRsd5QU1ZQsWU",
    "name": "Keidy’s fits bakery",
    "address": "1041 Park Creek Cir, Lawrenceville, GA 30044, USA",
@@ -2431,29 +2895,6 @@
    "googleUrl": "https://maps.google.com/?cid=16861595179562471880&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
-   "placeId": "ChIJCQgAG2aP9YgRxYX3e1UAQWs",
-   "name": "Kroger Bakery",
-   "address": "2655 Freedom Pkwy, Cumming, GA 30041, USA",
-   "city": "Cumming",
-   "county": "Forsyth",
-   "lat": 34.250864,
-   "lng": -84.091232,
-   "category": "Bakery+Cafe",
-   "model": "franchise",
-   "types": [
-    "bakery",
-    "bagel_shop",
-    "donut_shop",
-    "dessert_shop"
-   ],
-   "rating": 4.0,
-   "ratingNum": 1,
-   "ratingCount": "1",
-   "hours": null,
-   "website": "https://www.kroger.com/d/bakery?cid=loc_01100473B_gmb",
-   "googleUrl": "https://maps.google.com/?cid=7728458802696521157&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
    "placeId": "ChIJCWfEODOh9YgR1QGRTng3tAU",
    "name": "Panadería Chic’s bakery 2",
    "address": "5510 Spalding Dr, Peachtree Corners, GA 30092, USA",
@@ -2472,6 +2913,27 @@
    "hours": "Mon-Sat 6am-8pm · Sun 7am-6pm",
    "website": null,
    "googleUrl": "https://maps.google.com/?cid=411014455851286997&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJC_a5Cm6-9YgRpK5qnxGeqdk",
+   "name": "Starbucks Coffee Company",
+   "address": "1000 University Center Ln, Lawrenceville, GA 30043, USA",
+   "city": "Lawrenceville",
+   "county": "Gwinnett",
+   "lat": 33.97946,
+   "lng": -84.00444,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 3.8,
+   "ratingNum": 61,
+   "ratingCount": "61",
+   "hours": "Mon-Thu 7:30am-6pm · Fri 7:30am-3pm · Sat-Sun Closed",
+   "website": "https://www.starbucks.com/store-locator/store/1009839",
+   "googleUrl": "https://maps.google.com/?cid=15684240975820664484&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJCyl-9De-9YgRZbx_5Gjv3Ok",
@@ -2493,6 +2955,51 @@
    "hours": "Sun-Mon 5:00-11am · Tue-Sat 5am-12:30pm",
    "website": "https://m.facebook.com/pages/The-Donut-Palace/111848182179432",
    "googleUrl": "https://maps.google.com/?cid=16851607139502767205&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJD-o5Yfh09YgR6jiHe9oxZzU",
+   "name": "Dunkin'",
+   "address": "11706 Alpharetta Hwy Ste 400, Roswell, GA 30076, USA",
+   "city": "Roswell",
+   "county": "Fulton",
+   "lat": 34.06559,
+   "lng": -84.320626,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "donut_shop",
+    "cafe",
+    "bakery"
+   ],
+   "rating": 3.7,
+   "ratingNum": 535,
+   "ratingCount": "535",
+   "hours": "Mon-Sun 5am-9pm",
+   "website": "https://www.dunkindonuts.com/locations/us/ga/roswell/11706-alpharetta-hwy/store-334774/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=334774&y_source=1_MTIxMDYwNjAtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=3848099221056469226&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJD2Lf8n-59YgRyoCZjLVmRQg",
+   "name": "Starbucks Coffee Company",
+   "address": "1920 Scenic Hwy N, Snellville, GA 30078, USA",
+   "city": "Snellville",
+   "county": "Gwinnett",
+   "lat": 33.87351,
+   "lng": -84.01344,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.0,
+   "ratingNum": 1439,
+   "ratingCount": "1,439",
+   "hours": "Mon-Fri 4:30am-8:30pm · Sat-Sun 5am-9pm",
+   "website": "https://www.starbucks.com/store-locator/store/9523/",
+   "googleUrl": "https://maps.google.com/?cid=595995455630442698&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJD34KlgaX9YgR7ZAENz1fpf8",
@@ -2519,29 +3026,6 @@
    "googleUrl": "https://maps.google.com/?cid=18421234567349571821&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
-   "placeId": "ChIJD74U87689YgR2PtCT5Vr9zM",
-   "name": "Kroger Bakery",
-   "address": "950 Herrington Rd, Lawrenceville, GA 30044, USA",
-   "city": "Lawrenceville",
-   "county": "Gwinnett",
-   "lat": 33.940321,
-   "lng": -84.083023,
-   "category": "Bakery+Cafe",
-   "model": "franchise",
-   "types": [
-    "bakery",
-    "bagel_shop",
-    "donut_shop",
-    "dessert_shop"
-   ],
-   "rating": 4.0,
-   "ratingNum": 1,
-   "ratingCount": "1",
-   "hours": null,
-   "website": "https://www.kroger.com/d/bakery?cid=loc_01100440B_gmb",
-   "googleUrl": "https://maps.google.com/?cid=3744579904205945816&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
    "placeId": "ChIJD7wkMbt09YgRLBFVebWCd7E",
    "name": "Custom Cakes by Liud",
    "address": "10518 Alpharetta Hwy, Roswell, GA 30076, USA",
@@ -2564,6 +3048,29 @@
    "googleUrl": "https://maps.google.com/?cid=12787833382878122284&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJDRn7aqGR9YgRyTDJXonxBdA",
+   "name": "Einstein Bros. Bagels",
+   "address": "5965 Cumming Hwy NE Ste 320, Sugar Hill, GA 30518, USA",
+   "city": "Sugar Hill",
+   "county": "Gwinnett",
+   "lat": 34.120271,
+   "lng": -84.077562,
+   "category": "Bakery+Cafe",
+   "model": "franchise",
+   "types": [
+    "bagel_shop",
+    "coffee_shop",
+    "cafe",
+    "bakery"
+   ],
+   "rating": 3.4,
+   "ratingNum": 84,
+   "ratingCount": "84",
+   "hours": "Mon-Sun 6am-2pm",
+   "website": "https://locations.einsteinbros.com/us/ga/sugar-hill/5965-cumming-highway-northeast?y_source=1_MTA2NzEzMjExMC03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+   "googleUrl": "https://maps.google.com/?cid=14989652507075621065&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJDTTkkFuj9YgR2Sp2jGH-Nu0",
    "name": "MAZAPAN BAKERY",
    "address": "1630 Pleasant Hill Rd, Duluth, GA 30096, USA",
@@ -2583,6 +3090,28 @@
    "hours": "Mon-Sat 9am-8pm · Sun Closed",
    "website": "https://mazapanbakeryduluth.kwickmenu.com/index.php",
    "googleUrl": "https://maps.google.com/?cid=17093129130653133529&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJDUD0aNa99YgRaZ86TZxPLkg",
+   "name": "Panera Bread",
+   "address": "911 Lawrenceville-Suwanee Rd, Lawrenceville, GA 30043, USA",
+   "city": "Lawrenceville",
+   "county": "Gwinnett",
+   "lat": 33.971375,
+   "lng": -84.017551,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "cafe",
+    "coffee_shop",
+    "bakery"
+   ],
+   "rating": 3.7,
+   "ratingNum": 1196,
+   "ratingCount": "1,196",
+   "hours": "Mon-Fri 6:30am-9pm · Sat-Sun 7am-9pm",
+   "website": "https://www.panerabread.com/en-us/cafe/locations/ga/lawrenceville/911-lawrenceville-suwanee-road?utm_medium=local&utm_source=google&utm_campaign=dpm-dist&utm_term=202554&utm_content=main",
+   "googleUrl": "https://maps.google.com/?cid=5201182152388681577&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJDXHXJyi99YgRMm8Co9NpQJ8",
@@ -2783,27 +3312,28 @@
    "googleUrl": "https://maps.google.com/?cid=1381005834456166938&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
-   "placeId": "ChIJEb6Kkuub9YgRRD-BjAIIWLk",
-   "name": "Kroger Bakery",
-   "address": "1595 Peachtree Pkwy, Cumming, GA 30041, USA",
-   "city": "Cumming",
-   "county": "Forsyth",
-   "lat": 34.122184,
-   "lng": -84.168923,
-   "category": "Bakery+Cafe",
+   "placeId": "ChIJEWvpO8GQ9YgRDoaj3z0hEx4",
+   "name": "Dunkin'",
+   "address": "5870 Cumming Hwy NE, Sugar Hill, GA 30518, USA",
+   "city": "Sugar Hill",
+   "county": "Gwinnett",
+   "lat": 34.117273,
+   "lng": -84.076661,
+   "category": "Coffee",
    "model": "franchise",
    "types": [
-    "bakery",
+    "coffee_shop",
     "bagel_shop",
+    "cafe",
     "donut_shop",
-    "dessert_shop"
+    "bakery"
    ],
    "rating": 4.0,
-   "ratingNum": 4,
-   "ratingCount": "4",
-   "hours": null,
-   "website": "https://www.kroger.com/d/bakery?cid=loc_01100486B_gmb",
-   "googleUrl": "https://maps.google.com/?cid=13355433502007443268&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "ratingNum": 500,
+   "ratingCount": "500",
+   "hours": "Mon-Sat 5am-9pm · Sun 6am-9pm",
+   "website": "https://www.dunkindonuts.com/locations/us/ga/sugar-hill/5870-cumming-highway/store-354030/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=354030&y_source=1_MTIxMTQxNjItNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=2167112395324098062&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJEbRk2mKi9YgRs0wfwnNCb34",
@@ -2895,27 +3425,6 @@
    "googleUrl": "https://maps.google.com/?cid=118904821527421483&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
-   "placeId": "ChIJF7-7CAAL9YgRzvgQYKyWNhQ",
-   "name": "Fresh Market Bakery",
-   "address": "5515 Chamblee Dunwoody Rd, Dunwoody, GA 30338, USA",
-   "city": "Dunwoody",
-   "county": "DeKalb",
-   "neighborhood": "Dunwoody Village",
-   "lat": 33.948695,
-   "lng": -84.334735,
-   "category": "Bakery+Cafe",
-   "model": "franchise",
-   "types": [
-    "bakery"
-   ],
-   "rating": 3.6,
-   "ratingNum": 5,
-   "ratingCount": "5",
-   "hours": null,
-   "website": "https://delivery.thefreshmarket.com/store/the-fresh-market/collections/n-bakery-55290",
-   "googleUrl": "https://maps.google.com/?cid=1456517196591200462&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
    "placeId": "ChIJF9AYz5sP9YgReqMw0Q37Too",
    "name": "Café I AM",
    "address": "5825 Mountain Creek Rd NE Ste A, Sandy Springs, GA 30328, USA",
@@ -2977,6 +3486,28 @@
    "googleUrl": "https://maps.google.com/?cid=12816722088463977797&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJFXHVlGcJ9YgRG6f-Sx2Rf98",
+   "name": "Starbucks",
+   "address": "4300 Ashford Dunwoody Rd NE, Dunwoody, GA 30346, USA",
+   "city": "Dunwoody",
+   "county": "DeKalb",
+   "neighborhood": "Perimeter Center",
+   "lat": 33.92231,
+   "lng": -84.34125,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 1.0,
+   "ratingNum": 2,
+   "ratingCount": "2",
+   "hours": "Mon-Sat 9am-8pm · Sun 10am-7pm",
+   "website": null,
+   "googleUrl": "https://maps.google.com/?cid=16104750347515242267&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJFZKrPqmX9YgRzBguEOIZPow",
    "name": "Betto's Pasteleria & Panaderia",
    "address": "1325 Buford Hwy NE Ste 110, Buford, GA 30518, USA",
@@ -2995,6 +3526,48 @@
    "hours": "Wed-Mon 8am-9pm · Tue 9am-9pm",
    "website": null,
    "googleUrl": "https://maps.google.com/?cid=10105543072590731468&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJFaRyXSUO9YgR4bdsWnSuP4g",
+   "name": "Starbucks",
+   "address": "6350 Powers Ferry Rd NW, Atlanta, GA 30339, USA",
+   "city": "Atlanta",
+   "county": "Fulton",
+   "lat": 33.9056,
+   "lng": -84.42901,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 3.8,
+   "ratingNum": 450,
+   "ratingCount": "450",
+   "hours": "Mon-Sun 5am-8pm",
+   "website": "https://www.starbucks.com/store-locator/store/1019333",
+   "googleUrl": "https://maps.google.com/?cid=9817757527447484385&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJFcnH-vm59YgRSb4UzeWUDfA",
+   "name": "Scooter's Coffee",
+   "address": "2244 Loganville Hwy, Grayson, GA 30017, USA",
+   "city": "Grayson",
+   "county": "Gwinnett",
+   "lat": 33.892043,
+   "lng": -83.95019,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.5,
+   "ratingNum": 165,
+   "ratingCount": "165",
+   "hours": "Mon-Fri 5:30am-8pm · Sat-Sun 6am-8pm",
+   "website": "https://scooterscoffee.com/",
+   "googleUrl": "https://maps.google.com/?cid=17297645458509053513&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJFdVm1-Gn9YgRUZdcbHwEtQo",
@@ -3082,6 +3655,29 @@
    "googleUrl": "https://maps.google.com/?cid=9149652277466599187&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJG0jmzmeU9YgRrRsawq-ISz0",
+   "name": "Einstein Bros. Bagels",
+   "address": "3410 Buford Dr Ste, G400, Buford, GA 30519, USA",
+   "city": "Buford",
+   "county": "Gwinnett",
+   "lat": 34.075755,
+   "lng": -83.984555,
+   "category": "Bakery+Cafe",
+   "model": "franchise",
+   "types": [
+    "bagel_shop",
+    "coffee_shop",
+    "cafe",
+    "bakery"
+   ],
+   "rating": 4.0,
+   "ratingNum": 591,
+   "ratingCount": "591",
+   "hours": "Mon-Fri 5:30am-2pm · Sat-Sun 6am-2pm",
+   "website": "https://locations.einsteinbros.com/us/ga/buford/3410-buford-dr-ste-ste-g400?y_source=1_OTA0OTg2Mi03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+   "googleUrl": "https://maps.google.com/?cid=4416774148024048557&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJG1KP8qDq9YgReCfFZvohgwo",
    "name": "TradeWind Coffee Co.",
    "address": "2300 Liam Ave NE #200, Dacula, GA 30019, USA",
@@ -3114,6 +3710,30 @@
     "cinnamon rolls"
    ],
    "signature": "Cinnamon Vanilla Latte"
+  },
+  {
+   "placeId": "ChIJG54DsEwJ9YgRwxDqqtYi2yY",
+   "name": "Einstein Bros. Bagels",
+   "address": "1100 Hammond Dr NE Ste 600, Atlanta, GA 30328, USA",
+   "city": "Atlanta",
+   "county": "Fulton",
+   "neighborhood": "Perimeter Center",
+   "lat": 33.91942,
+   "lng": -84.35193,
+   "category": "Bakery+Cafe",
+   "model": "franchise",
+   "types": [
+    "bagel_shop",
+    "coffee_shop",
+    "cafe",
+    "bakery"
+   ],
+   "rating": 4.1,
+   "ratingNum": 1644,
+   "ratingCount": "1,644",
+   "hours": "Mon-Fri 5:30am-2pm · Sat-Sun 6am-2pm",
+   "website": "https://locations.einsteinbros.com/us/ga/atlanta/1100-hammond-dr?y_source=1_OTA0OTU0NS03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+   "googleUrl": "https://maps.google.com/?cid=2799869898726707395&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJGQRQBu2m9YgRBAKewzQ6ZII",
@@ -3276,6 +3896,30 @@
    "signature": "Nitro Draft Cold Brew"
   },
   {
+   "placeId": "ChIJH4WEs6Gc9YgRIYHElouv9qo",
+   "name": "Dunkin'",
+   "address": "5470 Bethelview Rd, Cumming, GA 30040, USA",
+   "city": "Cumming",
+   "county": "Forsyth",
+   "lat": 34.173212,
+   "lng": -84.188423,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "cafe",
+    "donut_shop",
+    "bakery"
+   ],
+   "rating": 3.8,
+   "ratingNum": 480,
+   "ratingCount": "480",
+   "hours": "Mon-Sun 5am-9pm",
+   "website": "https://www.dunkindonuts.com/locations/us/ga/cumming/5470-bethelview-rd/store-354533/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=354533&y_source=1_MTIxMTIxMjktNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=12319226844783345953&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJH5Nofoi59YgRwY-P0orAfK4",
    "name": "Crumbl Cookies",
    "address": "1905 Scenic Hwy S #330, Snellville, GA 30078, USA",
@@ -3340,6 +3984,31 @@
    "hours": "Mon-Sat 11am-8pm · Sun 12:00-7am",
    "website": "https://locations.cinnabon.com/ga/alpharetta/1140-north-point-circle?utm_source=google&utm_medium=organic&utm_campaign=locations_partner",
    "googleUrl": "https://maps.google.com/?cid=3706999121147172215&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJHbxy8Bu59YgRTnoet42gGew",
+   "name": "Starbucks Coffee Company",
+   "address": "1890 Grayson Hwy, Grayson, GA 30017, USA",
+   "city": "Grayson",
+   "county": "Gwinnett",
+   "lat": 33.89976,
+   "lng": -83.96088,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 3.9,
+   "ratingNum": 268,
+   "ratingCount": "268",
+   "hours": "Mon-Fri 4:30am-10pm · Sat-Sun 5am-10pm",
+   "late": {
+    "tier": "10pm+",
+    "when": "Daily till 10pm"
+   },
+   "website": null,
+   "googleUrl": "https://maps.google.com/?cid=17012805597891820110&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJHd_hdAej9YgR6lZtgCt-XIQ",
@@ -3434,6 +4103,48 @@
    "hours": "Mon-Sat 11am-8pm · Sun 12:00-6pm",
    "website": "https://locations.cinnabon.com/ga/atlanta/4400-ashford-dunwoody-road?utm_source=google&utm_medium=organic&utm_campaign=locations_partner",
    "googleUrl": "https://maps.google.com/?cid=10868600926762699683&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJIVAJ9Srr9YgR8TmGjbDQmHs",
+   "name": "Starbucks Coffee Company",
+   "address": "2700 Braselton Hwy, Dacula, GA 30019, USA",
+   "city": "Dacula",
+   "county": "Gwinnett",
+   "lat": 34.05133,
+   "lng": -83.93014,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 3.1,
+   "ratingNum": 61,
+   "ratingCount": "61",
+   "hours": "Mon-Sun 6am-6pm",
+   "website": "https://www.starbucks.com/store-locator/store/8613",
+   "googleUrl": "https://maps.google.com/?cid=8906097719832361457&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJIXDyVn--9YgRNtbQrWOtp6o",
+   "name": "Starbucks Coffee Company",
+   "address": "875 Lawrenceville-Suwanee Rd, Lawrenceville, GA 30043, USA",
+   "city": "Lawrenceville",
+   "county": "Gwinnett",
+   "lat": 33.97073,
+   "lng": -84.01833,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 3.9,
+   "ratingNum": 101,
+   "ratingCount": "101",
+   "hours": "Mon-Sun 8am-8pm",
+   "website": "https://www.starbucks.com/store-locator/store/1017754",
+   "googleUrl": "https://maps.google.com/?cid=12296987951187940918&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJIYRFWTeh9YgRBnNnH9g9zj4",
@@ -3607,6 +4318,32 @@
    "googleUrl": "https://maps.google.com/?cid=18176557141871901143&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJIe-KrX-59YgRm-p8TSWutTA",
+   "name": "Panera Bread",
+   "address": "1905 Scenic Hwy S #100, Snellville, GA 30078, USA",
+   "city": "Snellville",
+   "county": "Gwinnett",
+   "lat": 33.878499,
+   "lng": -84.013115,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "cafe",
+    "coffee_shop",
+    "bakery"
+   ],
+   "rating": 3.8,
+   "ratingNum": 1419,
+   "ratingCount": "1,419",
+   "hours": "Mon-Fri 6:30am-10pm · Sat-Sun 7am-10pm",
+   "late": {
+    "tier": "10pm+",
+    "when": "Daily till 10pm"
+   },
+   "website": "https://www.panerabread.com/en-us/cafe/locations/ga/snellville/1905-scenic-highway?utm_medium=local&utm_source=google&utm_campaign=dpm-dist&utm_term=202572&utm_content=main",
+   "googleUrl": "https://maps.google.com/?cid=3509902959842224795&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJIweX_p6j9YgRohKnFpOvv6o",
    "name": "Hong Kong Bakery & Dimsum Duluth",
    "address": "2255 Pleasant Hill Rd #205, Duluth, GA 30096, USA",
@@ -3752,6 +4489,78 @@
    "googleUrl": "https://maps.google.com/?cid=10186450473219623378&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJJcgnoOkL9YgRYrFapSosSa0",
+   "name": "Starbucks Coffee Company",
+   "address": "5561 Chamblee Dunwoody Rd, Dunwoody, GA 30338, USA",
+   "city": "Dunwoody",
+   "county": "DeKalb",
+   "neighborhood": "Dunwoody Village",
+   "lat": 33.949406,
+   "lng": -84.335677,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.0,
+   "ratingNum": 674,
+   "ratingCount": "674",
+   "hours": "Mon-Sun 5am-8pm",
+   "website": "https://www.starbucks.com/store-locator/store/8781/",
+   "googleUrl": "https://maps.google.com/?cid=12486560003535843682&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJJeGpFFyD9YgRSCpd8amjYkE",
+   "name": "Dunkin'",
+   "address": "3420 Canton Hwy Suite C-1, Cumming, GA 30040, USA",
+   "city": "Cumming",
+   "county": "Forsyth",
+   "lat": 34.239174,
+   "lng": -84.223798,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "cafe",
+    "donut_shop",
+    "bakery"
+   ],
+   "rating": 3.3,
+   "ratingNum": 141,
+   "ratingCount": "141",
+   "hours": "Mon-Sun 5am-9pm",
+   "website": "https://www.dunkindonuts.com/locations/us/ga/cumming/3420-canton-highway/store-364473/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=364473&y_source=1_MTAyNTQ4OTk2Ni03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+   "googleUrl": "https://maps.google.com/?cid=4711508110477175368&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJJxrGsHd19YgRNiI7A2yhonw",
+   "name": "Dutch Bros Coffee",
+   "address": "705 Holcomb Bridge Rd, Roswell, GA 30075, USA",
+   "city": "Roswell",
+   "county": "Fulton",
+   "lat": 34.031651,
+   "lng": -84.340308,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe",
+    "tea_house"
+   ],
+   "rating": 4.6,
+   "ratingNum": 125,
+   "ratingCount": "125",
+   "hours": "Sun-Thu 5am-10pm · Fri-Sat 5am-11pm",
+   "late": {
+    "tier": "10pm+",
+    "when": "Daily till 11pm"
+   },
+   "website": "https://www.dutchbros.com/locations/ga/roswell/705-holcomb-bridge-rd?y_source=1_MjA0OTkxNDc0NS03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+   "googleUrl": "https://maps.google.com/?cid=8980918092212937270&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJJyI9ue109YgR7tMuRiSgMMo",
    "name": "Banou Afghan Bakery",
    "address": "11235 Alpharetta Hwy, Roswell, GA 30076, USA",
@@ -3770,6 +4579,30 @@
    "hours": "Mon-Sat 8:30am-6pm · Sun Closed",
    "website": null,
    "googleUrl": "https://maps.google.com/?cid=14569320872200295406&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJK02KHY4J9YgRLEm1jtDkgoo",
+   "name": "Dunkin'",
+   "address": "4368 N Peachtree Rd, Dunwoody, GA 30338, USA",
+   "city": "Dunwoody",
+   "county": "DeKalb",
+   "lat": 33.921111,
+   "lng": -84.29723,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "cafe",
+    "donut_shop",
+    "bakery"
+   ],
+   "rating": 3.7,
+   "ratingNum": 516,
+   "ratingCount": "516",
+   "hours": "Mon-Sun 5am-9pm",
+   "website": "https://www.dunkindonuts.com/locations/us/ga/dunwoody/4368-n-peachtree-rd/store-354637/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=354637&y_source=1_MTIxMTE4MTgtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=9980791308605016364&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJK0HBxIih9YgRg_gq9RAZgRg",
@@ -3792,6 +4625,48 @@
    "hours": "Mon-Fri 6am-4pm · Sat 8am-4pm · Sun Closed",
    "website": "https://www.sequelcoffeeco.com/",
    "googleUrl": "https://maps.google.com/?cid=1765720089529350275&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJK13e_9S99YgRdDHgQMJ-B54",
+   "name": "Starbucks Coffee Company",
+   "address": "860 Duluth Hwy, Lawrenceville, GA 30043, USA",
+   "city": "Lawrenceville",
+   "county": "Gwinnett",
+   "lat": 33.96708,
+   "lng": -84.01906,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.0,
+   "ratingNum": 1090,
+   "ratingCount": "1,090",
+   "hours": "Mon-Fri 4:30am-9pm · Sat-Sun 5am-9pm",
+   "website": "https://www.starbucks.com/store-locator/store/8616/",
+   "googleUrl": "https://maps.google.com/?cid=11387209555606778228&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJK5ryvVC89YgRkcGdvMPMi_o",
+   "name": "Starbucks Coffee Company",
+   "address": "4825 Sugarloaf Pkwy, Lawrenceville, GA 30044, USA",
+   "city": "Lawrenceville",
+   "county": "Gwinnett",
+   "lat": 33.95521,
+   "lng": -84.0524,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 3.8,
+   "ratingNum": 1123,
+   "ratingCount": "1,123",
+   "hours": "Mon-Sun 5am-9pm",
+   "website": "https://www.starbucks.com/store-locator/store/1023502",
+   "googleUrl": "https://maps.google.com/?cid=18053748672299909521&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJK7cC-XFz9YgRn_nQ8wZ0L1I",
@@ -3866,29 +4741,6 @@
    "googleUrl": "https://maps.google.com/?cid=8833661737895696112&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
-   "placeId": "ChIJKQdnECvr9YgRy8leEXrFCPA",
-   "name": "Kroger Bakery",
-   "address": "2700 Braselton Hwy, Dacula, GA 30019, USA",
-   "city": "Dacula",
-   "county": "Gwinnett",
-   "lat": 34.051494,
-   "lng": -83.93033,
-   "category": "Bakery+Cafe",
-   "model": "franchise",
-   "types": [
-    "bakery",
-    "dessert_shop",
-    "bagel_shop",
-    "donut_shop"
-   ],
-   "rating": 5.0,
-   "ratingNum": 3,
-   "ratingCount": "3",
-   "hours": null,
-   "website": "https://www.kroger.com/d/bakery?cid=loc_01100457B_gmb",
-   "googleUrl": "https://maps.google.com/?cid=17296291496984496587&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
    "placeId": "ChIJKTWliT119YgRH3zMADiCVfc",
    "name": "Brewable Alpharetta",
    "address": "175 Roswell St, Alpharetta, GA 30009, USA",
@@ -3908,6 +4760,30 @@
    "hours": "Sun-Mon Closed · Tue-Thu 8:30am-1pm, 3:00-5:30pm · Fri-Sat 8:30am-3pm",
    "website": "https://www.brewable.org/",
    "googleUrl": "https://maps.google.com/?cid=17822294277431786527&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJKWDucfV19YgR_Gx75XRIPaQ",
+   "name": "Dunkin'",
+   "address": "670 N Main St, Alpharetta, GA 30009, USA",
+   "city": "Alpharetta",
+   "county": "Fulton",
+   "lat": 34.09264,
+   "lng": -84.286114,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "cafe",
+    "donut_shop",
+    "bakery"
+   ],
+   "rating": 4.1,
+   "ratingNum": 240,
+   "ratingCount": "240",
+   "hours": "Mon-Sun 5am-9pm",
+   "website": "https://www.dunkindonuts.com/locations/us/ga/alpharetta/670-n-main-st/store-359612/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=359612&y_source=1_Mjk1MTI4NjctNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=11834695062703009020&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJKWGIYOi_9YgRYeD8zqe9YKY",
@@ -4104,6 +4980,27 @@
    "googleUrl": "https://maps.google.com/?cid=316169418671657824&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJL4YBE4YP9YgREZE8FQyhXs8",
+   "name": "Starbucks Coffee Company",
+   "address": "5570 Roswell Rd, Sandy Springs, GA 30342, USA",
+   "city": "Sandy Springs",
+   "county": "Fulton",
+   "lat": 33.90588,
+   "lng": -84.38046,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 3.7,
+   "ratingNum": 63,
+   "ratingCount": "63",
+   "hours": "Mon-Sun 8am-8pm",
+   "website": "https://www.starbucks.com/store-locator/store/10685",
+   "googleUrl": "https://maps.google.com/?cid=14942557686929854737&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJL5qmfYR19YgRZRithymFoX4",
    "name": "Café Intermezzo - Avalon",
    "address": "100 Avalon Blvd, Alpharetta, GA 30009, USA",
@@ -4150,6 +5047,52 @@
    "hours": "Mon-Sat 8am-8pm · Sun 12:00-6pm",
    "website": "http://the-pantry-cafe.com/",
    "googleUrl": "https://maps.google.com/?cid=16996812149808947394&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJLXRen3x19YgR4VcCZnYc9RY",
+   "name": "Starbucks Coffee Company",
+   "address": "6000 North Point Pkwy, Alpharetta, GA 30022, USA",
+   "city": "Alpharetta",
+   "county": "Fulton",
+   "lat": 34.045979,
+   "lng": -84.286311,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 3.8,
+   "ratingNum": 89,
+   "ratingCount": "89",
+   "hours": "Mon-Sun 8am-8pm",
+   "website": "https://www.starbucks.com/store-locator/store/14360",
+   "googleUrl": "https://maps.google.com/?cid=1654259732971673569&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJLZ1EZBuV9YgRc7cWKSIOxZo",
+   "name": "7 Brew Coffee",
+   "address": "3700 Buford Dr, Buford, GA 30519, USA",
+   "city": "Buford",
+   "county": "Gwinnett",
+   "lat": 34.083212,
+   "lng": -83.98892,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.3,
+   "ratingNum": 621,
+   "ratingCount": "621",
+   "hours": "Sun-Thu 5:30am-10pm · Fri-Sat 5:30am-11pm",
+   "late": {
+    "tier": "10pm+",
+    "when": "Daily till 11pm"
+   },
+   "website": "https://7brew.com/location/georgia-buford-000067",
+   "googleUrl": "https://maps.google.com/?cid=11152335592133932915&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJLbgzaADB9YgRa-g7bd6krEE",
@@ -4288,24 +5231,28 @@
    "googleUrl": "https://maps.google.com/?cid=1350499312825375514&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
-   "placeId": "ChIJMQPlFwAP9YgR--xrzH2ckaM",
-   "name": "Whole Foods Bakery",
-   "address": "5932b Roswell Rd, Atlanta, GA 30328, USA",
-   "city": "Atlanta",
+   "placeId": "ChIJM5ikg9EP9YgRxZ_stvwKFNY",
+   "name": "Dunkin'",
+   "address": "5660 Roswell Rd, Sandy Springs, GA 30342, USA",
+   "city": "Sandy Springs",
    "county": "Fulton",
-   "lat": 33.917599,
-   "lng": -84.379923,
-   "category": "Bakery+Cafe",
+   "lat": 33.908667,
+   "lng": -84.379047,
+   "category": "Coffee",
    "model": "franchise",
    "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "cafe",
+    "donut_shop",
     "bakery"
    ],
-   "rating": 5.0,
-   "ratingNum": 1,
-   "ratingCount": "1",
-   "hours": null,
-   "website": "https://www.wholefoodsmarket.com/departments/bakery",
-   "googleUrl": "https://maps.google.com/?cid=11786373763919768827&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "rating": 2.8,
+   "ratingNum": 223,
+   "ratingCount": "223",
+   "hours": "Mon-Sun 5am-9pm",
+   "website": "https://www.dunkindonuts.com/locations/us/ga/sandy-springs/5660-roswell-road/store-363554/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=363554&y_source=1_NzYwNDMwNDYtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=15425966704167788485&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJMTO6OOu-9YgR9I4fu6ogx0Q",
@@ -4354,6 +5301,28 @@
    "googleUrl": "https://maps.google.com/?cid=7521050341532328791&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJMVBKZd2g9YgRrnQ5QCiOo3E",
+   "name": "Panera Bread",
+   "address": "3280 Holcomb Bridge Rd B, Norcross, GA 30092, USA",
+   "city": "Norcross",
+   "county": "Gwinnett",
+   "lat": 33.95114,
+   "lng": -84.236554,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "cafe",
+    "coffee_shop",
+    "bakery"
+   ],
+   "rating": 4.0,
+   "ratingNum": 1319,
+   "ratingCount": "1,319",
+   "hours": "Mon-Fri 6:30am-9pm · Sat-Sun 7am-9pm",
+   "website": "https://www.panerabread.com/en-us/cafe/locations/ga/norcross/3280-holcomb-bridge-northwest?utm_medium=local&utm_source=google&utm_campaign=dpm-dist&utm_term=202550&utm_content=main",
+   "googleUrl": "https://maps.google.com/?cid=8188544851017036974&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJM_iCegeV9YgR9Fls5bwV-TI",
    "name": "Smallcakes Buford",
    "address": "2925 Buford Dr Ste 1220, Buford, GA 30519, USA",
@@ -4373,6 +5342,48 @@
    "hours": "Mon-Thu 11am-8pm · Fri-Sat 11am-9pm · Sun 12:00-6pm",
    "website": "http://www.smallcakesgwinnett.com/",
    "googleUrl": "https://maps.google.com/?cid=3672990872144468468&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJMcDsp3-V9YgRYh6djR6lqpQ",
+   "name": "Starbucks Coffee Company",
+   "address": "3205 Woodward Crossing Blvd, Buford, GA 30519, USA",
+   "city": "Buford",
+   "county": "Gwinnett",
+   "lat": 34.07027,
+   "lng": -83.98226,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 1.8,
+   "ratingNum": 17,
+   "ratingCount": "17",
+   "hours": "Mon-Sun 8am-8pm",
+   "website": "https://www.starbucks.com/store-locator",
+   "googleUrl": "https://maps.google.com/?cid=10712556214297632354&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJN0rf2oZ19YgRNczch7zU2Pc",
+   "name": "Starbucks",
+   "address": "9000 Avalon Blvd, Alpharetta, GA 30009, USA",
+   "city": "Alpharetta",
+   "county": "Fulton",
+   "lat": 34.07088,
+   "lng": -84.27309,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.1,
+   "ratingNum": 290,
+   "ratingCount": "290",
+   "hours": "Sun-Thu 6am-8pm · Fri-Sat 6am-9:30pm",
+   "website": "https://www.starbucks.com/store-locator/store/1020902",
+   "googleUrl": "https://maps.google.com/?cid=17859258228536036405&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJN7Rhc6KV9YgRTGVZIeWQYPo",
@@ -4576,27 +5587,25 @@
    "googleUrl": "https://maps.google.com/?cid=17516230222780580539&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
-   "placeId": "ChIJNyOLDlaT9YgRqlZg7u0kJYU",
-   "name": "Kroger Bakery",
-   "address": "3300 Hamilton Mill Rd, Buford, GA 30519, USA",
+   "placeId": "ChIJO0CprALr9YgRjFen30AguPs",
+   "name": "Starbucks Coffee Company",
+   "address": "3265 Sardis Church Rd, Buford, GA 30519, USA",
    "city": "Buford",
    "county": "Gwinnett",
-   "lat": 34.093186,
-   "lng": -83.937853,
-   "category": "Bakery+Cafe",
+   "lat": 34.07902,
+   "lng": -83.91886,
+   "category": "Coffee",
    "model": "franchise",
    "types": [
-    "bakery",
-    "bagel_shop",
-    "donut_shop",
-    "dessert_shop"
+    "coffee_shop",
+    "cafe"
    ],
    "rating": 4.3,
-   "ratingNum": 4,
-   "ratingCount": "4",
-   "hours": null,
-   "website": "https://www.kroger.com/d/bakery?cid=loc_01100494B_gmb",
-   "googleUrl": "https://maps.google.com/?cid=9594115185507849898&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "ratingNum": 339,
+   "ratingCount": "339",
+   "hours": "Mon-Sun 5am-9pm",
+   "website": "https://www.starbucks.com/store-locator/store/1025094",
+   "googleUrl": "https://maps.google.com/?cid=18138282962236954508&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJO5KR1ia69YgRsCUUkFYU2QI",
@@ -4702,6 +5711,30 @@
    "signature": "Vanilla Caramel Cold Brew"
   },
   {
+   "placeId": "ChIJO7ymUUXr9YgRP3W93DVtwrY",
+   "name": "Dunkin'",
+   "address": "2710 Hamilton Mill Rd, Buford, GA 30519, USA",
+   "city": "Buford",
+   "county": "Gwinnett",
+   "lat": 34.080278,
+   "lng": -83.921796,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "donut_shop",
+    "cafe",
+    "bakery"
+   ],
+   "rating": 3.9,
+   "ratingNum": 618,
+   "ratingCount": "618",
+   "hours": "Mon-Sun 5am-9pm",
+   "website": "https://www.dunkindonuts.com/locations/us/ga/buford/2710-hamilton-mill-rd/store-353820/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=353820&y_source=1_MTIxMDk3MTYtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=13169208338488849727&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJO9PiyNmZ9YgRiPq-xRQAViA",
    "name": "Nakwon Rice Cake/ Sweet Rice/ Peachtree",
    "address": "2900 Peachtree Industrial Blvd, Duluth, GA 30097, USA",
@@ -4742,6 +5775,27 @@
    "hours": "Mon-Sat 10am-9pm · Sun 1:00-9pm",
    "website": "https://www.cafesoonatl.com/",
    "googleUrl": "https://maps.google.com/?cid=9558502295340037566&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJOYMTz2eU9YgR4HdekqpEB_o",
+   "name": "Starbucks Coffee Company",
+   "address": "3380 Buford Dr, Buford, GA 30519, USA",
+   "city": "Buford",
+   "county": "Gwinnett",
+   "lat": 34.074394,
+   "lng": -83.984794,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.1,
+   "ratingNum": 1493,
+   "ratingCount": "1,493",
+   "hours": "Mon-Thu 5am-8pm · Fri-Sun 5am-9pm",
+   "website": "https://www.starbucks.com/store-locator/store/6457/",
+   "googleUrl": "https://maps.google.com/?cid=18016444333709752288&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJOa5vXQCd9YgRgr2eK5diI00",
@@ -4805,6 +5859,30 @@
    "googleUrl": "https://maps.google.com/?cid=3815639748456130823&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJOdoa-N-H9YgRpniJX6Su_p0",
+   "name": "Dunkin'",
+   "address": "5290 Matt Hwy, Cumming, GA 30028, USA",
+   "city": "Cumming",
+   "county": "Forsyth",
+   "lat": 34.298853,
+   "lng": -84.151728,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "donut_shop",
+    "cafe",
+    "bakery"
+   ],
+   "rating": 4.1,
+   "ratingNum": 185,
+   "ratingCount": "185",
+   "hours": "Mon-Sun 5am-9pm",
+   "website": "https://www.dunkindonuts.com/locations/us/ga/cumming/5290-matt-highway/store-363793/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=363793&y_source=1_NTU2NjA5MDYtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=11384728929039906982&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJOxVu4ZTr9YgREqIIrOKR6D0",
    "name": "The Queen's Coffee & Donut cafe",
    "address": "2590 Hamilton Mill Rd #107, Buford, GA 30519, USA",
@@ -4830,6 +5908,27 @@
    "googleUrl": "https://maps.google.com/?cid=4460975833645359634&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJOyISZAvB9YgRsuf07m7-lRA",
+   "name": "Starbucks",
+   "address": "485 Dacula Rd, Dacula, GA 30019, USA",
+   "city": "Dacula",
+   "county": "Gwinnett",
+   "lat": 33.99939,
+   "lng": -83.90568,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 3.6,
+   "ratingNum": 390,
+   "ratingCount": "390",
+   "hours": "Mon-Sun 5am-9pm",
+   "website": "https://www.starbucks.com/store-locator/store/1023430",
+   "googleUrl": "https://maps.google.com/?cid=1195141028545619890&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJP0U0uJef9YgRItwooXqfu9c",
    "name": "Peach Coffee Roasters",
    "address": "10875 Jones Bridge Rd #5, Johns Creek, GA 30022, USA",
@@ -4849,6 +5948,51 @@
    "hours": "Mon-Fri 7am-5pm · Sat 8am-5pm · Sun 8am-3pm",
    "website": "https://www.peachcoffeeroasters.com/",
    "googleUrl": "https://maps.google.com/?cid=15545193887838034978&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJP260o4IK9YgRk7HV-bzTwps",
+   "name": "Starbucks Coffee Company",
+   "address": "8500 Holcomb Bridge Rd, Alpharetta, GA 30022, USA",
+   "city": "Alpharetta",
+   "county": "Fulton",
+   "lat": 33.98788,
+   "lng": -84.27365,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 3.6,
+   "ratingNum": 461,
+   "ratingCount": "461",
+   "hours": "Mon-Sun 5am-8pm",
+   "website": "https://www.starbucks.com/store-locator/store/1021452",
+   "googleUrl": "https://maps.google.com/?cid=11223766029959541139&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJP4ZShD6P9YgR7ZAQvZnXxe4",
+   "name": "Dunkin'",
+   "address": "3275 Keith Bridge Rd, Cumming, GA 30041, USA",
+   "city": "Cumming",
+   "county": "Forsyth",
+   "lat": 34.257881,
+   "lng": -84.076363,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "cafe",
+    "donut_shop",
+    "bakery"
+   ],
+   "rating": 4.0,
+   "ratingNum": 560,
+   "ratingCount": "560",
+   "hours": "Mon-Sun 5am-9pm",
+   "website": "https://www.dunkindonuts.com/locations/us/ga/cumming/3275-keith-bridge-rd/store-354752/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=354752&y_source=1_MTIxMTEzODktNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=17205395006740795629&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJP5oY9pqV9YgRRdhK8mc-rB8",
@@ -4920,29 +6064,6 @@
    "googleUrl": "https://maps.google.com/?cid=16810370310967326130&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
-   "placeId": "ChIJPQYL23kJ9YgRS9aLm2szU2Q",
-   "name": "Kroger Bakery",
-   "address": "4498 Chamblee Dunwoody Rd, Dunwoody, GA 30338, USA",
-   "city": "Dunwoody",
-   "county": "DeKalb",
-   "lat": 33.922634,
-   "lng": -84.315928,
-   "category": "Bakery+Cafe",
-   "model": "franchise",
-   "types": [
-    "bakery",
-    "bagel_shop",
-    "donut_shop",
-    "dessert_shop"
-   ],
-   "rating": 3.4,
-   "ratingNum": 32,
-   "ratingCount": "32",
-   "hours": null,
-   "website": "https://www.kroger.com/d/bakery?cid=loc_01100210B_gmb",
-   "googleUrl": "https://maps.google.com/?cid=7229178364123928139&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
    "placeId": "ChIJPR5SJL-f9YgRF4jcZyLZtrk",
    "name": "CHUCHAT 初茶",
    "address": "6000 Medlock Bridge Pkwy F200, Johns Creek, GA 30097, USA",
@@ -5010,29 +6131,6 @@
    "googleUrl": "https://maps.google.com/?cid=10381905533161240003&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
-   "placeId": "ChIJP_MTjKOw9YgRB4QsGXeDg3I",
-   "name": "Kroger Bakery",
-   "address": "3035 Scenic Hwy S #19, Snellville, GA 30039, USA",
-   "city": "Snellville",
-   "county": "Gwinnett",
-   "lat": 33.824814,
-   "lng": -84.033182,
-   "category": "Bakery+Cafe",
-   "model": "franchise",
-   "types": [
-    "bakery",
-    "dessert_shop",
-    "bagel_shop",
-    "donut_shop"
-   ],
-   "rating": 4.6,
-   "ratingNum": 11,
-   "ratingCount": "11",
-   "hours": null,
-   "website": "https://www.kroger.com/d/bakery?cid=loc_01100484B_gmb",
-   "googleUrl": "https://maps.google.com/?cid=8251583489819575303&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
    "placeId": "ChIJPa9M3xQJ9YgRITxwZv8veU8",
    "name": "Kokee Tea - Perimeter",
    "address": "4400 Ashford Dunwoody Rd NE Ste 1400, Atlanta, GA 30346, USA",
@@ -5073,6 +6171,27 @@
    "hours": "Mon-Sat 5:30am-2pm · Sun Closed",
    "website": "https://www.sarahdonuts.com/",
    "googleUrl": "https://maps.google.com/?cid=11421555170483637678&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJPdhv2RFz9YgRm5b67IzkxTM",
+   "name": "Starbucks Coffee Company",
+   "address": "680 W Crossville Rd, Roswell, GA 30075, USA",
+   "city": "Roswell",
+   "county": "Fulton",
+   "lat": 34.05817,
+   "lng": -84.38225,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.0,
+   "ratingNum": 262,
+   "ratingCount": "262",
+   "hours": "Mon-Sun 5am-8pm",
+   "website": "https://www.starbucks.com/store-locator/store/8761/",
+   "googleUrl": "https://maps.google.com/?cid=3730639160268723867&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJPfuFJDQJ9YgRfiQRcqz6dSE",
@@ -5198,6 +6317,27 @@
    "googleUrl": "https://maps.google.com/?cid=13852988599723253253&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJQ1jYBL109YgRLrJRpHHrK-0",
+   "name": "Starbucks Coffee Company",
+   "address": "10800 Alpharetta Hwy, Roswell, GA 30076, USA",
+   "city": "Roswell",
+   "county": "Fulton",
+   "lat": 34.04324,
+   "lng": -84.34166,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.3,
+   "ratingNum": 965,
+   "ratingCount": "965",
+   "hours": "Mon-Sun 5am-8pm",
+   "website": "https://www.starbucks.com/store-locator/store/15863/",
+   "googleUrl": "https://maps.google.com/?cid=17090012084308128302&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJQ3Zwpfih9YgRasoGrXAv7Mg",
    "name": "Perimeter Cafe & Bookstore",
    "address": "9500 Medlock Bridge Rd, Johns Creek, GA 30097, USA",
@@ -5217,6 +6357,29 @@
    "hours": "Mon-Fri 8am-3:45pm · Sat Closed · Sun 8:30am-12:30pm",
    "website": "https://www.perimeter.org/cafe-bookstore/",
    "googleUrl": "https://maps.google.com/?cid=14477999063075048042&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJQ4M3Epqj9YgRdqA7TdUlkhI",
+   "name": "Einstein Bros. Bagels",
+   "address": "3455 Peachtree Industrial Blvd #305, Duluth, GA 30096, USA",
+   "city": "Duluth",
+   "county": "Gwinnett",
+   "lat": 34.005269,
+   "lng": -84.173423,
+   "category": "Bakery+Cafe",
+   "model": "franchise",
+   "types": [
+    "bagel_shop",
+    "coffee_shop",
+    "cafe",
+    "bakery"
+   ],
+   "rating": 3.8,
+   "ratingNum": 45,
+   "ratingCount": "45",
+   "hours": "Mon-Sun 6am-2pm",
+   "website": "https://locations.einsteinbros.com/us/ga/duluth/3455-peachtree-industrial-blvd?y_source=1_MjAwNTYwNjcwMy03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+   "googleUrl": "https://maps.google.com/?cid=1338173637336473718&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJQ7rRNkm_9YgRdUCVBf73cgc",
@@ -5267,6 +6430,31 @@
    "googleUrl": "https://maps.google.com/?cid=12633105053239310974&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJQ9zDeIyf9YgRdPWmQJH8t5E",
+   "name": "7 Brew Coffee",
+   "address": "5813 State Bridge Rd, Johns Creek, GA 30097, USA",
+   "city": "Johns Creek",
+   "county": "Fulton",
+   "lat": 34.01653,
+   "lng": -84.187052,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.6,
+   "ratingNum": 387,
+   "ratingCount": "387",
+   "hours": "Sun-Thu 5:30am-10pm · Fri-Sat 5:30am-11pm",
+   "late": {
+    "tier": "10pm+",
+    "when": "Daily till 11pm"
+   },
+   "website": "https://7brew.com/",
+   "googleUrl": "https://maps.google.com/?cid=10500138757022741876&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJQS69IwCi9YgRpGzL06-Hz9U",
    "name": "WFM Coffee Bar",
    "address": "5945 State Bridge Rd Bldg 200, Duluth, GA 30097, USA",
@@ -5286,6 +6474,27 @@
    "hours": "Mon-Sun 7am-7pm",
    "website": "http://www.wholefoodsmarket.com/stores/Duluth?utm_source=google&utm_medium=organic&utm_campaign=listings&ref=US_TRF_ALL_UFG_WFM_FRSEA_1003805",
    "googleUrl": "https://maps.google.com/?cid=15406682039500106916&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJQSrKTCKx9YgR_UwY4jA8v1c",
+   "name": "Starbucks",
+   "address": "3035 Centerville Hwy, Snellville, GA 30039, USA",
+   "city": "Snellville",
+   "county": "Gwinnett",
+   "lat": 33.82503,
+   "lng": -84.03317,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 3.7,
+   "ratingNum": 273,
+   "ratingCount": "273",
+   "hours": "Mon-Sun 6am-6pm",
+   "website": "https://www.starbucks.com/store-locator/store/1024117",
+   "googleUrl": "https://maps.google.com/?cid=6322838582500805885&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJQW8iUegL9YgRlX7voh3KG3w",
@@ -5375,6 +6584,29 @@
    "googleUrl": "https://maps.google.com/?cid=12859471057437807841&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJQzRObcCl9YgRX3d_5uyNwO8",
+   "name": "Einstein Bros. Bagels",
+   "address": "4805 Lawrenceville Hwy Ste 502, Lilburn, GA 30047, USA",
+   "city": "Lilburn",
+   "county": "Gwinnett",
+   "lat": 33.894449,
+   "lng": -84.141213,
+   "category": "Bakery+Cafe",
+   "model": "franchise",
+   "types": [
+    "bagel_shop",
+    "coffee_shop",
+    "bakery",
+    "cafe"
+   ],
+   "rating": 4.1,
+   "ratingNum": 75,
+   "ratingCount": "75",
+   "hours": "Mon-Sun 6am-2pm",
+   "website": "https://locations.einsteinbros.com/us/ga/lilburn/4805-lawrenceville-hwy?y_source=1_MjAwODY0MjE3OC03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+   "googleUrl": "https://maps.google.com/?cid=17275964219212134239&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJR520zn2X9YgRwRSGbTBp7Fs",
    "name": "Zoom Coffee Roasters",
    "address": "960 Scales Rd Ste 110, Suwanee, GA 30024, USA",
@@ -5439,6 +6671,30 @@
    },
    "website": "http://www.dingtea.com/",
    "googleUrl": "https://maps.google.com/?cid=9562004776642166629&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJRTpb9r2d9YgRT9yrjzSNjpI",
+   "name": "Dunkin'",
+   "address": "6020 Atlanta Hwy, Alpharetta, GA 30004, USA",
+   "city": "Alpharetta",
+   "county": "Forsyth",
+   "lat": 34.136876,
+   "lng": -84.249038,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "donut_shop",
+    "cafe",
+    "bakery"
+   ],
+   "rating": 4.0,
+   "ratingNum": 617,
+   "ratingCount": "617",
+   "hours": "Mon-Sun 5am-9pm",
+   "website": "https://www.dunkindonuts.com/locations/us/ga/alpharetta/6020-atlanta-hwy/store-351179/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=351179&y_source=1_MTIxMDYyNDItNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=10560533433118612559&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJRW8utolz9YgRCFEoMUBJjIU",
@@ -5555,24 +6811,32 @@
    "googleUrl": "https://maps.google.com/?cid=808375601349223901&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
-   "placeId": "ChIJRcatKAB19YgRu4TiqPXEkNs",
-   "name": "Whole Foods Bakery",
-   "address": "2800 Old Milton Pkwy, Alpharetta, GA 30009, USA",
-   "city": "Alpharetta",
+   "placeId": "ChIJRege7bx09YgRQlv9kYx4xkY",
+   "name": "Krispy Kreme",
+   "address": "10781 Alpharetta Hwy, Roswell, GA 30076, USA",
+   "city": "Roswell",
    "county": "Fulton",
-   "lat": 34.069394,
-   "lng": -84.278439,
+   "lat": 34.042455,
+   "lng": -84.340962,
    "category": "Bakery+Cafe",
    "model": "franchise",
    "types": [
-    "bakery"
+    "donut_shop",
+    "coffee_shop",
+    "bakery",
+    "dessert_shop",
+    "cafe"
    ],
-   "rating": 3.4,
-   "ratingNum": 5,
-   "ratingCount": "5",
-   "hours": null,
-   "website": "https://www.wholefoodsmarket.com/departments/bakery",
-   "googleUrl": "https://maps.google.com/?cid=15821362050332001467&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "rating": 3.9,
+   "ratingNum": 1190,
+   "ratingCount": "1,190",
+   "hours": "Sun-Thu 6am-10pm · Fri-Sat 6am-11pm",
+   "late": {
+    "tier": "10pm+",
+    "when": "Daily till 11pm"
+   },
+   "website": "https://site.krispykreme.com/ga/roswell/10781-alpharetta-hwy?y_source=1_MTE4OTc4ODQtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=5099896173183720258&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJRfiUQtOj9YgRyiMsgL9WRCo",
@@ -5619,6 +6883,48 @@
    "hours": null,
    "website": null,
    "googleUrl": "https://maps.google.com/?cid=2185684829019484726&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJS2c9WiAM9YgRutuVaReeIUg",
+   "name": "Starbucks Coffee Company",
+   "address": "Abernathy Square, 6681 Roswell Rd, Sandy Springs, GA 30328, USA",
+   "city": "Sandy Springs",
+   "county": "Fulton",
+   "lat": 33.93661,
+   "lng": -84.37769,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.1,
+   "ratingNum": 438,
+   "ratingCount": "438",
+   "hours": "Mon-Sun 5am-8pm",
+   "website": "https://www.starbucks.com/store-locator/store/15409/",
+   "googleUrl": "https://maps.google.com/?cid=5197609268355128250&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJSQHyHYC59YgR3jgJeaRw0Vg",
+   "name": "Starbucks Coffee Company",
+   "address": "1905 Scenic Hwy N, Snellville, GA 30078, USA",
+   "city": "Snellville",
+   "county": "Gwinnett",
+   "lat": 33.87451,
+   "lng": -84.01581,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 3.3,
+   "ratingNum": 109,
+   "ratingCount": "109",
+   "hours": "Mon-Sun 8am-8pm",
+   "website": "https://www.starbucks.com/store-locator/store/9721",
+   "googleUrl": "https://maps.google.com/?cid=6400020397177780446&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJSSq0WtmT9YgRQHMErfA80sU",
@@ -5822,6 +7128,52 @@
    "googleUrl": "https://maps.google.com/?cid=16359016466528604425&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJT50dSQCf9YgRZp4K0F4MtyY",
+   "name": "Dunkin'",
+   "address": "11605 Jones Bridge Rd, Alpharetta, GA 30022, USA",
+   "city": "Alpharetta",
+   "county": "Fulton",
+   "lat": 34.063568,
+   "lng": -84.213419,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "cafe",
+    "donut_shop",
+    "bakery"
+   ],
+   "rating": 4.0,
+   "ratingNum": 65,
+   "ratingCount": "65",
+   "hours": "Mon-Sun 5am-9pm",
+   "website": "https://www.dunkindonuts.com/locations/us/ga/alpharetta/11605-jones-bridge-road/store-365396/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=365396&y_source=1_MjAzMDYyMzUwNi03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+   "googleUrl": "https://maps.google.com/?cid=2789712095536127590&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJT6-sVUMJ9YgRUca3QJVA6pA",
+   "name": "Starbucks Coffee Company",
+   "address": "4441 Ashford Dunwoody Rd NE, Dunwoody, GA 30346, USA",
+   "city": "Dunwoody",
+   "county": "DeKalb",
+   "neighborhood": "Perimeter Center",
+   "lat": 33.921824,
+   "lng": -84.338379,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 3.8,
+   "ratingNum": 1368,
+   "ratingCount": "1,368",
+   "hours": "Mon-Sun 5am-9pm",
+   "website": "https://www.starbucks.com/store-locator/store/92837/",
+   "googleUrl": "https://maps.google.com/?cid=10442229695792006737&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJT60Ng92e9YgROeU_MJ86dXg",
    "name": "HUT BAKERY",
    "address": "6300 Atlanta Hwy #104, Alpharetta, GA 30004, USA",
@@ -5881,6 +7233,30 @@
    "hours": "Mon-Sat 10:30am-2:30pm · Sun Closed",
    "website": "https://www.risingroll.com/",
    "googleUrl": "https://maps.google.com/?cid=7290362154133585216&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJTU3hhkyY9YgRFKzTM7PSo9A",
+   "name": "Dunkin'",
+   "address": "7810 McGinnis Ferry Rd Ste 101, Suwanee, GA 30024, USA",
+   "city": "Suwanee",
+   "county": "Forsyth",
+   "lat": 34.055403,
+   "lng": -84.128261,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "donut_shop",
+    "cafe",
+    "bakery"
+   ],
+   "rating": 4.0,
+   "ratingNum": 321,
+   "ratingCount": "321",
+   "hours": "Mon-Fri 5am-8pm · Sat-Sun 6am-8pm",
+   "website": "https://www.dunkindonuts.com/locations/us/ga/suwanee/7810-mcginnis-ferry-rd/store-350852/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=350852&y_source=1_MTIxMTI4MjQtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=15034091648203336724&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJTUGbsuu-9YgRt5PjOi6vDuc",
@@ -5973,6 +7349,49 @@
    "googleUrl": "https://maps.google.com/?cid=3091845833704732727&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJTdORqWSl9YgR0ni3I7Lkkhk",
+   "name": "Starbucks Coffee Company",
+   "address": "1227 Rockbridge Rd, Stone Mountain, GA 30087, USA",
+   "city": "Stone Mountain",
+   "county": "Gwinnett",
+   "lat": 33.84114,
+   "lng": -84.13294,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 3.6,
+   "ratingNum": 279,
+   "ratingCount": "279",
+   "hours": "Mon-Sun 6am-8pm",
+   "website": "https://www.starbucks.com/store-locator/store/8063",
+   "googleUrl": "https://maps.google.com/?cid=1842786651302492370&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJTdTn-wWj9YgRRCa2owK2LR4",
+   "name": "Starbucks Coffee Company",
+   "address": "3675 Satellite Blvd NW, Duluth, GA 30096, USA",
+   "city": "Duluth",
+   "county": "Gwinnett",
+   "neighborhood": "Gwinnett Place",
+   "lat": 33.95953,
+   "lng": -84.13554,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.0,
+   "ratingNum": 903,
+   "ratingCount": "903",
+   "hours": "Mon-Fri 5am-8pm · Sat-Sun 5am-7:30pm",
+   "website": "https://www.starbucks.com/store-locator/store/15318/",
+   "googleUrl": "https://maps.google.com/?cid=2174594317542630980&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJTdvjEVex9YgRDnIPQBmNXdQ",
    "name": "VI Sweets And Things LLC",
    "address": "4485 Lawrenceville Hwy Ste 207 #3460, Lilburn, GA 30047, USA",
@@ -6015,29 +7434,6 @@
    },
    "website": null,
    "googleUrl": "https://maps.google.com/?cid=13404549439038216125&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
-   "placeId": "ChIJTynv8Hq59YgRVT29EZOADUQ",
-   "name": "Kroger Bakery",
-   "address": "1670 Scenic Hwy N, Snellville, GA 30078, USA",
-   "city": "Snellville",
-   "county": "Gwinnett",
-   "lat": 33.882813,
-   "lng": -84.007898,
-   "category": "Bakery+Cafe",
-   "model": "franchise",
-   "types": [
-    "bakery",
-    "bagel_shop",
-    "donut_shop",
-    "dessert_shop"
-   ],
-   "rating": 3.0,
-   "ratingNum": 1,
-   "ratingCount": "1",
-   "hours": null,
-   "website": "https://www.kroger.com/d/bakery?cid=loc_01100483B_gmb",
-   "googleUrl": "https://maps.google.com/?cid=4903716938422500693&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJU67XsNKf9YgRNqYv9RjRqjc",
@@ -6200,6 +7596,34 @@
    "googleUrl": "https://maps.google.com/?cid=16797533993122728392&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJUVKywMm79YgRweLA-yi3tuA",
+   "name": "Dunkin'",
+   "address": "3941 US-78, Snellville, GA 30039, USA",
+   "city": "Snellville",
+   "county": "Gwinnett",
+   "lat": 33.83908,
+   "lng": -84.067346,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "donut_shop",
+    "bakery",
+    "cafe"
+   ],
+   "rating": 3.5,
+   "ratingNum": 391,
+   "ratingCount": "391",
+   "hours": "Mon-Sun 5am-10pm",
+   "late": {
+    "tier": "10pm+",
+    "when": "Daily till 10pm"
+   },
+   "website": "https://www.dunkindonuts.com/locations/us/ga/snellville/3941-us-highway-78/store-359244/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=359244&y_source=1_MTcwMzI5NDUtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=16192330896907494081&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJUddXuXGL9YgRb5U3F7Pj7-g",
    "name": "Deere Creek Bakery",
    "address": "Wallace Wood Rd, Gainesville, GA 30506, USA",
@@ -6289,6 +7713,31 @@
    "googleUrl": "https://maps.google.com/?cid=13454886609867511189&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJV4h21DsN9YgRYbKUNXW_EaY",
+   "name": "Dunkin'",
+   "address": "3 Glenlake Pkwy NE, Sandy Springs, GA 30328, USA",
+   "city": "Sandy Springs",
+   "county": "Fulton",
+   "neighborhood": "Perimeter Center",
+   "lat": 33.935549,
+   "lng": -84.359997,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "donut_shop",
+    "cafe",
+    "bakery"
+   ],
+   "rating": 3.8,
+   "ratingNum": 22,
+   "ratingCount": "22",
+   "hours": "Mon-Fri 6:30am-3pm · Sat-Sun Closed",
+   "website": "https://www.dunkindonuts.com/locations/us/ga/sandy-springs/3-glenlake-pkwy-northeast/store-363563/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=363563&y_source=1_MzU4NDAxMzgtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=11966556195031134817&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJVSUfFFSf9YgRapRS4CCQ9UE",
    "name": "Sarah Donuts",
    "address": "7110 McGinnis Ferry Rd C, Suwanee, GA 30024, USA",
@@ -6376,32 +7825,6 @@
    "hours": "Mon-Sun 8am-8pm",
    "website": null,
    "googleUrl": "https://maps.google.com/?cid=6802865969490951039&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
-   "placeId": "ChIJVVVVPO2w9YgRvLkDXU5KKVw",
-   "name": "Walmart Bakery",
-   "address": "3435 Centerville Hwy, Snellville, GA 30039, USA",
-   "city": "Snellville",
-   "county": "Gwinnett",
-   "lat": 33.808084,
-   "lng": -84.046643,
-   "category": "Bakery+Cafe",
-   "model": "franchise",
-   "types": [
-    "bakery",
-    "dessert_shop",
-    "bagel_shop"
-   ],
-   "rating": 5.0,
-   "ratingNum": 1,
-   "ratingCount": "1",
-   "hours": "Mon-Sun 7am-10pm",
-   "late": {
-    "tier": "10pm+",
-    "when": "Daily till 10pm"
-   },
-   "website": "https://www.walmart.com/store/3389-snellville-ga/bakery/?veh=seo_loc",
-   "googleUrl": "https://maps.google.com/?cid=6640920825962936764&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJVVVlrMLq9YgRXIkHK5UzhsY",
@@ -6510,6 +7933,32 @@
    "hours": "Mon-Fri 7am-6pm · Sat-Sun 8am-3pm",
    "website": "https://bloomroadside.com/",
    "googleUrl": "https://maps.google.com/?cid=1348569472458728438&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJW1ShfOWf9YgR0KxWLGZO6fY",
+   "name": "Dutch Bros Coffee",
+   "address": "9630 Medlock Bridge Rd, Johns Creek, GA 30097, USA",
+   "city": "Johns Creek",
+   "county": "Fulton",
+   "lat": 34.01631,
+   "lng": -84.19117,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "tea_house",
+    "cafe"
+   ],
+   "rating": 4.3,
+   "ratingNum": 361,
+   "ratingCount": "361",
+   "hours": "Sun-Thu 5am-10pm · Fri-Sat 5am-11pm",
+   "late": {
+    "tier": "10pm+",
+    "when": "Daily till 11pm"
+   },
+   "website": "https://www.dutchbros.com/locations/ga/johns-creek/9630-medlock-bridge-rd?y_source=1_MjAxODQxNTk0NC03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+   "googleUrl": "https://maps.google.com/?cid=17791838003641363664&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJW4UxMCh9X4gRsCdux2ZKFZ4",
@@ -6630,6 +8079,32 @@
    },
    "website": "http://www.roswellprovisions.com/",
    "googleUrl": "https://maps.google.com/?cid=6404874110290004868&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJWTzNqROV9YgRYyWdyGDdgI8",
+   "name": "Dutch Bros Coffee",
+   "address": "2505 Buford Dr, Lawrenceville, GA 30043, USA",
+   "city": "Lawrenceville",
+   "county": "Gwinnett",
+   "lat": 34.041834,
+   "lng": -83.990607,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "tea_house",
+    "cafe"
+   ],
+   "rating": 4.2,
+   "ratingNum": 207,
+   "ratingCount": "207",
+   "hours": "Sun-Thu 5am-10pm · Fri-Sat 5am-11pm",
+   "late": {
+    "tier": "10pm+",
+    "when": "Daily till 11pm"
+   },
+   "website": "https://www.dutchbros.com/locations/ga/lawrenceville/2505-buford-drive?y_source=1_MjAyODc5MzAxMC03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+   "googleUrl": "https://maps.google.com/?cid=10340508152194999651&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJWVQGzDuh9YgReHyw_-z_NY0",
@@ -6877,6 +8352,52 @@
    "googleUrl": "https://maps.google.com/?cid=16329729741144324512&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJX7xOUayf9YgRqviOnv4dAj4",
+   "name": "Starbucks Coffee Company",
+   "address": "4180 Old Milton Pkwy, Alpharetta, GA 30005, USA",
+   "city": "Alpharetta",
+   "county": "Fulton",
+   "lat": 34.05963,
+   "lng": -84.23539,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.2,
+   "ratingNum": 552,
+   "ratingCount": "552",
+   "hours": "Mon-Sun 5am-8pm",
+   "website": "https://www.starbucks.com/store-locator/store/12713/",
+   "googleUrl": "https://maps.google.com/?cid=4468166759724021930&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJX8oLWuu79YgRSSh2k9h4hko",
+   "name": "7 Brew Coffee",
+   "address": "3253 Stone Mountain Hwy, Snellville, GA 30078, USA",
+   "city": "Snellville",
+   "county": "Gwinnett",
+   "lat": 33.850884,
+   "lng": -84.046123,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.5,
+   "ratingNum": 522,
+   "ratingCount": "522",
+   "hours": "Sun-Thu 5:30am-10pm · Fri-Sat 5:30am-11pm",
+   "late": {
+    "tier": "10pm+",
+    "when": "Daily till 11pm"
+   },
+   "website": "https://7brew.com/location/georgia-snellville-000229",
+   "googleUrl": "https://maps.google.com/?cid=5370112477268158537&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJX8zUEgW59YgRc49j4Xj9rq4",
    "name": "Nifty Fingers Cakes",
    "address": "1008 Gate Post Ln, Lawrenceville, GA 30044, USA",
@@ -7014,26 +8535,6 @@
    "googleUrl": "https://maps.google.com/?cid=10904889939427460871&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
-   "placeId": "ChIJX_1TXmeU9YgRurbzqqOCZWE",
-   "name": "Sam's Club Bakery",
-   "address": "3383 Buford Dr, Buford, GA 30519, USA",
-   "city": "Buford",
-   "county": "Gwinnett",
-   "lat": 34.07265,
-   "lng": -83.982569,
-   "category": "Bakery+Cafe",
-   "model": "franchise",
-   "types": [
-    "bakery"
-   ],
-   "rating": 4.0,
-   "ratingNum": 3,
-   "ratingCount": "3",
-   "hours": "Mon-Sun 9am-8pm",
-   "website": "https://www.samsclub.com/club/4780-buford-ga/bakery",
-   "googleUrl": "https://maps.google.com/?cid=7018159233786164922&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
    "placeId": "ChIJX_C6Z4l19YgRg2Rv-aSfjis",
    "name": "EstoEtno Fine Bakery",
    "address": "Farmer's Market, 11770 Haynes Bridge Rd #501, Alpharetta, GA 30009, USA",
@@ -7100,6 +8601,30 @@
    "googleUrl": "https://maps.google.com/?cid=12697035289652180490&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJY2ZxidSb9YgR3uyRfTWDUEE",
+   "name": "Dunkin'",
+   "address": "3065 Old Atlanta Rd, Cumming, GA 30041, USA",
+   "city": "Cumming",
+   "county": "Forsyth",
+   "lat": 34.112811,
+   "lng": -84.153872,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "donut_shop",
+    "cafe",
+    "bakery"
+   ],
+   "rating": 4.1,
+   "ratingNum": 218,
+   "ratingCount": "218",
+   "hours": "Mon-Sun 5am-9pm",
+   "website": "https://www.dunkindonuts.com/locations/us/ga/cumming/3065-old-atlanta-rd/store-359376/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=359376&y_source=1_MTc4MDA4ODItNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=4706405876365389022&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJY9P99Yu59YgR1saCV7bFg5U",
    "name": "The Buttery Nutt",
    "address": "2132 Britt St Ste 211, Grayson, GA 30017, USA",
@@ -7118,6 +8643,27 @@
    "hours": "Mon-Fri 7am-4pm · Sat 9am-5pm · Sun Closed",
    "website": "https://www.thebutterynuttbakery.com/",
    "googleUrl": "https://maps.google.com/?cid=10773672120543266518&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJY9jlzZx19YgRnMjbcMYjbww",
+   "name": "Starbucks Coffee Company",
+   "address": "2705 Old Milton Pkwy, Alpharetta, GA 30022, USA",
+   "city": "Alpharetta",
+   "county": "Fulton",
+   "lat": 34.06845,
+   "lng": -84.28088,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.2,
+   "ratingNum": 420,
+   "ratingCount": "420",
+   "hours": "Mon-Sun 5am-8pm",
+   "website": "https://www.starbucks.com/store-locator/store/1014555/",
+   "googleUrl": "https://maps.google.com/?cid=895974186073966748&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJYRGi9FJz9YgRIQ9XQHnlB_U",
@@ -7160,29 +8706,6 @@
    "hours": "Mon-Tue Closed · Wed-Thu 9am-4pm · Fri 12:30-4:30pm · Sat 9am-5pm · Sun 10am-4pm",
    "website": null,
    "googleUrl": "https://maps.google.com/?cid=8585998792685535666&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
-   "placeId": "ChIJYWaX7Jid9YgRGIIxSBYElEM",
-   "name": "Kroger Bakery",
-   "address": "5665 Atlanta Hwy, Alpharetta, GA 30004, USA",
-   "city": "Alpharetta",
-   "county": "Forsyth",
-   "lat": 34.145069,
-   "lng": -84.249836,
-   "category": "Bakery+Cafe",
-   "model": "franchise",
-   "types": [
-    "bakery",
-    "bagel_shop",
-    "donut_shop",
-    "dessert_shop"
-   ],
-   "rating": null,
-   "ratingNum": 0,
-   "ratingCount": "0",
-   "hours": null,
-   "website": "https://www.kroger.com/d/bakery?cid=loc_01100444B_gmb",
-   "googleUrl": "https://maps.google.com/?cid=4869521590841344536&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJYXiqMDqh9YgRiHXhekcEOuY",
@@ -7232,6 +8755,30 @@
    "googleUrl": "https://maps.google.com/?cid=5634890486814457819&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJYfZm6z279YgRBONq2fyjQ_4",
+   "name": "Dunkin'",
+   "address": "3020 Five Forks Trickum Rd SW, Lilburn, GA 30047, USA",
+   "city": "Lilburn",
+   "county": "Gwinnett",
+   "lat": 33.885734,
+   "lng": -84.06018,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "donut_shop",
+    "bakery",
+    "cafe"
+   ],
+   "rating": 3.1,
+   "ratingNum": 232,
+   "ratingCount": "232",
+   "hours": "Mon-Sun Open 24 hours",
+   "website": "https://www.dunkindonuts.com/locations/us/ga/lilburn/3020-five-forks-trickum-rd-sw/store-358317/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=358317&y_source=1_MzcwMDc3NTktNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=18321668015448056580&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJYfjMaMsO9YgR2ed4zL7ADAg",
    "name": "Cafe Two Thousand",
    "address": "960 Johnson Ferry Rd NE Unit 123, Atlanta, GA 30342, USA",
@@ -7251,6 +8798,27 @@
    "hours": "Mon-Fri 7am-2:30pm · Sat-Sun Closed",
    "website": null,
    "googleUrl": "https://maps.google.com/?cid=580050377730746329&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJYwfF_G6e9YgRdLylEW-N8y4",
+   "name": "Starbucks Coffee Company",
+   "address": "6197 Windward Pkwy, Alpharetta, GA 30005, USA",
+   "city": "Alpharetta",
+   "county": "Fulton",
+   "lat": 34.09329,
+   "lng": -84.23666,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.2,
+   "ratingNum": 414,
+   "ratingCount": "414",
+   "hours": "Mon-Sun 5am-8pm",
+   "website": "https://www.starbucks.com/store-locator/store/13454/",
+   "googleUrl": "https://maps.google.com/?cid=3383203253262335092&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJYxz3TcWl9YgRuCGMblM--Uw",
@@ -7395,6 +8963,27 @@
    "googleUrl": "https://maps.google.com/?cid=5931073153636619906&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJZ6vv6mML9YgRywHzMSTtfqo",
+   "name": "Starbucks Coffee Company",
+   "address": "8725 Roswell Road Dunwoody, Place Shopping Center, Atlanta, GA 30350, USA",
+   "city": "Atlanta",
+   "county": "Fulton",
+   "lat": 33.99464,
+   "lng": -84.35014,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.0,
+   "ratingNum": 655,
+   "ratingCount": "655",
+   "hours": "Mon-Sun 5am-8pm",
+   "website": "https://www.starbucks.com/store-locator/store/16071/",
+   "googleUrl": "https://maps.google.com/?cid=12285517573225906635&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJZ8ZvPFy99YgRjia6zsMFj1s",
    "name": "Hansel & Gretel Bakery Cafe",
    "address": "1291 Old Peachtree Rd NW Suite 405, Suwanee, GA 30024, USA",
@@ -7418,27 +9007,6 @@
    },
    "website": "http://www.hanselgretelbakerycafe.com/",
    "googleUrl": "https://maps.google.com/?cid=6597498317666133646&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
-   "placeId": "ChIJZQglaAyj9YgRJULR0DBXgj4",
-   "name": "Sam's Club Bakery",
-   "address": "3450 Steve Reynolds Blvd, Duluth, GA 30096, USA",
-   "city": "Duluth",
-   "county": "Gwinnett",
-   "neighborhood": "Gwinnett Place",
-   "lat": 33.950358,
-   "lng": -84.136753,
-   "category": "Bakery+Cafe",
-   "model": "franchise",
-   "types": [
-    "bakery"
-   ],
-   "rating": 2.9,
-   "ratingNum": 9,
-   "ratingCount": "9",
-   "hours": "Mon-Sun 9am-8pm",
-   "website": "https://www.samsclub.com/club/8166-duluth-ga/bakery",
-   "googleUrl": "https://maps.google.com/?cid=4504258444497338917&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJZXxFvYyb9YgRA1CU4SKAxrU",
@@ -7523,6 +9091,50 @@
    "hours": "Mon-Fri 10am-5pm · Sat 11am-3pm · Sun Closed",
    "website": "http://www.sugarywhim.com/",
    "googleUrl": "https://maps.google.com/?cid=7525051197254863732&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJ_0iFekDr9YgRwG5SnI-zgMk",
+   "name": "Starbucks Coffee Company",
+   "address": "2085 Hamilton Creek Pkwy, Dacula, GA 30019, USA",
+   "city": "Dacula",
+   "county": "Gwinnett",
+   "lat": 34.07,
+   "lng": -83.91292,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 3.9,
+   "ratingNum": 1066,
+   "ratingCount": "1,066",
+   "hours": "Mon-Sun 5am-9pm",
+   "website": "https://www.starbucks.com/store-locator/store/16685/",
+   "googleUrl": "https://maps.google.com/?cid=14519802628026822336&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJ_3cCutO99YgR6ZEzXMNsAqQ",
+   "name": "Einstein Bros. Bagels",
+   "address": "900 Duluth Hwy Ste 500 Ste 500, Lawrenceville, GA 30043, USA",
+   "city": "Lawrenceville",
+   "county": "Gwinnett",
+   "lat": 33.967419,
+   "lng": -84.023852,
+   "category": "Bakery+Cafe",
+   "model": "franchise",
+   "types": [
+    "bagel_shop",
+    "coffee_shop",
+    "bakery",
+    "cafe"
+   ],
+   "rating": 4.2,
+   "ratingNum": 698,
+   "ratingCount": "698",
+   "hours": "Mon-Fri 5:30am-2pm · Sat-Sun 6am-2pm",
+   "website": "https://locations.einsteinbros.com/us/ga/lawrenceville/900-duluth-hwy-ste-500?y_source=1_OTA1MDEzNS03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+   "googleUrl": "https://maps.google.com/?cid=11818127958494908905&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJ_5IUbR519YgRMt7CoNxYoAE",
@@ -7642,26 +9254,6 @@
    "googleUrl": "https://maps.google.com/?cid=13012180827167590020&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
-   "placeId": "ChIJ__-jMPJ19YgRjPcFAdxBxwk",
-   "name": "Costco Bakery",
-   "address": "2855 Jordan Ct, Alpharetta, GA 30004, USA",
-   "city": "Alpharetta",
-   "county": "Fulton",
-   "lat": 34.090381,
-   "lng": -84.277169,
-   "category": "Bakery+Cafe",
-   "model": "franchise",
-   "types": [
-    "bakery"
-   ],
-   "rating": 4.7,
-   "ratingNum": 7,
-   "ratingCount": "7",
-   "hours": "Mon-Fri 10am-8:30pm · Sat 9:30am-7pm · Sun 10am-6pm",
-   "website": "https://www.costco.com/cakes-cookies.html",
-   "googleUrl": "https://maps.google.com/?cid=704604279872550796&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
    "placeId": "ChIJ__8_nQZ19YgRIRW2BepKLRw",
    "name": "Pastry Brigade | Nostalgic Snack Micro-Bakery",
    "address": "1805 Hembree Rd Ste b, Alpharetta, GA 30009, USA",
@@ -7680,54 +9272,6 @@
    "hours": null,
    "website": "https://pastrybrigade.com/",
    "googleUrl": "https://maps.google.com/?cid=2030361375992583457&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
-   "placeId": "ChIJ____L2W59YgRMYduj05mdeA",
-   "name": "Walmart Bakery",
-   "address": "1550 Scenic Hwy N, Snellville, GA 30078, USA",
-   "city": "Snellville",
-   "county": "Gwinnett",
-   "lat": 33.885993,
-   "lng": -84.008021,
-   "category": "Bakery+Cafe",
-   "model": "franchise",
-   "types": [
-    "bakery",
-    "bagel_shop",
-    "dessert_shop"
-   ],
-   "rating": 1.0,
-   "ratingNum": 3,
-   "ratingCount": "3",
-   "hours": "Mon-Sun 7am-10pm",
-   "late": {
-    "tier": "10pm+",
-    "when": "Daily till 10pm"
-   },
-   "website": "https://www.walmart.com/store/1720-snellville-ga/bakery/?veh=seo_loc",
-   "googleUrl": "https://maps.google.com/?cid=16173946124370872113&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
-   "placeId": "ChIJ____u7ek9YgRssAF3IFP8xA",
-   "name": "Walmart Bakery",
-   "address": "4004 Lawrenceville Hwy, Lilburn, GA 30047, USA",
-   "city": "Lilburn",
-   "county": "Gwinnett",
-   "lat": 33.903508,
-   "lng": -84.109869,
-   "category": "Bakery+Cafe",
-   "model": "franchise",
-   "types": [
-    "bakery",
-    "bagel_shop",
-    "dessert_shop"
-   ],
-   "rating": 4.3,
-   "ratingNum": 17,
-   "ratingCount": "17",
-   "hours": "Mon-Sun 7am-8pm",
-   "website": "https://www.walmart.com/store/1373-lilburn-ga/bakery/?veh=seo_loc",
-   "googleUrl": "https://maps.google.com/?cid=1221407343108276402&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJ_cCI0W6k9YgRi1gR29Urjyk",
@@ -7951,6 +9495,125 @@
    },
    "website": null,
    "googleUrl": "https://maps.google.com/?cid=17092552817331588686&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJabxR8sHB9YgRQJqt4quYSl4",
+   "name": "Starbucks Coffee Company",
+   "address": "1006 Martins Chapel Rd, Lawrenceville, GA 30045, USA",
+   "city": "Lawrenceville",
+   "county": "Gwinnett",
+   "lat": 33.94866,
+   "lng": -83.92549,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 3.3,
+   "ratingNum": 42,
+   "ratingCount": "42",
+   "hours": "Mon-Sun 6am-8pm",
+   "website": null,
+   "googleUrl": "https://maps.google.com/?cid=6794410851851672128&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJaevs7WeU9YgR2cekuffZWKQ",
+   "name": "Krispy Kreme",
+   "address": "3387 Buford Dr, Buford, GA 30519, USA",
+   "city": "Buford",
+   "county": "Gwinnett",
+   "lat": 34.073609,
+   "lng": -83.983423,
+   "category": "Bakery+Cafe",
+   "model": "franchise",
+   "types": [
+    "donut_shop",
+    "coffee_shop",
+    "bakery",
+    "dessert_shop",
+    "cafe"
+   ],
+   "rating": 3.4,
+   "ratingNum": 2121,
+   "ratingCount": "2,121",
+   "hours": "Sun-Thu 6am-9pm · Fri-Sat 6am-10pm",
+   "late": {
+    "tier": "10pm+",
+    "when": "Fri-Sat till 10pm"
+   },
+   "website": "https://site.krispykreme.com/ga/buford/3387-buford-dr?y_source=1_MTE4OTc4NzEtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=11842454878165452761&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJaxQeiA6i9YgRwPOZ-xnbinw",
+   "name": "Dunkin'",
+   "address": "3435 Peachtree Industrial Blvd, Duluth, GA 30096, USA",
+   "city": "Duluth",
+   "county": "Gwinnett",
+   "lat": 34.006968,
+   "lng": -84.170663,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "donut_shop",
+    "cafe",
+    "bakery"
+   ],
+   "rating": 4.2,
+   "ratingNum": 1004,
+   "ratingCount": "1,004",
+   "hours": "Mon-Fri 5am-9pm · Sat-Sun 6am-9pm",
+   "website": "https://www.dunkindonuts.com/locations/us/ga/duluth/3435-peachtree-industrial-blvd/store-302564/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=302564&y_source=1_MTIxMDU3OTEtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=8974226112130970560&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJb3rrIFOV9YgRGXF84KHZKgI",
+   "name": "Dunkin'",
+   "address": "3687 Buford Dr, Buford, GA 30519, USA",
+   "city": "Buford",
+   "county": "Gwinnett",
+   "lat": 34.080597,
+   "lng": -83.985715,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "donut_shop",
+    "cafe",
+    "bakery"
+   ],
+   "rating": 3.0,
+   "ratingNum": 532,
+   "ratingCount": "532",
+   "hours": "Mon-Sat 5am-9pm · Sun 6am-9pm",
+   "website": "https://www.dunkindonuts.com/locations/us/ga/buford/3687-buford-dr/store-354379/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=354379&y_source=1_MTIxMTI3MDItNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=156176426376917273&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJb453RvfH9YgRd2C7ZFVYQcw",
+   "name": "Panera Bread",
+   "address": "185 Athens Hwy, Loganville, GA 30052, USA",
+   "city": "Loganville",
+   "county": "Gwinnett",
+   "lat": 33.850208,
+   "lng": -83.918218,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "cafe",
+    "coffee_shop",
+    "bakery"
+   ],
+   "rating": 3.7,
+   "ratingNum": 433,
+   "ratingCount": "433",
+   "hours": "Mon-Fri 6:30am-9pm · Sat-Sun 7am-9pm",
+   "website": "https://www.panerabread.com/en-us/cafe/locations/ga/loganville/185-athens-hwy?utm_medium=local&utm_source=google&utm_campaign=dpm-dist&utm_term=202583&utm_content=main",
+   "googleUrl": "https://maps.google.com/?cid=14718142181008957559&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJbQYT4-WZ9YgRTgreSk34W28",
@@ -8192,6 +9855,27 @@
    "googleUrl": "https://maps.google.com/?cid=10839015018652828286&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJcRrYzFy99YgRwckrYWLaCVQ",
+   "name": "Starbucks Coffee Company",
+   "address": "1611 Satellite Blvd NW, Duluth, GA 30097, USA",
+   "city": "Duluth",
+   "county": "Gwinnett",
+   "lat": 34.002,
+   "lng": -84.08238,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.1,
+   "ratingNum": 874,
+   "ratingCount": "874",
+   "hours": "Mon-Sun 6am-4pm",
+   "website": "https://www.starbucks.com/store-locator/store/7043/",
+   "googleUrl": "https://maps.google.com/?cid=6055611290048252353&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJcVWNuGbH9YgRvnm9vd-mBoo",
    "name": "Lolli’s Cookie Clusters",
    "address": "3785 Harrison Rd Ste 200, Loganville, GA 30052, USA",
@@ -8238,6 +9922,51 @@
    },
    "website": "https://www.hanselgretelbakerycafe.com/",
    "googleUrl": "https://maps.google.com/?cid=5847278102667310420&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJceZahdYK9YgR6AHthwjLc5k",
+   "name": "Dunkin'",
+   "address": "1590 Holcomb Bridge Rd Ste 100, Roswell, GA 30076, USA",
+   "city": "Roswell",
+   "county": "Fulton",
+   "lat": 34.015594,
+   "lng": -84.308801,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "donut_shop",
+    "bakery",
+    "cafe"
+   ],
+   "rating": 3.5,
+   "ratingNum": 453,
+   "ratingCount": "453",
+   "hours": "Mon-Sun 5am-9pm",
+   "website": "https://www.dunkindonuts.com/locations/us/ga/roswell/1590-holcomb-bridge-rd/store-345546/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=345546&y_source=1_MTIxMDU4ODYtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=11057404747625333224&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJcwGSdEmW9YgRbKk_GocATgg",
+   "name": "Starbucks Coffee Company",
+   "address": "3206 Lawrenceville-Suwanee Rd, Suwanee, GA 30024, USA",
+   "city": "Suwanee",
+   "county": "Gwinnett",
+   "lat": 34.03475,
+   "lng": -84.05257,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 3.9,
+   "ratingNum": 947,
+   "ratingCount": "947",
+   "hours": "Mon-Fri 4:30am-8:30pm · Sat-Sun 5am-8:30pm",
+   "website": "https://www.starbucks.com/store-locator/store/1014225/",
+   "googleUrl": "https://maps.google.com/?cid=598416380747819372&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJd3zRD1Wb9YgRoq7_9bT-3LM",
@@ -8373,29 +10102,6 @@
    "googleUrl": "https://maps.google.com/?cid=3872559897768675806&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
-   "placeId": "ChIJd_6CtQif9YgR7qPn59R98-E",
-   "name": "Kroger Bakery",
-   "address": "10945 State Bridge Rd, Alpharetta, GA 30022, USA",
-   "city": "Alpharetta",
-   "county": "Fulton",
-   "lat": 34.049648,
-   "lng": -84.222868,
-   "category": "Bakery+Cafe",
-   "model": "franchise",
-   "types": [
-    "bakery",
-    "bagel_shop",
-    "donut_shop",
-    "dessert_shop"
-   ],
-   "rating": 3.5,
-   "ratingNum": 2,
-   "ratingCount": "2",
-   "hours": null,
-   "website": "https://www.kroger.com/d/bakery?cid=loc_01100390B_gmb",
-   "googleUrl": "https://maps.google.com/?cid=16281495431251731438&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
    "placeId": "ChIJdf_oeZMO9YgRoAONkbM1Kh0",
    "name": "teamo tea cafe",
    "address": "5920 Roswell Rd A107, Sandy Springs, GA 30328, USA",
@@ -8473,29 +10179,6 @@
    "googleUrl": "https://maps.google.com/?cid=1934253817982194297&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
-   "placeId": "ChIJdyXl0otz9YgR7zYUt-GuKmE",
-   "name": "Kroger Bakery",
-   "address": "12460 Crabapple Rd, Alpharetta, GA 30004, USA",
-   "city": "Alpharetta",
-   "county": "Fulton",
-   "lat": 34.085888,
-   "lng": -84.356814,
-   "category": "Bakery+Cafe",
-   "model": "franchise",
-   "types": [
-    "bakery",
-    "dessert_shop",
-    "bagel_shop",
-    "donut_shop"
-   ],
-   "rating": 3.0,
-   "ratingNum": 2,
-   "ratingCount": "2",
-   "hours": null,
-   "website": "https://www.kroger.com/d/bakery?cid=loc_01100415B_gmb",
-   "googleUrl": "https://maps.google.com/?cid=7001600855163287279&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
    "placeId": "ChIJdyqXHc-Y9YgRHVzRgsqnfYc",
    "name": "TOUS les JOURS Bakery Café - Johns Creek",
    "address": "10820 Abbotts Bridge Rd, Johns Creek, GA 30097, USA",
@@ -8564,6 +10247,31 @@
    "googleUrl": "https://maps.google.com/?cid=8123809758687271606&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJe83umBx19YgRT8Ezy-iIl0I",
+   "name": "7 Brew Coffee",
+   "address": "12875 GA-9, Milton, GA 30004, USA",
+   "city": "Milton",
+   "county": "Fulton",
+   "lat": 34.094764,
+   "lng": -84.276476,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.6,
+   "ratingNum": 191,
+   "ratingCount": "191",
+   "hours": "Sun-Thu 5:30am-10pm · Fri-Sat 5:30am-11pm",
+   "late": {
+    "tier": "10pm+",
+    "when": "Daily till 11pm"
+   },
+   "website": "https://locations.7brew.com/ga/milton/12875-hwy-9",
+   "googleUrl": "https://maps.google.com/?cid=4798454461409509711&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJe9X6bDCZ9YgRQqAsJDu1-Uo",
    "name": "Mits Creamy Creations",
    "address": "4195 Roseman Bridge Ct, Suwanee, GA 30024, USA",
@@ -8582,6 +10290,28 @@
    "hours": "Mon Closed · Tue-Sun 10am-8pm",
    "website": "http://www.mitscreamycreations.com/",
    "googleUrl": "https://maps.google.com/?cid=5402548493622222914&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJeR0zXAmk9YgRFYos-PYngRs",
+   "name": "Starbucks Coffee Company",
+   "address": "1528 Indian Trail Lilburn Rd NW, Norcross, GA 30093, USA",
+   "city": "Norcross",
+   "county": "Gwinnett",
+   "neighborhood": "Gwinnett Village",
+   "lat": 33.9209,
+   "lng": -84.16836,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.1,
+   "ratingNum": 1223,
+   "ratingCount": "1,223",
+   "hours": "Mon-Sun 5am-9pm",
+   "website": "https://www.starbucks.com/store-locator/store/1021091",
+   "googleUrl": "https://maps.google.com/?cid=1981909252698835477&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJeVScd9Wj9YgRPvfMkoImdOw",
@@ -8611,6 +10341,29 @@
    "googleUrl": "https://maps.google.com/?cid=17038285632499939134&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJedUxUKIJ9YgRX029JcV6Xus",
+   "name": "Einstein Bros. Bagels",
+   "address": "5564 Peachtree Blvd, Chamblee, GA 30341, USA",
+   "city": "Chamblee",
+   "county": "DeKalb",
+   "lat": 33.900329,
+   "lng": -84.301589,
+   "category": "Bakery+Cafe",
+   "model": "franchise",
+   "types": [
+    "bagel_shop",
+    "coffee_shop",
+    "cafe",
+    "bakery"
+   ],
+   "rating": 3.9,
+   "ratingNum": 130,
+   "ratingCount": "130",
+   "hours": "Mon-Sun 6am-2pm",
+   "website": "https://locations.einsteinbros.com/us/ga/chamblee/5564-peachtree-blvd?y_source=1_MTAwMzkxMDgyNi03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+   "googleUrl": "https://maps.google.com/?cid=16960128233884175711&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJeeTBa4aP9YgRLkRrkQQJKls",
    "name": "Gaucha Bakery - Cumming",
    "address": "5330 Mercedes Dr, Cumming, GA 30041, USA",
@@ -8629,6 +10382,58 @@
    "hours": "Sun-Fri Closed · Sat 9:00-11am",
    "website": "http://www.gauchabakery.com/",
    "googleUrl": "https://maps.google.com/?cid=6569072921697535022&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJf0eOq-mF9YgRq-LeVcCsC1w",
+   "name": "Dunkin'",
+   "address": "116 Canton Rd, Cumming, GA 30040, USA",
+   "city": "Cumming",
+   "county": "Forsyth",
+   "lat": 34.20854,
+   "lng": -84.143522,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "cafe",
+    "donut_shop",
+    "bakery"
+   ],
+   "rating": 3.8,
+   "ratingNum": 638,
+   "ratingCount": "638",
+   "hours": "Mon-Sun 5am-9pm",
+   "website": "https://www.dunkindonuts.com/locations/us/ga/cumming/116-canton-rd/store-359140/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=359140&y_source=1_MTMyNzM0NTgtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=6632584818307556011&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJf5i23bi59YgR80K6nHdMd1U",
+   "name": "Krispy Kreme",
+   "address": "1635 Scenic Hwy N, Snellville, GA 30078, USA",
+   "city": "Snellville",
+   "county": "Gwinnett",
+   "lat": 33.883666,
+   "lng": -84.011258,
+   "category": "Bakery+Cafe",
+   "model": "franchise",
+   "types": [
+    "donut_shop",
+    "coffee_shop",
+    "cafe",
+    "dessert_shop",
+    "bakery"
+   ],
+   "rating": 3.3,
+   "ratingNum": 1402,
+   "ratingCount": "1,402",
+   "hours": "Sun-Thu 6am-10pm · Fri-Sat 6am-11pm",
+   "late": {
+    "tier": "10pm+",
+    "when": "Daily till 11pm"
+   },
+   "website": "https://site.krispykreme.com/ga/snellville/1635-scenic-highway?y_source=1_MTYyNDE0MTktNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=6158475092066714355&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJf7GNJMiZ9YgRbie0TKkUg3o",
@@ -8701,26 +10506,6 @@
    },
    "website": "https://www.atlantacoffeeshops.com/cafe-flat",
    "googleUrl": "https://maps.google.com/?cid=17415106431526052373&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
-   "placeId": "ChIJfYFEiRW69YgR12EI-X0rumc",
-   "name": "Walmart Bakery",
-   "address": "2912 Main St W, Snellville, GA 30078, USA",
-   "city": "Snellville",
-   "county": "Gwinnett",
-   "lat": 33.852923,
-   "lng": -84.034306,
-   "category": "Bakery+Cafe",
-   "model": "franchise",
-   "types": [
-    "bakery"
-   ],
-   "rating": 5.0,
-   "ratingNum": 1,
-   "ratingCount": "1",
-   "hours": null,
-   "website": "https://www.walmart.com/store/3072-snellville-ga/bakery/?veh=seo_loc",
-   "googleUrl": "https://maps.google.com/?cid=7474334351623741911&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJfd7JAn5z9YgRSE14j1l7AfQ",
@@ -9127,6 +10912,27 @@
    "googleUrl": "https://maps.google.com/?cid=3398274561126865905&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJh_I6OAC_9YgRedbXoGHnYLE",
+   "name": "Starbucks Coffee Company",
+   "address": "92 S Clayton St, Lawrenceville, GA 30046, USA",
+   "city": "Lawrenceville",
+   "county": "Gwinnett",
+   "lat": 33.94989,
+   "lng": -83.98733,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.1,
+   "ratingNum": 38,
+   "ratingCount": "38",
+   "hours": "Mon-Sun 5am-8pm",
+   "website": null,
+   "googleUrl": "https://maps.google.com/?cid=12781470148973811321&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJhcePAdV19YgRRZaTDok5vM4",
    "name": "The Ginger Room",
    "address": "61 Roswell St, Alpharetta, GA 30009, USA",
@@ -9147,26 +10953,6 @@
    "hours": "Mon Closed · Tue-Thu 9am-3pm · Fri 9am-5pm · Sat-Sun 11am-5pm",
    "website": "http://www.the-gingerroom.com/",
    "googleUrl": "https://maps.google.com/?cid=14896844928252614213&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
-   "placeId": "ChIJhcuJdQCX9YgRpAT2Bfihqq4",
-   "name": "Fresh Market Bakery",
-   "address": "1500 Peachtree Industrial Blvd Ste 300, Suwanee, GA 30024, USA",
-   "city": "Suwanee",
-   "county": "Gwinnett",
-   "lat": 34.037391,
-   "lng": -84.09954,
-   "category": "Bakery+Cafe",
-   "model": "franchise",
-   "types": [
-    "bakery"
-   ],
-   "rating": 4.8,
-   "ratingNum": 5,
-   "ratingCount": "5",
-   "hours": null,
-   "website": null,
-   "googleUrl": "https://maps.google.com/?cid=12586050195264242852&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJhdVYYTij9YgRk0aMQQ4p1mw",
@@ -9254,6 +11040,49 @@
    },
    "website": "http://www.thebepteahousega.com/",
    "googleUrl": "https://maps.google.com/?cid=13669811427716369944&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJi8-d9Pxy9YgRaPE8JW5uI_s",
+   "name": "Panera Bread",
+   "address": "1195 Woodstock Rd, Roswell, GA 30075, USA",
+   "city": "Roswell",
+   "county": "Fulton",
+   "lat": 34.062216,
+   "lng": -84.398777,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "cafe",
+    "coffee_shop",
+    "bakery"
+   ],
+   "rating": 3.6,
+   "ratingNum": 515,
+   "ratingCount": "515",
+   "hours": "Mon-Fri 6:30am-9pm · Sat-Sun 7am-9pm",
+   "website": "https://www.panerabread.com/en-us/cafe/locations/ga/roswell/1195-woodstock-road?utm_medium=local&utm_source=google&utm_campaign=dpm-dist&utm_term=202596&utm_content=main",
+   "googleUrl": "https://maps.google.com/?cid=18096429147054993768&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJi9lpvSe-9YgRk04jXrj579I",
+   "name": "Starbucks Coffee Company",
+   "address": "1475 Buford Dr, Lawrenceville, GA 30043, USA",
+   "city": "Lawrenceville",
+   "county": "Gwinnett",
+   "lat": 34.00527,
+   "lng": -83.9863,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.1,
+   "ratingNum": 84,
+   "ratingCount": "84",
+   "hours": "Mon-Sun 6am-7pm",
+   "website": "https://www.starbucks.com/store-locator/store/9917",
+   "googleUrl": "https://maps.google.com/?cid=15199641837647384211&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJiQEgfgAP9YgRC9qcutf2SCs",
@@ -9589,27 +11418,6 @@
    "googleUrl": "https://maps.google.com/?cid=5674830207348534784&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
-   "placeId": "ChIJk5ZeRS8J9YgR_wky9DwapxQ",
-   "name": "Target Bakery",
-   "address": "100 Perimeter Center Pl, Atlanta, GA 30346, USA",
-   "city": "Atlanta",
-   "county": "DeKalb",
-   "neighborhood": "Perimeter Center",
-   "lat": 33.930816,
-   "lng": -84.341615,
-   "category": "Bakery+Cafe",
-   "model": "franchise",
-   "types": [
-    "bakery"
-   ],
-   "rating": 4.5,
-   "ratingNum": 2,
-   "ratingCount": "2",
-   "hours": "Mon-Sat 8:30am-7pm · Sun 10am-5pm",
-   "website": "https://www.target.com/sl/atlanta-perimeter/2036",
-   "googleUrl": "https://maps.google.com/?cid=1488187050966518271&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
    "placeId": "ChIJk5i4QH2-9YgRa6bSoQVckmY",
    "name": "El Salvador Bakery II PANADERIA Y PUPUSERIA",
    "address": "2110 Riverside Pkwy, Lawrenceville, GA 30043, USA",
@@ -9832,6 +11640,27 @@
    "googleUrl": "https://maps.google.com/?cid=15019307341036070568&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJl0PCZkl19YgRpAvO4fipv4s",
+   "name": "Starbucks Coffee Company",
+   "address": "12655 Birmingham Hwy, Alpharetta, GA 30004, USA",
+   "city": "Alpharetta",
+   "county": "Fulton",
+   "lat": 34.09216,
+   "lng": -84.33916,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 3.8,
+   "ratingNum": 97,
+   "ratingCount": "97",
+   "hours": "Mon-Sat 6am-7pm · Sun 7am-7pm",
+   "website": "https://www.starbucks.com/store-locator",
+   "googleUrl": "https://maps.google.com/?cid=10069954178229078948&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJl0j6EWMP9YgRcXziFYKToZ4",
    "name": "City Bagel and Cafe",
    "address": "334 Sandy Springs Cir, Sandy Springs, GA 30328, USA",
@@ -9850,6 +11679,51 @@
    "hours": "Mon Closed · Tue-Thu 6:30am-2pm · Fri-Sat 6:30am-3pm · Sun 6:30am-2pm",
    "website": null,
    "googleUrl": "https://maps.google.com/?cid=11430579516165225585&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJl1MqcXeh9YgR126g_QhHCNQ",
+   "name": "Dunkin'",
+   "address": "4941 S Old Peachtree Rd Ste A, Peachtree Corners, GA 30092, USA",
+   "city": "Peachtree Corners",
+   "county": "Gwinnett",
+   "lat": 33.968475,
+   "lng": -84.195692,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "donut_shop",
+    "cafe",
+    "bakery"
+   ],
+   "rating": 4.3,
+   "ratingNum": 471,
+   "ratingCount": "471",
+   "hours": "Mon-Sun 5am-8pm",
+   "website": "https://www.dunkindonuts.com/locations/us/ga/peachtree-corners/4941-s-old-peachtree-rd/store-354102/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=354102&y_source=1_MTIxMTM3MzYtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=15278539839794867927&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJl83IG_6f9YgRras0qKuZv7E",
+   "name": "Starbucks Coffee Company",
+   "address": "9925 Haynes Bridge Rd, Johns Creek, GA 30022, USA",
+   "city": "Johns Creek",
+   "county": "Fulton",
+   "lat": 34.0218,
+   "lng": -84.26803,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.2,
+   "ratingNum": 397,
+   "ratingCount": "397",
+   "hours": "Mon-Sun 5am-8pm",
+   "website": "https://www.starbucks.com/store-locator/store/9212/",
+   "googleUrl": "https://maps.google.com/?cid=12808124827805461421&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJlQqXw7SY9YgRu7GVeXoyQMw",
@@ -9954,6 +11828,27 @@
    "googleUrl": "https://maps.google.com/?cid=3220238224975125261&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJlzYMD1af9YgRO4AyIxx7Igk",
+   "name": "Starbucks Coffee Company",
+   "address": "10900 Medlock Bridge Rd, Johns Creek, GA 30097, USA",
+   "city": "Johns Creek",
+   "county": "Fulton",
+   "lat": 34.04655,
+   "lng": -84.17959,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.1,
+   "ratingNum": 836,
+   "ratingCount": "836",
+   "hours": "Mon-Sun 5am-8pm",
+   "website": "https://www.starbucks.com/store-locator/store/1013247/",
+   "googleUrl": "https://maps.google.com/?cid=658223856329326651&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJm1KcX5K_9YgRzdY-nHpPvy0",
    "name": "Tier Couture Bakery",
    "address": "138 E Crogan St, Lawrenceville, GA 30046, USA",
@@ -9973,6 +11868,27 @@
    "hours": null,
    "website": "https://www.tiercouturebakery.com/",
    "googleUrl": "https://maps.google.com/?cid=3296440840284460749&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJm6i-5uOg9YgRWoEjmhTvbwQ",
+   "name": "Starbucks Coffee Company",
+   "address": "5975 Peachtree Pkwy NW, Norcross, GA 30092, USA",
+   "city": "Norcross",
+   "county": "Gwinnett",
+   "lat": 33.95752,
+   "lng": -84.23209,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.0,
+   "ratingNum": 772,
+   "ratingCount": "772",
+   "hours": "Mon-Sun 5am-9pm",
+   "website": "https://www.starbucks.com/store-locator/store/15383/",
+   "googleUrl": "https://maps.google.com/?cid=319736970330997082&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJm841m4u-9YgRf0QBlnXxKx0",
@@ -10015,6 +11931,76 @@
    "googleUrl": "https://maps.google.com/?cid=16273171754662800968&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJmVc9DMKn9YgRtnhmN4V39E4",
+   "name": "Starbucks",
+   "address": "5485 Jimmy Carter Blvd, Norcross, GA 30093, USA",
+   "city": "Norcross",
+   "county": "Gwinnett",
+   "neighborhood": "Gwinnett Village",
+   "lat": 33.90827,
+   "lng": -84.20574,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 3.8,
+   "ratingNum": 957,
+   "ratingCount": "957",
+   "hours": "Mon-Sun 5am-9pm",
+   "website": "https://www.starbucks.com/store-locator/store/1022192",
+   "googleUrl": "https://maps.google.com/?cid=5689303643319597238&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJmWnUZze-9YgRTMmepGCc9jE",
+   "name": "Dunkin'",
+   "address": "938 Buford Dr, Lawrenceville, GA 30043, USA",
+   "city": "Lawrenceville",
+   "county": "Gwinnett",
+   "lat": 33.987655,
+   "lng": -83.984889,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "donut_shop",
+    "bakery",
+    "cafe"
+   ],
+   "rating": 4.1,
+   "ratingNum": 943,
+   "ratingCount": "943",
+   "hours": "Mon-Sun Open 24 hours",
+   "website": "https://www.dunkindonuts.com/locations/us/ga/lawrenceville/938-buford-dr/store-340436/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=340436&y_source=1_MTIxMTAxMDEtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=3600236891021953356&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJmZ1gJbF09YgRyPiH3PFHLTU",
+   "name": "Dunkin'",
+   "address": "775 Holcomb Bridge Rd, Roswell, GA 30076, USA",
+   "city": "Roswell",
+   "county": "Fulton",
+   "lat": 34.030649,
+   "lng": -84.339213,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "donut_shop",
+    "cafe",
+    "bakery"
+   ],
+   "rating": 3.7,
+   "ratingNum": 669,
+   "ratingCount": "669",
+   "hours": "Mon-Sun 5am-9pm",
+   "website": "https://www.dunkindonuts.com/locations/us/ga/roswell/775-holcomb-bridge-rd/store-302918/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=302918&y_source=1_MTIxMTM3MTQtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=3831797962074749128&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJmefb8sAJ9YgRqhELiGuzLKE",
    "name": "TOUS les JOURS Bakery Café - Doraville",
    "address": "6035 Peachtree Rd Bldg b, Doraville, GA 30360, USA",
@@ -10036,26 +12022,6 @@
    "hours": "Mon-Sun 9am-8:30pm",
    "website": "https://tljus.com/stores/doraville-6035-peachtree-rd?utm_source=google&utm_medium=gbp&utm_campaign=doraville",
    "googleUrl": "https://maps.google.com/?cid=11613854813506965930&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
-   "placeId": "ChIJn-dU7tC59YgR4oAkd8Uw9ws",
-   "name": "Sam's Club Cafe",
-   "address": "1520 Scenic Hwy N, Snellville, GA 30078, USA",
-   "city": "Snellville",
-   "county": "Gwinnett",
-   "lat": 33.889435,
-   "lng": -84.00805,
-   "category": "Coffee",
-   "model": "franchise",
-   "types": [
-    "cafe"
-   ],
-   "rating": 3.0,
-   "ratingNum": 2,
-   "ratingCount": "2",
-   "hours": "Mon-Sun 10am-8pm",
-   "website": "https://www.samsclub.com/club/4739-snellville-ga?CAF=aL",
-   "googleUrl": "https://maps.google.com/?cid=862211478330310882&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJn1NPVvS99YgRWj2oAeKnp18",
@@ -10099,29 +12065,6 @@
    "hours": "Mon Closed · Tue-Fri 6:30am-2pm · Sat-Sun 7:30am-3pm",
    "website": "https://www.nydelibagelcafe.com/",
    "googleUrl": "https://maps.google.com/?cid=11404508227319627841&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
-   "placeId": "ChIJn4hiVXul9YgReA5xV-3SEJg",
-   "name": "Kroger Bakery",
-   "address": "1227 Rockbridge Rd, Stone Mountain, GA 30087, USA",
-   "city": "Stone Mountain",
-   "county": "Gwinnett",
-   "lat": 33.841177,
-   "lng": -84.133052,
-   "category": "Bakery+Cafe",
-   "model": "franchise",
-   "types": [
-    "bakery",
-    "dessert_shop",
-    "bagel_shop",
-    "donut_shop"
-   ],
-   "rating": 5.0,
-   "ratingNum": 1,
-   "ratingCount": "1",
-   "hours": null,
-   "website": "https://www.kroger.com/d/bakery?cid=loc_01100449B_gmb",
-   "googleUrl": "https://maps.google.com/?cid=10957489810208525944&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJn4xe4ch19YgRaCC7h5cTl6E",
@@ -10192,6 +12135,31 @@
    "googleUrl": "https://maps.google.com/?cid=7308328879734963247&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJnZPhEgC59YgRQlV1vk5KlFc",
+   "name": "7 Brew Coffee",
+   "address": "1073 Scenic Hwy S, Lawrenceville, GA 30045, USA",
+   "city": "Lawrenceville",
+   "county": "Gwinnett",
+   "lat": 33.908292,
+   "lng": -84.003567,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.6,
+   "ratingNum": 114,
+   "ratingCount": "114",
+   "hours": "Sun-Thu 5:30am-10pm · Fri-Sat 5:30am-11pm",
+   "late": {
+    "tier": "10pm+",
+    "when": "Daily till 11pm"
+   },
+   "website": "https://locations.7brew.com/ga/lawrenceville/1073-scenic-highway-south",
+   "googleUrl": "https://maps.google.com/?cid=6310750679916172610&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJnbAcaMSj9YgR6i4B6bPkSu0",
    "name": "Panaderia Guatemala Beaver Ruin Norcross",
    "address": "2077 Beaver Ruin Rd Ste 90-3, Norcross, GA 30071, USA",
@@ -10231,6 +12199,32 @@
    "hours": null,
    "website": "https://varaha-bites.square.site/",
    "googleUrl": "https://maps.google.com/?cid=113276687383924998&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJneRi8VyU9YgR7CbZQpyWvz8",
+   "name": "Panera Bread",
+   "address": "3235 Woodward Crossing Blvd Suite 400, Buford, GA 30519, USA",
+   "city": "Buford",
+   "county": "Gwinnett",
+   "lat": 34.069145,
+   "lng": -83.982723,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "cafe",
+    "coffee_shop",
+    "bakery"
+   ],
+   "rating": 3.4,
+   "ratingNum": 1357,
+   "ratingCount": "1,357",
+   "hours": "Mon-Fri 6:30am-10pm · Sat-Sun 7am-10pm",
+   "late": {
+    "tier": "10pm+",
+    "when": "Daily till 10pm"
+   },
+   "website": "https://www.panerabread.com/en-us/cafe/locations/ga/buford/3235-woodward-crossing?utm_medium=local&utm_source=google&utm_campaign=dpm-dist&utm_term=202579&utm_content=main",
+   "googleUrl": "https://maps.google.com/?cid=4593555742821787372&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJnznFoK8N9YgR0Sn4-pX06I0",
@@ -10275,6 +12269,58 @@
    "googleUrl": "https://maps.google.com/?cid=9545238237081741804&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJo46CI8C49YgRQeOp4kILaR4",
+   "name": "Dunkin'",
+   "address": "15 Grayson New Hope Rd, Grayson, GA 30017, USA",
+   "city": "Grayson",
+   "county": "Gwinnett",
+   "lat": 33.894356,
+   "lng": -83.954728,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "cafe",
+    "donut_shop",
+    "bakery"
+   ],
+   "rating": 3.5,
+   "ratingNum": 811,
+   "ratingCount": "811",
+   "hours": "Mon-Fri 4:30am-10pm · Sat 5am-10pm · Sun 6am-10pm",
+   "late": {
+    "tier": "10pm+",
+    "when": "Daily till 10pm"
+   },
+   "website": "https://www.dunkindonuts.com/locations/us/ga/grayson/15-grayson-new-hope-rd/store-354612/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=354612&y_source=1_MTIxMTE3NzktNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=2191295075590988609&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJo4JLRlCX9YgRU9MIGSIkGdk",
+   "name": "Dunkin'",
+   "address": "220 Peachtree Industrial Blvd, Sugar Hill, GA 30518, USA",
+   "city": "Sugar Hill",
+   "county": "Gwinnett",
+   "lat": 34.080009,
+   "lng": -84.05849,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "cafe",
+    "donut_shop",
+    "bakery"
+   ],
+   "rating": 3.9,
+   "ratingNum": 368,
+   "ratingCount": "368",
+   "hours": "Mon-Sun 5am-9pm",
+   "website": "https://www.dunkindonuts.com/locations/us/ga/sugar-hill/220-peachtree-industrial-blvd/store-359157/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=359157&y_source=1_MTUwMTk0MzEtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=15643574509515625299&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJo5h9e6QL9YgRX03Mu5MqfUo",
    "name": "Cafe Amico Roswell",
    "address": "1540 Old Alabama Rd #450, Roswell, GA 30076, USA",
@@ -10299,27 +12345,49 @@
    "googleUrl": "https://maps.google.com/?cid=5367493144894786911&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
-   "placeId": "ChIJo8_AAJCb9YgRnSAlOuYrD54",
-   "name": "Kroger Bakery",
-   "address": "5550 Bethelview Rd, Cumming, GA 30040, USA",
-   "city": "Cumming",
-   "county": "Forsyth",
-   "lat": 34.169551,
-   "lng": -84.185401,
-   "category": "Bakery+Cafe",
+   "placeId": "ChIJo66cbGx19YgRAykSO8c6VBg",
+   "name": "Starbucks Coffee Company",
+   "address": "10830 Haynes Bridge Rd, Alpharetta, GA 30022, USA",
+   "city": "Alpharetta",
+   "county": "Fulton",
+   "lat": 34.04956,
+   "lng": -84.28725,
+   "category": "Coffee",
    "model": "franchise",
    "types": [
-    "bakery",
-    "bagel_shop",
-    "donut_shop",
-    "dessert_shop"
+    "coffee_shop",
+    "cafe"
    ],
-   "rating": null,
-   "ratingNum": 0,
-   "ratingCount": "0",
-   "hours": "Mon-Sun 8am-7pm",
-   "website": "https://www.kroger.com/d/bakery?cid=loc_01100627B_gmb",
-   "googleUrl": "https://maps.google.com/?cid=11389370250461257885&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "rating": 4.3,
+   "ratingNum": 670,
+   "ratingCount": "670",
+   "hours": "Mon-Sun 5am-8pm",
+   "website": "https://www.starbucks.com/store-locator/store/1016037",
+   "googleUrl": "https://maps.google.com/?cid=1753090782317914371&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJo6GovZYO9YgRjeyA578y220",
+   "name": "Dunkin'",
+   "address": "6060 Roswell Rd NE, Sandy Springs, GA 30328, USA",
+   "city": "Sandy Springs",
+   "county": "Fulton",
+   "lat": 33.920362,
+   "lng": -84.379352,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "cafe",
+    "donut_shop",
+    "bakery"
+   ],
+   "rating": 3.6,
+   "ratingNum": 841,
+   "ratingCount": "841",
+   "hours": "Mon-Sun 5am-9pm",
+   "website": "https://www.dunkindonuts.com/locations/us/ga/sandy-springs/6060-roswell-rd-ne/store-300577/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=300577&y_source=1_MTIxMTI4NzUtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=7915976569837907085&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJoV7chU699YgRymsb-HudK0Q",
@@ -10502,27 +12570,26 @@
    "signature": "Seasonal Single Origin Pour Over"
   },
   {
-   "placeId": "ChIJpQR3kt0M9YgRt3o-wzDJfWE",
-   "name": "Kroger Bakery",
-   "address": "900 Marietta Hwy, Roswell, GA 30075, USA",
-   "city": "Roswell",
-   "county": "Fulton",
-   "lat": 34.003997,
-   "lng": -84.389475,
-   "category": "Bakery+Cafe",
+   "placeId": "ChIJpSs0e2qj9YgRCCmLcVjFNU0",
+   "name": "Starbucks Coffee Company",
+   "address": "1550 Pleasant Hill Rd, Duluth, GA 30096, USA",
+   "city": "Duluth",
+   "county": "Gwinnett",
+   "neighborhood": "Gwinnett Place",
+   "lat": 33.94319,
+   "lng": -84.12305,
+   "category": "Coffee",
    "model": "franchise",
    "types": [
-    "bakery",
-    "bagel_shop",
-    "donut_shop",
-    "dessert_shop"
+    "coffee_shop",
+    "cafe"
    ],
-   "rating": 5.0,
-   "ratingNum": 1,
-   "ratingCount": "1",
-   "hours": null,
-   "website": "https://www.kroger.com/d/bakery?cid=loc_01100497B_gmb",
-   "googleUrl": "https://maps.google.com/?cid=7024992205039106743&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "rating": 3.8,
+   "ratingNum": 977,
+   "ratingCount": "977",
+   "hours": "Mon-Fri 5am-9pm · Sat-Sun 5am-8:30pm",
+   "website": "https://www.starbucks.com/store-locator/store/1014999",
+   "googleUrl": "https://maps.google.com/?cid=5563569898338855176&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJpTBSVVKf9YgRLo_nC6mMYxo",
@@ -10717,96 +12784,6 @@
    "googleUrl": "https://maps.google.com/?cid=3042637825477854999&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
-   "placeId": "ChIJq6qqVZV09YgRASPfIdJVaWw",
-   "name": "Walmart Bakery",
-   "address": "970 Mansell Rd, Roswell, GA 30076, USA",
-   "city": "Roswell",
-   "county": "Fulton",
-   "lat": 34.045252,
-   "lng": -84.333482,
-   "category": "Bakery+Cafe",
-   "model": "franchise",
-   "types": [
-    "bakery",
-    "bagel_shop",
-    "dessert_shop"
-   ],
-   "rating": 5.0,
-   "ratingNum": 1,
-   "ratingCount": "1",
-   "hours": "Mon-Sun 7am-10pm",
-   "late": {
-    "tier": "10pm+",
-    "when": "Daily till 10pm"
-   },
-   "website": "https://www.walmart.com/store/1578-roswell-ga/bakery/?veh=seo_loc",
-   "googleUrl": "https://maps.google.com/?cid=7811869389650600705&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
-   "placeId": "ChIJq6qqvmW59YgRFwcXWVxHJeI",
-   "name": "Sam's Club Bakery",
-   "address": "1520 Scenic Hwy N, Snellville, GA 30078, USA",
-   "city": "Snellville",
-   "county": "Gwinnett",
-   "lat": 33.890413,
-   "lng": -84.007034,
-   "category": "Bakery+Cafe",
-   "model": "franchise",
-   "types": [
-    "bakery"
-   ],
-   "rating": 3.9,
-   "ratingNum": 8,
-   "ratingCount": "8",
-   "hours": "Mon-Sun 9am-8pm",
-   "website": "https://www.samsclub.com/club/4739-snellville-ga/bakery",
-   "googleUrl": "https://maps.google.com/?cid=16295509288667252503&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
-   "placeId": "ChIJq6r-Z1MJ9YgRQqZtCW3A52Q",
-   "name": "Costco Bakery",
-   "address": "6350 Peachtree Dunwoody Rd NE, Atlanta, GA 30328, USA",
-   "city": "Atlanta",
-   "county": "Fulton",
-   "neighborhood": "Perimeter Center",
-   "lat": 33.928658,
-   "lng": -84.35556,
-   "category": "Bakery+Cafe",
-   "model": "franchise",
-   "types": [
-    "bakery"
-   ],
-   "rating": 4.7,
-   "ratingNum": 6,
-   "ratingCount": "6",
-   "hours": "Sun-Mon 7am-3pm · Tue-Sat 7am-7pm",
-   "website": null,
-   "googleUrl": "https://maps.google.com/?cid=7270991697955104322&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
-   "placeId": "ChIJqRyjNzKZ9YgRVb_qBjX7LiA",
-   "name": "Kroger Bakery",
-   "address": "3651 Peachtree Pkwy, Suwanee, GA 30024, USA",
-   "city": "Suwanee",
-   "county": "Forsyth",
-   "lat": 34.069408,
-   "lng": -84.165612,
-   "category": "Bakery+Cafe",
-   "model": "franchise",
-   "types": [
-    "bakery",
-    "bagel_shop",
-    "donut_shop",
-    "dessert_shop"
-   ],
-   "rating": null,
-   "ratingNum": 0,
-   "ratingCount": "0",
-   "hours": "Mon-Sun 7am-7pm",
-   "website": "https://www.kroger.com/d/bakery?cid=loc_01100434B_gmb",
-   "googleUrl": "https://maps.google.com/?cid=2319067063310270293&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
    "placeId": "ChIJqT8rzuu-9YgR_gs8ycsAC7Q",
    "name": "Ray's Donuts",
    "address": "257 Scenic Hwy S, Lawrenceville, GA 30046, USA",
@@ -10853,6 +12830,27 @@
    "googleUrl": "https://maps.google.com/?cid=14609992124365773846&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJqUgf4xGi9YgRehwcXtzp5HE",
+   "name": "Starbucks Coffee Company",
+   "address": "3501 Peachtree Industrial Blvd, Duluth, GA 30096, USA",
+   "city": "Duluth",
+   "county": "Gwinnett",
+   "lat": 34.00379,
+   "lng": -84.17067,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.1,
+   "ratingNum": 1161,
+   "ratingCount": "1,161",
+   "hours": "Mon-Sat 5am-9pm · Sun 5am-8:30pm",
+   "website": "https://www.starbucks.com/store-locator/store/1015000",
+   "googleUrl": "https://maps.google.com/?cid=8206941553656863866&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJqYkLfpN19YgRh_faIXBZ08w",
    "name": "967 Coffee Co",
    "address": "11235 Alpharetta Hwy Ste 136, Roswell, GA 30076, USA",
@@ -10890,26 +12888,6 @@
     "iced mocha"
    ],
    "signature": "Midnight Mocha"
-  },
-  {
-   "placeId": "ChIJqbv5bJ519YgR_hemdLeCKy0",
-   "name": "Publix Super Market Bakery",
-   "address": "11800 Haynes Bridge Rd Ste B, Alpharetta, GA 30009, USA",
-   "city": "Alpharetta",
-   "county": "Fulton",
-   "lat": 34.073216,
-   "lng": -84.29379,
-   "category": "Bakery+Cafe",
-   "model": "franchise",
-   "types": [
-    "bakery"
-   ],
-   "rating": 3.8,
-   "ratingNum": 10,
-   "ratingCount": "10",
-   "hours": null,
-   "website": "https://www.publix.com/products-services/bakery",
-   "googleUrl": "https://maps.google.com/?cid=3254838880152983550&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJqfp0XgAJ9YgRmFgnueckyrg",
@@ -11043,6 +13021,30 @@
    "googleUrl": "https://maps.google.com/?cid=1662418968680714173&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJr5XJUH2-9YgROwJ6rk4jSGE",
+   "name": "Dunkin'",
+   "address": "551 W Pike St, Lawrenceville, GA 30046, USA",
+   "city": "Lawrenceville",
+   "county": "Gwinnett",
+   "lat": 33.963419,
+   "lng": -84.006754,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "cafe",
+    "donut_shop",
+    "bakery"
+   ],
+   "rating": 3.9,
+   "ratingNum": 854,
+   "ratingCount": "854",
+   "hours": "Mon-Sat 5am-9pm · Sun 6am-9pm",
+   "website": "https://www.dunkindonuts.com/locations/us/ga/lawrenceville/551-w-pike-st/store-353927/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=353927&y_source=1_MTIxMDkyNTAtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=7009891640843829819&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJr8ussOOZ9YgRz6kth9hMDQ4",
    "name": "Gold N' Bean (Inside Read it Again Bookstore)",
    "address": "3630 Peachtree Pkwy, Suwanee, GA 30024, USA",
@@ -11062,6 +13064,94 @@
    "hours": "Mon 10am-2pm · Tue Closed · Wed-Thu 10am-3pm · Fri-Sat 10am-5pm · Sun 12:00-5pm",
    "website": "http://www.goldnbeancoffee.com/",
    "googleUrl": "https://maps.google.com/?cid=1012549984092793295&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJr9VcBxNz9YgR9P1rH1xthB0",
+   "name": "Scooter's Coffee",
+   "address": "550 W Crossville Rd #101, Roswell, GA 30075, USA",
+   "city": "Roswell",
+   "county": "Fulton",
+   "lat": 34.055001,
+   "lng": -84.377749,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.5,
+   "ratingNum": 369,
+   "ratingCount": "369",
+   "hours": "Mon-Sun 6am-8pm",
+   "website": "https://scooterscoffee.com/",
+   "googleUrl": "https://maps.google.com/?cid=2126945166457306612&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJrQMYwd0M9YgRkC05oz3GUNw",
+   "name": "Starbucks Coffee Company",
+   "address": "Coleman Village, 930 Marietta Hwy, Roswell, GA 30075, USA",
+   "city": "Roswell",
+   "county": "Fulton",
+   "lat": 34.00493,
+   "lng": -84.38989,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.2,
+   "ratingNum": 309,
+   "ratingCount": "309",
+   "hours": "Mon-Sun 5am-8pm",
+   "website": "https://www.starbucks.com/store-locator/store/14908/",
+   "googleUrl": "https://maps.google.com/?cid=15875406654514736528&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJrRsAo1kJ9YgRyrG6z4uUNI4",
+   "name": "Starbucks Coffee Company",
+   "address": "125 Perimeter Center Pl, Atlanta, GA 30346, USA",
+   "city": "Atlanta",
+   "county": "DeKalb",
+   "neighborhood": "Perimeter Center",
+   "lat": 33.93056,
+   "lng": -84.341542,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 3.5,
+   "ratingNum": 70,
+   "ratingCount": "70",
+   "hours": "Mon-Sun 8am-8pm",
+   "website": "https://www.starbucks.com/store-locator/store/8427",
+   "googleUrl": "https://maps.google.com/?cid=10246978380381204938&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJrS2tH1679YgRmsdC37HWw1s",
+   "name": "Dunkin'",
+   "address": "2229 Scenic Hwy N, Snellville, GA 30078, USA",
+   "city": "Snellville",
+   "county": "Gwinnett",
+   "lat": 33.859433,
+   "lng": -84.019677,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "donut_shop",
+    "bakery",
+    "cafe"
+   ],
+   "rating": 3.1,
+   "ratingNum": 133,
+   "ratingCount": "133",
+   "hours": "Mon-Sun Open 24 hours",
+   "website": "https://www.dunkindonuts.com/locations/us/ga/snellville/2229-scenic-highway-north/store-363054/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=363054&y_source=1_MTAwMjE0MTExOC03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+   "googleUrl": "https://maps.google.com/?cid=6612364737353271194&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJrVtYHfJz9YgRJ8WhtDPofHA",
@@ -11331,6 +13421,27 @@
    "googleUrl": "https://maps.google.com/?cid=6955557833831991485&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJsZqTDQe79YgRpaXF0T78veY",
+   "name": "Starbucks Coffee Company",
+   "address": "3050 Five Forks Trickum Rd SW, Lilburn, GA 30047, USA",
+   "city": "Lilburn",
+   "county": "Gwinnett",
+   "lat": 33.88442,
+   "lng": -84.06058,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.1,
+   "ratingNum": 299,
+   "ratingCount": "299",
+   "hours": "Mon-Fri 6am-8pm · Sat-Sun 7am-8pm",
+   "website": "https://www.starbucks.com/store-locator/store/10340",
+   "googleUrl": "https://maps.google.com/?cid=16626722746059302309&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJsb_4QUSj9YgRDhbbvw5cgpU",
    "name": "Yezi Coconut Dessert",
    "address": "2174 Pleasant Hill Rd #106, Duluth, GA 30096, USA",
@@ -11378,6 +13489,54 @@
    "googleUrl": "https://maps.google.com/?cid=14693523549520508040&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJsbtKuxWV9YgRVf2qqX_Tn3E",
+   "name": "Starbucks",
+   "address": "2925 Buford Dr Ste 620, Buford, GA 30519, USA",
+   "city": "Buford",
+   "county": "Gwinnett",
+   "lat": 34.052489,
+   "lng": -83.993603,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 3.8,
+   "ratingNum": 192,
+   "ratingCount": "192",
+   "hours": "Mon-Sun 5am-10pm",
+   "late": {
+    "tier": "10pm+",
+    "when": "Daily till 10pm"
+   },
+   "website": "https://www.starbucks.com/store-locator/store/1030193",
+   "googleUrl": "https://maps.google.com/?cid=8187495192843713877&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJscxdpsIL9YgRD8JeZqbFOtk",
+   "name": "Panera Bread",
+   "address": "1625 Mt Vernon Rd, Dunwoody, GA 30338, USA",
+   "city": "Dunwoody",
+   "county": "DeKalb",
+   "neighborhood": "Dunwoody Village",
+   "lat": 33.945922,
+   "lng": -84.332973,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "cafe",
+    "coffee_shop",
+    "bakery"
+   ],
+   "rating": 3.9,
+   "ratingNum": 760,
+   "ratingCount": "760",
+   "hours": "Mon-Fri 6:30am-9pm · Sat-Sun 7am-9pm",
+   "website": "https://www.panerabread.com/en-us/cafe/locations/ga/dunwoody/1625-mt-vernon-rd?utm_medium=local&utm_source=google&utm_campaign=dpm-dist&utm_term=202564&utm_content=main",
+   "googleUrl": "https://maps.google.com/?cid=15653040773352309263&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJsd1J4UOb9YgR5_BgmRxqJcQ",
    "name": "Jeff's Bagel Run",
    "address": "5610 Bethelview Rd Suite 700, Cumming, GA 30040, USA",
@@ -11397,26 +13556,6 @@
    "hours": null,
    "website": null,
    "googleUrl": "https://maps.google.com/?cid=14133819676637065447&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
-   "placeId": "ChIJsyV2EgB19YgRymXfnI4Whq0",
-   "name": "Fresh Market Bakery",
-   "address": "3005 Old Alabama Rd, Johns Creek, GA 30022, USA",
-   "city": "Johns Creek",
-   "county": "Fulton",
-   "lat": 34.020447,
-   "lng": -84.273191,
-   "category": "Bakery+Cafe",
-   "model": "franchise",
-   "types": [
-    "bakery"
-   ],
-   "rating": 4.3,
-   "ratingNum": 3,
-   "ratingCount": "3",
-   "hours": null,
-   "website": "https://delivery.thefreshmarket.com/store/the-fresh-market/collections/n-bakery-55290",
-   "googleUrl": "https://maps.google.com/?cid=12503706217213814218&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJt0s62q919YgR0Tfo28NAnkI",
@@ -11645,6 +13784,51 @@
    "googleUrl": "https://maps.google.com/?cid=3711430461158396689&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJtUxLNACd9YgRYG1h2BZ8EPo",
+   "name": "Tim Hortons",
+   "address": "4938 Atlanta Hwy, Alpharetta, GA 30004, USA",
+   "city": "Alpharetta",
+   "county": "Forsyth",
+   "lat": 34.158278,
+   "lng": -84.239397,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.6,
+   "ratingNum": 70,
+   "ratingCount": "70",
+   "hours": "Mon-Sun 5am-8pm",
+   "website": "https://locations.timhortons.com/en/ga/alpharetta/4938-atlanta-hwy/",
+   "googleUrl": "https://maps.google.com/?cid=18019038546670742880&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJt_GpU9ex9YgRQt9LxVAiKxs",
+   "name": "Dunkin'",
+   "address": "3455 Centerville Hwy, Snellville, GA 30039, USA",
+   "city": "Snellville",
+   "county": "Gwinnett",
+   "lat": 33.805464,
+   "lng": -84.043671,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "donut_shop",
+    "bakery",
+    "cafe"
+   ],
+   "rating": 3.3,
+   "ratingNum": 383,
+   "ratingCount": "383",
+   "hours": "Mon-Sun Open 24 hours",
+   "website": "https://www.dunkindonuts.com/locations/us/ga/snellville/3455-centerville-hwy/store-359242/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=359242&y_source=1_MTUwNDM4MzEtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=1957696193325424450&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJt_OXrDd19YgRI_frI_zJjuQ",
    "name": "Simply Sweet Potato",
    "address": "2001 Commerce St, Alpharetta, GA 30009, USA",
@@ -11728,6 +13912,27 @@
    "googleUrl": "https://maps.google.com/?cid=2549126147689298210&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJu7F0EySZ9YgRKSRZUTaL-ew",
+   "name": "Starbucks Coffee Company",
+   "address": "11720 Medlock Bridge Rd, Duluth, GA 30097, USA",
+   "city": "Duluth",
+   "county": "Fulton",
+   "lat": 34.06672,
+   "lng": -84.16962,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.2,
+   "ratingNum": 496,
+   "ratingCount": "496",
+   "hours": "Mon-Sun 5am-8pm",
+   "website": "https://www.starbucks.com/store-locator/store/14388/",
+   "googleUrl": "https://maps.google.com/?cid=17075832527561237545&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJu9LHmUK59YgRkq64ly1tFvE",
    "name": "Sweet Treats by Liek",
    "address": "1124 Willow Trce SW, Grayson, GA 30017, USA",
@@ -11772,30 +13977,6 @@
    "googleUrl": "https://maps.google.com/?cid=4811802076751401208&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
-   "placeId": "ChIJuVGK8cQP9YgR8qhw2hNZJ5E",
-   "name": "Publix Bakery",
-   "address": "6615 Roswell Rd NE, Sandy Springs, GA 30328, USA",
-   "city": "Sandy Springs",
-   "county": "Fulton",
-   "lat": 33.93503,
-   "lng": -84.377799,
-   "category": "Bakery+Cafe",
-   "model": "franchise",
-   "types": [
-    "bakery"
-   ],
-   "rating": 5.0,
-   "ratingNum": 5,
-   "ratingCount": "5",
-   "hours": "Mon-Sun 7am-10pm",
-   "late": {
-    "tier": "10pm+",
-    "when": "Daily till 10pm"
-   },
-   "website": "https://www.publix.com/locations/468-abernathy-square-shopping-center",
-   "googleUrl": "https://maps.google.com/?cid=10459426601395333362&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
    "placeId": "ChIJubQtGP6h9YgRRx_S_ysj92Q",
    "name": "Piece of Cake Inc.",
    "address": "9775 Medlock Bridge Road Rd Suite N, Johns Creek, Duluth, GA 30097, USA",
@@ -11835,6 +14016,35 @@
    "hours": "Mon-Sun 7:30am-6pm",
    "website": null,
    "googleUrl": "https://maps.google.com/?cid=4815772091824698623&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJuyPpZWqj9YgRYSqilYoRVGE",
+   "name": "Krispy Kreme",
+   "address": "2346 Pleasant Hill Rd, Duluth, GA 30096, USA",
+   "city": "Duluth",
+   "county": "Gwinnett",
+   "neighborhood": "Gwinnett Place",
+   "lat": 33.964059,
+   "lng": -84.138726,
+   "category": "Bakery+Cafe",
+   "model": "franchise",
+   "types": [
+    "donut_shop",
+    "coffee_shop",
+    "cafe",
+    "dessert_shop",
+    "bakery"
+   ],
+   "rating": 4.2,
+   "ratingNum": 2388,
+   "ratingCount": "2,388",
+   "hours": "Sun-Thu 6am-10pm · Fri-Sat 6am-11pm",
+   "late": {
+    "tier": "10pm+",
+    "when": "Daily till 11pm"
+   },
+   "website": "https://site.krispykreme.com/ga/duluth/2346-pleasant-hill-rd?y_source=1_MTE4OTc5ODMtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=7013249806636296801&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJv7ytaAAJ9YgRAe5TNfDtYGM",
@@ -11951,6 +14161,30 @@
    "googleUrl": "https://maps.google.com/?cid=8408515160472219510&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJw-xQBe1z9YgRhKAixguhOIY",
+   "name": "Dunkin'",
+   "address": "295 Rucker Rd, Alpharetta, GA 30004, USA",
+   "city": "Alpharetta",
+   "county": "Fulton",
+   "lat": 34.077079,
+   "lng": -84.355576,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "donut_shop",
+    "cafe",
+    "bakery"
+   ],
+   "rating": 3.9,
+   "ratingNum": 162,
+   "ratingCount": "162",
+   "hours": "Mon-Sun 5am-9pm",
+   "website": "https://www.dunkindonuts.com/locations/us/ga/alpharetta/295-rucker-road/store-363731/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=363731&y_source=1_NjM0MjE0MTYtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=9671657271719010436&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJw1oFgr6V9YgRMZGf4w-zqDs",
    "name": "King House Việt Kitchen",
    "address": "4835 Sugarloaf Pkwy Ste 100, Lawrenceville, GA 30045, USA",
@@ -11993,29 +14227,6 @@
    "googleUrl": "https://maps.google.com/?cid=17614386009381503152&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
-   "placeId": "ChIJwUzZ9vB19YgREjZa7qNjQbQ",
-   "name": "Kroger Bakery",
-   "address": "12870 GA-9, Alpharetta, GA 30004, USA",
-   "city": "Alpharetta",
-   "county": "Fulton",
-   "lat": 34.096132,
-   "lng": -84.277869,
-   "category": "Bakery+Cafe",
-   "model": "franchise",
-   "types": [
-    "bakery",
-    "dessert_shop",
-    "bagel_shop",
-    "donut_shop"
-   ],
-   "rating": 5.0,
-   "ratingNum": 2,
-   "ratingCount": "2",
-   "hours": null,
-   "website": "https://www.kroger.com/d/bakery?cid=loc_01100495B_gmb",
-   "googleUrl": "https://maps.google.com/?cid=12988772356042929682&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
    "placeId": "ChIJwcB6n6MJ9YgRZaM-QuLrB_U",
    "name": "Lucky Goat Coffee",
    "address": "Dunwoody Park Suite 300, Dunwoody, GA 30338, USA",
@@ -12047,6 +14258,27 @@
     "baked goods"
    ],
    "signature": "Goat Tracks Latte (Mocha & Caramel)"
+  },
+  {
+   "placeId": "ChIJwehsoBZ19YgRpN_mcic_zdo",
+   "name": "Starbucks",
+   "address": "609 Holcomb Bridge Rd, Roswell, GA 30076, USA",
+   "city": "Roswell",
+   "county": "Fulton",
+   "lat": 34.034942,
+   "lng": -84.342939,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.1,
+   "ratingNum": 318,
+   "ratingCount": "318",
+   "hours": "Mon-Sun 5am-9pm",
+   "website": "https://www.starbucks.com/store-locator/store/1027049",
+   "googleUrl": "https://maps.google.com/?cid=15766327309157982116&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJwf3fVO-f9YgRhgzeTc7kZ7Q",
@@ -12095,6 +14327,51 @@
    "hours": "Mon-Sun 8am-8pm",
    "website": "http://www.tiercouturebakery.com/",
    "googleUrl": "https://maps.google.com/?cid=9613689394485633906&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJwzjsNEO59YgRyPck_0Nf7B4",
+   "name": "Starbucks Coffee Company",
+   "address": "1249 Scenic Hwy S, Lawrenceville, GA 30045, USA",
+   "city": "Lawrenceville",
+   "county": "Gwinnett",
+   "lat": 33.90024,
+   "lng": -84.00605,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.1,
+   "ratingNum": 720,
+   "ratingCount": "720",
+   "hours": "Mon-Sun 5am-9pm",
+   "website": "https://www.starbucks.com/store-locator/store/9939/",
+   "googleUrl": "https://maps.google.com/?cid=2228260661289613256&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJx-LI8QWj9YgR5H2Py6kxaN4",
+   "name": "Einstein Bros. Bagels",
+   "address": "3675 Satellite Blvd, Duluth, GA 30096, USA",
+   "city": "Duluth",
+   "county": "Gwinnett",
+   "neighborhood": "Gwinnett Place",
+   "lat": 33.960165,
+   "lng": -84.136088,
+   "category": "Bakery+Cafe",
+   "model": "franchise",
+   "types": [
+    "bagel_shop",
+    "coffee_shop",
+    "bakery",
+    "cafe"
+   ],
+   "rating": 4.0,
+   "ratingNum": 736,
+   "ratingCount": "736",
+   "hours": "Mon-Fri 5:30am-2pm · Sat-Sun 6am-2pm",
+   "website": "https://locations.einsteinbros.com/us/ga/duluth/3675-satellite-blvd?y_source=1_OTA0OTg3NS03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+   "googleUrl": "https://maps.google.com/?cid=16026113879332322788&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJx0OOzEqU9YgR3t9VxlMXUK0",
@@ -12171,6 +14448,55 @@
    "hours": "Mon-Thu 10am-8pm · Fri-Sat 10am-9pm · Sun 11am-7pm",
    "website": "https://locations.cinnabon.com/ga/buford/3333-buford-dr?utm_source=google&utm_medium=organic&utm_campaign=locations_partner",
    "googleUrl": "https://maps.google.com/?cid=4604537043021636187&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJx6TUkbm79YgRwpRb2raQpiM",
+   "name": "7 Brew Coffee",
+   "address": "4035 Five Forks Trickum Rd SW, Lilburn, GA 30047, USA",
+   "city": "Lilburn",
+   "county": "Gwinnett",
+   "lat": 33.869563,
+   "lng": -84.091987,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.5,
+   "ratingNum": 214,
+   "ratingCount": "214",
+   "hours": "Sun-Thu 5:30am-10pm · Fri-Sat 5:30am-11pm",
+   "late": {
+    "tier": "10pm+",
+    "when": "Daily till 11pm"
+   },
+   "website": "https://locations.7brew.com/ga/lilburn/4045-five-forks-trickum-road-southwest",
+   "googleUrl": "https://maps.google.com/?cid=2568899752483329218&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJxQArrbS-9YgRtn7Hhe22Clk",
+   "name": "Dunkin'",
+   "address": "845 Scenic Hwy S Bldg E, Lawrenceville, GA 30046, USA",
+   "city": "Lawrenceville",
+   "county": "Gwinnett",
+   "lat": 33.91838,
+   "lng": -84.000249,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "cafe",
+    "donut_shop",
+    "bakery"
+   ],
+   "rating": 3.9,
+   "ratingNum": 799,
+   "ratingCount": "799",
+   "hours": "Mon-Sun 5am-9pm",
+   "website": "https://www.dunkindonuts.com/locations/us/ga/lawrenceville/845-scenic-hwy/store-349930/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=349930&y_source=1_MTIxMTIyNjMtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=6416141750410641078&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJxThB5GCV9YgRYdU4kSAgRZ4",
@@ -12294,6 +14620,72 @@
    "googleUrl": "https://maps.google.com/?cid=2303907868083493371&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJy2VLoSwL9YgROEOVEy_xbI8",
+   "name": "Starbucks Coffee Company",
+   "address": "1570 Holcomb Bridge Rd, Roswell, GA 30076, USA",
+   "city": "Roswell",
+   "county": "Fulton",
+   "lat": 34.01821,
+   "lng": -84.312,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.1,
+   "ratingNum": 643,
+   "ratingCount": "643",
+   "hours": "Mon-Sun 5am-8pm",
+   "website": "https://www.starbucks.com/store-locator/store/1010171",
+   "googleUrl": "https://maps.google.com/?cid=10334900429402751800&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJyQidFACb9YgR_VuvmyzKKDI",
+   "name": "Dunkin'",
+   "address": "651 Atlanta Hwy, Cumming, GA 30040, USA",
+   "city": "Cumming",
+   "county": "Forsyth",
+   "lat": 34.187906,
+   "lng": -84.142343,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "cafe",
+    "donut_shop",
+    "bakery"
+   ],
+   "rating": 3.7,
+   "ratingNum": 30,
+   "ratingCount": "30",
+   "hours": "Mon-Sun 5am-9pm",
+   "website": "https://www.dunkindonuts.com/locations/us/ga/cumming/651-atlanta-highway/store-365203/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=365203&y_source=1_MjAyODExMTA2My03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+   "googleUrl": "https://maps.google.com/?cid=3614360993904155645&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJyUDzRqq79YgR-Kp9fgpoNJg",
+   "name": "Starbucks Coffee Company",
+   "address": "4195 Stone Mountain Hwy, Lilburn, GA 30047, USA",
+   "city": "Lilburn",
+   "county": "Gwinnett",
+   "lat": 33.8356,
+   "lng": -84.07525,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 3.4,
+   "ratingNum": 168,
+   "ratingCount": "168",
+   "hours": "Mon-Sun 5am-9pm",
+   "website": null,
+   "googleUrl": "https://maps.google.com/?cid=10967505386835127032&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJyW17J_6C9YgRsxl3tS1kJys",
    "name": "Bakery Outlet",
    "address": "3758 Post Rd, Cumming, GA 30040, USA",
@@ -12335,6 +14727,27 @@
    "googleUrl": "https://maps.google.com/?cid=18233837215552986798&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJye9VAHmh9YgRHv_igPiECTE",
+   "name": "Starbucks Coffee Company",
+   "address": "4895 Peachtree Industrial Blvd, Norcross, GA 30092, USA",
+   "city": "Norcross",
+   "county": "Gwinnett",
+   "lat": 33.968816,
+   "lng": -84.195229,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.4,
+   "ratingNum": 605,
+   "ratingCount": "605",
+   "hours": "Mon-Sat 5am-9pm · Sun 5am-8:30pm",
+   "website": "https://www.starbucks.com/store-locator/store/10461/",
+   "googleUrl": "https://maps.google.com/?cid=3533501585497980702&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJyzlI-kuj9YgRvPslnFd8YH0",
    "name": "El Molino Bakery Supplies",
    "address": "4450 Business Park Ct SW, Lilburn, GA 30047, USA",
@@ -12355,24 +14768,28 @@
    "googleUrl": "https://maps.google.com/?cid=9034357568228948924&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
-   "placeId": "ChIJz30lCgCj9YgRf0HjGtknycc",
-   "name": "Whole Foods Bakery",
-   "address": "5945 State Bridge Rd Studio 111, Johns Creek, GA 30097, USA",
-   "city": "Johns Creek",
+   "placeId": "ChIJz84CbDOe9YgRDpeyazTYq3c",
+   "name": "Dunkin'",
+   "address": "3630 Old Milton Pkwy Ste 100, Alpharetta, GA 30005, USA",
+   "city": "Alpharetta",
    "county": "Fulton",
-   "lat": 34.012883,
-   "lng": -84.183771,
-   "category": "Bakery+Cafe",
+   "lat": 34.065507,
+   "lng": -84.254004,
+   "category": "Coffee",
    "model": "franchise",
    "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "donut_shop",
+    "cafe",
     "bakery"
    ],
-   "rating": null,
-   "ratingNum": 0,
-   "ratingCount": "0",
-   "hours": null,
-   "website": "https://www.wholefoodsmarket.com/departments/bakery",
-   "googleUrl": "https://maps.google.com/?cid=14396081497278988671&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "rating": 3.8,
+   "ratingNum": 777,
+   "ratingCount": "777",
+   "hours": "Mon-Sun 5am-9pm",
+   "website": "https://www.dunkindonuts.com/locations/us/ga/alpharetta/3630-old-milton-pkwy/store-332379/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=332379&y_source=1_MTIxMDg2NTAtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=8623223631187711758&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJzSbcDeyj9YgRvGFxBuHeXQA",
@@ -12487,29 +14904,6 @@
    "googleUrl": "https://maps.google.com/?cid=8818670064686534146&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
-   "placeId": "ChIJzX956ie-9YgR3a_ocUV-mKA",
-   "name": "Kroger Bakery",
-   "address": "1475 Buford Dr, Lawrenceville, GA 30043, USA",
-   "city": "Lawrenceville",
-   "county": "Gwinnett",
-   "lat": 34.0048,
-   "lng": -83.986318,
-   "category": "Bakery+Cafe",
-   "model": "franchise",
-   "types": [
-    "bakery",
-    "dessert_shop",
-    "bagel_shop",
-    "donut_shop"
-   ],
-   "rating": 4.7,
-   "ratingNum": 3,
-   "ratingCount": "3",
-   "hours": null,
-   "website": "https://www.kroger.com/d/bakery?cid=loc_01100424B_gmb",
-   "googleUrl": "https://maps.google.com/?cid=11572138079257407453&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
    "placeId": "ChIJzXDncDOj9YgRB2UWXEWX18w",
    "name": "Ginkgo Bakery & Cafe",
    "address": "3550 W Lawrenceville St #340, Duluth, GA 30096, USA",
@@ -12549,52 +14943,6 @@
    "hours": "Sun-Tue Closed · Wed-Fri 12:00-6:30pm · Sat 11am-6:30pm",
    "website": "http://honeyzsweetsbakery.com/",
    "googleUrl": "https://maps.google.com/?cid=12402337550230312969&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
-   "placeId": "ChIJzZuFHMO49YgRB_ywqbH9B7A",
-   "name": "Kroger Bakery",
-   "address": "1911 Grayson Hwy, Grayson, GA 30017, USA",
-   "city": "Grayson",
-   "county": "Gwinnett",
-   "lat": 33.897174,
-   "lng": -83.961883,
-   "category": "Bakery+Cafe",
-   "model": "franchise",
-   "types": [
-    "bakery",
-    "dessert_shop",
-    "bagel_shop",
-    "donut_shop"
-   ],
-   "rating": 5.0,
-   "ratingNum": 1,
-   "ratingCount": "1",
-   "hours": null,
-   "website": "https://www.kroger.com/d/bakery?cid=loc_01100480B_gmb",
-   "googleUrl": "https://maps.google.com/?cid=12684385815010278407&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
-   "placeId": "ChIJz_lSeIKD9YgRmNXdozaagcY",
-   "name": "Kroger Bakery",
-   "address": "2325 Bethelview Rd, Cumming, GA 30040, USA",
-   "city": "Cumming",
-   "county": "Forsyth",
-   "lat": 34.23844,
-   "lng": -84.193063,
-   "category": "Bakery+Cafe",
-   "model": "franchise",
-   "types": [
-    "bakery",
-    "bagel_shop",
-    "donut_shop",
-    "dessert_shop"
-   ],
-   "rating": 4.5,
-   "ratingNum": 4,
-   "ratingCount": "4",
-   "hours": null,
-   "website": "https://www.kroger.com/d/bakery?cid=loc_01100432B_gmb",
-   "googleUrl": "https://maps.google.com/?cid=14303883450973541784&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJza0NZ9O79YgRUqx3wJqcXu0",
@@ -12660,6 +15008,27 @@
    "hours": "Mon-Fri 6:30am-6pm · Sat-Sun 8am-3pm",
    "website": "http://www.northside.com/dining",
    "googleUrl": "https://maps.google.com/?cid=8130374086867535305&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJzyDRoODB9YgRxjbIW4eJAAo",
+   "name": "Starbucks Coffee Company",
+   "address": "952 Harbins Rd, Dacula, GA 30019, USA",
+   "city": "Dacula",
+   "county": "Gwinnett",
+   "lat": 33.96736,
+   "lng": -83.88626,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 3.4,
+   "ratingNum": 110,
+   "ratingCount": "110",
+   "hours": "Mon-Sun 5am-9pm",
+   "website": null,
+   "googleUrl": "https://maps.google.com/?cid=720727154832717510&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJzyUcwG0L9YgRdqKPWOn6bUU",

@@ -94,14 +94,42 @@ CATEGORY_BY_PRIMARY = {
     "dessert_restaurant": "Dessert Cafe",
 }
 TEA_NAME = re.compile(r"\b(boba|bubble tea|milk tea|tea ?house)\b", re.I)
-# Mass-market chains are left out on purpose (matches the curated set, which keeps
-# Paris Baguette and Tous Les Jours but no Starbucks or Dunkin').
+
+# Supermarket and grocery store in-store bakeries are completely excluded.
+GROCERY_PATTERNS = (
+    r"\bkroger\b",
+    r"\bwalmart\b",
+    r"\bsam\s*s?\s*club\b",
+    r"\bcostco\b",
+    r"\bwhole foods\b",
+    r"\bpublix\b",
+    r"\btarget\b",
+    r"\bsprouts\b",
+    r"\bh\s*mart\b",
+    r"\btrader joe",
+    r"\bfresh market\b",
+    r"\bingles\b",
+    r"\blidl\b",
+    r"\baldi\b",
+    r"\bbj\s*s\s*wholesale\b",
+)
+
+# Fast-food burger/fried food restaurants are excluded.
+FAST_FOOD_PATTERNS = (
+    r"\bmcdonald",
+    r"\bmccafe\b",
+    r"\bburger king\b",
+    r"\bwendy\s*s\b",
+    r"\bchick-fil-a\b",
+    r"\btaco bell\b",
+)
+
+# Coffee/tea/bakery chains are included and classified as 'franchise'
+# under the unified Franchise model.
 CHAINS = (
     "starbucks",
     "dunkin",
     "krispy kreme",
-    "mcdonald",
-    "mccafe",
     "panera",
     "einstein bros",
     "tim hortons",
@@ -216,6 +244,16 @@ def is_chain(name: str) -> bool:
     return any(re.search(r"\b" + re.escape(c) + r"\b", n) for c in CHAINS)
 
 
+def is_grocery(name: str) -> bool:
+    n = norm(name)
+    return any(re.search(pat, n) for pat in GROCERY_PATTERNS)
+
+
+def is_fast_food(name: str) -> bool:
+    n = norm(name)
+    return any(re.search(pat, n) for pat in FAST_FOOD_PATTERNS)
+
+
 # ---- franchise / independent classification ---------------------------------
 LOCATIONS = (
     "duluth", "alpharetta", "johns creek", "suwanee", "roswell", "sandy springs",
@@ -226,7 +264,7 @@ LOCATIONS = (
 )
 
 FRANCHISE_KEYWORDS = (
-    # Supermarkets / Big box / Grocery in-store bakeries
+    # Supermarkets / Big box / Grocery in-store bakeries (dropped during ingestion, kept as franchise fallback)
     r"\bkroger\b",
     r"\bwalmart\b",
     r"\bsam\s*s?\s*club\b",
@@ -258,6 +296,7 @@ FRANCHISE_KEYWORDS = (
     r"\bdunkin\b",
     r"\bstarbucks\b",
     r"\btim hortons\b",
+    r"\bkrispy kreme\b",
     r"\bpanera\b",
     r"\beinstein bros\b",
     r"\bpeet\s*s\b",
@@ -474,8 +513,10 @@ def to_record(place: dict, brand_counts=None, curations=None):
     name = (place.get("displayName") or {}).get("text", "").strip()
     if not name:
         return None, "no name"
-    if is_chain(name):
-        return None, "chain"
+    if is_grocery(name):
+        return None, "grocery"
+    if is_fast_food(name):
+        return None, "fast_food"
     category = category_for(place)
     if not category:
         return None, f"type:{place.get('primaryType') or 'none'}"

@@ -107,6 +107,11 @@ The paid pass refuses to start when `~/.config/caffeye/places_usage.json` shows 
 
 Coordinates for discovered shops are Google's place pin; Apple `CLGeocoder` remains the rule for hand-added curated shops.
 
+**Business Model Classification (`model: "independent" | "franchise"`):**
+- **Indie vs. Franchise/Chains**: Multi-location chains and franchises (e.g. Tim Hortons, Caribou Coffee, Starbucks, Dunkin', Paris Baguette, Sweet Hut, 7 Brew, Dutch Bros) are classified under the unified `"franchise"` model. Standalone and small local roasters (1-2 locations) are classified as `"independent"`.
+- **Grocery Stores Excluded**: In-store supermarket bakeries/cafes (Kroger, Walmart, Sam's Club, Costco, Whole Foods, Publix, Target, Sprouts, etc.) and fast-food burger chains (McDonald's) are completely removed at discovery.
+- **Default View**: Caffeye defaults to **Indie only** on initial load (`state.activeModel = 'independent'`). Users can tap `[🏢 Franchise]` to view franchises or toggle off `Indie` to see all spots.
+
 ### Curation Engine — `scripts/curations.json` & `scripts/curate_places.py`
 
 Google Places API provides operational data (hours, lat/lng, rating), but lacks editorial intelligence on coworking suitability (`cw: { tier, note, hasMeetingRoom, meetingRoomNote }`), USPs, and meeting room details. The Curation Engine bridges this gap by maintaining verified editorial overlays in `scripts/curations.json`.
