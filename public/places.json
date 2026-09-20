@@ -9,11 +9,36 @@
    "Fulton",
    "Forsyth",
    "DeKalb",
-   "Cobb"
+   "Cobb",
+   "Cherokee",
+   "Hall",
+   "Dawson"
   ],
-  "note": "For Fulton, DeKalb, and Cobb only the part north of the top-end Perimeter (I-285) is included: Sandy Springs, Dunwoody, Doraville, Roswell, Alpharetta, Johns Creek, Milton, Vinings, Smyrna, Marietta, Kennesaw, and Acworth."
+  "note": "Covers Greater North Atlanta and the North Georgia foothills. For Fulton, DeKalb, and Cobb only the part north of the top-end Perimeter (I-285) is included."
  },
  "places": [
+  {
+   "placeId": "ChIJ--0Bmm9l9YgRvI6Y6-nWOgg",
+   "name": "Cloud Tea",
+   "address": "151 Reinhardt College Pkwy Unit 102, Canton, GA 30114, USA",
+   "city": "Canton",
+   "county": "Cherokee",
+   "lat": 34.257008,
+   "lng": -84.482744,
+   "category": "Tea/Boba",
+   "model": "independent",
+   "types": [
+    "coffee_shop",
+    "cafe",
+    "tea_house"
+   ],
+   "rating": 4.5,
+   "ratingNum": 271,
+   "ratingCount": "271",
+   "hours": "Mon-Sat 12:00-8pm · Sun 1:00-8pm",
+   "website": "http://www.cloudtea.cafe/",
+   "googleUrl": "https://maps.google.com/?cid=593022601121009340&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
   {
    "placeId": "ChIJ-0Sla4R19YgRJdMw0Qvbxuc",
    "name": "Caffe Antico",
@@ -143,6 +168,31 @@
    "googleUrl": "https://maps.google.com/?cid=6854108251847911552&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJ-W7xcIVr9YgRQVwOMZZbP48",
+   "name": "Starbucks Coffee Company",
+   "address": "9529 Alabama Rd, Woodstock, GA 30188, USA",
+   "city": "Woodstock",
+   "county": "Cherokee",
+   "lat": 34.086498,
+   "lng": -84.530438,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.2,
+   "ratingNum": 1019,
+   "ratingCount": "1,019",
+   "hours": "Mon-Fri 4:30am-10pm · Sat-Sun 5am-10pm",
+   "late": {
+    "tier": "10pm+",
+    "when": "Daily till 10pm"
+   },
+   "website": "https://www.starbucks.com/store-locator/store/1007627/",
+   "googleUrl": "https://maps.google.com/?cid=10322069571582712897&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJ-ZYcBfm_9YgRsOMQYSYfZS8",
    "name": "Aroma Cafe",
    "address": "198 Gwinnett Dr, Lawrenceville, GA 30046, USA",
@@ -187,6 +237,27 @@
    "hours": "Mon Closed · Tue-Sat 7:30am-4:30pm · Sun 9am-3pm",
    "website": "https://www.bonninsbakery.com/",
    "googleUrl": "https://maps.google.com/?cid=9226483880062223530&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJ-b64ruZo9YgRyCS7UynQQDY",
+   "name": "Starbucks Coffee Company",
+   "address": "3241 Sixes Rd, Canton, GA 30114, USA",
+   "city": "Canton",
+   "county": "Cherokee",
+   "lat": 34.171813,
+   "lng": -84.547973,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.3,
+   "ratingNum": 409,
+   "ratingCount": "409",
+   "hours": "Mon-Sun 5am-8pm",
+   "website": "https://www.starbucks.com/store-locator/store/10952/",
+   "googleUrl": "https://maps.google.com/?cid=3909353352474600648&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJ-wZ1GACd9YgRlv0OOCW3obU",
@@ -355,6 +426,27 @@
    },
    "website": "https://www.dunkindonuts.com/locations/us/ga/marietta/751-whitlock-ave-sw/store-356161/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=356161&y_source=1_MTIxMDk1MzAtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
    "googleUrl": "https://maps.google.com/?cid=16170967809100190631&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJ0WKglvT39YgRbqTuE0QYRAM",
+   "name": "Meadowlark Coffee",
+   "address": "109 Bradford St NE, Gainesville, GA 30501, USA",
+   "city": "Gainesville",
+   "county": "Hall",
+   "lat": 34.30001,
+   "lng": -83.827128,
+   "category": "Coffee",
+   "model": "independent",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.9,
+   "ratingNum": 250,
+   "ratingCount": "250",
+   "hours": "Mon-Fri 7am-7:30pm · Sat 8am-7:30pm · Sun 8am-6pm",
+   "website": "http://meadowlarkcoffee.shop/",
+   "googleUrl": "https://maps.google.com/?cid=235339761201357934&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJ0WPQhUq_9YgRxjiD1JtjbdI",
@@ -629,6 +721,27 @@
    "googleUrl": "https://maps.google.com/?cid=6476967546852363146&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJ195FVwBl9YgRW7EF46G9w_k",
+   "name": "Starbucks",
+   "address": "950 Old Ball Ground Hwy, Canton, GA 30114, USA",
+   "city": "Canton",
+   "county": "Cherokee",
+   "lat": 34.25158,
+   "lng": -84.4711,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.4,
+   "ratingNum": 28,
+   "ratingCount": "28",
+   "hours": "Mon-Sun 5am-9pm",
+   "website": "https://www.starbucks.com/",
+   "googleUrl": "https://maps.google.com/?cid=17997437038898819419&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJ1Q7elSS_9YgRy5tABzHWDGg",
    "name": "Starbucks",
    "address": "665 Duluth Hwy, Lawrenceville, GA 30046, USA",
@@ -648,6 +761,28 @@
    "hours": "Mon-Sun 5am-8pm",
    "website": "https://www.starbucks.com/store-locator/store/1028636",
    "googleUrl": "https://maps.google.com/?cid=7497602985728449483&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJ1UFWG7Dz9YgRWJZ6ZSAWV40",
+   "name": "Banana Llama Boba & Cream",
+   "address": "3885 Mundy Mill Rd #107, Oakwood, GA 30566, USA",
+   "city": "Oakwood",
+   "county": "Hall",
+   "lat": 34.233251,
+   "lng": -83.874171,
+   "category": "Tea/Boba",
+   "model": "independent",
+   "types": [
+    "dessert_shop",
+    "cafe",
+    "tea_house"
+   ],
+   "rating": 4.2,
+   "ratingNum": 361,
+   "ratingCount": "361",
+   "hours": "Sun-Thu 11am-8:30pm · Fri-Sat 11am-9pm",
+   "website": "https://bananallamaboba.cloveronline.com/",
+   "googleUrl": "https://maps.google.com/?cid=10184633410718963288&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJ1Uqy_Lmk9YgRItQ9QkMEyHQ",
@@ -732,6 +867,49 @@
    "hours": "Mon-Thu 11am-7pm · Fri-Sat 10am-8pm · Sun Closed",
    "website": "https://beccaswell.com/",
    "googleUrl": "https://maps.google.com/?cid=13735379811071223726&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJ1d2wtHXz9YgRObK0E4ImN_8",
+   "name": "Tea Top (Oakwood)",
+   "address": "3446 Winder Hwy Ste 201, Flowery Branch, GA 30542, USA",
+   "city": "Flowery Branch",
+   "county": "Hall",
+   "lat": 34.217529,
+   "lng": -83.862917,
+   "category": "Tea/Boba",
+   "model": "franchise",
+   "types": [
+    "tea_house"
+   ],
+   "rating": 4.7,
+   "ratingNum": 124,
+   "ratingCount": "124",
+   "hours": "Sun-Thu 11am-9pm · Fri-Sat 11am-9:30pm",
+   "website": "https://teatopoakwood.kwickmenu.com/index.php",
+   "googleUrl": "https://maps.google.com/?cid=18390209943508922937&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJ1eCTwRKJ9YgRwLgwoMAI0pk",
+   "name": "Da Vinci’s Donuts",
+   "address": "Dawson Crossroads, 145 Forest Blvd Ste 455, Dawsonville, GA 30534, USA",
+   "city": "Dawsonville",
+   "county": "Dawson",
+   "lat": 34.350548,
+   "lng": -84.045648,
+   "category": "Bakery+Cafe",
+   "model": "franchise",
+   "types": [
+    "donut_shop",
+    "coffee_shop",
+    "cafe",
+    "bakery"
+   ],
+   "rating": 4.8,
+   "ratingNum": 133,
+   "ratingCount": "133",
+   "hours": "Mon Closed · Tue-Sat 7am-3pm · Sun 7am-12pm",
+   "website": "https://www.davincisdonuts.com/",
+   "googleUrl": "https://maps.google.com/?cid=11083931256326502592&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJ1ee7vEWj9YgRuakY6y4vmBc",
@@ -842,6 +1020,39 @@
    "hours": "Mon-Sun 11am-9:30pm",
    "website": "http://taichibubbletea.com/",
    "googleUrl": "https://maps.google.com/?cid=15105258475421062519&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJ21qjzD2J9YgRAEWkTb9IFqs",
+   "name": "Because Coffee",
+   "address": "240 Dawson Village Way N #100, Dawsonville, GA 30534, USA",
+   "city": "Dawsonville",
+   "county": "Dawson",
+   "lat": 34.365009,
+   "lng": -84.031883,
+   "category": "Coffee",
+   "model": "independent",
+   "types": [
+    "cafe",
+    "coffee_shop"
+   ],
+   "rating": 4.9,
+   "ratingNum": 353,
+   "ratingCount": "353",
+   "hours": "Mon-Fri 7am-6pm · Sat 8am-5pm · Sun 12:00-5pm",
+   "website": "https://because.coffee/",
+   "googleUrl": "https://maps.google.com/?cid=12328121016451876096&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "excellent",
+    "note": "Bright, welcoming specialty cafe with communal workspaces, fast Wi-Fi, power outlets, and mission-driven community ethos.",
+    "hasMeetingRoom": false
+   },
+   "usp": "Dawsonville's premier craft coffeehouse dedicated to quality single-origin roasts and community connection.",
+   "loved": [
+    "pourover",
+    "honey cinnamon latte",
+    "baked goods"
+   ],
+   "signature": "Dawsonville Vanilla Bean Drip"
   },
   {
    "placeId": "ChIJ22UGAeSV9YgRVk9j2pZMh2U",
@@ -1095,6 +1306,51 @@
    "googleUrl": "https://maps.google.com/?cid=12999342785379421241&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJ2_lvDCdv9YgRh6b6kX03-k8",
+   "name": "Cafe Floralia",
+   "address": "149 Prominence Point Pkwy Ste 100, Canton, GA 30114, USA",
+   "city": "Canton",
+   "county": "Cherokee",
+   "lat": 34.189798,
+   "lng": -84.50908,
+   "category": "Coffee",
+   "model": "independent",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.7,
+   "ratingNum": 211,
+   "ratingCount": "211",
+   "hours": "Mon-Fri 6:30am-5pm · Sat 8am-5pm · Sun 8am-4pm",
+   "website": "https://www.cafefloralia.com/",
+   "googleUrl": "https://maps.google.com/?cid=5762979685633533575&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJ2b-Nr5Jr9YgRLFsFxEeHAiw",
+   "name": "Dunkin'",
+   "address": "1920 Eagle Dr, Woodstock, GA 30189, USA",
+   "city": "Woodstock",
+   "county": "Cherokee",
+   "lat": 34.112657,
+   "lng": -84.574375,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "cafe",
+    "donut_shop",
+    "bakery"
+   ],
+   "rating": 2.8,
+   "ratingNum": 78,
+   "ratingCount": "78",
+   "hours": "Mon-Sun Open 24 hours",
+   "website": "https://www.dunkindonuts.com/locations/us/ga/woodstock/1920-eagle-drive/store-365613/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=365613&y_source=1_MTA5NDk2NzE0NS03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+   "googleUrl": "https://maps.google.com/?cid=3171245829923363628&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJ2erFTP4V9YgRkWOlJ04Elbo",
    "name": "Queen Tea （Kennesaw)",
    "address": "425 Ernest W Barrett Pkwy NW #1080, Kennesaw, GA 30144, USA",
@@ -1144,6 +1400,30 @@
    "googleUrl": "https://maps.google.com/?cid=10275551567288316791&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJ2wHriqlr9YgRplF4W1vNFGU",
+   "name": "Dunkin'",
+   "address": "8000 Alabama Rd, Woodstock, GA 30189, USA",
+   "city": "Woodstock",
+   "county": "Cherokee",
+   "lat": 34.084815,
+   "lng": -84.555729,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "donut_shop",
+    "cafe",
+    "bakery"
+   ],
+   "rating": 3.6,
+   "ratingNum": 220,
+   "ratingCount": "220",
+   "hours": "Mon-Sun Open 24 hours",
+   "website": "https://www.dunkindonuts.com/locations/us/ga/woodstock/8000-alabama-rd-ne/store-359456/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=359456&y_source=1_MjMwMTEzMTUtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=7283672289625264550&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJ2z9QfnkV9YgRzZS7cIjD10A",
    "name": "Café Clément",
    "address": "1438 Canton Rd, Marietta, GA 30066, USA",
@@ -1185,6 +1465,27 @@
    "hours": "Mon-Fri 6:30am-2pm · Sat-Sun 7am-2pm",
    "website": "http://bagelboyscafe.com/",
    "googleUrl": "https://maps.google.com/?cid=13867443045103437170&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJ3141TABt9YgR2IGF6xgXCBU",
+   "name": "Black Rifle Additional Parking",
+   "address": "303 Hickory Ridge Trail, Woodstock, GA 30188, USA",
+   "city": "Woodstock",
+   "county": "Cherokee",
+   "lat": 34.087574,
+   "lng": -84.502721,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 2.0,
+   "ratingNum": 1,
+   "ratingCount": "1",
+   "hours": null,
+   "website": null,
+   "googleUrl": "https://maps.google.com/?cid=1515486670408221144&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJ31v66Ax19YgRww_UDBd_zCs",
@@ -1386,6 +1687,28 @@
    "googleUrl": "https://maps.google.com/?cid=7553780221596603319&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJ3VZ3VO5l9YgRJbMb2oKIdWw",
+   "name": "Panera Bread",
+   "address": "205 W Main St, Canton, GA 30114, USA",
+   "city": "Canton",
+   "county": "Cherokee",
+   "lat": 34.236673,
+   "lng": -84.492536,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "cafe",
+    "coffee_shop",
+    "bakery"
+   ],
+   "rating": 4.0,
+   "ratingNum": 668,
+   "ratingCount": "668",
+   "hours": "Mon-Fri 6:30am-9pm · Sat-Sun 7am-9pm",
+   "website": "https://www.panerabread.com/en-us/cafe/locations/ga/canton/205-w-main-st?utm_medium=local&utm_source=google&utm_campaign=dpm-dist&utm_term=202561&utm_content=main",
+   "googleUrl": "https://maps.google.com/?cid=7815302823957738277&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJ3cYTIrSf9YgRwQe4Eg7Y-dI",
    "name": "Copa Cabana Brazilian Bakery",
    "address": "4005 Old Milton Pkwy, Alpharetta, GA 30022, USA",
@@ -1460,6 +1783,26 @@
    "googleUrl": "https://maps.google.com/?cid=3657937170062918078&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJ40RR2TZt9YgROK0ghkPEzxw",
+   "name": "Zinnia Cafe & Market",
+   "address": "13682 GA-92, Woodstock, GA 30188, USA",
+   "city": "Woodstock",
+   "county": "Cherokee",
+   "lat": 34.083509,
+   "lng": -84.460004,
+   "category": "Coffee",
+   "model": "independent",
+   "types": [
+    "cafe"
+   ],
+   "rating": 5.0,
+   "ratingNum": 1,
+   "ratingCount": "1",
+   "hours": "Mon-Sat 8am-3pm · Sun 8am-12pm",
+   "website": null,
+   "googleUrl": "https://maps.google.com/?cid=2076093747533229368&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJ40Y05PKh9YgRkU2guOKcpJg",
    "name": "Tier Couture Bakery Norcross",
    "address": "5051 Peachtree Corners Cir, Norcross, GA 30092, USA",
@@ -1478,6 +1821,30 @@
    "hours": "Mon-Sun 8am-8pm",
    "website": "http://www.tiercouturebakery.com/",
    "googleUrl": "https://maps.google.com/?cid=10999088687519649169&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJ46agLzpx9YgRpM6CWkOeYcw",
+   "name": "Dunkin'",
+   "address": "9045 Hickory Flat Hwy, Woodstock, GA 30188, USA",
+   "city": "Woodstock",
+   "county": "Cherokee",
+   "lat": 34.142205,
+   "lng": -84.393668,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "cafe",
+    "donut_shop",
+    "bakery"
+   ],
+   "rating": 4.5,
+   "ratingNum": 31,
+   "ratingCount": "31",
+   "hours": "Mon-Sun 5am-9pm",
+   "website": "https://locations.dunkindonuts.com/en/ga/woodstock/9045-hickory-flat-highway/366915?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=366915&y_source=1_MjA4MTQ3MDU3My03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+   "googleUrl": "https://maps.google.com/?cid=14727226268596752036&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJ47kAxysW9YgR3ZA7SBn1kt4",
@@ -1524,6 +1891,30 @@
    "hours": "Mon-Sun 7am-5pm",
    "website": "https://justlovecoffeecafe.com/ga-alpharetta/",
    "googleUrl": "https://maps.google.com/?cid=17198370273802552919&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJ4Sac3bBl9YgRk6TF9fonBBE",
+   "name": "Dunkin'",
+   "address": "121 Marietta Hwy, Canton, GA 30114, USA",
+   "city": "Canton",
+   "county": "Cherokee",
+   "lat": 34.243304,
+   "lng": -84.494828,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "cafe",
+    "donut_shop",
+    "bakery"
+   ],
+   "rating": 3.9,
+   "ratingNum": 571,
+   "ratingCount": "571",
+   "hours": "Mon-Sun 5am-9pm",
+   "website": "https://www.dunkindonuts.com/locations/us/ga/canton/121-marietta-hwy/store-353498/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=353498&y_source=1_MTIxMTExMzgtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=1226148957370295443&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJ4UulDK859YgRNPYJN8mlFfQ",
@@ -1701,6 +2092,30 @@
    "googleUrl": "https://maps.google.com/?cid=185088119533342989&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJ51ucGltq9YgRlmfvyWeAR80",
+   "name": "Las Tres Princesas Bakery",
+   "address": "5675 Bells Ferry Rd, Acworth, GA 30102, USA",
+   "city": "Acworth",
+   "county": "Cherokee",
+   "lat": 34.08748,
+   "lng": -84.577884,
+   "category": "Bakery+Cafe",
+   "model": "independent",
+   "types": [
+    "bakery"
+   ],
+   "rating": 4.2,
+   "ratingNum": 158,
+   "ratingCount": "158",
+   "hours": "Mon-Sat 7am-10pm · Sun 8am-10pm",
+   "late": {
+    "tier": "10pm+",
+    "when": "Daily till 10pm"
+   },
+   "website": null,
+   "googleUrl": "https://maps.google.com/?cid=14791932684379580310&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJ52QN5kQL9YgRFFRhpkGbVmw",
    "name": "Summit Coffee Dunwoody",
    "address": "5482 Chamblee Dunwoody Rd #23A, Dunwoody, GA 30338, USA",
@@ -1830,6 +2245,30 @@
    "hours": "Mon-Fri 7am-6pm · Sat-Sun 8am-5pm",
    "website": "http://smyrnacoffee.com/",
    "googleUrl": "https://maps.google.com/?cid=11214491732214121550&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJ5QZUW1Jt9YgRrk9GbZXT_Ig",
+   "name": "Dunkin'",
+   "address": "600 Claremore Professional Way, Woodstock, GA 30188, USA",
+   "city": "Woodstock",
+   "county": "Cherokee",
+   "lat": 34.086928,
+   "lng": -84.468535,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "cafe",
+    "donut_shop",
+    "bakery"
+   ],
+   "rating": 3.4,
+   "ratingNum": 287,
+   "ratingCount": "287",
+   "hours": "Mon-Sun Open 24 hours",
+   "website": "https://www.dunkindonuts.com/locations/us/ga/woodstock/600-claremore-professional-way/store-358663/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=358663&y_source=1_MTMzNDM2OTgtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=9870997122026196910&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJ5RRQ7m659YgRKbUMsITgUCA",
@@ -2088,6 +2527,27 @@
    "googleUrl": "https://maps.google.com/?cid=10181565695830729817&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJ5zh9bfdl9YgRcI0L1jUQY7Y",
+   "name": "Stitch Coffee",
+   "address": "135 Reinhardt College Pkwy, Canton, GA 30114, USA",
+   "city": "Canton",
+   "county": "Cherokee",
+   "lat": 34.254612,
+   "lng": -84.482187,
+   "category": "Coffee",
+   "model": "independent",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.8,
+   "ratingNum": 161,
+   "ratingCount": "161",
+   "hours": "Mon-Sat 7am-5pm · Sun 7am-3pm",
+   "website": "http://stitchcoffeecanton.com/",
+   "googleUrl": "https://maps.google.com/?cid=13142365961007631728&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJ60n2fyic9YgRR_q_T1IhMK8",
    "name": "Dunkin'",
    "address": "1610 Oak Farm Dr, Alpharetta, GA 30005, USA",
@@ -2287,6 +2747,27 @@
    "googleUrl": "https://maps.google.com/?cid=10962439176816513251&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJ6XNCOO9o9YgRUGqISkZ0Lmw",
+   "name": "Bagels & Deli",
+   "address": "Canton, GA 30114, USA",
+   "city": "Canton",
+   "county": "Cherokee",
+   "lat": 34.178429,
+   "lng": -84.549176,
+   "category": "Bakery+Cafe",
+   "model": "independent",
+   "types": [
+    "bagel_shop",
+    "bakery"
+   ],
+   "rating": 4.5,
+   "ratingNum": 11,
+   "ratingCount": "11",
+   "hours": "Wed-Mon 7am-2pm · Tue 7am-2:30pm",
+   "website": null,
+   "googleUrl": "https://maps.google.com/?cid=7795295850271894096&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJ6YTLPAOj9YgRIbjCKiTp2hM",
    "name": "Kung Fu Tea",
    "address": "3473 Old Norcross Rd Ste 202, Duluth, GA 30096, USA",
@@ -2311,6 +2792,27 @@
    },
    "website": "https://kungfutea.com/",
    "googleUrl": "https://maps.google.com/?cid=1430712173189052449&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJ6YukRwDz9YgRJScxAA9B1_c",
+   "name": "Starbucks",
+   "address": "4207 Martin Rd, Flowery Branch, GA 30542, USA",
+   "city": "Flowery Branch",
+   "county": "Hall",
+   "lat": 34.197494,
+   "lng": -83.886842,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 3.0,
+   "ratingNum": 51,
+   "ratingCount": "51",
+   "hours": "Mon-Sun 6am-8pm",
+   "website": null,
+   "googleUrl": "https://maps.google.com/?cid=17858814380044527397&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJ6bmiuN2j9YgRzBg9qGihHzc",
@@ -2360,6 +2862,27 @@
    },
    "website": "https://www.cuckooscafeduluth.com/",
    "googleUrl": "https://maps.google.com/?cid=10045659811956855191&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJ6fil2cGT9YgRWJtFTjI5xQo",
+   "name": "Starbucks",
+   "address": "4942 Bristol Industrial Way, Buford, GA 30518, USA",
+   "city": "Buford",
+   "county": "Hall",
+   "lat": 34.1434,
+   "lng": -83.95604,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.0,
+   "ratingNum": 686,
+   "ratingCount": "686",
+   "hours": "Mon-Fri 4:30am-9pm · Sat-Sun 5am-8:30pm",
+   "website": "https://www.starbucks.com/store-locator/store/1022249",
+   "googleUrl": "https://maps.google.com/?cid=776089399015611224&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJ6zDWQMkR9YgRa0i3EJn28DA",
@@ -3014,6 +3537,68 @@
    "googleUrl": "https://maps.google.com/?cid=11362260508708089274&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJ8eNvdF9t9YgRwpTeoYBh7gg",
+   "name": "Starbucks Coffee Company",
+   "address": "8212 Main St, Woodstock, GA 30188, USA",
+   "city": "Woodstock",
+   "county": "Cherokee",
+   "lat": 34.10632,
+   "lng": -84.51791,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.0,
+   "ratingNum": 83,
+   "ratingCount": "83",
+   "hours": "Mon-Thu 6am-6pm · Fri-Sat 6am-7pm · Sun 7am-6pm",
+   "website": null,
+   "googleUrl": "https://maps.google.com/?cid=643559001859986626&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJ8f2NkwFl9YgRrypJ9SHq2yc",
+   "name": "Starbucks Coffee Company",
+   "address": "1353 Riverstone Pkwy, Canton, GA 30114, USA",
+   "city": "Canton",
+   "county": "Cherokee",
+   "lat": 34.24852,
+   "lng": -84.47857,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.1,
+   "ratingNum": 458,
+   "ratingCount": "458",
+   "hours": "Mon-Sun 5am-8pm",
+   "website": "https://www.starbucks.com/store-locator/store/12849/",
+   "googleUrl": "https://maps.google.com/?cid=2872146618948856495&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJ8xvuZwBv9YgRRKaUwDLloM0",
+   "name": "Tea 365",
+   "address": "5341 Old Hwy 5, Woodstock, GA 30188, USA",
+   "city": "Woodstock",
+   "county": "Cherokee",
+   "lat": 34.140724,
+   "lng": -84.503155,
+   "category": "Tea/Boba",
+   "model": "independent",
+   "types": [
+    "tea_house"
+   ],
+   "rating": 4.3,
+   "ratingNum": 87,
+   "ratingCount": "87",
+   "hours": "Mon-Sat 11am-8pm · Sun 11am-6:30pm",
+   "website": "https://order.online/business/tea-365-24734955",
+   "googleUrl": "https://maps.google.com/?cid=14817094780191024708&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJ8ycPplsV9YgRRhitfBXutxI",
    "name": "Marietta Perks",
    "address": "800 Whitlock Ave NW Unit 116, Marietta, GA 30064, USA",
@@ -3167,6 +3752,26 @@
    "hours": "Sun-Mon Closed · Tue-Sat 12:00-6pm",
    "website": "http://www.tropicups.com/",
    "googleUrl": "https://maps.google.com/?cid=15799731658373988143&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJ9VCyr6Jl9YgR3gjfuU4RJLY",
+   "name": "La Luna Bakery Panaderia",
+   "address": "250 Marietta Rd, Canton, GA 30114, USA",
+   "city": "Canton",
+   "county": "Cherokee",
+   "lat": 34.230308,
+   "lng": -84.490255,
+   "category": "Bakery+Cafe",
+   "model": "independent",
+   "types": [
+    "bakery"
+   ],
+   "rating": 4.5,
+   "ratingNum": 89,
+   "ratingCount": "89",
+   "hours": "Mon-Sun 7am-5pm",
+   "website": null,
+   "googleUrl": "https://maps.google.com/?cid=13124634243887991006&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJ9W6P090Q9YgR0dhDs28vJV8",
@@ -3343,6 +3948,26 @@
    "googleUrl": "https://maps.google.com/?cid=9005993026413183821&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJA2c5GsVr9YgRvjGUkb6n0bY",
+   "name": "Smallcakes Woodstock",
+   "address": "2035 Towne Lake Pkwy, Woodstock, GA 30189, USA",
+   "city": "Woodstock",
+   "county": "Cherokee",
+   "lat": 34.108312,
+   "lng": -84.552113,
+   "category": "Bakery+Cafe",
+   "model": "franchise",
+   "types": [
+    "bakery"
+   ],
+   "rating": 4.6,
+   "ratingNum": 151,
+   "ratingCount": "151",
+   "hours": "Mon-Sat 10am-7pm · Sun Closed",
+   "website": "http://www.smallcakeswoodstock.com/",
+   "googleUrl": "https://maps.google.com/?cid=13173494821963444670&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJA6H5-Tdt9YgRWmYkmTOunCM",
    "name": "Starbucks Coffee Company",
    "address": "3631 Sandy Plains Rd, Marietta, GA 30066, USA",
@@ -3366,6 +3991,47 @@
    },
    "website": "https://www.starbucks.com/store-locator/store/1015648",
    "googleUrl": "https://maps.google.com/?cid=2566117424330204762&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJA6rrIwBr9YgRkg3Lsmktnwo",
+   "name": "Dunkin’",
+   "address": "8020 Alabama Rd, Woodstock, GA 30188, USA",
+   "city": "Woodstock",
+   "county": "Cherokee",
+   "lat": 34.084519,
+   "lng": -84.553306,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.0,
+   "ratingNum": 26,
+   "ratingCount": "26",
+   "hours": "Mon-Sun Open 24 hours",
+   "website": "https://www.dunkindonuts.com/",
+   "googleUrl": "https://maps.google.com/?cid=765380393670741394&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJA9xBcwhZX4gRjlMMLJY3cEU",
+   "name": "Truelove Celebrations",
+   "address": "4147 Cleveland Hwy #200, Gainesville, GA 30506, USA",
+   "city": "Gainesville",
+   "county": "Hall",
+   "lat": 34.407589,
+   "lng": -83.805919,
+   "category": "Bakery+Cafe",
+   "model": "independent",
+   "types": [
+    "bakery"
+   ],
+   "rating": 4.7,
+   "ratingNum": 315,
+   "ratingCount": "315",
+   "hours": "Mon-Fri 6am-5pm · Sat 6am-12pm · Sun Closed",
+   "website": "https://www.facebook.com/Truelove-Celebrations-Peggy-Truelove-1637737796520962/",
+   "googleUrl": "https://maps.google.com/?cid=5003560304132248462&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJAWPnybQO9YgRmyd2qe6xVWY",
@@ -3522,6 +4188,27 @@
    "googleUrl": "https://maps.google.com/?cid=12250460664234128037&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJB00NZ-Zr9YgRn2Wgk9ddV0M",
+   "name": "Apotheos Coffee Woodstock",
+   "address": "Inside Walmart, 6435 Bells Ferry Rd, Woodstock, GA 30189, USA",
+   "city": "Woodstock",
+   "county": "Cherokee",
+   "lat": 34.112806,
+   "lng": -84.584609,
+   "category": "Coffee",
+   "model": "independent",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.8,
+   "ratingNum": 81,
+   "ratingCount": "81",
+   "hours": "Mon-Fri 7:30am-5:30pm · Sat-Sun 8:30am-5:30pm",
+   "website": "https://apotheosroastery.com/",
+   "googleUrl": "https://maps.google.com/?cid=4852450303991113119&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJB6_vKKG99YgRstt9tuW7Dzk",
    "name": "Cafe Blue",
    "address": "2005 Boggs Rd Ste 100, Duluth, GA 30096, USA",
@@ -3655,6 +4342,27 @@
    },
    "website": "https://www.commoncoffeeandcocktails.com/",
    "googleUrl": "https://maps.google.com/?cid=3324516639012591289&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJBY2Wj0hw9YgRtZjgkWp8wyI",
+   "name": "Starbucks Coffee Company",
+   "address": "6766 Hickory Flat Hwy, Canton, GA 30115, USA",
+   "city": "Canton",
+   "county": "Cherokee",
+   "lat": 34.171413,
+   "lng": -84.416662,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 3.3,
+   "ratingNum": 93,
+   "ratingCount": "93",
+   "hours": "Mon-Sun 6am-7pm",
+   "website": "https://www.starbucks.com/store-locator/store/65468",
+   "googleUrl": "https://maps.google.com/?cid=2504982614903920821&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJBZCgZgOj9YgRAgvSfyGFbN0",
@@ -3834,6 +4542,26 @@
    "googleUrl": "https://maps.google.com/?cid=11669263876304177755&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJC6Fgirb19YgRs2xS1v2RCAo",
+   "name": "Zell's Cottage Bakery",
+   "address": "3294 Thompson Bridge Rd, Gainesville, GA 30506, USA",
+   "city": "Gainesville",
+   "county": "Hall",
+   "lat": 34.356642,
+   "lng": -83.859686,
+   "category": "Bakery+Cafe",
+   "model": "independent",
+   "types": [
+    "bakery"
+   ],
+   "rating": 4.6,
+   "ratingNum": 35,
+   "ratingCount": "35",
+   "hours": "Sun-Tue Closed · Wed-Fri 10am-6pm · Sat 10am-2pm",
+   "website": "http://www.zellscottagebakery.com/",
+   "googleUrl": "https://maps.google.com/?cid=722988259601444019&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJCQAfPvUJ9YgRyJFCsHprAOo",
    "name": "Sugar Shane’s",
    "address": "1110 Hammond Dr Ste 30, Sandy Springs, GA 30328, USA",
@@ -3881,6 +4609,27 @@
    "googleUrl": "https://maps.google.com/?cid=411014455851286997&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJC_MqzmBt9YgRxRKZ3Weur_s",
+   "name": "The Reeves House Visual Arts Center",
+   "address": "734 Reeves St, Woodstock, GA 30188, USA",
+   "city": "Woodstock",
+   "county": "Cherokee",
+   "lat": 34.100426,
+   "lng": -84.522153,
+   "category": "Coffee",
+   "model": "independent",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.6,
+   "ratingNum": 78,
+   "ratingCount": "78",
+   "hours": "Sun-Wed 8am-6pm · Thu-Sat 8am-8pm",
+   "website": "https://woodstockarts.org/visual-arts/",
+   "googleUrl": "https://maps.google.com/?cid=18135905985566937797&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJC_a5Cm6-9YgRpK5qnxGeqdk",
    "name": "Starbucks Coffee Company",
    "address": "1000 University Center Ln, Lawrenceville, GA 30043, USA",
@@ -3921,6 +4670,27 @@
    "hours": "Sun-Thu 11am-9pm · Fri-Sat 11am-9:30pm",
    "website": "https://pos.chowbus.com/online-ordering/store/Moge-TeeKennesaw/50065",
    "googleUrl": "https://maps.google.com/?cid=16503187939320115174&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJCfJGaHZt9YgRrkiK_3vXq7A",
+   "name": "Cafe Floralia X The Circuit",
+   "address": "1 Innovation Way, Woodstock, GA 30188, USA",
+   "city": "Woodstock",
+   "county": "Cherokee",
+   "lat": 34.10395,
+   "lng": -84.517723,
+   "category": "Coffee",
+   "model": "independent",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 5.0,
+   "ratingNum": 12,
+   "ratingCount": "12",
+   "hours": "Mon-Thu 7:30am-3pm · Fri 7:30am-1pm · Sat-Sun Closed",
+   "website": "https://www.cafefloralia.com/",
+   "googleUrl": "https://maps.google.com/?cid=12730505699261040814&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJCyl-9De-9YgRZbx_5Gjv3Ok",
@@ -4011,6 +4781,26 @@
    },
    "website": "https://greateausa.com/",
    "googleUrl": "https://maps.google.com/?cid=18421234567349571821&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJD5GE6Nx8X4gRlZLOd-M_dw4",
+   "name": "Crystal Falls Cafe",
+   "address": "416 Crystal Falls Fairway, Dawsonville, GA 30534, USA",
+   "city": "Dawsonville",
+   "county": "Dawson",
+   "lat": 34.371849,
+   "lng": -84.23908,
+   "category": "Coffee",
+   "model": "independent",
+   "types": [
+    "cafe"
+   ],
+   "rating": 4.4,
+   "ratingNum": 9,
+   "ratingCount": "9",
+   "hours": "Mon Closed · Tue-Sun 9am-5pm",
+   "website": null,
+   "googleUrl": "https://maps.google.com/?cid=1042372084959711893&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJD7wkMbt09YgRLBFVebWCd7E",
@@ -4165,6 +4955,52 @@
    "googleUrl": "https://maps.google.com/?cid=5201182152388681577&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJDUdNSADt9YgRb-5ib7GShuw",
+   "name": "Dunkin'",
+   "address": "7425 Spout Springs Rd, Flowery Branch, GA 30542, USA",
+   "city": "Flowery Branch",
+   "county": "Hall",
+   "neighborhood": "Duncan Corners",
+   "lat": 34.107425,
+   "lng": -83.873022,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "donut_shop",
+    "cafe",
+    "bakery"
+   ],
+   "rating": 3.7,
+   "ratingNum": 24,
+   "ratingCount": "24",
+   "hours": "Mon-Sun 5:30am-9pm",
+   "website": "https://www.dunkindonuts.com/locations/us/ga/flowery-branch/7425-spout-springs-road/store-365800/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=365800&y_source=1_MjAyMzEzNDQ4Ni03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+   "googleUrl": "https://maps.google.com/?cid=17043471130605842031&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJDV3z4JBx9YgRDZWLD2YE4Wc",
+   "name": "Starbucks Coffee Company",
+   "address": "6041 Hickory Flat Hwy, Canton, GA 30115, USA",
+   "city": "Canton",
+   "county": "Cherokee",
+   "lat": 34.17789,
+   "lng": -84.42277,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.1,
+   "ratingNum": 60,
+   "ratingCount": "60",
+   "hours": "Mon-Sun 5am-8pm",
+   "website": null,
+   "googleUrl": "https://maps.google.com/?cid=7485268892060456205&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJDXHXJyi99YgRMm8Co9NpQJ8",
    "name": "Cakes By West B",
    "address": "Sugarloaf Pkwy, Lawrenceville, GA 30043, USA",
@@ -4183,6 +5019,27 @@
    "hours": "Mon-Fri 9am-5pm · Sat 10am-5pm · Sun Closed",
    "website": "http://facebook.com/cakesbywestb",
    "googleUrl": "https://maps.google.com/?cid=11475288208233885490&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJDZk9c2_29YgRViMljuqkSf0",
+   "name": "Starbucks Coffee Company",
+   "address": "1429 Thompson Bridge Rd, Gainesville, GA 30501, USA",
+   "city": "Gainesville",
+   "county": "Hall",
+   "lat": 34.32145,
+   "lng": -83.83354,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.2,
+   "ratingNum": 525,
+   "ratingCount": "525",
+   "hours": "Mon-Fri 4:30am-9pm · Sat-Sun 5am-9pm",
+   "website": "https://www.starbucks.com/store-locator/store/1015464",
+   "googleUrl": "https://maps.google.com/?cid=18251300292209746774&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJDcKqUgCl9YgR-9P6CDrUBHI",
@@ -4207,6 +5064,28 @@
    },
    "website": "https://www.instagram.com/charsichai.murrays",
    "googleUrl": "https://maps.google.com/?cid=8215924965954475003&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJDcMep6AM9YgRm6sYnJAIubc",
+   "name": "Paula's Zzerts Catering & Natural baked goods",
+   "address": "521B Oakdale Rd, Canton, GA 30114, USA",
+   "city": "Canton",
+   "county": "Cherokee",
+   "lat": 34.228182,
+   "lng": -84.509502,
+   "category": "Bakery+Cafe",
+   "model": "independent",
+   "types": [
+    "bakery",
+    "dessert_restaurant",
+    "dessert_shop"
+   ],
+   "rating": 4.8,
+   "ratingNum": 28,
+   "ratingCount": "28",
+   "hours": null,
+   "website": "http://www.paulaszzerts.com/",
+   "googleUrl": "https://maps.google.com/?cid=13238621996819458971&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJDz_P0JsN9YgRRjv1-_rAZ74",
@@ -4570,6 +5449,48 @@
    "googleUrl": "https://maps.google.com/?cid=2191799250405892949&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJF1xQecDt9YgRo9TCfmZgr8U",
+   "name": "Lucky Goat Coffee",
+   "address": "5887 Spout Springs Rd D403, Flowery Branch, GA 30542, USA",
+   "city": "Flowery Branch",
+   "county": "Hall",
+   "lat": 34.179108,
+   "lng": -83.909014,
+   "category": "Coffee",
+   "model": "independent",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.7,
+   "ratingNum": 220,
+   "ratingCount": "220",
+   "hours": "Mon-Sat 7am-6pm · Sun 8am-6pm",
+   "website": "https://luckygoatcoffee.com/pages/spout-springs",
+   "googleUrl": "https://maps.google.com/?cid=14244710139725796515&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJF33zFzD09YgRiR0sLJw-wvk",
+   "name": "Danny's Donuts#2",
+   "address": "975 Dawsonville Hwy #19, Gainesville, GA 30501, USA",
+   "city": "Gainesville",
+   "county": "Hall",
+   "lat": 34.300723,
+   "lng": -83.858589,
+   "category": "Bakery+Cafe",
+   "model": "franchise",
+   "types": [
+    "donut_shop",
+    "bakery"
+   ],
+   "rating": 4.6,
+   "ratingNum": 270,
+   "ratingCount": "270",
+   "hours": "Mon-Sun 5am-5pm",
+   "website": "http://dannys-donuts.com/",
+   "googleUrl": "https://maps.google.com/?cid=17997015901402832265&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJF3SfDABz9YgRKyI5IU5vpgE",
    "name": "Davinci’s Donuts",
    "address": "1029 Alpharetta St, Roswell, GA 30075, USA",
@@ -4713,6 +5634,46 @@
    "hours": "Mon-Sun 5am-8pm",
    "website": "https://www.starbucks.com/store-locator/store/1019333",
    "googleUrl": "https://maps.google.com/?cid=9817757527447484385&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJFbRoZohfX4gRl_c4_rQG2bM",
+   "name": "Homespun Baking Co",
+   "address": "2480 Limestone Pkwy, Gainesville, GA 30501, USA",
+   "city": "Gainesville",
+   "county": "Hall",
+   "lat": 34.329868,
+   "lng": -83.804992,
+   "category": "Bakery+Cafe",
+   "model": "independent",
+   "types": [
+    "bakery"
+   ],
+   "rating": 4.8,
+   "ratingNum": 24,
+   "ratingCount": "24",
+   "hours": "Mon-Thu 11am-6pm · Fri 11am-4pm · Sat-Sun Closed",
+   "website": "https://www.facebook.com/182666308822620/",
+   "googleUrl": "https://maps.google.com/?cid=12959396777164339095&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJFcaA_gdv9YgRz3504-1UA9E",
+   "name": "The Custom Cake Studio at Alpine Bakery",
+   "address": "405 Toonigh Rd, Woodstock, GA 30188, USA",
+   "city": "Woodstock",
+   "county": "Cherokee",
+   "lat": 34.141893,
+   "lng": -84.506628,
+   "category": "Bakery+Cafe",
+   "model": "independent",
+   "types": [
+    "bakery"
+   ],
+   "rating": null,
+   "ratingNum": 0,
+   "ratingCount": "0",
+   "hours": "Sun-Mon Closed · Tue-Sat 8am-4pm",
+   "website": "https://alpinebakery.com/bakery/custom-cake-studio/",
+   "googleUrl": "https://maps.google.com/?cid=15060974959557115599&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJFcnH-vm59YgRSb4UzeWUDfA",
@@ -4902,6 +5863,28 @@
    "googleUrl": "https://maps.google.com/?cid=2799869898726707395&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJG92x2Gvs9YgRO9cKSK85n-4",
+   "name": "Starbucks Coffee Company",
+   "address": "7380 Spout Springs Rd, Flowery Branch, GA 30542, USA",
+   "city": "Flowery Branch",
+   "county": "Hall",
+   "neighborhood": "Duncan Corners",
+   "lat": 34.10762,
+   "lng": -83.87543,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 3.9,
+   "ratingNum": 129,
+   "ratingCount": "129",
+   "hours": "Mon-Sun 6am-8pm",
+   "website": "https://www.starbucks.com/store-locator/store/1021088",
+   "googleUrl": "https://maps.google.com/?cid=17194525327314573115&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJGQRQBu2m9YgRBAKewzQ6ZII",
    "name": "La Ideal Bakery",
    "address": "6083 Norcross Tucker Rd NW #201, Norcross, GA 30093, USA",
@@ -4964,6 +5947,30 @@
    "googleUrl": "https://maps.google.com/?cid=186437994740678112&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJGaVdYztl9YgRZ5vktMDfXlU",
+   "name": "Dunkin'",
+   "address": "2249 Cumming Hwy Ste 100, Canton, GA 30115, USA",
+   "city": "Canton",
+   "county": "Cherokee",
+   "lat": 34.237392,
+   "lng": -84.454007,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "cafe",
+    "donut_shop",
+    "bakery"
+   ],
+   "rating": 3.9,
+   "ratingNum": 487,
+   "ratingCount": "487",
+   "hours": "Mon-Sun Open 24 hours",
+   "website": "https://www.dunkindonuts.com/locations/us/ga/canton/2249-cumming-highway/store-355634/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=355634&y_source=1_MTIxMTMxNDItNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=6151600159796271975&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJGbcFeRGF9YgRZtDvrdglbnA",
    "name": "Donut Stop",
    "address": "230 Elm St #700, Cumming, GA 30040, USA",
@@ -4985,6 +5992,52 @@
    "hours": "Mon-Fri 6am-12:30pm, 2:00-5pm · Sat 6:30am-1pm · Sun Closed",
    "website": null,
    "googleUrl": "https://maps.google.com/?cid=8101454392247439462&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJGcOX-bJt9YgR7d4Nsfq1rHk",
+   "name": "Starbucks Coffee Company",
+   "address": "12400 GA-92, Woodstock, GA 30188, USA",
+   "city": "Woodstock",
+   "county": "Cherokee",
+   "lat": 34.086552,
+   "lng": -84.478755,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.2,
+   "ratingNum": 627,
+   "ratingCount": "627",
+   "hours": "Mon-Sun 5am-8pm",
+   "website": "https://www.starbucks.com/store-locator/store/6769/",
+   "googleUrl": "https://maps.google.com/?cid=8767582662900440813&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJGdZvI7bz9YgRpKxq_Cg0EDM",
+   "name": "Starbucks Coffee Company",
+   "address": "3707 Mundy Mill Rd, Oakwood, GA 30566, USA",
+   "city": "Oakwood",
+   "county": "Hall",
+   "lat": 34.22915,
+   "lng": -83.86927,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.0,
+   "ratingNum": 686,
+   "ratingCount": "686",
+   "hours": "Mon-Sun 5am-10pm",
+   "late": {
+    "tier": "10pm+",
+    "when": "Daily till 10pm"
+   },
+   "website": "https://www.starbucks.com/store-locator/store/1015906",
+   "googleUrl": "https://maps.google.com/?cid=3679498246199880868&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJGeL7kcEJ9YgRqNIACUy15u0",
@@ -5158,6 +6211,27 @@
    "googleUrl": "https://maps.google.com/?cid=12573135962182225857&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJH5R_5vtv9YgRACJ5n-gQKFI",
+   "name": "Starbucks Coffee Company",
+   "address": "4125 Marietta Hwy, Canton, GA 30114, USA",
+   "city": "Canton",
+   "county": "Cherokee",
+   "lat": 34.19199,
+   "lng": -84.5078,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.0,
+   "ratingNum": 160,
+   "ratingCount": "160",
+   "hours": "Mon-Fri 4:30am-8pm · Sat-Sun 5am-8pm",
+   "website": null,
+   "googleUrl": "https://maps.google.com/?cid=5920000301472489984&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJH5WjGwAJ9YgR4hCgzlSSKzs",
    "name": "Yummy Paradise - Perimeter Mall",
    "address": "4400 Ashford Dunwoody Rd NE Unit 1645, Atlanta, GA 30346, USA",
@@ -5197,6 +6271,47 @@
    "hours": "Mon-Sat 11am-8pm · Sun 12:00-7am",
    "website": "https://locations.cinnabon.com/ga/alpharetta/1140-north-point-circle?utm_source=google&utm_medium=organic&utm_campaign=locations_partner",
    "googleUrl": "https://maps.google.com/?cid=3706999121147172215&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJH9Rbbxj19YgRExuNOH3bLvw",
+   "name": "Bubble Bees Tea Taiwan",
+   "address": "333 Shallowford Rd Ste b, Gainesville, GA 30504, USA",
+   "city": "Gainesville",
+   "county": "Hall",
+   "lat": 34.294329,
+   "lng": -83.849331,
+   "category": "Tea/Boba",
+   "model": "independent",
+   "types": [
+    "tea_house"
+   ],
+   "rating": 4.9,
+   "ratingNum": 431,
+   "ratingCount": "431",
+   "hours": "Mon Closed · Tue-Sun 12:00-9pm",
+   "website": "https://www.bubblebeesteataiwan.com/",
+   "googleUrl": "https://maps.google.com/?cid=18171702877352696595&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJH_XVLADz9YgRSMTT_wIMTUs",
+   "name": "Starbucks",
+   "address": "4085 Mundy Mill Rd, Oakwood, GA 30566, USA",
+   "city": "Oakwood",
+   "county": "Hall",
+   "lat": 34.24146,
+   "lng": -83.88185,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 3.0,
+   "ratingNum": 2,
+   "ratingCount": "2",
+   "hours": "Mon-Sun 6am-8pm",
+   "website": null,
+   "googleUrl": "https://maps.google.com/?cid=5426006333072852040&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJHbxy8Bu59YgRTnoet42gGew",
@@ -5306,6 +6421,27 @@
    "googleUrl": "https://maps.google.com/?cid=4079696816571026199&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJI3EtyHCT9YgRzqU02YrYi-Y",
+   "name": "Donut World #2 ( Buford )",
+   "address": "922 Atlanta Hwy, Buford, GA 30518, USA",
+   "city": "Buford",
+   "county": "Hall",
+   "lat": 34.145222,
+   "lng": -83.965572,
+   "category": "Bakery+Cafe",
+   "model": "independent",
+   "types": [
+    "donut_shop",
+    "bakery"
+   ],
+   "rating": 4.9,
+   "ratingNum": 42,
+   "ratingCount": "42",
+   "hours": "Mon Closed · Tue-Sun 5:30am-3:30pm",
+   "website": "https://www.facebook.com/profile.php?id=61569582744952",
+   "googleUrl": "https://maps.google.com/?cid=16612609741347399118&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJI5y5ImC99YgRwPoOYRgVp0U",
    "name": "Arte",
    "address": "1291 Old Peachtree Rd NW #210, Suwanee, GA 30024, USA",
@@ -5353,6 +6489,26 @@
    },
    "website": "http://www.queenteaboba.com/",
    "googleUrl": "https://maps.google.com/?cid=629450969762394486&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJI8nlShf49YgRPr-HUQLG1A4",
+   "name": "Rabbittown Cafe",
+   "address": "2415 Old Cornelia Hwy, Gainesville, GA 30507, USA",
+   "city": "Gainesville",
+   "county": "Hall",
+   "lat": 34.314408,
+   "lng": -83.777884,
+   "category": "Coffee",
+   "model": "independent",
+   "types": [
+    "cafe"
+   ],
+   "rating": 4.5,
+   "ratingNum": 2078,
+   "ratingCount": "2,078",
+   "hours": "Sun-Fri 5:30am-2pm · Sat 5:30-11:30am",
+   "website": null,
+   "googleUrl": "https://maps.google.com/?cid=1068696724853735230&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJIR5xg8qj9YgRnSZmGjwPVWo",
@@ -5637,6 +6793,48 @@
    "googleUrl": "https://maps.google.com/?cid=3509902959842224795&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJIeHQcExs9YgRRiVNdUYkwFk",
+   "name": "Jessa's tea parlor",
+   "address": "3333 Trickum Rd #102, Woodstock, GA 30188, USA",
+   "city": "Woodstock",
+   "county": "Cherokee",
+   "lat": 34.090416,
+   "lng": -84.483663,
+   "category": "Tea/Boba",
+   "model": "independent",
+   "types": [
+    "tea_house",
+    "bakery"
+   ],
+   "rating": 4.8,
+   "ratingNum": 205,
+   "ratingCount": "205",
+   "hours": "Sun-Mon Closed · Tue-Sat 11am-5pm",
+   "website": "http://www.jessasteaparlor.com/",
+   "googleUrl": "https://maps.google.com/?cid=6467208949938332998&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJIfFbpJhl9YgRfo7QvKZiSK4",
+   "name": "Starbucks Coffee Company",
+   "address": "1478 Riverstone Pkwy, Canton, GA 30114, USA",
+   "city": "Canton",
+   "county": "Cherokee",
+   "lat": 34.25157,
+   "lng": -84.47145,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 3.5,
+   "ratingNum": 35,
+   "ratingCount": "35",
+   "hours": "Mon-Sun 5am-9pm",
+   "website": null,
+   "googleUrl": "https://maps.google.com/?cid=12558396029194505854&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJIwQavqo49YgRVyycYvkC8ds",
    "name": "Art's Bagel & More",
    "address": "3451 Cobb Pkwy NW, Acworth, GA 30101, USA",
@@ -5803,6 +7001,26 @@
    "signature": "Authentic Italian Espresso"
   },
   {
+   "placeId": "ChIJJTEWhxH39YgRaYVoieUgXyY",
+   "name": "The Twisted Whisk",
+   "address": "The Twisted Whisk, 1642 Park Hill Dr C, Gainesville, GA 30501, USA",
+   "city": "Gainesville",
+   "county": "Hall",
+   "lat": 34.32542,
+   "lng": -83.814868,
+   "category": "Bakery+Cafe",
+   "model": "independent",
+   "types": [
+    "bakery"
+   ],
+   "rating": 4.9,
+   "ratingNum": 14,
+   "ratingCount": "14",
+   "hours": "Mon-Fri 10am-7pm · Sat 10am-6pm · Sun Closed",
+   "website": null,
+   "googleUrl": "https://maps.google.com/?cid=2764964866453701993&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJJTGHWicV9YgREMqp1ZmfJz8",
    "name": "Terminus 72",
    "address": "46 Polk St NW, Marietta, GA 30064, USA",
@@ -5847,6 +7065,53 @@
    "hours": "Mon-Sat 8am-9pm · Sun 8:30am-7pm",
    "website": null,
    "googleUrl": "https://maps.google.com/?cid=2039551822159938080&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJJURQP-329YgR0TSYjN82HtE",
+   "name": "Dannys Donuts #1",
+   "address": "417 Main St SW #4415, Gainesville, GA 30501, USA",
+   "city": "Gainesville",
+   "county": "Hall",
+   "lat": 34.296315,
+   "lng": -83.825059,
+   "category": "Bakery+Cafe",
+   "model": "independent",
+   "types": [
+    "donut_shop",
+    "coffee_shop",
+    "cafe",
+    "bakery"
+   ],
+   "rating": 4.8,
+   "ratingNum": 637,
+   "ratingCount": "637",
+   "hours": "Mon 7am-5pm · Tue-Fri 5am-5pm · Sat 6am-5pm · Sun 6am-2pm",
+   "website": null,
+   "googleUrl": "https://maps.google.com/?cid=15068541736992650449&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJJYYsqL5o9YgRtyoaZfN9nQE",
+   "name": "Giggle Monsters Craft Donuts Bells Ferry",
+   "address": "10511 Bells Ferry Rd #300, Canton, GA 30114, USA",
+   "city": "Canton",
+   "county": "Cherokee",
+   "lat": 34.192983,
+   "lng": -84.538546,
+   "category": "Bakery+Cafe",
+   "model": "independent",
+   "types": [
+    "donut_shop",
+    "coffee_shop",
+    "bakery",
+    "cafe",
+    "dessert_shop"
+   ],
+   "rating": 4.4,
+   "ratingNum": 353,
+   "ratingCount": "353",
+   "hours": "Mon Closed · Tue-Sat 6am-7pm · Sun 7:30am-2pm",
+   "website": "https://www.gigglemonstersdonuts.com/",
+   "googleUrl": "https://maps.google.com/?cid=116387649708239543&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJJaYjEC1H9YgRoFWx7JLXtcw",
@@ -6290,6 +7555,27 @@
    "googleUrl": "https://maps.google.com/?cid=9637901325458131989&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJKYnAhQnz9YgRvZXJEz-Xdfg",
+   "name": "Starbucks Coffee Company",
+   "address": "4260 Winder Hwy, Flowery Branch, GA 30542, USA",
+   "city": "Flowery Branch",
+   "county": "Hall",
+   "lat": 34.189066,
+   "lng": -83.859031,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.3,
+   "ratingNum": 6,
+   "ratingCount": "6",
+   "hours": "Mon-Sat 6am-9pm · Sun 7am-9pm",
+   "website": null,
+   "googleUrl": "https://maps.google.com/?cid=17903382190851986877&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJKZuo8hNt9YgRTPuvEIpdbBE",
    "name": "Crumbl Cookies",
    "address": "3460 Sandy Plains Rd Ste 510, Marietta, GA 30066, USA",
@@ -6448,6 +7734,32 @@
    "googleUrl": "https://maps.google.com/?cid=8950875047507657772&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJL0FhIBNt9YgRHj6sNXPRVUA",
+   "name": "Dutch Bros Coffee",
+   "address": "11960 GA-92, Woodstock, GA 30188, USA",
+   "city": "Woodstock",
+   "county": "Cherokee",
+   "lat": 34.087438,
+   "lng": -84.487714,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe",
+    "tea_house"
+   ],
+   "rating": 4.0,
+   "ratingNum": 148,
+   "ratingCount": "148",
+   "hours": "Sun-Thu 5am-10pm · Fri-Sat 5am-11pm",
+   "late": {
+    "tier": "10pm+",
+    "when": "Daily till 11pm"
+   },
+   "website": "https://www.dutchbros.com/locations/ga/woodstock/11960-hwy-92?y_source=1_MjA0OTkxNDc1Mi03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+   "googleUrl": "https://maps.google.com/?cid=4635841684199718430&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJL0zVDC1z9YgRx800Xdpk6YU",
    "name": "Lviv Croissants",
    "address": "610 W Crossville Rd Ste 200, Roswell, GA 30075, USA",
@@ -6489,6 +7801,27 @@
    "hours": "Mon-Fri 6am-2pm · Sat-Sun 6am-3pm",
    "website": "https://www.brooklynbagel-deli.com/",
    "googleUrl": "https://maps.google.com/?cid=316169418671657824&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJL201keT19YgRQRstB15zwP0",
+   "name": "Scooter's Coffee",
+   "address": "2010 Browns Bridge Rd, Gainesville, GA 30501, USA",
+   "city": "Gainesville",
+   "county": "Hall",
+   "lat": 34.28332,
+   "lng": -83.850491,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.1,
+   "ratingNum": 124,
+   "ratingCount": "124",
+   "hours": "Mon-Sun 6am-8pm",
+   "website": "https://scooterscoffee.com/",
+   "googleUrl": "https://maps.google.com/?cid=18284741334808730433&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJL4YBE4YP9YgREZE8FQyhXs8",
@@ -6583,6 +7916,31 @@
    },
    "website": null,
    "googleUrl": "https://maps.google.com/?cid=18242021492980484578&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJL91LDMVr9YgRduxmMz3iHI4",
+   "name": "Starbucks Coffee Company",
+   "address": "2035 Towne Lake Pkwy, Woodstock, GA 30189, USA",
+   "city": "Woodstock",
+   "county": "Cherokee",
+   "lat": 34.10823,
+   "lng": -84.55212,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.0,
+   "ratingNum": 634,
+   "ratingCount": "634",
+   "hours": "Mon-Sun 5am-10pm",
+   "late": {
+    "tier": "10pm+",
+    "when": "Daily till 10pm"
+   },
+   "website": "https://www.starbucks.com/store-locator/store/9207/",
+   "googleUrl": "https://maps.google.com/?cid=10240308405216930934&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJLSW7kjkU9YgRR4rPVqqdVPs",
@@ -6743,6 +8101,26 @@
    "googleUrl": "https://maps.google.com/?cid=10760461958684588475&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJLzQ0asXz9YgRo4x8cnucoWo",
+   "name": "Flowers Discount Bakery",
+   "address": "2822 Frontage Rd, Gainesville, GA 30504, USA",
+   "city": "Gainesville",
+   "county": "Hall",
+   "lat": 34.234137,
+   "lng": -83.859432,
+   "category": "Bakery+Cafe",
+   "model": "independent",
+   "types": [
+    "bakery"
+   ],
+   "rating": 4.5,
+   "ratingNum": 61,
+   "ratingCount": "61",
+   "hours": "Mon-Tue 10am-5pm · Wed Closed · Thu-Fri 10am-5pm · Sat 10am-4pm · Sun Closed",
+   "website": null,
+   "googleUrl": "https://maps.google.com/?cid=7683594493286452387&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJM-FdL9QN9YgRTu5fvjDMj04",
    "name": "Land Of A Thousand Hills Coffee",
    "address": "352 S Atlanta St, Roswell, GA 30075, USA",
@@ -6774,6 +8152,27 @@
     "chicken salad croissant"
    ],
    "signature": "Kizi Rift Single Origin Pourover"
+  },
+  {
+   "placeId": "ChIJM-VQTf1t9YgRRwjHMl7JrDQ",
+   "name": "Black Rifle Coffee Company",
+   "address": "10971 GA-92, Woodstock, GA 30188, USA",
+   "city": "Woodstock",
+   "county": "Cherokee",
+   "lat": 34.086996,
+   "lng": -84.504929,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.6,
+   "ratingNum": 653,
+   "ratingCount": "653",
+   "hours": "Mon-Thu 6am-6pm · Fri-Sat 6am-7pm · Sun 7am-6pm",
+   "website": "https://www.blackriflecoffee.com/pages/woodstock-retail",
+   "googleUrl": "https://maps.google.com/?cid=3795629992382498887&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJM0Pbh7u_9YgRjIockT9LKLU",
@@ -6879,6 +8278,51 @@
    "hours": "Mon-Sun 5am-9pm",
    "website": "https://www.dunkindonuts.com/locations/us/ga/sandy-springs/5660-roswell-road/store-363554/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=363554&y_source=1_NzYwNDMwNDYtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
    "googleUrl": "https://maps.google.com/?cid=15425966704167788485&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJM5lpE-9o9YgREWgp9Ub6Dv0",
+   "name": "Soho Bagel Company",
+   "address": "3760 Sixes Rd, Canton, GA 30114, USA",
+   "city": "Canton",
+   "county": "Cherokee",
+   "lat": 34.178438,
+   "lng": -84.549093,
+   "category": "Bakery+Cafe",
+   "model": "independent",
+   "types": [
+    "bagel_shop",
+    "bakery"
+   ],
+   "rating": 4.7,
+   "ratingNum": 291,
+   "ratingCount": "291",
+   "hours": "Mon-Fri 5:30am-3pm · Sat-Sun 7am-2pm",
+   "website": "https://sohobagelcompany.wixsite.com/sohobagel",
+   "googleUrl": "https://maps.google.com/?cid=18234787123937503249&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJM6BE84rz9YgReeMt2DnaDUw",
+   "name": "Dunkin'",
+   "address": "4001 Winder Hwy, Flowery Branch, GA 30542, USA",
+   "city": "Flowery Branch",
+   "county": "Hall",
+   "lat": 34.195593,
+   "lng": -83.858376,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "donut_shop",
+    "cafe",
+    "bakery"
+   ],
+   "rating": 3.9,
+   "ratingNum": 114,
+   "ratingCount": "114",
+   "hours": "Mon-Sun 5am-9pm",
+   "website": "https://www.dunkindonuts.com/locations/us/ga/flowery-branch/4001-winder-hwy/store-363606/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=363606&y_source=1_NzE3NTQ5OTUtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=5480276263554638713&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJMRz4dMZA9YgRqNNMXZnj5pg",
@@ -7078,6 +8522,29 @@
    "googleUrl": "https://maps.google.com/?cid=17859258228536036405&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJN4IGvVVk9YgRaREL9jtH_AY",
+   "name": "Jill's Cakes & Bakes",
+   "address": "370 Gilmer Ferry Rd, Ball Ground, GA 30107, USA",
+   "city": "Ball Ground",
+   "county": "Cherokee",
+   "lat": 34.337197,
+   "lng": -84.374217,
+   "category": "Bakery+Cafe",
+   "model": "independent",
+   "types": [
+    "bakery",
+    "coffee_shop",
+    "cafe",
+    "dessert_shop"
+   ],
+   "rating": 4.5,
+   "ratingNum": 306,
+   "ratingCount": "306",
+   "hours": "Mon-Tue 7:30am-3pm · Wed-Fri 7:30am-5pm · Sat-Sun 8:30am-5pm",
+   "website": null,
+   "googleUrl": "https://maps.google.com/?cid=503355581215215977&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJN7Rhc6KV9YgRTGVZIeWQYPo",
    "name": "Mozart Bakery",
    "address": "3350 Buford Dr Ste A150, Buford, GA 30519, USA",
@@ -7178,6 +8645,27 @@
    },
    "website": "https://thebreadmuseum.com/",
    "googleUrl": "https://maps.google.com/?cid=12964538330227554401&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJNaZOyk1l9YgRhgOBTpQ9y2Q",
+   "name": "Bizarre Coffee (CANTON)",
+   "address": "121 E Marietta St, Canton, GA 30114, USA",
+   "city": "Canton",
+   "county": "Cherokee",
+   "lat": 34.236396,
+   "lng": -84.49002,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.8,
+   "ratingNum": 556,
+   "ratingCount": "556",
+   "hours": "Mon-Sun 7am-5pm",
+   "website": "http://www.bizarrecoffee.com/",
+   "googleUrl": "https://maps.google.com/?cid=7262966531246588806&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJNb8wEAB19YgRiqUEkrm4JCg",
@@ -7505,6 +8993,26 @@
    "googleUrl": "https://maps.google.com/?cid=2330049946427783816&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJOQPpa6CJ9YgROdq3NqFCO5U",
+   "name": "Bubble World",
+   "address": "800 GA-400 Ste 405, Dawsonville, GA 30534, USA",
+   "city": "Dawsonville",
+   "county": "Dawson",
+   "lat": 34.356596,
+   "lng": -84.048457,
+   "category": "Tea/Boba",
+   "model": "independent",
+   "types": [
+    "tea_house"
+   ],
+   "rating": 4.9,
+   "ratingNum": 210,
+   "ratingCount": "210",
+   "hours": "Mon-Thu 10am-8pm · Fri-Sat 10am-9pm · Sun 12:00-6pm",
+   "website": null,
+   "googleUrl": "https://maps.google.com/?cid=10753261795452377657&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJOUHmGDKZ9YgRvrV_yjGfpoQ",
    "name": "Café Soon",
    "address": "3300 Peachtree Industrial Blvd Ste H, Duluth, GA 30096, USA",
@@ -7628,6 +9136,42 @@
    "hours": "Sun-Mon Closed · Tue-Fri 12:00-6pm · Sat 10am-6pm",
    "website": null,
    "googleUrl": "https://maps.google.com/?cid=13284668404886331159&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJOcLV6Qps9YgRm_VF5J0E2l0",
+   "name": "Pie Bar (Woodstock)",
+   "address": "8720 Main St #130, Woodstock, GA 30188, USA",
+   "city": "Woodstock",
+   "county": "Cherokee",
+   "lat": 34.099419,
+   "lng": -84.520404,
+   "category": "Bakery+Cafe",
+   "model": "independent",
+   "types": [
+    "coffee_shop",
+    "dessert_restaurant",
+    "dessert_shop",
+    "cafe",
+    "bakery"
+   ],
+   "rating": 4.7,
+   "ratingNum": 639,
+   "ratingCount": "639",
+   "hours": "Mon-Thu 11am-7pm · Fri-Sat 11am-9pm · Sun 12:00-6pm",
+   "website": "http://orderpiebar.com/",
+   "googleUrl": "https://maps.google.com/?cid=6762722866636387739&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "good",
+    "note": "Cozy downtown Woodstock bakery cafe serving artisan pies slice-by-slice alongside locally-roasted drip coffee and espresso.",
+    "hasMeetingRoom": false
+   },
+   "usp": "Downtown Woodstock's iconic handmade pie shop serving sweet and savory slices with specialty coffee.",
+   "loved": [
+    "rustic apple pie",
+    "bourbon pecan slice",
+    "drip coffee"
+   ],
+   "signature": "Slice of Bourbon Pecan Pie with Hot Coffee"
   },
   {
    "placeId": "ChIJOcUxiEqf9YgRB6mWlSLg8zQ",
@@ -7879,6 +9423,26 @@
    "googleUrl": "https://maps.google.com/?cid=13382122084572629015&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJPSiDKAZr9YgRD5EHBle7ytc",
+   "name": "Tea Time Woodstock",
+   "address": "1105 Parkside Ln Ste 1320, Woodstock, GA 30189, USA",
+   "city": "Woodstock",
+   "county": "Cherokee",
+   "lat": 34.107946,
+   "lng": -84.553385,
+   "category": "Tea/Boba",
+   "model": "independent",
+   "types": [
+    "tea_house"
+   ],
+   "rating": 4.3,
+   "ratingNum": 214,
+   "ratingCount": "214",
+   "hours": "Mon-Sun 11am-9pm",
+   "website": "https://fromtherestaurant.com/tea-time/locations/",
+   "googleUrl": "https://maps.google.com/?cid=15549446645887766799&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJPUVLdTQJ9YgROfn7xob9Fn4",
    "name": "Just Love Coffee Cafe - Atlanta Perimeter",
    "address": "1110 Hammond Dr Ste 10, Sandy Springs, GA 30328, USA",
@@ -7983,6 +9547,27 @@
    "hours": "Mon-Sat 5:30am-2pm · Sun Closed",
    "website": "https://www.sarahdonuts.com/",
    "googleUrl": "https://maps.google.com/?cid=11421555170483637678&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJPcwlODx9X4gRqDa1vutwT2k",
+   "name": "IGY6 Coffee Company",
+   "address": "10 Ted Chester St, Dawsonville, GA 30534, USA",
+   "city": "Dawsonville",
+   "county": "Dawson",
+   "lat": 34.420964,
+   "lng": -84.116991,
+   "category": "Coffee",
+   "model": "independent",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.8,
+   "ratingNum": 176,
+   "ratingCount": "176",
+   "hours": "Mon-Fri 6:30am-4pm · Sat 7:30am-4pm · Sun Closed",
+   "website": "https://igy6coffee.com/",
+   "googleUrl": "https://maps.google.com/?cid=7588408054961747624&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJPdNdsUI_9YgR9bhO0EgdRf4",
@@ -8104,6 +9689,27 @@
     "pastries"
    ],
    "signature": "Ark House Blend"
+  },
+  {
+   "placeId": "ChIJPzedDZxr9YgRNr0wmNDNeZM",
+   "name": "Caribou Coffee",
+   "address": "9500 GA-92, Woodstock, GA 30188, USA",
+   "city": "Woodstock",
+   "county": "Cherokee",
+   "lat": 34.085402,
+   "lng": -84.530462,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.6,
+   "ratingNum": 66,
+   "ratingCount": "66",
+   "hours": "Mon-Fri 6am-6pm · Sat-Sun 7am-6pm",
+   "website": "https://locations.cariboucoffee.com/us/ga/woodstock/9500-georgia-92",
+   "googleUrl": "https://maps.google.com/?cid=10626751091547618614&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJQ-JiIMK49YgRpgF4NQ9lrlQ",
@@ -8380,6 +9986,42 @@
    "googleUrl": "https://maps.google.com/?cid=6322838582500805885&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJQTLuCE599YgRMaStFaGyVHQ",
+   "name": "Barrel House Coffee Company",
+   "address": "275 Gilmer Ferry Rd Ste 5, Ball Ground, GA 30107, USA",
+   "city": "Ball Ground",
+   "county": "Cherokee",
+   "lat": 34.338114,
+   "lng": -84.377097,
+   "category": "Coffee",
+   "model": "independent",
+   "types": [
+    "coffee_shop",
+    "tea_house",
+    "bakery",
+    "dessert_shop",
+    "cafe"
+   ],
+   "rating": 4.8,
+   "ratingNum": 490,
+   "ratingCount": "490",
+   "hours": "Mon-Fri 6am-5pm · Sat 7am-5pm · Sun 8am-2pm",
+   "website": "http://www.barrelhousecoffeeco.com/",
+   "googleUrl": "https://maps.google.com/?cid=8382521211366515761&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "excellent",
+    "note": "Historic mountain-town roastery with rustic wood seating, fast Wi-Fi, scenic patio, and barrel-aged coffee beans.",
+    "hasMeetingRoom": false
+   },
+   "usp": "Craft artisan roastery in Ball Ground specializing in bourbon-barrel-aged specialty beans and espresso.",
+   "loved": [
+    "barrel-aged cold brew",
+    "flat white",
+    "local scones"
+   ],
+   "signature": "Bourbon Barrel Cold Brew"
+  },
+  {
    "placeId": "ChIJQW8iUegL9YgRlX7voh3KG3w",
    "name": "The Hungry Peach / Cafe at Pharr Dunwoody",
    "address": "5533 Chamblee Dunwoody Rd #240, Dunwoody, GA 30338, USA",
@@ -8419,6 +10061,27 @@
    "hours": "Mon-Sun 6am-9:30pm",
    "website": "https://www.facebook.com/DelValleBakery",
    "googleUrl": "https://maps.google.com/?cid=5860948187794043643&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJQXgmZLzz9YgRcpR6cwKBcns",
+   "name": "Bungalow Coffee House",
+   "address": "2766 Atlanta Hwy, Gainesville, GA 30504, USA",
+   "city": "Gainesville",
+   "county": "Hall",
+   "lat": 34.235542,
+   "lng": -83.856983,
+   "category": "Coffee",
+   "model": "independent",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.6,
+   "ratingNum": 41,
+   "ratingCount": "41",
+   "hours": "Mon-Fri 6am-6pm · Sat 7am-6pm · Sun Closed",
+   "website": "https://www.bungalowcoffeehouse.com/",
+   "googleUrl": "https://maps.google.com/?cid=8895314061537481842&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJQYZxZfi_9YgRcvWmj8hcROM",
@@ -8465,6 +10128,30 @@
    },
    "website": "https://www.onezo.us/",
    "googleUrl": "https://maps.google.com/?cid=12859471057437807841&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJQfe3WwD19YgRTUAqQ2X40-c",
+   "name": "Dunkin'",
+   "address": "2895 Browns Bridge Rd, Gainesville, GA 30504, USA",
+   "city": "Gainesville",
+   "county": "Hall",
+   "lat": 34.279488,
+   "lng": -83.877266,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "cafe",
+    "donut_shop",
+    "bakery"
+   ],
+   "rating": 3.8,
+   "ratingNum": 103,
+   "ratingCount": "103",
+   "hours": "Mon-Sun 5am-9pm",
+   "website": "https://www.dunkindonuts.com/locations/us/ga/gainesville/2895-browns-bridge-road-sw/store-364974/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=364974&y_source=1_MTA4NjkwNzIyNS03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+   "googleUrl": "https://maps.google.com/?cid=16704968556649529421&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJQzRObcCl9YgRX3d_5uyNwO8",
@@ -8848,6 +10535,27 @@
    "googleUrl": "https://maps.google.com/?cid=2185684829019484726&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJRyX4CVH39YgRAnRXCOk56Dk",
+   "name": "Dunkin'",
+   "address": "374 Crescent Dr Suite A, Gainesville, GA 30501, USA",
+   "city": "Gainesville",
+   "county": "Hall",
+   "lat": 34.315766,
+   "lng": -83.791868,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 3.1,
+   "ratingNum": 164,
+   "ratingCount": "164",
+   "hours": "Mon-Sat 5am-9pm · Sun 6am-9pm",
+   "website": "https://www.dunkindonuts.com/",
+   "googleUrl": "https://maps.google.com/?cid=4172648727788876802&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJRzLnelxt9YgRh-lXudOUN9M",
    "name": "Baladi Coffee Marietta (Grab N Go)",
    "address": "3460 Sandy Plains Rd Ste 600, Marietta, GA 30066, USA",
@@ -8935,6 +10643,48 @@
    "hours": "Mon-Sun 6:30am-2pm",
    "website": null,
    "googleUrl": "https://maps.google.com/?cid=10946820810417800232&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJS9p9qoH39YgRogvW9WBJbs4",
+   "name": "Diletto (Inside Talpa)",
+   "address": "Diletto Inside Talpa, 2277 Browns Bridge Rd, Gainesville, GA 30501, USA",
+   "city": "Gainesville",
+   "county": "Hall",
+   "lat": 34.278573,
+   "lng": -83.851706,
+   "category": "Bakery+Cafe",
+   "model": "independent",
+   "types": [
+    "bakery",
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.7,
+   "ratingNum": 579,
+   "ratingCount": "579",
+   "hours": "Mon-Sun 8am-8pm",
+   "website": "https://order.toasttab.com/online/diletto-bakery-2-talpa-2277-browns-bridge-road",
+   "googleUrl": "https://maps.google.com/?cid=14874907300041460642&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJSQDUo_5z9YgReF1ViZb2kww",
+   "name": "Rday Cake Creations",
+   "address": "10511 Bells Ferry Rd #400, Canton, GA 30114, USA",
+   "city": "Canton",
+   "county": "Cherokee",
+   "lat": 34.193082,
+   "lng": -84.538459,
+   "category": "Bakery+Cafe",
+   "model": "independent",
+   "types": [
+    "bakery"
+   ],
+   "rating": 5.0,
+   "ratingNum": 312,
+   "ratingCount": "312",
+   "hours": "Sun-Mon Closed · Tue-Sat 11am-7pm",
+   "website": "http://www.rdaycreations.com/",
+   "googleUrl": "https://maps.google.com/?cid=906339076441202040&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJSQHyHYC59YgR3jgJeaRw0Vg",
@@ -9226,6 +10976,47 @@
    "googleUrl": "https://maps.google.com/?cid=16359016466528604425&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJT47oZvH29YgROXHhFmEF9lc",
+   "name": "Gainesville Coffee Shop @ Lawrence Pharmacy",
+   "address": "631 Broad St SE, Gainesville, GA 30501, USA",
+   "city": "Gainesville",
+   "county": "Hall",
+   "lat": 34.301397,
+   "lng": -83.820281,
+   "category": "Coffee",
+   "model": "independent",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.7,
+   "ratingNum": 170,
+   "ratingCount": "170",
+   "hours": "Mon-Fri 8am-2pm · Sat-Sun Closed",
+   "website": "http://gainesvillecoffeeshop.com/",
+   "googleUrl": "https://maps.google.com/?cid=6338259440124391737&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJT4ZJGRlv9YgRSD-dh5tli6k",
+   "name": "E & J Bakery",
+   "address": "131 Nature Cove, Canton, GA 30115, USA",
+   "city": "Canton",
+   "county": "Cherokee",
+   "lat": 34.175253,
+   "lng": -84.480449,
+   "category": "Bakery+Cafe",
+   "model": "independent",
+   "types": [
+    "bakery"
+   ],
+   "rating": 5.0,
+   "ratingNum": 7,
+   "ratingCount": "7",
+   "hours": "Mon-Fri 9am-5pm · Sat-Sun Closed",
+   "website": "http://eandjbakery7.godaddysites.com/",
+   "googleUrl": "https://maps.google.com/?cid=12216970132842168136&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJT50dSQCf9YgRZp4K0F4MtyY",
    "name": "Dunkin'",
    "address": "11605 Jones Bridge Rd, Alpharetta, GA 30022, USA",
@@ -9355,6 +11146,26 @@
    "hours": "Mon-Sat 5am-9pm · Sun 6am-9pm",
    "website": "https://www.dunkindonuts.com/locations/us/ga/kennesaw/2462-kennesaw-due-west-rd-nw/store-356296/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=356296&y_source=1_MTIxMDkxMzktNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
    "googleUrl": "https://maps.google.com/?cid=5389093733603753835&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJTTpQdQB9X4gRyziLcJQGw0U",
+   "name": "Food Lion Bakery",
+   "address": "59 Main St #100, Dawsonville, GA 30534, USA",
+   "city": "Dawsonville",
+   "county": "Dawson",
+   "lat": 34.417513,
+   "lng": -84.111598,
+   "category": "Bakery+Cafe",
+   "model": "independent",
+   "types": [
+    "bakery"
+   ],
+   "rating": 4.0,
+   "ratingNum": 2,
+   "ratingCount": "2",
+   "hours": null,
+   "website": "https://foodlion.com/groceries/bread-bakery/bakery-cakes-cupcakes.html",
+   "googleUrl": "https://maps.google.com/?cid=5026868843688704203&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJTU3hhkyY9YgRFKzTM7PSo9A",
@@ -9675,6 +11486,30 @@
    "googleUrl": "https://maps.google.com/?cid=13404549439038216125&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJU-EiQwJB9YgRKXWnIW7Z1GU",
+   "name": "Dunkin'",
+   "address": "130 Northpoint Pkwy Suite 100, Acworth, GA 30102, USA",
+   "city": "Acworth",
+   "county": "Cherokee",
+   "lat": 34.083693,
+   "lng": -84.655474,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "donut_shop",
+    "cafe",
+    "bakery"
+   ],
+   "rating": 4.3,
+   "ratingNum": 831,
+   "ratingCount": "831",
+   "hours": "Mon-Sun 5am-9pm",
+   "website": "https://www.dunkindonuts.com/locations/us/ga/acworth/130-northpoint-pkwy/store-353268/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=353268&y_source=1_MTIxMTE5MjYtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=7337728759927633193&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJU1dlee4N9YgRFlWeVUdpXaQ",
    "name": "Toastique",
    "address": "4250 Roswell Rd #510, Marietta, GA 30062, USA",
@@ -9809,6 +11644,26 @@
    "googleUrl": "https://maps.google.com/?cid=15877660779021305920&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJUSORcwBr9YgRW2wXpneyA4Q",
+   "name": "Pastry Paradise (Home Bakery)",
+   "address": "108 Sunny Side Wy, Acworth, GA 30102, USA",
+   "city": "Acworth",
+   "county": "Cherokee",
+   "lat": 34.097172,
+   "lng": -84.590399,
+   "category": "Bakery+Cafe",
+   "model": "independent",
+   "types": [
+    "bakery"
+   ],
+   "rating": 5.0,
+   "ratingNum": 51,
+   "ratingCount": "51",
+   "hours": "Mon-Sun 8am-9pm",
+   "website": "https://www.instagram.com/pastry_paradise19?igsh=enE5Z2ppaGM0dmox&utm_source=qr",
+   "googleUrl": "https://maps.google.com/?cid=9512643064894024795&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJUSQ5WIqj9YgRb6sDv17N9Ec",
    "name": "Gong cha Duluth",
    "address": "1630 Pleasant Hill Rd #180, Duluth, GA 30096, USA",
@@ -9852,6 +11707,28 @@
    "hours": null,
    "website": "https://macchihouse.com/",
    "googleUrl": "https://maps.google.com/?cid=738721792402261792&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJUTbgdqqJ9YgRMT0Ch1hz2M8",
+   "name": "The Human Bean",
+   "address": "320 S 400 Center Ln, Dawsonville, GA 30534, USA",
+   "city": "Dawsonville",
+   "county": "Dawson",
+   "lat": 34.361271,
+   "lng": -84.041491,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "tea_house",
+    "cafe"
+   ],
+   "rating": 4.6,
+   "ratingNum": 357,
+   "ratingCount": "357",
+   "hours": "Mon-Sat 5:30am-7pm · Sun 6am-7pm",
+   "website": "https://thehumanbean.com/blogs/stores/ga-dawsonville-center-ln",
+   "googleUrl": "https://maps.google.com/?cid=14976847384879971633&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJUUkDKgCf9YgRyAmhaivUHOk",
@@ -9904,6 +11781,48 @@
    "googleUrl": "https://maps.google.com/?cid=16192330896907494081&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJUWdL8K739YgRlr16LMQSSP8",
+   "name": "Starbucks Coffee Company",
+   "address": "1931 Jesse Jewell Pkwy SE, Gainesville, GA 30501, USA",
+   "city": "Gainesville",
+   "county": "Hall",
+   "lat": 34.315243,
+   "lng": -83.798007,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 3.5,
+   "ratingNum": 280,
+   "ratingCount": "280",
+   "hours": "Mon-Sun 6am-8pm",
+   "website": "https://www.starbucks.com/store-locator/store/1007039",
+   "googleUrl": "https://maps.google.com/?cid=18394973311763922326&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJUXEGf8Vr9YgR63pTWaRIOj0",
+   "name": "Soho Bagel Co",
+   "address": "1105 Parkside Ln #1202, Woodstock, GA 30189, USA",
+   "city": "Woodstock",
+   "county": "Cherokee",
+   "lat": 34.107315,
+   "lng": -84.552789,
+   "category": "Bakery+Cafe",
+   "model": "independent",
+   "types": [
+    "bagel_shop",
+    "bakery"
+   ],
+   "rating": 4.3,
+   "ratingNum": 268,
+   "ratingCount": "268",
+   "hours": "Mon Closed · Tue-Sat 7am-2pm · Sun 7am-1pm",
+   "website": "https://www.facebook.com/sohobagelcompany/",
+   "googleUrl": "https://maps.google.com/?cid=4411918655673301739&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJUddXuXGL9YgRb5U3F7Pj7-g",
    "name": "Deere Creek Bakery",
    "address": "Wallace Wood Rd, Gainesville, GA 30506, USA",
@@ -9922,6 +11841,26 @@
    "hours": "Fri-Wed Closed · Thu 9am-6pm",
    "website": "https://www.deerecreekbakery.com/",
    "googleUrl": "https://maps.google.com/?cid=16784884694561297775&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJUeGvIv1v9YgRQpeOspYn_pc",
+   "name": "Cielo Dulce Bakery & Cafe",
+   "address": "2271 Holly Springs Pkwy Ste 106, Holly Springs, GA 30115, USA",
+   "city": "Holly Springs",
+   "county": "Cherokee",
+   "lat": 34.179621,
+   "lng": -84.50313,
+   "category": "Bakery+Cafe",
+   "model": "independent",
+   "types": [
+    "bakery"
+   ],
+   "rating": 4.6,
+   "ratingNum": 50,
+   "ratingCount": "50",
+   "hours": "Mon 10:30am-7pm · Tue Closed · Wed-Fri 10:30am-7pm · Sat 9am-7pm · Sun Closed",
+   "website": null,
+   "googleUrl": "https://maps.google.com/?cid=10952234872005891906&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJUxfnTEiW9YgR0PpGO36pt88",
@@ -10016,6 +11955,27 @@
    "hours": "Mon-Fri 6:30am-3pm · Sat-Sun Closed",
    "website": "https://www.dunkindonuts.com/locations/us/ga/sandy-springs/3-glenlake-pkwy-northeast/store-363563/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=363563&y_source=1_MzU4NDAxMzgtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
    "googleUrl": "https://maps.google.com/?cid=11966556195031134817&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJV997juFl9YgRdEBWCl1wNbU",
+   "name": "Sweety's cafe & tea room",
+   "address": "225 Reformation Pkwy Ste 104E, Canton, GA 30114, USA",
+   "city": "Canton",
+   "county": "Cherokee",
+   "lat": 34.235879,
+   "lng": -84.495694,
+   "category": "Coffee",
+   "model": "independent",
+   "types": [
+    "cafe",
+    "tea_house"
+   ],
+   "rating": 4.6,
+   "ratingNum": 77,
+   "ratingCount": "77",
+   "hours": "Mon-Tue Closed · Wed-Sun 10am-4pm",
+   "website": "http://sweetys.net/",
+   "googleUrl": "https://maps.google.com/?cid=13057466239538315380&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJVSUfFFSf9YgRapRS4CCQ9UE",
@@ -10285,6 +12245,27 @@
    "googleUrl": "https://maps.google.com/?cid=17791838003641363664&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJW3N22oTz9YgRdhBSDYkYPkQ",
+   "name": "Danny’s Donuts#3",
+   "address": "4037 Winder Hwy Ste 501, Flowery Branch, GA 30542, USA",
+   "city": "Flowery Branch",
+   "county": "Hall",
+   "lat": 34.195103,
+   "lng": -83.857706,
+   "category": "Bakery+Cafe",
+   "model": "franchise",
+   "types": [
+    "donut_shop",
+    "bakery"
+   ],
+   "rating": 4.8,
+   "ratingNum": 320,
+   "ratingCount": "320",
+   "hours": "Mon-Sun 5am-5pm",
+   "website": "http://dannys-donuts.com/",
+   "googleUrl": "https://maps.google.com/?cid=4917394820048228470&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJW4UxMCh9X4gRsCdux2ZKFZ4",
    "name": "Valor Coffee",
    "address": "44 Milton Ave, Alpharetta, GA 30009, USA",
@@ -10476,6 +12457,27 @@
    },
    "website": "http://www.thecreekjc.com/",
    "googleUrl": "https://maps.google.com/?cid=17283857878180295717&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJWXFkXpD39YgR0hfmZFE6G3c",
+   "name": "Boarding Pass Coffee Gainesville",
+   "address": "106 Spring St SW Unit 140, Gainesville, GA 30501, USA",
+   "city": "Gainesville",
+   "county": "Hall",
+   "lat": 34.298937,
+   "lng": -83.82679,
+   "category": "Coffee",
+   "model": "independent",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.5,
+   "ratingNum": 214,
+   "ratingCount": "214",
+   "hours": "Mon-Tue 7am-5pm · Wed 7am-6pm · Thu 7am-5pm · Fri 7am-6pm · Sat-Sun 8am-6pm",
+   "website": "http://www.boardingpasscoffee.com/",
+   "googleUrl": "https://maps.google.com/?cid=8582517636144175058&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJWZkdRXq99YgRGurXbsK5p0s",
@@ -10698,6 +12700,27 @@
    },
    "website": "http://pearlstea.com/",
    "googleUrl": "https://maps.google.com/?cid=16329729741144324512&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJX4O1VQDt9YgRXb748p6EH9U",
+   "name": "Danny’s Donuts # 5",
+   "address": "5866 Spout Springs Rd c, Flowery Branch, GA 30542, USA",
+   "city": "Flowery Branch",
+   "county": "Hall",
+   "lat": 34.17722,
+   "lng": -83.912319,
+   "category": "Bakery+Cafe",
+   "model": "franchise",
+   "types": [
+    "donut_shop",
+    "bakery"
+   ],
+   "rating": 4.8,
+   "ratingNum": 122,
+   "ratingCount": "122",
+   "hours": "Mon-Sat 5am-5pm · Sun 5am-3pm",
+   "website": null,
+   "googleUrl": "https://maps.google.com/?cid=15357139072572767837&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJX5udrQsV9YgRE7TXKPHOQiw",
@@ -10953,6 +12976,26 @@
    "googleUrl": "https://maps.google.com/?cid=12134782338021355994&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJXcRz5lhr9YgRsg0Y4uvj8Ek",
+   "name": "Barriga Llena Bakery",
+   "address": "6380 Bells Ferry Rd Ste 102, Acworth, GA 30102, USA",
+   "city": "Acworth",
+   "county": "Cherokee",
+   "lat": 34.106868,
+   "lng": -84.580722,
+   "category": "Bakery+Cafe",
+   "model": "independent",
+   "types": [
+    "bakery"
+   ],
+   "rating": 4.8,
+   "ratingNum": 75,
+   "ratingCount": "75",
+   "hours": "Sun-Mon 8am-8pm · Tue Closed · Wed-Fri 8am-8pm · Sat Closed",
+   "website": null,
+   "googleUrl": "https://maps.google.com/?cid=5328008961429343666&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJXcW3BBG99YgRCjZR_FLuNLA",
    "name": "Cafe Amico",
    "address": "5900 Sugarloaf Pkwy #525, Lawrenceville, GA 30043, USA",
@@ -10972,6 +13015,27 @@
    "hours": "Mon-Thu 10am-8pm · Fri-Sat 10am-8:30pm · Sun 11am-7pm",
    "website": "https://www.facebook.com/cafeamicousa/",
    "googleUrl": "https://maps.google.com/?cid=12697035289652180490&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJY2SoHD1l9YgR7qTv3GUfXpU",
+   "name": "Starbucks Coffee Company",
+   "address": "The Shops at Canton MarketPlace, 2030 Cumming Hwy, Canton, GA 30115, USA",
+   "city": "Canton",
+   "county": "Cherokee",
+   "lat": 34.2365,
+   "lng": -84.45534,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 3.8,
+   "ratingNum": 460,
+   "ratingCount": "460",
+   "hours": "Mon-Sun 5am-9pm",
+   "website": "https://www.starbucks.com/store-locator/store/113968/",
+   "googleUrl": "https://maps.google.com/?cid=10763074681820914926&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJY2ZxidSb9YgR3uyRfTWDUEE",
@@ -11114,6 +13178,27 @@
    "googleUrl": "https://maps.google.com/?cid=8585998792685535666&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJYRetjwfv9YgRy6aNldUGfUg",
+   "name": "Starbucks Coffee Company",
+   "address": "5748 Old Winder Hwy, Braselton, GA 30517, USA",
+   "city": "Braselton",
+   "county": "Hall",
+   "lat": 34.12293,
+   "lng": -83.82852,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.3,
+   "ratingNum": 569,
+   "ratingCount": "569",
+   "hours": "Mon-Fri 4:30am-9pm · Sat-Sun 5am-9pm",
+   "website": "https://www.starbucks.com/store-locator/store/1025081",
+   "googleUrl": "https://maps.google.com/?cid=5223338657226532555&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJYXiqMDqh9YgRiHXhekcEOuY",
    "name": "45 South Cafe",
    "address": "45 S Peachtree St, Norcross, GA 30071, USA",
@@ -11159,6 +13244,30 @@
    },
    "website": "https://arwacoffee.com/",
    "googleUrl": "https://maps.google.com/?cid=5634890486814457819&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJYa8CnJP29YgRLPhokRajTNw",
+   "name": "Dunkin'",
+   "address": "504 Queen City Pkwy, Gainesville, GA 30501, USA",
+   "city": "Gainesville",
+   "county": "Hall",
+   "lat": 34.293582,
+   "lng": -83.829389,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "cafe",
+    "donut_shop",
+    "bakery"
+   ],
+   "rating": 3.9,
+   "ratingNum": 1074,
+   "ratingCount": "1,074",
+   "hours": "Mon-Sun 5am-9pm",
+   "website": "https://www.dunkindonuts.com/locations/us/ga/gainesville/504-queen-city-pkwy/store-350245/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=350245&y_source=1_MTIxMDU2OTctNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=15874242103898339372&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJYbm1Y8AV9YgRw8Y3sywRMDA",
@@ -11719,6 +13828,30 @@
    "googleUrl": "https://maps.google.com/?cid=831249501889181736&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJ_SxtJVtv9YgRvjm-0rE8RNQ",
+   "name": "Dunkin'",
+   "address": "3640 Marietta Hwy A, Canton, GA 30114, USA",
+   "city": "Canton",
+   "county": "Cherokee",
+   "lat": 34.197161,
+   "lng": -84.509594,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "cafe",
+    "donut_shop",
+    "bakery"
+   ],
+   "rating": 3.6,
+   "ratingNum": 663,
+   "ratingCount": "663",
+   "hours": "Mon-Sun Open 24 hours",
+   "website": "https://www.dunkindonuts.com/locations/us/ga/canton/3640-marietta-hwy/store-350554/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=350554&y_source=1_MTIxMTM5ODgtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=15295416968899606974&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJ_TRATjm99YgReMvbNaD5V-g",
    "name": "Kung Fu Tea",
    "address": "1291 Old Peachtree Rd NW Ste 402, Suwanee, GA 30024, USA",
@@ -11764,6 +13897,31 @@
    "googleUrl": "https://maps.google.com/?cid=13012180827167590020&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJ_ZOmRGLz9YgRfRSUg1ZUIx4",
+   "name": "7 Brew Coffee",
+   "address": "3449 Winder Hwy, Flowery Branch, GA 30542, USA",
+   "city": "Flowery Branch",
+   "county": "Hall",
+   "lat": 34.217129,
+   "lng": -83.860717,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.3,
+   "ratingNum": 323,
+   "ratingCount": "323",
+   "hours": "Sun-Thu 5:30am-10pm · Fri-Sat 5:30am-11pm",
+   "late": {
+    "tier": "10pm+",
+    "when": "Daily till 11pm"
+   },
+   "website": "https://7brew.com/location/georgia-flowery-branch-000546",
+   "googleUrl": "https://maps.google.com/?cid=2171672175874151549&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJ__8_nQZ19YgRIRW2BepKLRw",
    "name": "Pastry Brigade | Nostalgic Snack Micro-Bakery",
    "address": "1805 Hembree Rd Ste b, Alpharetta, GA 30009, USA",
@@ -11782,6 +13940,60 @@
    "hours": null,
    "website": "https://pastrybrigade.com/",
    "googleUrl": "https://maps.google.com/?cid=2030361375992583457&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJ__9PGPNp9YgRGr3ZYEgxVhE",
+   "name": "Sweet Detente | Organic International Desserts",
+   "address": "6687 Bells Ferry Rd, Woodstock, GA 30189, USA",
+   "city": "Woodstock",
+   "county": "Cherokee",
+   "lat": 34.130879,
+   "lng": -84.586532,
+   "category": "Bakery+Cafe",
+   "model": "independent",
+   "types": [
+    "bakery",
+    "dessert_shop"
+   ],
+   "rating": 4.7,
+   "ratingNum": 15,
+   "ratingCount": "15",
+   "hours": "Mon-Sun 9am-5pm",
+   "website": "https://sweetdetente.com/",
+   "googleUrl": "https://maps.google.com/?cid=1249240133574180122&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJ__9j61ON9YgR9JyfTETJGLs",
+   "name": "Whole Being Cafe",
+   "address": "Historic Downtown, 5510 Main St, Flowery Branch, GA 30542, USA",
+   "city": "Flowery Branch",
+   "county": "Hall",
+   "lat": 34.185321,
+   "lng": -83.925519,
+   "category": "Coffee",
+   "model": "independent",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.9,
+   "ratingNum": 402,
+   "ratingCount": "402",
+   "hours": "Sun-Mon Closed · Tue-Fri 7am-2pm · Sat 8am-2pm",
+   "website": "http://www.wholebeingcafe.com/",
+   "googleUrl": "https://maps.google.com/?cid=13481746779714067700&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "excellent",
+    "note": "Scenic historic downtown Flowery Branch cafe near Lake Lanier with work-friendly tables, fast Wi-Fi, and organic fare.",
+    "hasMeetingRoom": false
+   },
+   "usp": "Wellness-centered cafe and coffee bar in historic Flowery Branch steps from Lake Lanier.",
+   "loved": [
+    "organic drip",
+    "golden turmeric latte",
+    "avocado toast"
+   ],
+   "signature": "Lakeside Lavender Honey Latte"
   },
   {
    "placeId": "ChIJ_cCI0W6k9YgRi1gR29Urjyk",
@@ -11913,6 +14125,41 @@
    "hours": null,
    "website": null,
    "googleUrl": "https://maps.google.com/?cid=1434996467941654967&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJaWi5PI329YgRNJ9zcbRtfLg",
+   "name": "Inman Perk Coffee",
+   "address": "102 Washington St NW, Gainesville, GA 30501, USA",
+   "city": "Gainesville",
+   "county": "Hall",
+   "lat": 34.299782,
+   "lng": -83.827081,
+   "category": "Coffee",
+   "model": "independent",
+   "types": [
+    "coffee_shop",
+    "cafe",
+    "tea_house"
+   ],
+   "rating": 4.3,
+   "ratingNum": 629,
+   "ratingCount": "629",
+   "hours": "Mon-Sun 7am-8pm",
+   "website": "http://www.inmanperkcoffee.com/",
+   "googleUrl": "https://maps.google.com/?cid=13293620821855805236&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "excellent",
+    "note": "Two-story historic coffeehouse right on the Gainesville Square with an upstairs study mezzanine, fast Wi-Fi, and cozy work nooks.",
+    "hasMeetingRoom": true,
+    "meetingRoomNote": "Upstairs mezzanine gathering area and meeting space reservable for study groups and business meetings."
+   },
+   "usp": "Gainesville Square's beloved landmark coffeehouse with a multi-level historic layout and artisan espresso.",
+   "loved": [
+    "inman perk blend",
+    "white chocolate mocha",
+    "blueberry muffins"
+   ],
+   "signature": "Square Signature Caramel Macchiato"
   },
   {
    "placeId": "ChIJaY3FGl0J9YgRYPbZaAdV7T8",
@@ -12077,6 +14324,30 @@
    "googleUrl": "https://maps.google.com/?cid=11842454878165452761&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJaweTN4jz9YgRww1ysE66ar8",
+   "name": "Dunkin'",
+   "address": "3875 Mundy Mill Rd, Oakwood, GA 30566, USA",
+   "city": "Oakwood",
+   "county": "Hall",
+   "lat": 34.231379,
+   "lng": -83.874815,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "donut_shop",
+    "cafe",
+    "bakery"
+   ],
+   "rating": 4.4,
+   "ratingNum": 5,
+   "ratingCount": "5",
+   "hours": "Mon-Sun 7am-9pm",
+   "website": "https://www.dunkindonuts.com/locations/us/ga/oakwood/3875-mundy-mill-rd/store-366958/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=366958&y_source=1_MjA2MzM4Mzk1NC03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+   "googleUrl": "https://maps.google.com/?cid=13793041655906045379&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJaxQeiA6i9YgRwPOZ-xnbinw",
    "name": "Dunkin'",
    "address": "3435 Peachtree Industrial Blvd, Duluth, GA 30096, USA",
@@ -12099,6 +14370,34 @@
    "hours": "Mon-Fri 5am-9pm · Sat-Sun 6am-9pm",
    "website": "https://www.dunkindonuts.com/locations/us/ga/duluth/3435-peachtree-industrial-blvd/store-302564/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=302564&y_source=1_MTIxMDU3OTEtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
    "googleUrl": "https://maps.google.com/?cid=8974226112130970560&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJb-KrOoVr9YgRqmkV-Efhx6g",
+   "name": "Krispy Kreme",
+   "address": "9420 GA-92, Woodstock, GA 30188, USA",
+   "city": "Woodstock",
+   "county": "Cherokee",
+   "lat": 34.085365,
+   "lng": -84.531987,
+   "category": "Bakery+Cafe",
+   "model": "franchise",
+   "types": [
+    "donut_shop",
+    "coffee_shop",
+    "dessert_shop",
+    "cafe",
+    "bakery"
+   ],
+   "rating": 4.0,
+   "ratingNum": 1866,
+   "ratingCount": "1,866",
+   "hours": "Sun-Thu 6am-10pm · Fri-Sat 6am-11pm",
+   "late": {
+    "tier": "10pm+",
+    "when": "Daily till 11pm"
+   },
+   "website": "https://site.krispykreme.com/ga/woodstock/9420-highway-92?y_source=1_MTE4OTgwMDAtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=12161937017958394282&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJb2PupR9r9YgRcQEXkrsYykI",
@@ -12320,6 +14619,29 @@
    "hours": "Mon-Fri 6:30am-9pm · Sat-Sun 7am-9pm",
    "website": "https://www.panerabread.com/en-us/cafe/locations/ga/acworth/3384-cobb-pkwy?utm_medium=local&utm_source=google&utm_campaign=dpm-dist&utm_term=202573&utm_content=main",
    "googleUrl": "https://maps.google.com/?cid=14465219297189384245&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJbZPFXHlr9YgRsX9eOw1J0Aw",
+   "name": "Einstein Bros. Bagels",
+   "address": "310 Lanier Cir Suite 109, Woodstock, GA 30189, USA",
+   "city": "Woodstock",
+   "county": "Cherokee",
+   "lat": 34.084541,
+   "lng": -84.55535,
+   "category": "Bakery+Cafe",
+   "model": "franchise",
+   "types": [
+    "bagel_shop",
+    "coffee_shop",
+    "bakery",
+    "cafe"
+   ],
+   "rating": 4.3,
+   "ratingNum": 116,
+   "ratingCount": "116",
+   "hours": "Mon-Sun 6am-2pm",
+   "website": "https://locations.einsteinbros.com/us/ga/woodstock/310-lanier-circle?y_source=1_MjAyMjQ5MTU3OS03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+   "googleUrl": "https://maps.google.com/?cid=923318244790402993&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJb_bBeeq99YgRcOWGFPP-02g",
@@ -12626,6 +14948,51 @@
    "googleUrl": "https://maps.google.com/?cid=13426613170309718809&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJcZ0ySdmJ9YgRhZixTcZKAnc",
+   "name": "Dunkin'",
+   "address": "11 Donut Dr, Dawsonville, GA 30534, USA",
+   "city": "Dawsonville",
+   "county": "Dawson",
+   "lat": 34.359911,
+   "lng": -84.043911,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "donut_shop",
+    "cafe",
+    "bakery"
+   ],
+   "rating": 4.0,
+   "ratingNum": 805,
+   "ratingCount": "805",
+   "hours": "Mon-Sun 5am-9pm",
+   "website": "https://www.dunkindonuts.com/locations/us/ga/dawsonville/11-donut-dr/store-350336/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=350336&y_source=1_MTIxMTQ3MDYtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=8575498856034310277&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJcceYKgBl9YgRaq1tc3mauJo",
+   "name": "Good mood coffee and Juice",
+   "address": "Canton, GA 30114, USA",
+   "city": "Canton",
+   "county": "Cherokee",
+   "lat": 34.236762,
+   "lng": -84.490762,
+   "category": "Coffee",
+   "model": "independent",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": null,
+   "ratingNum": 0,
+   "ratingCount": "0",
+   "hours": null,
+   "website": null,
+   "googleUrl": "https://maps.google.com/?cid=11148830723973950826&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJcdUtPw6j9YgRVLVnRHS0JVE",
    "name": "Hansel & Gretel Bakery Cafe",
    "address": "2131 Pleasant Hill Rd #101, Duluth, GA 30096, USA",
@@ -12697,6 +15064,52 @@
    "hours": "Mon-Fri 4:30am-8:30pm · Sat-Sun 5am-8:30pm",
    "website": "https://www.starbucks.com/store-locator/store/1014225/",
    "googleUrl": "https://maps.google.com/?cid=598416380747819372&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJcxtbHrbz9YgRoU7bgtSavc8",
+   "name": "Dunkin'",
+   "address": "3629 Mundy Mill Rd, Oakwood, GA 30566, USA",
+   "city": "Oakwood",
+   "county": "Hall",
+   "lat": 34.227575,
+   "lng": -83.868189,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "donut_shop",
+    "cafe",
+    "bakery"
+   ],
+   "rating": 3.9,
+   "ratingNum": 844,
+   "ratingCount": "844",
+   "hours": "Mon-Sun 5am-9pm",
+   "website": "https://www.dunkindonuts.com/locations/us/ga/oakwood/3629-mundy-mill-rd/store-349338/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=349338&y_source=1_MTIxMDgxMjctNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=14969290973968551585&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJcy-hJyT09YgRAJrdDC0DMbs",
+   "name": "Panera Bread",
+   "address": "625 Dawsonville Hwy, Gainesville, GA 30501, USA",
+   "city": "Gainesville",
+   "county": "Hall",
+   "lat": 34.29478,
+   "lng": -83.853097,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "cafe",
+    "coffee_shop",
+    "bakery"
+   ],
+   "rating": 4.0,
+   "ratingNum": 955,
+   "ratingCount": "955",
+   "hours": "Mon-Fri 6:30am-9pm · Sat-Sun 7am-9pm",
+   "website": "https://www.panerabread.com/en-us/cafe/locations/ga/gainesville/625-dawsonville-highway?utm_medium=local&utm_source=google&utm_campaign=dpm-dist&utm_term=202552&utm_content=main",
+   "googleUrl": "https://maps.google.com/?cid=13488565850975607296&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJd3zRD1Wb9YgRoq7_9bT-3LM",
@@ -13164,6 +15577,30 @@
    "googleUrl": "https://maps.google.com/?cid=17038285632499939134&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJeZw2o5_t9YgRGAsbGQfx0Rs",
+   "name": "Dunkin'",
+   "address": "5915 Spout Springs Rd, Flowery Branch, GA 30542, USA",
+   "city": "Flowery Branch",
+   "county": "Hall",
+   "lat": 34.177202,
+   "lng": -83.910025,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "donut_shop",
+    "cafe",
+    "bakery"
+   ],
+   "rating": 3.4,
+   "ratingNum": 188,
+   "ratingCount": "188",
+   "hours": "Mon-Sun 5am-9pm",
+   "website": "https://www.dunkindonuts.com/locations/us/ga/flowery-branch/5915-spout-springs-rd/store-362647/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=362647&y_source=1_MjQyNDI5NjgtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=2004648321944849176&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJedUxUKIJ9YgRX029JcV6Xus",
    "name": "Einstein Bros. Bagels",
    "address": "5564 Peachtree Blvd, Chamblee, GA 30341, USA",
@@ -13421,6 +15858,26 @@
    "googleUrl": "https://maps.google.com/?cid=17415106431526052373&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJfZMjFpv29YgRQwqqBn3mjgw",
+   "name": "Dioselina's Bakery",
+   "address": "199 John W Morrow Jr Pkwy # B, Gainesville, GA 30501, USA",
+   "city": "Gainesville",
+   "county": "Hall",
+   "lat": 34.297016,
+   "lng": -83.840216,
+   "category": "Bakery+Cafe",
+   "model": "independent",
+   "types": [
+    "bakery"
+   ],
+   "rating": 4.6,
+   "ratingNum": 112,
+   "ratingCount": "112",
+   "hours": "Mon Closed · Tue-Thu 10am-6pm · Fri-Sat 8am-6pm · Sun 10am-5pm",
+   "website": null,
+   "googleUrl": "https://maps.google.com/?cid=904913999805155907&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJfc4n-eQ99YgRylXj9i57MPo",
    "name": "Starbucks Coffee Company",
    "address": "2535 Dallas Hwy, Marietta, GA 30064, USA",
@@ -13574,6 +16031,40 @@
    "googleUrl": "https://maps.google.com/?cid=10455564001004382148&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJg8q-aCRv9YgR2jDqvhGhKbA",
+   "name": "Alma Coffee",
+   "address": "3448 Holly Springs Pkwy, Canton, GA 30115, USA",
+   "city": "Canton",
+   "county": "Cherokee",
+   "lat": 34.164448,
+   "lng": -84.506678,
+   "category": "Coffee",
+   "model": "independent",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.9,
+   "ratingNum": 752,
+   "ratingCount": "752",
+   "hours": "Mon-Fri 7am-4pm · Sat-Sun 8am-4pm",
+   "website": "https://myalmacoffee.com/",
+   "googleUrl": "https://maps.google.com/?cid=12693854122309988570&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "excellent",
+    "note": "Spacious modern roastery with expansive communal tables, high-speed Wi-Fi, roastery viewing bar, and power outlets throughout.",
+    "hasMeetingRoom": true,
+    "meetingRoomNote": "Cupping lab and conference space reservable for business groups, workshops, and private tastings."
+   },
+   "usp": "5th-generation family farm roastery serving direct-trade Honduran single-origin coffees roasted on site.",
+   "loved": [
+    "cortado",
+    "iced dulce de leche latte",
+    "empanadas"
+   ],
+   "signature": "Cafe con Leche & Dulce de Leche Latte"
+  },
+  {
    "placeId": "ChIJgSCMj2B19YgRIFzbnXWn3fs",
    "name": "The Main Brews and Bites",
    "address": "2800 Old Milton Pkwy, Alpharetta, GA 30009, USA",
@@ -13679,6 +16170,47 @@
    },
    "website": "https://hanselgretelbakerycafe.com/",
    "googleUrl": "https://maps.google.com/?cid=14122491561446964686&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJgZv-MM9p9YgREtlb6pGJ_3c",
+   "name": "Caffe Giggle",
+   "address": "10511 Bells Ferry Rd, Canton, GA 30114, USA",
+   "city": "Canton",
+   "county": "Cherokee",
+   "lat": 34.193082,
+   "lng": -84.538459,
+   "category": "Coffee",
+   "model": "independent",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 5.0,
+   "ratingNum": 2,
+   "ratingCount": "2",
+   "hours": "Mon Closed · Tue-Sat 6am-7pm · Sun 7:30am-2pm",
+   "website": null,
+   "googleUrl": "https://maps.google.com/?cid=8646781069369792786&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJgckodoFx9YgRZm9QrAlETgA",
+   "name": "Circle of Friends at Flourish Café",
+   "address": "2864 E Cherokee Dr F, Canton, GA 30115, USA",
+   "city": "Canton",
+   "county": "Cherokee",
+   "lat": 34.173997,
+   "lng": -84.418518,
+   "category": "Coffee",
+   "model": "independent",
+   "types": [
+    "cafe"
+   ],
+   "rating": 5.0,
+   "ratingNum": 90,
+   "ratingCount": "90",
+   "hours": "Mon-Fri 7am-2pm · Sat 8am-2pm · Sun Closed",
+   "website": "https://www.circleoffriendsinc.org/flourish-cafe",
+   "googleUrl": "https://maps.google.com/?cid=22029856519778150&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJgem-RdRq9YgREEovQn07v4s",
@@ -14036,6 +16568,27 @@
    "googleUrl": "https://maps.google.com/?cid=7842500942318290579&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJheR0XgBr9YgRuDXhXVB6iu4",
+   "name": "Kraft Waffle and Coffee",
+   "address": "915 Ridgewalk Pkwy, Woodstock, GA 30188, USA",
+   "city": "Woodstock",
+   "county": "Cherokee",
+   "lat": 34.119757,
+   "lng": -84.526441,
+   "category": "Coffee",
+   "model": "independent",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": null,
+   "ratingNum": 0,
+   "ratingCount": "0",
+   "hours": null,
+   "website": null,
+   "googleUrl": "https://maps.google.com/?cid=17188685413403932088&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJhw4mmEab9YgRi_HIVSrTkb4",
    "name": "Caribou Coffee",
    "address": "580 Peachtree Pkwy Suite 106, Cumming, GA 30041, USA",
@@ -14128,6 +16681,27 @@
    "googleUrl": "https://maps.google.com/?cid=15593096242359543794&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJi7yDIQDz9YgRlObbx5vctMY",
+   "name": "Arpeggio Coffee and Bakery",
+   "address": "5603 Main St, Flowery Branch, GA 30542, USA",
+   "city": "Flowery Branch",
+   "county": "Hall",
+   "lat": 34.185253,
+   "lng": -83.926349,
+   "category": "Coffee",
+   "model": "independent",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.8,
+   "ratingNum": 11,
+   "ratingCount": "11",
+   "hours": "Sun-Mon Closed · Tue-Wed 10am-5pm · Thu-Fri 10am-6pm · Sat 10am-5pm",
+   "website": "https://www.instagram.com/arpeggiobakery?igsh=MTQ3ajIwbG42ZGx0dA%3D%3D&utm_source=qr",
+   "googleUrl": "https://maps.google.com/?cid=14318311676948768404&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJi8-d9Pxy9YgRaPE8JW5uI_s",
    "name": "Panera Bread",
    "address": "1195 Woodstock Rd, Roswell, GA 30075, USA",
@@ -14189,6 +16763,27 @@
    "hours": "Mon-Fri 8am-3pm · Sat-Sun Closed",
    "website": "https://thedupree.org/cafe",
    "googleUrl": "https://maps.google.com/?cid=3119014148363311627&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJiSfjtMGUDEkR1BEMPg1wCio",
+   "name": "Artful Cakery by Julie",
+   "address": "6269 Oak Ridge Dr, Flowery Branch, GA 30542, USA",
+   "city": "Flowery Branch",
+   "county": "Hall",
+   "lat": 34.160611,
+   "lng": -83.904242,
+   "category": "Bakery+Cafe",
+   "model": "independent",
+   "types": [
+    "bakery",
+    "dessert_shop"
+   ],
+   "rating": 5.0,
+   "ratingNum": 110,
+   "ratingCount": "110",
+   "hours": "Mon-Sat 9am-5pm · Sun 1:00-5pm",
+   "website": "http://www.artfulcakery.com/",
+   "googleUrl": "https://maps.google.com/?cid=3029356901537944020&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJiSwG4d4N9YgRUI8Ugy9q7Ts",
@@ -14348,6 +16943,27 @@
    "googleUrl": "https://maps.google.com/?cid=7306205762589706618&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJifOXR2pfX4gRQz8asseK5jc",
+   "name": "Starbucks Coffee Company",
+   "address": "3630 Thompson Bridge Rd, Gainesville, GA 30506, USA",
+   "city": "Gainesville",
+   "county": "Hall",
+   "lat": 34.3734,
+   "lng": -83.87002,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 3.7,
+   "ratingNum": 107,
+   "ratingCount": "107",
+   "hours": "Mon-Fri 6am-7pm · Sat-Sun 7am-7pm",
+   "website": "https://www.starbucks.com/store-locator/store/7589",
+   "googleUrl": "https://maps.google.com/?cid=4028059507020676931&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJj2DwTHIV9YgRik9qWb1hl9g",
    "name": "Starbucks Coffee Company",
    "address": "1955 Cobb Pkwy NW, Kennesaw, GA 30152, USA",
@@ -14458,6 +17074,29 @@
    "googleUrl": "https://maps.google.com/?cid=17294038563303521727&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJjSion7lv9YgRt-nAoHfqboc",
+   "name": "Alpine Bakery & Pizzeria | Woodstock",
+   "address": "405 Toonigh Rd, Woodstock, GA 30188, USA",
+   "city": "Woodstock",
+   "county": "Cherokee",
+   "lat": 34.141772,
+   "lng": -84.506674,
+   "category": "Bakery+Cafe",
+   "model": "independent",
+   "types": [
+    "bakery",
+    "coffee_shop",
+    "dessert_restaurant",
+    "cafe"
+   ],
+   "rating": 4.5,
+   "ratingNum": 646,
+   "ratingCount": "646",
+   "hours": "Mon Closed · Tue-Sun 11am-9pm",
+   "website": "https://alpinebakery.com/",
+   "googleUrl": "https://maps.google.com/?cid=9758995242077448631&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJjV40Byqb9YgR8eyL3btf8tQ",
    "name": "Rendezvous Cafe",
    "address": "543 Lakeland Plaza, Cumming, GA 30040, USA",
@@ -14528,6 +17167,49 @@
    },
    "website": null,
    "googleUrl": "https://maps.google.com/?cid=502618888164106175&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJjeS00Z_29YgRv2K2vZlXpPw",
+   "name": "Starbucks Coffee Company",
+   "address": "514 Shallowford Rd, Gainesville, GA 30504, USA",
+   "city": "Gainesville",
+   "county": "Hall",
+   "lat": 34.29022,
+   "lng": -83.84683,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.1,
+   "ratingNum": 168,
+   "ratingCount": "168",
+   "hours": "Mon-Sun 8am-8pm",
+   "website": "https://www.starbucks.com/store-locator/store/1017755",
+   "googleUrl": "https://maps.google.com/?cid=18204771911562846911&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJjf_zOI9p9YgRGBjBZe0Ycp0",
+   "name": "Panera Bread",
+   "address": "2625 Towne Lake Pkwy, Woodstock, GA 30189, USA",
+   "city": "Woodstock",
+   "county": "Cherokee",
+   "lat": 34.111592,
+   "lng": -84.554609,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "cafe",
+    "coffee_shop",
+    "bakery"
+   ],
+   "rating": 4.0,
+   "ratingNum": 732,
+   "ratingCount": "732",
+   "hours": "Mon-Fri 6:30am-9pm · Sat-Sun 7am-9pm",
+   "website": "https://www.panerabread.com/en-us/cafe/locations/ga/woodstock/2625-towne-lake-parkway?utm_medium=local&utm_source=google&utm_campaign=dpm-dist&utm_term=202597&utm_content=main",
+   "googleUrl": "https://maps.google.com/?cid=11345157819193169944&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJjx6T3bAR9YgR4mqQSGM9TrE",
@@ -14791,6 +17473,26 @@
    "googleUrl": "https://maps.google.com/?cid=17770449973555895897&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJkaGq2KFr9YgRWulhhtxwev4",
+   "name": "BJ's Bakery",
+   "address": "105 Long Dr, Woodstock, GA 30189, USA",
+   "city": "Woodstock",
+   "county": "Cherokee",
+   "lat": 34.08062,
+   "lng": -84.543188,
+   "category": "Bakery+Cafe",
+   "model": "independent",
+   "types": [
+    "bakery"
+   ],
+   "rating": 4.5,
+   "ratingNum": 2,
+   "ratingCount": "2",
+   "hours": "Mon-Fri 9am-6pm · Sat 8am-7:30pm · Sun 12:00-7pm",
+   "website": "https://www.bjs.com/bakery",
+   "googleUrl": "https://maps.google.com/?cid=18337092925242075482&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJkbIBo7YV9YgRS2Ki3BTLuaM",
    "name": "soluna bakery",
    "address": "594 Jackson Ridge Dr NW, Kennesaw, GA 30144, USA",
@@ -14810,6 +17512,28 @@
    "hours": null,
    "website": null,
    "googleUrl": "https://maps.google.com/?cid=11797683989335138891&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJkdDS-9uJ9YgRc3_P7OwWYKk",
+   "name": "Panera Bread",
+   "address": "321 Power Center Dr, Dawsonville, GA 30534, USA",
+   "city": "Dawsonville",
+   "county": "Dawson",
+   "lat": 34.357801,
+   "lng": -84.043519,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "cafe",
+    "coffee_shop",
+    "bakery"
+   ],
+   "rating": 3.8,
+   "ratingNum": 650,
+   "ratingCount": "650",
+   "hours": "Mon-Fri 6:30am-9pm · Sat-Sun 7am-9pm",
+   "website": "https://www.panerabread.com/en-us/cafe/locations/ga/dawsonville/321-power-center-drive?utm_medium=local&utm_source=google&utm_campaign=dpm-dist&utm_term=202559&utm_content=main",
+   "googleUrl": "https://maps.google.com/?cid=12204780197015158643&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJkzWckImX9YgRa9Q7nXG3NOI",
@@ -14965,6 +17689,31 @@
    "googleUrl": "https://maps.google.com/?cid=6791208367754523171&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJl4Ai1SX09YgRXBymYpS4GFk",
+   "name": "Starbucks Coffee Company",
+   "address": "821 Dawsonville Hwy, Gainesville, GA 30501, USA",
+   "city": "Gainesville",
+   "county": "Hall",
+   "lat": 34.29712,
+   "lng": -83.85617,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.0,
+   "ratingNum": 598,
+   "ratingCount": "598",
+   "hours": "Mon-Fri 4:30am-10pm · Sat-Sun 5am-10pm",
+   "late": {
+    "tier": "10pm+",
+    "when": "Daily till 10pm"
+   },
+   "website": "https://www.starbucks.com/store-locator/store/11733/",
+   "googleUrl": "https://maps.google.com/?cid=6420084216266366044&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJl83IG_6f9YgRras0qKuZv7E",
    "name": "Starbucks Coffee Company",
    "address": "9925 Haynes Bridge Rd, Johns Creek, GA 30022, USA",
@@ -15067,6 +17816,27 @@
    "googleUrl": "https://maps.google.com/?cid=12797420160757484839&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJla0Kbhfy9YgR_vj3txoqJjY",
+   "name": "Starbucks Coffee Company",
+   "address": "4025 Winder Hwy, Flowery Branch, GA 30542, USA",
+   "city": "Flowery Branch",
+   "county": "Hall",
+   "lat": 34.196429,
+   "lng": -83.857349,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 3.7,
+   "ratingNum": 161,
+   "ratingCount": "161",
+   "hours": "Mon-Sun 6am-7pm",
+   "website": "https://www.starbucks.com/store-locator/store/10812",
+   "googleUrl": "https://maps.google.com/?cid=3901852421407111422&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJlb9wErwN9YgRQB6pb-KGxoo",
    "name": "New Age Cupcakes",
    "address": "1592 Atlanta Rd SE Ste 130, Marietta, GA 30060, USA",
@@ -15085,6 +17855,31 @@
    "hours": "Sun-Mon Closed · Tue-Wed 9am-4pm · Thu 10:30am-4pm · Fri 9am-4pm · Sat 9am-2pm",
    "website": "http://newagecupcakes.com/",
    "googleUrl": "https://maps.google.com/?cid=9999828329716850240&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJldmRt09t9YgR5Hr_n7F-CIw",
+   "name": "Sucré",
+   "address": "8654 Main St, Woodstock, GA 30188, USA",
+   "city": "Woodstock",
+   "county": "Cherokee",
+   "lat": 34.100163,
+   "lng": -84.519977,
+   "category": "Bakery+Cafe",
+   "model": "independent",
+   "types": [
+    "bakery",
+    "dessert_shop"
+   ],
+   "rating": 4.2,
+   "ratingNum": 137,
+   "ratingCount": "137",
+   "hours": "Sun-Thu 9am-9pm · Fri-Sat 9am-11pm",
+   "late": {
+    "tier": "10pm+",
+    "when": "Fri-Sat till 11pm"
+   },
+   "website": "http://shopsucre.com/",
+   "googleUrl": "https://maps.google.com/?cid=10090454266482227940&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJlfl41t0T9YgRUBKuyhYmlTM",
@@ -15161,6 +17956,27 @@
    "hours": "Mon-Sun 5am-8pm",
    "website": "https://www.starbucks.com/store-locator/store/1013247/",
    "googleUrl": "https://maps.google.com/?cid=658223856329326651&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJm0FGOfZt9YgReaBktgMPa70",
+   "name": "Bizarre Coffee (WOODSTOCK)",
+   "address": "440 Chambers St, Woodstock, GA 30188, USA",
+   "city": "Woodstock",
+   "county": "Cherokee",
+   "lat": 34.099902,
+   "lng": -84.518915,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.7,
+   "ratingNum": 359,
+   "ratingCount": "359",
+   "hours": "Mon-Sun 7am-5pm",
+   "website": "http://www.bizarrecoffee.com/",
+   "googleUrl": "https://maps.google.com/?cid=13649019604295786617&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJm1KcX5K_9YgRzdY-nHpPvy0",
@@ -15268,6 +18084,46 @@
    "hours": "Mon 10am-4pm · Tue-Fri 9am-6pm · Sat 8am-4pm · Sun Closed",
    "website": "http://billrhodesbakery.com/?utm_source=google&utm_medium=wix_google_business_profile&utm_campaign=16355587573675536726",
    "googleUrl": "https://maps.google.com/?cid=16273171754662800968&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJm9nivN999YgR0plueLN3hg4",
+   "name": "The Grande Event Cafe and Tea Room",
+   "address": "5360 Ball Ground Hwy, Ball Ground, GA 30107, USA",
+   "city": "Ball Ground",
+   "county": "Cherokee",
+   "lat": 34.294661,
+   "lng": -84.417246,
+   "category": "Tea/Boba",
+   "model": "independent",
+   "types": [
+    "tea_house"
+   ],
+   "rating": 4.5,
+   "ratingNum": 61,
+   "ratingCount": "61",
+   "hours": "Sun-Mon Closed · Tue-Sat 11am-4:45pm",
+   "website": "http://www.thegrandeevent.com/",
+   "googleUrl": "https://maps.google.com/?cid=1046655576113584594&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJmSVdSen29YgRrv-k_dInbpg",
+   "name": "La Esperanza Panaderia",
+   "address": "838 Chestnut St SE, Gainesville, GA 30501, USA",
+   "city": "Gainesville",
+   "county": "Hall",
+   "lat": 34.291494,
+   "lng": -83.819755,
+   "category": "Bakery+Cafe",
+   "model": "independent",
+   "types": [
+    "bakery"
+   ],
+   "rating": 4.4,
+   "ratingNum": 733,
+   "ratingCount": "733",
+   "hours": "Mon-Sun 7am-8:30pm",
+   "website": "https://www.facebook.com/share/1AJePSTtKF/",
+   "googleUrl": "https://maps.google.com/?cid=10983760328355282862&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJmVc9DMKn9YgRtnhmN4V39E4",
@@ -15492,6 +18348,26 @@
    "hours": "Mon-Sat 5:30am-7pm · Sun 6am-7pm",
    "website": "https://thehumanbean.com/blogs/stores/ga-cumming-browns-bridge-rd",
    "googleUrl": "https://maps.google.com/?cid=5550177334844793567&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJnSfm1s-T9YgRJGaYZmtTzx8",
+   "name": "Baby Pay's Bakery",
+   "address": "5848 Atlanta Hwy, Flowery Branch, GA 30542, USA",
+   "city": "Flowery Branch",
+   "county": "Hall",
+   "lat": 34.171521,
+   "lng": -83.937159,
+   "category": "Bakery+Cafe",
+   "model": "independent",
+   "types": [
+    "bakery"
+   ],
+   "rating": 5.0,
+   "ratingNum": 1,
+   "ratingCount": "1",
+   "hours": null,
+   "website": null,
+   "googleUrl": "https://maps.google.com/?cid=2292142456102741540&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJnYFN5M2_9YgRL7xUGmVmbGU",
@@ -15972,6 +18848,27 @@
    "googleUrl": "https://maps.google.com/?cid=1100437096883432231&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJo_k2yTP39YgRIvJyQc0syDg",
+   "name": "Farmhouse Coffee®️",
+   "address": "118 Jesse Jewell Pkwy SE Ste 100, Gainesville, GA 30501, USA",
+   "city": "Gainesville",
+   "county": "Hall",
+   "lat": 34.297505,
+   "lng": -83.824369,
+   "category": "Coffee",
+   "model": "independent",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.8,
+   "ratingNum": 215,
+   "ratingCount": "215",
+   "hours": "Mon 6am-12:50pm · Tue-Fri 6am-7pm · Sat 7am-7pm · Sun Closed",
+   "website": "https://order.farmhouse.coffee/order?fulfillmentType=PICKUP",
+   "googleUrl": "https://maps.google.com/?cid=4091569521544065570&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJo_wHMQDh9YgRsEfaxJdbWYU",
    "name": "Treestory Bakery & Cafe",
    "address": "2340 Pleasant Hill Rd, Duluth, GA 30096, USA",
@@ -16011,6 +18908,26 @@
    "hours": "Mon-Sun Open 24 hours",
    "website": "https://sites.google.com/view/gideonsgrub/home",
    "googleUrl": "https://maps.google.com/?cid=12104649674275500379&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJof5b5sLt9YgRfmcjzWuSyhw",
+   "name": "Pearl's Tea - Flowery Branch",
+   "address": "5900 Spout Springs Rd Ste T20, Flowery Branch, GA 30542, USA",
+   "city": "Flowery Branch",
+   "county": "Hall",
+   "lat": 34.175892,
+   "lng": -83.910935,
+   "category": "Tea/Boba",
+   "model": "franchise",
+   "types": [
+    "tea_house"
+   ],
+   "rating": 4.7,
+   "ratingNum": 148,
+   "ratingCount": "148",
+   "hours": "Mon-Sun 11:30am-9pm",
+   "website": "http://www.pearlstea.com/",
+   "googleUrl": "https://maps.google.com/?cid=2074631570058340222&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJoxfvrKSj9YgRhPA6IhI8LK0",
@@ -17354,6 +20271,26 @@
    "signature": "Baladi Cardamom Latte"
   },
   {
+   "placeId": "ChIJsVJCVpNl9YgRnjTUgG5fKo0",
+   "name": "Panaderia Sweet Cake Bakery",
+   "address": "Marietta Hwy, Canton, GA 30114, USA",
+   "city": "Canton",
+   "county": "Cherokee",
+   "lat": 34.224621,
+   "lng": -84.500909,
+   "category": "Bakery+Cafe",
+   "model": "independent",
+   "types": [
+    "bakery"
+   ],
+   "rating": 4.4,
+   "ratingNum": 55,
+   "ratingCount": "55",
+   "hours": "Mon Closed · Tue-Sun 8am-9pm",
+   "website": null,
+   "googleUrl": "https://maps.google.com/?cid=10172047636582118558&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJsW31xJ4_9YgRZCg7UQ3j16k",
    "name": "Wiggin Espresso",
    "address": "3345 Cobb Pkwy NW, Acworth, GA 30101, USA",
@@ -17914,6 +20851,26 @@
    "googleUrl": "https://maps.google.com/?cid=6173072997503417171&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJtfXksqX29YgRMRDRwuhWm-A",
+   "name": "Panaderia y Pasteleria La Esperanza Bakery",
+   "address": "723 Atlanta Hwy, Gainesville, GA 30501, USA",
+   "city": "Gainesville",
+   "county": "Hall",
+   "lat": 34.278055,
+   "lng": -83.840133,
+   "category": "Bakery+Cafe",
+   "model": "independent",
+   "types": [
+    "bakery"
+   ],
+   "rating": 4.2,
+   "ratingNum": 127,
+   "ratingCount": "127",
+   "hours": "Thu-Tue 7:30am-6:30pm · Wed 7:30am-5pm",
+   "website": null,
+   "googleUrl": "https://maps.google.com/?cid=16184625243586891825&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJtwzKWVAT9YgRkarOIOe4aLw",
    "name": "Marietta Donuts ( E Piedmont Rd)",
    "address": "2520 E Piedmont Rd #122, Marietta, GA 30062, USA",
@@ -17932,6 +20889,27 @@
    "hours": "Mon-Sun 6am-3pm",
    "website": null,
    "googleUrl": "https://maps.google.com/?cid=13576304379535731345&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJtxOLbM-J9YgRZbMwNmHSACI",
+   "name": "Starbucks Coffee Company",
+   "address": "215 Marketplace Blvd, Dawsonville, GA 30534, USA",
+   "city": "Dawsonville",
+   "county": "Dawson",
+   "lat": 34.34934,
+   "lng": -84.04965,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.2,
+   "ratingNum": 726,
+   "ratingCount": "726",
+   "hours": "Mon-Fri 4:30am-9pm · Sat-Sun 5am-9pm",
+   "website": "https://www.starbucks.com/store-locator/store/1019185",
+   "googleUrl": "https://maps.google.com/?cid=2450189512252371813&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJtyF_O4o89YgR54fwWMwPwZ0",
@@ -17958,6 +20936,85 @@
    "googleUrl": "https://maps.google.com/?cid=11367384304799746023&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJtzU8wdZ79YgRfX3WX9BD0Jw",
+   "name": "Starbucks Coffee Company",
+   "address": "8020 Cumming Hwy, Canton, GA 30115, USA",
+   "city": "Canton",
+   "county": "Cherokee",
+   "lat": 34.252542,
+   "lng": -84.358137,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 3.8,
+   "ratingNum": 97,
+   "ratingCount": "97",
+   "hours": "Mon-Sun 6am-7pm",
+   "website": "https://www.starbucks.com/store-locator/store/1018675",
+   "googleUrl": "https://maps.google.com/?cid=11299606027312725373&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJu-kBJAts9YgR_DOa0KiKjqs",
+   "name": "Tiny Bubbles Tea Bar",
+   "address": "230 Chambers St, Woodstock, GA 30188, USA",
+   "city": "Woodstock",
+   "county": "Cherokee",
+   "lat": 34.098922,
+   "lng": -84.519217,
+   "category": "Tea/Boba",
+   "model": "independent",
+   "types": [
+    "coffee_shop",
+    "cafe",
+    "tea_house"
+   ],
+   "rating": 4.6,
+   "ratingNum": 832,
+   "ratingCount": "832",
+   "hours": "Mon-Sun 11am-9pm",
+   "website": "http://www.tinybubblesteabar.com/",
+   "googleUrl": "https://maps.google.com/?cid=12361970484837495804&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "good",
+    "note": "Vibrant downtown Woodstock bubble tea lounge with outdoor patio, fast Wi-Fi, and loose-leaf teas.",
+    "hasMeetingRoom": false
+   },
+   "usp": "Specialty loose-leaf tea and handcrafted bubble tea bar on Woodstock's lively Chambers Street.",
+   "loved": [
+    "brown sugar boba",
+    "taro milk tea",
+    "french macarons"
+   ],
+   "signature": "Classic Brown Sugar Milk Tea with Boba"
+  },
+  {
+   "placeId": "ChIJu1oQh2b29YgRWrHWs3AxC3Y",
+   "name": "Dunkin'",
+   "address": "1191 Thompson Bridge Rd, Gainesville, GA 30501, USA",
+   "city": "Gainesville",
+   "county": "Hall",
+   "lat": 34.317258,
+   "lng": -83.830933,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "cafe",
+    "donut_shop",
+    "bakery"
+   ],
+   "rating": 3.9,
+   "ratingNum": 333,
+   "ratingCount": "333",
+   "hours": "Mon-Sun 5am-9pm",
+   "website": "https://www.dunkindonuts.com/locations/us/ga/gainesville/1191-thompson-bridge-rd/store-355280/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=355280&y_source=1_MTIxMTQ2ODgtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=8505946681342603610&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJu4AWXaN19YgRfRijcLCRTDY",
    "name": "Argentis Gluten-Free Bakery",
    "address": "42 Milton Ave Ste. B, Alpharetta, GA 30009, USA",
@@ -17979,6 +21036,26 @@
    "hours": "Mon-Sun 8am-5pm",
    "website": "https://www.argentisbakery.com/",
    "googleUrl": "https://maps.google.com/?cid=3912662363268126845&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJu4JyZtRt9YgRVjCogl_Tp8c",
+   "name": "La Escondida Bakery",
+   "address": "9740 Main St Ste 220, Woodstock, GA 30188, USA",
+   "city": "Woodstock",
+   "county": "Cherokee",
+   "lat": 34.083287,
+   "lng": -84.521053,
+   "category": "Bakery+Cafe",
+   "model": "independent",
+   "types": [
+    "bakery"
+   ],
+   "rating": 4.8,
+   "ratingNum": 44,
+   "ratingCount": "44",
+   "hours": "Mon-Sun 8:30am-9pm",
+   "website": null,
+   "googleUrl": "https://maps.google.com/?cid=14386699941825753174&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJu5LSvJU-9YgRUugyLb1ALAU",
@@ -18087,6 +21164,30 @@
    "googleUrl": "https://maps.google.com/?cid=4811802076751401208&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJuXwfCYZr9YgRTZO_dynByRU",
+   "name": "Dunkin'",
+   "address": "9755 GA-92, Woodstock, GA 30188, USA",
+   "city": "Woodstock",
+   "county": "Cherokee",
+   "lat": 34.086823,
+   "lng": -84.527975,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "cafe",
+    "donut_shop",
+    "bakery"
+   ],
+   "rating": 4.1,
+   "ratingNum": 790,
+   "ratingCount": "790",
+   "hours": "Mon-Sun Open 24 hours",
+   "website": "https://www.dunkindonuts.com/locations/us/ga/woodstock/9755-hwy-92/store-336992/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=336992&y_source=1_MTIxMTEyMDUtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=1569998328962192205&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJubQtGP6h9YgRRx_S_ysj92Q",
    "name": "Piece of Cake Inc.",
    "address": "9775 Medlock Bridge Road Rd Suite N, Johns Creek, Duluth, GA 30097, USA",
@@ -18181,6 +21282,31 @@
    "googleUrl": "https://maps.google.com/?cid=2186434872704334342&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJuym7stxl9YgRB-9q4oeDPrQ",
+   "name": "Crumbl Cookies",
+   "address": "2018 Cumming Hwy #102, Canton, GA 30115, USA",
+   "city": "Canton",
+   "county": "Cherokee",
+   "lat": 34.236658,
+   "lng": -84.45725,
+   "category": "Bakery+Cafe",
+   "model": "franchise",
+   "types": [
+    "dessert_shop",
+    "bakery"
+   ],
+   "rating": 4.8,
+   "ratingNum": 1290,
+   "ratingCount": "1,290",
+   "hours": "Mon-Thu 8am-10pm · Fri-Sat 8am-11pm · Sun Closed",
+   "late": {
+    "tier": "10pm+",
+    "when": "Mon-Sat till 11pm"
+   },
+   "website": "https://crumblcookies.com/",
+   "googleUrl": "https://maps.google.com/?cid=12987962995025571591&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJv7ytaAAJ9YgRAe5TNfDtYGM",
    "name": "Postern Coffee",
    "address": "2421 Van Fleet Cir Ste 124, Doraville, GA 30360, USA",
@@ -18261,6 +21387,26 @@
    "googleUrl": "https://maps.google.com/?cid=2354611928549817143&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJvYi_aApl9YgRf-rY7PzIraI",
+   "name": "134 bakery",
+   "address": "134 Stargaze Ridge, Canton, GA 30114, USA",
+   "city": "Canton",
+   "county": "Cherokee",
+   "lat": 34.279248,
+   "lng": -84.493871,
+   "category": "Bakery+Cafe",
+   "model": "independent",
+   "types": [
+    "bakery"
+   ],
+   "rating": null,
+   "ratingNum": 0,
+   "ratingCount": "0",
+   "hours": "Sun-Fri Closed · Sat 9:30am-1pm",
+   "website": "https://www.facebook.com/search/top?q=134%20bakery",
+   "googleUrl": "https://maps.google.com/?cid=11722246393746221695&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJv_izHwB19YgR4SnpIH9wcos",
    "name": "Cinco de Mayo Bakery",
    "address": "1294 Alpharetta St, Roswell, GA 30075, USA",
@@ -18299,6 +21445,27 @@
    "hours": "Mon 7am-1pm · Tue Closed · Wed-Fri 7am-1pm · Sat-Sun 7am-12pm",
    "website": null,
    "googleUrl": "https://maps.google.com/?cid=17143469131031285795&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJvefrv4X7iaURF55Fry_aKKQ",
+   "name": "The Woodstock Coffee Company",
+   "address": "9550 Main St Ste 190, Woodstock, GA 30188, USA",
+   "city": "Woodstock",
+   "county": "Cherokee",
+   "lat": 34.086974,
+   "lng": -84.520027,
+   "category": "Coffee",
+   "model": "independent",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.7,
+   "ratingNum": 232,
+   "ratingCount": "232",
+   "hours": "Mon-Fri 7am-3pm · Sat-Sun 8am-3pm",
+   "website": "https://www.thewoodstockcoffeecompany.com/",
+   "googleUrl": "https://maps.google.com/?cid=11828944319627501079&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJvetrxYaj9YgRdu9u_PwLsXQ",
@@ -18454,6 +21621,26 @@
    "googleUrl": "https://maps.google.com/?cid=17614386009381503152&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJwU-VrpNt9YgRtavwkeGoWK8",
+   "name": "Pop Chicks Bakery",
+   "address": "117 Mill St Ste 100, Woodstock, GA 30188, USA",
+   "city": "Woodstock",
+   "county": "Cherokee",
+   "lat": 34.100823,
+   "lng": -84.521998,
+   "category": "Bakery+Cafe",
+   "model": "independent",
+   "types": [
+    "bakery"
+   ],
+   "rating": 5.0,
+   "ratingNum": 6,
+   "ratingCount": "6",
+   "hours": "Mon Closed · Tue-Fri 11:30am-7pm · Sat 11:30am-8pm · Sun 12:30-6pm",
+   "website": "https://popchicksbakery.com/",
+   "googleUrl": "https://maps.google.com/?cid=12635034441357503413&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJwYr-_-oN9YgRhN0JIQW_8Ts",
    "name": "Tea Time Marietta",
    "address": "3162 Johnson Ferry Rd Ste 116, Marietta, GA 30062, USA",
@@ -18472,6 +21659,27 @@
    "hours": "Mon Closed · Tue-Sun 12:00-8pm",
    "website": "http://teatimega.com/",
    "googleUrl": "https://maps.google.com/?cid=4319443546375052676&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJwajAeqxx9YgRZ28UUFWwquo",
+   "name": "We2Friends Coffeehouse",
+   "address": "4651 Union Hill Rd, Alpharetta, GA 30004, USA",
+   "city": "Alpharetta",
+   "county": "Cherokee",
+   "lat": 34.1972,
+   "lng": -84.354328,
+   "category": "Coffee",
+   "model": "independent",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.9,
+   "ratingNum": 27,
+   "ratingCount": "27",
+   "hours": "Sun-Tue Closed · Wed-Sat 9am-3pm",
+   "website": "https://we2friendscoffeehouse.com/",
+   "googleUrl": "https://maps.google.com/?cid=16909521631378173799&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJwcB6n6MJ9YgRZaM-QuLrB_U",
@@ -18573,6 +21781,27 @@
    },
    "website": "https://elcafebylaabuela.com/",
    "googleUrl": "https://maps.google.com/?cid=12999610424149019782&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJww_6b8hu9YgRi7kmvAgzIgo",
+   "name": "Starbucks Coffee Company",
+   "address": "4826 Holly Springs Pkwy, Holly Springs, GA 30115, USA",
+   "city": "Holly Springs",
+   "county": "Cherokee",
+   "lat": 34.14456,
+   "lng": -84.51254,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.2,
+   "ratingNum": 622,
+   "ratingCount": "622",
+   "hours": "Mon-Fri 4:30am-8pm · Sat-Sun 5am-8pm",
+   "website": "https://www.starbucks.com/store-locator/store/1017424/",
+   "googleUrl": "https://maps.google.com/?cid=730202202196851083&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJwwfzq9qj9YgRcqNBm5GvaoU",
@@ -19009,6 +22238,30 @@
    "googleUrl": "https://maps.google.com/?cid=12491837646208509003&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJxbpjkDdx9YgR74L0ua5efJs",
+   "name": "Dunkin'",
+   "address": "6110 Hickory Flat Hwy, Canton, GA 30115, USA",
+   "city": "Canton",
+   "county": "Cherokee",
+   "lat": 34.176562,
+   "lng": -84.42153,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "cafe",
+    "donut_shop",
+    "bakery"
+   ],
+   "rating": 4.0,
+   "ratingNum": 390,
+   "ratingCount": "390",
+   "hours": "Mon-Sun Open 24 hours",
+   "website": "https://www.dunkindonuts.com/locations/us/ga/canton/6110-hickory-flat-hwy/store-357384/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=357384&y_source=1_MTI4MjU0ODQtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=11203934077528081135&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJxcJCHi4L9YgRS3JJyrVlxH0",
    "name": "Valor Coffee",
    "address": "5531 Chamblee Dunwoody Rd, Dunwoody, GA 30338, USA",
@@ -19091,6 +22344,27 @@
    "googleUrl": "https://maps.google.com/?cid=2303907868083493371&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJy2Sj9s6J9YgRdyYcUGvCGTQ",
+   "name": "Starbucks",
+   "address": "378 Marketplace Pkwy, Dawsonville, GA 30534, USA",
+   "city": "Dawsonville",
+   "county": "Dawson",
+   "lat": 34.34994,
+   "lng": -84.05316,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.0,
+   "ratingNum": 245,
+   "ratingCount": "245",
+   "hours": "Mon-Sun 6am-8pm",
+   "website": "https://www.starbucks.com/store-locator/store/1016547",
+   "googleUrl": "https://maps.google.com/?cid=3754245530551330423&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJy2VLoSwL9YgROEOVEy_xbI8",
    "name": "Starbucks Coffee Company",
    "address": "1570 Holcomb Bridge Rd, Roswell, GA 30076, USA",
@@ -19110,6 +22384,48 @@
    "hours": "Mon-Sun 5am-8pm",
    "website": "https://www.starbucks.com/store-locator/store/1010171",
    "googleUrl": "https://maps.google.com/?cid=10334900429402751800&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJy4ntBmNjX4gRZXTvw3Is5eI",
+   "name": "BW Blacksmith Coffee Co. Dawsonville, Ga",
+   "address": "200 N 400 Center Ln, Dawsonville, GA 30534, USA",
+   "city": "Dawsonville",
+   "county": "Dawson",
+   "lat": 34.366224,
+   "lng": -84.034854,
+   "category": "Coffee",
+   "model": "independent",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.4,
+   "ratingNum": 209,
+   "ratingCount": "209",
+   "hours": "Mon-Fri 6:30am-7pm · Sat-Sun 7:30am-7pm",
+   "website": "https://bwblacksmith.com/",
+   "googleUrl": "https://maps.google.com/?cid=16349522893663597669&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJy5PDJKJr9YgRkBpN2wP9gIA",
+   "name": "Starbucks Coffee Company",
+   "address": "140 Woodstock Square Ave, Woodstock, GA 30189, USA",
+   "city": "Woodstock",
+   "county": "Cherokee",
+   "lat": 34.085672,
+   "lng": -84.546249,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.2,
+   "ratingNum": 190,
+   "ratingCount": "190",
+   "hours": "Mon-Sun 8am-8pm",
+   "website": "https://www.starbucks.com/store-locator/store/13211",
+   "googleUrl": "https://maps.google.com/?cid=9259679026879732368&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJy6XK9SQU9YgRr0xBd1PvNIc",
@@ -19196,6 +22512,30 @@
    "hours": "Mon-Sun 5am-9pm",
    "website": null,
    "googleUrl": "https://maps.google.com/?cid=10967505386835127032&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJyVoxg-uT9YgRe-hfJnqq8mU",
+   "name": "Dunkin'",
+   "address": "4803 Golden Pkwy, Buford, GA 30518, USA",
+   "city": "Buford",
+   "county": "Hall",
+   "lat": 34.142959,
+   "lng": -83.953299,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "cafe",
+    "donut_shop",
+    "bakery"
+   ],
+   "rating": 2.9,
+   "ratingNum": 340,
+   "ratingCount": "340",
+   "hours": "Mon-Sat 5am-9pm · Sun 6am-9pm",
+   "website": "https://www.dunkindonuts.com/locations/us/ga/buford/4803-golden-parkway/store-358579/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=358579&y_source=1_MTMyNzI1OTktNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=7346121383801251963&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJyW17J_6C9YgRsxl3tS1kJys",
@@ -19287,6 +22627,27 @@
    "googleUrl": "https://maps.google.com/?cid=3533501585497980702&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
+   "placeId": "ChIJyec5pl_t9YgRCG_hR4bmCj4",
+   "name": "Starbucks Coffee Company",
+   "address": "5865 Spout Springs Rd, Flowery Branch, GA 30542, USA",
+   "city": "Flowery Branch",
+   "county": "Hall",
+   "lat": 34.18088,
+   "lng": -83.9105,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "cafe"
+   ],
+   "rating": 4.0,
+   "ratingNum": 297,
+   "ratingCount": "297",
+   "hours": "Mon-Sun 8am-8pm",
+   "website": "https://www.starbucks.com/store-locator/store/6547",
+   "googleUrl": "https://maps.google.com/?cid=4470639044524601096&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
    "placeId": "ChIJywh7BXQN9YgRZKlI-Am_Ebo",
    "name": "Panera Bread",
    "address": "4475 Roswell Rd, Marietta, GA 30062, USA",
@@ -19327,6 +22688,30 @@
    "hours": "Mon-Fri 8:30am-5pm · Sat-Sun Closed",
    "website": "http://elmolinousa.com/",
    "googleUrl": "https://maps.google.com/?cid=9034357568228948924&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJz6Cbvepp9YgRxal26UAdewI",
+   "name": "Dunkin'",
+   "address": "180 Vince Merolla Dr, Canton, GA 30114, USA",
+   "city": "Canton",
+   "county": "Cherokee",
+   "lat": 34.172318,
+   "lng": -84.549026,
+   "category": "Coffee",
+   "model": "franchise",
+   "types": [
+    "coffee_shop",
+    "bagel_shop",
+    "donut_shop",
+    "cafe",
+    "bakery"
+   ],
+   "rating": 3.8,
+   "ratingNum": 218,
+   "ratingCount": "218",
+   "hours": "Mon-Sun Open 24 hours",
+   "website": "https://www.dunkindonuts.com/locations/us/ga/canton/180-vince-merolla-dr/store-356627/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=356627&y_source=1_MTI4MjU1NTItNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+   "googleUrl": "https://maps.google.com/?cid=178768774843247045&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJz84CbDOe9YgRDpeyazTYq3c",
@@ -19633,6 +23018,27 @@
    "hours": "Mon-Sat 5:30am-7pm · Sun 6am-7pm",
    "website": "https://thehumanbean.com/blogs/stores/ga-roswell-holcomb-bridge-road",
    "googleUrl": "https://maps.google.com/?cid=5002930641198621302&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+  },
+  {
+   "placeId": "ChIJzz2TOeJl9YgRkewM7GD-SSA",
+   "name": "Ray's Donuts",
+   "address": "245 Riverstone Pkwy, Canton, GA 30114, USA",
+   "city": "Canton",
+   "county": "Cherokee",
+   "lat": 34.244776,
+   "lng": -84.488373,
+   "category": "Bakery+Cafe",
+   "model": "franchise",
+   "types": [
+    "donut_shop",
+    "bakery"
+   ],
+   "rating": 4.8,
+   "ratingNum": 448,
+   "ratingCount": "448",
+   "hours": "Mon 5am-3pm · Tue Closed · Wed-Sat 5am-3pm · Sun 5:30am-2pm",
+   "website": "https://m.facebook.com/Raysdonutscanton/",
+   "googleUrl": "https://maps.google.com/?cid=2326670374744157329&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   }
  ]
 }

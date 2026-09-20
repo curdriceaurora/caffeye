@@ -75,8 +75,14 @@ class FilterTests(unittest.TestCase):
         self.assertEqual(D.county_label(c, 34.20), "Forsyth")
         c = [comp("Cobb County", "administrative_area_level_2")]
         self.assertEqual(D.county_label(c, 33.95), "Cobb")
+        c = [comp("Cherokee County", "administrative_area_level_2")]
+        self.assertEqual(D.county_label(c, 34.20), "Cherokee")
         c = [comp("Hall County", "administrative_area_level_2")]
-        self.assertIsNone(D.county_label(c, 34.20))
+        self.assertEqual(D.county_label(c, 34.20), "Hall")
+        c = [comp("Dawson County", "administrative_area_level_2")]
+        self.assertEqual(D.county_label(c, 34.40), "Dawson")
+        c = [comp("Clayton County", "administrative_area_level_2")]
+        self.assertIsNone(D.county_label(c, 33.50))
 
     def test_fulton_dekalb_and_cobb_need_the_latitude_cut(self):
         fulton = [comp("Fulton County", "administrative_area_level_2")]
@@ -248,7 +254,7 @@ class RecordTests(unittest.TestCase):
         p["businessStatus"] = "CLOSED_TEMPORARILY"
         self.assertEqual(D.to_record(p)[1], "status:CLOSED_TEMPORARILY")
         p = json.loads(json.dumps(BY_NAME["Sweet Hut Bakery & Cafe"]))
-        p["addressComponents"] = [comp("Hall County", "administrative_area_level_2")]
+        p["addressComponents"] = [comp("Clayton County", "administrative_area_level_2")]
         self.assertEqual(D.to_record(p)[1], "county")
         p = json.loads(json.dumps(BY_NAME["Sweet Hut Bakery & Cafe"]))
         p["displayName"]["text"] = "Kroger Bakery"

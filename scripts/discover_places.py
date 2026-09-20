@@ -65,10 +65,13 @@ REGION = {
         {"api": "Forsyth County", "label": "Forsyth"},
         {"api": "DeKalb County", "label": "DeKalb", "min_lat": 33.90},
         {"api": "Cobb County", "label": "Cobb", "min_lat": 33.86},
+        {"api": "Cherokee County", "label": "Cherokee"},
+        {"api": "Hall County", "label": "Hall"},
+        {"api": "Dawson County", "label": "Dawson"},
     ],
     "note": (
-        "For Fulton, DeKalb, and Cobb only the part north of the top-end Perimeter (I-285) is included: "
-        "Sandy Springs, Dunwoody, Doraville, Roswell, Alpharetta, Johns Creek, Milton, Vinings, Smyrna, Marietta, Kennesaw, and Acworth."
+        "Covers Greater North Atlanta and the North Georgia foothills. For Fulton, DeKalb, and Cobb "
+        "only the part north of the top-end Perimeter (I-285) is included."
     ),
 }
 # (includedType, textQuery). Pass 1 is free, so every in-scope type is queried.
@@ -262,7 +265,8 @@ LOCATIONS = (
     "perimeter", "haynes bridge", "buford", "peachtree", "georgia", "ga", "cumming",
     "doraville", "chamblee", "milton", "crabapple", "loganville", "dacula", "marietta",
     "kennesaw", "acworth", "smyrna", "vinings", "cumberland", "east cobb",
-    "woodstock", "canton", "avalon", "sugarloaf plaza", "town center", "drive thru",
+    "woodstock", "canton", "gainesville", "flowery branch", "ball ground", "holly springs",
+    "oakwood", "dawsonville", "avalon", "sugarloaf plaza", "town center", "drive thru",
 )
 
 FRANCHISE_KEYWORDS = (

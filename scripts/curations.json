@@ -519,6 +519,127 @@
         "cinnamon swirl pastry"
       ],
       "signature": "Marietta Caramel Crunch"
+    },
+    "ChIJg8q-aCRv9YgR2jDqvhGhKbA": {
+      "name": "Alma Coffee",
+      "city": "Canton",
+      "county": "Cherokee",
+      "cw": {
+        "tier": "excellent",
+        "note": "Spacious modern roastery with expansive communal tables, high-speed Wi-Fi, roastery viewing bar, and power outlets throughout.",
+        "hasMeetingRoom": true,
+        "meetingRoomNote": "Cupping lab and conference space reservable for business groups, workshops, and private tastings."
+      },
+      "usp": "5th-generation family farm roastery serving direct-trade Honduran single-origin coffees roasted on site.",
+      "loved": [
+        "cortado",
+        "iced dulce de leche latte",
+        "empanadas"
+      ],
+      "signature": "Cafe con Leche & Dulce de Leche Latte"
+    },
+    "ChIJaWi5PI329YgRNJ9zcbRtfLg": {
+      "name": "Inman Perk Coffee",
+      "city": "Gainesville",
+      "county": "Hall",
+      "cw": {
+        "tier": "excellent",
+        "note": "Two-story historic coffeehouse right on the Gainesville Square with an upstairs study mezzanine, fast Wi-Fi, and cozy work nooks.",
+        "hasMeetingRoom": true,
+        "meetingRoomNote": "Upstairs mezzanine gathering area and meeting space reservable for study groups and business meetings."
+      },
+      "usp": "Gainesville Square's beloved landmark coffeehouse with a multi-level historic layout and artisan espresso.",
+      "loved": [
+        "inman perk blend",
+        "white chocolate mocha",
+        "blueberry muffins"
+      ],
+      "signature": "Square Signature Caramel Macchiato"
+    },
+    "ChIJ21qjzD2J9YgRAEWkTb9IFqs": {
+      "name": "Because Coffee",
+      "city": "Dawsonville",
+      "county": "Dawson",
+      "cw": {
+        "tier": "excellent",
+        "note": "Bright, welcoming specialty cafe with communal workspaces, fast Wi-Fi, power outlets, and mission-driven community ethos.",
+        "hasMeetingRoom": false
+      },
+      "usp": "Dawsonville's premier craft coffeehouse dedicated to quality single-origin roasts and community connection.",
+      "loved": [
+        "pourover",
+        "honey cinnamon latte",
+        "baked goods"
+      ],
+      "signature": "Dawsonville Vanilla Bean Drip"
+    },
+    "ChIJQTLuCE599YgRMaStFaGyVHQ": {
+      "name": "Barrel House Coffee Company",
+      "city": "Ball Ground",
+      "county": "Cherokee",
+      "cw": {
+        "tier": "excellent",
+        "note": "Historic mountain-town roastery with rustic wood seating, fast Wi-Fi, scenic patio, and barrel-aged coffee beans.",
+        "hasMeetingRoom": false
+      },
+      "usp": "Craft artisan roastery in Ball Ground specializing in bourbon-barrel-aged specialty beans and espresso.",
+      "loved": [
+        "barrel-aged cold brew",
+        "flat white",
+        "local scones"
+      ],
+      "signature": "Bourbon Barrel Cold Brew"
+    },
+    "ChIJ__9j61ON9YgR9JyfTETJGLs": {
+      "name": "Whole Being Cafe",
+      "city": "Flowery Branch",
+      "county": "Hall",
+      "cw": {
+        "tier": "excellent",
+        "note": "Scenic historic downtown Flowery Branch cafe near Lake Lanier with work-friendly tables, fast Wi-Fi, and organic fare.",
+        "hasMeetingRoom": false
+      },
+      "usp": "Wellness-centered cafe and coffee bar in historic Flowery Branch steps from Lake Lanier.",
+      "loved": [
+        "organic drip",
+        "golden turmeric latte",
+        "avocado toast"
+      ],
+      "signature": "Lakeside Lavender Honey Latte"
+    },
+    "ChIJOcLV6Qps9YgRm_VF5J0E2l0": {
+      "name": "Pie Bar (Woodstock)",
+      "city": "Woodstock",
+      "county": "Cherokee",
+      "cw": {
+        "tier": "good",
+        "note": "Cozy downtown Woodstock bakery cafe serving artisan pies slice-by-slice alongside locally-roasted drip coffee and espresso.",
+        "hasMeetingRoom": false
+      },
+      "usp": "Downtown Woodstock's iconic handmade pie shop serving sweet and savory slices with specialty coffee.",
+      "loved": [
+        "rustic apple pie",
+        "bourbon pecan slice",
+        "drip coffee"
+      ],
+      "signature": "Slice of Bourbon Pecan Pie with Hot Coffee"
+    },
+    "ChIJu-kBJAts9YgR_DOa0KiKjqs": {
+      "name": "Tiny Bubbles Tea Bar",
+      "city": "Woodstock",
+      "county": "Cherokee",
+      "cw": {
+        "tier": "good",
+        "note": "Vibrant downtown Woodstock bubble tea lounge with outdoor patio, fast Wi-Fi, and loose-leaf teas.",
+        "hasMeetingRoom": false
+      },
+      "usp": "Specialty loose-leaf tea and handcrafted bubble tea bar on Woodstock's lively Chambers Street.",
+      "loved": [
+        "brown sugar boba",
+        "taro milk tea",
+        "french macarons"
+      ],
+      "signature": "Classic Brown Sugar Milk Tea with Boba"
     }
   }
 }
