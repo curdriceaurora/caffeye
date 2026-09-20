@@ -202,6 +202,7 @@ These are decisions, not accidents — don't undo them without reading the linke
 | **`placeLabels()`'s 300-simultaneously-visible-pin safety cap** hides labels above that count rather than running its O(items × angles × obstacles) collision pass — untested against real data today (clustering keeps counts well below 300 in practice, including on the 244-shop test fixture), verify the 300/301 boundary directly per TESTS.md T3.x before relying on it. | Guard the pathological case instead of claiming it's exercised by ordinary use. | §7 |
 | **Mobile: map fixed at 220 px**, panel takes the rest, footer hidden. | Density on phones — iPhone 14 Pro target = 5 cards visible on single-region data; 4 when the County/City row is also shown (see R8.5) — that row costs ~48 px, deliberately not clawed back from card spacing shared with the 5-card baseline. | §4 |
 | **"Until midnight"** is the label for the midnight tier — not "Past midnight" (most close at 12am sharp). | Truth in labeling. | — |
+| **Map bounded to Greater Atlanta (`ATL_BOUNDS`: `[33.25, -85.00]` to `[34.75, -83.30]`)** with `minZoom: 8`, `maxZoom: 19`, and `maxBoundsViscosity: 1.0`. `L.tileLayer` specifies `bounds: ATL_BOUNDS` to prevent fetching or rendering tiles outside the region. `minZoom: 8` ensures mobile's 220px map can display the entire multi-county spread without markers being clipped on initial `fitBounds`. | Prevent stray panning, eliminate unnecessary tile bandwidth, ensure mobile full-extent display. | §3, §4 |
 
 ## Working with the user (Rahul)
 

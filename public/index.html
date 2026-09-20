@@ -863,14 +863,25 @@ function boot() {
   }
 
   // MAP
-  const map = L.map('map', { zoomControl: true }).setView([33.972, -84.142], 13); // initial view; refit to markers below
+  // Bounding box for Greater Atlanta region: bounds panning and restricts tile requests
+  const ATL_BOUNDS = L.latLngBounds([33.25, -85.00], [34.75, -83.30]);
+  const map = L.map('map', {
+    zoomControl: true,
+    minZoom: 8,
+    maxZoom: 19,
+    maxBounds: ATL_BOUNDS,
+    maxBoundsViscosity: 1.0
+  }).setView([33.972, -84.142], 13); // initial view; refit to markers below
   // CARTO's raster basemaps now require a (free, no-account) API key — unauthenticated
   // requests still return 200 but the tile itself is watermarked "API key required".
   // This key is meant to be public client-side, same model as a Google Maps JS key;
   // the security boundary is the fair-use limit + required attribution, not secrecy.
   L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png?key=cb1_3qiv_1_0583eea1ec1b7dd298410338', {
     attribution: '&copy; OpenStreetMap &copy; CARTO',
-    subdomains: 'abcd', maxZoom: 19
+    subdomains: 'abcd',
+    minZoom: 8,
+    maxZoom: 19,
+    bounds: ATL_BOUNDS
   }).addTo(map);
 
   const clusterGroup = L.markerClusterGroup({
@@ -1482,7 +1493,7 @@ function boot() {
   render();
 
   // Expose key globals for console testing and the test suite in TESTS.md.
-  Object.assign(window, { state, SHOPS, ADDR, NEIGHBORHOODS, CATS, CITIES, COUNTIES, REGION_LABEL, map, markers, clusterGroup, selectCity, selectCounty, exceedsLabelSafetyCap, placeLabels });
+  Object.assign(window, { state, SHOPS, ADDR, NEIGHBORHOODS, CATS, CITIES, COUNTIES, REGION_LABEL, map, markers, clusterGroup, selectCity, selectCounty, exceedsLabelSafetyCap, placeLabels, ATL_BOUNDS });
 }
 
 </script>

@@ -29,6 +29,7 @@ Functional and non-functional requirements for the current state of the page. Ea
 | R2.7 | Shops at the same building coords are fanned out in a ~20 m ring so pins don't fully overlap. | Labels must not lie |
 | R2.8 | Tapping a pin selects the shop directly (no preview popup). | One tap to the answer |
 | R2.9 | "Back to list" runs `fitBounds(clusterGroup.getBounds())` to reset the view to all markers. | — |
+| R2.10 | The map zoom is bounded between `minZoom: 8` and `maxZoom: 19`. Viewport panning and tile network requests are strictly bounded to Greater Atlanta via `ATL_BOUNDS` (`[33.25, -85.00]` to `[34.75, -83.30]`) with `maxBoundsViscosity: 1.0`, preventing users from panning away from the coverage area and eliminating unnecessary tile rendering/requests. | Bound performance and avoid stray navigation |
 
 ## R3. Pin labels
 

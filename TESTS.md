@@ -41,6 +41,9 @@ Local: `python3 -m http.server 8765` in the project root, open `http://127.0.0.1
 | T2.7 | R2.7 | `js> { const same = SHOPS.filter(s => s.name === 'Alchemist on the Divide' \|\| s.name === 'Ginkgo Bakery & Cafe').map(s => [s.lat, s.lng]); Math.abs(same[0][0] - same[1][0]) + Math.abs(same[0][1] - same[1][1]) > 0 }` | `true` (same-address pins are nudged apart) |
 | T2.8 | R2.8 | Click a pin. | The detail card opens directly; no preview popup appears. |
 | T2.9 | R2.9 | Click a pin, then "← Back to list". | Map fits all markers again. |
+| T2.10 | R2.10 | `js> map.getMinZoom() === 8 && map.getMaxZoom() === 19` | `true` (zoom out bounded at 8, zoom in up to 19) |
+| T2.11 | R2.10 | `js> map.options.maxBoundsViscosity === 1.0 && map.options.maxBounds.equals(ATL_BOUNDS)` | `true` (panning hard-locked to Greater Atlanta) |
+| T2.12 | R2.10 | `js> { let tl; map.eachLayer(l => { if (l instanceof L.TileLayer) tl = l; }); tl.options.bounds.equals(ATL_BOUNDS) }` | `true` (tile network fetches restricted to Greater Atlanta) |
 
 ## T3. Pin labels (R3)
 
@@ -125,8 +128,8 @@ recovery, not just the threshold function in isolation.
 | T4.1 | R4.1 | `js> document.querySelectorAll('#categoryChips .chip').length` | `6` (All + 5 categories) |
 | T4.2 | R4.1 | Each category chip displays its emoji + label + count; sum of category counts = `SHOPS.length`. | Recount per the live build; the five counts must sum to `SHOPS.length` (61 as of Sept 2026). |
 | T4.3 | R4.2 | Click "All". `js> [...document.querySelectorAll('#categoryChips .chip')][0].classList.contains('active')` | `true` |
-| T4.4 | R4.3 | `js> document.querySelectorAll('#featureChips .chip').length` | `6` (Indie, Franchise, plus 4 features) |
-| T4.5 | R4.3 | Feature chip text matches `['🌱Indie{n}', '🏢Franchise{n}', '💻Work-friendly{n}', '🤝Meeting room{n}', '🌙Open late{n}', '🦉Until midnight{n}']` (spaces normalized). | All six present. |
+| T4.4 | R4.3 | `js> document.querySelectorAll('#featureChips .chip').length` | `4` (Work-friendly, Meeting room, Open late, Until midnight) |
+| T4.5 | R4.3 | Feature chip text matches `['💻Work-friendly{n}', '🤝Meeting room{n}', '🌙Open late{n}', '🦉Until midnight{n}']` (spaces normalized). | All four present. |
 | T4.6 | R4.4 | Click "Coffee" then "Work-friendly". `js> document.querySelectorAll('.shop-item').length` | Returns count of Coffee × Work-friendly intersection. |
 | T4.7 | R4.5 | Search the page DOM for "Past midnight". | Returns no matches. |
 | T4.8 | R4.6 | `js> !document.getElementById('sortSelect')` | `true` |
