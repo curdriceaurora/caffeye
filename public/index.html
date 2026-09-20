@@ -99,6 +99,68 @@
   }
   .freshness { font-size: 12px; color: var(--muted); }
 
+  .header-toggle {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
+  .toggle-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    user-select: none;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text);
+    padding: 4px 8px;
+    border-radius: 6px;
+    transition: background-color 0.15s ease;
+  }
+  .toggle-label:hover {
+    background: rgba(0, 0, 0, 0.04);
+  }
+  .toggle-switch {
+    position: relative;
+    width: 32px;
+    height: 18px;
+    background: #d1d5db;
+    border-radius: 10px;
+    transition: background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    flex-shrink: 0;
+  }
+  .toggle-switch::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 14px;
+    height: 14px;
+    background: #ffffff;
+    border-radius: 50%;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  #franchiseToggle {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+  }
+  #franchiseToggle:checked + .toggle-switch {
+    background: var(--caffeye-forest);
+  }
+  #franchiseToggle:checked + .toggle-switch::after {
+    transform: translateX(14px);
+  }
+  #franchiseToggle:focus-visible + .toggle-switch {
+    outline: 2px solid var(--caffeye-forest);
+    outline-offset: 2px;
+  }
+  .toggle-text-mobile { display: none; }
+
   .filter-bar {
     background: var(--surface);
     border-bottom: 1px solid var(--border);
@@ -370,11 +432,18 @@
   }
 
   @media (max-width: 820px) {
-    header { padding: 6px 14px 5px; flex-wrap: wrap; gap: 4px; }
-    .brand-group { gap: 7px; }
+    header { padding: 6px 12px 5px; flex-wrap: nowrap; justify-content: space-between; gap: 8px; }
+    .brand-group { gap: 6px; }
     .brand-logo { width: 17px; height: 17px; }
-    .brand { font-size: 16px; }
-    .freshness { font-size: 10.5px; }
+    .brand { font-size: 15px; }
+    .freshness { display: none; }
+    .header-toggle { margin-left: auto; }
+    .toggle-label { font-size: 11px; gap: 6px; padding: 2px 4px; }
+    .toggle-switch { width: 28px; height: 16px; }
+    .toggle-switch::after { width: 12px; height: 12px; }
+    #franchiseToggle:checked + .toggle-switch::after { transform: translateX(12px); }
+    .toggle-text-full { display: none; }
+    .toggle-text-mobile { display: inline; }
     .filter-bar { padding: 4px 12px 5px; }
     .filter-row + .filter-row { margin-top: 3px; }
     .filter-label { display: none; }
@@ -408,6 +477,14 @@
       <div class="brand">Coffee in Duluth</div>
     </div>
     <div class="freshness">Loading spots…</div>
+    <div class="header-toggle">
+      <label class="toggle-label" for="franchiseToggle" title="Include chains & franchise stores">
+        <input type="checkbox" id="franchiseToggle" aria-label="Include franchise stores">
+        <span class="toggle-switch"></span>
+        <span class="toggle-text toggle-text-full">Include franchise stores</span>
+        <span class="toggle-text toggle-text-mobile">Franchises</span>
+      </label>
+    </div>
   </header>
 
   <div class="filter-bar">
@@ -601,7 +678,7 @@ function boot() {
   const state = {
     activeCounty: null,          // null = All counties; otherwise the county name
     activeCity: null,            // null = All cities; otherwise the city name
-    activeModel: 'independent',  // Default to Indie only; null = All models; 'independent' or 'franchise'
+    includeFranchises: false,    // Default to Indie only; true = Include franchises
     categories: new Set(),
     features: new Set(),
     search: '',
@@ -756,38 +833,11 @@ function boot() {
     featChipsEl.style.gap = '6px';
     featChipsEl.style.flexWrap = 'wrap';
 
-    const inScope = state.activeCity
+    const inScope = (state.activeCity
       ? SHOPS.filter(s => s.city === state.activeCity)
       : state.activeCounty
       ? SHOPS.filter(s => s.county === state.activeCounty)
-      : SHOPS;
-
-    const indieCount = inScope.filter(s => (s.model || 'independent') === 'independent').length;
-    const franchiseCount = inScope.filter(s => s.model === 'franchise').length;
-
-    featChipsEl.appendChild(makeChip({
-      label: 'Indie', count: indieCount, icon: '🌱', themeColor: '#2e7d4f',
-      onClick: () => {
-        state.activeModel = state.activeModel === 'independent' ? null : 'independent';
-        if (state.selected && state.activeModel && (state.selected.model || 'independent') !== state.activeModel) {
-          deselectShop();
-        }
-        render();
-      },
-      isActive: state.activeModel === 'independent'
-    }));
-
-    featChipsEl.appendChild(makeChip({
-      label: 'Franchise', count: franchiseCount, icon: '🏢', themeColor: '#5a6474',
-      onClick: () => {
-        state.activeModel = state.activeModel === 'franchise' ? null : 'franchise';
-        if (state.selected && state.activeModel && (state.selected.model || 'independent') !== state.activeModel) {
-          deselectShop();
-        }
-        render();
-      },
-      isActive: state.activeModel === 'franchise'
-    }));
+      : SHOPS).filter(s => state.includeFranchises || s.model !== 'franchise');
 
     const workCount = inScope.filter(s => (s.cw||{}).tier === 'excellent').length;
     const meetingCount = inScope.filter(s => (s.cw||{}).hasMeetingRoom).length;
@@ -1059,7 +1109,7 @@ function boot() {
     if (state.activeCounty && s.county !== state.activeCounty) return false;
     if (state.activeCity && s.city !== state.activeCity) return false;
     if (state.categories.size && !state.categories.has(s.category)) return false;
-    if (state.activeModel && (s.model || 'independent') !== state.activeModel) return false;
+    if (!state.includeFranchises && s.model === 'franchise') return false;
     const cw = s.cw || {};
     const ln = s.late;
     if (state.features.has('work') && cw.tier !== 'excellent') return false;
@@ -1398,13 +1448,26 @@ function boot() {
 
   searchInput.addEventListener('input', e => { state.search = e.target.value; renderList(); });
 
+  const franchiseToggle = document.getElementById('franchiseToggle');
+  if (franchiseToggle) {
+    franchiseToggle.checked = state.includeFranchises;
+    franchiseToggle.addEventListener('change', e => {
+      state.includeFranchises = e.target.checked;
+      if (!state.includeFranchises && state.selected && state.selected.model === 'franchise') {
+        deselectShop();
+      }
+      render();
+    });
+  }
+
   const brandHomeBtn = document.getElementById('brandHomeBtn');
   if (brandHomeBtn) {
     const resetAll = (e) => {
       e.preventDefault();
       selectCounty(null);
       selectCity(null);
-      state.activeModel = 'independent';
+      state.includeFranchises = false;
+      if (franchiseToggle) franchiseToggle.checked = false;
       state.categories.clear();
       state.features.clear();
       state.search = '';

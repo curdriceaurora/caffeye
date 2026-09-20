@@ -134,14 +134,14 @@ recovery, not just the threshold function in isolation.
 | T4.10 | R4.7 | On multi-county data with no county selected: `js> document.querySelectorAll('#locationChips .chip').length` | Equals `COUNTIES.length + 1` (just the county chips: "All counties" + one per county) — City chips are not shown yet. County ⊇ City, so showing every city across every county at the same time as every county is redundant, and was measured to cost mobile a visible card (see T8.x). |
 | T4.11 | R4.7 | `js> selectCounty('Gwinnett'); document.getElementById('resultsCount').textContent === String(SHOPS.filter(s => s.county === 'Gwinnett').length)` | `true` — and City chips now appear (drilled down to Gwinnett's cities only), separated from the county chips by a `.chip-divider`. |
 | T4.12 | R4.7 | County and City chips are both children of one `#locationChips` container (a single flex-wrap sequence), not two separately-wrapping sub-containers. | Splitting one row's width between two independently-wrapping boxes was measured to wrap *more* than the combined content needs (74px vs. 48px tall at 375px, same chip set) — packing them as one sequence fixes it. |
-| T4.13 | R4.8 | On load, "🌱 Indie" is active by default: `js> state.activeModel === 'independent' && document.querySelector('#featureChips .chip').classList.contains('active')`. | `true`; all initially rendered cards have `.model-tag.indie`. |
-| T4.14 | R4.8 | Click "🏢 Franchise". Check `document.querySelectorAll('.shop-item').length`. | Matches count on Franchise chip; all rendered cards have `.model-tag.franchise`. |
+| T4.13 | R4.8 | On load, Indie-only is active by default: `js> state.includeFranchises === false && !document.getElementById('franchiseToggle').checked`. | `true`; all initially rendered cards have `.model-tag.indie`. |
+| T4.14 | R4.8 | Flip top-right toggle `#franchiseToggle` (Include franchise stores). Check `document.querySelectorAll('.shop-item').length`. | Matches total shop count (indie + franchise); franchise cards appear with `.model-tag.franchise`. |
 
 ## T5. Right-side list (R5)
 
 | ID | Trace | Test | Pass |
 |---|---|---|---|
-| T5.1 | R5.1 | Hard reload, after settle: `js> document.querySelectorAll('.shop-item').length` | Count of independent shops in scope (matches `[🌱 Indie]` count on boot) |
+| T5.1 | R5.1 | Hard reload, after settle: `js> document.querySelectorAll('.shop-item').length` | Count of independent shops in scope (386 indie spots on boot) |
 | T5.2 | R5.2 | First 3 list items by name. | Top of list reflects weighted-rating order (Yibna Cafe, Incha Duluth, Georgia French Bakery as of Sept 2026). |
 | T5.3 | R5.2 | `js> Math.abs(SHOPS.filter(s=>typeof s.rating==='number').reduce((a,s)=>a+s.rating,0)/SHOPS.filter(s=>typeof s.rating==='number').length - 4.5) < 0.1` | `true` (C ≈ 4.5) |
 | T5.4 | R5.3 | `js> SHOPS.filter(s => s.rating == null).every(s => typeof s.weightedRating === 'number')` | `true` (vacuously true while every shop is rated — as of Sept 2026 none is null; the branch is exercised whenever one is) |
