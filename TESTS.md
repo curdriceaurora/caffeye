@@ -126,21 +126,21 @@ recovery, not just the threshold function in isolation.
 | ID | Trace | Test | Pass |
 |---|---|---|---|
 | T4.1 | R4.1 | `js> document.querySelectorAll('#categoryChips .chip').length` | `6` (All + 5 categories) |
-| T4.2 | R4.1 | Each category chip displays its emoji + label + count; sum of category counts = `SHOPS.length`. | Recount per the live build; the five counts must sum to `SHOPS.length` (61 as of Sept 2026). |
+| T4.2 | R4.1 | Each category chip displays its emoji + label + count; sum of category counts = inScope.length. | Five category counts sum to inScope.length matching the franchise toggle state (571 indie shops when toggle OFF; 1,034 total shops when toggle ON). |
 | T4.3 | R4.2 | Click "All". `js> [...document.querySelectorAll('#categoryChips .chip')][0].classList.contains('active')` | `true` |
 | T4.4 | R4.3 | `js> document.querySelectorAll('#featureChips .chip').length` | `4` (Work-friendly, Meeting room, Open late, Until midnight) |
 | T4.5 | R4.3 | Feature chip text matches `['💻Work-friendly{n}', '🤝Meeting room{n}', '🌙Open late{n}', '🦉Until midnight{n}']` (spaces normalized). | All four present. |
 | T4.6 | R4.4 | Click "Coffee" then "Work-friendly". `js> document.querySelectorAll('.shop-item').length` | Returns count of Coffee × Work-friendly intersection. |
 | T4.7 | R4.5 | Search the page DOM for "Past midnight". | Returns no matches. |
 | T4.8 | R4.6 | `js> !document.getElementById('sortSelect')` | `true` |
-| T4.9 | R4.7 | `js> COUNTIES.length` on single-region data (no `county` field on any shop). | `0` — county chips absent, `#locationRow` shows City chips only (or hides entirely on today's single-city Duluth data, since `showCityRow` is also false). |
-| T4.10 | R4.7 | On multi-county data with no county selected: `js> document.querySelectorAll('#locationChips .chip').length` | Equals `COUNTIES.length + 1` (just the county chips: "All counties" + one per county) — City chips are not shown yet. County ⊇ City, so showing every city across every county at the same time as every county is redundant, and was measured to cost mobile a visible card (see T8.x). |
-| T4.11 | R4.7 | `js> selectCounty('Gwinnett'); document.getElementById('resultsCount').textContent === String(SHOPS.filter(s => s.county === 'Gwinnett').length)` | `true` — and City chips now appear (drilled down to Gwinnett's cities only), separated from the county chips by a `.chip-divider`. |
-| T4.12 | R4.7 | County and City chips are both children of one `#locationChips` container (a single flex-wrap sequence), not two separately-wrapping sub-containers. | Splitting one row's width between two independently-wrapping boxes was measured to wrap *more* than the combined content needs (74px vs. 48px tall at 375px, same chip set) — packing them as one sequence fixes it. |
+| T4.9 | R4.7 | `js> getComputedStyle(document.getElementById('locationRow')).display` | `'none'` — county filter row removed per user preference. |
+| T4.10 | R4.7 | Filter bar presentation: | Only Type and Useful For rows are displayed, maximizing mobile density. |
+| T4.11 | R4.7 | Programmatic county scoping: `js> selectCounty('Gwinnett'); document.getElementById('resultsCount').textContent === String(SHOPS.filter(s => s.county === 'Gwinnett' && (!state.includeFranchises ? s.model !== 'franchise' : true)).length)` | `true` |
+| T4.12 | R4.7 | Filter bar row spacing: `.filter-row[style*="display: none"] + .filter-row` has `margin-top: 0` so the Type row sits flush against the top padding. | `true` |
 | T4.13 | R4.8 | On load, Indie-only is active by default: `js> state.includeFranchises === false && !document.getElementById('franchiseToggle').checked`. | `true`; all initially rendered cards have `.model-tag.indie`. |
 | T4.14 | R4.8 | Flip top-right toggle `#franchiseToggle` (Include franchise stores). Check `document.querySelectorAll('.shop-item').length`. | Matches total shop count (indie + franchise); franchise cards appear with `.model-tag.franchise`. |
 | T4.15 | R4.9 | `js> COUNTIES.length === 8 && ['Gwinnett', 'Fulton', 'Forsyth', 'DeKalb', 'Cobb', 'Cherokee', 'Hall', 'Dawson'].every(c => COUNTIES.includes(c))` | `true` (all 8 North Atlanta & North Georgia counties present) |
-| T4.16 | R4.9 | `js> selectCounty('Cherokee'); state.activeCounty === 'Cherokee' && document.querySelectorAll('.shop-item').length > 0` | `true` (Cherokee places rendered; city drill-down active) |
+| T4.16 | R4.9 | Programmatic county filter: `js> selectCounty('Cherokee'); state.activeCounty === 'Cherokee' && document.querySelectorAll('.shop-item').length > 0` | `true` (Cherokee places rendered; category counts scoped) |
 
 ## T5. Right-side list (R5)
 
@@ -199,8 +199,8 @@ recovery, not just the threshold function in isolation.
 | T8.2 | R8.2 | Width 390 px (mobile). | Column layout: map on top (220 px), panel below filling remainder. |
 | T8.3 | R8.3 | At 390 px width, chip computed font-size. | `11.5px`. |
 | T8.4 | R8.4 | At 390 px width: `js> getComputedStyle(document.querySelector('footer')).display` | `"none"`. |
-| T8.5 | R8.5 | Mobile, 375×812 viewport, single-region data (`#locationRow` hidden — true of every dataset shipped today). Count *fully* visible cards (not merely intersecting the viewport): `js> (() => { const r = document.getElementById('shopList').getBoundingClientRect(); return [...document.querySelectorAll('.shop-item')].filter(li => { const cr = li.getBoundingClientRect(); return cr.top >= r.top - 0.5 && cr.bottom <= r.bottom + 0.5; }).length; })()` | `5` (measured: 356 px available ÷ 68.64 px/card). |
-| T8.5b | R8.5 | Same viewport and card-count snippet, with multi-county data so `#locationRow` is showing. | `4` (measured: 308 px available ÷ 68.64 px/card — the row itself is ~48 px, not clawed back from card spacing shared with T8.5's baseline). A looser "any pixel intersects the viewport" count would read 5 here too and hide this; T8.5/T8.5b must both use the strict full-visibility definition to be comparable. |
+| T8.5 | R8.5 | Mobile, 375×812 viewport with `#locationRow` hidden. Count *fully* visible cards (not merely intersecting the viewport): `js> (() => { const r = document.getElementById('shopList').getBoundingClientRect(); return [...document.querySelectorAll('.shop-item')].filter(li => { const cr = li.getBoundingClientRect(); return cr.top >= r.top - 0.5 && cr.bottom <= r.bottom + 0.5; }).length; })()` | `5` (measured: 356 px available ÷ 68.64 px/card). |
+| T8.5b | R8.5 | Mobile 375×812 viewport preserves 5 visible cards across both Indie-only and Franchise-included modes. | `5` fully visible cards in list view. |
 
 ## T9. Performance & errors (R9)
 
