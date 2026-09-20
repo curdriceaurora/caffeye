@@ -1,0 +1,3 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" role="img"><title>Caffeye adaptive favicon</title><style>:root{color:#293F34}@media(prefers-color-scheme:dark){:root{color:#F4F3ED}}</style><g transform="translate(0 0) scale(1.0)"><defs><mask id="bean" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100"><rect width="100" height="100" fill="white"/><path d="M55 33 L45 67" fill="none" stroke="black" stroke-width="6" stroke-linecap="round"/></mask></defs>
+    <path d="M10 50 Q50 3 90 50 Q50 97 10 50Z" fill="none" stroke="currentColor" stroke-width="9" stroke-linejoin="round"/>
+    <ellipse cx="50" cy="50" rx="15" ry="21" transform="rotate(25 50 50)" fill="currentColor" mask="url(#bean)"/></g></svg>

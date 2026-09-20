@@ -1,0 +1,450 @@
+{
+  "brand": "Caffeye",
+  "version": "1.0.0",
+  "assets": [
+    {
+      "path": "README.md",
+      "bytes": 6202,
+      "sha256": "82dd0629704c014dd14dfad75e67b54dbe3d428ff933e0bed068c30b520a88b5"
+    },
+    {
+      "path": "brand-guide.html",
+      "bytes": 8724,
+      "sha256": "64b8e0f89bb24ee74243a45e39809b638b99ac22d6d53bf213c30ef7a21bd903"
+    },
+    {
+      "path": "fonts/Fraunces-OFL.txt",
+      "bytes": 4391,
+      "sha256": "bdf4c22802eaf804f998195871c6b8938aac2ac14b2d78a8bd66a6f1eced833b"
+    },
+    {
+      "path": "fonts/Fraunces.ttf",
+      "bytes": 360440,
+      "sha256": "177ff6c0f14e5550a3c624247cd1189611d4eb65d000b14944c63d967958abbb"
+    },
+    {
+      "path": "fonts/Inter-OFL.txt",
+      "bytes": 4377,
+      "sha256": "5b9321a4298cfeb6b34354164a1c3afc3db114569984c502b9b35d988fd58c57"
+    },
+    {
+      "path": "fonts/Inter.ttf",
+      "bytes": 876576,
+      "sha256": "29160a80ff49ddcab2c97711247e08b1fab27a484a329ce8b813d820dc559031"
+    },
+    {
+      "path": "icons/apple-touch-icon.png",
+      "bytes": 4937,
+      "sha256": "857ab1a7f94305a9a15d2d702ca4862ad715ae3740804938c0bb0a8011c54b67",
+      "width": 180,
+      "height": 180
+    },
+    {
+      "path": "icons/apple-touch-icon.svg",
+      "bytes": 725,
+      "sha256": "e937ecafb4d6934144eda5a4f9ebd489e49d01a41324358df8d853db9b4b5180"
+    },
+    {
+      "path": "icons/caffeye-app-forest-1024.png",
+      "bytes": 33727,
+      "sha256": "c7cd36218e372149e47a8761aeae0bdff99a6fce7917b7f94a1bef8c27f0040b",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "path": "icons/caffeye-app-forest-1024.svg",
+      "bytes": 714,
+      "sha256": "a7495524b36060fbcb7e31fe25bc32c0c5383b762a4e24f2b8da2220de563742"
+    },
+    {
+      "path": "icons/caffeye-app-paper-1024.png",
+      "bytes": 32743,
+      "sha256": "a3242f403b2aed9fe7972fd3597df44fbc26d2fd69f342437a647f7ec897d8a8",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "path": "icons/caffeye-app-paper-1024.svg",
+      "bytes": 714,
+      "sha256": "5db20913914b5312c8ee8cc8a2cf3677e9611cb11aa2700482eac8d9f870064a"
+    },
+    {
+      "path": "icons/favicon-16.png",
+      "bytes": 477,
+      "sha256": "feb6df04f98edd42de308d3fc65e4daee3c4cadfeb736f26b623719b783e6386",
+      "width": 16,
+      "height": 16
+    },
+    {
+      "path": "icons/favicon-16.svg",
+      "bytes": 641,
+      "sha256": "8286ee22f28ab9b09269d92d54d9886ac66db6b3f68dd2d3639aaea43b2a0dc7"
+    },
+    {
+      "path": "icons/favicon-32.png",
+      "bytes": 1076,
+      "sha256": "39092606687680e110c461fefbf8312379909e1810f0626b8fb21ba38973aa83",
+      "width": 32,
+      "height": 32
+    },
+    {
+      "path": "icons/favicon-32.svg",
+      "bytes": 641,
+      "sha256": "7256a170382205615ae9d901c72b117f5e7f8be6cb7012498670a44d21f1442a"
+    },
+    {
+      "path": "icons/favicon-48.png",
+      "bytes": 1710,
+      "sha256": "b454d5d0c487b0142b070028e83089e4c610ae3bb0089d0f39fbb059644fe460",
+      "width": 48,
+      "height": 48
+    },
+    {
+      "path": "icons/favicon-48.svg",
+      "bytes": 641,
+      "sha256": "950949d8e91b58a3b6547d2dae22695246ba6a3e2f30458f8293655c2f9ef2be"
+    },
+    {
+      "path": "icons/favicon.ico",
+      "bytes": 3117,
+      "sha256": "cce8841db81ab399c6e437781915ef2c1bd62bef886aea3d722f637ce67b4150"
+    },
+    {
+      "path": "icons/favicon.svg",
+      "bytes": 753,
+      "sha256": "032cad403fcb028210cf946a9fa30e14684911638687b2075e4cf0bdaf1c3b89"
+    },
+    {
+      "path": "icons/icon-192.png",
+      "bytes": 5251,
+      "sha256": "b75b8f14121e0ac34be1119c6c1ae09ffa4aef4e685bbbbb91ab2beea550e01f",
+      "width": 192,
+      "height": 192
+    },
+    {
+      "path": "icons/icon-192.svg",
+      "bytes": 753,
+      "sha256": "bfa22bd94e7ef620ed8848a228ebcbe547080780850df692ba71a8a0ffe91cc8"
+    },
+    {
+      "path": "icons/icon-512.png",
+      "bytes": 14921,
+      "sha256": "ba392a182f71e15645d34b7a813b584d2a3379864998ea710324b4c1b5e71952",
+      "width": 512,
+      "height": 512
+    },
+    {
+      "path": "icons/icon-512.svg",
+      "bytes": 725,
+      "sha256": "d536c30c958a97666ca0c810befb2260798be3157a182e81c82b28f1ff49d31b"
+    },
+    {
+      "path": "icons/icon-maskable-512.png",
+      "bytes": 14921,
+      "sha256": "ba392a182f71e15645d34b7a813b584d2a3379864998ea710324b4c1b5e71952",
+      "width": 512,
+      "height": 512
+    },
+    {
+      "path": "icons/icon-maskable-512.svg",
+      "bytes": 725,
+      "sha256": "d536c30c958a97666ca0c810befb2260798be3157a182e81c82b28f1ff49d31b"
+    },
+    {
+      "path": "logos/caffeye-horizontal-black.png",
+      "bytes": 53265,
+      "sha256": "09c6820fb68c182908b8a01f0e825e5d7395f1c976835ac9c7622ee1f9f2f21c",
+      "width": 2280,
+      "height": 704
+    },
+    {
+      "path": "logos/caffeye-horizontal-black.svg",
+      "bytes": 21241,
+      "sha256": "795d1c0a29bc7905bb1988d6540a0bb6a814bcf6a875b9dba61165459a963113"
+    },
+    {
+      "path": "logos/caffeye-horizontal-forest.png",
+      "bytes": 78410,
+      "sha256": "b40b4598caa020296bf7fde241dcaf693554e376999963fa619bf3228e273626",
+      "width": 2280,
+      "height": 704
+    },
+    {
+      "path": "logos/caffeye-horizontal-forest.svg",
+      "bytes": 21242,
+      "sha256": "dbf38e200aa7ccacb89435a0667033f20db164edfc20729dce661b695c631caa"
+    },
+    {
+      "path": "logos/caffeye-horizontal-paper.png",
+      "bytes": 75822,
+      "sha256": "049f8ced3e012175ea34c521bcac6c47ad0fadb9eb4fda98ce3a12056c2f8c39",
+      "width": 2280,
+      "height": 704
+    },
+    {
+      "path": "logos/caffeye-horizontal-paper.svg",
+      "bytes": 21241,
+      "sha256": "305926379efce1bdb296b0d35e670eaa4ebeb43dac90421bd8b648d4a0b77147"
+    },
+    {
+      "path": "logos/caffeye-horizontal-white.png",
+      "bytes": 59239,
+      "sha256": "7c8d896642d8c0367f69265a1be52ca08cb7528145daabbb7feabb469525e619",
+      "width": 2280,
+      "height": 704
+    },
+    {
+      "path": "logos/caffeye-horizontal-white.svg",
+      "bytes": 21241,
+      "sha256": "0022b4f90736b198c68290b40cdadb714794361a391acf7f93f0243289114e8c"
+    },
+    {
+      "path": "logos/caffeye-stacked-black.png",
+      "bytes": 54607,
+      "sha256": "3d9ad720c62cdb7228a474740285988b751fa1bc1a810b04d9216a7b5d5bca0f",
+      "width": 1760,
+      "height": 1160
+    },
+    {
+      "path": "logos/caffeye-stacked-black.svg",
+      "bytes": 21228,
+      "sha256": "64c8c1854e4138854cbbbbd78af40ee890182ec69bed12eaf443215570ce599b"
+    },
+    {
+      "path": "logos/caffeye-stacked-forest.png",
+      "bytes": 80580,
+      "sha256": "875cc515ccff6009a23b63375252f166ef64f1af6df2db9e62d0ab81b5ae74f8",
+      "width": 1760,
+      "height": 1160
+    },
+    {
+      "path": "logos/caffeye-stacked-forest.svg",
+      "bytes": 21229,
+      "sha256": "81a7a7e44f1dade578087b44412e1a3db5cb071747f885a62cb6345c8bec7eec"
+    },
+    {
+      "path": "logos/caffeye-stacked-paper.png",
+      "bytes": 77930,
+      "sha256": "c7f8c871d82987f0120e65a18c5bd8bd560a8cdc74bb3c183a95b9289249e4a5",
+      "width": 1760,
+      "height": 1160
+    },
+    {
+      "path": "logos/caffeye-stacked-paper.svg",
+      "bytes": 21228,
+      "sha256": "826cd050e6a8ad5d994149689ed2469859f8e2e92f9c2e8c6ddfc080b3a91734"
+    },
+    {
+      "path": "logos/caffeye-stacked-white.png",
+      "bytes": 60798,
+      "sha256": "fa2ef5b84894fecd516db141aba115272889a48575c944b174b6c464e72db0e2",
+      "width": 1760,
+      "height": 1160
+    },
+    {
+      "path": "logos/caffeye-stacked-white.svg",
+      "bytes": 21228,
+      "sha256": "2c7d49909070d29380425b76882fec9ce9dd5cf5fc374772c97ac5343e135c4c"
+    },
+    {
+      "path": "logos/caffeye-symbol-black.png",
+      "bytes": 28996,
+      "sha256": "47b5914bd4b8b6f4d75a22cede853c8bd6056f2e5e3a432febcb3328776b3fcc",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "path": "logos/caffeye-symbol-black.svg",
+      "bytes": 670,
+      "sha256": "d78bae97bb8ff3689cf3f828efa05f2e4ea24b83b6061fb0e2a5ef1e50dde8b1"
+    },
+    {
+      "path": "logos/caffeye-symbol-forest.png",
+      "bytes": 41811,
+      "sha256": "1559e603919a5c4766794c105dfc64fb507719c74d28481d2ce9142be82aa83d",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "path": "logos/caffeye-symbol-forest.svg",
+      "bytes": 671,
+      "sha256": "27fed405bd7fda6ed84d844e75775f5739d9776269b28bf50a84d1c329808a44"
+    },
+    {
+      "path": "logos/caffeye-symbol-micro.png",
+      "bytes": 14866,
+      "sha256": "fba5a0830fb81d2d700da433183aea4c2b07c1c7aadebcc93cc5ecb3492cee3a",
+      "width": 400,
+      "height": 400
+    },
+    {
+      "path": "logos/caffeye-symbol-micro.svg",
+      "bytes": 660,
+      "sha256": "e9e7899270ffaaeb867a6eaf42fbcb639a0a6d6726f8dc8a86c675e1a26579d8"
+    },
+    {
+      "path": "logos/caffeye-symbol-paper.png",
+      "bytes": 40305,
+      "sha256": "173850172f86d105c92200205db7f6e4522b0286708591ac276a011eb65aef46",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "path": "logos/caffeye-symbol-paper.svg",
+      "bytes": 670,
+      "sha256": "f5b200716342018b3304e068c48fff4a2104d825469dbae2a1312d8625d1afdd"
+    },
+    {
+      "path": "logos/caffeye-symbol-white.png",
+      "bytes": 32170,
+      "sha256": "b38a261363af3400a94a3bd2c3c7964a3bc890b6b51064bdf792368394135df8",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "path": "logos/caffeye-symbol-white.svg",
+      "bytes": 670,
+      "sha256": "665f7be20a3229bf1c647337212da2040b6439f443e29f857acfcb1165fbd5d0"
+    },
+    {
+      "path": "logos/caffeye-wordmark-black.png",
+      "bytes": 34830,
+      "sha256": "b83e547a6646183939bbc9b0bd7654d2f052ff836702ddaea8a61e22f79d771f",
+      "width": 1620,
+      "height": 608
+    },
+    {
+      "path": "logos/caffeye-wordmark-black.svg",
+      "bytes": 20664,
+      "sha256": "6aaf68908f122e959cf892e78a2fafc49a4b5bed4eff83371c8423372d744ea5"
+    },
+    {
+      "path": "logos/caffeye-wordmark-forest.png",
+      "bytes": 51416,
+      "sha256": "8565dbec9019ef0094f5986f533d955652618459eaae7ff048ef6f6bf33b7903",
+      "width": 1620,
+      "height": 608
+    },
+    {
+      "path": "logos/caffeye-wordmark-forest.svg",
+      "bytes": 20665,
+      "sha256": "0e6dce34206468fa3fab90012c3608b7b6e81e418b40f3fed080bd830bf7c703"
+    },
+    {
+      "path": "logos/caffeye-wordmark-paper.png",
+      "bytes": 49990,
+      "sha256": "119135a18476b483e13db52f2f63a936e424a608574a1833e0ef3ecd3fb01016",
+      "width": 1620,
+      "height": 608
+    },
+    {
+      "path": "logos/caffeye-wordmark-paper.svg",
+      "bytes": 20664,
+      "sha256": "3efb7e6a3c2c2a5cfabe2df08b18faed386a7c9509489a14eb43daa94a6115bf"
+    },
+    {
+      "path": "logos/caffeye-wordmark-white.png",
+      "bytes": 38418,
+      "sha256": "7fd4e3184e6236dd55ee79b0d09cca2c4190e0c7e46cc6716cd9a3693d02fcb7",
+      "width": 1620,
+      "height": 608
+    },
+    {
+      "path": "logos/caffeye-wordmark-white.svg",
+      "bytes": 20664,
+      "sha256": "71eeada0d4b4a179ac985539cf1c4c6d2a62a973a97ffeef6518e18acc605060"
+    },
+    {
+      "path": "previews/brand-board.html",
+      "bytes": 3799,
+      "sha256": "78b4fd5b6c26b1c82dc0e97bd641c2f74e64a85084a2485acaf0dff846f00ce0"
+    },
+    {
+      "path": "previews/brand-board.png",
+      "bytes": 115011,
+      "sha256": "b802bafd3e58503e1f584e473e265e2f25b176b2aec979b95b57ea7cb4f676a3",
+      "width": 1400,
+      "height": 1013
+    },
+    {
+      "path": "previews/brand-guide-desktop.png",
+      "bytes": 533568,
+      "sha256": "b69765517725efdd68d53d15ec5c67606539a34efe48c8ad2208038cd18ae812",
+      "width": 1400,
+      "height": 4894
+    },
+    {
+      "path": "previews/brand-guide-mobile.png",
+      "bytes": 417682,
+      "sha256": "bca019e6721ae535884d1661ff69323c3108aa346ec97555a1bb94f499df247f",
+      "width": 390,
+      "height": 6455
+    },
+    {
+      "path": "social/caffeye-avatar-forest.png",
+      "bytes": 35570,
+      "sha256": "43473184703afc665357eab59942c4537cf26b471a02eae4f687dd206fb52e32",
+      "width": 1080,
+      "height": 1080
+    },
+    {
+      "path": "social/caffeye-avatar-forest.svg",
+      "bytes": 719,
+      "sha256": "103193f33a5b367b23568bcc141d0765f38d47c4d0d3a394ee11fcecfd48ef88"
+    },
+    {
+      "path": "social/caffeye-avatar-paper.png",
+      "bytes": 34830,
+      "sha256": "e2da875184994629acecca69c08c066e9688729039445d2293d205241f572530",
+      "width": 1080,
+      "height": 1080
+    },
+    {
+      "path": "social/caffeye-avatar-paper.svg",
+      "bytes": 719,
+      "sha256": "32875b6c4adb03fb8c6acba5ebe5052c6c155ff02593f8c7402e82de166992b6"
+    },
+    {
+      "path": "social/caffeye-share-1200x630.png",
+      "bytes": 54062,
+      "sha256": "763a3c51f00d9990609602bb29867ec3425fd94caee2aa93f56ce6ed23b6bbf9",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "path": "social/caffeye-share-1200x630.svg",
+      "bytes": 145491,
+      "sha256": "5a553a1584bb422b35c5e5eeee8e951cd6b591e501981802d5669a72ce337ea7"
+    },
+    {
+      "path": "source/build.py",
+      "bytes": 10127,
+      "sha256": "1e956bfd22ded02341c2c2051607c1a84d84e892f0c26d86baebc4cf3430d9c6"
+    },
+    {
+      "path": "source/finish.py",
+      "bytes": 4859,
+      "sha256": "2a479f127ad1f503f15639f9bab6fcbeaa33c1b62b3d035525e7352a6a8f5c9f"
+    },
+    {
+      "path": "source/requirements.txt",
+      "bytes": 54,
+      "sha256": "cad375b301ee464c18889769777cac76dbd7a089d0a514df0843f9ec5b057272"
+    },
+    {
+      "path": "tokens/brand-tokens.css",
+      "bytes": 386,
+      "sha256": "2ae4ffdf014ce906afb8e542db844f062a1c68adf947c198a946eb52802780ba"
+    },
+    {
+      "path": "tokens/brand-tokens.json",
+      "bytes": 630,
+      "sha256": "b2ad2a91b548df52bf76994e35251587f495025d1ed081569adaf68ee0663368"
+    },
+    {
+      "path": "validation.json",
+      "bytes": 496,
+      "sha256": "b3454a25ab8067ef305df7521c291108c6ed4127d6f9e53ec44563384ec0d582"
+    }
+  ]
+}

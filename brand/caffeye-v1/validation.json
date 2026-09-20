@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "raster_assets_checked": 29,
+  "checks": [
+    "SVG parsing, titles and outlined text",
+    "Exact PNG dimensions",
+    "Transparent logo backgrounds and bean seam",
+    "Unclipped logo content",
+    "Opaque app and social backgrounds",
+    "Exact 16/32/48 ICO frames",
+    "Offline guide images load",
+    "Mobile guide has no horizontal overflow",
+    "No preview JavaScript errors"
+  ],
+  "visual_review": "See previews; automated checks supplement visual review."
+}

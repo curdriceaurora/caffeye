@@ -1,0 +1,12 @@
+/* Opt-in Caffeye brand tokens. Does not override application styles. */
+:root {
+  --caffeye-forest: #293F34;
+  --caffeye-gold: #DCAF59;
+  --caffeye-paper: #F4F3ED;
+  --caffeye-ink: #222721;
+  --caffeye-muted: #60645F;
+  --caffeye-white: #FFFFFF;
+  --caffeye-black: #000000;
+  --caffeye-font-display: "Fraunces", Georgia, serif;
+  --caffeye-font-body: "Inter", system-ui, sans-serif;
+}

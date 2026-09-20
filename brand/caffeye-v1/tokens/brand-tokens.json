@@ -1,0 +1,37 @@
+{
+  "version": "1.0.0",
+  "colors": {
+    "forest": "#293F34",
+    "gold": "#DCAF59",
+    "paper": "#F4F3ED",
+    "ink": "#222721",
+    "muted": "#60645F",
+    "white": "#FFFFFF",
+    "black": "#000000"
+  },
+  "typography": {
+    "display": {
+      "family": "Fraunces",
+      "weight": 800,
+      "axes": {
+        "opsz": 72,
+        "SOFT": 50,
+        "WONK": 1
+      }
+    },
+    "body": {
+      "family": "Inter",
+      "weights": [
+        400,
+        500,
+        600
+      ]
+    }
+  },
+  "contrast": {
+    "forest_on_paper": 10.18,
+    "forest_on_gold": 5.56,
+    "white_on_gold": 2.04,
+    "muted_on_paper": 5.42
+  }
+}
