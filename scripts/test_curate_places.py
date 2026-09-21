@@ -106,6 +106,34 @@ class CuratePlacesTests(unittest.TestCase):
         self.assertEqual(res["total_venues"], 3)
         self.assertEqual(res["total_work_friendly"], 1)
 
+    def test_audit_proximity_deduplication_relisted_shop(self):
+        # Base curated shop: "Octane Coffee Bar" at (33.7750, -84.4100)
+        shops = [
+            {"placeId": "curated_octane", "name": "Octane Coffee Bar", "county": "Fulton", "lat": 33.7750, "lng": -84.4100}
+        ]
+
+        # Case 1: Relisted discovered shop under different placeId, co-located (< 60m, diff <= 0.0006)
+        # sharing distinctive name token "octane" -> suppressed as duplicate
+        relisted_places = [
+            {"placeId": "new_octane_pid", "name": "Octane Coffee", "county": "Fulton", "lat": 33.7752, "lng": -84.4102}
+        ]
+        res1 = CP.audit(relisted_places, shops)
+        self.assertEqual(res1["total_venues"], 1)
+
+        # Case 2: Same name token but distant location (> 0.0006) -> not a relist, both kept
+        distant_places = [
+            {"placeId": "distant_octane", "name": "Octane Coffee", "county": "Fulton", "lat": 33.8500, "lng": -84.3500}
+        ]
+        res2 = CP.audit(distant_places, shops)
+        self.assertEqual(res2["total_venues"], 2)
+
+        # Case 3: Co-located (< 60m) but completely distinct name with no shared non-generic token -> both kept
+        colocated_diff_places = [
+            {"placeId": "different_shop", "name": "Completely Different Bakery", "county": "Fulton", "lat": 33.7751, "lng": -84.4101}
+        ]
+        res3 = CP.audit(colocated_diff_places, shops)
+        self.assertEqual(res3["total_venues"], 2)
+
     def test_extract_signals_from_text(self):
         html_sample = """
         <html>

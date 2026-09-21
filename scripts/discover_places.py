@@ -227,7 +227,7 @@ def component(place: dict, kind: str):
 
 
 def county_label(components, lat: float):
-    """Label for an in-region county, or None. Applies the min_lat cut for Fulton/DeKalb."""
+    """Label for an in-region county, or None. Applies the min_lat cut if configured for a county."""
     name = None
     for c in components or []:
         if "administrative_area_level_2" in (c.get("types") or []):
@@ -457,20 +457,6 @@ def compact_hours(weekday_descriptions):
         groups[0][0] = last[0]
     return " · ".join(f"{a}-{b} {s}" if a != b else f"{a} {s}" for a, b, s in groups)
 
-
-def _close_minutes(period: dict):
-    """Close time as minutes after the open day's midnight (>= 1440 means past midnight).
-    Returns '24h' for periods without a closing time, integer minutes, or None."""
-    o, c = period.get("open") or {}, period.get("close")
-    if not o or "day" not in o:
-        return None
-    if not c:
-        return "24h"
-    if "day" not in c:
-        return None
-    return (
-        ((c["day"] - o["day"]) % 7) * 1440 + c.get("hour", 0) * 60 + c.get("minute", 0)
-    )
 
 
 def _parse_periods(periods: list) -> dict:
@@ -1028,13 +1014,15 @@ def main() -> int:
     )
     generated_at = datetime.now(timezone.utc).isoformat(timespec="seconds")
     raw = {}
-    incomplete = False
+    incomplete = True
     try:
         raw = fetch_details(client, plan, raw)
+        incomplete = False
     except FatalApiError as e:
-        incomplete = True
         print(f"ABORTED during pass 2: {e}")
         return 2
+    except BaseException:
+        raise
     finally:
         write_dump(
             raw_path,

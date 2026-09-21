@@ -57,7 +57,7 @@ Functional and non-functional requirements for the current state of the page. Ea
 | R4.6 | Sort controls are intentionally absent. The list is always ordered by Bayesian weighted rating, descending. | The right default |
 | R4.7 | The filter bar presents two streamlined rows: Type (All + 5 categories) and Useful for (4 utility features). County/city filter rows are omitted to preserve vertical space and guarantee at least 5 visible cards on mobile viewports. | Density on phones; clean defaults |
 | R4.8 | Dedicated top-right header toggle switch (`#franchiseToggle`) controls franchise and chain inclusion, defaulting to Indie-only discovery on boot (`state.includeFranchises = false`). "Useful for" section contains only utility feature chips (Work-friendly, Meeting room, Open late, Until midnight). | Clean defaults; truth in labeling |
-| R4.9 | Regional scope covers Metro Atlanta across eight counties (Gwinnett, Fulton, Forsyth, DeKalb, Cobb, Cherokee, Hall, Dawson), encompassing both North Atlanta/North Georgia and central/ITP Atlanta (Downtown, Midtown, West Midtown, Old Fourth Ward, Inman Park, Decatur). | Curated regional discovery |
+| R4.9 | Regional scope covers Metro Atlanta across 14 counties (Gwinnett, Fulton, Forsyth, DeKalb, Cobb, Cherokee, Hall, Dawson, Clayton, Henry, Fayette, Coweta, Douglas, Rockdale), encompassing North Georgia foothills, central/ITP Atlanta (Downtown, Midtown, West Midtown, Old Fourth Ward, Inman Park, Decatur), and South Metro (Clayton, Henry, Fayette, Coweta, Douglas, Rockdale). | Curated regional discovery |
 
 ## R5. Right-side list
 

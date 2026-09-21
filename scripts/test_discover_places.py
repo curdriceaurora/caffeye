@@ -502,6 +502,30 @@ class CrawlTests(unittest.TestCase):
         finally:
             Path(temp_path).unlink(missing_ok=True)
 
+    def test_keyboard_interrupt_during_pass_2_marks_dump_incomplete(self):
+        """Pass 2 interrupted by KeyboardInterrupt must write dump with incomplete: True."""
+        import tempfile
+        from unittest.mock import patch
+
+        with tempfile.NamedTemporaryFile(mode="w", suffix=".json", delete=False) as f:
+            temp_path = f.name
+
+        try:
+            test_args = ["discover_places.py", "--raw", temp_path]
+            with patch("sys.argv", test_args), \
+                 patch("discover_places.load_key", return_value="dummy_key"), \
+                 patch("discover_places.crawl", return_value=[]), \
+                 patch("discover_places.usage_gate", return_value=(True, "")), \
+                 patch("discover_places.fetch_details", side_effect=KeyboardInterrupt):
+                with self.assertRaises(KeyboardInterrupt):
+                    D.main()
+
+            dump = json.loads(Path(temp_path).read_text())
+            self.assertTrue(dump.get("incomplete"))
+        finally:
+            Path(temp_path).unlink(missing_ok=True)
+
+
 
 if __name__ == "__main__":
     unittest.main()
