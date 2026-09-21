@@ -352,11 +352,6 @@
     padding: 10px 16px;
     border-bottom: 1px solid var(--border);
     cursor: pointer; transition: background 150ms var(--ease-out);
-    content-visibility: auto;
-    contain-intrinsic-size: auto 72px;
-  }
-  @supports not (content-visibility: auto) {
-    .shop-item { contain: layout style paint; }
   }
   .load-more {
     padding: 0; border-bottom: none;
@@ -505,14 +500,16 @@
   }
   .leaflet-container.with-labels .pin-label { display: block; }
   .pin.late { box-shadow: 0 0 0 3px rgba(63,79,138,0.32), 0 2px 6px rgba(0,0,0,0.35); }
-  .pin.franchise { border-radius: 7px; }
   .pin.selected {
-    width: 32px; height: 32px; font-size: 16px; border-width: 3px;
+    transform: scale(1.23);
+    border-width: 2.5px;
     box-shadow: 0 0 0 5px rgba(122,86,53,0.32), 0 2px 8px rgba(0,0,0,0.4);
     will-change: transform;
+    z-index: 1000;
   }
-  .pin.franchise.selected { border-radius: 9px; }
+  .pin.franchise.selected { border-radius: 8px; transform: scale(1.23); }
   .pin:hover { transform: scale(1.12); will-change: transform; }
+  .pin.selected:hover { transform: scale(1.28); }
 
   .marker-cluster-small, .marker-cluster-medium, .marker-cluster-large { background: none !important; }
   .marker-cluster-small div, .marker-cluster-medium div, .marker-cluster-large div { background: none !important; }
@@ -1072,8 +1069,8 @@ function boot() {
     return L.divIcon({
       className: '',
       html: `<div class="pin-wrap"><div class="pin${late}${sel}${model}" style="background:${c.hex}">${c.icon}</div><div class="pin-label">${name}</div></div>`,
-      iconSize: isSelected ? [32, 32] : [26, 26],
-      iconAnchor: isSelected ? [16, 16] : [13, 13],
+      iconSize: [26, 26],
+      iconAnchor: [13, 13],
       popupAnchor: [0, -14]
     });
   }
@@ -1092,7 +1089,7 @@ function boot() {
 
   // Fit the map to all markers on first paint (instead of the hardcoded center+zoom)
   if (clusterGroup.getLayers().length > 0) {
-    map.fitBounds(clusterGroup.getBounds(), { padding: [40, 40] });
+    map.fitBounds(clusterGroup.getBounds(), { padding: [40, 40], animate: false });
   }
 
   // Keep the right-hand list in sync with the current map viewport.
@@ -1109,7 +1106,7 @@ function boot() {
           shopListEl.scrollTop = state.lastScrollTop;
         }
         const el = shopListEl.querySelector(`[data-id="${idToFocus}"]`);
-        if (el) el.focus();
+        if (el) el.focus({ preventScroll: true });
       }
     }, 80);
   });
@@ -1292,17 +1289,39 @@ function boot() {
   scheduleLabels();
 
   let selectedMarker = null;
+
+  function updatePinSelectedDOM(marker, isSelected) {
+    if (!marker) return;
+    marker.options.icon = makeIcon(marker.shopRef, isSelected);
+    if (marker._icon) {
+      let pin = marker._pinEl;
+      if (!pin || !pin.isConnected) {
+        pin = marker._icon.querySelector('.pin');
+        marker._pinEl = pin;
+      }
+      if (pin) pin.classList.toggle('selected', isSelected);
+    }
+  }
+
   function setMarkerSelected(shop) {
     const nextMarker = shop ? markerByShopId.get(shop.id) : null;
     if (selectedMarker && selectedMarker !== nextMarker) {
-      selectedMarker.setIcon(makeIcon(selectedMarker.shopRef, false));
+      updatePinSelectedDOM(selectedMarker, false);
       selectedMarker = null;
     }
     if (nextMarker) {
-      nextMarker.setIcon(makeIcon(nextMarker.shopRef, true));
+      updatePinSelectedDOM(nextMarker, true);
       selectedMarker = nextMarker;
     }
   }
+
+  // Ensure selection persists when clusters explode/spiderfy and mount marker DOM
+  clusterGroup.on('layeradd', e => {
+    if (e.layer && e.layer.shopRef && state.selected && e.layer.shopRef.id === state.selected.id) {
+      updatePinSelectedDOM(e.layer, true);
+      selectedMarker = e.layer;
+    }
+  });
 
   // LIST
   const shopListEl = document.getElementById('shopList');
@@ -1367,6 +1386,49 @@ function boot() {
     return arr.slice().sort((x, y) => y.weightedRating - x.weightedRating);
   }
 
+  let lastRenderedShopIds = [];
+  let lastRenderedSelectedId = null;
+
+  function buildShopCard(shop) {
+    const li = document.createElement('li');
+    li.className = 'shop-item' + (state.selected && state.selected.id === shop.id ? ' active' : '');
+    li.dataset.id = shop.id;
+    li.setAttribute('tabindex', '0');
+    li.setAttribute('role', 'button');
+    const catStr = (typeof shop.category === 'string') ? shop.category : '';
+    const cleanCat = catStr.replace('+', ' and ');
+    li.setAttribute('aria-label', `${shop.name}, ${cleanCat} in ${shop.neighborhood}${shop.rated ? `, score ${shop.scoreText}` : ''}`);
+
+    const cat = CATS[shop.category] || {};
+    const catColor = cat.hex || '#999';
+    const catIcon = cat.icon || '';
+    const tags = compactTags(shop);
+    const tagsHtml = tags.map((t, i) => (i > 0 ? '<span class="tag-sep">·</span>' : '') + escapeHtml(t)).join('');
+    const catLabel = escapeHtml(catStr.replace('+', ' & '));
+    const ratingHtml = shop.rated
+      ? `<span class="score">◆ ${shop.scoreText}</span>`
+      : `<span class="muted">no rating</span>`;
+    const modelTag = shop.model === 'franchise'
+      ? ' · <span class="model-tag franchise">Franchise</span>'
+      : ' · <span class="model-tag indie">Indie</span>';
+    const curatedTag = shop.curated ? ' · <span class="curated-tag">✔ curated</span>' : '';
+    li.innerHTML = `
+      <div class="shop-name"><span class="shop-icon-tile" style="background:${catColor}">${catIcon}</span>${escapeHtml(shop.name)}</div>
+      <div class="shop-meta">${catLabel} · ${ratingHtml} · ${escapeHtml(shop.neighborhood)}${modelTag}${curatedTag}</div>
+      <div class="shop-tags">${tagsHtml}</div>
+    `;
+
+    const triggerSelect = () => selectShop(shop);
+    li.addEventListener('click', triggerSelect);
+    li.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        triggerSelect();
+      }
+    });
+    return li;
+  }
+
   function renderList(source) {
     // A fresh filter/search context starts back at the top of the list;
     // explicit "Load more", returning from detail, and viewport updates preserve pagination.
@@ -1400,79 +1462,110 @@ function boot() {
     const shown = filtered.slice(0, state.listLimit);
     const globalCount = cachedGlobalShops ? cachedGlobalShops.length : SHOPS.length;
     const isViewportFiltering = filtered.length < globalCount;
+    const currentSelectedId = state.selected ? state.selected.id : null;
 
-    // Count pop when number changes
+    // Count pop when number changes (Web Animations API: zero forced reflow)
     const prevCount = parseInt(resultsCountEl.textContent) || -1;
     resultsCountEl.textContent = filtered.length;
-    if (filtered.length !== prevCount) {
-      resultsCountEl.classList.remove('count-pop');
-      void resultsCountEl.offsetWidth;
-      resultsCountEl.classList.add('count-pop');
+    if (filtered.length !== prevCount && prevCount !== -1) {
+      if (resultsCountEl.animate && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        resultsCountEl.animate([
+          { transform: 'scale(1)' },
+          { transform: 'scale(1.25)', color: 'var(--accent)' },
+          { transform: 'scale(1)', color: 'inherit' }
+        ], { duration: 250, easing: 'cubic-bezier(0.22, 1, 0.36, 1)' });
+      }
     }
 
-    // Label and pulse: "17 in view" vs "59 spots"
+    // Label and pulse: "17 in view" vs "59 spots" (Web Animations API: zero forced reflow)
     resultsLabelEl.textContent = isViewportFiltering ? ' in view' : ' spots';
     if (source === 'viewport') {
-      resultsMetaEl.classList.remove('viewport-flash');
-      void resultsMetaEl.offsetWidth;
-      resultsMetaEl.classList.add('viewport-flash');
-      clearTimeout(resultsMetaEl._flashTimer);
-      resultsMetaEl._flashTimer = setTimeout(() => {
-        resultsMetaEl.classList.remove('viewport-flash');
-      }, 300);
+      if (resultsMetaEl.animate && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        resultsMetaEl.animate([
+          { background: 'var(--accent-soft)' },
+          { background: 'transparent' }
+        ], { duration: 350, easing: 'cubic-bezier(0.22, 1, 0.36, 1)' });
+      }
     }
 
-    shopListEl.innerHTML = '';
-    if (filtered.length === 0) {
-      const empty = document.createElement('li');
-      empty.className = 'empty-state';
-      empty.innerHTML = '<img src="./brand/logos/caffeye-symbol-forest.svg" alt="" width="28" height="28" style="opacity:0.35;display:block;margin:0 auto 8px;">Nothing here — try zooming out or clearing a filter.';
-      shopListEl.appendChild(empty);
-    }
-    shown.forEach((shop, i) => {
-      const li = document.createElement('li');
-      li.className = 'shop-item' + (state.selected && state.selected.id === shop.id ? ' active' : '');
-      li.style.animationDelay = `${Math.min(i * 28, 140)}ms`;
-      li.dataset.id = shop.id;
-      li.setAttribute('tabindex', '0');
-      li.setAttribute('role', 'button');
-      const catStr = (typeof shop.category === 'string') ? shop.category : '';
-      const cleanCat = catStr.replace('+', ' and ');
-      li.setAttribute('aria-label', `${shop.name}, ${cleanCat} in ${shop.neighborhood}${shop.rated ? `, score ${shop.scoreText}` : ''}`);
-
-      const cat = CATS[shop.category] || {};
-      const catColor = cat.hex || '#999';
-      const catIcon = cat.icon || '';
-      const tags = compactTags(shop);
-      const tagsHtml = tags.map((t, i) => (i > 0 ? '<span class="tag-sep">·</span>' : '') + escapeHtml(t)).join('');
-      const catLabel = escapeHtml(catStr.replace('+', ' & '));
-      // The headline number is OUR score (Bayesian-weighted), not Google's star —
-      // it is what the list is ordered by. Google's raw rating lives only on the
-      // detail card; the results-bar legend explains ◆ (tooltips don't fire on touch).
-      const ratingHtml = shop.rated
-        ? `<span class="score">◆ ${shop.scoreText}</span>`
-        : `<span class="muted">no rating</span>`;
-      const modelTag = shop.model === 'franchise'
-        ? ' · <span class="model-tag franchise">Franchise</span>'
-        : ' · <span class="model-tag indie">Indie</span>';
-      const curatedTag = shop.curated ? ' · <span class="curated-tag">✔ curated</span>' : '';
-      li.innerHTML = `
-        <div class="shop-name"><span class="shop-icon-tile" style="background:${catColor}">${catIcon}</span>${escapeHtml(shop.name)}</div>
-        <div class="shop-meta">${catLabel} · ${ratingHtml} · ${escapeHtml(shop.neighborhood)}${modelTag}${curatedTag}</div>
-        <div class="shop-tags">${tagsHtml}</div>
-      `;
-      
-      const triggerSelect = () => selectShop(shop);
-      li.addEventListener('click', triggerSelect);
-      li.addEventListener('keydown', e => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          triggerSelect();
+    // Fast-path: if displayed ordered IDs, selection state, and list count are identical, skip DOM reconciliation
+    let idsMatch = shown.length === lastRenderedShopIds.length;
+    if (idsMatch) {
+      for (let i = 0; i < shown.length; i++) {
+        if (shown[i].id !== lastRenderedShopIds[i]) {
+          idsMatch = false;
+          break;
         }
-      });
-      
-      shopListEl.appendChild(li);
+      }
+    }
+
+    if (idsMatch && lastRenderedSelectedId === currentSelectedId && source === 'viewport') {
+      if (typeof scheduleLabels === 'function') scheduleLabels();
+      return;
+    }
+
+    // Keyed DOM reconciliation
+    if (filtered.length === 0) {
+      shopListEl.innerHTML = '<li class="empty-state"><img src="./brand/logos/caffeye-symbol-forest.svg" alt="" width="28" height="28" style="opacity:0.35;display:block;margin:0 auto 8px;">Nothing here — try zooming out or clearing a filter.</li>';
+      lastRenderedShopIds = [];
+      lastRenderedSelectedId = currentSelectedId;
+      if (typeof scheduleLabels === 'function') scheduleLabels();
+      return;
+    }
+
+    // Capture focus and scroll anchor before reconciliation
+    let focusedShopId = null;
+    if (document.activeElement && document.activeElement.classList && document.activeElement.classList.contains('shop-item')) {
+      focusedShopId = document.activeElement.dataset.id;
+    }
+
+    let anchorShopId = null;
+    let anchorOffset = 0;
+    const currentItems = shopListEl.querySelectorAll('.shop-item');
+    for (let i = 0; i < currentItems.length; i++) {
+      const item = currentItems[i];
+      if (item.offsetTop + item.offsetHeight > shopListEl.scrollTop) {
+        anchorShopId = item.dataset.id;
+        anchorOffset = shopListEl.scrollTop - item.offsetTop;
+        break;
+      }
+    }
+
+    const emptyEl = shopListEl.querySelector('.empty-state');
+    if (emptyEl) emptyEl.remove();
+
+    const oldMore = shopListEl.querySelector('.load-more');
+    if (oldMore) oldMore.remove();
+
+    // Map existing card elements by data-id
+    const existingMap = new Map();
+    shopListEl.querySelectorAll('.shop-item').forEach(el => {
+      existingMap.set(el.dataset.id, el);
     });
+
+    shown.forEach((shop, i) => {
+      const currentChild = shopListEl.children[i];
+      let li = existingMap.get(shop.id);
+      if (li) {
+        existingMap.delete(shop.id);
+        const shouldBeActive = currentSelectedId === shop.id;
+        if (li.classList.contains('active') !== shouldBeActive) {
+          li.classList.toggle('active', shouldBeActive);
+        }
+        li.style.animation = 'none'; // preserve existing node, do not replay entry animation
+        if (currentChild !== li) {
+          shopListEl.insertBefore(li, currentChild || null);
+        }
+      } else {
+        li = buildShopCard(shop);
+        li.style.animationDelay = `${Math.min(i * 20, 100)}ms`;
+        shopListEl.insertBefore(li, currentChild || null);
+      }
+    });
+
+    // Remove nodes that are no longer in the visible slice
+    existingMap.forEach(el => el.remove());
+
     if (filtered.length > shown.length) {
       const more = document.createElement('li');
       more.className = 'load-more';
@@ -1480,10 +1573,6 @@ function boot() {
       const nextBatch = Math.min(remaining, LIST_PAGE_SIZE);
       more.innerHTML = `<button type="button" class="load-more-btn">Load ${nextBatch} more (${remaining} left)</button>`;
       more.querySelector('button').addEventListener('click', () => {
-        // renderList() rebuilds the whole <ul>, which would otherwise drop focus
-        // to <body> on keyboard activation. Move it to the first newly-revealed
-        // card instead, so keyboard/screen-reader users land where new content
-        // starts rather than losing their place entirely.
         const firstNewIndex = shown.length;
         state.listLimit += LIST_PAGE_SIZE;
         renderList('loadmore');
@@ -1492,6 +1581,27 @@ function boot() {
       });
       shopListEl.appendChild(more);
     }
+
+    // Preserve scroll anchor and keyboard focus
+    if (source === 'filter' || source === 'search') {
+      shopListEl.scrollTop = 0;
+    } else if (anchorShopId) {
+      const anchorEl = shopListEl.querySelector(`[data-id="${anchorShopId}"]`);
+      if (anchorEl) {
+        shopListEl.scrollTop = anchorEl.offsetTop + anchorOffset;
+      }
+    }
+
+    if (focusedShopId) {
+      const focusedEl = shopListEl.querySelector(`[data-id="${focusedShopId}"]`);
+      if (focusedEl && document.activeElement !== focusedEl) {
+        focusedEl.focus({ preventScroll: true });
+      }
+    }
+
+    lastRenderedShopIds = shown.map(s => s.id);
+    lastRenderedSelectedId = currentSelectedId;
+
     if (typeof scheduleLabels === 'function') scheduleLabels();
   }
 
@@ -1586,6 +1696,17 @@ function boot() {
     state.lastScrollTop = shopListEl.scrollTop;
     state.savedListLimit = state.listLimit;
     state.selected = shop;
+
+    // In-place active class update on list cards
+    const prevActive = shopListEl.querySelector('.shop-item.active');
+    if (prevActive && (!shop || prevActive.dataset.id !== shop.id)) {
+      prevActive.classList.remove('active');
+    }
+    if (shop) {
+      const nextActive = shopListEl.querySelector(`.shop-item[data-id="${shop.id}"]`);
+      if (nextActive) nextActive.classList.add('active');
+    }
+
     renderDetail(shop);
     panelEl.classList.add('detail-mode');
     if (listViewEl) listViewEl.setAttribute('inert', '');
@@ -1600,7 +1721,9 @@ function boot() {
     if (opts.recenterMap !== false) {
       const m = markerByShopId.get(shop.id);
       if (m) clusterGroup.zoomToShowLayer(m, () => {
-        map.setView([shop.lat, shop.lng], Math.max(map.getZoom(), 16), { animate: true });
+        if (state.selected && state.selected.id === shop.id) {
+          map.setView([shop.lat, shop.lng], Math.max(map.getZoom(), 16), { animate: true });
+        }
       });
     }
   }
@@ -1608,6 +1731,9 @@ function boot() {
   function deselectShop() {
     const lastSelectedId = state.selected ? state.selected.id : null;
     state.selected = null;
+    const prevActive = shopListEl.querySelector('.shop-item.active');
+    if (prevActive) prevActive.classList.remove('active');
+
     panelEl.classList.remove('detail-mode');
     if (listViewEl) listViewEl.removeAttribute('inert');
     if (detailEl) detailEl.setAttribute('inert', '');
@@ -1625,7 +1751,7 @@ function boot() {
     // Restore keyboard focus to the list item that was open
     if (lastSelectedId) {
       const el = shopListEl.querySelector(`[data-id="${lastSelectedId}"]`);
-      if (el) el.focus();
+      if (el) el.focus({ preventScroll: true });
     }
 
     // Reset the map back to the full-spread view
