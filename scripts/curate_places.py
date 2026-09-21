@@ -28,7 +28,7 @@ CURATIONS_PATH = ROOT / "scripts" / "curations.json"
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from refresh_ratings import norm  # noqa: E402
-from discover_places import ROASTERY_NAMES, SPECIALTY_NAME  # noqa: E402
+from discover_places import ROASTERY_NAMES, ROASTER_NAME, SPECIALTY_NAME  # noqa: E402
 
 
 def load_curations(path=CURATIONS_PATH) -> dict:
@@ -96,7 +96,7 @@ def apply_curations(places: list, curations: dict) -> tuple:
 
 
 def classify_specialty(places: list) -> tuple:
-    """Classifies venues matching roastery, cultural, and concept patterns as 'Specialty'.
+    """Separates Roasters from cultural and concept venues classified as Specialty.
 
     Guards Bakery+Cafe, Dessert Cafe, and Tea/Boba from heuristic name overrides;
     only deliberate curation or explicit roasteries/concept types can cross those category boundaries.
@@ -106,7 +106,7 @@ def classify_specialty(places: list) -> tuple:
     for p in places:
         rec = dict(p)
         current_cat = rec.get("category")
-        if current_cat == "Specialty":
+        if current_cat == "Roasters":
             updated.append(rec)
             continue
 
@@ -117,14 +117,15 @@ def classify_specialty(places: list) -> tuple:
         is_roastery = any(r in n_lower for r in ROASTERY_NAMES)
         is_spec_name = bool(SPECIALTY_NAME.search(name))
 
-        # Guard: Bakery+Cafe, Dessert Cafe, and Tea/Boba are not overridden by generic specialty names
-        if current_cat in ("Bakery+Cafe", "Dessert Cafe", "Tea/Boba"):
-            is_spec = is_concept or is_roastery
-        else:
-            is_spec = is_concept or is_roastery or is_spec_name
-
-        if is_spec:
+        guarded = current_cat in ("Bakery+Cafe", "Dessert Cafe", "Tea/Boba")
+        if is_concept:
             rec["category"] = "Specialty"
+        elif is_roastery or (not guarded and ROASTER_NAME.search(name)):
+            rec["category"] = "Roasters"
+        elif not guarded and is_spec_name:
+            rec["category"] = "Specialty"
+
+        if rec.get("category") != current_cat:
             upgraded += 1
         updated.append(rec)
     return updated, upgraded
@@ -269,8 +270,8 @@ def research_website(url: str, timeout: float = 6.0) -> dict:
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--audit", action="store_true", help="Print coworking, meeting room, and specialty coverage audit")
-    parser.add_argument("--apply", action="store_true", help="Merge curations and classify specialty in public/places.json")
-    parser.add_argument("--classify-specialty", action="store_true", help="Reclassify specialty venues in public/places.json")
+    parser.add_argument("--apply", action="store_true", help="Merge curations and classify roasters and specialty in public/places.json")
+    parser.add_argument("--classify-specialty", action="store_true", help="Reclassify roasters and specialty venues in public/places.json")
     parser.add_argument("--research", type=str, default="", help="Fetch and analyze URL for signals")
     args = parser.parse_args()
 
@@ -314,7 +315,7 @@ def main() -> int:
             places, cur_count = apply_curations(places, curations)
             print(f"Applied {cur_count} curations from {CURATIONS_PATH.name}")
         places, spec_count = classify_specialty(places)
-        print(f"Classified {spec_count} new venues as Specialty")
+        print(f"Reclassified {spec_count} venues as Roasters or Specialty")
         places_data["places"] = places
         PLACES_PATH.write_text(json.dumps(places_data, indent=1, ensure_ascii=False) + "\n")
         print(f"Saved -> {PLACES_PATH} ({PLACES_PATH.stat().st_size // 1024} KB)")

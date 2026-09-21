@@ -125,8 +125,8 @@ recovery, not just the threshold function in isolation.
 
 | ID | Trace | Test | Pass |
 |---|---|---|---|
-| T4.1 | R4.1 | `js> document.querySelectorAll('#categoryChips .chip').length` | `6` (All + 5 categories) |
-| T4.2 | R4.1 | Each category chip displays its emoji + label + count; sum of category counts = inScope.length. | Five category counts sum to inScope.length matching the franchise toggle state (970 indie shops when toggle OFF; 1,705 total shops when toggle ON; or 61 in baseline Duluth mode). Category and feature chip counts intentionally reflect global category totals and ignore search text input. |
+| T4.1 | R4.1 | `js> document.querySelectorAll('#categoryChips .chip').length` | `7` (All + 6 categories) |
+| T4.2 | R4.1 | Each category chip displays its emoji + label + count; sum of category counts = inScope.length. | Six category counts sum to inScope.length matching the franchise toggle state (970 indie shops when toggle OFF; 1,705 total shops when toggle ON; or 61 in baseline Duluth mode). Category and feature chip counts intentionally reflect global category totals and ignore search text input. |
 | T4.3 | R4.2 | Click "All". `js> [...document.querySelectorAll('#categoryChips .chip')][0].classList.contains('active')` | `true` |
 | T4.4 | R4.3 | `js> document.querySelectorAll('#featureChips .chip').length` | `4` (Work-friendly, Meeting room, Open late, Until midnight) |
 | T4.5 | R4.3 | Feature chip text matches `['💻Work-friendly{n}', '🤝Meeting room{n}', '🌙Open late{n}', '🦉Until midnight{n}']` (spaces normalized). | All four present. |
@@ -227,7 +227,7 @@ recovery, not just the threshold function in isolation.
 
 Run after every `wrangler deploy`:
 
-1. Open the live URL on desktop. Expect `SHOPS.length` markers (1,705 across Metro Atlanta as of Sept 2026; 61 in baseline-only mode), all 5 category chips, 4 feature chips, the full list sorted by weighted rating. Results header reads "970 spots" (independent mode on boot; "61 spots" in baseline mode).
+1. Open the live URL on desktop. Expect `SHOPS.length` markers (1,705 across Metro Atlanta as of Sept 2026; 61 in baseline-only mode), all 6 category chips, 4 feature chips, the full list sorted by weighted rating. Results header reads "970 spots" (independent mode on boot; "61 spots" in baseline mode).
 2. Click Bread Museum (or Chrome Yellow in Metro Atlanta) → detail card slides in (list slides left). Click "← Back to list" → list slides back in, map fits bounds.
 3. Click "Until midnight" → expect late-night shops (114 venues across Metro Atlanta; 8 venues in baseline Duluth mode).
 4. Search "matcha" → ≥ 10 results.

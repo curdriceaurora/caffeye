@@ -4,7 +4,7 @@ A one-page, single-tap map of every coffee shop, bakery, and tea house in **Dulu
 
 🌐 **Live:** <https://duluth-coffee-shoppes.sra-e69.workers.dev>
 
-![pin labels avoiding overlap](https://img.shields.io/badge/shops-59-6f4e37) ![category count](https://img.shields.io/badge/categories-5-b89464) ![host](https://img.shields.io/badge/hosted%20on-Cloudflare%20Workers-orange)
+![pin labels avoiding overlap](https://img.shields.io/badge/shops-59-6f4e37) ![category count](https://img.shields.io/badge/categories-6-b89464) ![host](https://img.shields.io/badge/hosted%20on-Cloudflare%20Workers-orange)
 
 ## What it is
 

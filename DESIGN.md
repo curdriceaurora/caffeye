@@ -54,6 +54,7 @@ From `CATS` in `public/index.html`. Each category has both a color and an emoji 
 | Category | Hex | Emoji | CSS token |
 |---|---|---|---|
 | Coffee | `#6f4e37` | ☕ | `--c-coffee` |
+| Roasters | `#a65332` | 🫘 | — |
 | Bakery+Cafe | `#b89464` | 🥐 | `--c-bakery` |
 | Tea/Boba | `#5b8a72` | 🧋 | `--c-tea` |
 | Dessert Cafe | `#c66980` | 🍰 | `--c-dessert` |
@@ -249,7 +250,7 @@ A shop is the only first-class entity. From `public/shops.json`:
   "name": "...",
   "city": "Duluth",
   "addrKey": "duluth-2180-pleasanthill",
-  "category": "Coffee" | "Bakery+Cafe" | "Tea/Boba" | "Dessert Cafe" | "Specialty",
+  "category": "Coffee" | "Roasters" | "Bakery+Cafe" | "Tea/Boba" | "Dessert Cafe" | "Specialty",
   "rating": 4.9, "ratingCount": "190+", "ratingNum": 190,
   "hours": "...", "usp": "...", "signature": "...",
   "loved": ["...", "...", "..."],

@@ -114,11 +114,10 @@ ROASTERY_NAMES = (
     "boarding pass coffee", "land of a thousand hills", "perc coffee",
     "spiller park", "banjo coffee", "taproom coffee", "shiba coffee", "shibam coffee"
 )
+ROASTER_NAME = re.compile(r"\b(roast(ers?|ery|ings?)|perc)\b", re.I)
 SPECIALTY_NAME = re.compile(
     r"\b("
-    r"roast(ers?|ery|ings?)|"
     r"coffee lab|"
-    r"perc|"
     r"yemeni|turkish|arabic|ethiopi\w*|cardamom|cà phê|ca phe|vietnamese coffee|"
     r"cats? (cafe|lounge)|dogs? (cafe|lounge)|craft cafe|board game|ceramics|apothecary|"
     r"specialty (coffee|tea|roast|cafe)"
@@ -271,7 +270,7 @@ def category_for(place: dict):
        Only an explicit roastery match in ROASTERY_NAMES can override them.
     3. Tea/Boba: if primary is tea_house or name matches TEA_NAME, 'Tea/Boba' takes
        precedence over loose cultural/specialty name patterns (e.g. 'Yemeni Boba Tea House' -> 'Tea/Boba').
-    4. Coffee / general cafes: upgraded to 'Specialty' if matching ROASTERY_NAMES or SPECIALTY_NAME.
+    4. Roastery brands and coffee roaster names -> 'Roasters'; cultural/concept names -> 'Specialty'.
     """
     cat = CATEGORY_BY_PRIMARY.get(place.get("primaryType"))
     if not cat:
@@ -289,16 +288,19 @@ def category_for(place: dict):
     # Guard: Bakeries and Dessert cafes don't get converted by generic specialty name patterns
     if cat in ("Bakery+Cafe", "Dessert Cafe"):
         if is_roastery:
-            return "Specialty"
+            return "Roasters"
         return cat
 
     # Precedence: Tea/Boba wins over generic specialty unless it's a known roastery
     if is_tea:
         if is_roastery:
-            return "Specialty"
+            return "Roasters"
         return "Tea/Boba"
 
-    if is_roastery or is_spec_name:
+    if is_roastery or ROASTER_NAME.search(name):
+        return "Roasters"
+
+    if is_spec_name:
         return "Specialty"
 
     return cat

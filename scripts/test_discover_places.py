@@ -72,30 +72,30 @@ class FilterTests(unittest.TestCase):
         self.assertEqual(D.category_for({"primaryType": "cat_cafe"}), "Specialty")
         self.assertEqual(D.category_for({"primaryType": "dog_cafe"}), "Specialty")
         p1 = {"primaryType": "coffee_shop", "displayName": {"text": "East Pole Coffee Co."}}
-        self.assertEqual(D.category_for(p1), "Specialty")
+        self.assertEqual(D.category_for(p1), "Roasters")
         p2 = {"primaryType": "cafe", "displayName": {"text": "Qamaria Yemeni Coffee Co."}}
         self.assertEqual(D.category_for(p2), "Specialty")
         p3 = {"primaryType": "coffee_shop", "displayName": {"text": "Scenttok Craft Cafe"}}
         self.assertEqual(D.category_for(p3), "Specialty")
         p4 = {"primaryType": "cafe", "displayName": {"text": "Radio Roasters Coffee"}}
-        self.assertEqual(D.category_for(p4), "Specialty")
+        self.assertEqual(D.category_for(p4), "Roasters")
 
         # PERC word-boundary token vs substring landmines
-        self.assertEqual(D.category_for({"primaryType": "coffee_shop", "displayName": {"text": "PERC"}}), "Specialty")
-        self.assertEqual(D.category_for({"primaryType": "coffee_shop", "displayName": {"text": "PERC Coffee"}}), "Specialty")
+        self.assertEqual(D.category_for({"primaryType": "coffee_shop", "displayName": {"text": "PERC"}}), "Roasters")
+        self.assertEqual(D.category_for({"primaryType": "coffee_shop", "displayName": {"text": "PERC Coffee"}}), "Roasters")
         self.assertEqual(D.category_for({"primaryType": "coffee_shop", "displayName": {"text": "Percentage Cafe"}}), "Coffee")
         self.assertEqual(D.category_for({"primaryType": "cafe", "displayName": {"text": "The Perch Coffee Shop"}}), "Coffee")
         self.assertEqual(D.category_for({"primaryType": "coffee_shop", "displayName": {"text": "Percolate Coffee"}}), "Coffee")
 
         # Bare "roast" disarmed vs roaster/roasting/roastery
         self.assertEqual(D.category_for({"primaryType": "cafe", "displayName": {"text": "Sunday Roast Cafe"}}), "Coffee")
-        self.assertEqual(D.category_for({"primaryType": "cafe", "displayName": {"text": "Sunday Roasting Cafe"}}), "Specialty")
+        self.assertEqual(D.category_for({"primaryType": "cafe", "displayName": {"text": "Sunday Roasting Cafe"}}), "Roasters")
 
         # Bakery guard: bakeries don't get hijacked by generic specialty name patterns
         self.assertEqual(D.category_for({"primaryType": "bakery", "displayName": {"text": "Sunday Roasters Bakery"}}), "Bakery+Cafe")
         self.assertEqual(D.category_for({"primaryType": "bakery", "displayName": {"text": "Turkish Delight Bakery"}}), "Bakery+Cafe")
         # but deliberate roasteries do upgrade even if primary was bakery
-        self.assertEqual(D.category_for({"primaryType": "bakery", "displayName": {"text": "East Pole Coffee Co"}}), "Specialty")
+        self.assertEqual(D.category_for({"primaryType": "bakery", "displayName": {"text": "East Pole Coffee Co"}}), "Roasters")
 
         # Precedence: Tea/Boba takes precedence over generic specialty
         self.assertEqual(D.category_for({"primaryType": "coffee_shop", "displayName": {"text": "Yemeni Boba Tea House"}}), "Tea/Boba")

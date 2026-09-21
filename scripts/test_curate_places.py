@@ -88,11 +88,25 @@ class CuratePlacesTests(unittest.TestCase):
         classified, count = CP.classify_specialty(places)
         self.assertEqual(count, 3)
         p_map = {p["placeId"]: p["category"] for p in classified}
-        self.assertEqual(p_map["p1"], "Specialty")
+        self.assertEqual(p_map["p1"], "Roasters")
         self.assertEqual(p_map["p2"], "Specialty")
         self.assertEqual(p_map["p3"], "Specialty")
         self.assertEqual(p_map["p4"], "Tea/Boba")
         self.assertEqual(p_map["p5"], "Coffee")
+
+    def test_existing_specialty_roasters_migrate_and_stay_classified(self):
+        places = [
+            {"name": "Radio Roasters Coffee", "category": "Specialty"},
+            {"name": "PERC", "category": "Specialty"},
+            {"name": "Qamaria Yemeni Coffee", "category": "Specialty"},
+            {"name": "Java Cats Cafe", "category": "Specialty", "types": ["cat_cafe"]},
+        ]
+        classified, count = CP.classify_specialty(places)
+        self.assertEqual(count, 2)
+        self.assertEqual([p["category"] for p in classified],
+                         ["Roasters", "Roasters", "Specialty", "Specialty"])
+        self.assertEqual(CP.classify_specialty(classified), (classified, 0))
+        self.assertTrue(all(p["category"] == "Specialty" for p in places))
 
     def test_bakery_and_tea_guards(self):
         # Bakeries, Dessert Cafes, and Tea/Boba must NOT be hijacked by generic specialty name patterns
@@ -109,7 +123,7 @@ class CuratePlacesTests(unittest.TestCase):
         self.assertEqual(p_map["b1"], "Bakery+Cafe")
         self.assertEqual(p_map["d1"], "Dessert Cafe")
         self.assertEqual(p_map["t1"], "Tea/Boba")
-        self.assertEqual(p_map["r1"], "Specialty")
+        self.assertEqual(p_map["r1"], "Roasters")
 
     def test_curation_category_override(self):
         places = [

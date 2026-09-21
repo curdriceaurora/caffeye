@@ -71,7 +71,7 @@
         "butter croissant"
       ],
       "signature": "Warm Waves Signature Pour-Over",
-      "category": "Specialty"
+      "category": "Roasters"
     },
     "ChIJNfDXtVNz9YgRhKlE7GaAsbs": {
       "name": "Crazy Love Coffee House",
@@ -123,7 +123,8 @@
         "caramel macchiato",
         "chicken salad croissant"
       ],
-      "signature": "Kizi Rift Single Origin Pourover"
+      "signature": "Kizi Rift Single Origin Pourover",
+      "category": "Roasters"
     },
     "ChIJH4Tz37R19YgRMb1rXwvp8EA": {
       "name": "Pop's Coffee Co.",
@@ -157,7 +158,8 @@
         "golden milk latte",
         "matcha"
       ],
-      "signature": "Single Origin Espresso"
+      "signature": "Single Origin Espresso",
+      "category": "Roasters"
     },
     "ChIJqYkLfpN19YgRh_faIXBZ08w": {
       "name": "967 Coffee Co",
@@ -416,7 +418,7 @@
         "raspberry scone"
       ],
       "signature": "Marietta Square Dark Roast",
-      "category": "Specialty"
+      "category": "Roasters"
     },
     "ChIJHdL7-dIR9YgR_vIuc67Dle4": {
       "name": "Chattahoochee Coffee Company - Riverside",
@@ -647,7 +649,7 @@
       "name": "East Pole Coffee Co.",
       "city": "Atlanta",
       "county": "Fulton",
-      "category": "Specialty",
+      "category": "Roasters",
       "cw": {
         "tier": "excellent",
         "note": "Spacious communal tables, fast Wi-Fi, abundant natural light, and quiet morning work vibe.",
@@ -665,7 +667,7 @@
       "name": "Chrome Yellow",
       "city": "Atlanta",
       "county": "Fulton",
-      "category": "Specialty",
+      "category": "Roasters",
       "cw": {
         "tier": "excellent",
         "note": "Long wooden work bar, reliable Wi-Fi, power strips, and great ambient indie playlist.",
@@ -683,7 +685,7 @@
       "name": "Portrait Coffee",
       "city": "Atlanta",
       "county": "Fulton",
-      "category": "Specialty",
+      "category": "Roasters",
       "cw": {
         "tier": "good",
         "note": "Cozy neighborhood gathering space with good Wi-Fi, friendly baristas, and community focus.",
@@ -701,7 +703,7 @@
       "name": "Bellwood Coffee - Riverside",
       "city": "Atlanta",
       "county": "Fulton",
-      "category": "Specialty",
+      "category": "Roasters",
       "cw": {
         "tier": "excellent",
         "note": "Comfortable indoor tables and expansive covered patio with solid Wi-Fi and power.",
@@ -719,7 +721,7 @@
       "name": "Bellwood Coffee - Grant Park",
       "city": "Atlanta",
       "county": "Fulton",
-      "category": "Specialty",
+      "category": "Roasters",
       "cw": {
         "tier": "good",
         "note": "Intimate seating with neighborhood park-goer energy; great for quick laptop sessions.",
@@ -737,7 +739,7 @@
       "name": "BRASH Coffee",
       "city": "Atlanta",
       "county": "Fulton",
-      "category": "Specialty",
+      "category": "Roasters",
       "cw": {
         "tier": "good",
         "note": "Compact footprint with outdoor bench seating and quick-grab laptop focus.",
@@ -755,7 +757,7 @@
       "name": "Dancing Goats Ponce City Market",
       "city": "Atlanta",
       "county": "Fulton",
-      "category": "Specialty",
+      "category": "Roasters",
       "cw": {
         "tier": "excellent",
         "note": "Iconic screened porch with Adirondack chairs, porch swings, fast Wi-Fi, and endless power.",
@@ -773,7 +775,7 @@
       "name": "Dancing Goats Decatur",
       "city": "Decatur",
       "county": "DeKalb",
-      "category": "Specialty",
+      "category": "Roasters",
       "cw": {
         "tier": "excellent",
         "note": "Generous work tables, fast Wi-Fi, ample power outlets, and a relaxed college-town vibe.",
@@ -791,7 +793,7 @@
       "name": "Radio Roasters Coffee",
       "city": "Decatur",
       "county": "DeKalb",
-      "category": "Specialty",
+      "category": "Roasters",
       "cw": {
         "tier": "good",
         "note": "Focused, roaster-forward tasting room with bar seating, Wi-Fi, and coffee geek conversations.",
@@ -938,7 +940,7 @@
       "name": "Mzizi Coffee Roaster",
       "city": "Marietta",
       "county": "Cobb",
-      "category": "Specialty",
+      "category": "Roasters",
       "cw": {
         "tier": "good",
         "note": "Welcoming neighborhood roastery with dedicated work counter and Wi-Fi.",
@@ -992,7 +994,7 @@
       "name": "Zoom Coffee Roasters",
       "city": "Suwanee",
       "county": "Gwinnett",
-      "category": "Specialty",
+      "category": "Roasters",
       "cw": {
         "tier": "excellent",
         "note": "Quiet, minimalist study aesthetic with laptop-friendly desks, fast Wi-Fi, and outlets.",
@@ -1029,7 +1031,7 @@
       "name": "Peach Coffee Roasters",
       "city": "Johns Creek",
       "county": "Fulton",
-      "category": "Specialty",
+      "category": "Roasters",
       "cw": {
         "tier": "excellent",
         "note": "Spacious suburban roastery with plenty of outlets, strong Wi-Fi, and sunny work tables.",

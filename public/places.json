@@ -364,7 +364,7 @@
    "county": "Forsyth",
    "lat": 34.11078,
    "lng": -84.223702,
-   "category": "Specialty",
+   "category": "Roasters",
    "model": "franchise",
    "types": [
     "coffee_shop",
@@ -386,7 +386,7 @@
    "neighborhood": "Old Fourth Ward",
    "lat": 33.753927,
    "lng": -84.371011,
-   "category": "Specialty",
+   "category": "Roasters",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -488,7 +488,7 @@
    "neighborhood": "Buckhead",
    "lat": 33.850606,
    "lng": -84.375069,
-   "category": "Specialty",
+   "category": "Roasters",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -1504,7 +1504,7 @@
    "neighborhood": "West End",
    "lat": 33.738506,
    "lng": -84.422642,
-   "category": "Specialty",
+   "category": "Roasters",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -2628,7 +2628,7 @@
    "county": "Fulton",
    "lat": 34.093073,
    "lng": -84.282328,
-   "category": "Specialty",
+   "category": "Roasters",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -3443,7 +3443,7 @@
    "neighborhood": "Grant Park",
    "lat": 33.739005,
    "lng": -84.367862,
-   "category": "Specialty",
+   "category": "Roasters",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -3640,7 +3640,7 @@
    "neighborhood": "Midtown Atlanta",
    "lat": 33.785563,
    "lng": -84.389436,
-   "category": "Specialty",
+   "category": "Roasters",
    "model": "franchise",
    "types": [
     "coffee_shop",
@@ -4910,7 +4910,7 @@
    "neighborhood": "Buckhead",
    "lat": 33.81046,
    "lng": -84.433807,
-   "category": "Specialty",
+   "category": "Roasters",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -5373,7 +5373,7 @@
    "county": "Gwinnett",
    "lat": 34.024938,
    "lng": -84.043764,
-   "category": "Specialty",
+   "category": "Roasters",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -6634,7 +6634,7 @@
    "neighborhood": "Midtown Atlanta",
    "lat": 33.794116,
    "lng": -84.386951,
-   "category": "Specialty",
+   "category": "Roasters",
    "model": "franchise",
    "types": [
     "coffee_shop",
@@ -7178,7 +7178,7 @@
    "county": "DeKalb",
    "lat": 33.797582,
    "lng": -84.323544,
-   "category": "Specialty",
+   "category": "Roasters",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -7598,7 +7598,7 @@
    "neighborhood": "Grant Park",
    "lat": 33.746093,
    "lng": -84.370273,
-   "category": "Specialty",
+   "category": "Roasters",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -9367,7 +9367,7 @@
    "neighborhood": "Old Fourth Ward",
    "lat": 33.772954,
    "lng": -84.365335,
-   "category": "Specialty",
+   "category": "Roasters",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -10084,7 +10084,7 @@
    "neighborhood": "Old Fourth Ward",
    "lat": 33.771513,
    "lng": -84.367403,
-   "category": "Specialty",
+   "category": "Roasters",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -10266,7 +10266,7 @@
    "neighborhood": "Riverside",
    "lat": 33.810283,
    "lng": -84.476704,
-   "category": "Specialty",
+   "category": "Roasters",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -10983,7 +10983,7 @@
    "county": "DeKalb",
    "lat": 33.775842,
    "lng": -84.271281,
-   "category": "Specialty",
+   "category": "Roasters",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -11193,7 +11193,7 @@
    "county": "Gwinnett",
    "lat": 34.003359,
    "lng": -84.14583,
-   "category": "Specialty",
+   "category": "Roasters",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -11697,7 +11697,7 @@
    "neighborhood": "Georgia Tech",
    "lat": 33.780821,
    "lng": -84.398406,
-   "category": "Specialty",
+   "category": "Roasters",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -11890,7 +11890,7 @@
    "neighborhood": "Buckhead",
    "lat": 33.802793,
    "lng": -84.393155,
-   "category": "Specialty",
+   "category": "Roasters",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -12267,7 +12267,7 @@
    "neighborhood": "Old Fourth Ward",
    "lat": 33.757405,
    "lng": -84.365215,
-   "category": "Specialty",
+   "category": "Roasters",
    "model": "franchise",
    "types": [
     "coffee_shop",
@@ -12887,7 +12887,7 @@
    "neighborhood": "Buckhead",
    "lat": 33.802314,
    "lng": -84.428871,
-   "category": "Specialty",
+   "category": "Roasters",
    "model": "franchise",
    "types": [
     "coffee_shop",
@@ -12909,7 +12909,7 @@
    "neighborhood": "Old Fourth Ward",
    "lat": 33.770843,
    "lng": -84.369931,
-   "category": "Specialty",
+   "category": "Roasters",
    "model": "franchise",
    "types": [
     "coffee_shop",
@@ -13650,7 +13650,7 @@
    "neighborhood": "Buckhead",
    "lat": 33.851184,
    "lng": -84.360904,
-   "category": "Specialty",
+   "category": "Roasters",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -13889,7 +13889,7 @@
    "county": "Fulton",
    "lat": 34.008348,
    "lng": -84.360204,
-   "category": "Specialty",
+   "category": "Roasters",
    "model": "franchise",
    "types": [
     "coffee_shop",
@@ -15982,7 +15982,7 @@
    "county": "Fulton",
    "lat": 34.044203,
    "lng": -84.22433,
-   "category": "Specialty",
+   "category": "Roasters",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -17339,7 +17339,7 @@
    "county": "Gwinnett",
    "lat": 34.045631,
    "lng": -84.083339,
-   "category": "Specialty",
+   "category": "Roasters",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -17741,7 +17741,7 @@
    "county": "Fulton",
    "lat": 34.067744,
    "lng": -84.259982,
-   "category": "Specialty",
+   "category": "Roasters",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -19452,7 +19452,7 @@
    "county": "Fulton",
    "lat": 34.066672,
    "lng": -84.261324,
-   "category": "Specialty",
+   "category": "Roasters",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -20450,7 +20450,7 @@
    "neighborhood": "Downtown Decatur",
    "lat": 33.775363,
    "lng": -84.295726,
-   "category": "Specialty",
+   "category": "Roasters",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -20658,7 +20658,7 @@
    "neighborhood": "East Lake",
    "lat": 33.751289,
    "lng": -84.309373,
-   "category": "Specialty",
+   "category": "Roasters",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -21048,7 +21048,7 @@
    "county": "Hall",
    "lat": 34.298937,
    "lng": -83.82679,
-   "category": "Specialty",
+   "category": "Roasters",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -22074,7 +22074,7 @@
    "county": "Cobb",
    "lat": 33.953127,
    "lng": -84.55073,
-   "category": "Specialty",
+   "category": "Roasters",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -22739,7 +22739,7 @@
    "neighborhood": "Midtown Atlanta",
    "lat": 33.774059,
    "lng": -84.38449,
-   "category": "Specialty",
+   "category": "Roasters",
    "model": "franchise",
    "types": [
     "coffee_shop",
@@ -23054,7 +23054,7 @@
    "neighborhood": "Buckhead",
    "lat": 33.810817,
    "lng": -84.378806,
-   "category": "Specialty",
+   "category": "Roasters",
    "model": "independent",
    "types": [
     "cafe",
@@ -23512,7 +23512,7 @@
    "neighborhood": "Home Park",
    "lat": 33.785553,
    "lng": -84.411948,
-   "category": "Specialty",
+   "category": "Roasters",
    "model": "franchise",
    "types": [
     "coffee_shop",
@@ -24654,7 +24654,7 @@
    "neighborhood": "Peachtree Center",
    "lat": 33.759005,
    "lng": -84.387194,
-   "category": "Specialty",
+   "category": "Roasters",
    "model": "franchise",
    "types": [
     "coffee_shop",
@@ -25154,7 +25154,7 @@
    "county": "DeKalb",
    "lat": 33.852844,
    "lng": -84.214663,
-   "category": "Specialty",
+   "category": "Roasters",
    "model": "franchise",
    "types": [
     "coffee_shop",
@@ -25538,7 +25538,7 @@
    "neighborhood": "West End",
    "lat": 33.730077,
    "lng": -84.419127,
-   "category": "Specialty",
+   "category": "Roasters",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -25672,7 +25672,7 @@
    "county": "Forsyth",
    "lat": 34.125022,
    "lng": -84.169102,
-   "category": "Specialty",
+   "category": "Roasters",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -25757,7 +25757,7 @@
    "county": "Gwinnett",
    "lat": 33.957773,
    "lng": -83.98989,
-   "category": "Specialty",
+   "category": "Roasters",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -26298,7 +26298,7 @@
    "neighborhood": "Downtown Decatur",
    "lat": 33.775928,
    "lng": -84.303255,
-   "category": "Specialty",
+   "category": "Roasters",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -26523,7 +26523,7 @@
    "neighborhood": "Candler Park",
    "lat": 33.7625,
    "lng": -84.333333,
-   "category": "Specialty",
+   "category": "Roasters",
    "model": "franchise",
    "types": [
     "coffee_shop",
@@ -26616,7 +26616,7 @@
    "neighborhood": "Kirkwood",
    "lat": 33.751578,
    "lng": -84.323209,
-   "category": "Specialty",
+   "category": "Roasters",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -26759,7 +26759,7 @@
    "county": "Forsyth",
    "lat": 34.092312,
    "lng": -84.169762,
-   "category": "Specialty",
+   "category": "Roasters",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -27227,7 +27227,7 @@
    "neighborhood": "Virginia-Highland",
    "lat": 33.787337,
    "lng": -84.355499,
-   "category": "Specialty",
+   "category": "Roasters",
    "model": "franchise",
    "types": [
     "coffee_shop",
@@ -28355,7 +28355,7 @@
    "county": "Fulton",
    "lat": 34.074533,
    "lng": -84.293402,
-   "category": "Specialty",
+   "category": "Roasters",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -28538,7 +28538,7 @@
    "neighborhood": "Buckhead",
    "lat": 33.840581,
    "lng": -84.375803,
-   "category": "Specialty",
+   "category": "Roasters",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -31781,7 +31781,7 @@
    "county": "Clayton",
    "lat": 33.639137,
    "lng": -84.429403,
-   "category": "Specialty",
+   "category": "Roasters",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -32080,7 +32080,7 @@
    "county": "Gwinnett",
    "lat": 34.053067,
    "lng": -84.068918,
-   "category": "Specialty",
+   "category": "Roasters",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -32180,7 +32180,7 @@
    "county": "Cobb",
    "lat": 34.022156,
    "lng": -84.427127,
-   "category": "Specialty",
+   "category": "Roasters",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -32628,7 +32628,7 @@
    "neighborhood": "South Downtown",
    "lat": 33.752379,
    "lng": -84.395146,
-   "category": "Specialty",
+   "category": "Roasters",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -32743,7 +32743,7 @@
    "neighborhood": "Buckhead",
    "lat": 33.841964,
    "lng": -84.385844,
-   "category": "Specialty",
+   "category": "Roasters",
    "model": "franchise",
    "types": [
     "coffee_shop",
@@ -34337,7 +34337,7 @@
    "neighborhood": "Midtown Atlanta",
    "lat": 33.780428,
    "lng": -84.38683,
-   "category": "Specialty",
+   "category": "Roasters",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -34541,7 +34541,7 @@
    "county": "Fulton",
    "lat": 34.076966,
    "lng": -84.294831,
-   "category": "Specialty",
+   "category": "Roasters",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -34658,7 +34658,7 @@
    "county": "Gwinnett",
    "lat": 34.001442,
    "lng": -84.146361,
-   "category": "Specialty",
+   "category": "Roasters",
    "model": "franchise",
    "types": [
     "coffee_shop",
@@ -34728,7 +34728,7 @@
    "neighborhood": "Buckhead",
    "lat": 33.87493,
    "lng": -84.379668,
-   "category": "Specialty",
+   "category": "Roasters",
    "model": "franchise",
    "types": [
     "coffee_shop",
@@ -35155,7 +35155,7 @@
    "county": "DeKalb",
    "lat": 33.782934,
    "lng": -84.271676,
-   "category": "Specialty",
+   "category": "Roasters",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -35421,7 +35421,7 @@
    "neighborhood": "Buckhead Heights",
    "lat": 33.847272,
    "lng": -84.357245,
-   "category": "Specialty",
+   "category": "Roasters",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -35883,7 +35883,7 @@
    "neighborhood": "Virginia-Highland",
    "lat": 33.783196,
    "lng": -84.354739,
-   "category": "Specialty",
+   "category": "Roasters",
    "model": "franchise",
    "types": [
     "coffee_shop",
@@ -36066,7 +36066,7 @@
    "county": "Douglas",
    "lat": 33.736442,
    "lng": -84.793312,
-   "category": "Specialty",
+   "category": "Roasters",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -36170,7 +36170,7 @@
    "neighborhood": "Toco Hills",
    "lat": 33.815326,
    "lng": -84.311954,
-   "category": "Specialty",
+   "category": "Roasters",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -37030,7 +37030,7 @@
    "county": "Gwinnett",
    "lat": 34.007737,
    "lng": -84.128918,
-   "category": "Specialty",
+   "category": "Roasters",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -37052,7 +37052,7 @@
    "neighborhood": "Poncey-Highland",
    "lat": 33.772843,
    "lng": -84.352778,
-   "category": "Specialty",
+   "category": "Roasters",
    "model": "independent",
    "types": [
     "coffee_shop",

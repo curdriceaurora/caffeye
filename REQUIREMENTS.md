@@ -22,7 +22,7 @@ Functional and non-functional requirements for the current state of the page. Ea
 |---|---|---|
 | R2.1 | The map uses Leaflet with CARTO light tiles and MarkerCluster. | — |
 | R2.2 | On first paint, the map fits all 59 markers (`fitBounds` with 40 px padding). | Show what's available |
-| R2.3 | Each marker is a 26 px circular pin in the category color with the category emoji centered inside (☕ Coffee, 🥐 Bakery & Cafe, 🧋 Tea/Boba, 🍰 Dessert Cafe, ✦ Specialty). | Playfulness is information |
+| R2.3 | Each marker is a 26 px circular pin in the category color with the category emoji centered inside (☕ Coffee, 🫘 Roasters, 🥐 Bakery & Cafe, 🧋 Tea/Boba, 🍰 Dessert Cafe, ✦ Specialty). | Playfulness is information |
 | R2.4 | Late-night shops have a blue glow ring on their pin. | — |
 | R2.5 | The selected shop's pin grows to 32 px with a brown selection ring. | — |
 | R2.6 | Marker clusters use a dark brown bubble with white count text, customized via `iconCreateFunction` (class `coffee-cluster`). | — |
@@ -49,7 +49,7 @@ Functional and non-functional requirements for the current state of the page. Ea
 
 | ID | Requirement | Principle |
 |---|---|---|
-| R4.1 | Five category chips (Coffee, Bakery & Cafe, Tea/Boba, Dessert Cafe, Specialty) with category-color tinted backgrounds, the category emoji, and a count. | Playfulness is information |
+| R4.1 | Six category chips (Coffee, Roasters, Bakery & Cafe, Tea/Boba, Dessert Cafe, Specialty) with category-color tinted backgrounds, the category emoji, and a count. | Playfulness is information |
 | R4.2 | An "All" chip toggles all category filters off; active state is solid black. | — |
 | R4.3 | Four feature chips: 💻 Work-friendly, 🤝 Meeting room, 🌙 Open late, 🦉 Until midnight — each with a themed background and live count. | — |
 | R4.4 | Category and feature chips are toggleable independently; multiple can be active. | — |
