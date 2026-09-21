@@ -141,6 +141,7 @@ recovery, not just the threshold function in isolation.
 | T4.14 | R4.8 | Flip top-right toggle `#franchiseToggle` (Include franchise stores). Check `document.getElementById('resultsCount').textContent` and rendered items. | `resultsCount` matches total shop count (1,705); rendered cards capped at 200 initial pagination limit with "Load more" button; franchise cards appear with `.model-tag.franchise`. |
 | T4.15 | R4.9 | `js> REGION_LABEL === 'Metro Atlanta'` | `true` (unified 14-county Metro Atlanta region). |
 | T4.16 | R4.9 | `js> SHOPS.length === 1705` | `true` (1,705 total venues across Metro Atlanta & North Georgia). |
+| T4.17 | R4.10 | `js> typeof applyTheme === 'function' && typeof getCurrentTheme === 'function' && !!document.getElementById('themeToggle')` | `true` — `#themeToggle` button present in header; clicking toggles `data-theme` between `'light'` and `'dark'`, syncs `tileLayer` between `light_all` and `dark_all`, and persists to `localStorage`. |
 
 ## T5. Right-side list (R5)
 

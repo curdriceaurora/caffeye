@@ -3,6 +3,17 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="color-scheme" content="light dark" />
+<script>
+  (function() {
+    try {
+      const saved = localStorage.getItem('caffeye-theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = saved || (prefersDark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    } catch (e) {}
+  })();
+</script>
 <title>Coffee in Duluth</title>
 <link rel="icon" type="image/svg+xml" sizes="any" href="./brand/icons/favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="./brand/icons/favicon-32.png">
@@ -10,7 +21,7 @@
 <link rel="icon" href="./favicon.ico">
 <link rel="apple-touch-icon" sizes="180x180" href="./brand/icons/apple-touch-icon.png">
 <link rel="manifest" href="./manifest.webmanifest">
-<meta name="theme-color" content="#293F34">
+<meta name="theme-color" content="#293F34" id="themeColorMeta">
 <meta name="description" content="A local with an eye for good spots. Curated coffee, bakeries & tea across North Atlanta.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Caffeye">
@@ -31,6 +42,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
+    color-scheme: light dark;
     --bg: oklch(97% 0.008 75);
     --surface: oklch(99.5% 0.006 75);
     --surface-alt: oklch(98% 0.007 75);
@@ -54,6 +66,41 @@
     --caffeye-paper: #F4F3ED;
     --caffeye-ink: #222721;
     --caffeye-muted: #60645F;
+    --map-bg: #e9e5dc;
+    --brand-title-color: var(--caffeye-forest);
+    --pin-label-bg: rgba(255, 255, 255, 0.94);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #181e19;
+      --surface: #212822;
+      --surface-alt: #28322a;
+      --text: #F4F3ED;
+      --muted: #9da29b;
+      --border: #2e3930;
+      --border-strong: #3f4e42;
+      --accent: #DCAF59;
+      --accent-soft: rgba(220, 175, 89, 0.16);
+      --map-bg: #191e1a;
+      --brand-title-color: var(--caffeye-paper);
+      --pin-label-bg: rgba(33, 40, 34, 0.94);
+    }
+  }
+
+  [data-theme="dark"] {
+    --bg: #181e19;
+    --surface: #212822;
+    --surface-alt: #28322a;
+    --text: #F4F3ED;
+    --muted: #9da29b;
+    --border: #2e3930;
+    --border-strong: #3f4e42;
+    --accent: #DCAF59;
+    --accent-soft: rgba(220, 175, 89, 0.16);
+    --map-bg: #191e1a;
+    --brand-title-color: var(--caffeye-paper);
+    --pin-label-bg: rgba(33, 40, 34, 0.94);
   }
   * { box-sizing: border-box; }
   html, body { margin: 0; padding: 0; height: 100%; }
@@ -96,12 +143,18 @@
     font-weight: 800;
     font-size: 22px;
     letter-spacing: -0.015em;
-    color: var(--caffeye-forest);
+    color: var(--brand-title-color);
   }
   .freshness { font-size: 12px; color: var(--muted); }
 
-  .header-toggle {
+  .header-actions {
     margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+  }
+  .header-toggle {
     display: flex;
     align-items: center;
     flex-shrink: 0;
@@ -120,8 +173,48 @@
     transition: background-color 0.15s ease;
   }
   .toggle-label:hover {
-    background: rgba(0, 0, 0, 0.04);
+    background: var(--accent-soft);
   }
+  .theme-toggle-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--surface-alt);
+    color: var(--text);
+    cursor: pointer;
+    transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+    padding: 0;
+    flex-shrink: 0;
+  }
+  .theme-toggle-btn:hover {
+    background: var(--accent-soft);
+    border-color: var(--border-strong);
+    color: var(--accent);
+  }
+  .theme-toggle-btn:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+  .theme-toggle-btn svg {
+    width: 16px;
+    height: 16px;
+    stroke: currentColor;
+    fill: none;
+    display: block;
+  }
+  .sun-icon { display: none; }
+  .moon-icon { display: block; }
+  [data-theme="dark"] .sun-icon { display: block; }
+  [data-theme="dark"] .moon-icon { display: none; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .sun-icon { display: block; }
+    :root:not([data-theme="light"]) .moon-icon { display: none; }
+  }
+
   .toggle-switch {
     position: relative;
     width: 32px;
@@ -164,6 +257,18 @@
     outline: 2px solid var(--caffeye-forest);
     outline-offset: 2px;
   }
+  [data-theme="dark"] .toggle-switch,
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .toggle-switch {
+    background: #3a453c;
+  } }
+  [data-theme="dark"] #franchiseToggle:checked + .toggle-switch,
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) #franchiseToggle:checked + .toggle-switch {
+    background: var(--accent);
+  } }
+  [data-theme="dark"] #franchiseToggle:focus-visible + .toggle-switch,
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) #franchiseToggle:focus-visible + .toggle-switch {
+    outline-color: var(--accent);
+  } }
   .toggle-text-mobile { display: none; }
 
   .filter-bar {
@@ -199,7 +304,7 @@
 
 
   .layout { flex: 1; display: flex; min-height: 0; }
-  #map { flex: 1; background: #e9e5dc; }
+  #map { flex: 1; background: var(--map-bg); }
   .panel {
     width: 380px; background: var(--surface);
     border-left: 1px solid var(--border);
@@ -386,7 +491,7 @@
     white-space: nowrap;
     font-family: 'Inter', sans-serif;
     font-size: 11px; font-weight: 600; line-height: 1.2;
-    background: rgba(255,255,255,0.94);
+    background: var(--pin-label-bg);
     color: var(--text);
     padding: 2px 6px;
     border-radius: 4px;
@@ -415,6 +520,48 @@
   .leaflet-popup-content { margin: 0; width: auto !important; min-width: 180px; }
   .leaflet-popup-tip { background: var(--surface); }
 
+  [data-theme="dark"] .model-tag.indie,
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .model-tag.indie {
+    background: rgba(46, 125, 79, 0.22);
+    color: #6ece91;
+    border-color: rgba(46, 125, 79, 0.4);
+  } }
+  [data-theme="dark"] .model-tag.franchise,
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .model-tag.franchise {
+    background: rgba(148, 163, 184, 0.16);
+    color: #cbd5e1;
+    border-color: rgba(148, 163, 184, 0.3);
+  } }
+  [data-theme="dark"] .pill-tag.late,
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .pill-tag.late {
+    background: rgba(99, 125, 204, 0.22);
+    color: #a8bcf0;
+  } }
+  [data-theme="dark"] .pill-tag.work,
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .pill-tag.work {
+    background: rgba(46, 125, 79, 0.22);
+    color: #7ce0a3;
+  } }
+  [data-theme="dark"] .leaflet-bar a,
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .leaflet-bar a {
+    background-color: var(--surface);
+    color: var(--text);
+    border-bottom-color: var(--border);
+  } }
+  [data-theme="dark"] .leaflet-bar a:hover,
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .leaflet-bar a:hover {
+    background-color: var(--surface-alt);
+    color: var(--accent);
+  } }
+  [data-theme="dark"] .leaflet-container .leaflet-control-attribution,
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .leaflet-container .leaflet-control-attribution {
+    background: rgba(33, 40, 34, 0.85);
+    color: var(--muted);
+  } }
+  [data-theme="dark"] .leaflet-container .leaflet-control-attribution a,
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .leaflet-container .leaflet-control-attribution a {
+    color: var(--muted);
+  } }
 
   footer {
     background: var(--surface); border-top: 1px solid var(--border);
@@ -424,7 +571,7 @@
   .footer-brand {
     font-family: 'Fraunces', serif;
     font-weight: 800;
-    color: var(--caffeye-forest);
+    color: var(--brand-title-color);
     letter-spacing: -0.01em;
   }
   .empty-state { padding: 32px 20px; text-align: center; color: var(--muted); font-size: 13px; }
@@ -443,7 +590,10 @@
     .brand-logo { width: 17px; height: 17px; }
     .brand { font-size: 15px; }
     .freshness { display: none; }
-    .header-toggle { margin-left: auto; }
+    .header-actions { margin-left: auto; gap: 6px; }
+    .header-toggle { margin-left: 0; }
+    .theme-toggle-btn { width: 26px; height: 26px; border-radius: 6px; }
+    .theme-toggle-btn svg { width: 14px; height: 14px; }
     .toggle-label { font-size: 11px; gap: 6px; padding: 2px 4px; }
     .toggle-switch { width: 28px; height: 16px; }
     .toggle-switch::after { width: 12px; height: 12px; }
@@ -488,17 +638,23 @@
 <div class="app">
   <header>
     <div class="brand-group" id="brandHomeBtn" role="button" tabindex="0" title="Caffeye — Reset filters" aria-label="Caffeye — Reset filters">
-      <img src="./brand/logos/caffeye-symbol-forest.svg" alt="Caffeye" class="brand-logo" width="22" height="22">
+      <img src="./brand/logos/caffeye-symbol-forest.svg" alt="Caffeye" class="brand-logo" id="brandLogoImg" width="22" height="22">
       <div class="brand">Coffee in Duluth</div>
     </div>
     <div class="freshness">Loading spots…</div>
-    <div class="header-toggle">
-      <label class="toggle-label" for="franchiseToggle" title="Include chains & franchise stores">
-        <input type="checkbox" id="franchiseToggle" aria-label="Include franchise stores">
-        <span class="toggle-switch"></span>
-        <span class="toggle-text toggle-text-full">Include franchise stores</span>
-        <span class="toggle-text toggle-text-mobile">Franchises</span>
-      </label>
+    <div class="header-actions">
+      <div class="header-toggle">
+        <label class="toggle-label" for="franchiseToggle" title="Include chains & franchise stores">
+          <input type="checkbox" id="franchiseToggle" aria-label="Include franchise stores">
+          <span class="toggle-switch"></span>
+          <span class="toggle-text toggle-text-full">Include franchise stores</span>
+          <span class="toggle-text toggle-text-mobile">Franchises</span>
+        </label>
+      </div>
+      <button id="themeToggle" class="theme-toggle-btn" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
+        <svg class="sun-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        <svg class="moon-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      </button>
     </div>
   </header>
 
@@ -859,10 +1015,14 @@ function boot() {
   // domain-restricted to the Cloudflare Workers origin. On localhost / file: protocol,
   // omit the key query parameter to prevent 403s during local dev and automated tests.
   const isLocalHost = location.hostname === 'localhost' || location.hostname === '127.0.0.1' || location.protocol === 'file:';
-  const cartoTileUrl = isLocalHost
-    ? 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png'
-    : 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png?key=cb1_3qiv_1_0583eea1ec1b7dd298410338';
-  L.tileLayer(cartoTileUrl, {
+  function getCartoTileUrl(theme) {
+    const style = theme === 'dark' ? 'dark_all' : 'light_all';
+    return isLocalHost
+      ? `https://{s}.basemaps.cartocdn.com/${style}/{z}/{x}/{y}{r}.png`
+      : `https://{s}.basemaps.cartocdn.com/${style}/{z}/{x}/{y}{r}.png?key=cb1_3qiv_1_0583eea1ec1b7dd298410338`;
+  }
+  const initialTheme = document.documentElement.getAttribute('data-theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  const tileLayer = L.tileLayer(getCartoTileUrl(initialTheme), {
     attribution: '&copy; OpenStreetMap &copy; CARTO',
     subdomains: 'abcd',
     minZoom: 7,
@@ -1479,10 +1639,63 @@ function boot() {
     brandHomeBtn.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') resetAll(e); });
   }
 
+  const themeToggleBtn = document.getElementById('themeToggle');
+  function getSystemTheme() {
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+  function getCurrentTheme() {
+    return document.documentElement.getAttribute('data-theme') || getSystemTheme();
+  }
+  function updateThemeUI(theme) {
+    const isDark = theme === 'dark';
+    if (themeToggleBtn) {
+      themeToggleBtn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+      themeToggleBtn.setAttribute('title', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+    }
+    const logoImg = document.getElementById('brandLogoImg');
+    if (logoImg) {
+      logoImg.src = isDark ? './brand/logos/caffeye-symbol-paper.svg' : './brand/logos/caffeye-symbol-forest.svg';
+    }
+    const meta = document.getElementById('themeColorMeta');
+    if (meta) {
+      meta.content = isDark ? '#181e19' : '#293F34';
+    }
+  }
+
+  function applyTheme(theme, isUserManual) {
+    document.documentElement.setAttribute('data-theme', theme);
+    if (isUserManual) {
+      try {
+        localStorage.setItem('caffeye-theme', theme);
+      } catch (err) {}
+    }
+    updateThemeUI(theme);
+    if (typeof tileLayer !== 'undefined' && tileLayer) {
+      tileLayer.setUrl(getCartoTileUrl(theme));
+    }
+  }
+
+  if (themeToggleBtn) {
+    themeToggleBtn.addEventListener('click', () => {
+      const next = getCurrentTheme() === 'dark' ? 'light' : 'dark';
+      applyTheme(next, true);
+    });
+  }
+
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+    let saved = null;
+    try { saved = localStorage.getItem('caffeye-theme'); } catch (err) {}
+    if (!saved) {
+      applyTheme(e.matches ? 'dark' : 'light', false);
+    }
+  });
+
+  updateThemeUI(getCurrentTheme());
+
   render();
 
   // Expose key globals for console testing and the test suite in TESTS.md.
-  Object.assign(window, { state, SHOPS, ADDR, NEIGHBORHOODS, CATS, REGION_LABEL, map, markers, clusterGroup, exceedsLabelSafetyCap, placeLabels, ATL_BOUNDS, escapeHtml });
+  Object.assign(window, { state, SHOPS, ADDR, NEIGHBORHOODS, CATS, REGION_LABEL, map, markers, clusterGroup, exceedsLabelSafetyCap, placeLabels, ATL_BOUNDS, escapeHtml, tileLayer, applyTheme, getCurrentTheme, getCartoTileUrl });
 }
 
 </script>
