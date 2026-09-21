@@ -534,11 +534,11 @@
 <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
 <script>
 const CATS = {
-  "Coffee":       { hex: "#6f4e37", icon: "☕" },
-  "Bakery+Cafe":  { hex: "#b89464", icon: "🥐" },
-  "Tea/Boba":     { hex: "#5b8a72", icon: "🧋" },
-  "Dessert Cafe": { hex: "#c66980", icon: "🍰" },
-  "Specialty":    { hex: "#7b6cb8", icon: "✦"  }
+  "Coffee":       { hex: "#6f4e37", activeBg: "#6f4e37", icon: "☕" },
+  "Bakery+Cafe":  { hex: "#b89464", activeBg: "#7c5828", icon: "🥐" },
+  "Tea/Boba":     { hex: "#5b8a72", activeBg: "#32634d", icon: "🧋" },
+  "Dessert Cafe": { hex: "#c66980", activeBg: "#943851", icon: "🍰" },
+  "Specialty":    { hex: "#7b6cb8", activeBg: "#5d4b99", icon: "✦"  }
 };
 
 let SHOPS, ADDR, NEIGHBORHOODS, CITIES, COUNTIES, REGION_LABEL, CHECKED_MONTH;
@@ -551,13 +551,17 @@ Promise.allSettled([
     if (!r.ok) throw new Error('Failed to load shops.json: ' + r.status);
     return r.json();
   }),
-  fetch('./places.json', { signal: placesController.signal })
-    .then(r => {
-      clearTimeout(placesTimeout);
+  (async () => {
+    try {
+      const r = await fetch('./places.json', { signal: placesController.signal });
       if (!r.ok) return null;
-      return r.json();
-    })
-    .catch(() => null)
+      return await r.json();
+    } catch {
+      return null;
+    } finally {
+      clearTimeout(placesTimeout);
+    }
+  })()
 ])
 .then(([shopsRes, placesRes]) => {
   const shopsData = shopsRes.status === 'fulfilled' ? shopsRes.value : null;
@@ -576,6 +580,7 @@ Promise.allSettled([
       if (typeof p.lat !== 'number' || !Number.isFinite(p.lat) || typeof p.lng !== 'number' || !Number.isFinite(p.lng)) return;
       if (p.lat === 0 && p.lng === 0) return;
       if (!p.name || typeof p.name !== 'string') return;
+      if (!p.category || typeof p.category !== 'string' || !CATS[p.category]) return;
       if (p.placeId && seenPlaceIds.has(p.placeId)) return;
       // Guard against relisted duplicate of a curated shop (<60m and shared non-generic name token)
       const isRelistedDupe = SHOPS.some(s => {
@@ -733,7 +738,7 @@ function boot() {
   const catChipsEl = document.getElementById('categoryChips');
   const featChipsEl = document.getElementById('featureChips');
 
-  function makeChip({ label, count, color, icon, themeColor, onClick, isActive, chipKey }) {
+  function makeChip({ label, count, color, icon, themeColor, activeBg, onClick, isActive, chipKey }) {
     const b = document.createElement('button');
     b.className = 'chip' + (isActive ? ' active' : '') + (themeColor ? ' themed' : '');
     b.type = 'button';
@@ -741,9 +746,10 @@ function boot() {
     if (chipKey) b.dataset.chipKey = chipKey;
     if (themeColor) {
       if (isActive) {
-        b.style.background = themeColor;
+        const bg = activeBg || themeColor;
+        b.style.background = bg;
         b.style.color = '#fff';
-        b.style.borderColor = themeColor;
+        b.style.borderColor = bg;
       } else {
         b.style.background = themeColor + '1f';
         b.style.borderColor = themeColor + '55';
@@ -794,6 +800,7 @@ function boot() {
         count: catCounts[cat] || 0,
         icon: CATS[cat].icon,
         themeColor: CATS[cat].hex,
+        activeBg: CATS[cat].activeBg,
         chipKey: 'cat-' + cat,
         onClick: () => {
           if (state.categories.has(cat)) state.categories.delete(cat);
@@ -843,7 +850,7 @@ function boot() {
   const ATL_BOUNDS = L.latLngBounds([33.25, -85.00], [34.75, -83.30]);
   const map = L.map('map', {
     zoomControl: true,
-    minZoom: 8,
+    minZoom: 7,
     maxZoom: 19,
     maxBounds: ATL_BOUNDS,
     maxBoundsViscosity: 1.0
@@ -858,7 +865,7 @@ function boot() {
   L.tileLayer(cartoTileUrl, {
     attribution: '&copy; OpenStreetMap &copy; CARTO',
     subdomains: 'abcd',
-    minZoom: 8,
+    minZoom: 7,
     maxZoom: 19,
     bounds: ATL_BOUNDS
   }).addTo(map);
@@ -1214,7 +1221,8 @@ function boot() {
       li.dataset.id = shop.id;
       li.setAttribute('tabindex', '0');
       li.setAttribute('role', 'button');
-      const cleanCat = shop.category.replace('+', ' and ');
+      const catStr = (typeof shop.category === 'string') ? shop.category : '';
+      const cleanCat = catStr.replace('+', ' and ');
       li.setAttribute('aria-label', `${shop.name}, ${cleanCat} in ${shop.neighborhood}${shop.rated ? `, score ${shop.scoreText}` : ''}`);
 
       const cat = CATS[shop.category] || {};
@@ -1222,7 +1230,7 @@ function boot() {
       const catIcon = cat.icon || '';
       const tags = compactTags(shop);
       const tagsHtml = tags.map((t, i) => (i > 0 ? '<span class="tag-sep">·</span>' : '') + escapeHtml(t)).join('');
-      const catLabel = escapeHtml(shop.category.replace('+', ' & '));
+      const catLabel = escapeHtml(catStr.replace('+', ' & '));
       // The headline number is OUR score (Bayesian-weighted), not Google's star —
       // it is what the list is ordered by. Google's raw rating lives only on the
       // detail card; the results-bar legend explains ◆ (tooltips don't fire on touch).

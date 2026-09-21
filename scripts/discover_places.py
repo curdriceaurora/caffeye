@@ -68,10 +68,16 @@ REGION = {
         {"api": "Cherokee County", "label": "Cherokee"},
         {"api": "Hall County", "label": "Hall"},
         {"api": "Dawson County", "label": "Dawson"},
+        {"api": "Clayton County", "label": "Clayton"},
+        {"api": "Henry County", "label": "Henry"},
+        {"api": "Fayette County", "label": "Fayette"},
+        {"api": "Coweta County", "label": "Coweta"},
+        {"api": "Douglas County", "label": "Douglas"},
+        {"api": "Rockdale County", "label": "Rockdale"},
     ],
     "note": (
-        "Covers Metro Atlanta (including Atlanta urban core, Decatur, and North Georgia foothills) "
-        "across Fulton, DeKalb, Cobb, Gwinnett, Cherokee, Forsyth, Hall, and Dawson counties."
+        "Covers Metro Atlanta (including Atlanta urban core, Decatur, South Metro, and North Georgia foothills) "
+        "across Fulton, DeKalb, Cobb, Gwinnett, Cherokee, Forsyth, Hall, Dawson, Clayton, Henry, Fayette, Coweta, Douglas, and Rockdale counties."
     ),
 }
 # (includedType, textQuery). Pass 1 is free, so every in-scope type is queried.
@@ -728,13 +734,24 @@ class Client:
         raise FatalApiError("rate limited four times in a row")
 
 
-def fetch_pages(client, rect: Rect, qtype: str, text: str, mask: str, sku: str):
+def fetch_pages(
+    client,
+    rect: Rect,
+    qtype: str,
+    text: str,
+    mask: str,
+    sku: str,
+    on_page=None,
+):
     """All pages (max 3) for one rect+type -> (places, calls_made)."""
     places, token, calls = [], None, 0
     while True:
         res = client(search_body(rect, qtype, text, token), mask, sku)
         calls += 1
-        places.extend(res.get("places") or [])
+        page_places = res.get("places") or []
+        places.extend(page_places)
+        if on_page:
+            on_page(page_places)
         token = res.get("nextPageToken")
         if not token or len(places) >= PAGE_LIMIT or calls >= MAX_PAGES:
             return places, calls
@@ -763,9 +780,15 @@ def fetch_details(client, plan, out: dict | None = None) -> dict:
     raw = out if out is not None else {}
     for item in plan:
         qtype, text, rect = item[:3]
-        places, _ = fetch_pages(client, rect, qtype, text, FULL_MASK, SKU_FULL)
-        for p in places:
-            raw.setdefault(p["id"], p)
+        fetch_pages(
+            client,
+            rect,
+            qtype,
+            text,
+            FULL_MASK,
+            SKU_FULL,
+            on_page=lambda page: [raw.setdefault(p["id"], p) for p in page],
+        )
     return raw
 
 
@@ -916,6 +939,16 @@ def main() -> int:
     ap.add_argument("--usage-threshold", type=int, default=500)
     ap.add_argument("--max-paid-calls", type=int, default=900)
     ap.add_argument("--sleep", type=float, default=0.1)
+    ap.add_argument(
+        "--bbox",
+        default="",
+        help="custom bbox: south,west,north,east (e.g. 33.25,-84.85,33.71,-84.00)",
+    )
+    ap.add_argument(
+        "--allow-incomplete",
+        action="store_true",
+        help="allow replaying and writing a dump marked with incomplete: true",
+    )
     args = ap.parse_args()
 
     if args.write and not args.replay:
@@ -925,6 +958,12 @@ def main() -> int:
 
     if args.replay:
         dump = json.loads(Path(args.replay).read_text())
+        if dump.get("incomplete") and args.write and not args.allow_incomplete:
+            sys.exit(
+                f"REFUSED: {args.replay} is marked as incomplete. "
+                "Writing an incomplete dump could corrupt the public dataset. "
+                "Pass --allow-incomplete to override."
+            )
         recs, stats = build_places(dump["places"], load_exclusions())
         report(recs, stats, curated_with_coords(), dump["places"])
         if args.write:
@@ -943,7 +982,12 @@ def main() -> int:
         print(msg)
         return 2
     client = Client(load_key(), args.sleep)
-    bbox = REGION["bbox"]
+    if args.bbox:
+        s, w, n, e = [float(x.strip()) for x in args.bbox.split(",")]
+        bbox = {"south": s, "west": w, "north": n, "east": e}
+        print(f"custom crawl bbox: {bbox}")
+    else:
+        bbox = REGION["bbox"]
     root = Rect(bbox["south"], bbox["west"], bbox["north"], bbox["east"])
     plan, leaves_out = [], {}
     try:

@@ -41,7 +41,7 @@ Local: `python3 -m http.server 8765` in the project root, open `http://127.0.0.1
 | T2.7 | R2.7 | `js> { const same = SHOPS.filter(s => s.name === 'Alchemist on the Divide' \|\| s.name === 'Ginkgo Bakery & Cafe').map(s => [s.lat, s.lng]); Math.abs(same[0][0] - same[1][0]) + Math.abs(same[0][1] - same[1][1]) > 0 }` | `true` (same-address pins are nudged apart) |
 | T2.8 | R2.8 | Click a pin. | The detail card opens directly; no preview popup appears. |
 | T2.9 | R2.9 | Click a pin, then "← Back to list". | Map fits all markers again. |
-| T2.10 | R2.10 | `js> map.getMinZoom() === 8 && map.getMaxZoom() === 19` | `true` (zoom out bounded at 8, zoom in up to 19) |
+| T2.10 | R2.10 | `js> map.getMinZoom() === 7 && map.getMaxZoom() === 19` | `true` (zoom out bounded at 7 for full regional landscape fit, zoom in up to 19) |
 | T2.11 | R2.10 | `js> map.options.maxBoundsViscosity === 1.0 && map.options.maxBounds.equals(ATL_BOUNDS)` | `true` (panning hard-locked to Greater Atlanta) |
 | T2.12 | R2.10 | `js> { let tl; map.eachLayer(l => { if (l instanceof L.TileLayer) tl = l; }); tl.options.bounds.equals(ATL_BOUNDS) }` | `true` (tile network fetches restricted to Greater Atlanta) |
 
@@ -126,7 +126,7 @@ recovery, not just the threshold function in isolation.
 | ID | Trace | Test | Pass |
 |---|---|---|---|
 | T4.1 | R4.1 | `js> document.querySelectorAll('#categoryChips .chip').length` | `6` (All + 5 categories) |
-| T4.2 | R4.1 | Each category chip displays its emoji + label + count; sum of category counts = inScope.length. | Five category counts sum to inScope.length matching the franchise toggle state (572 indie shops when toggle OFF; 1,034 total shops when toggle ON). |
+| T4.2 | R4.1 | Each category chip displays its emoji + label + count; sum of category counts = inScope.length. | Five category counts sum to inScope.length matching the franchise toggle state (838 indie shops when toggle OFF; 1,438 total shops when toggle ON; or 61 in baseline Duluth mode). Category and feature chip counts intentionally reflect global category totals and ignore search text input. |
 | T4.3 | R4.2 | Click "All". `js> [...document.querySelectorAll('#categoryChips .chip')][0].classList.contains('active')` | `true` |
 | T4.4 | R4.3 | `js> document.querySelectorAll('#featureChips .chip').length` | `4` (Work-friendly, Meeting room, Open late, Until midnight) |
 | T4.5 | R4.3 | Feature chip text matches `['💻Work-friendly{n}', '🤝Meeting room{n}', '🌙Open late{n}', '🦉Until midnight{n}']` (spaces normalized). | All four present. |
@@ -155,7 +155,7 @@ recovery, not just the threshold function in isolation.
 | T5.5c | R5.4 | `js> [...document.querySelectorAll('.shop-item .score')].map(e => +e.textContent.slice(2)).every((v, i, a) => i === 0 \|\| a[i-1] >= v)` | `true` — displayed scores never increase down the list (order uses full precision, display rounds). |
 | T5.5d | R5.4 | `js> [...document.querySelectorAll('.shop-meta')].every(m => !m.innerHTML.includes('★')) && document.querySelector('.results-meta .score-legend').textContent === '◆ = weighted score'` | `true` — no ★ anywhere on a card (attributes included); the legend is present. |
 | T5.6 | R5.5 | `js> document.querySelector('.shop-item').style.borderLeftColor` | Non-empty (a category color). |
-| T5.7 | R5.6 | Filter to "Meeting room". `js> document.getElementById('resultsCount').textContent` | `"4"` |
+| T5.7 | R5.6 | Filter to "Meeting room". `js> document.getElementById('resultsCount').textContent` | `"9"` (independent meeting room venues on boot in Metro Atlanta; `"10"` with franchise toggle ON; `"4"` in baseline Duluth mode). |
 | T5.7b | R5.6 | Hard reload (all shops in viewport). `js> document.getElementById('resultsLabel').textContent` | `" spots"` |
 | T5.7c | R5.6 | Zoom in until fewer than `SHOPS.length` shops are visible in the map. `js> document.getElementById('resultsLabel').textContent` | `" in view"` |
 | T5.8 | R5.7 | Scroll the shop list. | Inner list scrolls; header, filters, map don't. |
@@ -226,26 +226,26 @@ recovery, not just the threshold function in isolation.
 
 Run after every `wrangler deploy`:
 
-1. Open the live URL on desktop. Expect `SHOPS.length` markers (61 as of Sept 2026), all 5 category chips, 4 feature chips, the full list sorted by weighted rating. Results header reads "61 spots".
-2. Click Bread Museum → detail card slides in (list slides left). Click "← Back to list" → list slides back in, map fits bounds.
-3. Click "Until midnight" → expect 8 shops (TwoHa's, Hayat, Cafe Mozart, The Coffee By Hand, The Bep Teahouse, Hansel & Gretel, Qamaria Yemeni, Glaze Tea).
+1. Open the live URL on desktop. Expect `SHOPS.length` markers (1,438 across Metro Atlanta as of Sept 2026; 61 in baseline-only mode), all 5 category chips, 4 feature chips, the full list sorted by weighted rating. Results header reads "838 spots" (independent mode on boot; "61 spots" in baseline mode).
+2. Click Bread Museum (or Chrome Yellow in Metro Atlanta) → detail card slides in (list slides left). Click "← Back to list" → list slides back in, map fits bounds.
+3. Click "Until midnight" → expect late-night shops (109 venues across Metro Atlanta; 8 venues in baseline Duluth mode).
 4. Search "matcha" → ≥ 10 results.
-5. Zoom in until fewer than all shops appear in the list. Confirm header changes to "X in view" and list items cascade in. Zoom back out — header returns to "61 spots".
-6. Resize window below 820 px → mobile layout kicks in, footer disappears, ≥ 5 cards visible.
+5. Zoom in until fewer than all shops appear in the list. Confirm header changes to "X in view" and list items cascade in. Zoom back out — header returns to "838 spots" ("61 spots" in baseline mode).
+6. Resize window below 820 px → mobile layout kicks in, footer disappears, cards visible and scrollable.
 7. Zoom in to a single shop, confirm label appears with no overlap. Zoom out to default fit, confirm clusters reform.
 8. Open DevTools console → no errors.
 
-## Known-good fixture data (May 2026)
+## Known-good fixture data (September 2026)
 
-| Field | Value |
-|---|---|
-| Total shops | 61 (Sept 2026) |
-| Category counts | Coffee 10, Bakery & Cafe 18, Tea/Boba 14, Dessert Cafe 11, Specialty 6 |
-| Work-friendly | 19 |
-| Meeting room | 4 |
-| Open late | 39 |
-| Until midnight | 8 |
-| Bayesian C | ≈ 4.50 |
-| Bayesian m | 230 (median review count) |
-| #1 by weighted rating | Yibna Cafe (Sept 2026; Georgia French Bakery & Cafe before the Places API refresh) |
-| Unique buildings (ADDR keys) | 42 |
+| Field | Metro Atlanta (Expanded) | Duluth Baseline (Fallback) |
+|---|---|---|
+| Total shops | 1,438 | 61 |
+| Independent shops | 838 | 61 |
+| Franchise shops | 600 | 0 |
+| Category counts (indie) | Coffee 402, Bakery & Cafe 289, Tea/Boba 86, Dessert Cafe 46, Specialty 15 | Coffee 10, Bakery & Cafe 18, Tea/Boba 14, Dessert Cafe 11, Specialty 6 |
+| Work-friendly | 47 (29 indie) | 19 |
+| Meeting room | 10 (9 indie) | 4 |
+| Open late | 456 (226 indie) | 39 |
+| Until midnight | 109 (61 indie) | 8 |
+| Bayesian C | ≈ 4.36 | ≈ 4.50 |
+| #1 by weighted rating | Douceur De France (Yibna Cafe #2) | Yibna Cafe |

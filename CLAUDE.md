@@ -14,7 +14,7 @@ For product principles and design rationale, read `PRODUCT.md` first.
 public/
   index.html          # the entire app shell (~95 KB)
   shops.json          # curated shop data (Duluth baseline)
-  places.json         # discovered places across North Atlanta
+  places.json         # discovered places across Metro Atlanta
   favicon.ico         # root browser favicon fallback
   manifest.webmanifest # PWA web manifest
   brand/              # Bean Eye v1.0 brand assets

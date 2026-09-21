@@ -82,7 +82,9 @@ class FilterTests(unittest.TestCase):
         c = [comp("Dawson County", "administrative_area_level_2")]
         self.assertEqual(D.county_label(c, 34.40), "Dawson")
         c = [comp("Clayton County", "administrative_area_level_2")]
-        self.assertIsNone(D.county_label(c, 33.50))
+        self.assertEqual(D.county_label(c, 33.50), "Clayton")
+        c = [comp("Bibb County", "administrative_area_level_2")]
+        self.assertIsNone(D.county_label(c, 32.84))
 
     def test_fulton_dekalb_and_cobb_include_itp_and_downtown(self):
         fulton = [comp("Fulton County", "administrative_area_level_2")]
@@ -297,7 +299,7 @@ class RecordTests(unittest.TestCase):
         p["businessStatus"] = "CLOSED_TEMPORARILY"
         self.assertEqual(D.to_record(p)[1], "status:CLOSED_TEMPORARILY")
         p = json.loads(json.dumps(BY_NAME["Sweet Hut Bakery & Cafe"]))
-        p["addressComponents"] = [comp("Clayton County", "administrative_area_level_2")]
+        p["addressComponents"] = [comp("Bibb County", "administrative_area_level_2")]
         self.assertEqual(D.to_record(p)[1], "county")
         p = json.loads(json.dumps(BY_NAME["Sweet Hut Bakery & Cafe"]))
         p["displayName"]["text"] = "Kroger Bakery"
@@ -434,11 +436,14 @@ class CrawlTests(unittest.TestCase):
         from unittest.mock import MagicMock, patch
         call_count = [0]
 
-        def fake_fetch_pages(client, rect, qtype, text, mask, sku):
+        def fake_fetch_pages(client, rect, qtype, text, mask, sku, on_page=None):
             call_count[0] += 1
             if call_count[0] == 2:
                 raise D.FatalApiError("Simulated 429 rate limit")
-            return [{"id": f"place_{call_count[0]}"}], 1
+            places = [{"id": f"place_{call_count[0]}"}]
+            if on_page:
+                on_page(places)
+            return places, 1
 
         with patch("discover_places.fetch_pages", side_effect=fake_fetch_pages):
             client = MagicMock()
@@ -450,6 +455,52 @@ class CrawlTests(unittest.TestCase):
             with self.assertRaises(D.FatalApiError):
                 D.fetch_details(client, plan, out=accumulated)
             self.assertIn("place_1", accumulated)
+
+    def test_fetch_details_preserves_page_one_when_page_two_fails(self):
+        """P2 finding: failure on page 2 of a multi-page query must not lose page 1 records."""
+        from unittest.mock import MagicMock
+        calls = [0]
+
+        def fake_client(body, mask, sku):
+            calls[0] += 1
+            if calls[0] == 1:
+                return {
+                    "places": [{"id": "page1_place"}],
+                    "nextPageToken": "token_for_page_2"
+                }
+            raise D.FatalApiError("Interrupted on page 2")
+
+        client = MagicMock(side_effect=fake_client)
+        plan = [("q1", "t1", D.Rect(0, 0, 1, 1))]
+        accumulated = {}
+        with self.assertRaises(D.FatalApiError):
+            D.fetch_details(client, plan, out=accumulated)
+        self.assertIn("page1_place", accumulated)
+
+    def test_replay_rejects_incomplete_dump_unless_allowed(self):
+        """P2 finding: replaying an incomplete dump with --write must refuse by default."""
+        import tempfile
+        from unittest.mock import patch
+
+        with tempfile.NamedTemporaryFile(mode="w", suffix=".json", delete=False) as f:
+            json.dump({"incomplete": True, "places": {}}, f)
+            temp_path = f.name
+
+        try:
+            test_args = ["discover_places.py", "--replay", temp_path, "--write"]
+            with patch("sys.argv", test_args):
+                with self.assertRaises(SystemExit) as cm:
+                    D.main()
+                self.assertIn("marked as incomplete", str(cm.exception))
+
+            # With --allow-incomplete, it proceeds to write_places
+            test_args_allowed = ["discover_places.py", "--replay", temp_path, "--write", "--allow-incomplete"]
+            with patch("sys.argv", test_args_allowed), patch("discover_places.write_places") as mock_write:
+                ret = D.main()
+                self.assertEqual(ret, 0)
+                mock_write.assert_called_once()
+        finally:
+            Path(temp_path).unlink(missing_ok=True)
 
 
 if __name__ == "__main__":
