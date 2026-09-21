@@ -57,7 +57,7 @@ CURATIONS_PATH = ROOT / "scripts" / "curations.json"
 REGION = {
     "label": "Metro Atlanta",
     # Only needs to contain the counties; membership is decided by county_label().
-    "bbox": {"south": 33.70, "west": -84.80, "north": 34.65, "east": -83.60},
+    "bbox": {"south": 33.20, "west": -84.95, "north": 34.65, "east": -83.60},
     # API county name -> label shown in the app.
     "counties": [
         {"api": "Gwinnett County", "label": "Gwinnett"},
