@@ -61,6 +61,13 @@ except ImportError:
     except Exception:
         places_ledger = None
 
+if places_ledger is None:
+    print(
+        "WARNING: places_ledger unavailable — API spend will NOT be counted. "
+        "Fix the import before paid runs.",
+        file=sys.stderr,
+    )
+
 ROOT = Path(__file__).resolve().parent.parent
 SHOPS_PATH = ROOT / "public" / "shops.json"
 SCRATCH = ROOT / "scratch"
@@ -245,8 +252,14 @@ def _request(key: str, url: str, body, mask: str, sku: str | None = None) -> dic
                     )
                     try:
                         places_ledger.record(recorded_sku)
-                    except Exception:
-                        pass
+                    except Exception as e:
+                        # The request already succeeded: the spend is real.
+                        # Never swallow it — surface it so the ledger can be repaired.
+                        print(
+                            f"WARNING: API call succeeded but ledger record({recorded_sku}) "
+                            f"failed ({e}); spend is UNCOUNTED.",
+                            file=sys.stderr,
+                        )
                 return data
         except urllib.error.HTTPError as e:
             msg = e.read().decode(errors="replace").replace(key, "<key>")[:400]

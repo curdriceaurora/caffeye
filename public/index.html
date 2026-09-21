@@ -303,6 +303,10 @@
   .chip .chip-icon { font-size: 13px; line-height: 1; }
   .chip .num { font-size: 11px; color: var(--muted); font-weight: 500; }
   .chip.active .num { color: rgba(255,255,255,0.6); }
+  /* Non-themed active chips (e.g. All) pair pale text-on-dark in light mode
+     but dark-on-pale in dark mode — white counts would vanish on the pale bg. */
+  [data-theme="dark"] .chip.active:not(.themed) .num { color: inherit; opacity: 0.6; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .chip.active:not(.themed) .num { color: inherit; opacity: 0.6; } }
   .chip.themed .num { color: inherit; opacity: 0.65; }
   .chip.themed.active .num { color: rgba(255,255,255,0.7); opacity: 1; }
   .chip-divider { width: 1px; align-self: stretch; background: var(--border-strong); margin: 2px 2px; }
@@ -1746,7 +1750,8 @@ function boot() {
     }
   }
 
-  function deselectShop() {
+  function deselectShop(opts) {
+    const skipFit = !!(opts && opts.skipFit);
     const lastSelectedId = state.selected ? state.selected.id : null;
     state.selected = null;
     const prevActive = shopListEl.querySelector('.shop-item.active');
@@ -1772,8 +1777,9 @@ function boot() {
       if (el) el.focus({ preventScroll: true });
     }
 
-    // Reset the map back to the full-spread view
-    if (clusterGroup.getLayers().length) {
+    // Reset the map back to the full-spread view. Skipped when the caller
+    // re-fits after rebuilding marker membership (e.g. Home reset).
+    if (!skipFit && clusterGroup.getLayers().length) {
       state.returningFromDetail = lastSelectedId;
       map.fitBounds(clusterGroup.getBounds(), { padding: [40, 40], animate: true });
     }
@@ -1795,9 +1801,26 @@ function boot() {
     }
   }
 
+  // Clear an open detail card whose shop no longer passes global filters
+  // (category / feature / search / franchise changed underneath it). Focus
+  // stays where the user put it (the chip/toggle just activated); the list
+  // re-renders from the render() caller below.
+  function syncSelectionToFilters() {
+    if (state.selected && !passesGlobalFilters(state.selected)) {
+      state.selected = null;
+      const prevActive = shopListEl.querySelector('.shop-item.active');
+      if (prevActive) prevActive.classList.remove('active');
+      panelEl.classList.remove('detail-mode');
+      if (listViewEl) listViewEl.removeAttribute('inert');
+      if (detailEl) detailEl.setAttribute('inert', '');
+      setMarkerSelected(null);
+    }
+  }
+
   function render() {
     updateHeader();
     renderChips();
+    syncSelectionToFilters();
     if (state.selected) renderDetail(state.selected);
     renderList('filter');
   }
@@ -1814,9 +1837,7 @@ function boot() {
     franchiseToggle.checked = state.includeFranchises;
     franchiseToggle.addEventListener('change', e => {
       state.includeFranchises = e.target.checked;
-      if (!state.includeFranchises && state.selected && state.selected.model === 'franchise') {
-        deselectShop();
-      }
+      // Incompatible selections are cleared centrally in render().
       render();
     });
   }
@@ -1831,8 +1852,13 @@ function boot() {
       state.features.clear();
       state.search = '';
       if (searchInput) searchInput.value = '';
-      deselectShop();
+      // Close any open detail without fitting (membership is still stale),
+      // rebuild markers for the cleared filters, then fit the full spread.
+      deselectShop({ skipFit: true });
       render();
+      if (clusterGroup.getLayers().length) {
+        map.fitBounds(clusterGroup.getBounds(), { padding: [40, 40], animate: true });
+      }
     };
     brandHomeBtn.addEventListener('click', resetAll);
     brandHomeBtn.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') resetAll(e); });

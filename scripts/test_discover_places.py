@@ -558,6 +558,113 @@ class CrawlTests(unittest.TestCase):
             Path(temp_path).unlink(missing_ok=True)
 
 
+class OverlayTests(unittest.TestCase):
+    def test_to_record_preserves_curated_category(self):
+        """Bug 3: discovery replay must not undo curated category overrides."""
+        curations = {
+            BY_NAME["Boba Mocha"]["id"]: {
+                "name": "Boba Mocha",
+                "category": "Specialty",
+                "usp": "Figurine-painting concept cafe",
+            }
+        }
+        rec, reason = D.to_record(BY_NAME["Boba Mocha"], None, curations)
+        self.assertIsNone(reason)
+        self.assertEqual(rec["category"], "Specialty")
+        self.assertEqual(rec["usp"], "Figurine-painting concept cafe")
+
+    def test_to_record_without_overlay_keeps_classified_category(self):
+        rec, _ = D.to_record(BY_NAME["Boba Mocha"], None, {})
+        self.assertEqual(rec["category"], "Tea/Boba")
+
+
+class BudgetTests(unittest.TestCase):
+    def test_budget_allows_calls_under_cap(self):
+        from unittest.mock import patch
+        with patch("discover_places.ledger") as mock_ledger:
+            mock_ledger.used.return_value = 899
+            D.PaidBudget(900).check()  # must not raise
+
+    def test_budget_stops_at_cap(self):
+        from unittest.mock import patch
+        with patch("discover_places.ledger") as mock_ledger:
+            mock_ledger.used.return_value = 900
+            with self.assertRaises(D.BudgetExceeded):
+                D.PaidBudget(900).check()
+
+    def test_fetch_pages_stops_runaway_pagination(self):
+        """Bug 4: a 1-page estimate with a 3-page client must stop, not overspend."""
+        from unittest.mock import MagicMock
+        calls = [0]
+
+        def fake_client(body, mask, sku):
+            calls[0] += 1
+            return {
+                "places": [{"id": f"p{calls[0]}"}],
+                "nextPageToken": "more",  # always another page
+            }
+
+        budget = MagicMock()
+        budget.check.side_effect = [None, D.BudgetExceeded("exhausted")]
+        with self.assertRaises(D.BudgetExceeded):
+            D.fetch_pages(
+                fake_client, D.Rect(0, 0, 1, 1), "q", "t",
+                D.FULL_MASK, D.SKU_FULL, budget=budget,
+            )
+        self.assertEqual(calls[0], 1)  # stopped before the 2nd paid call
+
+    def test_fetch_details_keeps_partial_progress_on_budget_stop(self):
+        from unittest.mock import MagicMock
+        seen = []
+
+        def fake_client(body, mask, sku):
+            seen.append(1)
+            if len(seen) == 1:
+                return {"places": [{"id": "first_place"}]}
+            return {"places": [{"id": "x"}], "nextPageToken": "more"}
+
+        budget = MagicMock()
+        budget.check.side_effect = [None, D.BudgetExceeded("exhausted")]
+        plan = [
+            ("q1", "t1", D.Rect(0, 0, 1, 1)),
+            ("q2", "t2", D.Rect(0, 0, 1, 1)),
+        ]
+        accumulated = {}
+        with self.assertRaises(D.BudgetExceeded):
+            D.fetch_details(MagicMock(side_effect=fake_client), plan,
+                            out=accumulated, budget=budget)
+        self.assertIn("first_place", accumulated)
+
+    def test_free_sku_ignores_budget(self):
+        """Pass-1 free calls must never trip the paid budget."""
+        from unittest.mock import MagicMock
+        budget = MagicMock()
+        places, n = D.fetch_pages(
+            lambda body, mask, sku: {"places": [{"id": "a"}]},
+            D.Rect(0, 0, 1, 1), "q", "t", D.IDS_MASK, D.SKU_IDS,
+            budget=budget,
+        )
+        self.assertEqual(n, 1)
+        budget.check.assert_not_called()
+
+
+class FreshnessTests(unittest.TestCase):
+    def test_month_label_uses_observation_date(self):
+        """Bug 7: replaying old data must not claim this month's verification."""
+        self.assertEqual(
+            D.month_label("2024-01-15T00:00:00+00:00"), "January 2024"
+        )
+
+    def test_month_label_falls_back_to_today(self):
+        from datetime import date
+        self.assertEqual(
+            D.month_label("not-a-date"), date.today().strftime("%B %Y")
+        )
+        self.assertEqual(
+            D.month_label(None), date.today().strftime("%B %Y")
+        )
+
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -77,6 +77,48 @@ class CuratePlacesTests(unittest.TestCase):
         self.assertNotIn("cw", updated[0])
         self.assertNotIn("cw", updated[1])
 
+    def test_duplicate_source_overlays_do_not_cross_contaminate(self):
+        """Bug 6: two overlays sharing norm(name)+city must not collapse —
+        a relisted venue gets no fallback amenities from the other address."""
+        places = [
+            {"placeId": "new_relist", "name": "Brand Cafe", "city": "Roswell",
+             "address": "999 New St"},
+        ]
+        curations = {
+            "pid_a": {
+                "name": "Brand Cafe", "city": "Roswell", "address": "100 Main St",
+                "cw": {"tier": "excellent", "hasMeetingRoom": True},
+            },
+            "pid_b": {
+                "name": "Brand Cafe", "city": "Roswell", "address": "200 South Rd",
+                "cw": {"tier": "good", "hasMeetingRoom": False},
+            },
+        }
+        updated, count = CP.apply_curations(places, curations)
+        self.assertEqual(count, 0)
+        self.assertNotIn("cw", updated[0])
+
+    def test_duplicate_source_overlays_still_match_by_place_id(self):
+        """placeId matches keep working even with duplicate name+city sources."""
+        places = [
+            {"placeId": "pid_b", "name": "Brand Cafe", "city": "Roswell",
+             "address": "200 South Rd"},
+        ]
+        curations = {
+            "pid_a": {
+                "name": "Brand Cafe", "city": "Roswell", "address": "100 Main St",
+                "cw": {"tier": "excellent", "hasMeetingRoom": True},
+            },
+            "pid_b": {
+                "name": "Brand Cafe", "city": "Roswell", "address": "200 South Rd",
+                "cw": {"tier": "good", "hasMeetingRoom": False},
+            },
+        }
+        updated, count = CP.apply_curations(places, curations)
+        self.assertEqual(count, 1)
+        self.assertFalse(updated[0]["cw"]["hasMeetingRoom"])
+        self.assertEqual(updated[0]["cw"]["tier"], "good")
+
     def test_classify_specialty(self):
         places = [
             {"placeId": "p1", "name": "Atomic Roastery & Lab", "category": "Coffee"},

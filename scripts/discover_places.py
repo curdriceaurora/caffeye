@@ -697,6 +697,8 @@ def to_record(place: dict, brand_counts=None, curations=None):
     rec["googleUrl"] = place.get("googleMapsUri")
     if curations and place.get("id") in curations:
         cur = curations[place["id"]]
+        if "category" in cur:
+            rec["category"] = cur["category"]
         if "cw" in cur:
             rec["cw"] = cur["cw"]
         if "usp" in cur:
@@ -753,6 +755,35 @@ def usage_gate(used: int, planned: int, threshold: int, cap: int):
 
 
 # ---- API client --------------------------------------------------------------
+class BudgetExceeded(FatalApiError):
+    """Raised when the paid-call ceiling is hit mid-run. Handled like an abort,
+    except the finally block retains the partial results as an incomplete dump."""
+
+
+class PaidBudget:
+    """Runtime ceiling for paid calls. Unlike the preflight estimate (which can
+    go stale when pagination shifts), this re-reads the ledger before every
+    paid request and stops the run before the next billable call."""
+
+    def __init__(self, cap: int, sku: str = SKU_FULL):
+        self.cap = cap
+        self.sku = sku
+
+    def check(self) -> None:
+        try:
+            spent = ledger.used(self.sku)
+        except Exception as e:
+            raise BudgetExceeded(
+                f"paid-call budget unverifiable (ledger unreadable: {e}); "
+                f"stopping before further paid calls."
+            ) from e
+        if spent >= self.cap:
+            raise BudgetExceeded(
+                f"paid-call budget exhausted: ledger shows {spent} {self.sku} calls "
+                f"(cap {self.cap}). Partial results retained as an incomplete dump."
+            )
+
+
 class Client:
     """Live client: every request is counted in the ledger first; 429 backs off and retries."""
 
@@ -785,10 +816,18 @@ def fetch_pages(
     mask: str,
     sku: str,
     on_page=None,
+    budget=None,
 ):
-    """All pages (max 3) for one rect+type -> (places, calls_made)."""
+    """All pages (max 3) for one rect+type -> (places, calls_made).
+
+    When budget is given and this is a paid SKU, the budget is checked before
+    every request so the run stops instead of overshooting the ceiling when
+    pagination expands beyond the preflight estimate.
+    """
     places, token, calls = [], None, 0
     while True:
+        if budget is not None and sku == SKU_FULL:
+            budget.check()
         res = client(search_body(rect, qtype, text, token), mask, sku)
         calls += 1
         page_places = res.get("places") or []
@@ -818,11 +857,12 @@ def planned_calls(leaves) -> int:
     return sum(calls for _rect, n, calls in leaves if n > 0)
 
 
-def fetch_details(client, plan, out: dict | None = None) -> dict:
+def fetch_details(client, plan, out: dict | None = None, budget=None) -> dict:
     """Pass 2 (paid): plan = [(qtype, text, rect)] -> {placeId: place} (first sighting wins)."""
     raw = out if out is not None else {}
     for item in plan:
         qtype, text, rect = item[:3]
+        extra = {} if budget is None else {"budget": budget}
         fetch_pages(
             client,
             rect,
@@ -831,6 +871,7 @@ def fetch_details(client, plan, out: dict | None = None) -> dict:
             FULL_MASK,
             SKU_FULL,
             on_page=lambda page: [raw.setdefault(p["id"], p) for p in page],
+            **extra,
         )
     return raw
 
@@ -942,10 +983,19 @@ def curated_with_coords() -> list:
     return out
 
 
+def month_label(generated_at: str) -> str:
+    """checkedMonth for write_places: the observation date the dump represents,
+    not today. Replaying an old dump must not re-stamp it as freshly verified."""
+    try:
+        return datetime.fromisoformat(generated_at).strftime("%B %Y")
+    except (ValueError, TypeError):
+        return date.today().strftime("%B %Y")
+
+
 def write_places(recs, generated_at: str) -> None:
     data = {
         "version": 1,
-        "checkedMonth": date.today().strftime("%B %Y"),
+        "checkedMonth": month_label(generated_at),
         "generatedAt": generated_at,
         "region": {
             "label": REGION["label"],
@@ -1019,7 +1069,14 @@ def main() -> int:
             print("(replay — nothing written; add --write)")
         return 0
 
-    used = ledger.used(SKU_FULL)
+    try:
+        used = ledger.used(SKU_FULL)
+    except Exception as e:
+        print(
+            f"REFUSED: cannot verify this month's usage ({e}). "
+            f"No calls made. Ledger: {ledger.default_path()}"
+        )
+        return 2
     ok, msg = usage_gate(used, 0, args.usage_threshold, args.max_paid_calls)
     if not ok:
         print(msg)
@@ -1072,9 +1129,13 @@ def main() -> int:
     generated_at = datetime.now(timezone.utc).isoformat(timespec="seconds")
     raw = {}
     incomplete = True
+    budget = PaidBudget(args.max_paid_calls)
     try:
-        raw = fetch_details(client, plan, raw)
+        raw = fetch_details(client, plan, raw, budget=budget)
         incomplete = False
+    except BudgetExceeded as e:
+        print(f"STOPPED during pass 2: {e}")
+        return 2
     except FatalApiError as e:
         print(f"ABORTED during pass 2: {e}")
         return 2

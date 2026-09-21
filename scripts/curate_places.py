@@ -62,10 +62,21 @@ def apply_curations(places: list, curations: dict) -> tuple:
         for p in places
     )
 
-    by_name_city = {}
+    # Overlays are keyed by placeId, but collect every overlay per
+    # norm(name)+city: duplicate source keys must NOT silently collapse
+    # (last-writer-wins would copy one location's amenities onto another).
+    by_name_city: dict = {}
     for pid, c in curations.items():
         key = (norm(c.get("name", "")), norm(c.get("city", "")))
-        by_name_city[key] = c
+        by_name_city.setdefault(key, []).append((pid, c))
+    for key, cands in by_name_city.items():
+        if len(cands) > 1:
+            dup_ids = ", ".join(pid for pid, _ in cands)
+            print(
+                f"curate: {len(cands)} overlays share name+city {key[0]!r} in {key[1]!r} "
+                f"({dup_ids}); name/city fallback disabled for them — "
+                f"only placeId matches apply"
+            )
 
     applied = 0
     updated = []
@@ -74,12 +85,17 @@ def apply_curations(places: list, curations: dict) -> tuple:
         cur = curations.get(pid)
         if not cur:
             key = (norm(p.get("name", "")), norm(p.get("city", "")))
+            cands = by_name_city.get(key, [])
+            if len(cands) > 1:
+                # Ambiguous on the source side too: even a single remaining
+                # destination cannot prove which overlay location it is.
+                print(f"curate: ambiguous name+city fallback skipped for {p.get('name')} in {p.get('city')}")
             # If multiple venues exist with this name and city (e.g. multi-unit chains),
             # do not decorate without a placeId or matching address
-            if place_key_counts.get(key, 0) == 1:
-                cur = by_name_city.get(key)
-            elif place_key_counts.get(key, 0) > 1 and key in by_name_city:
-                c_cand = by_name_city.get(key)
+            elif place_key_counts.get(key, 0) == 1 and len(cands) == 1:
+                cur = cands[0][1]
+            elif place_key_counts.get(key, 0) > 1 and len(cands) == 1:
+                c_cand = cands[0][1]
                 if c_cand and c_cand.get("address") and p.get("address"):
                     if norm(c_cand["address"]) in norm(p["address"]) or norm(p["address"]) in norm(c_cand["address"]):
                         cur = c_cand
