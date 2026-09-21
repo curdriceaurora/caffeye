@@ -28,6 +28,7 @@ CURATIONS_PATH = ROOT / "scripts" / "curations.json"
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from refresh_ratings import norm  # noqa: E402
+from discover_places import ROASTERY_NAMES, SPECIALTY_NAME  # noqa: E402
 
 
 def load_curations(path=CURATIONS_PATH) -> dict:
@@ -40,6 +41,8 @@ def load_curations(path=CURATIONS_PATH) -> dict:
 def apply_curation_to_place(place: dict, cur: dict) -> dict:
     """Returns a copy of place updated with curated fields."""
     rec = dict(place)
+    if "category" in cur:
+        rec["category"] = cur["category"]
     if "cw" in cur:
         rec["cw"] = cur["cw"]
     if "usp" in cur:
@@ -92,6 +95,41 @@ def apply_curations(places: list, curations: dict) -> tuple:
     return updated, applied
 
 
+def classify_specialty(places: list) -> tuple:
+    """Classifies venues matching roastery, cultural, and concept patterns as 'Specialty'.
+
+    Guards Bakery+Cafe, Dessert Cafe, and Tea/Boba from heuristic name overrides;
+    only deliberate curation or explicit roasteries/concept types can cross those category boundaries.
+    """
+    updated = []
+    upgraded = 0
+    for p in places:
+        rec = dict(p)
+        current_cat = rec.get("category")
+        if current_cat == "Specialty":
+            updated.append(rec)
+            continue
+
+        name = rec.get("name", "")
+        n_lower = name.lower()
+        types = [t.lower() for t in rec.get("types", [])]
+        is_concept = any(t in ("cat_cafe", "dog_cafe") for t in types)
+        is_roastery = any(r in n_lower for r in ROASTERY_NAMES)
+        is_spec_name = bool(SPECIALTY_NAME.search(name))
+
+        # Guard: Bakery+Cafe, Dessert Cafe, and Tea/Boba are not overridden by generic specialty names
+        if current_cat in ("Bakery+Cafe", "Dessert Cafe", "Tea/Boba"):
+            is_spec = is_concept or is_roastery
+        else:
+            is_spec = is_concept or is_roastery or is_spec_name
+
+        if is_spec:
+            rec["category"] = "Specialty"
+            upgraded += 1
+        updated.append(rec)
+    return updated, upgraded
+
+
 def audit(places: list, shops: list = None) -> dict:
     if shops:
         all_venues = list(shops)
@@ -138,11 +176,14 @@ def audit(places: list, shops: list = None) -> dict:
     by_county = Counter()
     work_by_county = Counter()
     meeting_by_county = Counter()
+    specialty_by_county = Counter()
     tier_counts = Counter()
 
     for v in all_venues:
         county = v.get("county") or "Unknown"
         by_county[county] += 1
+        if v.get("category") == "Specialty":
+            specialty_by_county[county] += 1
         cw = v.get("cw")
         if cw and isinstance(cw, dict):
             tier = cw.get("tier")
@@ -159,9 +200,11 @@ def audit(places: list, shops: list = None) -> dict:
         "by_county": dict(by_county),
         "work_by_county": dict(work_by_county),
         "meeting_by_county": dict(meeting_by_county),
+        "specialty_by_county": dict(specialty_by_county),
         "tier_counts": dict(tier_counts),
         "total_work_friendly": sum(work_by_county.values()),
         "total_meeting_rooms": sum(meeting_by_county.values()),
+        "total_specialty": sum(specialty_by_county.values()),
     }
 
 
@@ -225,8 +268,9 @@ def research_website(url: str, timeout: float = 6.0) -> dict:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("--audit", action="store_true", help="Print coworking and meeting room coverage audit")
-    parser.add_argument("--apply", action="store_true", help="Merge curations into public/places.json")
+    parser.add_argument("--audit", action="store_true", help="Print coworking, meeting room, and specialty coverage audit")
+    parser.add_argument("--apply", action="store_true", help="Merge curations and classify specialty in public/places.json")
+    parser.add_argument("--classify-specialty", action="store_true", help="Reclassify specialty venues in public/places.json")
     parser.add_argument("--research", type=str, default="", help="Fetch and analyze URL for signals")
     args = parser.parse_args()
 
@@ -249,23 +293,32 @@ def main() -> int:
         res = audit(places_data["places"], shops)
         print("=== CAFFEYE CURATION AUDIT ===")
         print(f"Total Venues: {res['total_venues']}")
+        print(f"Specialty Venues: {res['total_specialty']}")
         print(f"Work-Friendly Venues: {res['total_work_friendly']}")
         print(f"Meeting Room Venues: {res['total_meeting_rooms']}")
         print(f"Tiers: {res['tier_counts']}")
         print("\nBreakdown by County:")
         for c in res["counties"]:
             tot = res["by_county"].get(c, 0)
+            spec = res["specialty_by_county"].get(c, 0)
             wf = res["work_by_county"].get(c, 0)
             mr = res["meeting_by_county"].get(c, 0)
-            print(f"  {c:10s}: {tot:3d} venues | {wf:2d} work-friendly | {mr:2d} meeting rooms")
+            print(f"  {c:10s}: {tot:3d} venues | {spec:2d} specialty | {wf:2d} work-friendly | {mr:2d} meeting rooms")
         return 0
 
-    if args.apply:
+    if args.apply or args.classify_specialty:
         places_data = json.loads(PLACES_PATH.read_text())
-        updated_places, count = apply_curations(places_data["places"], curations)
-        places_data["places"] = updated_places
+        places = places_data["places"]
+        cur_count = 0
+        if args.apply:
+            places, cur_count = apply_curations(places, curations)
+            print(f"Applied {cur_count} curations from {CURATIONS_PATH.name}")
+        places, spec_count = classify_specialty(places)
+        print(f"Classified {spec_count} new venues as Specialty")
+        places_data["places"] = places
         PLACES_PATH.write_text(json.dumps(places_data, indent=1, ensure_ascii=False) + "\n")
-        print(f"Applied {count} curations from {CURATIONS_PATH.name} -> {PLACES_PATH} ({PLACES_PATH.stat().st_size // 1024} KB)")
+        print(f"Saved -> {PLACES_PATH} ({PLACES_PATH.stat().st_size // 1024} KB)")
+
         # Show audit after apply
         shops_data = json.loads(SHOPS_PATH.read_text())
         shops = shops_data.get("shops", [])
@@ -274,13 +327,14 @@ def main() -> int:
             if "lat" not in s and s.get("addrKey") in addr:
                 s["lat"] = addr[s["addrKey"]].get("lat")
                 s["lng"] = addr[s["addrKey"]].get("lng")
-        res = audit(updated_places, shops)
+        res = audit(places, shops)
         print("\nPost-apply audit:")
         for c in res["counties"]:
             tot = res["by_county"].get(c, 0)
+            spec = res["specialty_by_county"].get(c, 0)
             wf = res["work_by_county"].get(c, 0)
             mr = res["meeting_by_county"].get(c, 0)
-            print(f"  {c:10s}: {tot:3d} venues | {wf:2d} work-friendly | {mr:2d} meeting rooms")
+            print(f"  {c:10s}: {tot:3d} venues | {spec:2d} specialty | {wf:2d} work-friendly | {mr:2d} meeting rooms")
         return 0
 
     parser.print_help()

@@ -61,16 +61,17 @@
       "county": "Gwinnett",
       "cw": {
         "tier": "excellent",
-        "note": "Roastery with airy modern seating, fast Wi-Fi, and an inviting atmosphere for remote workers.",
+        "note": "Sleek modern roastery with wide communal work tables, fast Wi-Fi, and ample outlets.",
         "hasMeetingRoom": false
       },
-      "usp": "Local craft roastery showcasing light roast profiles and mindful, welcoming hospitality.",
+      "usp": "Artisanal Suwanee micro-roaster pouring precision single-origins alongside house-baked pastries.",
       "loved": [
-        "cortado",
-        "cappuccino",
-        "scones"
+        "single-origin pour-over",
+        "sea salt caramel latte",
+        "butter croissant"
       ],
-      "signature": "Seasonal Single Origin Pour Over"
+      "signature": "Warm Waves Signature Pour-Over",
+      "category": "Specialty"
     },
     "ChIJNfDXtVNz9YgRhKlE7GaAsbs": {
       "name": "Crazy Love Coffee House",
@@ -259,7 +260,7 @@
         "nova lox spread",
         "breakfast sandwich"
       ],
-      "signature": "Everything Bagel with Jalape\u00f1o Cream Cheese"
+      "signature": "Everything Bagel with Jalapeño Cream Cheese"
     },
     "ChIJxcJCHi4L9YgRS3JJyrVlxH0": {
       "name": "Valor Coffee",
@@ -405,16 +406,17 @@
       "county": "Cobb",
       "cw": {
         "tier": "excellent",
-        "note": "Historic Marietta Square coffeehouse with outdoor patio tables, study seating, fast Wi-Fi, and small-batch roasting on site.",
+        "note": "Cozy exposed-brick cafe with upstairs loft, fast Wi-Fi, power, and view of the Square.",
         "hasMeetingRoom": false
       },
-      "usp": "Landmark Marietta Square roaster serving freshly roasted single-origin coffees and espresso since 2001.",
+      "usp": "Historic Marietta Square institution micro-roasting ethically sourced beans on-site for over two decades.",
       "loved": [
-        "single-origin pour over",
-        "cold brew",
-        "muffins"
+        "Square blend",
+        "Cuban espresso",
+        "raspberry scone"
       ],
-      "signature": "Marietta Square Espresso Blend"
+      "signature": "Marietta Square Dark Roast",
+      "category": "Specialty"
     },
     "ChIJHdL7-dIR9YgR_vIuc67Dle4": {
       "name": "Chattahoochee Coffee Company - Riverside",
@@ -451,7 +453,7 @@
       "signature": "Paces Ferry Vanilla Latte"
     },
     "ChIJpSzr2h8R9YgRakJbxJUmC-Y": {
-      "name": "Hermanas Caf\u00e9 at the battery",
+      "name": "Hermanas Café at the battery",
       "city": "Atlanta",
       "county": "Cobb",
       "cw": {
@@ -640,6 +642,952 @@
         "french macarons"
       ],
       "signature": "Classic Brown Sugar Milk Tea with Boba"
+    },
+    "ChIJZybc5LYF9YgRv0t0iDtA9zc": {
+      "name": "East Pole Coffee Co.",
+      "city": "Atlanta",
+      "county": "Fulton",
+      "category": "Specialty",
+      "cw": {
+        "tier": "excellent",
+        "note": "Spacious communal tables, fast Wi-Fi, abundant natural light, and quiet morning work vibe.",
+        "hasMeetingRoom": false
+      },
+      "usp": "Flagship West Midtown roastery crafting bright single-origin pour-overs and seasonal espresso in a sunlit warehouse.",
+      "loved": [
+        "Traffic Maker blend",
+        "single-origin pour-over",
+        "sea salt chocolate chip cookie"
+      ],
+      "signature": "Cortado with House Roast"
+    },
+    "ChIJ-yzpL4wF9YgR4gopjocMzl4": {
+      "name": "Chrome Yellow",
+      "city": "Atlanta",
+      "county": "Fulton",
+      "category": "Specialty",
+      "cw": {
+        "tier": "excellent",
+        "note": "Long wooden work bar, reliable Wi-Fi, power strips, and great ambient indie playlist.",
+        "hasMeetingRoom": false
+      },
+      "usp": "Edgewood Avenue specialty roastery and dry goods shop celebrated for draft cold brew and minimalist design.",
+      "loved": [
+        "draft cold brew",
+        "vanilla bourbon latte",
+        "almond croissant"
+      ],
+      "signature": "Vanilla Bourbon Cold Brew"
+    },
+    "ChIJ1bWy9eQD9YgRcOiOw0GAZZw": {
+      "name": "Portrait Coffee",
+      "city": "Atlanta",
+      "county": "Fulton",
+      "category": "Specialty",
+      "cw": {
+        "tier": "good",
+        "note": "Cozy neighborhood gathering space with good Wi-Fi, friendly baristas, and community focus.",
+        "hasMeetingRoom": false
+      },
+      "usp": "Historic West End specialty roastery pouring bold single-origins and honoring Black coffee heritage.",
+      "loved": [
+        "Founders blend pour-over",
+        "Barry latte",
+        "vegan sweet potato loaf"
+      ],
+      "signature": "The Barry (Maple & Cinnamon Latte)"
+    },
+    "ChIJGaQ-CBQb9YgRS22bZ-peZuo": {
+      "name": "Bellwood Coffee - Riverside",
+      "city": "Atlanta",
+      "county": "Fulton",
+      "category": "Specialty",
+      "cw": {
+        "tier": "excellent",
+        "note": "Comfortable indoor tables and expansive covered patio with solid Wi-Fi and power.",
+        "hasMeetingRoom": false
+      },
+      "usp": "Westside artisan roastery set in an airy restored cottage with lush patio seating and seasonal espresso creations.",
+      "loved": [
+        "house drip",
+        "orange blossom latte",
+        "cinnamon cardamom bun"
+      ],
+      "signature": "Orange Blossom Espresso"
+    },
+    "ChIJ4TfXX_0D9YgRTKTC_q63TUE": {
+      "name": "Bellwood Coffee - Grant Park",
+      "city": "Atlanta",
+      "county": "Fulton",
+      "category": "Specialty",
+      "cw": {
+        "tier": "good",
+        "note": "Intimate seating with neighborhood park-goer energy; great for quick laptop sessions.",
+        "hasMeetingRoom": false
+      },
+      "usp": "Intown micro-cafe by Grant Park serving meticulous espresso and house-roasted coffees in a bright walk-up setting.",
+      "loved": [
+        "espresso tonic",
+        "batch brew",
+        "morning pastry"
+      ],
+      "signature": "Espresso Tonic with Citrus"
+    },
+    "ChIJ__5mduwE9YgR5qBPCMdD2Z0": {
+      "name": "BRASH Coffee",
+      "city": "Atlanta",
+      "county": "Fulton",
+      "category": "Specialty",
+      "cw": {
+        "tier": "good",
+        "note": "Compact footprint with outdoor bench seating and quick-grab laptop focus.",
+        "hasMeetingRoom": false
+      },
+      "usp": "Minimalist Westside shipping container cafe obsessed with direct-trade single-origin espresso and clean aesthetics.",
+      "loved": [
+        "single-origin espresso",
+        "flat white",
+        "pour-over"
+      ],
+      "signature": "Direct-Trade Flat White"
+    },
+    "ChIJG6geABEE9YgRwtlJO55xc44": {
+      "name": "Dancing Goats Ponce City Market",
+      "city": "Atlanta",
+      "county": "Fulton",
+      "category": "Specialty",
+      "cw": {
+        "tier": "excellent",
+        "note": "Iconic screened porch with Adirondack chairs, porch swings, fast Wi-Fi, and endless power.",
+        "hasMeetingRoom": false
+      },
+      "usp": "High-energy BeltLine landmark featuring Batdorf & Bronson specialty roasts and Atlanta's favorite screened-in porch.",
+      "loved": [
+        "Dancing Goats house blend",
+        "caramel macchiato",
+        "apple turnover"
+      ],
+      "signature": "Goat Crunch Cold Brew"
+    },
+    "ChIJeUxhviIH9YgR0QctVcuQP0E": {
+      "name": "Dancing Goats Decatur",
+      "city": "Decatur",
+      "county": "DeKalb",
+      "category": "Specialty",
+      "cw": {
+        "tier": "excellent",
+        "note": "Generous work tables, fast Wi-Fi, ample power outlets, and a relaxed college-town vibe.",
+        "hasMeetingRoom": false
+      },
+      "usp": "Downtown Decatur's community coffee porch roasting specialty beans with spacious indoor and outdoor study areas.",
+      "loved": [
+        "organic French roast",
+        "chai latte",
+        "spinach feta croissant"
+      ],
+      "signature": "Decatur House Drip"
+    },
+    "ChIJteWyUNep9YgR2bnMxhI9fz0": {
+      "name": "Radio Roasters Coffee",
+      "city": "Decatur",
+      "county": "DeKalb",
+      "category": "Specialty",
+      "cw": {
+        "tier": "good",
+        "note": "Focused, roaster-forward tasting room with bar seating, Wi-Fi, and coffee geek conversations.",
+        "hasMeetingRoom": false
+      },
+      "usp": "Precision micro-roastery tucked in East Decatur pouring exceptionally balanced pour-overs and micro-lot coffees.",
+      "loved": [
+        "Ethiopian pour-over",
+        "Colombia micro-lot",
+        "cardamom shortbread"
+      ],
+      "signature": "Single-Origin Pour-Over Flights"
+    },
+    "ChIJoYUH8Iyp9YgRwmUxsm-Zy0g": {
+      "name": "Mokhaport Yemeni Coffee",
+      "city": "Tucker",
+      "county": "DeKalb",
+      "category": "Specialty",
+      "cw": {
+        "tier": "excellent",
+        "note": "Expansive seating with plush banquettes, Wi-Fi, and lively late-night study atmosphere.",
+        "hasMeetingRoom": true,
+        "meetingRoomNote": "Private curtained salon seating available for larger group study and gatherings."
+      },
+      "usp": "Traditional Yemeni coffeehouse serving cardamom-infused pot coffee and honeycomb bread in a lavish Arabian setting.",
+      "loved": [
+        "Mofawar pot coffee",
+        "Adeni tea",
+        "Khaliat Al Nahl (honeycomb bread)"
+      ],
+      "signature": "Yemeni Qishr (Spiced Coffee Cherry Tea)"
+    },
+    "ChIJa7lUBUWo9YgRa_v2rfkf5So": {
+      "name": "Refuge Coffee Co. Clarkston",
+      "city": "Clarkston",
+      "county": "DeKalb",
+      "category": "Specialty",
+      "cw": {
+        "tier": "excellent",
+        "note": "Spacious community pavilion with picnic tables, indoor seating, Wi-Fi, and inspiring mission.",
+        "hasMeetingRoom": true,
+        "meetingRoomNote": "Community room and outdoor event deck reservable for civic and study groups."
+      },
+      "usp": "Heartwarming non-profit coffee truck & cafe offering refugee job training and world-class espresso in Clarkston.",
+      "loved": [
+        "sweet vanilla cold brew",
+        "lemon ginger tea",
+        "chocolate chip scone"
+      ],
+      "signature": "Refuge Cold Brew Float"
+    },
+    "ChIJMYhLmCgH9YgRrbujxM702W4": {
+      "name": "Revolution Doughnuts & Coffee",
+      "city": "Decatur",
+      "county": "DeKalb",
+      "category": "Bakery+Cafe",
+      "cw": {
+        "tier": "good",
+        "note": "Casual counter with window counter seating, Wi-Fi, and sweet neighborhood aroma.",
+        "hasMeetingRoom": false
+      },
+      "usp": "Handcrafted artisan doughnut bakery making everything from scratch with local ingredients and Counter Culture coffee.",
+      "loved": [
+        "caramel bacon doughnut",
+        "vanilla bean yeast",
+        "apple fritter"
+      ],
+      "signature": "Salted Caramel Bacon Doughnut"
+    },
+    "ChIJqWy5W9-p9YgRNC4PzcmDCzo": {
+      "name": "Southern Sweets Bakery",
+      "city": "Decatur",
+      "county": "DeKalb",
+      "category": "Dessert Cafe",
+      "cw": {
+        "tier": "good",
+        "note": "Homey dining room with Wi-Fi and relaxed afternoon tea vibe.",
+        "hasMeetingRoom": true,
+        "meetingRoomNote": "Private dining room available for group lunches, book clubs, and celebrations."
+      },
+      "usp": "Beloved Avondale-adjacent bakery and tearoom famed for legendary layer cakes, pies, and warm Southern lunch plates.",
+      "loved": [
+        "red velvet cake",
+        "vegan carrot cake",
+        "chicken salad sandwich"
+      ],
+      "signature": "Traditional 7-Layer Chocolate Cake"
+    },
+    "ChIJO6Bu6aEW9YgROazj5lci390": {
+      "name": "Douceur De France - Bakery & Brunch",
+      "city": "Marietta",
+      "county": "Cobb",
+      "category": "Bakery+Cafe",
+      "cw": {
+        "tier": "good",
+        "note": "Bustling French cafe with indoor and patio tables; best for mid-day working lunches.",
+        "hasMeetingRoom": false
+      },
+      "usp": "Authentic French patisserie and bistro crafting flaky croissants, delicate macarons, and Parisian café classics.",
+      "loved": [
+        "almond croissant",
+        "croque monsieur",
+        "assorted macarons"
+      ],
+      "signature": "Traditional Almond Croissant"
+    },
+    "ChIJs31HEpcR9YgRN-ygaPsvwh4": {
+      "name": "Brazilian Bakery Cafe",
+      "city": "Marietta",
+      "county": "Cobb",
+      "category": "Bakery+Cafe",
+      "cw": {
+        "tier": "good",
+        "note": "Spacious cafe seating with Wi-Fi and friendly Latin American atmosphere.",
+        "hasMeetingRoom": false
+      },
+      "usp": "Authentic Brazilian bakery serving warm pão de queijo, savory coxinha pastries, and rich Brazilian cafezinho.",
+      "loved": [
+        "pão de queijo",
+        "chicken coxinha",
+        "brigadeiro tart"
+      ],
+      "signature": "Pão de Queijo with Brazilian Cafezinho"
+    },
+    "ChIJTbcY8SQU9YgRlcI2_opw3TI": {
+      "name": "Tiny Bubbles Tea Bar and Gift Shop",
+      "city": "Marietta",
+      "county": "Cobb",
+      "category": "Tea/Boba",
+      "cw": {
+        "tier": "good",
+        "note": "Bright shop with sunny window seating, Wi-Fi, and gift shop browsing.",
+        "hasMeetingRoom": false
+      },
+      "usp": "Whimsical tea boutique on the Marietta Square famous for loose-leaf blends, bubble teas, and French macarons.",
+      "loved": [
+        "brown sugar milk tea",
+        "lavender green tea",
+        "pistachio macaron"
+      ],
+      "signature": "Brown Sugar Pearl Milk Tea"
+    },
+    "ChIJp5s-piEN9YgRjll84qNI_FE": {
+      "name": "Mzizi Coffee Roaster",
+      "city": "Marietta",
+      "county": "Cobb",
+      "category": "Specialty",
+      "cw": {
+        "tier": "good",
+        "note": "Welcoming neighborhood roastery with dedicated work counter and Wi-Fi.",
+        "hasMeetingRoom": false
+      },
+      "usp": "East African specialty roaster celebrating Kenyan single-origin beans and vibrant community coffee tastings.",
+      "loved": [
+        "Kenya AA pour-over",
+        "honey cinnamon latte",
+        "blueberry muffin"
+      ],
+      "signature": "Kenyan Single-Origin Pour-Over"
+    },
+    "ChIJUxfnTEiW9YgR0PpGO36pt88": {
+      "name": "The Baking Grounds Bakery Cafe",
+      "city": "Buford",
+      "county": "Gwinnett",
+      "category": "Bakery+Cafe",
+      "cw": {
+        "tier": "good",
+        "note": "Charming historic storefront with booth seating, Wi-Fi, and morning work buzz.",
+        "hasMeetingRoom": false
+      },
+      "usp": "Downtown Buford bakery cafe renowned for gourmet cupcakes, fresh breakfast biscuits, and specialty espresso.",
+      "loved": [
+        "red velvet cupcake",
+        "buttermilk chicken biscuit",
+        "vanilla latte"
+      ],
+      "signature": "Signature Buttercream Cupcake"
+    },
+    "ChIJ13gKx_a-9YgRz4giUCtXDQc": {
+      "name": "Blue Rooster Bake Shop & Eatery",
+      "city": "Lawrenceville",
+      "county": "Gwinnett",
+      "category": "Bakery+Cafe",
+      "cw": {
+        "tier": "good",
+        "note": "Cozy square-facing bakery with casual tables and Wi-Fi.",
+        "hasMeetingRoom": false
+      },
+      "usp": "Historic downtown Lawrenceville bakeshop baking scratch pies, decadent layered cakes, and Southern comfort fare.",
+      "loved": [
+        "key lime pie",
+        "pimento cheese melt",
+        "pecan cinnamon roll"
+      ],
+      "signature": "Fresh Baked Peach Bourbon Pie"
+    },
+    "ChIJR520zn2X9YgRwRSGbTBp7Fs": {
+      "name": "Zoom Coffee Roasters",
+      "city": "Suwanee",
+      "county": "Gwinnett",
+      "category": "Specialty",
+      "cw": {
+        "tier": "excellent",
+        "note": "Quiet, minimalist study aesthetic with laptop-friendly desks, fast Wi-Fi, and outlets.",
+        "hasMeetingRoom": false
+      },
+      "usp": "Precision Korean-inspired specialty roastery known for meticulous pourovers and peaceful study ambiance.",
+      "loved": [
+        "Geisha pour-over",
+        "Einspänner latte",
+        "matcha financier"
+      ],
+      "signature": "House Einspänner"
+    },
+    "ChIJh4jIqNyj9YgRu1_QcC8GzmA": {
+      "name": "Qamaria Yemeni Coffee Co.",
+      "city": "Duluth",
+      "county": "Gwinnett",
+      "category": "Specialty",
+      "cw": {
+        "tier": "excellent",
+        "note": "High ceilings, comfortable booths, fast Wi-Fi, and great late-night energy.",
+        "hasMeetingRoom": true,
+        "meetingRoomNote": "Large rear conference room available for private study sessions and events."
+      },
+      "usp": "Premier Yemeni coffeehouse serving slow-roasted heirloom beans with cardamom, ginger, and flaky honeycomb pastries.",
+      "loved": [
+        "Jubani spiced coffee",
+        "Adeni chai",
+        "Khaliat Al Nahl"
+      ],
+      "signature": "Traditional Qamaria Pot Coffee"
+    },
+    "ChIJP0U0uJef9YgRItwooXqfu9c": {
+      "name": "Peach Coffee Roasters",
+      "city": "Johns Creek",
+      "county": "Fulton",
+      "category": "Specialty",
+      "cw": {
+        "tier": "excellent",
+        "note": "Spacious suburban roastery with plenty of outlets, strong Wi-Fi, and sunny work tables.",
+        "hasMeetingRoom": false
+      },
+      "usp": "Neighborhood craft roaster brewing ethically sourced beans with vibrant espresso drinks and local breakfast bites.",
+      "loved": [
+        "Georgia peach latte",
+        "cold brew on draft",
+        "ham and cheese croissant"
+      ],
+      "signature": "Georgia Peach Infused Latte"
+    },
+    "ChIJC7ypNI0E9YgRhGJzdw1n5Q0": {
+      "name": "Sublime Doughnuts",
+      "city": "Atlanta",
+      "county": "Fulton",
+      "category": "Bakery+Cafe",
+      "cw": {
+        "tier": "limited",
+        "note": "High-traffic campus walk-up best for quick sweet runs and grab-and-go caffeine.",
+        "hasMeetingRoom": false
+      },
+      "usp": "Iconic Georgia Tech sweet spot crafting internationally famous creative doughnuts and late-night treats.",
+      "loved": [
+        "A-Town cream doughnut",
+        "strawberry n cream",
+        "fresh-roasted coffee"
+      ],
+      "signature": "A-Town Cream Doughnut"
+    },
+    "ChIJ6_mpfNwF9YgRLtjthgGTwmM": {
+      "name": "Sugar Shane's",
+      "city": "Atlanta",
+      "county": "Fulton",
+      "category": "Bakery+Cafe",
+      "cw": {
+        "tier": "limited",
+        "note": "Dessert boutique focused on takeout and gourmet sweet fixes.",
+        "hasMeetingRoom": false
+      },
+      "usp": "Atlanta's legendary gourmet cookie shop serving massive, gooey stuffed cookies and espresso drinks.",
+      "loved": [
+        "D-Nuts stuffed cookie",
+        "red velvet cookie",
+        "iced cold brew"
+      ],
+      "signature": "The Mac Daddy Gourmet Stuffed Cookie"
+    },
+    "ChIJjSion7lv9YgRt-nAoHfqboc": {
+      "name": "Alpine Bakery & Pizzeria | Woodstock",
+      "city": "Woodstock",
+      "county": "Cherokee",
+      "category": "Bakery+Cafe",
+      "cw": {
+        "tier": "good",
+        "note": "Spacious cafe seating with Wi-Fi and sweet display cases.",
+        "hasMeetingRoom": false
+      },
+      "usp": "North Georgia dessert institution famous for towering 10-layer cakes, Italian pastries, and artisan coffee.",
+      "loved": [
+        "cannoli",
+        "chocolate mousse cake",
+        "cappuccino"
+      ],
+      "signature": "Authentic Sicilian Cannoli"
+    },
+    "ChIJJYYsqL5o9YgRtyoaZfN9nQE": {
+      "name": "Giggle Monsters Craft Donuts Bells Ferry",
+      "city": "Canton",
+      "county": "Cherokee",
+      "category": "Specialty",
+      "cw": {
+        "tier": "good",
+        "note": "Friendly family atmosphere with booth seating and Wi-Fi.",
+        "hasMeetingRoom": false
+      },
+      "usp": "Whimsical craft donut and specialty espresso shop creating customized, made-to-order gourmet donuts.",
+      "loved": [
+        "maple bacon craft donut",
+        "cinnamon monster",
+        "iced mocha"
+      ],
+      "signature": "Custom Made-to-Order Craft Donut"
+    },
+    "ChIJM5lpE-9o9YgREWgp9Ub6Dv0": {
+      "name": "Soho Bagel Company",
+      "city": "Canton",
+      "county": "Cherokee",
+      "category": "Bakery+Cafe",
+      "cw": {
+        "tier": "good",
+        "note": "Bright neighborhood morning cafe with Wi-Fi and counter seating.",
+        "hasMeetingRoom": false
+      },
+      "usp": "New York style kettle-boiled bagel bakery serving authentic schmears, breakfast sandwiches, and hot coffee.",
+      "loved": [
+        "everything bagel with lox",
+        "jalapeño cheddar bagel",
+        "drip coffee"
+      ],
+      "signature": "Everything Bagel with Nova Lox"
+    },
+    "ChIJ71QZYQif9YgRpG4LcUKeeC8": {
+      "name": "BB's Bagels",
+      "city": "Alpharetta",
+      "county": "Forsyth",
+      "category": "Bakery+Cafe",
+      "cw": {
+        "tier": "limited",
+        "note": "High-volume breakfast counter; best for early fuel-up or grab-and-go.",
+        "hasMeetingRoom": false
+      },
+      "usp": "Legendary Bronx-style water bagel institution with huge hand-rolled bagels, house schmears, and diner coffee.",
+      "loved": [
+        "bacon egg and cheese bagel",
+        "cinnamon raisin bagel",
+        "iced coffee"
+      ],
+      "signature": "Bronx Style Hand-Rolled Everything Bagel"
+    },
+    "ChIJjV40Byqb9YgR8eyL3btf8tQ": {
+      "name": "Rendezvous Cafe",
+      "city": "Cumming",
+      "county": "Forsyth",
+      "category": "Coffee",
+      "cw": {
+        "tier": "good",
+        "note": "Quiet indoor tables, reliable Wi-Fi, and relaxed suburban work environment.",
+        "hasMeetingRoom": false
+      },
+      "usp": "Cozy Cumming neighborhood cafe serving specialty espresso drinks, crêpes, and fresh brunch plates.",
+      "loved": [
+        "caramel macchiato",
+        "sweet Nutella crêpe",
+        "avocado toast"
+      ],
+      "signature": "House Salted Caramel Latte"
+    },
+    "ChIJ1VXlWXab9YgRIPGZyjo0mHU": {
+      "name": "Dutch Monkey Doughnuts",
+      "city": "Cumming",
+      "county": "Forsyth",
+      "category": "Bakery+Cafe",
+      "cw": {
+        "tier": "good",
+        "note": "Airy cafe space with counter seats, Wi-Fi, and fresh pastry aromas.",
+        "hasMeetingRoom": false
+      },
+      "usp": "Nationally acclaimed scratch doughnut bakery by CIA-trained chefs, featuring seasonal flavors and fair-trade coffee.",
+      "loved": [
+        "Dutch Monkey signature doughnut",
+        "Boston cream",
+        "iced latte"
+      ],
+      "signature": "The Dutch Monkey (Bananas, Dulce de Leche & Nutella)"
+    },
+    "ChIJNwxC4OCZ9YgR_qAUvBwDExc": {
+      "name": "Uni Uni Boba & Figurine Painting",
+      "city": "Suwanee",
+      "county": "Forsyth",
+      "category": "Specialty",
+      "cw": {
+        "tier": "good",
+        "note": "Bright, playful crafting tables with Wi-Fi; great for relaxed casual work or creative sessions.",
+        "hasMeetingRoom": false
+      },
+      "usp": "Creative experiential tea bar pairing authentic Taiwanese boba with hands-on ceramic and plaster figurine painting.",
+      "loved": [
+        "taro boba milk tea",
+        "mango pomelo sago",
+        "brown sugar deerioca"
+      ],
+      "signature": "Brown Sugar Boba with Cheese Foam"
+    },
+    "ChIJI8nlShf49YgRPr-HUQLG1A4": {
+      "name": "Rabbittown Cafe",
+      "city": "Gainesville",
+      "county": "Hall",
+      "category": "Coffee",
+      "cw": {
+        "tier": "limited",
+        "note": "Classic bustling Southern diner; ideal for breakfast energy before the workday.",
+        "hasMeetingRoom": false
+      },
+      "usp": "Gainesville landmark diner and coffee stop famous for oversized fluffy biscuits and endless hot coffee.",
+      "loved": [
+        "cathead biscuit with gravy",
+        "country breakfast",
+        "drip coffee"
+      ],
+      "signature": "Famous Rabbittown Cathead Biscuit"
+    },
+    "ChIJH9Rbbxj19YgRExuNOH3bLvw": {
+      "name": "Bubble Bees Tea Taiwan",
+      "city": "Gainesville",
+      "county": "Hall",
+      "category": "Tea/Boba",
+      "cw": {
+        "tier": "good",
+        "note": "Clean, cheerful modern tea room with Wi-Fi and casual study tables.",
+        "hasMeetingRoom": false
+      },
+      "usp": "Authentic Taiwanese bubble tea parlor in Gainesville crafting fresh boba pearls, milk teas, and fruit slushes.",
+      "loved": [
+        "Taiwanese classic milk tea",
+        "passionfruit green tea",
+        "egg waffles"
+      ],
+      "signature": "Classic Taiwan Milk Tea with Brown Sugar Boba"
+    },
+    "ChIJJURQP-329YgR0TSYjN82HtE": {
+      "name": "Dannys Donuts #1",
+      "city": "Gainesville",
+      "county": "Hall",
+      "category": "Bakery+Cafe",
+      "cw": {
+        "tier": "limited",
+        "note": "Quick-service neighborhood bakery with traditional counter charm.",
+        "hasMeetingRoom": false
+      },
+      "usp": "Family-owned Gainesville doughnut shop frying light-as-air yeast glazed doughnuts and brewing hot morning coffee.",
+      "loved": [
+        "warm glazed doughnut",
+        "apple fritter",
+        "coffee"
+      ],
+      "signature": "Hot Glazed Yeast Doughnut"
+    },
+    "ChIJy4ntBmNjX4gRZXTvw3Is5eI": {
+      "name": "BW Blacksmith Coffee Co. Dawsonville, Ga",
+      "city": "Dawsonville",
+      "county": "Dawson",
+      "category": "Specialty",
+      "cw": {
+        "tier": "excellent",
+        "note": "Rustic timber tables, fast Wi-Fi, plenty of outlets, and tranquil North Georgia atmosphere.",
+        "hasMeetingRoom": false
+      },
+      "usp": "Foothills artisan roastery and cafe celebrating blacksmith heritage with hand-roasted coffee and quiet study areas.",
+      "loved": [
+        "Anvil house dark roast",
+        "honey vanilla latte",
+        "fresh blueberry scone"
+      ],
+      "signature": "The Anvil Roast (Smoky Dark Espresso)"
+    },
+    "ChIJPcwlODx9X4gRqDa1vutwT2k": {
+      "name": "IGY6 Coffee Company",
+      "city": "Dawsonville",
+      "county": "Dawson",
+      "category": "Coffee",
+      "cw": {
+        "tier": "good",
+        "note": "Community gathering room with comfortable seating, Wi-Fi, and patriotic hospitality.",
+        "hasMeetingRoom": false
+      },
+      "usp": "Veteran-owned Dawsonville coffeehouse dedicated to first responders, roasting bold blends in a mission-driven space.",
+      "loved": [
+        "Got Your 6 roast",
+        "toffee nut cold brew",
+        "cinnamon roll"
+      ],
+      "signature": "IGY6 Cold Brew"
+    },
+    "ChIJuRLi-LP-9IgRgtHgNd4cxc4": {
+      "name": "Boba Theory",
+      "city": "Morrow",
+      "county": "Clayton",
+      "category": "Tea/Boba",
+      "cw": {
+        "tier": "excellent",
+        "note": "Spacious modern lounge with dedicated study booths, fast Wi-Fi, and ample power outlets.",
+        "hasMeetingRoom": true,
+        "meetingRoomNote": "Semi-private group study alcove reservable for team sessions."
+      },
+      "usp": "South Metro's premier bubble tea destination serving handcrafted fruit teas, brown sugar boba, and Asian street snacks.",
+      "loved": [
+        "crème brûlée boba",
+        "taro swirl milk tea",
+        "popcorn chicken"
+      ],
+      "signature": "Crème Brûlée Brown Sugar Milk Tea"
+    },
+    "ChIJT2LTygn79IgRFOTFonPHUKE": {
+      "name": "Rays Donuts",
+      "city": "Jonesboro",
+      "county": "Clayton",
+      "category": "Bakery+Cafe",
+      "cw": {
+        "tier": "limited",
+        "note": "Fast-moving bakery counter with classic morning breakfast crowds.",
+        "hasMeetingRoom": false
+      },
+      "usp": "Clayton County's favorite traditional doughnut shop known for enormous cinnamon rolls and hot glazed rings.",
+      "loved": [
+        "glazed doughnut",
+        "cinnamon twist",
+        "hot black coffee"
+      ],
+      "signature": "Giant Apple Fritter"
+    },
+    "ChIJs7KxY9X99IgRqtTIV8j1Pcg": {
+      "name": "Best Country Doughnuts",
+      "city": "Forest Park",
+      "county": "Clayton",
+      "category": "Bakery+Cafe",
+      "cw": {
+        "tier": "limited",
+        "note": "Beloved local grab-and-go morning staple with friendly counter service.",
+        "hasMeetingRoom": false
+      },
+      "usp": "Longtime Forest Park neighborhood bakery serving fluffy handmade doughnuts, kolaches, and fresh coffee.",
+      "loved": [
+        "glazed yeast doughnut",
+        "jalapeño sausage kolache",
+        "hot coffee"
+      ],
+      "signature": "Jalapeño Sausage Cheese Kolache"
+    },
+    "ChIJtYtpoDFQ9IgRxnUNZJ9hc6g": {
+      "name": "Queen Bee Coffee Co",
+      "city": "McDonough",
+      "county": "Henry",
+      "category": "Specialty",
+      "cw": {
+        "tier": "excellent",
+        "note": "Exposed brick, roomy communal tables, fast Wi-Fi, and downtown square charm.",
+        "hasMeetingRoom": true,
+        "meetingRoomNote": "Upstairs community gathering room reservable for meetings and workshops."
+      },
+      "usp": "Historic McDonough Square roastery and community coffeehouse serving micro-roasted beans and fresh bakery treats.",
+      "loved": [
+        "Queen Bee honey latte",
+        "cold brew on nitro",
+        "fresh morning muffin"
+      ],
+      "signature": "The Queen Bee (Honey & Vanilla Latte)"
+    },
+    "ChIJ49cWosRW9IgRoSTHYsLlK9g": {
+      "name": "Holey Sweet Donuts",
+      "city": "Stockbridge",
+      "county": "Henry",
+      "category": "Bakery+Cafe",
+      "cw": {
+        "tier": "good",
+        "note": "Casual cafe seating with Wi-Fi and morning neighborhood feel.",
+        "hasMeetingRoom": false
+      },
+      "usp": "Stockbridge artisan doughnut bakery creating creative filled doughnuts, breakfast sandwiches, and iced espresso.",
+      "loved": [
+        "bacon maple doughnut",
+        "red velvet cake doughnut",
+        "caramel iced latte"
+      ],
+      "signature": "Maple Bacon Specialty Doughnut"
+    },
+    "ChIJ5QEs0XHv9IgRzVm6V2VvJII": {
+      "name": "Fuel Coffee Bar-Fayetteville",
+      "city": "Fayetteville",
+      "county": "Fayette",
+      "category": "Specialty",
+      "cw": {
+        "tier": "excellent",
+        "note": "Spacious multi-zone cafe with dedicated quiet laptop counter, high-speed Wi-Fi, and outlets.",
+        "hasMeetingRoom": true,
+        "meetingRoomNote": "Reservable conference room with AV display for business meetings."
+      },
+      "usp": "High-volume, high-vibe Fayetteville community coffeehouse serving craft espresso, nitro cold brew, and fresh acai bowls.",
+      "loved": [
+        "Fuel cold brew",
+        "vanilla lavender latte",
+        "acai energy bowl"
+      ],
+      "signature": "The High Octane Nitro Cold Brew"
+    },
+    "ChIJ5Z7eZzTu9IgRuqm_Bp9lV88": {
+      "name": "City Cafe and Bakery",
+      "city": "Fayetteville",
+      "county": "Fayette",
+      "category": "Bakery+Cafe",
+      "cw": {
+        "tier": "good",
+        "note": "Relaxed dining room with Wi-Fi and European cafe atmosphere.",
+        "hasMeetingRoom": false
+      },
+      "usp": "Downtown Fayetteville German-inspired bakery and cafe serving authentic strudels, pretzels, and European coffees.",
+      "loved": [
+        "apple strudel",
+        "Bavarian pretzel",
+        "Viennese roast coffee"
+      ],
+      "signature": "Homemade Apple Strudel with Vanilla Cream"
+    },
+    "ChIJbYl1yRXo9IgRWJ_Ru6_r7ik": {
+      "name": "Kakao Cafe",
+      "city": "Tyrone",
+      "county": "Fayette",
+      "category": "Coffee",
+      "cw": {
+        "tier": "good",
+        "note": "Comfortable seating, quiet suburban setting, Wi-Fi, and decadent chocolate aroma.",
+        "hasMeetingRoom": false
+      },
+      "usp": "Tyrone village coffeehouse and European chocolatier pairing artisan espresso with handcrafted truffles and crepes.",
+      "loved": [
+        "dark mocha latte",
+        "Belgian chocolate truffle",
+        "savory ham crepe"
+      ],
+      "signature": "Kakao Belgian Chocolate Mocha"
+    },
+    "ChIJVzFv1NyU9IgRQugz159LVaM": {
+      "name": "Senoia Coffee",
+      "city": "Senoia",
+      "county": "Coweta",
+      "category": "Coffee",
+      "cw": {
+        "tier": "good",
+        "note": "Quaint downtown setting with street-facing tables, Wi-Fi, and movie-town charm.",
+        "hasMeetingRoom": false
+      },
+      "usp": "Historic Senoia Main Street coffee shop (famous filming location for The Walking Dead) serving craft espresso and pastries.",
+      "loved": [
+        "Main Street latte",
+        "iced chai",
+        "cinnamon coffee cake"
+      ],
+      "signature": "The Alexandria Mocha"
+    },
+    "ChIJvyp2qVjI9IgR_Xg74GZM4y4": {
+      "name": "Leaf and Bean",
+      "city": "Newnan",
+      "county": "Coweta",
+      "category": "Specialty",
+      "cw": {
+        "tier": "excellent",
+        "note": "Historic two-story brick building, fast Wi-Fi, comfortable sofas, and quiet upstairs work nooks.",
+        "hasMeetingRoom": true,
+        "meetingRoomNote": "Upstairs mezzanine space reservable for business gatherings and remote team meetups."
+      },
+      "usp": "Historic Newnan Court Square coffee roaster and wine bar brewing small-batch beans in a historic brick setting.",
+      "loved": [
+        "Court Square blend",
+        "Cuban latte",
+        "lemon blueberry scone"
+      ],
+      "signature": "Newnan Square Pour-Over"
+    },
+    "ChIJ0ZKTHF_J9IgRyNSGPAMp_0o": {
+      "name": "Doba Cafe",
+      "city": "Newnan",
+      "county": "Coweta",
+      "category": "Coffee",
+      "cw": {
+        "tier": "good",
+        "note": "Cheerful dining area with Wi-Fi and warm Latin American hospitality.",
+        "hasMeetingRoom": false
+      },
+      "usp": "Vibrant Newnan Latin bakery and espresso bar serving Colombian empanadas, arepas, and rich mountain-grown coffee.",
+      "loved": [
+        "Colombian pour-over",
+        "beef empanada",
+        "dulce de leche latte"
+      ],
+      "signature": "Single-Origin Colombian Drip with Fresh Empanada"
+    },
+    "ChIJx-NcYgoo9YgRsZUbczWFIJY": {
+      "name": "Farmer's Table",
+      "city": "Douglasville",
+      "county": "Douglas",
+      "category": "Coffee",
+      "cw": {
+        "tier": "good",
+        "note": "Bright farmhouse aesthetic with roomy tables and Wi-Fi.",
+        "hasMeetingRoom": false
+      },
+      "usp": "Douglasville farm-to-table breakfast cafe and espresso bar serving local pasture-raised breakfast plates and specialty roasts.",
+      "loved": [
+        "farmer's breakfast plate",
+        "honey cinnamon latte",
+        "fresh biscuit"
+      ],
+      "signature": "Farm Fresh Honey Butter Latte"
+    },
+    "ChIJib5umVQm9YgR_b8lGH8g9a4": {
+      "name": "The Bagel Meister",
+      "city": "Douglasville",
+      "county": "Douglas",
+      "category": "Bakery+Cafe",
+      "cw": {
+        "tier": "excellent",
+        "note": "Comfortable booth and table seating, reliable Wi-Fi, and quiet mid-day study hours.",
+        "hasMeetingRoom": true,
+        "meetingRoomNote": "Community table reservable for morning business meetups."
+      },
+      "usp": "Authentic New York bagel shop in Douglasville baking kettle-boiled bagels daily with homemade cream cheese spreads.",
+      "loved": [
+        "everything bagel with lox",
+        "asiago cheese bagel",
+        "drip coffee"
+      ],
+      "signature": "Asiago Bagel with Jalapeño Cream Cheese"
+    },
+    "ChIJ8Ra0aXEh9YgRaEdi0-NROZk": {
+      "name": "Jewel's Treats & More",
+      "city": "Douglasville",
+      "county": "Douglas",
+      "category": "Dessert Cafe",
+      "cw": {
+        "tier": "limited",
+        "note": "Charming sweet shop ideal for dessert cravings and quick treats.",
+        "hasMeetingRoom": false
+      },
+      "usp": "Boutique custom cakery and dessert bar crafting decadent cupcakes, cake jars, and dessert coffees.",
+      "loved": [
+        "strawberry crunch cake jar",
+        "banana pudding cupcake",
+        "iced caramel macchiato"
+      ],
+      "signature": "Strawberry Crunch Gourmet Cake Jar"
+    },
+    "ChIJT4j2MABL9IgR3aFwBHstjyI": {
+      "name": "Tammy's Little Cafe",
+      "city": "Conyers",
+      "county": "Rockdale",
+      "category": "Coffee",
+      "cw": {
+        "tier": "good",
+        "note": "Home-style dining room with Wi-Fi and loyal regular crowd.",
+        "hasMeetingRoom": false
+      },
+      "usp": "Welcoming Conyers neighborhood cafe serving homemade breakfast skillets, fresh pastries, and warm drip coffee.",
+      "loved": [
+        "country breakfast platter",
+        "cinnamon French toast",
+        "house coffee"
+      ],
+      "signature": "Tammy's Famous Breakfast Skillet"
+    },
+    "ChIJFQkZ1-Q19IgRa-lhMGen99I": {
+      "name": "The SugarMill, Inc.",
+      "city": "Conyers",
+      "county": "Rockdale",
+      "category": "Bakery+Cafe",
+      "cw": {
+        "tier": "excellent",
+        "note": "Spacious historic parlor with comfortable seating, fast Wi-Fi, and relaxed afternoon work atmosphere.",
+        "hasMeetingRoom": true,
+        "meetingRoomNote": "Private parlor room reservable for group meetings, book clubs, and remote teams."
+      },
+      "usp": "Historic Conyers family bakery baking traditional Southern pound cakes, decorated cookies, and specialty morning coffee.",
+      "loved": [
+        "seven-flavor pound cake",
+        "cheese straw pack",
+        "iced vanilla latte"
+      ],
+      "signature": "Southern Seven-Flavor Pound Cake"
     }
   }
 }

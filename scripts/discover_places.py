@@ -24,6 +24,7 @@ Key (never printed): $GOOGLE_MAPS_API_KEY wins, else ~/.config/caffeye/google_ma
 Ledger of calls made: ~/.config/caffeye/places_usage.json (see scripts/places_ledger.py).
 Region, query types, category mapping and chain list are the constants below.
 """
+from __future__ import annotations
 
 import argparse
 import json
@@ -94,8 +95,8 @@ QUERIES = [
 CATEGORY_BY_PRIMARY = {
     "coffee_shop": "Coffee",
     "cafe": "Coffee",
-    "cat_cafe": "Coffee",
-    "dog_cafe": "Coffee",
+    "cat_cafe": "Specialty",
+    "dog_cafe": "Specialty",
     "bakery": "Bakery+Cafe",
     "bagel_shop": "Bakery+Cafe",
     "donut_shop": "Bakery+Cafe",
@@ -104,6 +105,26 @@ CATEGORY_BY_PRIMARY = {
     "dessert_restaurant": "Dessert Cafe",
 }
 TEA_NAME = re.compile(r"\b(boba|bubble tea|milk tea|tea ?house)\b", re.I)
+ROASTERY_NAMES = (
+    "east pole", "portrait coffee", "chrome yellow", "radio roasters", "peach coffee",
+    "cool beans coffee", "warm waves", "blue mountain coffee", "break coffee",
+    "san francisco coffee roasting", "notable roasting", "cips coffee", "mzizi coffee",
+    "coffee that matters", "bellwood coffee", "brash coffee", "dancing goats",
+    "fuel coffee roasters", "zoom coffee roasters", "roast coffee", "phoenix roasters",
+    "boarding pass coffee", "land of a thousand hills", "perc coffee",
+    "spiller park", "banjo coffee", "taproom coffee", "shiba coffee", "shibam coffee"
+)
+SPECIALTY_NAME = re.compile(
+    r"\b("
+    r"roast(ers?|ery|ings?)|"
+    r"coffee lab|"
+    r"perc|"
+    r"yemeni|turkish|arabic|ethiopi\w*|cardamom|cà phê|ca phe|vietnamese coffee|"
+    r"cats? (cafe|lounge)|dogs? (cafe|lounge)|craft cafe|board game|ceramics|apothecary|"
+    r"specialty (coffee|tea|roast|cafe)"
+    r")\b",
+    re.I
+)
 
 # Supermarket and grocery store in-store bakeries are completely excluded.
 GROCERY_PATTERNS = (
@@ -242,10 +263,44 @@ def county_label(components, lat: float):
 
 
 def category_for(place: dict):
-    """Category from primaryType (allowlist), with a boba/tea-house name override. None = drop."""
+    """Category from primaryType (allowlist), with specialty, roastery, and tea-house overrides. None = drop.
+
+    Precedence & Guard rules:
+    1. Concept cafes by primaryType ('cat_cafe', 'dog_cafe') -> 'Specialty'.
+    2. Bakery+Cafe / Dessert Cafe: guarded against heuristic specialty name matches.
+       Only an explicit roastery match in ROASTERY_NAMES can override them.
+    3. Tea/Boba: if primary is tea_house or name matches TEA_NAME, 'Tea/Boba' takes
+       precedence over loose cultural/specialty name patterns (e.g. 'Yemeni Boba Tea House' -> 'Tea/Boba').
+    4. Coffee / general cafes: upgraded to 'Specialty' if matching ROASTERY_NAMES or SPECIALTY_NAME.
+    """
     cat = CATEGORY_BY_PRIMARY.get(place.get("primaryType"))
-    if cat and TEA_NAME.search((place.get("displayName") or {}).get("text", "")):
+    if not cat:
+        return None
+    name = (place.get("displayName") or {}).get("text", "") or place.get("name", "")
+    n_lower = name.lower()
+
+    if cat == "Specialty":
+        return "Specialty"
+
+    is_roastery = any(r in n_lower for r in ROASTERY_NAMES)
+    is_spec_name = bool(SPECIALTY_NAME.search(name))
+    is_tea = (cat == "Tea/Boba") or bool(TEA_NAME.search(name))
+
+    # Guard: Bakeries and Dessert cafes don't get converted by generic specialty name patterns
+    if cat in ("Bakery+Cafe", "Dessert Cafe"):
+        if is_roastery:
+            return "Specialty"
+        return cat
+
+    # Precedence: Tea/Boba wins over generic specialty unless it's a known roastery
+    if is_tea:
+        if is_roastery:
+            return "Specialty"
         return "Tea/Boba"
+
+    if is_roastery or is_spec_name:
+        return "Specialty"
+
     return cat
 
 

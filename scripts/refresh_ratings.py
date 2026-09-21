@@ -38,6 +38,7 @@ Rows marked ⚠ are refused on --write: API error, no candidate, no name overlap
 CLOSED_PERMANENTLY, and — unless --accept — CLOSED_TEMPORARILY or count < DROP_LIMIT × stored.
 The first accepted match stores the Google `placeId` on the shop.
 """
+from __future__ import annotations
 
 import argparse
 import json

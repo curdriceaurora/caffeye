@@ -77,17 +77,94 @@ class CuratePlacesTests(unittest.TestCase):
         self.assertNotIn("cw", updated[0])
         self.assertNotIn("cw", updated[1])
 
+    def test_classify_specialty(self):
+        places = [
+            {"placeId": "p1", "name": "Atomic Roastery & Lab", "category": "Coffee"},
+            {"placeId": "p2", "name": "Qamaria Yemeni Coffee Co.", "category": "Coffee"},
+            {"placeId": "p3", "name": "Java Cats Cafe", "category": "Coffee"},
+            {"placeId": "p4", "name": "Boba Time", "category": "Tea/Boba"},
+            {"placeId": "p5", "name": "Standard Cafe", "category": "Coffee"},
+        ]
+        classified, count = CP.classify_specialty(places)
+        self.assertEqual(count, 3)
+        p_map = {p["placeId"]: p["category"] for p in classified}
+        self.assertEqual(p_map["p1"], "Specialty")
+        self.assertEqual(p_map["p2"], "Specialty")
+        self.assertEqual(p_map["p3"], "Specialty")
+        self.assertEqual(p_map["p4"], "Tea/Boba")
+        self.assertEqual(p_map["p5"], "Coffee")
+
+    def test_bakery_and_tea_guards(self):
+        # Bakeries, Dessert Cafes, and Tea/Boba must NOT be hijacked by generic specialty name patterns
+        places = [
+            {"placeId": "b1", "name": "Sunday Roasters Bakery", "category": "Bakery+Cafe"},
+            {"placeId": "d1", "name": "Turkish Delight Dessert Shop", "category": "Dessert Cafe"},
+            {"placeId": "t1", "name": "Yemeni Boba Tea House", "category": "Tea/Boba"},
+            # But explicit roasteries in ROASTERY_NAMES DO upgrade even if typed bakery
+            {"placeId": "r1", "name": "East Pole Coffee Co Bakery", "category": "Bakery+Cafe"},
+        ]
+        classified, count = CP.classify_specialty(places)
+        self.assertEqual(count, 1)
+        p_map = {p["placeId"]: p["category"] for p in classified}
+        self.assertEqual(p_map["b1"], "Bakery+Cafe")
+        self.assertEqual(p_map["d1"], "Dessert Cafe")
+        self.assertEqual(p_map["t1"], "Tea/Boba")
+        self.assertEqual(p_map["r1"], "Specialty")
+
+    def test_curation_category_override(self):
+        places = [
+            {"placeId": "p1", "name": "Some Artisanal Roaster", "category": "Coffee"}
+        ]
+        curations = {
+            "p1": {
+                "name": "Some Artisanal Roaster",
+                "category": "Specialty",
+                "usp": "In-house micro-lot roasting",
+            }
+        }
+        updated, count = CP.apply_curations(places, curations)
+        self.assertEqual(count, 1)
+        self.assertEqual(updated[0]["category"], "Specialty")
+        self.assertEqual(updated[0]["usp"], "In-house micro-lot roasting")
+
+    def test_apply_idempotency(self):
+        places = [
+            {"placeId": "p1", "name": "East Pole Coffee Co", "category": "Coffee"},
+            {"placeId": "p2", "name": "Regular Cafe", "category": "Coffee"},
+        ]
+        curations = {
+            "p2": {
+                "name": "Regular Cafe",
+                "cw": {"tier": "excellent", "hasMeetingRoom": True}
+            }
+        }
+        # Run 1
+        pass1_places, count1 = CP.apply_curations(places, curations)
+        pass1_classified, spec_count1 = CP.classify_specialty(pass1_places)
+        self.assertEqual(count1, 1)
+        self.assertEqual(spec_count1, 1)
+
+        # Run 2 on the output of Run 1
+        pass2_places, count2 = CP.apply_curations(pass1_classified, curations)
+        pass2_classified, spec_count2 = CP.classify_specialty(pass2_places)
+        self.assertEqual(count2, 1)
+        self.assertEqual(spec_count2, 0)  # 0 new upgrades on second run
+        self.assertEqual(pass1_classified, pass2_classified)
+
     def test_audit_computation(self):
         places = [
-            {"name": "P1", "county": "Fulton", "cw": {"tier": "excellent", "hasMeetingRoom": True}},
-            {"name": "P2", "county": "Fulton", "cw": {"tier": "good", "hasMeetingRoom": False}},
-            {"name": "P3", "county": "Forsyth", "cw": {"tier": "excellent", "hasMeetingRoom": False}},
-            {"name": "P4", "county": "Forsyth"},
+            {"name": "P1", "county": "Fulton", "category": "Specialty", "cw": {"tier": "excellent", "hasMeetingRoom": True}},
+            {"name": "P2", "county": "Fulton", "category": "Coffee", "cw": {"tier": "good", "hasMeetingRoom": False}},
+            {"name": "P3", "county": "Forsyth", "category": "Specialty", "cw": {"tier": "excellent", "hasMeetingRoom": False}},
+            {"name": "P4", "county": "Forsyth", "category": "Bakery+Cafe"},
         ]
         res = CP.audit(places)
         self.assertEqual(res["total_venues"], 4)
         self.assertEqual(res["total_work_friendly"], 2)
         self.assertEqual(res["total_meeting_rooms"], 1)
+        self.assertEqual(res["total_specialty"], 2)
+        self.assertEqual(res["specialty_by_county"]["Fulton"], 1)
+        self.assertEqual(res["specialty_by_county"]["Forsyth"], 1)
         self.assertEqual(res["work_by_county"]["Fulton"], 1)
         self.assertEqual(res["work_by_county"]["Forsyth"], 1)
         self.assertEqual(res["meeting_by_county"]["Fulton"], 1)
@@ -153,3 +230,4 @@ class CuratePlacesTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+

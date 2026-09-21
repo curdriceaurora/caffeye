@@ -364,7 +364,7 @@
    "county": "Forsyth",
    "lat": 34.11078,
    "lng": -84.223702,
-   "category": "Coffee",
+   "category": "Specialty",
    "model": "franchise",
    "types": [
     "coffee_shop",
@@ -386,7 +386,7 @@
    "neighborhood": "Old Fourth Ward",
    "lat": 33.753927,
    "lng": -84.371011,
-   "category": "Coffee",
+   "category": "Specialty",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -397,7 +397,19 @@
    "ratingCount": "938",
    "hours": "Mon-Fri 7am-5pm · Sat-Sun 8am-5pm",
    "website": "https://chrome-yellow.com/",
-   "googleUrl": "https://maps.google.com/?cid=6831411461112793826&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=6831411461112793826&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "excellent",
+    "note": "Long wooden work bar, reliable Wi-Fi, power strips, and great ambient indie playlist.",
+    "hasMeetingRoom": false
+   },
+   "usp": "Edgewood Avenue specialty roastery and dry goods shop celebrated for draft cold brew and minimalist design.",
+   "loved": [
+    "draft cold brew",
+    "vanilla bourbon latte",
+    "almond croissant"
+   ],
+   "signature": "Vanilla Bourbon Cold Brew"
   },
   {
    "placeId": "ChIJ-zaYD68F9YgR9cUMxvI4A20",
@@ -476,7 +488,7 @@
    "neighborhood": "Buckhead",
    "lat": 33.850606,
    "lng": -84.375069,
-   "category": "Coffee",
+   "category": "Specialty",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -911,7 +923,7 @@
    "county": "Coweta",
    "lat": 33.378912,
    "lng": -84.798734,
-   "category": "Bakery+Cafe",
+   "category": "Coffee",
    "model": "independent",
    "types": [
     "donut_shop",
@@ -922,7 +934,19 @@
    "ratingCount": "469",
    "hours": "Mon Closed · Tue-Sun 6am-2pm",
    "website": "http://facebook.com/dobacafe",
-   "googleUrl": "https://maps.google.com/?cid=5404083171744994504&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=5404083171744994504&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "good",
+    "note": "Cheerful dining area with Wi-Fi and warm Latin American hospitality.",
+    "hasMeetingRoom": false
+   },
+   "usp": "Vibrant Newnan Latin bakery and espresso bar serving Colombian empanadas, arepas, and rich mountain-grown coffee.",
+   "loved": [
+    "Colombian pour-over",
+    "beef empanada",
+    "dulce de leche latte"
+   ],
+   "signature": "Single-Origin Colombian Drip with Fresh Empanada"
   },
   {
    "placeId": "ChIJ0ZR1LhcP9YgROXaS4i3zwp4",
@@ -1018,7 +1042,7 @@
    "county": "Fulton",
    "lat": 34.055929,
    "lng": -84.229265,
-   "category": "Coffee",
+   "category": "Specialty",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -1211,7 +1235,19 @@
    "ratingCount": "882",
    "hours": "Mon-Sat 9am-4pm · Sun Closed",
    "website": "http://blueroosterbakeshops.com/",
-   "googleUrl": "https://maps.google.com/?cid=508158176502384847&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=508158176502384847&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "good",
+    "note": "Cozy square-facing bakery with casual tables and Wi-Fi.",
+    "hasMeetingRoom": false
+   },
+   "usp": "Historic downtown Lawrenceville bakeshop baking scratch pies, decadent layered cakes, and Southern comfort fare.",
+   "loved": [
+    "key lime pie",
+    "pimento cheese melt",
+    "pecan cinnamon roll"
+   ],
+   "signature": "Fresh Baked Peach Bourbon Pie"
   },
   {
    "placeId": "ChIJ14JDaeup9YgRI6JZwiB9vlU",
@@ -1404,7 +1440,19 @@
    "ratingCount": "709",
    "hours": "Mon Closed · Tue-Sun 7am-2pm",
    "website": "http://www.dutchmonkeydoughnuts.com/",
-   "googleUrl": "https://maps.google.com/?cid=8473580126009422112&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=8473580126009422112&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "good",
+    "note": "Airy cafe space with counter seats, Wi-Fi, and fresh pastry aromas.",
+    "hasMeetingRoom": false
+   },
+   "usp": "Nationally acclaimed scratch doughnut bakery by CIA-trained chefs, featuring seasonal flavors and fair-trade coffee.",
+   "loved": [
+    "Dutch Monkey signature doughnut",
+    "Boston cream",
+    "iced latte"
+   ],
+   "signature": "The Dutch Monkey (Bananas, Dulce de Leche & Nutella)"
   },
   {
    "placeId": "ChIJ1VzqTIOX9YgRc-mB21uH4_Y",
@@ -1456,7 +1504,7 @@
    "neighborhood": "West End",
    "lat": 33.738506,
    "lng": -84.422642,
-   "category": "Coffee",
+   "category": "Specialty",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -1467,7 +1515,19 @@
    "ratingCount": "582",
    "hours": "Mon-Fri 7am-4pm · Sat-Sun 8am-4pm",
    "website": "http://portrait.coffee/",
-   "googleUrl": "https://maps.google.com/?cid=11269554662506686576&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=11269554662506686576&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "good",
+    "note": "Cozy neighborhood gathering space with good Wi-Fi, friendly baristas, and community focus.",
+    "hasMeetingRoom": false
+   },
+   "usp": "Historic West End specialty roastery pouring bold single-origins and honoring Black coffee heritage.",
+   "loved": [
+    "Founders blend pour-over",
+    "Barry latte",
+    "vegan sweet potato loaf"
+   ],
+   "signature": "The Barry (Maple & Cinnamon Latte)"
   },
   {
    "placeId": "ChIJ1d0S3aQF9YgRtCdQqVEno3I",
@@ -2568,7 +2628,7 @@
    "county": "Fulton",
    "lat": 34.093073,
    "lng": -84.282328,
-   "category": "Coffee",
+   "category": "Specialty",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -3315,7 +3375,19 @@
    "ratingCount": "814",
    "hours": "Mon Closed · Tue-Fri 5:45am-2:45pm · Sat-Sun 6:45am-1:30pm",
    "website": "http://www.holeysweetdonuts.com/",
-   "googleUrl": "https://maps.google.com/?cid=15576796359234626721&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=15576796359234626721&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "good",
+    "note": "Casual cafe seating with Wi-Fi and morning neighborhood feel.",
+    "hasMeetingRoom": false
+   },
+   "usp": "Stockbridge artisan doughnut bakery creating creative filled doughnuts, breakfast sandwiches, and iced espresso.",
+   "loved": [
+    "bacon maple doughnut",
+    "red velvet cake doughnut",
+    "caramel iced latte"
+   ],
+   "signature": "Maple Bacon Specialty Doughnut"
   },
   {
    "placeId": "ChIJ4QvFBAB19YgRV4ajpaTirO4",
@@ -3371,7 +3443,7 @@
    "neighborhood": "Grant Park",
    "lat": 33.739005,
    "lng": -84.367862,
-   "category": "Coffee",
+   "category": "Specialty",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -3382,7 +3454,19 @@
    "ratingCount": "31",
    "hours": "Mon-Fri 7am-4pm · Sat-Sun 8am-4pm",
    "website": "https://bellwoodcoffee.com/",
-   "googleUrl": "https://maps.google.com/?cid=4705619147898397772&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=4705619147898397772&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "good",
+    "note": "Intimate seating with neighborhood park-goer energy; great for quick laptop sessions.",
+    "hasMeetingRoom": false
+   },
+   "usp": "Intown micro-cafe by Grant Park serving meticulous espresso and house-roasted coffees in a bright walk-up setting.",
+   "loved": [
+    "espresso tonic",
+    "batch brew",
+    "morning pastry"
+   ],
+   "signature": "Espresso Tonic with Citrus"
   },
   {
    "placeId": "ChIJ4UulDK859YgRNPYJN8mlFfQ",
@@ -3556,7 +3640,7 @@
    "neighborhood": "Midtown Atlanta",
    "lat": 33.785563,
    "lng": -84.389436,
-   "category": "Coffee",
+   "category": "Specialty",
    "model": "franchise",
    "types": [
     "coffee_shop",
@@ -3899,7 +3983,7 @@
    "county": "Fayette",
    "lat": 33.452435,
    "lng": -84.507729,
-   "category": "Coffee",
+   "category": "Specialty",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -3910,7 +3994,20 @@
    "ratingCount": "1,391",
    "hours": "Mon-Fri 8am-4pm · Sat 8am-12pm · Sun Closed",
    "website": "http://www.fuelcoffeebar.com/",
-   "googleUrl": "https://maps.google.com/?cid=9377742805146425805&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=9377742805146425805&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "excellent",
+    "note": "Spacious multi-zone cafe with dedicated quiet laptop counter, high-speed Wi-Fi, and outlets.",
+    "hasMeetingRoom": true,
+    "meetingRoomNote": "Reservable conference room with AV display for business meetings."
+   },
+   "usp": "High-volume, high-vibe Fayetteville community coffeehouse serving craft espresso, nitro cold brew, and fresh acai bowls.",
+   "loved": [
+    "Fuel cold brew",
+    "vanilla lavender latte",
+    "acai energy bowl"
+   ],
+   "signature": "The High Octane Nitro Cold Brew"
   },
   {
    "placeId": "ChIJ5QZUW1Jt9YgRrk9GbZXT_Ig",
@@ -4073,7 +4170,7 @@
    "county": "Fayette",
    "lat": 33.446275,
    "lng": -84.455631,
-   "category": "Coffee",
+   "category": "Bakery+Cafe",
    "model": "independent",
    "types": [
     "cafe",
@@ -4084,7 +4181,19 @@
    "ratingCount": "1,392",
    "hours": "Mon-Tue 7am-3pm · Wed-Thu 7am-8pm · Fri-Sat 7am-8:30pm · Sun Closed",
    "website": "https://www.citycafeandbakery.com/",
-   "googleUrl": "https://maps.google.com/?cid=14940522022512339386&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=14940522022512339386&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "good",
+    "note": "Relaxed dining room with Wi-Fi and European cafe atmosphere.",
+    "hasMeetingRoom": false
+   },
+   "usp": "Downtown Fayetteville German-inspired bakery and cafe serving authentic strudels, pretzels, and European coffees.",
+   "loved": [
+    "apple strudel",
+    "Bavarian pretzel",
+    "Viennese roast coffee"
+   ],
+   "signature": "Homemade Apple Strudel with Vanilla Cream"
   },
   {
    "placeId": "ChIJ5ZlESgAJ9YgR6OT0ATtogyY",
@@ -4688,7 +4797,19 @@
     "when": "Fri-Sat till midnight; Mon-Thu till 11pm"
    },
    "website": "https://sugarshanes.com/",
-   "googleUrl": "https://maps.google.com/?cid=7188469590004717614&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=7188469590004717614&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "limited",
+    "note": "Dessert boutique focused on takeout and gourmet sweet fixes.",
+    "hasMeetingRoom": false
+   },
+   "usp": "Atlanta's legendary gourmet cookie shop serving massive, gooey stuffed cookies and espresso drinks.",
+   "loved": [
+    "D-Nuts stuffed cookie",
+    "red velvet cookie",
+    "iced cold brew"
+   ],
+   "signature": "The Mac Daddy Gourmet Stuffed Cookie"
   },
   {
    "placeId": "ChIJ6bmiuN2j9YgRzBg9qGihHzc",
@@ -4789,7 +4910,7 @@
    "neighborhood": "Buckhead",
    "lat": 33.81046,
    "lng": -84.433807,
-   "category": "Coffee",
+   "category": "Specialty",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -4941,7 +5062,19 @@
    "ratingCount": "1,960",
    "hours": "Wed-Mon 7am-2pm · Tue Closed",
    "website": "http://bronxbagelsga.com/",
-   "googleUrl": "https://maps.google.com/?cid=3420657925189496484&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=3420657925189496484&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "limited",
+    "note": "High-volume breakfast counter; best for early fuel-up or grab-and-go.",
+    "hasMeetingRoom": false
+   },
+   "usp": "Legendary Bronx-style water bagel institution with huge hand-rolled bagels, house schmears, and diner coffee.",
+   "loved": [
+    "bacon egg and cheese bagel",
+    "cinnamon raisin bagel",
+    "iced coffee"
+   ],
+   "signature": "Bronx Style Hand-Rolled Everything Bagel"
   },
   {
    "placeId": "ChIJ71TxInkE9YgR6v_KT3QrK30",
@@ -5240,7 +5373,7 @@
    "county": "Gwinnett",
    "lat": 34.024938,
    "lng": -84.043764,
-   "category": "Coffee",
+   "category": "Specialty",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -5745,7 +5878,7 @@
    "county": "Douglas",
    "lat": 33.735625,
    "lng": -84.67109,
-   "category": "Bakery+Cafe",
+   "category": "Dessert Cafe",
    "model": "independent",
    "types": [
     "bakery",
@@ -5756,7 +5889,19 @@
    "ratingCount": "837",
    "hours": "Sun-Tue Closed · Wed-Thu 11am-6pm · Fri 11am-6:30pm · Sat 11am-4pm",
    "website": "http://www.jewelstreatsandmore.com/",
-   "googleUrl": "https://maps.google.com/?cid=11040946000421341032&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=11040946000421341032&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "limited",
+    "note": "Charming sweet shop ideal for dessert cravings and quick treats.",
+    "hasMeetingRoom": false
+   },
+   "usp": "Boutique custom cakery and dessert bar crafting decadent cupcakes, cake jars, and dessert coffees.",
+   "loved": [
+    "strawberry crunch cake jar",
+    "banana pudding cupcake",
+    "iced caramel macchiato"
+   ],
+   "signature": "Strawberry Crunch Gourmet Cake Jar"
   },
   {
    "placeId": "ChIJ8USvTU6f9YgRcULKeIlUnR4",
@@ -6489,7 +6634,7 @@
    "neighborhood": "Midtown Atlanta",
    "lat": 33.794116,
    "lng": -84.386951,
-   "category": "Coffee",
+   "category": "Specialty",
    "model": "franchise",
    "types": [
     "coffee_shop",
@@ -7033,7 +7178,7 @@
    "county": "DeKalb",
    "lat": 33.797582,
    "lng": -84.323544,
-   "category": "Coffee",
+   "category": "Specialty",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -7453,7 +7598,7 @@
    "neighborhood": "Grant Park",
    "lat": 33.746093,
    "lng": -84.370273,
-   "category": "Coffee",
+   "category": "Specialty",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -7883,7 +8028,19 @@
     "when": "Daily till 10pm"
    },
    "website": "http://www.sublimedoughnuts.com/",
-   "googleUrl": "https://maps.google.com/?cid=1001319799696089732&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=1001319799696089732&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "limited",
+    "note": "High-traffic campus walk-up best for quick sweet runs and grab-and-go caffeine.",
+    "hasMeetingRoom": false
+   },
+   "usp": "Iconic Georgia Tech sweet spot crafting internationally famous creative doughnuts and late-night treats.",
+   "loved": [
+    "A-Town cream doughnut",
+    "strawberry n cream",
+    "fresh-roasted coffee"
+   ],
+   "signature": "A-Town Cream Doughnut"
   },
   {
    "placeId": "ChIJCQAfPvUJ9YgRyJFCsHprAOo",
@@ -9210,7 +9367,7 @@
    "neighborhood": "Old Fourth Ward",
    "lat": 33.772954,
    "lng": -84.365335,
-   "category": "Coffee",
+   "category": "Specialty",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -9439,7 +9596,20 @@
    "ratingCount": "262",
    "hours": "Mon 11am-5pm · Tue 11am-7pm · Wed 12:00-5pm · Thu-Sat 11am-7pm · Sun Closed",
    "website": "http://www.cjsugarmill.com/",
-   "googleUrl": "https://maps.google.com/?cid=15201803128847591787&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=15201803128847591787&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "excellent",
+    "note": "Spacious historic parlor with comfortable seating, fast Wi-Fi, and relaxed afternoon work atmosphere.",
+    "hasMeetingRoom": true,
+    "meetingRoomNote": "Private parlor room reservable for group meetings, book clubs, and remote teams."
+   },
+   "usp": "Historic Conyers family bakery baking traditional Southern pound cakes, decorated cookies, and specialty morning coffee.",
+   "loved": [
+    "seven-flavor pound cake",
+    "cheese straw pack",
+    "iced vanilla latte"
+   ],
+   "signature": "Southern Seven-Flavor Pound Cake"
   },
   {
    "placeId": "ChIJFU72h2JZ9IgRuPBKs5Lh34g",
@@ -9914,7 +10084,7 @@
    "neighborhood": "Old Fourth Ward",
    "lat": 33.771513,
    "lng": -84.367403,
-   "category": "Coffee",
+   "category": "Specialty",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -9925,7 +10095,19 @@
    "ratingCount": "1,192",
    "hours": "Mon-Fri 6:30am-7pm · Sat-Sun 7am-7pm",
    "website": "http://www.dancinggoats.com/",
-   "googleUrl": "https://maps.google.com/?cid=10264672900120959426&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=10264672900120959426&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "excellent",
+    "note": "Iconic screened porch with Adirondack chairs, porch swings, fast Wi-Fi, and endless power.",
+    "hasMeetingRoom": false
+   },
+   "usp": "High-energy BeltLine landmark featuring Batdorf & Bronson specialty roasts and Atlanta's favorite screened-in porch.",
+   "loved": [
+    "Dancing Goats house blend",
+    "caramel macchiato",
+    "apple turnover"
+   ],
+   "signature": "Goat Crunch Cold Brew"
   },
   {
    "placeId": "ChIJG92x2Gvs9YgRO9cKSK85n-4",
@@ -10084,7 +10266,7 @@
    "neighborhood": "Riverside",
    "lat": 33.810283,
    "lng": -84.476704,
-   "category": "Coffee",
+   "category": "Specialty",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -10095,7 +10277,19 @@
    "ratingCount": "375",
    "hours": "Mon Closed · Tue 7am-4pm · Wed-Fri 7am-9pm · Sat 8am-9pm · Sun 8am-4pm",
    "website": "http://bellwoodcoffee.com/riverside",
-   "googleUrl": "https://maps.google.com/?cid=16890291813353221451&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=16890291813353221451&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "excellent",
+    "note": "Comfortable indoor tables and expansive covered patio with solid Wi-Fi and power.",
+    "hasMeetingRoom": false
+   },
+   "usp": "Westside artisan roastery set in an airy restored cottage with lush patio seating and seasonal espresso creations.",
+   "loved": [
+    "house drip",
+    "orange blossom latte",
+    "cinnamon cardamom bun"
+   ],
+   "signature": "Orange Blossom Espresso"
   },
   {
    "placeId": "ChIJGaVdYztl9YgRZ5vktMDfXlU",
@@ -10544,7 +10738,19 @@
    "ratingCount": "431",
    "hours": "Mon Closed · Tue-Sun 12:00-9pm",
    "website": "https://www.bubblebeesteataiwan.com/",
-   "googleUrl": "https://maps.google.com/?cid=18171702877352696595&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=18171702877352696595&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "good",
+    "note": "Clean, cheerful modern tea room with Wi-Fi and casual study tables.",
+    "hasMeetingRoom": false
+   },
+   "usp": "Authentic Taiwanese bubble tea parlor in Gainesville crafting fresh boba pearls, milk teas, and fruit slushes.",
+   "loved": [
+    "Taiwanese classic milk tea",
+    "passionfruit green tea",
+    "egg waffles"
+   ],
+   "signature": "Classic Taiwan Milk Tea with Brown Sugar Boba"
   },
   {
    "placeId": "ChIJHTRrktYF9YgRWqXiOmFXQOY",
@@ -10777,7 +10983,7 @@
    "county": "DeKalb",
    "lat": 33.775842,
    "lng": -84.271281,
-   "category": "Coffee",
+   "category": "Specialty",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -10920,7 +11126,19 @@
    "ratingCount": "2,078",
    "hours": "Sun-Fri 5:30am-2pm · Sat 5:30-11:30am",
    "website": null,
-   "googleUrl": "https://maps.google.com/?cid=1068696724853735230&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=1068696724853735230&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "limited",
+    "note": "Classic bustling Southern diner; ideal for breakfast energy before the workday.",
+    "hasMeetingRoom": false
+   },
+   "usp": "Gainesville landmark diner and coffee stop famous for oversized fluffy biscuits and endless hot coffee.",
+   "loved": [
+    "cathead biscuit with gravy",
+    "country breakfast",
+    "drip coffee"
+   ],
+   "signature": "Famous Rabbittown Cathead Biscuit"
   },
   {
    "placeId": "ChIJIQ2YWqfd9IgRugegdcUUGUY",
@@ -10975,7 +11193,7 @@
    "county": "Gwinnett",
    "lat": 34.003359,
    "lng": -84.14583,
-   "category": "Coffee",
+   "category": "Specialty",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -11479,7 +11697,7 @@
    "neighborhood": "Georgia Tech",
    "lat": 33.780821,
    "lng": -84.398406,
-   "category": "Coffee",
+   "category": "Specialty",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -11672,7 +11890,7 @@
    "neighborhood": "Buckhead",
    "lat": 33.802793,
    "lng": -84.393155,
-   "category": "Coffee",
+   "category": "Specialty",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -11969,7 +12187,19 @@
    "ratingCount": "637",
    "hours": "Mon 7am-5pm · Tue-Fri 5am-5pm · Sat 6am-5pm · Sun 6am-2pm",
    "website": null,
-   "googleUrl": "https://maps.google.com/?cid=15068541736992650449&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=15068541736992650449&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "limited",
+    "note": "Quick-service neighborhood bakery with traditional counter charm.",
+    "hasMeetingRoom": false
+   },
+   "usp": "Family-owned Gainesville doughnut shop frying light-as-air yeast glazed doughnuts and brewing hot morning coffee.",
+   "loved": [
+    "warm glazed doughnut",
+    "apple fritter",
+    "coffee"
+   ],
+   "signature": "Hot Glazed Yeast Doughnut"
   },
   {
    "placeId": "ChIJJVAuHS8F9YgRmc6JDsTPZSk",
@@ -12000,7 +12230,7 @@
    "county": "Cherokee",
    "lat": 34.192983,
    "lng": -84.538546,
-   "category": "Bakery+Cafe",
+   "category": "Specialty",
    "model": "independent",
    "types": [
     "donut_shop",
@@ -12014,7 +12244,19 @@
    "ratingCount": "353",
    "hours": "Mon Closed · Tue-Sat 6am-7pm · Sun 7:30am-2pm",
    "website": "https://www.gigglemonstersdonuts.com/",
-   "googleUrl": "https://maps.google.com/?cid=116387649708239543&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=116387649708239543&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "good",
+    "note": "Friendly family atmosphere with booth seating and Wi-Fi.",
+    "hasMeetingRoom": false
+   },
+   "usp": "Whimsical craft donut and specialty espresso shop creating customized, made-to-order gourmet donuts.",
+   "loved": [
+    "maple bacon craft donut",
+    "cinnamon monster",
+    "iced mocha"
+   ],
+   "signature": "Custom Made-to-Order Craft Donut"
   },
   {
    "placeId": "ChIJJa8VGBAD9YgRfVI1drjgKNY",
@@ -12025,7 +12267,7 @@
    "neighborhood": "Old Fourth Ward",
    "lat": 33.757405,
    "lng": -84.365215,
-   "category": "Coffee",
+   "category": "Specialty",
    "model": "franchise",
    "types": [
     "coffee_shop",
@@ -12645,7 +12887,7 @@
    "neighborhood": "Buckhead",
    "lat": 33.802314,
    "lng": -84.428871,
-   "category": "Coffee",
+   "category": "Specialty",
    "model": "franchise",
    "types": [
     "coffee_shop",
@@ -12667,7 +12909,7 @@
    "neighborhood": "Old Fourth Ward",
    "lat": 33.770843,
    "lng": -84.369931,
-   "category": "Coffee",
+   "category": "Specialty",
    "model": "franchise",
    "types": [
     "coffee_shop",
@@ -13408,7 +13650,7 @@
    "neighborhood": "Buckhead",
    "lat": 33.851184,
    "lng": -84.360904,
-   "category": "Coffee",
+   "category": "Specialty",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -13647,7 +13889,7 @@
    "county": "Fulton",
    "lat": 34.008348,
    "lng": -84.360204,
-   "category": "Coffee",
+   "category": "Specialty",
    "model": "franchise",
    "types": [
     "coffee_shop",
@@ -13860,7 +14102,19 @@
    "ratingCount": "291",
    "hours": "Mon-Fri 5:30am-3pm · Sat-Sun 7am-2pm",
    "website": "https://sohobagelcompany.wixsite.com/sohobagel",
-   "googleUrl": "https://maps.google.com/?cid=18234787123937503249&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=18234787123937503249&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "good",
+    "note": "Bright neighborhood morning cafe with Wi-Fi and counter seating.",
+    "hasMeetingRoom": false
+   },
+   "usp": "New York style kettle-boiled bagel bakery serving authentic schmears, breakfast sandwiches, and hot coffee.",
+   "loved": [
+    "everything bagel with lox",
+    "jalapeño cheddar bagel",
+    "drip coffee"
+   ],
+   "signature": "Everything Bagel with Nova Lox"
   },
   {
    "placeId": "ChIJM6BE84rz9YgReeMt2DnaDUw",
@@ -14043,7 +14297,19 @@
    "ratingCount": "1,843",
    "hours": "Mon Closed · Tue-Fri 7am-2pm · Sat-Sun 8am-3pm",
    "website": "http://www.revolutiondoughnuts.com/",
-   "googleUrl": "https://maps.google.com/?cid=7987684583017790381&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=7987684583017790381&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "good",
+    "note": "Casual counter with window counter seating, Wi-Fi, and sweet neighborhood aroma.",
+    "hasMeetingRoom": false
+   },
+   "usp": "Handcrafted artisan doughnut bakery making everything from scratch with local ingredients and Counter Culture coffee.",
+   "loved": [
+    "caramel bacon doughnut",
+    "vanilla bean yeast",
+    "apple fritter"
+   ],
+   "signature": "Salted Caramel Bacon Doughnut"
   },
   {
    "placeId": "ChIJM_iCegeV9YgR9Fls5bwV-TI",
@@ -14818,7 +15084,7 @@
    "county": "Forsyth",
    "lat": 34.069226,
    "lng": -84.169319,
-   "category": "Tea/Boba",
+   "category": "Specialty",
    "model": "independent",
    "types": [
     "tea_house"
@@ -14828,7 +15094,19 @@
    "ratingCount": "788",
    "hours": "Mon-Sun 11:30am-9pm",
    "website": "https://www.uniuni.us/",
-   "googleUrl": "https://maps.google.com/?cid=1662676109379281150&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=1662676109379281150&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "good",
+    "note": "Bright, playful crafting tables with Wi-Fi; great for relaxed casual work or creative sessions.",
+    "hasMeetingRoom": false
+   },
+   "usp": "Creative experiential tea bar pairing authentic Taiwanese boba with hands-on ceramic and plaster figurine painting.",
+   "loved": [
+    "taro boba milk tea",
+    "mango pomelo sago",
+    "brown sugar deerioca"
+   ],
+   "signature": "Brown Sugar Boba with Cheese Foam"
   },
   {
    "placeId": "ChIJNy3vK-8J9YgRu0LMKJUmFvM",
@@ -14997,7 +15275,19 @@
    "ratingCount": "19,856",
    "hours": "Mon-Sat 7am-6pm · Sun 9am-3:30pm",
    "website": "http://www.douceurdefrance.com/?utm_source=google&utm_medium=organic&utm_campaign=gmb",
-   "googleUrl": "https://maps.google.com/?cid=15987534963119729721&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=15987534963119729721&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "good",
+    "note": "Bustling French cafe with indoor and patio tables; best for mid-day working lunches.",
+    "hasMeetingRoom": false
+   },
+   "usp": "Authentic French patisserie and bistro crafting flaky croissants, delicate macarons, and Parisian café classics.",
+   "loved": [
+    "almond croissant",
+    "croque monsieur",
+    "assorted macarons"
+   ],
+   "signature": "Traditional Almond Croissant"
   },
   {
    "placeId": "ChIJO6JKnxwP9YgRg-Rn-rE8ZTg",
@@ -15692,7 +15982,7 @@
    "county": "Fulton",
    "lat": 34.044203,
    "lng": -84.22433,
-   "category": "Coffee",
+   "category": "Specialty",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -15703,7 +15993,19 @@
    "ratingCount": "459",
    "hours": "Mon-Fri 7am-5pm · Sat 8am-5pm · Sun 8am-3pm",
    "website": "https://www.peachcoffeeroasters.com/",
-   "googleUrl": "https://maps.google.com/?cid=15545193887838034978&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=15545193887838034978&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "excellent",
+    "note": "Spacious suburban roastery with plenty of outlets, strong Wi-Fi, and sunny work tables.",
+    "hasMeetingRoom": false
+   },
+   "usp": "Neighborhood craft roaster brewing ethically sourced beans with vibrant espresso drinks and local breakfast bites.",
+   "loved": [
+    "Georgia peach latte",
+    "cold brew on draft",
+    "ham and cheese croissant"
+   ],
+   "signature": "Georgia Peach Infused Latte"
   },
   {
    "placeId": "ChIJP1XppfkJ9YgRY-aqsiY5Ngg",
@@ -16121,7 +16423,19 @@
    "ratingCount": "176",
    "hours": "Mon-Fri 6:30am-4pm · Sat 7:30am-4pm · Sun Closed",
    "website": "https://igy6coffee.com/",
-   "googleUrl": "https://maps.google.com/?cid=7588408054961747624&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=7588408054961747624&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "good",
+    "note": "Community gathering room with comfortable seating, Wi-Fi, and patriotic hospitality.",
+    "hasMeetingRoom": false
+   },
+   "usp": "Veteran-owned Dawsonville coffeehouse dedicated to first responders, roasting bold blends in a mission-driven space.",
+   "loved": [
+    "Got Your 6 roast",
+    "toffee nut cold brew",
+    "cinnamon roll"
+   ],
+   "signature": "IGY6 Cold Brew"
   },
   {
    "placeId": "ChIJPdNdsUI_9YgR9bhO0EgdRf4",
@@ -17025,7 +17339,7 @@
    "county": "Gwinnett",
    "lat": 34.045631,
    "lng": -84.083339,
-   "category": "Coffee",
+   "category": "Specialty",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -17036,7 +17350,19 @@
    "ratingCount": "271",
    "hours": "Sun-Mon Closed · Tue-Sat 8am-4pm",
    "website": "https://www.instagram.com/zoomcoffeeroaster/?hl=en",
-   "googleUrl": "https://maps.google.com/?cid=6623784808672007361&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=6623784808672007361&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "excellent",
+    "note": "Quiet, minimalist study aesthetic with laptop-friendly desks, fast Wi-Fi, and outlets.",
+    "hasMeetingRoom": false
+   },
+   "usp": "Precision Korean-inspired specialty roastery known for meticulous pourovers and peaceful study ambiance.",
+   "loved": [
+    "Geisha pour-over",
+    "Einspänner latte",
+    "matcha financier"
+   ],
+   "signature": "House Einspänner"
   },
   {
    "placeId": "ChIJR6AvqGbH9IgRFBxAKQtssLk",
@@ -17415,7 +17741,7 @@
    "county": "Fulton",
    "lat": 34.067744,
    "lng": -84.259982,
-   "category": "Coffee",
+   "category": "Specialty",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -18327,7 +18653,19 @@
    "ratingCount": "792",
    "hours": "Mon-Sat 5am-3pm · Sun 6am-3pm",
    "website": null,
-   "googleUrl": "https://maps.google.com/?cid=11624009937709294612&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=11624009937709294612&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "limited",
+    "note": "Fast-moving bakery counter with classic morning breakfast crowds.",
+    "hasMeetingRoom": false
+   },
+   "usp": "Clayton County's favorite traditional doughnut shop known for enormous cinnamon rolls and hot glazed rings.",
+   "loved": [
+    "glazed doughnut",
+    "cinnamon twist",
+    "hot black coffee"
+   ],
+   "signature": "Giant Apple Fritter"
   },
   {
    "placeId": "ChIJT47oZvH29YgROXHhFmEF9lc",
@@ -18389,7 +18727,19 @@
    "ratingCount": "308",
    "hours": "Mon-Fri 7am-4pm · Sat 8am-4pm · Sun 9am-2pm",
    "website": "https://www.tammyslittlecafe.com/",
-   "googleUrl": "https://maps.google.com/?cid=2490259125337891293&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=2490259125337891293&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "good",
+    "note": "Home-style dining room with Wi-Fi and loyal regular crowd.",
+    "hasMeetingRoom": false
+   },
+   "usp": "Welcoming Conyers neighborhood cafe serving homemade breakfast skillets, fresh pastries, and warm drip coffee.",
+   "loved": [
+    "country breakfast platter",
+    "cinnamon French toast",
+    "house coffee"
+   ],
+   "signature": "Tammy's Famous Breakfast Skillet"
   },
   {
    "placeId": "ChIJT50dSQCf9YgRZp4K0F4MtyY",
@@ -18814,7 +19164,19 @@
    "ratingCount": "1,471",
    "hours": "Mon-Sun 11am-9pm",
    "website": "http://www.tinybubblesteabar.com/",
-   "googleUrl": "https://maps.google.com/?cid=3665209414022251157&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=3665209414022251157&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "good",
+    "note": "Bright shop with sunny window seating, Wi-Fi, and gift shop browsing.",
+    "hasMeetingRoom": false
+   },
+   "usp": "Whimsical tea boutique on the Marietta Square famous for loose-leaf blends, bubble teas, and French macarons.",
+   "loved": [
+    "brown sugar milk tea",
+    "lavender green tea",
+    "pistachio macaron"
+   ],
+   "signature": "Brown Sugar Pearl Milk Tea"
   },
   {
    "placeId": "ChIJTby4OCwJ9YgR51wOxAIEukA",
@@ -19090,7 +19452,7 @@
    "county": "Fulton",
    "lat": 34.066672,
    "lng": -84.261324,
-   "category": "Coffee",
+   "category": "Specialty",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -19640,7 +20002,19 @@
    "ratingCount": "1,171",
    "hours": "Mon Closed · Tue-Sat 8am-5pm · Sun 8am-4pm",
    "website": "http://www.thebakinggrounds.com/",
-   "googleUrl": "https://maps.google.com/?cid=14967618246214613712&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=14967618246214613712&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "good",
+    "note": "Charming historic storefront with booth seating, Wi-Fi, and morning work buzz.",
+    "hasMeetingRoom": false
+   },
+   "usp": "Downtown Buford bakery cafe renowned for gourmet cupcakes, fresh breakfast biscuits, and specialty espresso.",
+   "loved": [
+    "red velvet cupcake",
+    "buttermilk chicken biscuit",
+    "vanilla latte"
+   ],
+   "signature": "Signature Buttercream Cupcake"
   },
   {
    "placeId": "ChIJUxfnTEiW9YgRotyu2zixt6I",
@@ -20076,7 +20450,7 @@
    "neighborhood": "Downtown Decatur",
    "lat": 33.775363,
    "lng": -84.295726,
-   "category": "Coffee",
+   "category": "Specialty",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -20170,7 +20544,19 @@
    "ratingCount": "966",
    "hours": "Mon Closed · Tue-Sat 7am-8pm · Sun 9am-3pm",
    "website": "http://senoiacoffeecafe.com/",
-   "googleUrl": "https://maps.google.com/?cid=11769396351085045826&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=11769396351085045826&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "good",
+    "note": "Quaint downtown setting with street-facing tables, Wi-Fi, and movie-town charm.",
+    "hasMeetingRoom": false
+   },
+   "usp": "Historic Senoia Main Street coffee shop (famous filming location for The Walking Dead) serving craft espresso and pastries.",
+   "loved": [
+    "Main Street latte",
+    "iced chai",
+    "cinnamon coffee cake"
+   ],
+   "signature": "The Alexandria Mocha"
   },
   {
    "placeId": "ChIJW-SAG5PH9YgR-mQcH498zOw",
@@ -20272,7 +20658,7 @@
    "neighborhood": "East Lake",
    "lat": 33.751289,
    "lng": -84.309373,
-   "category": "Coffee",
+   "category": "Specialty",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -20662,7 +21048,7 @@
    "county": "Hall",
    "lat": 34.298937,
    "lng": -83.82679,
-   "category": "Coffee",
+   "category": "Specialty",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -21688,7 +22074,7 @@
    "county": "Cobb",
    "lat": 33.953127,
    "lng": -84.55073,
-   "category": "Coffee",
+   "category": "Specialty",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -21702,16 +22088,16 @@
    "googleUrl": "https://maps.google.com/?cid=13923243261910553028&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
    "cw": {
     "tier": "excellent",
-    "note": "Historic Marietta Square coffeehouse with outdoor patio tables, study seating, fast Wi-Fi, and small-batch roasting on site.",
+    "note": "Cozy exposed-brick cafe with upstairs loft, fast Wi-Fi, power, and view of the Square.",
     "hasMeetingRoom": false
    },
-   "usp": "Landmark Marietta Square roaster serving freshly roasted single-origin coffees and espresso since 2001.",
+   "usp": "Historic Marietta Square institution micro-roasting ethically sourced beans on-site for over two decades.",
    "loved": [
-    "single-origin pour over",
-    "cold brew",
-    "muffins"
+    "Square blend",
+    "Cuban espresso",
+    "raspberry scone"
    ],
-   "signature": "Marietta Square Espresso Blend"
+   "signature": "Marietta Square Dark Roast"
   },
   {
    "placeId": "ChIJY83ReEwH9YgRnVdUc8RykDY",
@@ -21982,7 +22368,7 @@
    "county": "Fulton",
    "lat": 34.05366,
    "lng": -84.175288,
-   "category": "Coffee",
+   "category": "Specialty",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -22353,7 +22739,7 @@
    "neighborhood": "Midtown Atlanta",
    "lat": 33.774059,
    "lng": -84.38449,
-   "category": "Coffee",
+   "category": "Specialty",
    "model": "franchise",
    "types": [
     "coffee_shop",
@@ -22668,7 +23054,7 @@
    "neighborhood": "Buckhead",
    "lat": 33.810817,
    "lng": -84.378806,
-   "category": "Coffee",
+   "category": "Specialty",
    "model": "independent",
    "types": [
     "cafe",
@@ -22682,7 +23068,19 @@
    "ratingCount": "627",
    "hours": "Mon-Fri 7am-6pm · Sat-Sun 8am-6pm",
    "website": "http://eastpole.coffee/",
-   "googleUrl": "https://maps.google.com/?cid=4032762615770139583&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=4032762615770139583&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "excellent",
+    "note": "Spacious communal tables, fast Wi-Fi, abundant natural light, and quiet morning work vibe.",
+    "hasMeetingRoom": false
+   },
+   "usp": "Flagship West Midtown roastery crafting bright single-origin pour-overs and seasonal espresso in a sunlit warehouse.",
+   "loved": [
+    "Traffic Maker blend",
+    "single-origin pour-over",
+    "sea salt chocolate chip cookie"
+   ],
+   "signature": "Cortado with House Roast"
   },
   {
    "placeId": "ChIJZzJTJKeX9YgR5b7YlZrY3B0",
@@ -23114,7 +23512,7 @@
    "neighborhood": "Home Park",
    "lat": 33.785553,
    "lng": -84.411948,
-   "category": "Coffee",
+   "category": "Specialty",
    "model": "franchise",
    "types": [
     "coffee_shop",
@@ -23125,7 +23523,19 @@
    "ratingCount": "524",
    "hours": "Mon-Fri 7am-5pm · Sat-Sun 8am-6pm",
    "website": "http://www.brashcoffee.com/",
-   "googleUrl": "https://maps.google.com/?cid=11374196856017887462&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=11374196856017887462&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "good",
+    "note": "Compact footprint with outdoor bench seating and quick-grab laptop focus.",
+    "hasMeetingRoom": false
+   },
+   "usp": "Minimalist Westside shipping container cafe obsessed with direct-trade single-origin espresso and clean aesthetics.",
+   "loved": [
+    "single-origin espresso",
+    "flat white",
+    "pour-over"
+   ],
+   "signature": "Direct-Trade Flat White"
   },
   {
    "placeId": "ChIJ__8_nQZ19YgRIRW2BepKLRw",
@@ -23502,7 +23912,7 @@
    "county": "DeKalb",
    "lat": 33.809467,
    "lng": -84.240392,
-   "category": "Coffee",
+   "category": "Specialty",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -23513,7 +23923,20 @@
    "ratingCount": "879",
    "hours": "Mon-Sat 7am-5pm · Sun Closed",
    "website": "http://www.refugecoffeeco.com/",
-   "googleUrl": "https://maps.google.com/?cid=3090911876485675883&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=3090911876485675883&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "excellent",
+    "note": "Spacious community pavilion with picnic tables, indoor seating, Wi-Fi, and inspiring mission.",
+    "hasMeetingRoom": true,
+    "meetingRoomNote": "Community room and outdoor event deck reservable for civic and study groups."
+   },
+   "usp": "Heartwarming non-profit coffee truck & cafe offering refugee job training and world-class espresso in Clarkston.",
+   "loved": [
+    "sweet vanilla cold brew",
+    "lemon ginger tea",
+    "chocolate chip scone"
+   ],
+   "signature": "Refuge Cold Brew Float"
   },
   {
    "placeId": "ChIJa7xyr88J9YgRoAZAoEff0Wg",
@@ -24231,7 +24654,7 @@
    "neighborhood": "Peachtree Center",
    "lat": 33.759005,
    "lng": -84.387194,
-   "category": "Coffee",
+   "category": "Specialty",
    "model": "franchise",
    "types": [
     "coffee_shop",
@@ -24414,7 +24837,19 @@
    "ratingCount": "569",
    "hours": "Mon-Fri 7am-3pm · Sat 7:30am-3pm · Sun Closed",
    "website": "http://kakaocafe.com/",
-   "googleUrl": "https://maps.google.com/?cid=3021611540015062872&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=3021611540015062872&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "good",
+    "note": "Comfortable seating, quiet suburban setting, Wi-Fi, and decadent chocolate aroma.",
+    "hasMeetingRoom": false
+   },
+   "usp": "Tyrone village coffeehouse and European chocolatier pairing artisan espresso with handcrafted truffles and crepes.",
+   "loved": [
+    "dark mocha latte",
+    "Belgian chocolate truffle",
+    "savory ham crepe"
+   ],
+   "signature": "Kakao Belgian Chocolate Mocha"
   },
   {
    "placeId": "ChIJbZPFXHlr9YgRsX9eOw1J0Aw",
@@ -24719,7 +25154,7 @@
    "county": "DeKalb",
    "lat": 33.852844,
    "lng": -84.214663,
-   "category": "Coffee",
+   "category": "Specialty",
    "model": "franchise",
    "types": [
     "coffee_shop",
@@ -25103,7 +25538,7 @@
    "neighborhood": "West End",
    "lat": 33.730077,
    "lng": -84.419127,
-   "category": "Coffee",
+   "category": "Specialty",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -25237,7 +25672,7 @@
    "county": "Forsyth",
    "lat": 34.125022,
    "lng": -84.169102,
-   "category": "Coffee",
+   "category": "Specialty",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -25322,7 +25757,7 @@
    "county": "Gwinnett",
    "lat": 33.957773,
    "lng": -83.98989,
-   "category": "Coffee",
+   "category": "Specialty",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -25863,7 +26298,7 @@
    "neighborhood": "Downtown Decatur",
    "lat": 33.775928,
    "lng": -84.303255,
-   "category": "Coffee",
+   "category": "Specialty",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -25874,7 +26309,19 @@
    "ratingCount": "1,228",
    "hours": "Mon-Fri 6:30am-7pm · Sat-Sun 7am-7pm",
    "website": "https://www.dancinggoats.com/pages/dancing-goats-coffee-bar",
-   "googleUrl": "https://maps.google.com/?cid=4701635738979862481&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=4701635738979862481&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "excellent",
+    "note": "Generous work tables, fast Wi-Fi, ample power outlets, and a relaxed college-town vibe.",
+    "hasMeetingRoom": false
+   },
+   "usp": "Downtown Decatur's community coffee porch roasting specialty beans with spacious indoor and outdoor study areas.",
+   "loved": [
+    "organic French roast",
+    "chai latte",
+    "spinach feta croissant"
+   ],
+   "signature": "Decatur House Drip"
   },
   {
    "placeId": "ChIJeVScd9Wj9YgRPvfMkoImdOw",
@@ -26076,7 +26523,7 @@
    "neighborhood": "Candler Park",
    "lat": 33.7625,
    "lng": -84.333333,
-   "category": "Coffee",
+   "category": "Specialty",
    "model": "franchise",
    "types": [
     "coffee_shop",
@@ -26169,7 +26616,7 @@
    "neighborhood": "Kirkwood",
    "lat": 33.751578,
    "lng": -84.323209,
-   "category": "Coffee",
+   "category": "Specialty",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -26312,7 +26759,7 @@
    "county": "Forsyth",
    "lat": 34.092312,
    "lng": -84.169762,
-   "category": "Coffee",
+   "category": "Specialty",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -26780,7 +27227,7 @@
    "neighborhood": "Virginia-Highland",
    "lat": 33.787337,
    "lng": -84.355499,
-   "category": "Coffee",
+   "category": "Specialty",
    "model": "franchise",
    "types": [
     "coffee_shop",
@@ -27110,7 +27557,7 @@
    "county": "Gwinnett",
    "lat": 33.975816,
    "lng": -84.159379,
-   "category": "Coffee",
+   "category": "Specialty",
    "model": "franchise",
    "types": [
     "coffee_shop",
@@ -27125,7 +27572,20 @@
     "when": "Fri-Sat till 1am; Sun-Mon, Wed-Thu till 11pm"
    },
    "website": "http://qamariacoffee.com/",
-   "googleUrl": "https://maps.google.com/?cid=6975519673669410747&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=6975519673669410747&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "excellent",
+    "note": "High ceilings, comfortable booths, fast Wi-Fi, and great late-night energy.",
+    "hasMeetingRoom": true,
+    "meetingRoomNote": "Large rear conference room available for private study sessions and events."
+   },
+   "usp": "Premier Yemeni coffeehouse serving slow-roasted heirloom beans with cardamom, ginger, and flaky honeycomb pastries.",
+   "loved": [
+    "Jubani spiced coffee",
+    "Adeni chai",
+    "Khaliat Al Nahl"
+   ],
+   "signature": "Traditional Qamaria Pot Coffee"
   },
   {
    "placeId": "ChIJh5BKwEsJ9YgRKZ9bxlyw8Gw",
@@ -27895,7 +28355,7 @@
    "county": "Fulton",
    "lat": 34.074533,
    "lng": -84.293402,
-   "category": "Coffee",
+   "category": "Specialty",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -28078,7 +28538,7 @@
    "neighborhood": "Buckhead",
    "lat": 33.840581,
    "lng": -84.375803,
-   "category": "Coffee",
+   "category": "Specialty",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -28131,7 +28591,20 @@
    "ratingCount": "1,174",
    "hours": "Mon-Fri 6am-3pm · Sat-Sun 8am-3pm",
    "website": "http://www.thebagelmeister.com/",
-   "googleUrl": "https://maps.google.com/?cid=12607018462131634173&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=12607018462131634173&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "excellent",
+    "note": "Comfortable booth and table seating, reliable Wi-Fi, and quiet mid-day study hours.",
+    "hasMeetingRoom": true,
+    "meetingRoomNote": "Community table reservable for morning business meetups."
+   },
+   "usp": "Authentic New York bagel shop in Douglasville baking kettle-boiled bagels daily with homemade cream cheese spreads.",
+   "loved": [
+    "everything bagel with lox",
+    "asiago cheese bagel",
+    "drip coffee"
+   ],
+   "signature": "Asiago Bagel with Jalapeño Cream Cheese"
   },
   {
    "placeId": "ChIJicBn_aoF9YgRya-jWCHOmB0",
@@ -28404,7 +28877,19 @@
    "ratingCount": "646",
    "hours": "Mon Closed · Tue-Sun 11am-9pm",
    "website": "https://alpinebakery.com/",
-   "googleUrl": "https://maps.google.com/?cid=9758995242077448631&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=9758995242077448631&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "good",
+    "note": "Spacious cafe seating with Wi-Fi and sweet display cases.",
+    "hasMeetingRoom": false
+   },
+   "usp": "North Georgia dessert institution famous for towering 10-layer cakes, Italian pastries, and artisan coffee.",
+   "loved": [
+    "cannoli",
+    "chocolate mousse cake",
+    "cappuccino"
+   ],
+   "signature": "Authentic Sicilian Cannoli"
   },
   {
    "placeId": "ChIJjTu-9GYE9YgRLuE7sCZXJGM",
@@ -28470,7 +28955,19 @@
    "ratingCount": "962",
    "hours": "Mon-Fri 8am-5pm · Sat 8am-4pm · Sun Closed",
    "website": null,
-   "googleUrl": "https://maps.google.com/?cid=15344432140885159153&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=15344432140885159153&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "good",
+    "note": "Quiet indoor tables, reliable Wi-Fi, and relaxed suburban work environment.",
+    "hasMeetingRoom": false
+   },
+   "usp": "Cozy Cumming neighborhood cafe serving specialty espresso drinks, crêpes, and fresh brunch plates.",
+   "loved": [
+    "caramel macchiato",
+    "sweet Nutella crêpe",
+    "avocado toast"
+   ],
+   "signature": "House Salted Caramel Latte"
   },
   {
    "placeId": "ChIJjV7tpVCZ9YgRdN-lpNGXUnU",
@@ -30735,7 +31232,7 @@
    "neighborhood": "Reynoldstown",
    "lat": 33.750102,
    "lng": -84.354613,
-   "category": "Coffee",
+   "category": "Specialty",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -31284,7 +31781,7 @@
    "county": "Clayton",
    "lat": 33.639137,
    "lng": -84.429403,
-   "category": "Coffee",
+   "category": "Specialty",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -31351,7 +31848,7 @@
    "county": "DeKalb",
    "lat": 33.837953,
    "lng": -84.200251,
-   "category": "Coffee",
+   "category": "Specialty",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -31362,7 +31859,20 @@
    "ratingCount": "680",
    "hours": "Mon-Thu 9am-5pm · Fri 9am-1pm, 3:00-6pm · Sat 8am-4pm · Sun 10am-3pm",
    "website": "http://mokhaport.com/",
-   "googleUrl": "https://maps.google.com/?cid=5245454896013075906&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=5245454896013075906&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "excellent",
+    "note": "Expansive seating with plush banquettes, Wi-Fi, and lively late-night study atmosphere.",
+    "hasMeetingRoom": true,
+    "meetingRoomNote": "Private curtained salon seating available for larger group study and gatherings."
+   },
+   "usp": "Traditional Yemeni coffeehouse serving cardamom-infused pot coffee and honeycomb bread in a lavish Arabian setting.",
+   "loved": [
+    "Mofawar pot coffee",
+    "Adeni tea",
+    "Khaliat Al Nahl (honeycomb bread)"
+   ],
+   "signature": "Yemeni Qishr (Spiced Coffee Cherry Tea)"
   },
   {
    "placeId": "ChIJo_k2yTP39YgRIvJyQc0syDg",
@@ -31570,7 +32080,7 @@
    "county": "Gwinnett",
    "lat": 34.053067,
    "lng": -84.068918,
-   "category": "Coffee",
+   "category": "Specialty",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -31584,16 +32094,16 @@
    "googleUrl": "https://maps.google.com/?cid=11356555697667985340&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
    "cw": {
     "tier": "excellent",
-    "note": "Roastery with airy modern seating, fast Wi-Fi, and an inviting atmosphere for remote workers.",
+    "note": "Sleek modern roastery with wide communal work tables, fast Wi-Fi, and ample outlets.",
     "hasMeetingRoom": false
    },
-   "usp": "Local craft roastery showcasing light roast profiles and mindful, welcoming hospitality.",
+   "usp": "Artisanal Suwanee micro-roaster pouring precision single-origins alongside house-baked pastries.",
    "loved": [
-    "cortado",
-    "cappuccino",
-    "scones"
+    "single-origin pour-over",
+    "sea salt caramel latte",
+    "butter croissant"
    ],
-   "signature": "Seasonal Single Origin Pour Over"
+   "signature": "Warm Waves Signature Pour-Over"
   },
   {
    "placeId": "ChIJp4n-96cW9YgRFopUvySwmkk",
@@ -31670,7 +32180,7 @@
    "county": "Cobb",
    "lat": 34.022156,
    "lng": -84.427127,
-   "category": "Coffee",
+   "category": "Specialty",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -31681,7 +32191,19 @@
    "ratingCount": "408",
    "hours": "Mon-Thu 8am-4pm · Fri 8am-5pm · Sat 9am-5pm · Sun 9am-4pm",
    "website": "http://mzizicoffeeroaster.com/",
-   "googleUrl": "https://maps.google.com/?cid=5907676679919917454&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=5907676679919917454&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "good",
+    "note": "Welcoming neighborhood roastery with dedicated work counter and Wi-Fi.",
+    "hasMeetingRoom": false
+   },
+   "usp": "East African specialty roaster celebrating Kenyan single-origin beans and vibrant community coffee tastings.",
+   "loved": [
+    "Kenya AA pour-over",
+    "honey cinnamon latte",
+    "blueberry muffin"
+   ],
+   "signature": "Kenyan Single-Origin Pour-Over"
   },
   {
    "placeId": "ChIJp6g4QRXG9IgRY1f2vOS6Tck",
@@ -32106,7 +32628,7 @@
    "neighborhood": "South Downtown",
    "lat": 33.752379,
    "lng": -84.395146,
-   "category": "Coffee",
+   "category": "Specialty",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -32221,7 +32743,7 @@
    "neighborhood": "Buckhead",
    "lat": 33.841964,
    "lng": -84.385844,
-   "category": "Coffee",
+   "category": "Specialty",
    "model": "franchise",
    "types": [
     "coffee_shop",
@@ -32382,7 +32904,20 @@
    "ratingCount": "1,482",
    "hours": "Mon-Fri 8am-5pm · Sat-Sun 10am-5pm",
    "website": "https://www.southernsweets.com/",
-   "googleUrl": "https://maps.google.com/?cid=4182581581695626804&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=4182581581695626804&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "good",
+    "note": "Homey dining room with Wi-Fi and relaxed afternoon tea vibe.",
+    "hasMeetingRoom": true,
+    "meetingRoomNote": "Private dining room available for group lunches, book clubs, and celebrations."
+   },
+   "usp": "Beloved Avondale-adjacent bakery and tearoom famed for legendary layer cakes, pies, and warm Southern lunch plates.",
+   "loved": [
+    "red velvet cake",
+    "vegan carrot cake",
+    "chicken salad sandwich"
+   ],
+   "signature": "Traditional 7-Layer Chocolate Cake"
   },
   {
    "placeId": "ChIJqXTXlFA59YgRXwKnKKQ43zE",
@@ -33388,7 +33923,19 @@
     "when": "Daily till 10pm"
    },
    "website": "http://brazilianbakerycafe.com/",
-   "googleUrl": "https://maps.google.com/?cid=2216386723458378807&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=2216386723458378807&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "good",
+    "note": "Spacious cafe seating with Wi-Fi and friendly Latin American atmosphere.",
+    "hasMeetingRoom": false
+   },
+   "usp": "Authentic Brazilian bakery serving warm pão de queijo, savory coxinha pastries, and rich Brazilian cafezinho.",
+   "loved": [
+    "pão de queijo",
+    "chicken coxinha",
+    "brigadeiro tart"
+   ],
+   "signature": "Pão de Queijo with Brazilian Cafezinho"
   },
   {
    "placeId": "ChIJs48T57m59YgRAuRCOdW5IY8",
@@ -33482,7 +34029,19 @@
    "ratingCount": "636",
    "hours": "Mon-Sun 5am-12pm",
    "website": "https://www.facebook.com/pages/Best-Country-Donuts/104925646217984",
-   "googleUrl": "https://maps.google.com/?cid=14428959021979980970&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=14428959021979980970&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "limited",
+    "note": "Beloved local grab-and-go morning staple with friendly counter service.",
+    "hasMeetingRoom": false
+   },
+   "usp": "Longtime Forest Park neighborhood bakery serving fluffy handmade doughnuts, kolaches, and fresh coffee.",
+   "loved": [
+    "glazed yeast doughnut",
+    "jalapeño sausage kolache",
+    "hot coffee"
+   ],
+   "signature": "Jalapeño Sausage Cheese Kolache"
   },
   {
    "placeId": "ChIJs88QSVaf9YgR534-SQo4bjk",
@@ -33778,7 +34337,7 @@
    "neighborhood": "Midtown Atlanta",
    "lat": 33.780428,
    "lng": -84.38683,
-   "category": "Coffee",
+   "category": "Specialty",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -33982,7 +34541,7 @@
    "county": "Fulton",
    "lat": 34.076966,
    "lng": -84.294831,
-   "category": "Coffee",
+   "category": "Specialty",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -34099,7 +34658,7 @@
    "county": "Gwinnett",
    "lat": 34.001442,
    "lng": -84.146361,
-   "category": "Coffee",
+   "category": "Specialty",
    "model": "franchise",
    "types": [
     "coffee_shop",
@@ -34169,7 +34728,7 @@
    "neighborhood": "Buckhead",
    "lat": 33.87493,
    "lng": -84.379668,
-   "category": "Coffee",
+   "category": "Specialty",
    "model": "franchise",
    "types": [
     "coffee_shop",
@@ -34494,7 +35053,7 @@
    "county": "Henry",
    "lat": 33.446033,
    "lng": -84.147116,
-   "category": "Coffee",
+   "category": "Specialty",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -34505,7 +35064,20 @@
    "ratingCount": "771",
    "hours": "Sun-Mon Closed · Tue-Fri 7am-7pm · Sat 9am-4pm",
    "website": "http://queenbeecoffee.com/",
-   "googleUrl": "https://maps.google.com/?cid=12138152757899916742&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=12138152757899916742&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "excellent",
+    "note": "Exposed brick, roomy communal tables, fast Wi-Fi, and downtown square charm.",
+    "hasMeetingRoom": true,
+    "meetingRoomNote": "Upstairs community gathering room reservable for meetings and workshops."
+   },
+   "usp": "Historic McDonough Square roastery and community coffeehouse serving micro-roasted beans and fresh bakery treats.",
+   "loved": [
+    "Queen Bee honey latte",
+    "cold brew on nitro",
+    "fresh morning muffin"
+   ],
+   "signature": "The Queen Bee (Honey & Vanilla Latte)"
   },
   {
    "placeId": "ChIJt_GpU9ex9YgRQt9LxVAiKxs",
@@ -34583,7 +35155,7 @@
    "county": "DeKalb",
    "lat": 33.782934,
    "lng": -84.271676,
-   "category": "Coffee",
+   "category": "Specialty",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -34594,7 +35166,19 @@
    "ratingCount": "229",
    "hours": "Mon-Sun 8am-3pm",
    "website": "http://radioroasters.com/",
-   "googleUrl": "https://maps.google.com/?cid=4431327709209868761&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=4431327709209868761&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "good",
+    "note": "Focused, roaster-forward tasting room with bar seating, Wi-Fi, and coffee geek conversations.",
+    "hasMeetingRoom": false
+   },
+   "usp": "Precision micro-roastery tucked in East Decatur pouring exceptionally balanced pour-overs and micro-lot coffees.",
+   "loved": [
+    "Ethiopian pour-over",
+    "Colombia micro-lot",
+    "cardamom shortbread"
+   ],
+   "signature": "Single-Origin Pour-Over Flights"
   },
   {
    "placeId": "ChIJtfXksqX29YgRMRDRwuhWm-A",
@@ -34837,7 +35421,7 @@
    "neighborhood": "Buckhead Heights",
    "lat": 33.847272,
    "lng": -84.357245,
-   "category": "Coffee",
+   "category": "Specialty",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -35018,7 +35602,20 @@
    "ratingCount": "1,147",
    "hours": "Mon-Sun 9am-9pm",
    "website": "https://m.facebook.com/BobaTheory/",
-   "googleUrl": "https://maps.google.com/?cid=14899346682937397634&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=14899346682937397634&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "excellent",
+    "note": "Spacious modern lounge with dedicated study booths, fast Wi-Fi, and ample power outlets.",
+    "hasMeetingRoom": true,
+    "meetingRoomNote": "Semi-private group study alcove reservable for team sessions."
+   },
+   "usp": "South Metro's premier bubble tea destination serving handcrafted fruit teas, brown sugar boba, and Asian street snacks.",
+   "loved": [
+    "crème brûlée boba",
+    "taro swirl milk tea",
+    "popcorn chicken"
+   ],
+   "signature": "Crème Brûlée Brown Sugar Milk Tea"
   },
   {
    "placeId": "ChIJuX-RSRgn9YgRn4SaMm8rLJs",
@@ -35286,7 +35883,7 @@
    "neighborhood": "Virginia-Highland",
    "lat": 33.783196,
    "lng": -84.354739,
-   "category": "Coffee",
+   "category": "Specialty",
    "model": "franchise",
    "types": [
     "coffee_shop",
@@ -35469,7 +36066,7 @@
    "county": "Douglas",
    "lat": 33.736442,
    "lng": -84.793312,
-   "category": "Coffee",
+   "category": "Specialty",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -35573,7 +36170,7 @@
    "neighborhood": "Toco Hills",
    "lat": 33.815326,
    "lng": -84.311954,
-   "category": "Coffee",
+   "category": "Specialty",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -35659,7 +36256,7 @@
    "county": "Coweta",
    "lat": 33.374891,
    "lng": -84.800612,
-   "category": "Coffee",
+   "category": "Specialty",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -35670,7 +36267,20 @@
    "ratingCount": "877",
    "hours": "Mon-Thu 7am-6pm · Fri-Sat 7am-9pm · Sun 8am-4pm",
    "website": "http://www.leafandbeannewnan.com/",
-   "googleUrl": "https://maps.google.com/?cid=3378628150190373117&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=3378628150190373117&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "excellent",
+    "note": "Historic two-story brick building, fast Wi-Fi, comfortable sofas, and quiet upstairs work nooks.",
+    "hasMeetingRoom": true,
+    "meetingRoomNote": "Upstairs mezzanine space reservable for business gatherings and remote team meetups."
+   },
+   "usp": "Historic Newnan Court Square coffee roaster and wine bar brewing small-batch beans in a historic brick setting.",
+   "loved": [
+    "Court Square blend",
+    "Cuban latte",
+    "lemon blueberry scone"
+   ],
+   "signature": "Newnan Square Pour-Over"
   },
   {
    "placeId": "ChIJvzk9tWEP9YgR7yVxuCIMxGQ",
@@ -36342,7 +36952,19 @@
    "ratingCount": "1,461",
    "hours": "Mon-Sat 8am-7pm · Sun Closed",
    "website": "http://www.farmerstablega.com/",
-   "googleUrl": "https://maps.google.com/?cid=10817792769554879921&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=10817792769554879921&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "good",
+    "note": "Bright farmhouse aesthetic with roomy tables and Wi-Fi.",
+    "hasMeetingRoom": false
+   },
+   "usp": "Douglasville farm-to-table breakfast cafe and espresso bar serving local pasture-raised breakfast plates and specialty roasts.",
+   "loved": [
+    "farmer's breakfast plate",
+    "honey cinnamon latte",
+    "fresh biscuit"
+   ],
+   "signature": "Farm Fresh Honey Butter Latte"
   },
   {
    "placeId": "ChIJx-SFIGCo9YgRVIallgKSgAc",
@@ -36408,7 +37030,7 @@
    "county": "Gwinnett",
    "lat": 34.007737,
    "lng": -84.128918,
-   "category": "Coffee",
+   "category": "Specialty",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -36430,7 +37052,7 @@
    "neighborhood": "Poncey-Highland",
    "lat": 33.772843,
    "lng": -84.352778,
-   "category": "Coffee",
+   "category": "Specialty",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -37081,7 +37703,7 @@
    "county": "Dawson",
    "lat": 34.366224,
    "lng": -84.034854,
-   "category": "Coffee",
+   "category": "Specialty",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -37092,7 +37714,19 @@
    "ratingCount": "209",
    "hours": "Mon-Fri 6:30am-7pm · Sat-Sun 7:30am-7pm",
    "website": "https://bwblacksmith.com/",
-   "googleUrl": "https://maps.google.com/?cid=16349522893663597669&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=16349522893663597669&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "excellent",
+    "note": "Rustic timber tables, fast Wi-Fi, plenty of outlets, and tranquil North Georgia atmosphere.",
+    "hasMeetingRoom": false
+   },
+   "usp": "Foothills artisan roastery and cafe celebrating blacksmith heritage with hand-roasted coffee and quiet study areas.",
+   "loved": [
+    "Anvil house dark roast",
+    "honey vanilla latte",
+    "fresh blueberry scone"
+   ],
+   "signature": "The Anvil Roast (Smoky Dark Espresso)"
   },
   {
    "placeId": "ChIJy5K7dLFX9IgRV0WfnysbX4Q",
@@ -38064,7 +38698,7 @@
    "county": "Fulton",
    "lat": 34.030513,
    "lng": -84.188229,
-   "category": "Coffee",
+   "category": "Specialty",
    "model": "independent",
    "types": [
     "cafe"
