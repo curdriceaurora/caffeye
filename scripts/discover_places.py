@@ -55,23 +55,23 @@ EXCLUDE_PATH = ROOT / "scripts" / "places_exclude.json"
 CURATIONS_PATH = ROOT / "scripts" / "curations.json"
 
 REGION = {
-    "label": "North Atlanta",
+    "label": "Metro Atlanta",
     # Only needs to contain the counties; membership is decided by county_label().
-    "bbox": {"south": 33.70, "west": -84.80, "north": 34.45, "east": -83.75},
-    # API county name -> label shown in the app. min_lat = only the part north of it.
+    "bbox": {"south": 33.70, "west": -84.80, "north": 34.65, "east": -83.60},
+    # API county name -> label shown in the app.
     "counties": [
         {"api": "Gwinnett County", "label": "Gwinnett"},
-        {"api": "Fulton County", "label": "Fulton", "min_lat": 33.90},
+        {"api": "Fulton County", "label": "Fulton"},
         {"api": "Forsyth County", "label": "Forsyth"},
-        {"api": "DeKalb County", "label": "DeKalb", "min_lat": 33.90},
-        {"api": "Cobb County", "label": "Cobb", "min_lat": 33.86},
+        {"api": "DeKalb County", "label": "DeKalb"},
+        {"api": "Cobb County", "label": "Cobb"},
         {"api": "Cherokee County", "label": "Cherokee"},
         {"api": "Hall County", "label": "Hall"},
         {"api": "Dawson County", "label": "Dawson"},
     ],
     "note": (
-        "Covers Greater North Atlanta and the North Georgia foothills. For Fulton, DeKalb, and Cobb "
-        "only the part north of the top-end Perimeter (I-285) is included."
+        "Covers Metro Atlanta (including Atlanta urban core, Decatur, and North Georgia foothills) "
+        "across Fulton, DeKalb, Cobb, Gwinnett, Cherokee, Forsyth, Hall, and Dawson counties."
     ),
 }
 # (includedType, textQuery). Pass 1 is free, so every in-scope type is queried.
@@ -453,13 +453,59 @@ def compact_hours(weekday_descriptions):
 
 
 def _close_minutes(period: dict):
-    """Close time as minutes after the open day's midnight (>= 1440 means past midnight)."""
+    """Close time as minutes after the open day's midnight (>= 1440 means past midnight).
+    Returns '24h' for periods without a closing time, integer minutes, or None."""
     o, c = period.get("open") or {}, period.get("close")
-    if not c or "day" not in o or "day" not in c:
+    if not o or "day" not in o:
+        return None
+    if not c:
+        return "24h"
+    if "day" not in c:
         return None
     return (
         ((c["day"] - o["day"]) % 7) * 1440 + c.get("hour", 0) * 60 + c.get("minute", 0)
     )
+
+
+def _parse_periods(periods: list) -> dict:
+    """Map open day (0=Sun..6=Sat) -> latest closing time ('24h' or minutes after open day's midnight)."""
+    if not periods:
+        return {}
+    if len(periods) == 1 and not periods[0].get("close"):
+        return {d: "24h" for d in range(7)}
+
+    daily_close = {}
+    for p in periods:
+        o, c = p.get("open") or {}, p.get("close")
+        if not o or "day" not in o:
+            continue
+        if not c:
+            daily_close[o["day"]] = "24h"
+            continue
+        if "day" not in c:
+            continue
+
+        o_day = o["day"]
+        c_day = c["day"]
+        c_min = c.get("hour", 0) * 60 + c.get("minute", 0)
+        diff = (c_day - o_day) % 7
+
+        if diff == 0:
+            if daily_close.get(o_day) != "24h":
+                daily_close[o_day] = max(daily_close.get(o_day, 0), c_min)
+        elif diff == 1:
+            close_after = 1440 + c_min
+            if daily_close.get(o_day) != "24h":
+                daily_close[o_day] = max(daily_close.get(o_day, 0), close_after)
+        else:
+            daily_close[o_day] = "24h"
+            curr = (o_day + 1) % 7
+            while curr != c_day:
+                daily_close[curr] = "24h"
+                curr = (curr + 1) % 7
+            if c_min > 0 and daily_close.get(c_day) != "24h":
+                daily_close[c_day] = max(daily_close.get(c_day, 0), c_min)
+    return daily_close
 
 
 def _time_text(minutes: int) -> str:
@@ -494,25 +540,49 @@ def _days_text(days: set) -> str:
 
 
 def late_for(periods):
-    """{'tier': '10pm+'|'midnight', 'when': 'Fri-Sat till 1am; rest of week till 11pm'} or None."""
-    if not periods:
+    """{'tier': '10pm+'|'midnight', 'when': '...'} or None."""
+    daily = _parse_periods(periods)
+    if not daily:
         return None
-    latest = {}  # open day -> latest close, minutes after that day's midnight
-    for p in periods:
-        m = _close_minutes(p)
-        if m is None:
-            continue
-        d = p["open"]["day"]
-        latest[d] = max(latest.get(d, 0), m)
-    midnight = {d for d, m in latest.items() if m >= 1440}
-    ten = {d for d, m in latest.items() if 22 * 60 <= m < 1440}
-    if not midnight and not ten:
+
+    late_days = {}
+    for d, m in daily.items():
+        if m == "24h":
+            late_days[d] = "24h"
+        elif isinstance(m, int) and m >= 22 * 60:
+            late_days[d] = m
+
+    if not late_days:
         return None
-    head, rest = (midnight, ten) if midnight else (ten, set())
-    when = f"{_days_text(head)} till {_time_text(max(latest[d] for d in head))}"
-    if rest:
-        when += f"; rest of week till {_time_text(max(latest[d] for d in rest))}"
-    return {"tier": "midnight" if midnight else "10pm+", "when": when}
+
+    by_close = {}
+    for d, m in late_days.items():
+        by_close.setdefault(m, set()).add(d)
+
+    has_midnight = any(
+        m == "24h" or (isinstance(m, int) and m >= 1440)
+        for m in late_days.values()
+    )
+    tier = "midnight" if has_midnight else "10pm+"
+
+    def sort_key(item):
+        m, days = item
+        if m == "24h":
+            return (2, 99999)
+        return (1, m)
+
+    parts = []
+    for m, days in sorted(by_close.items(), key=sort_key, reverse=True):
+        d_text = _days_text(days)
+        if m == "24h":
+            if len(days) == 7:
+                parts.append("Open 24 hours")
+            else:
+                parts.append(f"{d_text} Open 24 hours")
+        else:
+            parts.append(f"{d_text} till {_time_text(m)}")
+
+    return {"tier": tier, "when": "; ".join(parts)}
 
 
 def to_record(place: dict, brand_counts=None, curations=None):
@@ -644,13 +714,12 @@ class Client:
     def __call__(self, body: dict, mask: str, sku: str) -> dict:
         for attempt in range(4):
             try:
-                res = _request(self.key, SEARCH_URL, body, mask)
+                res = _request(self.key, SEARCH_URL, body, mask, sku=sku)
             except FatalApiError as e:
                 if "HTTP 429" in str(e) and attempt < 3:
                     time.sleep(2 ** (attempt + 1))
                     continue
                 raise
-            ledger.record(sku)
             self.calls[sku] += 1
             time.sleep(self.sleep)
             if "error" in res:
@@ -689,9 +758,9 @@ def planned_calls(leaves) -> int:
     return sum(calls for _rect, n, calls in leaves if n > 0)
 
 
-def fetch_details(client, plan) -> dict:
+def fetch_details(client, plan, out: dict | None = None) -> dict:
     """Pass 2 (paid): plan = [(qtype, text, rect)] -> {placeId: place} (first sighting wins)."""
-    raw = {}
+    raw = out if out is not None else {}
     for item in plan:
         qtype, text, rect = item[:3]
         places, _ = fetch_pages(client, rect, qtype, text, FULL_MASK, SKU_FULL)
@@ -701,7 +770,7 @@ def fetch_details(client, plan) -> dict:
 
 
 # ---- dump / replay ----------------------------------------------------------
-def write_dump(path: Path, dump: dict) -> None:
+def write_dump(path: Path, dump: dict, incomplete: bool = False) -> None:
     """Merge places into an existing dump (never drop); replace the leaves/meta."""
     existing = {}
     if path.exists():
@@ -712,9 +781,14 @@ def write_dump(path: Path, dump: dict) -> None:
     merged = dict(existing)
     merged.update({k: v for k, v in dump.items() if k != "places"})
     merged["places"] = {**existing.get("places", {}), **dump.get("places", {})}
+    if incomplete:
+        merged["incomplete"] = True
+    elif "incomplete" in merged and not incomplete:
+        merged.pop("incomplete", None)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(merged, indent=1))
-    print(f"dump -> {path}  ({len(merged['places'])} places)")
+    status = " (INCOMPLETE)" if incomplete else ""
+    print(f"dump -> {path}{status}  ({len(merged['places'])} places)")
 
 
 def load_exclusions() -> set:
@@ -910,9 +984,11 @@ def main() -> int:
     )
     generated_at = datetime.now(timezone.utc).isoformat(timespec="seconds")
     raw = {}
+    incomplete = False
     try:
-        raw = fetch_details(client, plan)
+        raw = fetch_details(client, plan, raw)
     except FatalApiError as e:
+        incomplete = True
         print(f"ABORTED during pass 2: {e}")
         return 2
     finally:
@@ -924,6 +1000,7 @@ def main() -> int:
                 "leaves": leaves_out,
                 "places": raw,
             },
+            incomplete=incomplete,
         )
     recs, stats = build_places(raw, load_exclusions())
     report(recs, stats, curated_with_coords(), raw)

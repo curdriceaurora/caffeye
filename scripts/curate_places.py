@@ -93,7 +93,48 @@ def apply_curations(places: list, curations: dict) -> tuple:
 
 
 def audit(places: list, shops: list = None) -> dict:
-    all_venues = list(places) + (list(shops) if shops else [])
+    if shops:
+        all_venues = list(shops)
+        seen_pids = {s["placeId"] for s in shops if s.get("placeId")}
+        for p in places:
+            pid = p.get("placeId")
+            if pid and pid in seen_pids:
+                continue
+            # Guard against relisted duplicate of a curated shop (<60m and shared non-generic name token)
+            is_dupe = False
+            p_lat, p_lng = p.get("lat"), p.get("lng")
+            p_name = p.get("name", "")
+            if p_lat and p_lng:
+                p_tokens = [
+                    t
+                    for t in re.split(r"[^a-z0-9]+", p_name.lower())
+                    if len(t) >= 3 and t not in ("cafe", "coffee", "bakery", "tea")
+                ]
+                for s in shops:
+                    s_lat, s_lng = s.get("lat"), s.get("lng")
+                    if not s_lat or not s_lng:
+                        continue
+                    if (
+                        abs(p_lat - s_lat) <= 0.0006
+                        and abs(p_lng - s_lng) <= 0.0006
+                    ):
+                        s_name = s.get("name", "")
+                        s_tokens = [
+                            t
+                            for t in re.split(r"[^a-z0-9]+", s_name.lower())
+                            if len(t) >= 3
+                            and t not in ("cafe", "coffee", "bakery", "tea")
+                        ]
+                        if any(t in s_tokens for t in p_tokens):
+                            is_dupe = True
+                            break
+            if not is_dupe:
+                if pid:
+                    seen_pids.add(pid)
+                all_venues.append(p)
+    else:
+        all_venues = list(places)
+
     by_county = Counter()
     work_by_county = Counter()
     meeting_by_county = Counter()
@@ -199,7 +240,13 @@ def main() -> int:
     if args.audit:
         places_data = json.loads(PLACES_PATH.read_text())
         shops_data = json.loads(SHOPS_PATH.read_text())
-        res = audit(places_data["places"], shops_data.get("shops", []))
+        shops = shops_data.get("shops", [])
+        addr = shops_data.get("addr", {})
+        for s in shops:
+            if "lat" not in s and s.get("addrKey") in addr:
+                s["lat"] = addr[s["addrKey"]].get("lat")
+                s["lng"] = addr[s["addrKey"]].get("lng")
+        res = audit(places_data["places"], shops)
         print("=== CAFFEYE CURATION AUDIT ===")
         print(f"Total Venues: {res['total_venues']}")
         print(f"Work-Friendly Venues: {res['total_work_friendly']}")
@@ -221,7 +268,13 @@ def main() -> int:
         print(f"Applied {count} curations from {CURATIONS_PATH.name} -> {PLACES_PATH} ({PLACES_PATH.stat().st_size // 1024} KB)")
         # Show audit after apply
         shops_data = json.loads(SHOPS_PATH.read_text())
-        res = audit(updated_places, shops_data.get("shops", []))
+        shops = shops_data.get("shops", [])
+        addr = shops_data.get("addr", {})
+        for s in shops:
+            if "lat" not in s and s.get("addrKey") in addr:
+                s["lat"] = addr[s["addrKey"]].get("lat")
+                s["lng"] = addr[s["addrKey"]].get("lng")
+        res = audit(updated_places, shops)
         print("\nPost-apply audit:")
         for c in res["counties"]:
             tot = res["by_county"].get(c, 0)

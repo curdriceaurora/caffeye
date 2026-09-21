@@ -84,17 +84,24 @@ class FilterTests(unittest.TestCase):
         c = [comp("Clayton County", "administrative_area_level_2")]
         self.assertIsNone(D.county_label(c, 33.50))
 
-    def test_fulton_dekalb_and_cobb_need_the_latitude_cut(self):
+    def test_fulton_dekalb_and_cobb_include_itp_and_downtown(self):
         fulton = [comp("Fulton County", "administrative_area_level_2")]
         self.assertEqual(D.county_label(fulton, 33.95), "Fulton")
-        self.assertIsNone(D.county_label(fulton, 33.85))
+        self.assertEqual(D.county_label(fulton, 33.75), "Fulton")  # Downtown Atlanta
         dekalb = [comp("DeKalb County", "administrative_area_level_2")]
         self.assertEqual(D.county_label(dekalb, 33.95), "DeKalb")
-        self.assertIsNone(D.county_label(dekalb, 33.85))
+        self.assertEqual(D.county_label(dekalb, 33.77), "DeKalb")  # Decatur
         cobb = [comp("Cobb County", "administrative_area_level_2")]
         self.assertEqual(D.county_label(cobb, 33.95), "Cobb")
-        self.assertEqual(D.county_label(cobb, 33.87), "Cobb")  # north of 33.86
-        self.assertIsNone(D.county_label(cobb, 33.80))         # south of 33.86
+        self.assertEqual(D.county_label(cobb, 33.80), "Cobb")      # Vinings / Cumberland
+
+    def test_min_lat_rule_honored_when_specified(self):
+        from unittest.mock import patch
+        custom_rule = {"api": "Test County", "label": "Test", "min_lat": 33.90}
+        with patch.dict(D.REGION, {"counties": [custom_rule]}):
+            test_c = [comp("Test County", "administrative_area_level_2")]
+            self.assertEqual(D.county_label(test_c, 33.95), "Test")
+            self.assertIsNone(D.county_label(test_c, 33.85))
 
 
 class HoursTests(unittest.TestCase):
@@ -140,7 +147,43 @@ class LateTests(unittest.TestCase):
         periods[6] = self.p(6, 10, 0, cday=0)  # Saturday closes midnight
         late = D.late_for(periods)
         self.assertEqual(late["tier"], "midnight")
-        self.assertEqual(late["when"], "Fri-Sat till 1am; rest of week till 11pm")
+        self.assertEqual(late["when"], "Fri till 1am; Sat till midnight; Sun-Thu till 11pm")
+
+    def test_always_open_twenty_four_hours(self):
+        late = D.late_for([{"open": {"day": 0, "hour": 0, "minute": 0}}])
+        self.assertEqual(late, {"tier": "midnight", "when": "Open 24 hours"})
+
+    def test_differing_weekday_and_weekend_closures(self):
+        # 967 Coffee Co schedule: Sun-Thu close midnight, Fri-Sat close 2am
+        periods = [self.p(d, 7, 0, cday=(d + 1) % 7) for d in range(5)]
+        periods.append(self.p(5, 7, 2, cday=6))
+        periods.append(self.p(6, 7, 2, cday=0))
+        late = D.late_for(periods)
+        self.assertEqual(
+            late,
+            {"tier": "midnight", "when": "Fri-Sat till 2am; Sun-Thu till midnight"},
+        )
+
+    def test_closed_days_do_not_produce_rest_of_week(self):
+        # Only Fri and Sat open late (1am), Mon-Thu close 8pm, Sun closed
+        periods = [self.p(d, 8, 20) for d in (1, 2, 3, 4)]
+        periods.append(self.p(5, 8, 1, cday=6))
+        periods.append(self.p(6, 8, 1, cday=0))
+        late = D.late_for(periods)
+        self.assertEqual(late, {"tier": "midnight", "when": "Fri-Sat till 1am"})
+
+    def test_multi_day_continuous_open(self):
+        # Mon 0:00 to Sat 0:00 (5 full days open), Sat-Sun 9am-9pm
+        periods = [
+            self.p(0, 9, 21),
+            {
+                "open": {"day": 1, "hour": 0, "minute": 0},
+                "close": {"day": 6, "hour": 0, "minute": 0},
+            },
+            self.p(6, 9, 21),
+        ]
+        late = D.late_for(periods)
+        self.assertEqual(late, {"tier": "midnight", "when": "Weekdays Open 24 hours"})
 
     def test_daily(self):
         late = D.late_for([self.p(d, 7, 23, cmin=30) for d in range(7)])
@@ -362,6 +405,51 @@ class CrawlTests(unittest.TestCase):
         finally:
             D.EXCLUDE_PATH = orig
             tf_path.unlink(missing_ok=True)
+
+    def test_client_and_request_single_ledger_entry_per_request(self):
+        from unittest.mock import MagicMock, patch
+        with (
+            patch("discover_places.ledger") as mock_ledger,
+            patch("refresh_ratings.places_ledger") as mock_rr_ledger,
+            patch("urllib.request.urlopen") as mock_urlopen,
+        ):
+            mock_resp = MagicMock()
+            mock_resp.read.return_value = b'{"places": []}'
+            mock_urlopen.return_value.__enter__.return_value = mock_resp
+
+            client = D.Client("fake-key", sleep=0.0)
+            # Pass 1 request (free ids-only)
+            client({}, D.IDS_MASK, D.SKU_IDS)
+            # Only refresh_ratings.places_ledger should record the SKU_IDS
+            mock_rr_ledger.record.assert_called_once_with(D.SKU_IDS)
+            mock_ledger.record.assert_not_called()
+
+            mock_rr_ledger.reset_mock()
+            # Pass 2 request (paid enterprise)
+            client({}, D.FULL_MASK, D.SKU_FULL)
+            mock_rr_ledger.record.assert_called_once_with(D.SKU_FULL)
+            mock_ledger.record.assert_not_called()
+
+    def test_fetch_details_preserves_partial_progress_on_failure(self):
+        from unittest.mock import MagicMock, patch
+        call_count = [0]
+
+        def fake_fetch_pages(client, rect, qtype, text, mask, sku):
+            call_count[0] += 1
+            if call_count[0] == 2:
+                raise D.FatalApiError("Simulated 429 rate limit")
+            return [{"id": f"place_{call_count[0]}"}], 1
+
+        with patch("discover_places.fetch_pages", side_effect=fake_fetch_pages):
+            client = MagicMock()
+            plan = [
+                ("q1", "t1", D.Rect(0, 0, 1, 1)),
+                ("q2", "t2", D.Rect(0, 0, 1, 1)),
+            ]
+            accumulated = {}
+            with self.assertRaises(D.FatalApiError):
+                D.fetch_details(client, plan, out=accumulated)
+            self.assertIn("place_1", accumulated)
 
 
 if __name__ == "__main__":

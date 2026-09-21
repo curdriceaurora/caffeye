@@ -93,6 +93,19 @@ class CuratePlacesTests(unittest.TestCase):
         self.assertEqual(res["meeting_by_county"]["Fulton"], 1)
         self.assertEqual(res["meeting_by_county"].get("Forsyth", 0), 0)
 
+    def test_audit_deduplicates_overlapping_shops(self):
+        places = [
+            {"placeId": "shared_1", "name": "Shared Cafe", "county": "Gwinnett"},
+            {"placeId": "discovered_only", "name": "Discovered Cafe", "county": "Gwinnett"},
+        ]
+        shops = [
+            {"placeId": "shared_1", "name": "Shared Cafe", "county": "Gwinnett", "cw": {"tier": "excellent"}},
+            {"placeId": "curated_only", "name": "Curated Cafe", "county": "Gwinnett"},
+        ]
+        res = CP.audit(places, shops)
+        self.assertEqual(res["total_venues"], 3)
+        self.assertEqual(res["total_work_friendly"], 1)
+
     def test_extract_signals_from_text(self):
         html_sample = """
         <html>

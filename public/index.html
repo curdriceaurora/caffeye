@@ -472,6 +472,15 @@
     .shop-tags { font-size: 10.5px; }
     footer { display: none; }
   }
+
+  @media (max-width: 820px) and (max-height: 500px) {
+    #map { flex: 0 0 120px; min-height: 90px; }
+    header { padding: 4px 10px; }
+    .filter-bar { padding: 2px 10px; }
+    .search { padding: 4px 10px; }
+    .results-meta { padding: 3px 10px; }
+    .shop-item { padding: 5px 10px; }
+  }
 </style>
 <link rel="preload" href="./shops.json" as="fetch" crossorigin>
 </head>
@@ -534,15 +543,21 @@ const CATS = {
 
 let SHOPS, ADDR, NEIGHBORHOODS, CITIES, COUNTIES, REGION_LABEL, CHECKED_MONTH;
 
+const placesController = new AbortController();
+const placesTimeout = setTimeout(() => placesController.abort(), 2500);
+
 Promise.allSettled([
   fetch('./shops.json').then(r => {
     if (!r.ok) throw new Error('Failed to load shops.json: ' + r.status);
     return r.json();
   }),
-  fetch('./places.json').then(r => {
-    if (!r.ok) return null;
-    return r.json();
-  }).catch(() => null)
+  fetch('./places.json', { signal: placesController.signal })
+    .then(r => {
+      clearTimeout(placesTimeout);
+      if (!r.ok) return null;
+      return r.json();
+    })
+    .catch(() => null)
 ])
 .then(([shopsRes, placesRes]) => {
   const shopsData = shopsRes.status === 'fulfilled' ? shopsRes.value : null;
@@ -557,6 +572,10 @@ Promise.allSettled([
 
   if (placesData && Array.isArray(placesData.places)) {
     placesData.places.forEach(p => {
+      if (!p || typeof p !== 'object') return;
+      if (typeof p.lat !== 'number' || !Number.isFinite(p.lat) || typeof p.lng !== 'number' || !Number.isFinite(p.lng)) return;
+      if (p.lat === 0 && p.lng === 0) return;
+      if (!p.name || typeof p.name !== 'string') return;
       if (p.placeId && seenPlaceIds.has(p.placeId)) return;
       // Guard against relisted duplicate of a curated shop (<60m and shared non-generic name token)
       const isRelistedDupe = SHOPS.some(s => {
@@ -570,7 +589,8 @@ Promise.allSettled([
       });
       if (isRelistedDupe) return;
 
-      const addrKey = `place-${p.placeId}`;
+      if (p.placeId) seenPlaceIds.add(p.placeId);
+      const addrKey = `place-${p.placeId || Math.random().toString(36).slice(2)}`;
       ADDR[addrKey] = { lat: p.lat, lng: p.lng };
       NEIGHBORHOODS[addrKey] = p.neighborhood || p.city;
       SHOPS.push({
@@ -593,15 +613,23 @@ Promise.allSettled([
 
 function boot() {
   // DERIVED
-  const slug = s => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  const slug = s => (s || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  const seenIds = new Set();
   SHOPS = SHOPS.filter(s => {
     const key = s.addrKey;
     if (key && ADDR[key]) { s.lat = ADDR[key].lat; s.lng = ADDR[key].lng; }
-    if (!s.lat || !s.lng || (s.lat === 0 && s.lng === 0)) {
+    if (typeof s.lat !== 'number' || !Number.isFinite(s.lat) || typeof s.lng !== 'number' || !Number.isFinite(s.lng) || (s.lat === 0 && s.lng === 0)) {
       console.warn('Skipping shop with invalid coordinates:', s.name);
       return false;
     }
-    s.id = s.placeId || (slug(s.city || 'duluth') + '-' + slug(s.name));
+    const baseId = s.placeId || (slug(s.city || 'duluth') + '-' + slug(s.name || 'spot'));
+    let uniqueId = baseId;
+    let counter = 1;
+    while (seenIds.has(uniqueId)) {
+      uniqueId = `${baseId}-${counter++}`;
+    }
+    seenIds.add(uniqueId);
+    s.id = uniqueId;
     s.neighborhood = s.neighborhood || NEIGHBORHOODS[key] || s.city || "Duluth";
     s.model = s.model || 'independent';
     return true;
@@ -705,11 +733,12 @@ function boot() {
   const catChipsEl = document.getElementById('categoryChips');
   const featChipsEl = document.getElementById('featureChips');
 
-  function makeChip({ label, count, color, icon, themeColor, onClick, isActive }) {
+  function makeChip({ label, count, color, icon, themeColor, onClick, isActive, chipKey }) {
     const b = document.createElement('button');
     b.className = 'chip' + (isActive ? ' active' : '') + (themeColor ? ' themed' : '');
     b.type = 'button';
     b.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+    if (chipKey) b.dataset.chipKey = chipKey;
     if (themeColor) {
       if (isActive) {
         b.style.background = themeColor;
@@ -718,7 +747,7 @@ function boot() {
       } else {
         b.style.background = themeColor + '1f';
         b.style.borderColor = themeColor + '55';
-        b.style.color = themeColor;
+        b.style.color = 'var(--text)';
       }
     }
     if (icon) {
@@ -744,6 +773,9 @@ function boot() {
   }
 
   function renderChips() {
+    const activeEl = document.activeElement;
+    const focusedKey = activeEl && activeEl.dataset ? activeEl.dataset.chipKey : null;
+
     const inScope = SHOPS.filter(s => state.includeFranchises || s.model !== 'franchise');
     const catCounts = inScope.reduce((acc, s) => { acc[s.category] = (acc[s.category]||0)+1; return acc; }, {});
 
@@ -752,7 +784,7 @@ function boot() {
     catChipsEl.style.gap = '6px';
     catChipsEl.style.flexWrap = 'wrap';
     catChipsEl.appendChild(makeChip({
-      label: 'All', count: inScope.length,
+      label: 'All', count: inScope.length, chipKey: 'cat-all',
       onClick: () => { state.categories.clear(); render(); },
       isActive: state.categories.size === 0
     }));
@@ -762,6 +794,7 @@ function boot() {
         count: catCounts[cat] || 0,
         icon: CATS[cat].icon,
         themeColor: CATS[cat].hex,
+        chipKey: 'cat-' + cat,
         onClick: () => {
           if (state.categories.has(cat)) state.categories.delete(cat);
           else state.categories.add(cat);
@@ -789,6 +822,7 @@ function boot() {
     features.forEach(f => {
       featChipsEl.appendChild(makeChip({
         label: f.label, count: f.count, icon: f.icon, themeColor: f.themeColor,
+        chipKey: 'feat-' + f.key,
         onClick: () => {
           if (state.features.has(f.key)) state.features.delete(f.key);
           else state.features.add(f.key);
@@ -797,6 +831,11 @@ function boot() {
         isActive: state.features.has(f.key)
       }));
     });
+
+    if (focusedKey) {
+      const el = document.querySelector(`button[data-chip-key="${focusedKey}"]`);
+      if (el) el.focus();
+    }
   }
 
   // MAP
@@ -872,14 +911,27 @@ function boot() {
   });
 
   // Fit the map to all markers on first paint (instead of the hardcoded center+zoom)
-  map.fitBounds(clusterGroup.getBounds(), { padding: [40, 40] });
+  if (clusterGroup.getLayers().length > 0) {
+    map.fitBounds(clusterGroup.getBounds(), { padding: [40, 40] });
+  }
 
   // Keep the right-hand list in sync with the current map viewport.
   // Debounce so panning/zooming doesn't thrash the DOM.
   let __viewportTimer = null;
   map.on('moveend zoomend', () => {
     clearTimeout(__viewportTimer);
-    __viewportTimer = setTimeout(() => { renderList('viewport'); }, 80);
+    __viewportTimer = setTimeout(() => {
+      renderList('viewport');
+      if (state.returningFromDetail) {
+        const idToFocus = state.returningFromDetail;
+        state.returningFromDetail = null;
+        if (state.lastScrollTop !== undefined) {
+          shopListEl.scrollTop = state.lastScrollTop;
+        }
+        const el = shopListEl.querySelector(`[data-id="${idToFocus}"]`);
+        if (el) el.focus();
+      }
+    }, 80);
   });
 
   // Show shop-name labels under pins. Below LABEL_MIN_ZOOM they're hidden;
@@ -1072,6 +1124,9 @@ function boot() {
       s.signature,
       s.category,
       s.neighborhood,
+      s.city || '',
+      s.county || '',
+      s.address || s.addr || '',
       cw.tier || '',
       cw.note || '',
       ln ? ln.tier : '',
@@ -1103,9 +1158,14 @@ function boot() {
   }
 
   function renderList(source) {
-    // A fresh filter/search/viewport context starts back at the top of the list;
-    // only an explicit "Load more" click should grow the visible window.
-    if (source !== 'loadmore') state.listLimit = LIST_PAGE_SIZE;
+    // A fresh filter/search context starts back at the top of the list;
+    // explicit "Load more", returning from detail, and viewport updates preserve pagination.
+    if (source === 'filter' || source === 'search') {
+      state.listLimit = LIST_PAGE_SIZE;
+      state.savedListLimit = LIST_PAGE_SIZE;
+    } else if (source === 'detail-back') {
+      if (state.savedListLimit) state.listLimit = state.savedListLimit;
+    }
 
     // Map cluster membership tracks global filters only — viewport filtering must not
     // shrink clusterGroup.getBounds() (otherwise later fitBounds calls fit to a tiny set).
@@ -1215,6 +1275,8 @@ function boot() {
   // DETAIL
   const panelEl = document.getElementById('panel');
   const detailEl = document.getElementById('detailView');
+  const listViewEl = document.getElementById('listView');
+  if (detailEl) detailEl.setAttribute('inert', '');
 
   function renderDetail(shop) {
     const cat = CATS[shop.category] || {};
@@ -1297,14 +1359,20 @@ function boot() {
 
   function selectShop(shop, opts) {
     opts = opts || {};
-    // Save scroll position of the list before entering detail mode
+    // Save scroll position and pagination limit of the list before entering detail mode
     state.lastScrollTop = shopListEl.scrollTop;
+    state.savedListLimit = state.listLimit;
     state.selected = shop;
     renderDetail(shop);
     panelEl.classList.add('detail-mode');
+    if (listViewEl) listViewEl.setAttribute('inert', '');
+    if (detailEl) detailEl.removeAttribute('inert');
     setMarkerSelected(shop);
     // Trigger immediate label placement since the selection ring changed the marker's size
     if (typeof scheduleLabels === 'function') scheduleLabels();
+
+    const backBtn = document.getElementById('backBtn');
+    if (backBtn) backBtn.focus();
 
     if (opts.recenterMap !== false) {
       const m = markers.find(mm => mm.shopRef.id === shop.id);
@@ -1314,14 +1382,17 @@ function boot() {
     }
   }
 
-
-
   function deselectShop() {
     const lastSelectedId = state.selected ? state.selected.id : null;
     state.selected = null;
     panelEl.classList.remove('detail-mode');
+    if (listViewEl) listViewEl.removeAttribute('inert');
+    if (detailEl) detailEl.setAttribute('inert', '');
     setMarkerSelected(null);
-    renderList();
+    if (state.savedListLimit) {
+      state.listLimit = state.savedListLimit;
+    }
+    renderList('detail-back');
 
     // Restore scroll position
     if (state.lastScrollTop !== undefined) {
@@ -1336,6 +1407,7 @@ function boot() {
 
     // Reset the map back to the full-spread view
     if (clusterGroup.getLayers().length) {
+      state.returningFromDetail = lastSelectedId;
       map.fitBounds(clusterGroup.getBounds(), { padding: [40, 40], animate: true });
     }
   }
@@ -1360,14 +1432,14 @@ function boot() {
     updateHeader();
     renderChips();
     if (state.selected) renderDetail(state.selected);
-    renderList();
+    renderList('filter');
   }
 
   let searchTimer = null;
   searchInput.addEventListener('input', e => {
     state.search = e.target.value;
     clearTimeout(searchTimer);
-    searchTimer = setTimeout(() => { renderList(); }, 80);
+    searchTimer = setTimeout(() => { renderList('search'); }, 80);
   });
 
   const franchiseToggle = document.getElementById('franchiseToggle');

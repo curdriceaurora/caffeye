@@ -18,7 +18,7 @@ Local: `python3 -m http.server 8765` in the project root, open `http://127.0.0.1
 
 | ID | Trace | Test | Pass |
 |---|---|---|---|
-| T1.1 | R1.1 | `js> SHOPS.length` | `61` (Sept 2026 — equals the count in the header) |
+| T1.1 | R1.1 | `js> SHOPS.length` | `1438` with `places.json` loaded (Sept 2026); `61` in baseline-only mode |
 | T1.2 | R1.2 | `js> SHOPS.every(s => s.name && s.address && s.lat && s.lng && s.category && s.hours && s.usp && s.signature && Array.isArray(s.loved) && s.loved.length === 3 && s.googleUrl && s.yelpUrl)` | `true` |
 | T1.3 | R1.2 | `js> SHOPS.filter(s => !s.lat \|\| !s.lng \|\| s.lat === 0).length` | `0` |
 | T1.4 | R1.3 | `js> SHOPS.every(s => s.cw && ['excellent','good','limited'].includes(s.cw.tier))` | `true` |
@@ -26,7 +26,7 @@ Local: `python3 -m http.server 8765` in the project root, open `http://127.0.0.1
 | T1.6 | R1.5 | `js> SHOPS.filter(s => s.late).every(s => ['10pm+','midnight'].includes(s.late.tier) && typeof s.late.when === 'string')` | `true` |
 | T1.7 | R1.6 | `js> SHOPS.filter(s => !s.addrKey.startsWith(s.city.toLowerCase() + '-'))` | `[]` |
 | T1.8 | R1.7 | `js> SHOPS.filter(s => !CATS[s.category]).map(s => s.name)` | `[]` |
-| T1.9 | R1.9 | Open page, check header text. | Reads "**61** spots in Duluth · verified **September 2026**" (count = `SHOPS.length`, month = `checkedMonth`). |
+| T1.9 | R1.9 | Open page, check header text. | Reads "**1438** spots in Metro Atlanta · verified **September 2026**" (or "**61** spots in Duluth" in baseline-only mode). |
 
 ## T2. Map setup (R2)
 
@@ -138,15 +138,15 @@ recovery, not just the threshold function in isolation.
 | T4.11 | R4.7 | List card tags and category names are safely escaped via `escapeHtml()`. | `true` — no unescaped markup in `tagsHtml`. |
 | T4.12 | R4.7 | Filter bar layout: `.filter-row:first-of-type` sits flush with `margin-top: 0`. | `true` |
 | T4.13 | R4.8 | On load, Indie-only is active by default: `js> state.includeFranchises === false && !document.getElementById('franchiseToggle').checked`. | `true`; all initially rendered cards have `.model-tag.indie`. |
-| T4.14 | R4.8 | Flip top-right toggle `#franchiseToggle` (Include franchise stores). Check `document.querySelectorAll('.shop-item').length`. | Matches total shop count (indie + franchise); franchise cards appear with `.model-tag.franchise`. |
-| T4.15 | R4.9 | `js> REGION_LABEL === 'North Atlanta'` | `true` (unified 8-county North Atlanta region). |
-| T4.16 | R4.9 | `js> SHOPS.length === 1034` | `true` (1,034 total venues across North Atlanta & North Georgia). |
+| T4.14 | R4.8 | Flip top-right toggle `#franchiseToggle` (Include franchise stores). Check `document.getElementById('resultsCount').textContent` and rendered items. | `resultsCount` matches total shop count (1,438); rendered cards capped at 200 initial pagination limit with "Load more" button; franchise cards appear with `.model-tag.franchise`. |
+| T4.15 | R4.9 | `js> REGION_LABEL === 'Metro Atlanta'` | `true` (unified 8-county Metro Atlanta region). |
+| T4.16 | R4.9 | `js> SHOPS.length === 1438` | `true` (1,438 total venues across Metro Atlanta & North Georgia). |
 
 ## T5. Right-side list (R5)
 
 | ID | Trace | Test | Pass |
 |---|---|---|---|
-| T5.1 | R5.1 | Hard reload, after settle: `js> document.querySelectorAll('.shop-item').length` | Count of independent shops in scope (572 indie spots on boot) |
+| T5.1 | R5.1 | Hard reload, after settle: `js> document.getElementById('resultsCount').textContent` and `document.querySelectorAll('.shop-item').length` | `resultsCount` shows `838` (count of independent shops in scope on boot); rendered `.shop-item` count is `200` (initial pagination page limit). |
 | T5.2 | R5.2 | First 3 list items by name. | Top of list reflects weighted-rating order (Douceur De France, Yibna Cafe, Lumier's Chimney Cake as of Sept 2026). |
 | T5.3 | R5.2 | `js> Math.abs(SHOPS.filter(s=>typeof s.rating==='number').reduce((a,s)=>a+s.rating,0)/SHOPS.filter(s=>typeof s.rating==='number').length - 4.36) < 0.1` | `true` (C ≈ 4.36 across 990 rated shops) |
 | T5.4 | R5.3 | `js> SHOPS.filter(s => s.rating == null).every(s => typeof s.weightedRating === 'number')` | `true` (vacuously true while every shop is rated — as of Sept 2026 none is null; the branch is exercised whenever one is) |

@@ -219,7 +219,7 @@ def name_overlap(shop_name: str, place_name: str):
     return len(shared - GENERIC), len(shared)
 
 
-def _request(key: str, url: str, body, mask: str) -> dict:
+def _request(key: str, url: str, body, mask: str, sku: str | None = None) -> dict:
     data = json.dumps(body).encode() if body is not None else None
     req = urllib.request.Request(
         url,
@@ -237,9 +237,13 @@ def _request(key: str, url: str, body, mask: str) -> dict:
             with urllib.request.urlopen(req, timeout=25) as r:
                 data = json.load(r)
                 if places_ledger:
-                    sku = "text_search_enterprise" if body is not None else "place_details_enterprise"
+                    recorded_sku = sku or (
+                        "text_search_enterprise"
+                        if body is not None
+                        else "place_details_enterprise"
+                    )
                     try:
-                        places_ledger.record(sku)
+                        places_ledger.record(recorded_sku)
                     except Exception:
                         pass
                 return data
