@@ -14,7 +14,12 @@
     } catch (e) {}
   })();
 </script>
-<title>Coffee in Duluth</title>
+<title>Caffeye — We know a spot.</title>
+<link rel="preconnect" href="https://a.basemaps.cartocdn.com" crossorigin>
+<link rel="preconnect" href="https://b.basemaps.cartocdn.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="./places.json" as="fetch" crossorigin>
 <link rel="icon" type="image/svg+xml" sizes="any" href="./brand/icons/favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="./brand/icons/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="./brand/icons/favicon-16.png">
@@ -701,7 +706,7 @@ const CATS = {
 let SHOPS, ADDR, NEIGHBORHOODS, CITIES, COUNTIES, REGION_LABEL, CHECKED_MONTH;
 
 const placesController = new AbortController();
-const placesTimeout = setTimeout(() => placesController.abort(), 2500);
+const placesTimeout = setTimeout(() => placesController.abort(), 7500);
 
 Promise.allSettled([
   fetch('./shops.json').then(r => {
@@ -1028,7 +1033,10 @@ function boot() {
     subdomains: 'abcd',
     minZoom: 7,
     maxZoom: 19,
-    bounds: ATL_BOUNDS
+    bounds: ATL_BOUNDS,
+    updateWhenIdle: true,
+    updateWhenZooming: false,
+    keepBuffer: 2
   }).addTo(map);
 
   const clusterGroup = L.markerClusterGroup({
@@ -1238,11 +1246,20 @@ function boot() {
     measured.sort((a, b) => (b.it.shop.weightedRating || 0) - (a.it.shop.weightedRating || 0));
     measured.forEach(m => {
       let chosen = null;
+      // Spatial culling: candidate labels for shop m are strictly bounded within
+      // [cx - maxReach, cx + maxReach] × [cy - maxReach, cy + maxReach].
+      // Obstacles outside this window can never collide with any candidate angle.
+      const maxReach = m.pinR + LABEL_GAP + m.lw + m.lh;
+      const minX = m.cx - maxReach, maxX = m.cx + maxReach;
+      const minY = m.cy - maxReach, maxY = m.cy + maxReach;
+      const nearbyObstacles = obstacles.filter(p => {
+        if (p.ownerId === m.it.shop.id) return false;
+        return p.right >= minX && p.left <= maxX && p.bottom >= minY && p.top <= maxY;
+      });
+
       for (const angle of LABEL_ANGLES) {
         const r = rectForAngle(m, angle);
-        const collides = obstacles.some(p => {
-          // Exclude the shop's own pin (and its own placed labels if any)
-          if (p.ownerId === m.it.shop.id) return false;
+        const collides = nearbyObstacles.some(p => {
           return !(r.right <= p.left || r.left >= p.right || r.bottom <= p.top || r.top >= p.bottom);
         });
         if (!collides) {
