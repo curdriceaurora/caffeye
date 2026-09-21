@@ -352,6 +352,11 @@
     padding: 10px 16px;
     border-bottom: 1px solid var(--border);
     cursor: pointer; transition: background 150ms var(--ease-out);
+    content-visibility: auto;
+    contain-intrinsic-size: auto 72px;
+  }
+  @supports not (content-visibility: auto) {
+    .shop-item { contain: layout style paint; }
   }
   .load-more {
     padding: 0; border-bottom: none;
@@ -482,7 +487,6 @@
     transition: transform 150ms var(--ease-out), box-shadow 200ms var(--ease-out);
     display: flex; align-items: center; justify-content: center;
     font-size: 13px; line-height: 1; color: #fff;
-    will-change: transform;
   }
   .pin-label {
     position: absolute;
@@ -498,7 +502,6 @@
     box-shadow: 0 1px 3px rgba(0,0,0,0.18);
     pointer-events: none;
     display: none;
-    will-change: transform;
   }
   .leaflet-container.with-labels .pin-label { display: block; }
   .pin.late { box-shadow: 0 0 0 3px rgba(63,79,138,0.32), 0 2px 6px rgba(0,0,0,0.35); }
@@ -506,9 +509,10 @@
   .pin.selected {
     width: 32px; height: 32px; font-size: 16px; border-width: 3px;
     box-shadow: 0 0 0 5px rgba(122,86,53,0.32), 0 2px 8px rgba(0,0,0,0.4);
+    will-change: transform;
   }
   .pin.franchise.selected { border-radius: 9px; }
-  .pin:hover { transform: scale(1.12); }
+  .pin:hover { transform: scale(1.12); will-change: transform; }
 
   .marker-cluster-small, .marker-cluster-medium, .marker-cluster-large { background: none !important; }
   .marker-cluster-small div, .marker-cluster-medium div, .marker-cluster-large div { background: none !important; }
@@ -1035,7 +1039,14 @@ function boot() {
     zoomToBoundsOnClick: true,
     spiderfyOnMaxZoom: true,
     spiderfyDistanceMultiplier: 1.4,
-    maxClusterRadius: 35,
+    maxClusterRadius: function(zoom) {
+      return zoom >= 15 ? 35 : (zoom >= 13 ? 45 : 55);
+    },
+    chunkedLoading: true,
+    chunkInterval: 100,
+    chunkDelay: 10,
+    removeOutsideVisibleBounds: true,
+    animateAddingMarkers: false,
     iconCreateFunction: function(cluster) {
       const count = cluster.getChildCount();
       const size = count >= 10 ? 36 : count >= 5 ? 32 : 28;
@@ -1072,10 +1083,12 @@ function boot() {
   const markers = SHOPS.map(shop => {
     const m = L.marker([shop.lat, shop.lng], { icon: makeIcon(shop, false) });
     m.shopRef = shop;
+    m.isOnMap = true;
     m.on('click', () => selectShop(shop));
-    clusterGroup.addLayer(m);
     return m;
   });
+  clusterGroup.addLayers(markers);
+  const markerByShopId = new Map(markers.map(m => [m.shopRef.id, m]));
 
   // Fit the map to all markers on first paint (instead of the hardcoded center+zoom)
   if (clusterGroup.getLayers().length > 0) {
@@ -1137,20 +1150,28 @@ function boot() {
   // production data (61 shops) both fall well short of.
   function placeLabels(overrideItems) {
     const enabled = overrideItems ? true : map.getZoom() >= LABEL_MIN_ZOOM;
+    if (!enabled) return;
+
     // Gather visible (non-clustered) pin labels
     const items = overrideItems || [];
-    if (!overrideItems) markers.forEach(m => {
-      if (!m._icon) return;
-      const pin = m._icon.querySelector('.pin');
-      const label = m._icon.querySelector('.pin-label');
-      if (!pin || !label) return;
-      items.push({ pin, label, shop: m.shopRef });
-    });
-    if (!enabled || !items.length) {
-      items.forEach(it => {
-        it.label.style.visibility = '';
-        it.label.style.transform = '';
+    if (!overrideItems) {
+      const view = (typeof map !== 'undefined' && map && map._loaded) ? map.getBounds().pad(0.05) : null;
+      markers.forEach(m => {
+        if (!m._icon) return;
+        if (view && !view.contains([m.shopRef.lat, m.shopRef.lng])) return;
+        let pin = m._pinEl;
+        let label = m._labelEl;
+        if (!pin || !pin.isConnected) {
+          pin = m._icon.querySelector('.pin');
+          label = m._icon.querySelector('.pin-label');
+          m._pinEl = pin;
+          m._labelEl = label;
+        }
+        if (!pin || !label) return;
+        items.push({ pin, label, shop: m.shopRef });
       });
+    }
+    if (!items.length) {
       return;
     }
     // The collision pass below is O(items × angles × obstacles). Clustering keeps
@@ -1250,20 +1271,37 @@ function boot() {
   }
 
   let __labelTimer = null;
+  let __labelRaf = null;
   function scheduleLabels() {
     clearTimeout(__labelTimer);
-    __labelTimer = setTimeout(placeLabels, 60);
+    if (__labelRaf) cancelAnimationFrame(__labelRaf);
+    __labelTimer = setTimeout(() => {
+      __labelRaf = requestAnimationFrame(() => {
+        placeLabels();
+      });
+    }, 60);
   }
+  map.on('zoomstart', () => {
+    clearTimeout(__labelTimer);
+    if (__labelRaf) cancelAnimationFrame(__labelRaf);
+  });
   map.on('zoomend', () => { toggleLabels(); scheduleLabels(); });
   map.on('moveend', scheduleLabels);
   clusterGroup.on('animationend spiderfied unspiderfied', scheduleLabels);
   toggleLabels();
   scheduleLabels();
 
+  let selectedMarker = null;
   function setMarkerSelected(shop) {
-    markers.forEach(m => {
-      m.setIcon(makeIcon(m.shopRef, shop && m.shopRef.id === shop.id));
-    });
+    const nextMarker = shop ? markerByShopId.get(shop.id) : null;
+    if (selectedMarker && selectedMarker !== nextMarker) {
+      selectedMarker.setIcon(makeIcon(selectedMarker.shopRef, false));
+      selectedMarker = null;
+    }
+    if (nextMarker) {
+      nextMarker.setIcon(makeIcon(nextMarker.shopRef, true));
+      selectedMarker = nextMarker;
+    }
   }
 
   // LIST
@@ -1304,19 +1342,24 @@ function boot() {
     return words.every(word => hay.includes(word));
   }
 
+  let cachedGlobalShops = null;
+  function updateGlobalFilteredShops() {
+    cachedGlobalShops = SHOPS.filter(passesGlobalFilters);
+    cachedGlobalShops.sort((a, b) => (b.weightedRating || 0) - (a.weightedRating || 0));
+  }
+
   // Shops eligible to live on the map (global filters only — no viewport).
   function filteredForMap() {
-    return SHOPS.filter(passesGlobalFilters);
+    if (!cachedGlobalShops) updateGlobalFilteredShops();
+    return cachedGlobalShops;
   }
 
   // Shops shown in the right-hand list (global filters + current map viewport).
   function filteredForList() {
+    if (!cachedGlobalShops) updateGlobalFilteredShops();
     const view = (typeof map !== 'undefined' && map && map._loaded) ? map.getBounds() : null;
-    return SHOPS.filter(s => {
-      if (!passesGlobalFilters(s)) return false;
-      if (view && !view.contains([s.lat, s.lng])) return false;
-      return true;
-    });
+    if (!view) return cachedGlobalShops;
+    return cachedGlobalShops.filter(s => view.contains([s.lat, s.lng]));
   }
 
   function sortShops(arr) {
@@ -1330,21 +1373,33 @@ function boot() {
     if (source === 'filter' || source === 'search') {
       state.listLimit = LIST_PAGE_SIZE;
       state.savedListLimit = LIST_PAGE_SIZE;
+      updateGlobalFilteredShops();
+
+      // Map cluster membership tracks global filters only — viewport filtering must not
+      // shrink clusterGroup.getBounds() (otherwise later fitBounds calls fit to a tiny set).
+      const mapSet = new Set(cachedGlobalShops);
+      const toAdd = [];
+      const toRemove = [];
+      markers.forEach(m => {
+        const shouldBeOnMap = mapSet.has(m.shopRef);
+        if (shouldBeOnMap && !m.isOnMap) {
+          toAdd.push(m);
+          m.isOnMap = true;
+        } else if (!shouldBeOnMap && m.isOnMap) {
+          toRemove.push(m);
+          m.isOnMap = false;
+        }
+      });
+      if (toAdd.length > 0) clusterGroup.addLayers(toAdd);
+      if (toRemove.length > 0) clusterGroup.removeLayers(toRemove);
     } else if (source === 'detail-back') {
       if (state.savedListLimit) state.listLimit = state.savedListLimit;
     }
 
-    // Map cluster membership tracks global filters only — viewport filtering must not
-    // shrink clusterGroup.getBounds() (otherwise later fitBounds calls fit to a tiny set).
-    const mapSet = new Set(filteredForMap());
-    markers.forEach(m => {
-      const onMap = mapSet.has(m.shopRef);
-      if (onMap && !clusterGroup.hasLayer(m)) clusterGroup.addLayer(m);
-      else if (!onMap && clusterGroup.hasLayer(m)) clusterGroup.removeLayer(m);
-    });
-    const filtered = sortShops(filteredForList());
+    const filtered = filteredForList();
     const shown = filtered.slice(0, state.listLimit);
-    const isViewportFiltering = filtered.length < mapSet.size;
+    const globalCount = cachedGlobalShops ? cachedGlobalShops.length : SHOPS.length;
+    const isViewportFiltering = filtered.length < globalCount;
 
     // Count pop when number changes
     const prevCount = parseInt(resultsCountEl.textContent) || -1;
@@ -1543,7 +1598,7 @@ function boot() {
     if (backBtn) backBtn.focus();
 
     if (opts.recenterMap !== false) {
-      const m = markers.find(mm => mm.shopRef.id === shop.id);
+      const m = markerByShopId.get(shop.id);
       if (m) clusterGroup.zoomToShowLayer(m, () => {
         map.setView([shop.lat, shop.lng], Math.max(map.getZoom(), 16), { animate: true });
       });
@@ -1695,7 +1750,7 @@ function boot() {
   render();
 
   // Expose key globals for console testing and the test suite in TESTS.md.
-  Object.assign(window, { state, SHOPS, ADDR, NEIGHBORHOODS, CATS, REGION_LABEL, map, markers, clusterGroup, exceedsLabelSafetyCap, placeLabels, ATL_BOUNDS, escapeHtml, tileLayer, applyTheme, getCurrentTheme, getCartoTileUrl });
+  Object.assign(window, { state, SHOPS, ADDR, NEIGHBORHOODS, CATS, REGION_LABEL, map, markers, clusterGroup, markerByShopId, exceedsLabelSafetyCap, placeLabels, setMarkerSelected, selectShop, deselectShop, ATL_BOUNDS, escapeHtml, tileLayer, applyTheme, getCurrentTheme, getCartoTileUrl });
 }
 
 </script>
