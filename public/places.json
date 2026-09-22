@@ -401,7 +401,9 @@
    "cw": {
     "tier": "excellent",
     "note": "Long wooden work bar, reliable Wi-Fi, power strips, and great ambient indie playlist.",
-    "hasMeetingRoom": false
+    "hasMeetingRoom": false,
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "Edgewood Avenue specialty roastery and dry goods shop celebrated for draft cold brew and minimalist design.",
    "loved": [
@@ -938,7 +940,9 @@
    "cw": {
     "tier": "good",
     "note": "Cheerful dining area with Wi-Fi and warm Latin American hospitality.",
-    "hasMeetingRoom": false
+    "hasMeetingRoom": false,
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "Vibrant Newnan Latin bakery and espresso bar serving Colombian empanadas, arepas, and rich mountain-grown coffee.",
    "loved": [
@@ -1082,7 +1086,9 @@
    "cw": {
     "tier": "limited",
     "note": "Fast-paced morning bagel spot with casual counter seating; better for quick bites than long work sessions.",
-    "hasMeetingRoom": false
+    "hasMeetingRoom": false,
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "Old-fashioned New York-style bagel shop boiling and baking kettle bagels daily.",
    "loved": [
@@ -1239,7 +1245,9 @@
    "cw": {
     "tier": "good",
     "note": "Cozy square-facing bakery with casual tables and Wi-Fi.",
-    "hasMeetingRoom": false
+    "hasMeetingRoom": false,
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "Historic downtown Lawrenceville bakeshop baking scratch pies, decadent layered cakes, and Southern comfort fare.",
    "loved": [
@@ -1444,7 +1452,9 @@
    "cw": {
     "tier": "good",
     "note": "Airy cafe space with counter seats, Wi-Fi, and fresh pastry aromas.",
-    "hasMeetingRoom": false
+    "hasMeetingRoom": false,
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "Nationally acclaimed scratch doughnut bakery by CIA-trained chefs, featuring seasonal flavors and fair-trade coffee.",
    "loved": [
@@ -1519,7 +1529,9 @@
    "cw": {
     "tier": "good",
     "note": "Cozy neighborhood gathering space with good Wi-Fi, friendly baristas, and community focus.",
-    "hasMeetingRoom": false
+    "hasMeetingRoom": false,
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "Historic West End specialty roastery pouring bold single-origins and honoring Black coffee heritage.",
    "loved": [
@@ -1870,7 +1882,9 @@
    "cw": {
     "tier": "excellent",
     "note": "Bright, welcoming specialty cafe with communal workspaces, fast Wi-Fi, power outlets, and mission-driven community ethos.",
-    "hasMeetingRoom": false
+    "hasMeetingRoom": false,
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "Dawsonville's premier craft coffeehouse dedicated to quality single-origin roasts and community connection.",
    "loved": [
@@ -3064,7 +3078,9 @@
    "cw": {
     "tier": "excellent",
     "note": "Quiet lakeside setting with comfortable tables, fast Wi-Fi, outlets, and scenic patio.",
-    "hasMeetingRoom": false
+    "hasMeetingRoom": false,
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "Scenic lakefront cafe with artisan coffee and tranquil spaces for working or reading.",
    "loved": [
@@ -3379,7 +3395,9 @@
    "cw": {
     "tier": "good",
     "note": "Casual cafe seating with Wi-Fi and morning neighborhood feel.",
-    "hasMeetingRoom": false
+    "hasMeetingRoom": false,
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "Stockbridge artisan doughnut bakery creating creative filled doughnuts, breakfast sandwiches, and iced espresso.",
    "loved": [
@@ -3458,7 +3476,9 @@
    "cw": {
     "tier": "good",
     "note": "Intimate seating with neighborhood park-goer energy; great for quick laptop sessions.",
-    "hasMeetingRoom": false
+    "hasMeetingRoom": false,
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "Intown micro-cafe by Grant Park serving meticulous espresso and house-roasted coffees in a bright walk-up setting.",
    "loved": [
@@ -3999,7 +4019,9 @@
     "tier": "excellent",
     "note": "Spacious multi-zone cafe with dedicated quiet laptop counter, high-speed Wi-Fi, and outlets.",
     "hasMeetingRoom": true,
-    "meetingRoomNote": "Reservable conference room with AV display for business meetings."
+    "meetingRoomNote": "Reservable conference room with AV display for business meetings.",
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "High-volume, high-vibe Fayetteville community coffeehouse serving craft espresso, nitro cold brew, and fresh acai bowls.",
    "loved": [
@@ -4185,7 +4207,9 @@
    "cw": {
     "tier": "good",
     "note": "Relaxed dining room with Wi-Fi and European cafe atmosphere.",
-    "hasMeetingRoom": false
+    "hasMeetingRoom": false,
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "Downtown Fayetteville German-inspired bakery and cafe serving authentic strudels, pretzels, and European coffees.",
    "loved": [
@@ -4801,7 +4825,9 @@
    "cw": {
     "tier": "limited",
     "note": "Dessert boutique focused on takeout and gourmet sweet fixes.",
-    "hasMeetingRoom": false
+    "hasMeetingRoom": false,
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "Atlanta's legendary gourmet cookie shop serving massive, gooey stuffed cookies and espresso drinks.",
    "loved": [
@@ -5066,7 +5092,9 @@
    "cw": {
     "tier": "limited",
     "note": "High-volume breakfast counter; best for early fuel-up or grab-and-go.",
-    "hasMeetingRoom": false
+    "hasMeetingRoom": false,
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "Legendary Bronx-style water bagel institution with huge hand-rolled bagels, house schmears, and diner coffee.",
    "loved": [
@@ -5793,7 +5821,9 @@
    "cw": {
     "tier": "excellent",
     "note": "Spacious modern interior with high ceilings, large communal work tables, Wi-Fi, and outlets.",
-    "hasMeetingRoom": false
+    "hasMeetingRoom": false,
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "Muslim-owned modern coffee house celebrating global stories through specialty coffee and French pastries.",
    "loved": [
@@ -5893,7 +5923,9 @@
    "cw": {
     "tier": "limited",
     "note": "Charming sweet shop ideal for dessert cravings and quick treats.",
-    "hasMeetingRoom": false
+    "hasMeetingRoom": false,
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "Boutique custom cakery and dessert bar crafting decadent cupcakes, cake jars, and dessert coffees.",
    "loved": [
@@ -8032,7 +8064,9 @@
    "cw": {
     "tier": "limited",
     "note": "High-traffic campus walk-up best for quick sweet runs and grab-and-go caffeine.",
-    "hasMeetingRoom": false
+    "hasMeetingRoom": false,
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "Iconic Georgia Tech sweet spot crafting internationally famous creative doughnuts and late-night treats.",
    "loved": [
@@ -8542,7 +8576,9 @@
     "tier": "excellent",
     "note": "Spacious roastery in a converted garage with communal work tables, fast Wi-Fi, abundant outlets, and a dedicated back room.",
     "hasMeetingRoom": true,
-    "meetingRoomNote": "Private back meeting room and event space available for reservation for teams and study groups."
+    "meetingRoomNote": "Private back meeting room and event space available for reservation for teams and study groups.",
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "Smyrna's flagship artisan roastery and community workspace roasting specialty beans on site.",
    "loved": [
@@ -9601,7 +9637,9 @@
     "tier": "excellent",
     "note": "Spacious historic parlor with comfortable seating, fast Wi-Fi, and relaxed afternoon work atmosphere.",
     "hasMeetingRoom": true,
-    "meetingRoomNote": "Private parlor room reservable for group meetings, book clubs, and remote teams."
+    "meetingRoomNote": "Private parlor room reservable for group meetings, book clubs, and remote teams.",
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "Historic Conyers family bakery baking traditional Southern pound cakes, decorated cookies, and specialty morning coffee.",
    "loved": [
@@ -10020,7 +10058,9 @@
     "tier": "excellent",
     "note": "Spacious community tables, fast Wi-Fi, ample power outlets, and a dedicated reservable conference room.",
     "hasMeetingRoom": true,
-    "meetingRoomNote": "The Chart Room: private conference room with table seating up to 10, whiteboard, and presentation screen."
+    "meetingRoomNote": "The Chart Room: private conference room with table seating up to 10, whiteboard, and presentation screen.",
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "Specialty roastery and cafe built for community and remote work with house-roasted beans and fresh bakery fare.",
    "loved": [
@@ -10099,7 +10139,9 @@
    "cw": {
     "tier": "excellent",
     "note": "Iconic screened porch with Adirondack chairs, porch swings, fast Wi-Fi, and endless power.",
-    "hasMeetingRoom": false
+    "hasMeetingRoom": false,
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "High-energy BeltLine landmark featuring Batdorf & Bronson specialty roasts and Atlanta's favorite screened-in porch.",
    "loved": [
@@ -10281,7 +10323,9 @@
    "cw": {
     "tier": "excellent",
     "note": "Comfortable indoor tables and expansive covered patio with solid Wi-Fi and power.",
-    "hasMeetingRoom": false
+    "hasMeetingRoom": false,
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "Westside artisan roastery set in an airy restored cottage with lush patio seating and seasonal espresso creations.",
    "loved": [
@@ -10547,7 +10591,9 @@
    "cw": {
     "tier": "excellent",
     "note": "Spacious industrial cafe with wide wooden work tables, plenty of power outlets, and solid Wi-Fi.",
-    "hasMeetingRoom": false
+    "hasMeetingRoom": false,
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "Industrial garage-themed specialty cafe known for wide work tables and top-tier cold brew.",
    "loved": [
@@ -10742,7 +10788,9 @@
    "cw": {
     "tier": "good",
     "note": "Clean, cheerful modern tea room with Wi-Fi and casual study tables.",
-    "hasMeetingRoom": false
+    "hasMeetingRoom": false,
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "Authentic Taiwanese bubble tea parlor in Gainesville crafting fresh boba pearls, milk teas, and fruit slushes.",
    "loved": [
@@ -10847,7 +10895,9 @@
    "cw": {
     "tier": "excellent",
     "note": "World-class riverside setting along the Chattahoochee River with scenic patio tables, quiet study spots, fast Wi-Fi, and Counter Culture coffee.",
-    "hasMeetingRoom": false
+    "hasMeetingRoom": false,
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "Unmatched riverfront sanctuary perched right on the banks of the Chattahoochee with lush nature views.",
    "loved": [
@@ -11130,7 +11180,9 @@
    "cw": {
     "tier": "limited",
     "note": "Classic bustling Southern diner; ideal for breakfast energy before the workday.",
-    "hasMeetingRoom": false
+    "hasMeetingRoom": false,
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "Gainesville landmark diner and coffee stop famous for oversized fluffy biscuits and endless hot coffee.",
    "loved": [
@@ -11952,7 +12004,9 @@
    "cw": {
     "tier": "good",
     "note": "Cozy European ambiance with indoor cafe tables, dependable Wi-Fi, and Italian espresso.",
-    "hasMeetingRoom": false
+    "hasMeetingRoom": false,
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "European cafe featuring authentic Italian espresso, paninis, and artisanal gelato.",
    "loved": [
@@ -12191,7 +12245,9 @@
    "cw": {
     "tier": "limited",
     "note": "Quick-service neighborhood bakery with traditional counter charm.",
-    "hasMeetingRoom": false
+    "hasMeetingRoom": false,
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "Family-owned Gainesville doughnut shop frying light-as-air yeast glazed doughnuts and brewing hot morning coffee.",
    "loved": [
@@ -12248,7 +12304,9 @@
    "cw": {
     "tier": "good",
     "note": "Friendly family atmosphere with booth seating and Wi-Fi.",
-    "hasMeetingRoom": false
+    "hasMeetingRoom": false,
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "Whimsical craft donut and specialty espresso shop creating customized, made-to-order gourmet donuts.",
    "loved": [
@@ -13904,7 +13962,9 @@
    "cw": {
     "tier": "excellent",
     "note": "Cottage setting with multiple rooms, wrap-around porch, fast Wi-Fi, and quiet corners for laptops.",
-    "hasMeetingRoom": false
+    "hasMeetingRoom": false,
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "Direct-trade Rwandan coffeehouse supporting farming communities with extensive cottage seating.",
    "loved": [
@@ -14106,7 +14166,9 @@
    "cw": {
     "tier": "good",
     "note": "Bright neighborhood morning cafe with Wi-Fi and counter seating.",
-    "hasMeetingRoom": false
+    "hasMeetingRoom": false,
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "New York style kettle-boiled bagel bakery serving authentic schmears, breakfast sandwiches, and hot coffee.",
    "loved": [
@@ -14301,7 +14363,9 @@
    "cw": {
     "tier": "good",
     "note": "Casual counter with window counter seating, Wi-Fi, and sweet neighborhood aroma.",
-    "hasMeetingRoom": false
+    "hasMeetingRoom": false,
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "Handcrafted artisan doughnut bakery making everything from scratch with local ingredients and Counter Culture coffee.",
    "loved": [
@@ -15045,7 +15109,9 @@
     "tier": "excellent",
     "note": "Massive historic house with multiple work-friendly rooms, high-speed Wi-Fi, and abundant seating.",
     "hasMeetingRoom": true,
-    "meetingRoomNote": "Private conference/meeting room available for reservation (ideal for 6-10 people)."
+    "meetingRoomNote": "Private conference/meeting room available for reservation (ideal for 6-10 people).",
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "Historic Roswell landmark featuring homemade Liege waffles, craft espresso, and expansive work rooms.",
    "loved": [
@@ -15098,7 +15164,9 @@
    "cw": {
     "tier": "good",
     "note": "Bright, playful crafting tables with Wi-Fi; great for relaxed casual work or creative sessions.",
-    "hasMeetingRoom": false
+    "hasMeetingRoom": false,
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "Creative experiential tea bar pairing authentic Taiwanese boba with hands-on ceramic and plaster figurine painting.",
    "loved": [
@@ -15178,7 +15246,9 @@
     "tier": "excellent",
     "note": "Cozy historic home in downtown Kennesaw with study nooks, community tables, fast Wi-Fi, and friendly hospitality.",
     "hasMeetingRoom": true,
-    "meetingRoomNote": "Private study and meeting room available for reservation for up to 8 people."
+    "meetingRoomNote": "Private study and meeting room available for reservation for up to 8 people.",
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "Historic downtown Kennesaw gathering spot with home-style comfort, house-baked goods, and craft espresso.",
    "loved": [
@@ -15279,7 +15349,9 @@
    "cw": {
     "tier": "good",
     "note": "Bustling French cafe with indoor and patio tables; best for mid-day working lunches.",
-    "hasMeetingRoom": false
+    "hasMeetingRoom": false,
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "Authentic French patisserie and bistro crafting flaky croissants, delicate macarons, and Parisian café classics.",
    "loved": [
@@ -15382,7 +15454,9 @@
    "cw": {
     "tier": "excellent",
     "note": "Expansive modern coffee bar with high-top work tables, abundant power outlets, and fast Wi-Fi.",
-    "hasMeetingRoom": false
+    "hasMeetingRoom": false,
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "Spacious rustic-chic coffee bar in Ashford Lane serving craft cold brews and Kelly's homemade ice cream.",
    "loved": [
@@ -15806,7 +15880,9 @@
    "cw": {
     "tier": "good",
     "note": "Cozy downtown Woodstock bakery cafe serving artisan pies slice-by-slice alongside locally-roasted drip coffee and espresso.",
-    "hasMeetingRoom": false
+    "hasMeetingRoom": false,
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "Downtown Woodstock's iconic handmade pie shop serving sweet and savory slices with specialty coffee.",
    "loved": [
@@ -15997,7 +16073,9 @@
    "cw": {
     "tier": "excellent",
     "note": "Spacious suburban roastery with plenty of outlets, strong Wi-Fi, and sunny work tables.",
-    "hasMeetingRoom": false
+    "hasMeetingRoom": false,
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "Neighborhood craft roaster brewing ethically sourced beans with vibrant espresso drinks and local breakfast bites.",
    "loved": [
@@ -16427,7 +16505,9 @@
    "cw": {
     "tier": "good",
     "note": "Community gathering room with comfortable seating, Wi-Fi, and patriotic hospitality.",
-    "hasMeetingRoom": false
+    "hasMeetingRoom": false,
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "Veteran-owned Dawsonville coffeehouse dedicated to first responders, roasting bold blends in a mission-driven space.",
    "loved": [
@@ -16594,7 +16674,9 @@
    "cw": {
     "tier": "excellent",
     "note": "Spacious and peaceful environment with dedicated work tables, strong Wi-Fi, and plenty of power outlets.",
-    "hasMeetingRoom": false
+    "hasMeetingRoom": false,
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "Specialty coffeehaus dedicated to community fellowship with peaceful study areas.",
    "loved": [
@@ -17077,7 +17159,9 @@
    "cw": {
     "tier": "excellent",
     "note": "Historic mountain-town roastery with rustic wood seating, fast Wi-Fi, scenic patio, and barrel-aged coffee beans.",
-    "hasMeetingRoom": false
+    "hasMeetingRoom": false,
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "Craft artisan roastery in Ball Ground specializing in bourbon-barrel-aged specialty beans and espresso.",
    "loved": [
@@ -17321,7 +17405,9 @@
    "cw": {
     "tier": "good",
     "note": "Intimate bookstore cafe in Vinings Jubilee with cozy seating, Stumptown coffee, and a quiet curated atmosphere.",
-    "hasMeetingRoom": false
+    "hasMeetingRoom": false,
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "Charming Vinings bookstore and espresso bar pairing specialty roasts with curated literary titles.",
    "loved": [
@@ -17354,7 +17440,9 @@
    "cw": {
     "tier": "excellent",
     "note": "Quiet, minimalist study aesthetic with laptop-friendly desks, fast Wi-Fi, and outlets.",
-    "hasMeetingRoom": false
+    "hasMeetingRoom": false,
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "Precision Korean-inspired specialty roastery known for meticulous pourovers and peaceful study ambiance.",
    "loved": [
@@ -18657,7 +18745,9 @@
    "cw": {
     "tier": "limited",
     "note": "Fast-moving bakery counter with classic morning breakfast crowds.",
-    "hasMeetingRoom": false
+    "hasMeetingRoom": false,
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "Clayton County's favorite traditional doughnut shop known for enormous cinnamon rolls and hot glazed rings.",
    "loved": [
@@ -18731,7 +18821,9 @@
    "cw": {
     "tier": "good",
     "note": "Home-style dining room with Wi-Fi and loyal regular crowd.",
-    "hasMeetingRoom": false
+    "hasMeetingRoom": false,
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "Welcoming Conyers neighborhood cafe serving homemade breakfast skillets, fresh pastries, and warm drip coffee.",
    "loved": [
@@ -19168,7 +19260,9 @@
    "cw": {
     "tier": "good",
     "note": "Bright shop with sunny window seating, Wi-Fi, and gift shop browsing.",
-    "hasMeetingRoom": false
+    "hasMeetingRoom": false,
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "Whimsical tea boutique on the Marietta Square famous for loose-leaf blends, bubble teas, and French macarons.",
    "loved": [
@@ -20006,7 +20100,9 @@
    "cw": {
     "tier": "good",
     "note": "Charming historic storefront with booth seating, Wi-Fi, and morning work buzz.",
-    "hasMeetingRoom": false
+    "hasMeetingRoom": false,
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "Downtown Buford bakery cafe renowned for gourmet cupcakes, fresh breakfast biscuits, and specialty espresso.",
    "loved": [
@@ -20548,7 +20644,9 @@
    "cw": {
     "tier": "good",
     "note": "Quaint downtown setting with street-facing tables, Wi-Fi, and movie-town charm.",
-    "hasMeetingRoom": false
+    "hasMeetingRoom": false,
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "Historic Senoia Main Street coffee shop (famous filming location for The Walking Dead) serving craft espresso and pastries.",
    "loved": [
@@ -20716,7 +20814,9 @@
    "cw": {
     "tier": "excellent",
     "note": "Vibrant specialty roastery with communal work tables, fast Wi-Fi, and friendly counter service.",
-    "hasMeetingRoom": false
+    "hasMeetingRoom": false,
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "Nationally acclaimed craft coffee roaster with playful hospitality and precision espresso.",
    "loved": [
@@ -21210,7 +21310,9 @@
    "cw": {
     "tier": "good",
     "note": "Pleasant European cafe ambiance with outdoor courtyard seating, Wi-Fi, and specialty tapas.",
-    "hasMeetingRoom": false
+    "hasMeetingRoom": false,
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "European cafe and chocolate shop nestled in Vickery Village with fondue, churros, and espresso.",
    "loved": [
@@ -22089,7 +22191,9 @@
    "cw": {
     "tier": "excellent",
     "note": "Cozy exposed-brick cafe with upstairs loft, fast Wi-Fi, power, and view of the Square.",
-    "hasMeetingRoom": false
+    "hasMeetingRoom": false,
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "Historic Marietta Square institution micro-roasting ethically sourced beans on-site for over two decades.",
    "loved": [
@@ -22700,7 +22804,9 @@
     "tier": "excellent",
     "note": "Forsyth's community hub with large wooden work tables, fast Wi-Fi, and a reservable group room.",
     "hasMeetingRoom": true,
-    "meetingRoomNote": "Meeting and gathering room available for community groups, business meetings, and study sessions."
+    "meetingRoomNote": "Meeting and gathering room available for community groups, business meetings, and study sessions.",
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "Community-centered Cumming coffeehouse supporting local causes with comfortable group tables.",
    "loved": [
@@ -23072,7 +23178,9 @@
    "cw": {
     "tier": "excellent",
     "note": "Spacious communal tables, fast Wi-Fi, abundant natural light, and quiet morning work vibe.",
-    "hasMeetingRoom": false
+    "hasMeetingRoom": false,
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "Flagship West Midtown roastery crafting bright single-origin pour-overs and seasonal espresso in a sunlit warehouse.",
    "loved": [
@@ -23527,7 +23635,9 @@
    "cw": {
     "tier": "good",
     "note": "Compact footprint with outdoor bench seating and quick-grab laptop focus.",
-    "hasMeetingRoom": false
+    "hasMeetingRoom": false,
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "Minimalist Westside shipping container cafe obsessed with direct-trade single-origin espresso and clean aesthetics.",
    "loved": [
@@ -23601,7 +23711,9 @@
    "cw": {
     "tier": "excellent",
     "note": "Scenic historic downtown Flowery Branch cafe near Lake Lanier with work-friendly tables, fast Wi-Fi, and organic fare.",
-    "hasMeetingRoom": false
+    "hasMeetingRoom": false,
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "Wellness-centered cafe and coffee bar in historic Flowery Branch steps from Lake Lanier.",
    "loved": [
@@ -23928,7 +24040,9 @@
     "tier": "excellent",
     "note": "Spacious community pavilion with picnic tables, indoor seating, Wi-Fi, and inspiring mission.",
     "hasMeetingRoom": true,
-    "meetingRoomNote": "Community room and outdoor event deck reservable for civic and study groups."
+    "meetingRoomNote": "Community room and outdoor event deck reservable for civic and study groups.",
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "Heartwarming non-profit coffee truck & cafe offering refugee job training and world-class espresso in Clarkston.",
    "loved": [
@@ -24122,7 +24236,9 @@
     "tier": "excellent",
     "note": "Two-story historic coffeehouse right on the Gainesville Square with an upstairs study mezzanine, fast Wi-Fi, and cozy work nooks.",
     "hasMeetingRoom": true,
-    "meetingRoomNote": "Upstairs mezzanine gathering area and meeting space reservable for study groups and business meetings."
+    "meetingRoomNote": "Upstairs mezzanine gathering area and meeting space reservable for study groups and business meetings.",
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "Gainesville Square's beloved landmark coffeehouse with a multi-level historic layout and artisan espresso.",
    "loved": [
@@ -24213,7 +24329,9 @@
     "tier": "excellent",
     "note": "Large Korean coffeehouse with fast Wi-Fi, power outlets at most booths, and dedicated private study rooms.",
     "hasMeetingRoom": true,
-    "meetingRoomNote": "Private enclosed study/meeting rooms available for small group work and discussions."
+    "meetingRoomNote": "Private enclosed study/meeting rooms available for small group work and discussions.",
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "Late-night Korean coffeehouse featuring freshly baked specialty pretzels and private study rooms.",
    "loved": [
@@ -24841,7 +24959,9 @@
    "cw": {
     "tier": "good",
     "note": "Comfortable seating, quiet suburban setting, Wi-Fi, and decadent chocolate aroma.",
-    "hasMeetingRoom": false
+    "hasMeetingRoom": false,
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "Tyrone village coffeehouse and European chocolatier pairing artisan espresso with handcrafted truffles and crepes.",
    "loved": [
@@ -26313,7 +26433,9 @@
    "cw": {
     "tier": "excellent",
     "note": "Generous work tables, fast Wi-Fi, ample power outlets, and a relaxed college-town vibe.",
-    "hasMeetingRoom": false
+    "hasMeetingRoom": false,
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "Downtown Decatur's community coffee porch roasting specialty beans with spacious indoor and outdoor study areas.",
    "loved": [
@@ -27166,7 +27288,9 @@
     "tier": "excellent",
     "note": "Spacious modern roastery with expansive communal tables, high-speed Wi-Fi, roastery viewing bar, and power outlets throughout.",
     "hasMeetingRoom": true,
-    "meetingRoomNote": "Cupping lab and conference space reservable for business groups, workshops, and private tastings."
+    "meetingRoomNote": "Cupping lab and conference space reservable for business groups, workshops, and private tastings.",
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "5th-generation family farm roastery serving direct-trade Honduran single-origin coffees roasted on site.",
    "loved": [
@@ -27577,7 +27701,9 @@
     "tier": "excellent",
     "note": "High ceilings, comfortable booths, fast Wi-Fi, and great late-night energy.",
     "hasMeetingRoom": true,
-    "meetingRoomNote": "Large rear conference room available for private study sessions and events."
+    "meetingRoomNote": "Large rear conference room available for private study sessions and events.",
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "Premier Yemeni coffeehouse serving slow-roasted heirloom beans with cardamom, ginger, and flaky honeycomb pastries.",
    "loved": [
@@ -28596,7 +28722,9 @@
     "tier": "excellent",
     "note": "Comfortable booth and table seating, reliable Wi-Fi, and quiet mid-day study hours.",
     "hasMeetingRoom": true,
-    "meetingRoomNote": "Community table reservable for morning business meetups."
+    "meetingRoomNote": "Community table reservable for morning business meetups.",
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "Authentic New York bagel shop in Douglasville baking kettle-boiled bagels daily with homemade cream cheese spreads.",
    "loved": [
@@ -28881,7 +29009,9 @@
    "cw": {
     "tier": "good",
     "note": "Spacious cafe seating with Wi-Fi and sweet display cases.",
-    "hasMeetingRoom": false
+    "hasMeetingRoom": false,
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "North Georgia dessert institution famous for towering 10-layer cakes, Italian pastries, and artisan coffee.",
    "loved": [
@@ -28959,7 +29089,9 @@
    "cw": {
     "tier": "good",
     "note": "Quiet indoor tables, reliable Wi-Fi, and relaxed suburban work environment.",
-    "hasMeetingRoom": false
+    "hasMeetingRoom": false,
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "Cozy Cumming neighborhood cafe serving specialty espresso drinks, crêpes, and fresh brunch plates.",
    "loved": [
@@ -30187,7 +30319,9 @@
    "cw": {
     "tier": "excellent",
     "note": "Spacious neighborhood coffeehouse on Roswell Rd with drive-thru, plenty of study tables, fast Wi-Fi, and power outlets.",
-    "hasMeetingRoom": false
+    "hasMeetingRoom": false,
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "Community-first neighborhood coffee hub known for friendly baristas, fast drive-thru, and abundant seating.",
    "loved": [
@@ -31864,7 +31998,9 @@
     "tier": "excellent",
     "note": "Expansive seating with plush banquettes, Wi-Fi, and lively late-night study atmosphere.",
     "hasMeetingRoom": true,
-    "meetingRoomNote": "Private curtained salon seating available for larger group study and gatherings."
+    "meetingRoomNote": "Private curtained salon seating available for larger group study and gatherings.",
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "Traditional Yemeni coffeehouse serving cardamom-infused pot coffee and honeycomb bread in a lavish Arabian setting.",
    "loved": [
@@ -32095,7 +32231,9 @@
    "cw": {
     "tier": "excellent",
     "note": "Sleek modern roastery with wide communal work tables, fast Wi-Fi, and ample outlets.",
-    "hasMeetingRoom": false
+    "hasMeetingRoom": false,
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "Artisanal Suwanee micro-roaster pouring precision single-origins alongside house-baked pastries.",
    "loved": [
@@ -32195,7 +32333,9 @@
    "cw": {
     "tier": "good",
     "note": "Welcoming neighborhood roastery with dedicated work counter and Wi-Fi.",
-    "hasMeetingRoom": false
+    "hasMeetingRoom": false,
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "East African specialty roaster celebrating Kenyan single-origin beans and vibrant community coffee tastings.",
    "loved": [
@@ -32294,7 +32434,9 @@
     "tier": "excellent",
     "note": "Modern Latin coffeehouse at The Battery Atlanta with communal workspaces, fast Wi-Fi, outdoor tables, and authentic Latin espresso drinks.",
     "hasMeetingRoom": true,
-    "meetingRoomNote": "Mezzanine and group conference seating reservable for business meetings and private gatherings."
+    "meetingRoomNote": "Mezzanine and group conference seating reservable for business meetings and private gatherings.",
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "Vibrant Latin specialty coffee bar and workspace steps from Truist Park at The Battery.",
    "loved": [
@@ -32909,7 +33051,9 @@
     "tier": "good",
     "note": "Homey dining room with Wi-Fi and relaxed afternoon tea vibe.",
     "hasMeetingRoom": true,
-    "meetingRoomNote": "Private dining room available for group lunches, book clubs, and celebrations."
+    "meetingRoomNote": "Private dining room available for group lunches, book clubs, and celebrations.",
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "Beloved Avondale-adjacent bakery and tearoom famed for legendary layer cakes, pies, and warm Southern lunch plates.",
    "loved": [
@@ -32973,7 +33117,9 @@
    "cw": {
     "tier": "excellent",
     "note": "Open until midnight daily with comfortable seating, fast Wi-Fi, and late-night study atmosphere.",
-    "hasMeetingRoom": false
+    "hasMeetingRoom": false,
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "Late-night coffeehouse open until midnight offering craft coffee, desserts, and study spaces.",
    "loved": [
@@ -33927,7 +34073,9 @@
    "cw": {
     "tier": "good",
     "note": "Spacious cafe seating with Wi-Fi and friendly Latin American atmosphere.",
-    "hasMeetingRoom": false
+    "hasMeetingRoom": false,
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "Authentic Brazilian bakery serving warm pão de queijo, savory coxinha pastries, and rich Brazilian cafezinho.",
    "loved": [
@@ -33980,7 +34128,9 @@
    "cw": {
     "tier": "good",
     "note": "Friendly neighborhood cafe with comfortable seating, Wi-Fi, and light breakfast options.",
-    "hasMeetingRoom": false
+    "hasMeetingRoom": false,
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "Cozy local Johns Creek cafe serving fresh baked goods and comforting espresso drinks.",
    "loved": [
@@ -34033,7 +34183,9 @@
    "cw": {
     "tier": "limited",
     "note": "Beloved local grab-and-go morning staple with friendly counter service.",
-    "hasMeetingRoom": false
+    "hasMeetingRoom": false,
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "Longtime Forest Park neighborhood bakery serving fluffy handmade doughnuts, kolaches, and fresh coffee.",
    "loved": [
@@ -34228,7 +34380,9 @@
    "cw": {
     "tier": "excellent",
     "note": "Mediterranean-inspired coffeehouse with ample tables, reliable Wi-Fi, power outlets, and authentic Arabic and specialty coffee preparations.",
-    "hasMeetingRoom": false
+    "hasMeetingRoom": false,
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "Authentic Middle Eastern and specialty coffee bar featuring cardamom-infused Arabic coffee and handmade baklava.",
    "loved": [
@@ -34556,7 +34710,9 @@
    "cw": {
     "tier": "excellent",
     "note": "Calm and bright atmosphere, dependable Wi-Fi, and cozy seating for remote focus work.",
-    "hasMeetingRoom": false
+    "hasMeetingRoom": false,
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "Specialty coffeehouse roasting single-origin beans with a focus on mindful hospitality.",
    "loved": [
@@ -35069,7 +35225,9 @@
     "tier": "excellent",
     "note": "Exposed brick, roomy communal tables, fast Wi-Fi, and downtown square charm.",
     "hasMeetingRoom": true,
-    "meetingRoomNote": "Upstairs community gathering room reservable for meetings and workshops."
+    "meetingRoomNote": "Upstairs community gathering room reservable for meetings and workshops.",
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "Historic McDonough Square roastery and community coffeehouse serving micro-roasted beans and fresh bakery treats.",
    "loved": [
@@ -35170,7 +35328,9 @@
    "cw": {
     "tier": "good",
     "note": "Focused, roaster-forward tasting room with bar seating, Wi-Fi, and coffee geek conversations.",
-    "hasMeetingRoom": false
+    "hasMeetingRoom": false,
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "Precision micro-roastery tucked in East Decatur pouring exceptionally balanced pour-overs and micro-lot coffees.",
    "loved": [
@@ -35353,7 +35513,9 @@
    "cw": {
     "tier": "good",
     "note": "Vibrant downtown Woodstock bubble tea lounge with outdoor patio, fast Wi-Fi, and loose-leaf teas.",
-    "hasMeetingRoom": false
+    "hasMeetingRoom": false,
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "Specialty loose-leaf tea and handcrafted bubble tea bar on Woodstock's lively Chambers Street.",
    "loved": [
@@ -35607,7 +35769,9 @@
     "tier": "excellent",
     "note": "Spacious modern lounge with dedicated study booths, fast Wi-Fi, and ample power outlets.",
     "hasMeetingRoom": true,
-    "meetingRoomNote": "Semi-private group study alcove reservable for team sessions."
+    "meetingRoomNote": "Semi-private group study alcove reservable for team sessions.",
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "South Metro's premier bubble tea destination serving handcrafted fruit teas, brown sugar boba, and Asian street snacks.",
    "loved": [
@@ -35960,7 +36124,9 @@
    "cw": {
     "tier": "good",
     "note": "Minimalist specialty coffee bar with quiet corners, Wi-Fi, and focused vibe.",
-    "hasMeetingRoom": false
+    "hasMeetingRoom": false,
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "Minimalist neighborhood coffee shop serving carefully sourced single-origin pour overs.",
    "loved": [
@@ -36272,7 +36438,9 @@
     "tier": "excellent",
     "note": "Historic two-story brick building, fast Wi-Fi, comfortable sofas, and quiet upstairs work nooks.",
     "hasMeetingRoom": true,
-    "meetingRoomNote": "Upstairs mezzanine space reservable for business gatherings and remote team meetups."
+    "meetingRoomNote": "Upstairs mezzanine space reservable for business gatherings and remote team meetups.",
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "Historic Newnan Court Square coffee roaster and wine bar brewing small-batch beans in a historic brick setting.",
    "loved": [
@@ -36677,7 +36845,9 @@
    "cw": {
     "tier": "excellent",
     "note": "Quiet roastery tasting room with comfortable work tables, fast Wi-Fi, and cold brew on tap.",
-    "hasMeetingRoom": false
+    "hasMeetingRoom": false,
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "Craft coffee tasting room specializing in micro-roasted coffees and cold brew growlers.",
    "loved": [
@@ -36956,7 +37126,9 @@
    "cw": {
     "tier": "good",
     "note": "Bright farmhouse aesthetic with roomy tables and Wi-Fi.",
-    "hasMeetingRoom": false
+    "hasMeetingRoom": false,
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "Douglasville farm-to-table breakfast cafe and espresso bar serving local pasture-raised breakfast plates and specialty roasts.",
    "loved": [
@@ -37012,7 +37184,9 @@
     "tier": "excellent",
     "note": "Two-story historic brick building with upstairs study nooks, fast Wi-Fi, and multiple meeting areas.",
     "hasMeetingRoom": true,
-    "meetingRoomNote": "Private meeting rooms and upstairs gathering spaces available for study groups and business meetings."
+    "meetingRoomNote": "Private meeting rooms and upstairs gathering spaces available for study groups and business meetings.",
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "Multi-level historic coffeehouse offering quiet workspaces, artisanal coffee, and local bakery treats.",
    "loved": [
@@ -37551,7 +37725,9 @@
    "cw": {
     "tier": "excellent",
     "note": "Spacious Dunwoody Village location with long banquette seating, power outlets, and reliable Wi-Fi.",
-    "hasMeetingRoom": false
+    "hasMeetingRoom": false,
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "Acclaimed specialty roaster in Dunwoody Village known for vibrant coffees, food menu, and upbeat hospitality.",
    "loved": [
@@ -37718,7 +37894,9 @@
    "cw": {
     "tier": "excellent",
     "note": "Rustic timber tables, fast Wi-Fi, plenty of outlets, and tranquil North Georgia atmosphere.",
-    "hasMeetingRoom": false
+    "hasMeetingRoom": false,
+    "source": "editorial",
+    "verified": "September 2026"
    },
    "usp": "Foothills artisan roastery and cafe celebrating blacksmith heritage with hand-roasted coffee and quiet study areas.",
    "loved": [

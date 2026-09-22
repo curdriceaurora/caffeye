@@ -1,11 +1,10 @@
-const { test, expect } = require('@playwright/test');
+const { test, expect, gotoHome, findIsolatedShop, detailMode } = require('./helpers');
 
-// Baseline suite: runs against current behavior on every project.
-// Waits on rendered list items, never on basemap tile network responses.
+// Baseline suite: core smoke & critical paths. Mobile projects also run
+// this file; density assertions live in responsive-mobile.spec.js.
 test.describe('navigation (baseline)', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/');
-    await page.locator('.shop-item').first().waitFor({ timeout: 30000 });
+    await gotoHome(page);
   });
 
   test('initial load populates list and fits markers', async ({ page }) => {
@@ -36,9 +35,7 @@ test.describe('navigation (baseline)', () => {
     await expect(page.locator('#backBtn')).toBeVisible();
     await page.locator('#backBtn').click();
     // Detail hides via compositor (opacity), not display:none — assert mode class.
-    await expect.poll(async () => page.evaluate(
-      () => document.getElementById('panel')?.classList.contains('detail-mode')
-    )).toBe(false);
+    await expect.poll(() => detailMode(page)).toBe(false);
     expect(await page.evaluate(() => document.activeElement?.dataset?.id)).toBe(targetId);
   });
 
@@ -57,27 +54,32 @@ test.describe('navigation (baseline)', () => {
     await page.locator('.shop-item').first().click();
     await expect(page.locator('#backBtn')).toBeVisible();
     await page.locator('#categoryChips .chip', { hasText: 'Tea/Boba' }).click();
-    await expect.poll(async () => page.evaluate(
-      () => document.getElementById('panel')?.classList.contains('detail-mode')
-    )).toBe(false);
+    await expect.poll(() => detailMode(page)).toBe(false);
+  });
+
+  test('select then filter-out leaves no dangling map errors', async ({ page }) => {
+    // Regression: zoomToShowLayer's internal listeners used to throw inside
+    // markercluster once a filter removed the marker mid-flight. The shared
+    // error-listener fixture fails this test on any pageerror.
+    const spot = await findIsolatedShop(page);
+    await page.evaluate(({ lat, lng }) => window.map.setView([lat, lng], 16, { animate: false }), spot);
+    await page.locator('#searchInput').fill(spot.name);
+    await page.locator('.shop-item').first().click();
+    await expect(page.locator('#backBtn')).toBeVisible();
+    await page.evaluate(() => {
+      const selected = window.state.selected.category.replace('+', ' &');
+      const chips = [...document.querySelectorAll('#categoryChips .chip')];
+      chips.find((c) => !c.textContent.includes('All') && !c.textContent.includes(selected)).click();
+    });
+    await expect.poll(() => detailMode(page)).toBe(false);
+    await page.evaluate(() => window.map.zoomIn());
+    await page.waitForTimeout(1500);
   });
 
   test('pin click opens the detail card', async ({ page }) => {
     // Zoom onto an isolated shop so it renders as a marker, not a cluster.
-    await page.evaluate(() => {
-      let best = null;
-      let bestDist = -1;
-      for (const s of window.SHOPS) {
-        let nearest = Infinity;
-        for (const t of window.SHOPS) {
-          if (t === s) continue;
-          const d = Math.hypot(s.lat - t.lat, s.lng - t.lng);
-          if (d < nearest) nearest = d;
-        }
-        if (nearest > bestDist) { bestDist = nearest; best = s; }
-      }
-      window.map.setView([best.lat, best.lng], 16, { animate: false });
-    });
+    const spot = await findIsolatedShop(page);
+    await page.evaluate(({ lat, lng }) => window.map.setView([lat, lng], 16, { animate: false }), spot);
     const icon = page.locator('.leaflet-marker-icon').first();
     await icon.waitFor({ timeout: 15000 });
     await icon.click();
@@ -87,8 +89,7 @@ test.describe('navigation (baseline)', () => {
 
 test.describe('search expansion', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/');
-    await page.locator('.shop-item').first().waitFor({ timeout: 30000 });
+    await gotoHome(page);
   });
 
   test('off-view search offers expansion that reveals matches', async ({ page }) => {
@@ -105,7 +106,14 @@ test.describe('search expansion', () => {
 test.describe('regional failure and retry', () => {
   test('blocked places.json shows banner; retry recovers', async ({ page }) => {
     await page.route('**/places.json', (route) => route.abort());
-    await page.goto('/');
+    for (let i = 0; i < 3; i++) {
+      try {
+        await page.goto('/');
+        break;
+      } catch (e) {
+        if (i === 2) throw e;
+      }
+    }
     await page.locator('.shop-item').first().waitFor({ timeout: 30000 });
     const banner = page.locator('#dataStatusBanner');
     await expect(banner).toBeVisible();
@@ -118,30 +126,4 @@ test.describe('regional failure and retry', () => {
     await expect(banner).toBeHidden({ timeout: 20000 });
     expect(Number(await page.locator('#resultsCount').textContent())).toBeGreaterThan(before);
   });
-});
-
-test.describe('mobile density', () => {
-  for (const [name, viewport, minCards] of [
-    ['375x750', { width: 375, height: 750 }, 5],
-    ['320x568', { width: 320, height: 568 }, 3],
-  ]) {
-    test(`fully visible cards at ${name} >= ${minCards}`, async ({ browser }) => {
-      const context = await browser.newContext({ viewport, isMobile: true, hasTouch: true });
-      const page = await context.newPage();
-      try {
-        await page.goto('/');
-        await page.locator('.shop-item').first().waitFor({ timeout: 30000 });
-        const visible = await page.evaluate(() => {
-          const r = document.getElementById('shopList').getBoundingClientRect();
-          return [...document.querySelectorAll('.shop-item')].filter((li) => {
-            const cr = li.getBoundingClientRect();
-            return cr.top >= r.top - 0.5 && cr.bottom <= r.bottom + 0.5;
-          }).length;
-        });
-        expect(visible).toBeGreaterThanOrEqual(minCards);
-      } finally {
-        await context.close();
-      }
-    });
-  }
 });

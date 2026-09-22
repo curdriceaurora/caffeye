@@ -331,6 +331,25 @@ class CuratePlacesTests(unittest.TestCase):
         self.assertTrue(len(signals["meeting_signals"]) > 0)
         self.assertTrue(len(signals["coworking_signals"]) >= 2)
 
+    def test_explicit_curation_beats_classifier(self):
+        """Editorial last: a concept-cafe overlay pinning Specialty must
+        survive the classifier's tea-name match (Uni Uni regression)."""
+        places = [
+            {"placeId": "u1", "name": "Uni Uni Boba & Figurine Painting",
+             "city": "Duluth", "county": "Gwinnett", "category": "Tea/Boba",
+             "types": ["tea_house"]},
+        ]
+        curations = {
+            "u1": {"name": "Uni Uni Boba & Figurine Painting", "category": "Specialty",
+                   "cw": {"tier": "good", "hasMeetingRoom": False}},
+        }
+        classified, _ = CP.classify_specialty(places)
+        self.assertEqual(classified[0]["category"], "Tea/Boba")
+        updated, count = CP.apply_curations(classified, curations,
+                                            defaults=("September 2026", "editorial"))
+        self.assertEqual(count, 1)
+        self.assertEqual(updated[0]["category"], "Specialty")
+
 
 if __name__ == "__main__":
     unittest.main()

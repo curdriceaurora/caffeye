@@ -657,7 +657,7 @@
     footer { display: none; }
     /* 44px touch targets without visual bulk: invisible hit-slop on chips. */
     .chip { position: relative; }
-    .chip::after { content: ''; position: absolute; left: 0; right: 0; top: -10px; bottom: -10px; }
+    .chip::after { content: ''; position: absolute; left: 0; right: 0; top: -12px; bottom: -12px; }
   }
 
   @media (max-width: 820px) and (max-height: 600px) {
@@ -1670,8 +1670,8 @@ function boot(opts) {
       if (outsideCount > 0) {
         const li = document.createElement('li');
         li.className = 'empty-state';
-        const plural = outsideCount === 1 ? '' : 's';
-        li.innerHTML = `<div>No matches in the current map view — found ${outsideCount} matching spot${plural} elsewhere.</div>`;
+        const plural = outsideCount === 1 ? '' : 'es';
+        li.innerHTML = `<div>No matches in the current map view — found ${outsideCount} matching spot${outsideCount === 1 ? '' : 's'} elsewhere.</div>`;
         const btn = document.createElement('button');
         btn.type = 'button';
         btn.className = 'action-btn outside-matches-btn';
@@ -1902,11 +1902,22 @@ function boot(opts) {
 
     if (opts.recenterMap !== false) {
       const m = markerByShopId.get(shop.id);
-      if (m) clusterGroup.zoomToShowLayer(m, () => {
-        if (state.selected && state.selected.id === shop.id) {
+      if (m) {
+        if (m._icon && map.getBounds().contains(m.getLatLng())) {
+          // Pin already on screen: center directly. Skipping zoomToShowLayer
+          // matters, not just for animation: its moveend/animationend
+          // subscription keeps firing, and if a filter change removes this
+          // marker mid-flight, markercluster dereferences the deleted
+          // layer.__parent and throws on every later animation.
           map.setView([shop.lat, shop.lng], Math.max(map.getZoom(), 16), { animate: true });
+        } else {
+          clusterGroup.zoomToShowLayer(m, () => {
+            if (state.selected && state.selected.id === shop.id) {
+              map.setView([shop.lat, shop.lng], Math.max(map.getZoom(), 16), { animate: true });
+            }
+          });
         }
-      });
+      }
     }
   }
 
