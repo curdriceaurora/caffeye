@@ -708,7 +708,7 @@ const CATS = {
   "Specialty":    { hex: "#7b6cb8", activeBg: "#5d4b99", icon: "✦"  }
 };
 
-let SHOPS, ADDR, NEIGHBORHOODS, CITIES, COUNTIES, REGION_LABEL, CHECKED_MONTH;
+  let SHOPS, ADDR, NEIGHBORHOODS, CITIES, COUNTIES, REGION_LABEL, SHOPS_MONTH, PLACES_MONTH;
 
 const placesController = new AbortController();
 const placesTimeout = setTimeout(() => placesController.abort(), 7500);
@@ -776,7 +776,10 @@ Promise.allSettled([
   CITIES = Array.from(new Set(SHOPS.map(s => s.city).filter(Boolean))).sort();
   COUNTIES = (placesData && placesData.region && placesData.region.counties) || (shopsData && shopsData.counties) || Array.from(new Set(SHOPS.map(s => s.county).filter(Boolean))).sort();
   REGION_LABEL = (placesData && placesData.region && placesData.region.label) || (shopsData && shopsData.regionLabel) || (CITIES.length === 1 ? CITIES[0] : 'North Atlanta');
-  CHECKED_MONTH = (shopsData && shopsData.checkedMonth) || (placesData && placesData.checkedMonth) || '';
+  // Per-source verification months. "unknown" (or missing) means the source
+  // never established its observation date — it must not borrow the other's.
+  SHOPS_MONTH = (shopsData && shopsData.checkedMonth) || '';
+  PLACES_MONTH = (placesData && placesData.checkedMonth) || '';
   boot();
 })
 .catch(err => {
@@ -1789,6 +1792,18 @@ function boot() {
   // the whole curated region when no single city is selected).
   const brandEl = document.querySelector('.brand');
   const freshnessEl = document.querySelector('.freshness');
+  // Freshness suffix with per-source attribution. A source whose month is
+  // missing or "unknown" contributes nothing — refreshing one dataset must
+  // not vouch for the other.
+  function freshnessSuffix() {
+    const known = m => (m && m !== 'unknown') ? m : '';
+    const s = known(SHOPS_MONTH), p = known(PLACES_MONTH);
+    if (s && p) {
+      return s === p ? ` · verified ${s}` : ` · curated verified ${s} · regional verified ${p}`;
+    }
+    const m = s || p;
+    return m ? ` · verified ${m}` : '';
+  }
   function updateHeader() {
     const inScope = SHOPS.filter(s => state.includeFranchises || s.model !== 'franchise');
     const count = inScope.length;
@@ -1796,8 +1811,7 @@ function boot() {
     document.title = title;
     if (brandEl) brandEl.textContent = title;
     if (freshnessEl) {
-      freshnessEl.textContent = count + ' spots in ' + REGION_LABEL
-        + (CHECKED_MONTH ? ' · verified ' + CHECKED_MONTH : '');
+      freshnessEl.textContent = count + ' spots in ' + REGION_LABEL + freshnessSuffix();
     }
   }
 

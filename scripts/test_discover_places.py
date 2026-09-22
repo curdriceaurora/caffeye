@@ -647,6 +647,54 @@ class BudgetTests(unittest.TestCase):
         self.assertEqual(n, 1)
         budget.check.assert_not_called()
 
+    def test_acquire_reserves_against_real_ledger(self):
+        """Gaps 1+2: cap of 1 allows one reservation; the next raises."""
+        import os
+        import tempfile
+        from unittest.mock import patch
+        with tempfile.TemporaryDirectory() as d:
+            ledger_path = str(Path(d) / "places_usage.json")
+            with patch.dict(os.environ, {"CAFFEYE_LEDGER": ledger_path}):
+                budget = D.PaidBudget(1)
+                self.assertEqual(budget.acquire(), 1)
+                with self.assertRaises(D.BudgetExceeded):
+                    budget.acquire()
+                # usage frozen at the cap
+                from discover_places import ledger as real_ledger
+                self.assertEqual(real_ledger.used(D.SKU_FULL), 1)
+
+    def test_client_reserves_before_paid_request(self):
+        """Gap 1: the billable request never fires without a reservation."""
+        from unittest.mock import MagicMock, patch
+        budget = MagicMock()
+        client = D.Client("fake-key", sleep=0.0, budget=budget)
+        with patch("discover_places._request", return_value={"places": []}) as mock_req:
+            client({"q": 1}, D.FULL_MASK, D.SKU_FULL)
+            budget.acquire.assert_called_once_with()
+            mock_req.assert_called_once()
+            _, kwargs = mock_req.call_args
+            self.assertTrue(kwargs["pre_counted"])
+
+    def test_client_no_reservation_without_budget_or_free_sku(self):
+        from unittest.mock import MagicMock, patch
+        budget = MagicMock()
+        with patch("discover_places._request", return_value={"places": []}) as mock_req:
+            D.Client("k", sleep=0.0, budget=budget)({}, D.IDS_MASK, D.SKU_IDS)
+            budget.acquire.assert_not_called()
+            D.Client("k", sleep=0.0)({}, D.FULL_MASK, D.SKU_FULL)
+            budget.acquire.assert_not_called()
+
+    def test_client_budget_exhaustion_blocks_request(self):
+        """Gap 1: exhausted cap → BudgetExceeded, zero HTTP traffic."""
+        from unittest.mock import MagicMock, patch
+        budget = MagicMock()
+        budget.acquire.side_effect = D.BudgetExceeded("exhausted")
+        client = D.Client("fake-key", sleep=0.0, budget=budget)
+        with patch("discover_places._request") as mock_req:
+            with self.assertRaises(D.BudgetExceeded):
+                client({"q": 1}, D.FULL_MASK, D.SKU_FULL)
+            mock_req.assert_not_called()
+
 
 class FreshnessTests(unittest.TestCase):
     def test_month_label_uses_observation_date(self):
@@ -655,14 +703,31 @@ class FreshnessTests(unittest.TestCase):
             D.month_label("2024-01-15T00:00:00+00:00"), "January 2024"
         )
 
-    def test_month_label_falls_back_to_today(self):
-        from datetime import date
-        self.assertEqual(
-            D.month_label("not-a-date"), date.today().strftime("%B %Y")
-        )
-        self.assertEqual(
-            D.month_label(None), date.today().strftime("%B %Y")
-        )
+    def test_month_label_unknown_when_unparseable(self):
+        """Gap 5: unknown dates stay unknown instead of becoming this month."""
+        self.assertIsNone(D.month_label("not-a-date"))
+        self.assertIsNone(D.month_label(None))
+
+    def test_write_places_marks_unknown_dates(self):
+        import tempfile
+        from unittest.mock import patch
+        with tempfile.TemporaryDirectory() as d:
+            out = Path(d) / "places.json"
+            with patch.object(D, "PLACES_PATH", out):
+                D.write_places([], "not-a-date")
+            data = json.loads(out.read_text())
+            self.assertEqual(data["checkedMonth"], "unknown")
+            self.assertEqual(data["generatedAt"], "not-a-date")
+
+    def test_write_places_uses_observation_month(self):
+        import tempfile
+        from unittest.mock import patch
+        with tempfile.TemporaryDirectory() as d:
+            out = Path(d) / "places.json"
+            with patch.object(D, "PLACES_PATH", out):
+                D.write_places([], "2024-01-15T00:00:00+00:00")
+            data = json.loads(out.read_text())
+            self.assertEqual(data["checkedMonth"], "January 2024")
 
 
 

@@ -227,7 +227,8 @@ def name_overlap(shop_name: str, place_name: str):
     return len(shared - GENERIC), len(shared)
 
 
-def _request(key: str, url: str, body, mask: str, sku: str | None = None) -> dict:
+def _request(key: str, url: str, body, mask: str, sku: str | None = None,
+             pre_counted: bool = False) -> dict:
     data = json.dumps(body).encode() if body is not None else None
     req = urllib.request.Request(
         url,
@@ -244,7 +245,7 @@ def _request(key: str, url: str, body, mask: str, sku: str | None = None) -> dic
         try:
             with urllib.request.urlopen(req, timeout=25) as r:
                 data = json.load(r)
-                if places_ledger:
+                if places_ledger and not pre_counted:
                     recorded_sku = sku or (
                         "text_search_enterprise"
                         if body is not None
@@ -253,13 +254,13 @@ def _request(key: str, url: str, body, mask: str, sku: str | None = None) -> dic
                     try:
                         places_ledger.record(recorded_sku)
                     except Exception as e:
-                        # The request already succeeded: the spend is real.
-                        # Never swallow it — surface it so the ledger can be repaired.
-                        print(
-                            f"WARNING: API call succeeded but ledger record({recorded_sku}) "
-                            f"failed ({e}); spend is UNCOUNTED.",
-                            file=sys.stderr,
-                        )
+                        # The request already succeeded: the spend is real but
+                        # uncounted, so the cap can no longer be trusted.
+                        # Abort instead of making further paid requests blind.
+                        raise FatalApiError(
+                            f"API call succeeded but ledger record({recorded_sku}) "
+                            f"failed ({e}); stopping before further paid calls."
+                        ) from e
                 return data
         except urllib.error.HTTPError as e:
             msg = e.read().decode(errors="replace").replace(key, "<key>")[:400]

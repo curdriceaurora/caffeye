@@ -783,18 +783,45 @@ class PaidBudget:
                 f"(cap {self.cap}). Partial results retained as an incomplete dump."
             )
 
+    def acquire(self) -> int:
+        """Reserve one paid call atomically (check-and-increment under the
+        ledger lock) and return the new usage count. Raises BudgetExceeded
+        when the cap is reached, the ledger is unreadable, or another runner
+        took the last allowance — so concurrent runs cannot jointly overshoot.
+        A reservation that never turns into a request over-counts by one;
+        that errs toward safety for a spend guard."""
+        try:
+            return ledger.reserve(self.sku, self.cap)
+        except ledger.CapExceeded as e:
+            raise BudgetExceeded(
+                f"paid-call budget exhausted ({e}). "
+                f"Partial results retained as an incomplete dump."
+            ) from e
+        except Exception as e:
+            raise BudgetExceeded(
+                f"paid-call budget unverifiable (ledger unreadable: {e}); "
+                f"stopping before further paid calls."
+            ) from e
+
 
 class Client:
-    """Live client: every request is counted in the ledger first; 429 backs off and retries."""
+    """Live client: paid requests reserve ledger allowance before sending;
+    429 backs off and retries."""
 
-    def __init__(self, key: str, sleep: float):
+    def __init__(self, key: str, sleep: float, budget=None):
         self.key, self.sleep = key, sleep
+        self.budget = budget
         self.calls = Counter()
 
     def __call__(self, body: dict, mask: str, sku: str) -> dict:
+        pre_counted = False
+        if sku == SKU_FULL and self.budget is not None:
+            self.budget.acquire()
+            pre_counted = True
         for attempt in range(4):
             try:
-                res = _request(self.key, SEARCH_URL, body, mask, sku=sku)
+                res = _request(self.key, SEARCH_URL, body, mask, sku=sku,
+                               pre_counted=pre_counted)
             except FatalApiError as e:
                 if "HTTP 429" in str(e) and attempt < 3:
                     time.sleep(2 ** (attempt + 1))
@@ -983,19 +1010,20 @@ def curated_with_coords() -> list:
     return out
 
 
-def month_label(generated_at: str) -> str:
+def month_label(generated_at: str | None) -> str | None:
     """checkedMonth for write_places: the observation date the dump represents,
-    not today. Replaying an old dump must not re-stamp it as freshly verified."""
+    not today. Unparseable dates return None (rendered as "unknown") — replaying
+    data of unknown age must not claim this month's verification."""
     try:
         return datetime.fromisoformat(generated_at).strftime("%B %Y")
     except (ValueError, TypeError):
-        return date.today().strftime("%B %Y")
+        return None
 
 
 def write_places(recs, generated_at: str) -> None:
     data = {
         "version": 1,
-        "checkedMonth": month_label(generated_at),
+        "checkedMonth": month_label(generated_at) or "unknown",
         "generatedAt": generated_at,
         "region": {
             "label": REGION["label"],
@@ -1081,7 +1109,7 @@ def main() -> int:
     if not ok:
         print(msg)
         return 2
-    client = Client(load_key(), args.sleep)
+    client = Client(load_key(), args.sleep, budget=PaidBudget(args.max_paid_calls))
     if args.bbox:
         s, w, n, e = [float(x.strip()) for x in args.bbox.split(",")]
         bbox = {"south": s, "west": w, "north": n, "east": e}
@@ -1129,7 +1157,7 @@ def main() -> int:
     generated_at = datetime.now(timezone.utc).isoformat(timespec="seconds")
     raw = {}
     incomplete = True
-    budget = PaidBudget(args.max_paid_calls)
+    budget = client.budget
     try:
         raw = fetch_details(client, plan, raw, budget=budget)
         incomplete = False

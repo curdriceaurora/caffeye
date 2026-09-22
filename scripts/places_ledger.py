@@ -31,6 +31,10 @@ class LedgerError(Exception):
     """The ledger file exists but is unusable. Fail closed: fix or remove it."""
 
 
+class CapExceeded(Exception):
+    """A reserve() call would push usage past the cap. Fail closed."""
+
+
 def default_path() -> Path:
     env = os.environ.get("CAFFEYE_LEDGER")
     return (
@@ -57,6 +61,23 @@ def _corrupt(path: Path, detail: str) -> LedgerError:
     )
 
 
+def _validate(data: dict, path: Path) -> None:
+    """Nested entries must be nonnegative ints. Anything else is corruption,
+    not a balance — a stored -5 must never read as usable headroom."""
+    months = data.get("months", {})
+    for month, skus in months.items():
+        if not isinstance(skus, dict):
+            raise _corrupt(path, f"month {month!r} is not an object")
+        for sku, n in skus.items():
+            if isinstance(n, bool) or not isinstance(n, int) or n < 0:
+                raise _corrupt(
+                    path, f"month {month!r} sku {sku!r} has invalid count {n!r} "
+                    f"(expected a nonnegative integer)"
+                )
+    if not isinstance(data.get("notes", []), list):
+        raise _corrupt(path, '"notes" is not a list')
+
+
 def load(path=None) -> dict:
     p = Path(path) if path else default_path()
     if not p.exists():
@@ -73,6 +94,7 @@ def load(path=None) -> dict:
         raise _corrupt(p, "unexpected shape (expected {\"months\": {...}})")
     data.setdefault("months", {})
     data.setdefault("notes", [])
+    _validate(data, p)
     return data
 
 
@@ -91,6 +113,12 @@ def _save(data: dict, path=None) -> None:
         except OSError:
             pass
         raise
+
+
+def _ensure_parent(p: Path) -> None:
+    """The lock file opens before any save, so the directory must exist first —
+    otherwise first-time setup crashes with FileNotFoundError."""
+    p.parent.mkdir(parents=True, exist_ok=True)
 
 
 def _locked(path: Path):
@@ -121,13 +149,38 @@ def _check(sku: str) -> None:
 
 def used(sku: str, path=None, today=None) -> int:
     _check(sku)
-    return int(load(path)["months"].get(month_key(today), {}).get(sku, 0))
+    return load(path)["months"].get(month_key(today), {}).get(sku, 0)
+
+
+def reserve(sku: str, cap: int, path=None, today=None) -> int:
+    """Atomically check-then-increment under the ledger lock and return the new
+    count. Raises CapExceeded (usage stays put) or LedgerError (unreadable).
+    Call BEFORE the billable request: separate check and record operations let
+    concurrent runners both pass the cap before either records."""
+    _check(sku)
+    p = Path(path) if path else default_path()
+    _ensure_parent(p)
+    with _locked(p.with_name(p.name + ".lock")):
+        data = load(path)
+        month = data["months"].setdefault(month_key(today), {})
+        current = month.get(sku, 0)
+        if current >= cap:
+            raise CapExceeded(
+                f"{sku}: ledger shows {current} calls against cap {cap}; "
+                f"refusing to reserve another"
+            )
+        month[sku] = current + 1
+        _save(data, path)
+        return month[sku]
 
 
 def record(sku: str, n: int = 1, path=None, today=None) -> int:
     """Add n calls for this month and return the new count."""
     _check(sku)
+    if int(n) <= 0:
+        raise ValueError(f"cannot record non-positive count {n}")
     p = Path(path) if path else default_path()
+    _ensure_parent(p)
     with _locked(p.with_name(p.name + ".lock")):
         data = load(path)
         month = data["months"].setdefault(month_key(today), {})
@@ -139,7 +192,10 @@ def record(sku: str, n: int = 1, path=None, today=None) -> int:
 def seed(sku: str, n: int, basis: str, path=None, today=None) -> None:
     """Set this month's count outright (for calls made before the ledger existed)."""
     _check(sku)
+    if int(n) < 0:
+        raise ValueError(f"cannot seed negative count {n}")
     p = Path(path) if path else default_path()
+    _ensure_parent(p)
     with _locked(p.with_name(p.name + ".lock")):
         data = load(path)
         data["months"].setdefault(month_key(today), {})[sku] = int(n)
