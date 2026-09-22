@@ -2327,7 +2327,15 @@
    "ratingCount": "211",
    "hours": "Mon-Fri 6:30am-5pm · Sat 8am-5pm · Sun 8am-4pm",
    "website": "https://www.cafefloralia.com/",
-   "googleUrl": "https://maps.google.com/?cid=5762979685633533575&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=5762979685633533575&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "good",
+    "note": "Coworking Laptop-friendly Built for coworking",
+    "hasMeetingRoom": false,
+    "source": "website-crawl",
+    "verified": "September 2026"
+   },
+   "usp": "Independent coffee in Canton serving specialty coffee and fresh menu offerings."
   },
   {
    "placeId": "ChIJ2aXLEJLv9IgR6zlv7DCi0zA",
@@ -5412,7 +5420,15 @@
    "ratingCount": "520",
    "hours": "Mon-Sun 8am-8pm",
    "website": "https://www.atlantacoffeeshops.com/blue-mountain-coffee-roasters",
-   "googleUrl": "https://maps.google.com/?cid=15311820883455065775&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=15311820883455065775&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "good",
+    "note": "✓ Free Wi-Fi",
+    "hasMeetingRoom": false,
+    "source": "website-crawl",
+    "verified": "September 2026"
+   },
+   "usp": "Independent roasters in Suwanee serving specialty coffee and fresh menu offerings."
   },
   {
    "placeId": "ChIJ7XDJPwBX9IgRM6zHc2xP0ug",
@@ -7360,7 +7376,7 @@
    "county": "Cherokee",
    "lat": 34.112806,
    "lng": -84.584609,
-   "category": "Coffee",
+   "category": "Roasters",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -7371,7 +7387,8 @@
    "ratingCount": "81",
    "hours": "Mon-Fri 7:30am-5:30pm · Sat-Sun 8:30am-5:30pm",
    "website": "https://apotheosroastery.com/",
-   "googleUrl": "https://maps.google.com/?cid=4852450303991113119&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=4852450303991113119&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "usp": "Independent craft coffee roaster in Woodstock offering house-roasted specialty coffee."
   },
   {
    "placeId": "ChIJB4yG6XkE9YgRZR6dHNph3d8",
@@ -15956,7 +15973,15 @@
    "ratingCount": "1,415",
    "hours": "Mon-Fri 7am-7pm · Sat-Sun 8am-6pm",
    "website": "https://www.theblackcoffeecompany.com/black-coffee-atl",
-   "googleUrl": "https://maps.google.com/?cid=17964425523703728247&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=17964425523703728247&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "good",
+    "note": "FREE WiFi",
+    "hasMeetingRoom": false,
+    "source": "website-crawl",
+    "verified": "September 2026"
+   },
+   "usp": "Independent coffee in Atlanta serving specialty coffee and fresh menu offerings."
   },
   {
    "placeId": "ChIJOw4r793B9IgRz_9yS-MZS2M",
@@ -21138,7 +21163,15 @@
     "when": "Tue-Sat till 10pm"
    },
    "website": "http://www.thecreekjc.com/",
-   "googleUrl": "https://maps.google.com/?cid=17283857878180295717&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=17283857878180295717&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "excellent",
+    "note": "Verified work-friendly spot: We offer free WiFi, a (dog-friendly) enclosed patio space, and a calm environment for anyone who needs to get out of their house or the office to enjoy some much-needed \"me-time\" and a good cup of coffee.",
+    "hasMeetingRoom": false,
+    "source": "website-crawl",
+    "verified": "September 2026"
+   },
+   "usp": "Work-friendly coffee in Alpharetta with verified Wi-Fi and comfortable seating."
   },
   {
    "placeId": "ChIJWXFkXpD39YgR0hfmZFE6G3c",
@@ -21234,7 +21267,15 @@
     "when": "Thu-Sat till 10pm"
    },
    "website": "http://groundandpoundcoffee.com/",
-   "googleUrl": "https://maps.google.com/?cid=7293311345355028175&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=7293311345355028175&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "excellent",
+    "note": "Verified work-friendly spot: High-speed Wi-Fi access (Indoor Outdoor Seating)",
+    "hasMeetingRoom": false,
+    "source": "website-crawl",
+    "verified": "September 2026"
+   },
+   "usp": "Work-friendly coffee in Alpharetta with verified Wi-Fi and comfortable seating."
   },
   {
    "placeId": "ChIJWzlSNoID9YgRmhyw_lVu21U",
@@ -24607,7 +24648,15 @@
    "ratingCount": "1,462",
    "hours": "Mon Closed · Tue-Fri 7am-2pm · Sat-Sun 8am-3pm",
    "website": "http://revolutiondoughnuts.com/",
-   "googleUrl": "https://maps.google.com/?cid=16830412075862456810&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=16830412075862456810&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "limited",
+    "note": "No, we do not offer WiFI at either of our shops.",
+    "hasMeetingRoom": false,
+    "source": "website-crawl",
+    "verified": "September 2026"
+   },
+   "usp": "Independent bakery+cafe in Atlanta serving specialty coffee and fresh menu offerings."
   },
   {
    "placeId": "ChIJb2PupR9r9YgRcQEXkrsYykI",
@@ -26749,7 +26798,15 @@
    "ratingCount": "622",
    "hours": "Mon-Fri 6:30am-6pm · Sat-Sun 7:30am-6pm",
    "website": "http://www.taproomcoffee.com/",
-   "googleUrl": "https://maps.google.com/?cid=15995314867726533930&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=15995314867726533930&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "good",
+    "note": "Yes, customers can access free Wi-Fi under the network “Taproom-Public”.",
+    "hasMeetingRoom": false,
+    "source": "website-crawl",
+    "verified": "September 2026"
+   },
+   "usp": "Independent roasters in Atlanta serving specialty coffee and fresh menu offerings."
   },
   {
    "placeId": "ChIJf4w9uP4I9YgRzWlnkir00Ec",
@@ -28640,7 +28697,7 @@
    "county": "Gwinnett",
    "lat": 33.887754,
    "lng": -84.062837,
-   "category": "Coffee",
+   "category": "Roasters",
    "model": "independent",
    "types": [
     "coffee_shop",
@@ -28653,7 +28710,8 @@
    "ratingCount": "458",
    "hours": "Mon-Sat 8am-3pm · Sun 9am-3pm",
    "website": "http://www.beansandbutter.com/",
-   "googleUrl": "https://maps.google.com/?cid=8637006456799621014&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=8637006456799621014&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "usp": "Independent craft coffee roaster in Lawrenceville offering house-roasted specialty coffee."
   },
   {
    "placeId": "ChIJiZjouYwF9YgR7WdeKn0njXU",
@@ -29840,7 +29898,15 @@
     "when": "Tue-Sat till 10pm"
    },
    "website": "https://www.atlantacoffeeshops.com/tada-coffee-and-dessert",
-   "googleUrl": "https://maps.google.com/?cid=16299854649957799019&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=16299854649957799019&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "cw": {
+    "tier": "good",
+    "note": "✓ Free Wi-Fi",
+    "hasMeetingRoom": false,
+    "source": "website-crawl",
+    "verified": "September 2026"
+   },
+   "usp": "Independent coffee in Suwanee serving specialty coffee and fresh menu offerings."
   },
   {
    "placeId": "ChIJl-453Ku99YgRqCbfcnNMb9A",

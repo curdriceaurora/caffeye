@@ -234,6 +234,7 @@ def audit(places: list, shops: list = None) -> dict:
     meeting_by_county = Counter()
     specialty_by_county = Counter()
     tier_counts = Counter()
+    curated_by_county = Counter()
 
     for v in all_venues:
         county = v.get("county") or "Unknown"
@@ -242,6 +243,7 @@ def audit(places: list, shops: list = None) -> dict:
             specialty_by_county[county] += 1
         cw = v.get("cw")
         if cw and isinstance(cw, dict):
+            curated_by_county[county] += 1
             tier = cw.get("tier")
             if tier:
                 tier_counts[tier] += 1
@@ -252,8 +254,10 @@ def audit(places: list, shops: list = None) -> dict:
 
     return {
         "total_venues": len(all_venues),
+        "total_curated": sum(curated_by_county.values()),
         "counties": sorted(by_county.keys()),
         "by_county": dict(by_county),
+        "curated_by_county": dict(curated_by_county),
         "work_by_county": dict(work_by_county),
         "meeting_by_county": dict(meeting_by_county),
         "specialty_by_county": dict(specialty_by_county),
@@ -266,8 +270,7 @@ def audit(places: list, shops: list = None) -> dict:
 
 MEETING_PATTERNS = [
     re.compile(r"\b(private\s+)?(meeting|conference|board|study|seminar)\s*(room|space|hall)\b", re.I),
-    re.compile(r"\b(reservable|reserve|rent|book)\s+(a\s+)?(room|space|table)\b", re.I),
-    re.compile(r"\bprivate\s+events?\b", re.I),
+    re.compile(r"\b(reservable|reserve|rent|book)\s+(a\s+)?(meeting\s+room|conference\s+room|study\s+room|private\s+room|room)\b", re.I),
     re.compile(r"\bgroup\s+(meetings?|study|gatherings?)\b", re.I),
 ]
 
@@ -279,10 +282,19 @@ COWORKING_PATTERNS = [
     re.compile(r"\b(community\s+tables?|spacious\s+seating|large\s+tables?)\b", re.I),
 ]
 
+NEGATIVE_LAPTOP_PATTERNS = [
+    re.compile(r"\bno\s+(laptops?|screens?|computers?)\b", re.I),
+    re.compile(r"\blaptops?\s+(are\s+)?(not\s+allowed|prohibited|forbidden|restricted)\b", re.I),
+    re.compile(r"\blaptop[- ]free\b", re.I),
+    re.compile(r"\bno\s+screens\s+on\s+weekends\b", re.I),
+]
+
 
 def extract_signals_from_text(text: str) -> dict:
     clean = re.sub(r"<[^>]+>", " ", text)
     clean = re.sub(r"\s+", " ", clean)
+
+    has_negative_laptop = any(pat.search(clean) for pat in NEGATIVE_LAPTOP_PATTERNS)
 
     meeting_hits = []
     for pat in MEETING_PATTERNS:
@@ -291,16 +303,18 @@ def extract_signals_from_text(text: str) -> dict:
             meeting_hits.extend([" ".join(m) if isinstance(m, tuple) else m for m in matches])
 
     cowork_hits = []
-    for pat in COWORKING_PATTERNS:
-        matches = pat.findall(clean)
-        if matches:
-            cowork_hits.extend([" ".join(m) if isinstance(m, tuple) else m for m in matches])
+    if not has_negative_laptop:
+        for pat in COWORKING_PATTERNS:
+            matches = pat.findall(clean)
+            if matches:
+                cowork_hits.extend([" ".join(m) if isinstance(m, tuple) else m for m in matches])
 
     return {
         "meeting_signals": list(set(meeting_hits)),
         "coworking_signals": list(set(cowork_hits)),
         "likely_has_meeting_room": len(meeting_hits) > 0,
-        "likely_work_friendly": len(cowork_hits) >= 2,
+        "likely_work_friendly": (len(cowork_hits) >= 2) and not has_negative_laptop,
+        "laptop_restricted": has_negative_laptop,
     }
 
 
@@ -326,6 +340,7 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--audit", action="store_true", help="Print coworking, meeting room, and specialty coverage audit")
     parser.add_argument("--research-queue", action="store_true", help="Print the top 10 independent venues missing coworking data as JSON; no network calls or writes")
+    parser.add_argument("--balanced", action="store_true", help="Use balanced 14-county research queue")
     parser.add_argument("--apply", action="store_true", help="Merge curations and classify roasters and specialty in public/places.json")
     parser.add_argument("--classify-specialty", action="store_true", help="Reclassify roasters and specialty venues in public/places.json")
     parser.add_argument("--research", type=str, default="", help="Fetch and analyze URL for signals")
@@ -349,11 +364,17 @@ def main() -> int:
                 s["lat"] = addr[s["addrKey"]].get("lat")
                 s["lng"] = addr[s["addrKey"]].get("lng")
         if args.research_queue:
-            print(json.dumps(research_queue(merge_venues(places_data["places"], shops)), indent=2, ensure_ascii=False))
+            if args.balanced:
+                from enrich_places import generate_balanced_queue
+                q = generate_balanced_queue(places_data["places"], shops, target_total=10)
+            else:
+                q = research_queue(merge_venues(places_data["places"], shops))
+            print(json.dumps(q, indent=2, ensure_ascii=False))
             return 0
         res = audit(places_data["places"], shops)
         print("=== CAFFEYE CURATION AUDIT ===")
         print(f"Total Venues: {res['total_venues']}")
+        print(f"Detailed Records: {res.get('total_curated', 0)} ({res.get('total_curated', 0) / res['total_venues'] * 100:.1f}%)")
         print(f"Specialty Venues: {res['total_specialty']}")
         print(f"Work-Friendly Venues: {res['total_work_friendly']}")
         print(f"Meeting Room Venues: {res['total_meeting_rooms']}")
@@ -361,10 +382,12 @@ def main() -> int:
         print("\nBreakdown by County:")
         for c in res["counties"]:
             tot = res["by_county"].get(c, 0)
+            cur = res.get("curated_by_county", {}).get(c, 0)
+            cur_pct = (cur / tot * 100) if tot else 0
             spec = res["specialty_by_county"].get(c, 0)
             wf = res["work_by_county"].get(c, 0)
             mr = res["meeting_by_county"].get(c, 0)
-            print(f"  {c:10s}: {tot:3d} venues | {spec:2d} specialty | {wf:2d} work-friendly | {mr:2d} meeting rooms")
+            print(f"  {c:10s}: {tot:3d} venues | {cur:2d} curated ({cur_pct:4.1f}%) | {spec:2d} specialty | {wf:2d} work-friendly | {mr:2d} meeting rooms")
         return 0
 
     if args.apply or args.classify_specialty:

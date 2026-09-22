@@ -1,0 +1,3508 @@
+{
+  "version": 1,
+  "description": "Evidence-backed research facts extracted from venue websites",
+  "lastUpdated": "2026-09-22T15:00:21.013995+00:00",
+  "places": {
+    "ChIJOfalBUMD9YgRd0hSjtV1Tvk": {
+      "name": "Black Coffee Atlanta",
+      "city": "Atlanta",
+      "county": "Fulton",
+      "website": "https://www.theblackcoffeecompany.com/black-coffee-atl",
+      "pagesChecked": [
+        "https://www.theblackcoffeecompany.com/black-coffee-atl",
+        "https://www.theblackcoffeecompany.com/contact-us",
+        "https://www.theblackcoffeecompany.com/menu",
+        "https://www.theblackcoffeecompany.com/about-us",
+        "https://www.theblackcoffeecompany.com/events",
+        "https://www.theblackcoffeecompany.com/about-1",
+        "https://www.theblackcoffeecompany.com/privateevents"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "confirmed",
+          "excerpt": "FREE WiFi",
+          "sourceUrl": "https://www.theblackcoffeecompany.com/black-coffee-atl",
+          "checkedDate": "September 2026"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJh8T65al09YgR9F7Z_odg7dg": {
+      "name": "Douceur De France - Bakery & Brunch",
+      "city": "Roswell",
+      "county": "Fulton",
+      "website": "https://www.douceurdefrance.com/%20?utm_source=google&utm_medium=organic&utm_campaign=gmb",
+      "pagesChecked": [
+        "https://www.douceurdefrance.com/%20",
+        "https://douceurdefrance.com/contact-us/",
+        "https://douceurdefrance.com/menus/",
+        "https://douceurdefrance.com/our-story/",
+        "https://douceurdefrance.com/order-online/"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJX-ZxNwl19YgRxEQDFVJMbYo": {
+      "name": "Yummy Paradise - North Point Mall",
+      "city": "Alpharetta",
+      "county": "Fulton",
+      "website": "http://www.yummyparadise.com/",
+      "pagesChecked": [
+        "http://www.yummyparadise.com/"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJQ1iGXoQK32oRBV4KNLyzP8A": {
+      "name": "Doodle Pies",
+      "city": "Roswell",
+      "county": "Fulton",
+      "website": "https://doodlepies.net/",
+      "pagesChecked": [
+        "https://doodlepies.net/",
+        "https://doodlepies.net/about-us/"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJWVlDyv6f9YgRJfRFmSqZ3O8": {
+      "name": "The Creek Café + Gelato",
+      "city": "Alpharetta",
+      "county": "Fulton",
+      "website": "http://www.thecreekjc.com/",
+      "pagesChecked": [
+        "http://www.thecreekjc.com/",
+        "http://www.thecreekjc.com/contact",
+        "http://www.thecreekjc.com/menu",
+        "http://www.thecreekjc.com/about-us"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "confirmed",
+          "excerpt": "We offer free WiFi, a (dog-friendly) enclosed patio space, and a calm environment for anyone who needs to get out of their house or the office to enjoy some much-needed \"me-time\" and a good cup of coffee.",
+          "sourceUrl": "http://www.thecreekjc.com/",
+          "checkedDate": "September 2026"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "confirmed",
+          "excerpt": "We offer free WiFi, a (dog-friendly) enclosed patio space, and a calm environment for anyone who needs to get out of their house or the office to enjoy some much-needed \"me-time\" and a good cup of coffee.",
+          "sourceUrl": "http://www.thecreekjc.com/",
+          "checkedDate": "September 2026"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJWSOJdYkD9YgR5L4Duah0nZw": {
+      "name": "Just Add Honey Tea Company",
+      "city": "Atlanta",
+      "county": "Fulton",
+      "website": "http://justaddhoney.net/",
+      "pagesChecked": [
+        "http://justaddhoney.net/",
+        "http://justaddhoney.net/pages/mobile-tea-room",
+        "http://justaddhoney.net/pages/contact",
+        "http://justaddhoney.net/policies/refund-policy",
+        "http://justaddhoney.net/policies/privacy-policy",
+        "http://justaddhoney.net/policies/shipping-policy",
+        "http://justaddhoney.net/pages/in-store-events"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "confirmed",
+          "excerpt": "Enjoy indoor seating, relax on our sunny outdoor patio, or pop in for your favorite blend to-go.",
+          "sourceUrl": "http://justaddhoney.net/pages/in-store-events",
+          "checkedDate": "September 2026"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJWdUhZCQL9YgRz3Y26AYMN2U": {
+      "name": "Ground & Pound Coffee",
+      "city": "Alpharetta",
+      "county": "Fulton",
+      "website": "http://groundandpoundcoffee.com/",
+      "pagesChecked": [
+        "http://groundandpoundcoffee.com/",
+        "http://groundandpoundcoffee.com/location-events",
+        "http://groundandpoundcoffee.com/location-scouts",
+        "http://groundandpoundcoffee.com/menu",
+        "http://groundandpoundcoffee.com/events"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "confirmed",
+          "excerpt": "High-speed Wi-Fi access",
+          "sourceUrl": "http://groundandpoundcoffee.com/location-events",
+          "checkedDate": "September 2026"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "confirmed",
+          "excerpt": "Indoor Outdoor Seating",
+          "sourceUrl": "http://groundandpoundcoffee.com/location-events",
+          "checkedDate": "September 2026"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJ31v66Ax19YgRww_UDBd_zCs": {
+      "name": "Fuel Coffee Roasters",
+      "city": "Alpharetta",
+      "county": "Fulton",
+      "website": "http://fuelatl.com/",
+      "pagesChecked": [
+        "http://fuelatl.com/"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJK7cC-XFz9YgRn_nQ8wZ0L1I": {
+      "name": "Belux Coffee Roswell",
+      "city": "Roswell",
+      "county": "Fulton",
+      "website": "http://www.beluxcoffee.com/",
+      "pagesChecked": [
+        "http://www.beluxcoffee.com/",
+        "https://www.beluxcoffee.com/contact-5",
+        "https://www.beluxcoffee.com/product-page-1/panama-geisha-coffee-hacienda-la-esmeralda-special-natural-noria-4nb",
+        "https://www.beluxcoffee.com/product-page-1/belux-coffee-bunny-barista-t-shirt-unisex",
+        "https://www.beluxcoffee.com/product-page-1/belux-coffee-graphic-sweatshirt",
+        "https://www.beluxcoffee.com/product-page-1/coffee-tasting-event-coffee",
+        "https://www.beluxcoffee.com/product-page-1/panama-geisha-coffee-esmeralda-special-natural"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJCQAfPvUJ9YgRyJFCsHprAOo": {
+      "name": "Sugar Shane’s",
+      "city": "Sandy Springs",
+      "county": "Fulton",
+      "website": "http://sugarshanes.com/",
+      "pagesChecked": [
+        "http://sugarshanes.com/"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJb-uOTPgD9YgR6vk5lZyikek": {
+      "name": "Revolution Doughnuts & Coffee",
+      "city": "Atlanta",
+      "county": "Fulton",
+      "website": "http://revolutiondoughnuts.com/",
+      "pagesChecked": [
+        "http://revolutiondoughnuts.com/",
+        "http://revolutiondoughnuts.com/locations",
+        "http://revolutiondoughnuts.com/faq-1"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unavailable",
+          "excerpt": "No, we do not offer WiFI at either of our shops.",
+          "sourceUrl": "http://revolutiondoughnuts.com/faq-1",
+          "checkedDate": "September 2026"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJNex-VpED9YgR9S18lwlISfc": {
+      "name": "Little Tart Bakeshop",
+      "city": "Atlanta",
+      "county": "Fulton",
+      "website": "http://littletartatl.com/",
+      "pagesChecked": [
+        "http://littletartatl.com/",
+        "http://littletartatl.com/locations/",
+        "http://littletartatl.com/contact-us/",
+        "http://littletartatl.com/menus/"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJ5f_gqxp19YgRzscMyDwLw5Q": {
+      "name": "The Bep Teahouse",
+      "city": "Johns Creek",
+      "county": "Fulton",
+      "website": "https://thebepteahousega.com/",
+      "pagesChecked": [
+        "https://thebepteahousega.com/",
+        "https://thebepteahousega.com/locations/",
+        "https://thebepteahousega.com/our-drinks/",
+        "https://thebepteahousega.com/about-us/"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJF9AYz5sP9YgReqMw0Q37Too": {
+      "name": "Café I AM",
+      "city": "Sandy Springs",
+      "county": "Fulton",
+      "website": "https://shopwithvanda.com/pages/cafe-i-am-sandy-springs",
+      "pagesChecked": [
+        "https://shopwithvanda.com/pages/cafe-i-am-sandy-springs",
+        "https://shopwithvanda.com/policies/contact-information",
+        "https://shopwithvanda.com/policies/shipping-policy",
+        "https://shopwithvanda.com/pages/contact-us",
+        "https://shopwithvanda.com/policies/refund-policy",
+        "https://shopwithvanda.com/policies/privacy-policy",
+        "https://shopwithvanda.com/pages/about-vanda"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "confirmed",
+          "excerpt": "With elegant indoor spaces, a charming outdoor patio, artisan catering, and the warm atmosphere the café is known for, each event becomes a memorable experience.",
+          "sourceUrl": "https://shopwithvanda.com/pages/cafe-i-am-sandy-springs",
+          "checkedDate": "September 2026"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJs2AdYMOf9YgRIxi0P11vw1I": {
+      "name": "Belen de la Cruz - Empanadas & Pastries - Johns Creek",
+      "city": "Johns Creek",
+      "county": "Fulton",
+      "website": "https://belendelacruz.com/",
+      "pagesChecked": [
+        "https://belendelacruz.com/",
+        "https://belendelacruz.com/locations",
+        "https://belendelacruz.com/food-trailer",
+        "https://belendelacruz.com/about-us"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJ9biQySif9YgRrlvSghTyRFo": {
+      "name": "My Gourmet Parlor",
+      "city": "Alpharetta",
+      "county": "Fulton",
+      "website": "http://mygourmetparlor.us/",
+      "pagesChecked": [
+        "http://mygourmetparlor.us/",
+        "http://mygourmetparlor.us/contact",
+        "http://mygourmetparlor.us/menu",
+        "http://mygourmetparlor.us/about"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJ6SXdJACf9YgR5RpztNDxIcI": {
+      "name": "ArtAro Cafe",
+      "city": "Alpharetta",
+      "county": "Fulton",
+      "website": "https://www.artarocafe.com/",
+      "pagesChecked": [
+        "https://www.artarocafe.com/",
+        "https://www.artarocafe.com/contact",
+        "https://www.artarocafe.com/services-store/p/private-events-small-gatherings-1",
+        "https://www.artarocafe.com/about"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJE8oV4Amf9YgRAT8Eqgs7G8U": {
+      "name": "Crave Cookies",
+      "city": "Johns Creek",
+      "county": "Fulton",
+      "website": "https://cravecookies.com/",
+      "pagesChecked": [
+        "https://cravecookies.com/",
+        "https://cravecookies.com/pages/locations",
+        "https://cravecookies.com/pages/contact",
+        "https://cravecookies.com/pages/our-story"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJA-5SSI8F9YgR4HjmsJiPDo0": {
+      "name": "The Queens Tea Party",
+      "city": "Atlanta",
+      "county": "Fulton",
+      "website": "https://www.aqueensteapartyatl.com/book-online",
+      "pagesChecked": [
+        "https://www.aqueensteapartyatl.com/book-online",
+        "https://www.aqueensteapartyatl.com/contact-8",
+        "https://www.aqueensteapartyatl.com/about-1",
+        "https://www.aqueensteapartyatl.com/booking-calendar/tea-blending-tasting-experience",
+        "https://www.aqueensteapartyatl.com/booking-calendar/sip-click-1",
+        "https://www.aqueensteapartyatl.com/booking-calendar/tea-etiquette-experience",
+        "https://www.aqueensteapartyatl.com/booking-calendar/the-grand-tea-celebration"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJFXpCpFoD9YgRq_At4U63AI8": {
+      "name": "Atlanta Donuts",
+      "city": "Atlanta",
+      "county": "Fulton",
+      "website": "https://menutoeat.com/atlanta-donuts/",
+      "pagesChecked": [
+        "https://menutoeat.com/atlanta-donuts/"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJD34KlgaX9YgR7ZAENz1fpf8": {
+      "name": "Greatea Suwanee",
+      "city": "Suwanee",
+      "county": "Gwinnett",
+      "website": "https://greateausa.com/",
+      "pagesChecked": [
+        "https://greateausa.com/",
+        "https://greateausa.com/locations-order-online/",
+        "https://greateausa.com/contact-us/",
+        "https://greateausa.com/location.html",
+        "https://greateausa.com/contact.html",
+        "https://greateausa.com/greateausa/contact-us/",
+        "https://greateausa.com/product-cat/featured-drinks-collection/"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJiY6Amwi79YgRlu9LlJzP3Hc": {
+      "name": "Beans and Butter Coffeehouse",
+      "city": "Lawrenceville",
+      "county": "Gwinnett",
+      "website": "http://www.beansandbutter.com/",
+      "pagesChecked": [
+        "http://www.beansandbutter.com/",
+        "https://beansandbutter.com/contact-us/",
+        "https://beansandbutter.com/menu/",
+        "https://beansandbutter.com/menu//",
+        "https://beansandbutter.com/about/",
+        "https://beansandbutter.com/now-hiring-in-bakery-two-positions-available/"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "confirmed",
+          "excerpt": "At Beans & Butter, we roast our own coffee beans and start by purchasing green beans from micro lot farms.",
+          "sourceUrl": "https://beansandbutter.com/about/",
+          "checkedDate": "September 2026"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJ3S4aEw6X9YgRnBWAB40CoWw": {
+      "name": "J & J Donuts",
+      "city": "Suwanee",
+      "county": "Gwinnett",
+      "website": "https://www.jandjdonuts.com/",
+      "pagesChecked": [
+        "https://www.jandjdonuts.com/",
+        "https://www.jandjdonuts.com/menu",
+        "https://www.jandjdonuts.com/about"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJFW_19e-v9YgRRU3MY9Uk3rE": {
+      "name": "Trend Urban Cafe",
+      "city": "Stone Mountain",
+      "county": "Gwinnett",
+      "website": "https://trendurbancafe.com/",
+      "pagesChecked": [
+        "https://trendurbancafe.com/",
+        "https://trendurbancafe.com/stone-mountain-trend-urban-cafe-food-menu",
+        "https://trendurbancafe.com/stone-mountain-trend-urban-cafe-happy-hours-specials",
+        "https://trendurbancafe.com/stone-mountain-trend-urban-cafe-drink-menu",
+        "https://trendurbancafe.com/stone-mountain-trend-urban-cafe-events"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJPy1yRYi-9YgRrNAFRgTcwkg": {
+      "name": "Grand Polish Bakery",
+      "city": "Lawrenceville",
+      "county": "Gwinnett",
+      "website": "https://www.grandpolishbakery.com/",
+      "pagesChecked": [
+        "https://www.grandpolishbakery.com/",
+        "https://www.grandpolishbakery.com/menu",
+        "https://www.grandpolishbakery.com/faq"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJXUDAIuLAdGERO23kP2XHaHI": {
+      "name": "Mood Cafe",
+      "city": "Lawrenceville",
+      "county": "Gwinnett",
+      "website": "https://www.moodcafega.com/?utm_source=google&utm_medium=wix_google_business_profile&utm_campaign=2807117499166253827",
+      "pagesChecked": [
+        "https://www.moodcafega.com/"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJzYnGI6Gx9YgRCVj3oUr0Haw": {
+      "name": "Honey'z Sweets & Deliveries LLC",
+      "city": "Snellville",
+      "county": "Gwinnett",
+      "website": "http://honeyzsweetsbakery.com/",
+      "pagesChecked": [
+        "http://honeyzsweetsbakery.com/",
+        "http://honeyzsweetsbakery.com/pages/contact",
+        "http://honeyzsweetsbakery.com/pages/about-us"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJs48T57m59YgRAuRCOdW5IY8": {
+      "name": "Kakes4U",
+      "city": "Snellville",
+      "county": "Gwinnett",
+      "website": "http://kakes4u.com/",
+      "pagesChecked": [
+        "http://kakes4u.com/",
+        "https://www.kakes4u.com/hours-and-locations",
+        "https://www.kakes4u.com/about",
+        "https://www.kakes4u.com/faq",
+        "https://www.kakes4u.com/order-online"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJ5WNvr_Ol9YgRMt7KCQHUgq8": {
+      "name": "Haven Bodega",
+      "city": "Lilburn",
+      "county": "Gwinnett",
+      "website": "http://www.havenbodega.com/",
+      "pagesChecked": [
+        "http://www.havenbodega.com/"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJ372qWG6h9YgRqNRYk6pEghQ": {
+      "name": "U&ME coffee bakery and wine",
+      "city": "Peachtree Corners",
+      "county": "Gwinnett",
+      "website": "https://uandme.coffee/",
+      "pagesChecked": [
+        "https://uandme.coffee/",
+        "https://uandme.coffee/pages/food-menu",
+        "https://uandme.coffee/pages/drinks-menu",
+        "https://uandme.coffee/policies/contact-information",
+        "https://uandme.coffee/pages/contact",
+        "https://uandme.coffee/policies/privacy-policy",
+        "https://uandme.coffee/pages/events"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJ7TehoAaX9YgRrz6_zveDftQ": {
+      "name": "Blue Mountain Coffee Roasters",
+      "city": "Suwanee",
+      "county": "Gwinnett",
+      "website": "https://www.atlantacoffeeshops.com/blue-mountain-coffee-roasters",
+      "pagesChecked": [
+        "https://www.atlantacoffeeshops.com/blue-mountain-coffee-roasters"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "confirmed",
+          "excerpt": "✓ Free Wi-Fi",
+          "sourceUrl": "https://www.atlantacoffeeshops.com/blue-mountain-coffee-roasters",
+          "checkedDate": "September 2026"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJkzWckImX9YgRa9Q7nXG3NOI": {
+      "name": "Tada Coffee and Dessert",
+      "city": "Suwanee",
+      "county": "Gwinnett",
+      "website": "https://www.atlantacoffeeshops.com/tada-coffee-and-dessert",
+      "pagesChecked": [
+        "https://www.atlantacoffeeshops.com/tada-coffee-and-dessert"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "confirmed",
+          "excerpt": "✓ Free Wi-Fi",
+          "sourceUrl": "https://www.atlantacoffeeshops.com/tada-coffee-and-dessert",
+          "checkedDate": "September 2026"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJkST2gIeY9YgRY1kdCcYe82E": {
+      "name": "The Sweet Spot Bakery",
+      "city": "Duluth",
+      "county": "Gwinnett",
+      "website": "http://www.thesweetspotduluth.com/",
+      "pagesChecked": [
+        "http://www.thesweetspotduluth.com/"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJB8VftLu89YgRGbSJ6rFG3KM": {
+      "name": "Panaderia Criolla -Café Bakery",
+      "city": "Lawrenceville",
+      "county": "Gwinnett",
+      "website": "https://panaderiacriollaoficial.com/",
+      "pagesChecked": [
+        "https://panaderiacriollaoficial.com/"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJk7Yx7EyX9YgRLvSNtjXCk5k": {
+      "name": "Soon's Bakery",
+      "city": "Suwanee",
+      "county": "Gwinnett",
+      "website": "https://soonsbakery.squarespace.com/",
+      "pagesChecked": [
+        "https://soonsbakery.squarespace.com/",
+        "https://soonsbakery.squarespace.com/contact",
+        "https://soonsbakery.squarespace.com/drinkmenu",
+        "https://soonsbakery.squarespace.com/menu",
+        "https://soonsbakery.squarespace.com/about"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJH0I1Z0YR9YgRgcB8m8Xy76Y": {
+      "name": "Jacobs Java Chicago Food & Drive Thru",
+      "city": "Marietta",
+      "county": "Cobb",
+      "website": "https://www.jacobsjava932.com/",
+      "pagesChecked": [
+        "https://www.jacobsjava932.com/",
+        "https://www.jacobsjava932.com/locations"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJp9MBeIJs9YgRyKXZ9e9dnxA": {
+      "name": "Ray's Donut Shop",
+      "city": "Marietta",
+      "county": "Cobb",
+      "website": "https://facebook.com/RaysDonutsMarietta/",
+      "pagesChecked": [
+        "https://facebook.com/RaysDonutsMarietta/"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJLfRFf_dz9YgRu7l_2iPXVJU": {
+      "name": "RISE coffee & tea",
+      "city": "Roswell",
+      "county": "Cobb",
+      "website": "https://rise-coffeetea.com/",
+      "pagesChecked": [
+        "https://rise-coffeetea.com/",
+        "https://rise-coffeetea.com/menu",
+        "https://rise-coffeetea.com/visit-us",
+        "https://rise-coffeetea.com/our-story",
+        "https://rise-coffeetea.com/events",
+        "https://rise-coffeetea.com/mobile-events-%26-catering"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJiSwG4d4N9YgRUI8Ugy9q7Ts": {
+      "name": "J'mz Bowls | Acai, Coffee & Custard",
+      "city": "Marietta",
+      "county": "Cobb",
+      "website": "https://jmzhub.com/",
+      "pagesChecked": [
+        "https://jmzhub.com/"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJIwQavqo49YgRVyycYvkC8ds": {
+      "name": "Art's Bagel & More",
+      "city": "Acworth",
+      "county": "Cobb",
+      "website": "http://artsbagelsga.com/",
+      "pagesChecked": [
+        "http://artsbagelsga.com/"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJjx9I3XMb9YgR4uhKUlXpfGU": {
+      "name": "Bolivar Coffee",
+      "city": "Smyrna",
+      "county": "Cobb",
+      "website": "https://bolivarcoffee.com/marietta?utm_source=google",
+      "pagesChecked": [
+        "https://bolivarcoffee.com/marietta"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJSa-0QQAV9YgRCkWqRJJE87E": {
+      "name": "Valley's Bakery",
+      "city": "Marietta",
+      "county": "Cobb",
+      "website": "https://valleysbakery.com/",
+      "pagesChecked": [
+        "https://valleysbakery.com/",
+        "https://valleysbakery.com/contact/",
+        "https://valleysbakery.com/contact",
+        "https://valleysbakery.com/menu/",
+        "https://valleysbakery.com/privacy-policy",
+        "https://valleysbakery.com/about",
+        "https://valleysbakery.com/about/reviews/"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJ2z9QfnkV9YgRzZS7cIjD10A": {
+      "name": "Café Clément",
+      "city": "Marietta",
+      "county": "Cobb",
+      "website": "http://www.cafeclement.com/",
+      "pagesChecked": [
+        "http://www.cafeclement.com/",
+        "http://www.cafeclement.com/pages/contact",
+        "http://www.cafeclement.com/policies/privacy-policy",
+        "http://www.cafeclement.com/products/classique-coffee-subscription?variant=62736290742643",
+        "http://www.cafeclement.com/products/single-origin-coffee-subscription?variant=62797743817075",
+        "http://www.cafeclement.com/products/classique-coffee-subscription"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJl2cLvflB9YgREt5q1jeyKC0": {
+      "name": "Donut Lane",
+      "city": "Acworth",
+      "county": "Cobb",
+      "website": "https://donutlane.com/",
+      "pagesChecked": [
+        "https://donutlane.com/"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJyZmrAZ8l9YgR5SflWYnRDq0": {
+      "name": "Coffee Snobs",
+      "city": "Powder Springs",
+      "county": "Cobb",
+      "website": "https://coffeesnobs.org/",
+      "pagesChecked": [
+        "https://coffeesnobs.org/"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJ-_3ODoh1NoQRqgT6dDQOC4A": {
+      "name": "Bonnin's Bakery",
+      "city": "Kennesaw",
+      "county": "Cobb",
+      "website": "https://www.bonninsbakery.com/",
+      "pagesChecked": [
+        "https://www.bonninsbakery.com/"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJtVTQ1-sX9YgRRWSIrwVRGL0": {
+      "name": "Dough In The Box DONUTS - Marietta",
+      "city": "Marietta",
+      "county": "Cobb",
+      "website": "http://doughinthebox.com/index.html",
+      "pagesChecked": [
+        "http://doughinthebox.com/index.html",
+        "http://doughinthebox.com/menu---cobb-county--fulton-industrial.html",
+        "http://doughinthebox.com/menu---south-downtown-atl.html",
+        "http://doughinthebox.com/history.html"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJN0SqDMQW9YgRzhg8ChALpv8": {
+      "name": "Bernhard's German Bakery & Deli",
+      "city": "Marietta",
+      "county": "Cobb",
+      "website": "http://www.bernhardsgermanbakery.com/",
+      "pagesChecked": [
+        "http://www.bernhardsgermanbakery.com/",
+        "http://www.bernhardsgermanbakery.com/contact",
+        "http://www.bernhardsgermanbakery.com/our-breakfast-menus",
+        "http://www.bernhardsgermanbakery.com/coffee-cakes",
+        "http://www.bernhardsgermanbakery.com/about-our-bread",
+        "http://www.bernhardsgermanbakery.com/our-home-made-german-bakery-specials",
+        "http://www.bernhardsgermanbakery.com/home-made-german-bakery-specials"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJHfRXj2sU9YgRFwsCt6P-nTg": {
+      "name": "Tip Top Donuts",
+      "city": "Marietta",
+      "county": "Cobb",
+      "website": "http://tiptopdonuts.com/",
+      "pagesChecked": [
+        "http://tiptopdonuts.com/"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJbRZUS-sT9YgRQ1kgQ58bRrI": {
+      "name": "Belen de la Cruz - Empanadas & Pastries - Marietta",
+      "city": "Marietta",
+      "county": "Cobb",
+      "website": "https://belendelacruz.com/",
+      "pagesChecked": [
+        "https://belendelacruz.com/",
+        "https://belendelacruz.com/locations",
+        "https://belendelacruz.com/food-trailer",
+        "https://belendelacruz.com/about-us"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJ9chw5-kH9YgRwTf9UofVK2w": {
+      "name": "Rebel Teahouse | Decatur, GA",
+      "city": "Decatur",
+      "county": "DeKalb",
+      "website": "http://www.rebelteahouse.com/?utm_source=google&utm_medium=wix_google_business_profile&utm_campaign=12377121211590886312",
+      "pagesChecked": [
+        "http://www.rebelteahouse.com/",
+        "https://www.rebelteahouse.com/our-story",
+        "https://www.rebelteahouse.com/visit",
+        "https://www.rebelteahouse.com/faq",
+        "https://www.rebelteahouse.com/privacy-policy"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJAbi5azuv9YgRHAB_BFzo0TE": {
+      "name": "Gilly Brew Bar",
+      "city": "Stone Mountain",
+      "county": "DeKalb",
+      "website": "http://gillybrewbar.com/",
+      "pagesChecked": [
+        "http://gillybrewbar.com/",
+        "http://gillybrewbar.com/policies/privacy-policy",
+        "http://gillybrewbar.com/pages/wholesale-coffee",
+        "http://gillybrewbar.com/products/coffee-cupping",
+        "http://gillybrewbar.com/pages/our-story"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJmTeBW_un9YgRlM1oiv9elNU": {
+      "name": "The Corner Cup Coffee",
+      "city": "Tucker",
+      "county": "DeKalb",
+      "website": "https://www.thecornercupcoffee.com/tucker",
+      "pagesChecked": [
+        "https://www.thecornercupcoffee.com/tucker"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJgeovpxmo9YgRSyuA0yvlGTY": {
+      "name": "The Corner Cup Coffee",
+      "city": "Decatur",
+      "county": "DeKalb",
+      "website": "https://www.thecornercupcoffee.com/decatur",
+      "pagesChecked": [
+        "https://www.thecornercupcoffee.com/decatur"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJO6_2C2QH9YgRmQDLaVMQKrk": {
+      "name": "Waller's Coffee Shop",
+      "city": "Decatur",
+      "county": "DeKalb",
+      "website": "http://www.wallerscoffeeshop.com/",
+      "pagesChecked": [
+        "http://www.wallerscoffeeshop.com/",
+        "https://www.wallerscoffeeshop.com/menu-1",
+        "https://www.wallerscoffeeshop.com/events"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJ2ypQabC_tokRaM1nEtjN-OY": {
+      "name": "Mint Coffeehouse نعنع",
+      "city": "Tucker",
+      "county": "DeKalb",
+      "website": "http://www.mintcoffeehouse.com/",
+      "pagesChecked": [
+        "http://www.mintcoffeehouse.com/",
+        "https://mintcoffeehouse.com/shop-menu/",
+        "https://mintcoffeehouse.com/menu/",
+        "https://mintcoffeehouse.com/calendar-of-events/",
+        "https://mintcoffeehouse.com/about/"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJXbeYsqCo9YgRdRNtI5BwS6k": {
+      "name": "Donut City",
+      "city": "Tucker",
+      "county": "DeKalb",
+      "website": "http://donutcitytucker.com/",
+      "pagesChecked": [
+        "http://donutcitytucker.com/"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJHwPHDGAH9YgR0ggS3b5rhd0": {
+      "name": "Banjo Coffee",
+      "city": "Avondale Estates",
+      "county": "DeKalb",
+      "website": "http://www.banjocoffee.com/",
+      "pagesChecked": [
+        "http://www.banjocoffee.com/",
+        "http://www.banjocoffee.com/contact",
+        "http://www.banjocoffee.com/our-coffee"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJ1wHmqIit9YgRkwIYT96peIo": {
+      "name": "Akoma Coffee & Books",
+      "city": "Stonecrest",
+      "county": "DeKalb",
+      "website": "http://visitakoma.com/",
+      "pagesChecked": [
+        "http://visitakoma.com/",
+        "https://visitakoma.com/coffee-bar-menu/",
+        "https://visitakoma.com/about-akoma-coffee-house/",
+        "https://visitakoma.com/contact/",
+        "https://visitakoma.com/our-story/",
+        "https://visitakoma.com/events/",
+        "https://books.visitakoma.com/list/childrens-ya-books-black-stories-history-reader-favorites"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJf3sUcjIB9YgRKkVdGSDG-t0": {
+      "name": "Taproom Coffee",
+      "city": "Atlanta",
+      "county": "DeKalb",
+      "website": "http://www.taproomcoffee.com/",
+      "pagesChecked": [
+        "http://www.taproomcoffee.com/",
+        "http://www.taproomcoffee.com/events-list/taproom-second-shift/2026/10/01",
+        "http://www.taproomcoffee.com/events-list/taproom-second-shift/2026/10/15",
+        "http://www.taproomcoffee.com/events-list/taproom-second-shift/2026/10/29",
+        "http://www.taproomcoffee.com/menu",
+        "http://www.taproomcoffee.com/visit",
+        "http://www.taproomcoffee.com/events"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "confirmed",
+          "excerpt": "Yes, customers can access free Wi-Fi under the network “Taproom-Public”.",
+          "sourceUrl": "http://www.taproomcoffee.com/visit",
+          "checkedDate": "September 2026"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJUQQYr2AB9YgRjFPhCWb3boM": {
+      "name": "Jayida Ché Herbal Tea Spot",
+      "city": "Atlanta",
+      "county": "DeKalb",
+      "website": "http://jayidache.com/",
+      "pagesChecked": [
+        "http://jayidache.com/",
+        "http://jayidache.com/pages/contact-us",
+        "http://jayidache.com/pages/tea-spot-hours-information",
+        "http://jayidache.com/pages/tea-spot-hours",
+        "http://jayidache.com/collections/coffee-replacements",
+        "http://jayidache.com/collections/workshops",
+        "http://jayidache.com/pages/about-us"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJGe8bhK0J9YgRwu6ypI0azKY": {
+      "name": "ZenTea",
+      "city": "Chamblee",
+      "county": "DeKalb",
+      "website": "https://zentea.com/",
+      "pagesChecked": [
+        "https://zentea.com/",
+        "https://zentea.com/food-menu/",
+        "https://zentea.com/contact-us/",
+        "https://zentea.com/about/",
+        "https://zentea.com/classes-events/",
+        "https://zentea.com/faqs/"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "confirmed",
+          "excerpt": "Outdoor patio and zen garden seating is available.",
+          "sourceUrl": "https://zentea.com/",
+          "checkedDate": "September 2026"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJeV_PHQAJ9YgRe62R4VYTAus": {
+      "name": "Gula Indonesian Dessert Café",
+      "city": "Doraville",
+      "county": "DeKalb",
+      "website": "https://www.tastegula.com/",
+      "pagesChecked": [
+        "https://www.tastegula.com/",
+        "https://www.tastegula.com/contact",
+        "https://www.tastegula.com/menu-1",
+        "https://www.tastegula.com/about",
+        "https://www.tastegula.com/english-privacy-policy"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJZbOXDAIJ9YgR0yLsz8v6_Cc": {
+      "name": "Kin Coffee Co.",
+      "city": "Chamblee",
+      "county": "DeKalb",
+      "website": "https://www.kincoffeeco.com/",
+      "pagesChecked": [
+        "https://www.kincoffeeco.com/",
+        "https://www.kincoffeeco.com/about-2"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJSQDUo_5z9YgReF1ViZb2kww": {
+      "name": "Rday Cake Creations",
+      "city": "Canton",
+      "county": "Cherokee",
+      "website": "http://www.rdaycreations.com/",
+      "pagesChecked": [
+        "http://www.rdaycreations.com/",
+        "http://www.rdaycreations.com/pages/contact",
+        "http://www.rdaycreations.com/policies/privacy-policy",
+        "http://www.rdaycreations.com/pages/about",
+        "http://www.rdaycreations.com/pages/refund-policy",
+        "http://www.rdaycreations.com/pages/faqs"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJIeHQcExs9YgRRiVNdUYkwFk": {
+      "name": "Jessa's tea parlor",
+      "city": "Woodstock",
+      "county": "Cherokee",
+      "website": "http://www.jessasteaparlor.com/",
+      "pagesChecked": [
+        "http://www.jessasteaparlor.com/"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJ5zh9bfdl9YgRcI0L1jUQY7Y": {
+      "name": "Stitch Coffee",
+      "city": "Canton",
+      "county": "Cherokee",
+      "website": "http://stitchcoffeecanton.com/",
+      "pagesChecked": [
+        "http://stitchcoffeecanton.com/"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJvefrv4X7iaURF55Fry_aKKQ": {
+      "name": "The Woodstock Coffee Company",
+      "city": "Woodstock",
+      "county": "Cherokee",
+      "website": "https://www.thewoodstockcoffeecompany.com/",
+      "pagesChecked": [
+        "https://www.thewoodstockcoffeecompany.com/"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJgckodoFx9YgRZm9QrAlETgA": {
+      "name": "Circle of Friends at Flourish Café",
+      "city": "Canton",
+      "county": "Cherokee",
+      "website": "https://www.circleoffriendsinc.org/flourish-cafe",
+      "pagesChecked": [
+        "https://www.circleoffriendsinc.org/flourish-cafe",
+        "https://www.circleoffriendsinc.org/contact",
+        "https://www.circleoffriendsinc.org/about-us",
+        "https://forms.circleoffriendsinc.org/nx/portal/neonevents/events?path=%2Fportal%2Fevents",
+        "https://www.circleoffriendsinc.org/about",
+        "https://www.circleoffriendsinc.org/faqs",
+        "https://www.circleoffriendsinc.org/private-policy"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJ2_lvDCdv9YgRh6b6kX03-k8": {
+      "name": "Cafe Floralia",
+      "city": "Canton",
+      "county": "Cherokee",
+      "website": "https://www.cafefloralia.com/",
+      "pagesChecked": [
+        "https://www.cafefloralia.com/",
+        "https://www.cafefloralia.com/locations",
+        "https://www.cafefloralia.com/contact",
+        "https://www.cafefloralia.com/coffee-cart",
+        "https://www.cafefloralia.com/menu",
+        "https://www.cafefloralia.com/coffee-subscription",
+        "https://www.cafefloralia.com/events"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "confirmed",
+          "excerpt": "Coworking Laptop-friendly Built for coworking",
+          "sourceUrl": "https://www.cafefloralia.com/locations",
+          "checkedDate": "September 2026"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJB00NZ-Zr9YgRn2Wgk9ddV0M": {
+      "name": "Apotheos Coffee Woodstock",
+      "city": "Woodstock",
+      "county": "Cherokee",
+      "website": "https://apotheosroastery.com/",
+      "pagesChecked": [
+        "https://apotheosroastery.com/",
+        "https://apotheosroastery.com/wholesale-coffee",
+        "https://apotheosroastery.com/our-story",
+        "https://apotheosroastery.com/privacy-policy"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "confirmed",
+          "excerpt": "Our proprietary in-house roasting philosophy is based on our deep knowledge and appreciation of coffee, honed over decades of experience.",
+          "sourceUrl": "https://apotheosroastery.com/",
+          "checkedDate": "September 2026"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJUSORcwBr9YgRW2wXpneyA4Q": {
+      "name": "Pastry Paradise (Home Bakery)",
+      "city": "Acworth",
+      "county": "Cherokee",
+      "website": "https://www.instagram.com/pastry_paradise19?igsh=enE5Z2ppaGM0dmox&utm_source=qr",
+      "pagesChecked": [
+        "https://www.instagram.com/pastry_paradise19?igsh=enE5Z2ppaGM0dmox"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJQ8IVNbqe9YgRfnqF5BzOUa8": {
+      "name": "Sweet Apple",
+      "city": "Alpharetta",
+      "county": "Forsyth",
+      "website": "http://www.sweetappledonuts.com/",
+      "pagesChecked": [
+        "http://www.sweetappledonuts.com/"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJzWBIhvmZ9YgRAg4DVbM1Yno": {
+      "name": "CafeFoam",
+      "city": "Suwanee",
+      "county": "Forsyth",
+      "website": "http://www.cafefoamsuwanee.com/",
+      "pagesChecked": [
+        "http://www.cafefoamsuwanee.com/"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJXT7M3KOb9YgRoLZPOBmIAcs": {
+      "name": "Bake Memories",
+      "city": "Cumming",
+      "county": "Forsyth",
+      "website": "http://bakememoriesbystuti.com/",
+      "pagesChecked": [
+        "http://bakememoriesbystuti.com/"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJSTi5rvqJ9YgRY_VaoW4C2Kk": {
+      "name": "Cassie Cakes",
+      "city": "Cumming",
+      "county": "Forsyth",
+      "website": "http://www.cassiecakesbakery.com/",
+      "pagesChecked": [
+        "http://www.cassiecakesbakery.com/",
+        "https://cassiecakesbakery.com/menu/"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJ24aPl7-F9YgRgm3JuOLHLeI": {
+      "name": "Myth & Legend",
+      "city": "Cumming",
+      "county": "Forsyth",
+      "website": "http://www.mythandlegend.coffee/",
+      "pagesChecked": [
+        "http://www.mythandlegend.coffee/",
+        "http://www.mythandlegend.coffee/pages/locations",
+        "http://www.mythandlegend.coffee/pages/contact",
+        "http://www.mythandlegend.coffee/pages/about-us",
+        "http://www.mythandlegend.coffee/pages/privacy-policy-toast-app"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJT60Ng92e9YgROeU_MJ86dXg": {
+      "name": "HUT BAKERY",
+      "city": "Alpharetta",
+      "county": "Forsyth",
+      "website": "http://hutbakery.com/",
+      "pagesChecked": [
+        "http://hutbakery.com/",
+        "https://hutbakery.com/contact-us/",
+        "https://hutbakery.com/about-us/",
+        "https://hutbakery.com/privacy-policy/",
+        "https://hutbakery.com/shipping-policy/"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJa7N3kMJb9IgRdqUuMoGc8cA": {
+      "name": "Sweet Tooth Creations,LLC",
+      "city": "McDonough",
+      "county": "Henry",
+      "website": "http://www.sweettoothcreationsllc.com/",
+      "pagesChecked": [
+        "http://www.sweettoothcreationsllc.com/",
+        "https://www.sweettoothcreationsllc.com/view-menu-place-an-order",
+        "https://www.sweettoothcreationsllc.com/view-menu-place-an-order/dish/c93fe3a6-a19a-4324-aec0-4a933403ffd4",
+        "https://www.sweettoothcreationsllc.com/contact-8",
+        "https://www.sweettoothcreationsllc.com/online-ordering",
+        "https://www.sweettoothcreationsllc.com/policy",
+        "https://www.sweettoothcreationsllc.com/privacypolicy"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJ4Z83x09b9IgRtLE_C5mQ7Z4": {
+      "name": "Magnolia Tea Room",
+      "city": "McDonough",
+      "county": "Henry",
+      "website": "https://www.magnoliatearm.com/",
+      "pagesChecked": [
+        "https://www.magnoliatearm.com/",
+        "https://www.magnoliatearm.com/private-events-page",
+        "https://www.magnoliatearm.com/contact-page",
+        "https://www.magnoliatearm.com/menus",
+        "https://www.magnoliatearm.com/about",
+        "https://www.magnoliatearm.com/faqs",
+        "https://www.magnoliatearm.com/events"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJy5K7dLFX9IgRV0WfnysbX4Q": {
+      "name": "Sweet Stacey's",
+      "city": "McDonough",
+      "county": "Henry",
+      "website": "http://www.sweetstaceys.com/",
+      "pagesChecked": [
+        "http://www.sweetstaceys.com/",
+        "https://www.sweetstaceys.com/contact-me",
+        "https://www.sweetstaceys.com/about-me"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJG0T9hTtV9IgRDm2b6ftktms": {
+      "name": "Mojo Coffee Company",
+      "city": "Ellenwood",
+      "county": "Henry",
+      "website": "https://mojo-coffee-company.square.site/",
+      "pagesChecked": [
+        "https://mojo-coffee-company.square.site/"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJS9DBQXlZ9IgRtikkrT8A3h8": {
+      "name": "SDK'S Cafe and Coffee",
+      "city": "McDonough",
+      "county": "Henry",
+      "website": "http://www.sdkscafeandcoffee.com/",
+      "pagesChecked": [
+        "http://www.sdkscafeandcoffee.com/"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJ0WKglvT39YgRbqTuE0QYRAM": {
+      "name": "Meadowlark Coffee",
+      "city": "Gainesville",
+      "county": "Hall",
+      "website": "http://meadowlarkcoffee.shop/",
+      "pagesChecked": [
+        "http://meadowlarkcoffee.shop/",
+        "http://meadowlarkcoffee.shop/contact-us",
+        "http://meadowlarkcoffee.shop/contact-us-1",
+        "http://meadowlarkcoffee.shop/mobile-coffee-cart",
+        "http://meadowlarkcoffee.shop/our-story"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJS9p9qoH39YgRogvW9WBJbs4": {
+      "name": "Diletto (Inside Talpa)",
+      "city": "Gainesville",
+      "county": "Hall",
+      "website": "https://order.toasttab.com/online/diletto-bakery-2-talpa-2277-browns-bridge-road",
+      "pagesChecked": [
+        "https://order.toasttab.com/online/diletto-bakery-2-talpa-2277-browns-bridge-road"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJo_k2yTP39YgRIvJyQc0syDg": {
+      "name": "Farmhouse Coffee®️",
+      "city": "Gainesville",
+      "county": "Hall",
+      "website": "https://order.farmhouse.coffee/order?fulfillmentType=PICKUP",
+      "pagesChecked": [
+        "https://order.farmhouse.coffee/order?fulfillmentType=PICKUP",
+        "https://order.farmhouse.coffee/privacy-policy"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJA9xBcwhZX4gRjlMMLJY3cEU": {
+      "name": "Truelove Celebrations",
+      "city": "Gainesville",
+      "county": "Hall",
+      "website": "https://www.facebook.com/Truelove-Celebrations-Peggy-Truelove-1637737796520962/",
+      "pagesChecked": [
+        "https://www.facebook.com/Truelove-Celebrations-Peggy-Truelove-1637737796520962/"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJiSfjtMGUDEkR1BEMPg1wCio": {
+      "name": "Artful Cakery by Julie",
+      "city": "Flowery Branch",
+      "county": "Hall",
+      "website": "http://www.artfulcakery.com/",
+      "pagesChecked": [
+        "http://www.artfulcakery.com/",
+        "http://www.artfulcakery.com/groom-cakes",
+        "https://www.artfulcakery.com/wedding-bride-and-groom-cakes",
+        "http://www.artfulcakery.com/menu",
+        "http://www.artfulcakery.com/about",
+        "http://www.artfulcakery.com/faqs",
+        "http://www.artfulcakery.com/sms-privacy-policy"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJ7699PCPo9IgROzTSx1FCAto": {
+      "name": "Circa Coffee",
+      "city": "Tyrone",
+      "county": "Fayette",
+      "website": "http://www.instagram.com/circa.coffee.tyrone",
+      "pagesChecked": [
+        "http://www.instagram.com/circa.coffee.tyrone"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJ3VuDFW3v9IgRw9UrJfRhh_k": {
+      "name": "Woodstone Bakery and Cafe",
+      "city": "Fayetteville",
+      "county": "Fayette",
+      "website": "http://www.woodstonebakerycafe.com/",
+      "pagesChecked": [
+        "http://www.woodstonebakerycafe.com/"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJ_0jxzZLB9IgRT3b312Hjtvk": {
+      "name": "Heirloom Donuts",
+      "city": "Peachtree City",
+      "county": "Fayette",
+      "website": "https://heirloom-donuts.com/locations/peachtree-city-ga/",
+      "pagesChecked": [
+        "https://heirloom-donuts.com/locations/peachtree-city-ga/",
+        "https://heirloom-donuts.com/locations/lagrange-ga/",
+        "https://heirloom-donuts.com/locations/santarosabeach-fl-30a-fl-sowal-fl/",
+        "https://heirloom-donuts.com/contact-us/",
+        "https://heirloom-donuts.com/coffee-peachtree-city-ga/",
+        "https://heirloom-donuts.com/about-us/",
+        "https://heirloom-donuts.com/bakery-peachtree-city-ga/"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJyTvulbrB9IgRtiBagu9zxgY": {
+      "name": "Foxtail Coffee Co.",
+      "city": "Newnan",
+      "county": "Coweta",
+      "website": "https://www.foxtailcoffee.com/locations/foxtail-coffee-newnan",
+      "pagesChecked": [
+        "https://www.foxtailcoffee.com/locations/foxtail-coffee-newnan",
+        "https://www.foxtailcoffee.com/locations",
+        "https://shop.foxtailcoffee.com/collections/coffee",
+        "https://shop.foxtailcoffee.com/collections/coffee-gear",
+        "https://www.foxtailcoffee.com/our-story",
+        "https://www.foxtailcoffee.com/privacy-policy"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJ8V8nI1m59IgRJj-NnE4HiHo": {
+      "name": "Honey in the Rock Coffeehouse",
+      "city": "Moreland",
+      "county": "Coweta",
+      "website": "http://www.honeyintherockcoffeehouse.com/",
+      "pagesChecked": [
+        "http://www.honeyintherockcoffeehouse.com/"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJecm2LGbB9IgRfnNbtzoTfZY": {
+      "name": "Peach Cobbler Factory Newnan/Sharpsburg",
+      "city": "Sharpsburg",
+      "county": "Coweta",
+      "website": "https://peachcobblerfactory.com/",
+      "pagesChecked": [
+        "https://peachcobblerfactory.com/",
+        "https://peachcobblerfactory.com/the-peach-cobbler-factory-locations/",
+        "https://peachcobblerfactory.com/contact-the-peach-cobbler-factory/",
+        "https://peachcobblerfactory.com/menu-item/caramel-apple-cobbler/",
+        "https://peachcobblerfactory.com/food-category/cobblers/",
+        "https://peachcobblerfactory.com/food-category/banana-pudding/",
+        "https://peachcobblerfactory.com/food-category/cheesecake-in-a-cup/"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJuX-RSRgn9YgRn4SaMm8rLJs": {
+      "name": "Kuumba Coffee",
+      "city": "Douglasville",
+      "county": "Douglas",
+      "website": "https://kuumbacoffee.com/",
+      "pagesChecked": [
+        "https://kuumbacoffee.com/",
+        "https://kuumbacoffee.com/contact-us",
+        "https://kuumbacoffee.com/menu",
+        "https://kuumbacoffee.com/m/bookings"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJ136E68sn9YgRlEypqzMPnnE": {
+      "name": "Douglas Donuts",
+      "city": "Douglasville",
+      "county": "Douglas",
+      "website": "https://www.facebook.com/Douglas-donuts-1933226236929520/",
+      "pagesChecked": [
+        "https://www.facebook.com/Douglas-donuts-1933226236929520/"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJ7dqsBaYg9YgRt5YNwZZX3jg": {
+      "name": "Cindyrella Cakes & Cake Supply Shop",
+      "city": "Lithia Springs",
+      "county": "Douglas",
+      "website": "http://www.cindyrellacakes.com/",
+      "pagesChecked": [
+        "http://www.cindyrellacakes.com/",
+        "https://www.cindyrellacakes.com/contact",
+        "https://www.cindyrellacakes.com/bakerysupplies",
+        "https://www.cindyrellacakes.com/bakery",
+        "https://www.cindyrellacakes.com/online-ordering",
+        "https://www.cindyrellacakes.com/bakery?Category=In+Store+Daily",
+        "https://www.cindyrellacakes.com/bakery?Category=Shipping+"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJXTC4UQH39IgRsTnS0z1VraM": {
+      "name": "Lovejoy Donuts",
+      "city": "Jonesboro",
+      "county": "Clayton",
+      "website": "https://www.facebook.com/share/177Jd1XY5E/?mibextid=wwXIfr",
+      "pagesChecked": [
+        "https://www.facebook.com/share/177Jd1XY5E/?mibextid=wwXIfr"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJF1PZvNTj9IgR0g4xrHe0T4E": {
+      "name": "Goldberg’s",
+      "city": "Atlanta",
+      "county": "Clayton",
+      "website": "https://www.goldbergbagel.com/stores/hartsfield-jackson-atlanta-airport-2/",
+      "pagesChecked": [
+        "https://www.goldbergbagel.com/stores/hartsfield-jackson-atlanta-airport-2/"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    },
+    "ChIJoVamYDz99IgRD1PqwKbB_wA": {
+      "name": "Roast Coffee",
+      "city": "Atlanta",
+      "county": "Clayton",
+      "website": "https://www.cintl.com/",
+      "pagesChecked": [
+        "https://www.cintl.com/",
+        "https://www.cintl.com/locations-and-brands/chef-spotlight",
+        "https://www.cintl.com/locations-and-brands/locations",
+        "https://www.cintl.com/locations-and-brands/locations/4",
+        "https://www.cintl.com/locations-and-brands/locations/2",
+        "https://www.cintl.com/locations-and-brands/locations/7",
+        "https://www.cintl.com/locations-and-brands/locations/16"
+      ],
+      "checkedDate": "2026-09-22",
+      "facts": {
+        "laptopPolicy": {
+          "status": "unknown"
+        },
+        "wifi": {
+          "status": "unknown"
+        },
+        "outlets": {
+          "status": "unknown"
+        },
+        "seating": {
+          "status": "unknown"
+        },
+        "meetingRoom": {
+          "status": "unknown"
+        },
+        "roaster": {
+          "status": "unknown"
+        },
+        "menuHighlights": [],
+        "hoursMention": null
+      }
+    }
+  }
+}
