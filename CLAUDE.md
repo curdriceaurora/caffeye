@@ -4,7 +4,7 @@ Operating notes for Claude when working on this project. Companion to `PRODUCT.m
 
 ## What this project is
 
-A single static HTML file (`index.html`) that maps every coffee shop, bakery, and tea house in Duluth, GA. Hosted on Cloudflare Workers static assets at <https://duluth-coffee-shoppes.sra-e69.workers.dev>. No build step, no backend, no framework. Leaflet + MarkerCluster loaded from CDN.
+A single static HTML file (`index.html`) that maps coffee shops, bakeries, and tea houses across Metro Atlanta. Hosted on Cloudflare Workers static assets at <https://duluth-coffee-shoppes.sra-e69.workers.dev>. No build step, no backend, no framework. Leaflet + MarkerCluster loaded from CDN.
 
 For product principles and design rationale, read `PRODUCT.md` first.
 
@@ -62,14 +62,14 @@ The schema:
 ```jsonc
 {
   "version": 5,
-  "regionLabel": "Duluth",       // shown when no single city is active
-  "checkedMonth": "May 2026",
+  "regionLabel": "Duluth",       // fallback label when regional data is unavailable
+  "checkedMonth": "September 2026",
   "cities": ["Duluth"],          // list grows as new cities are added
   "shops": [
     {
       "name": "...",
       "city": "Duluth",
-      "county": "Fulton",        // optional; omit for single-region data. Drives the County chip row.
+      "county": "Fulton",        // geographic tag; never infer county solely from postal city.
       "model": "independent|franchise", // independent local spot or franchise/chain location
       "addrKey": "duluth-2180-pleasanthill",  // city-prefixed to prevent cross-city collisions
       "address": "...",          // full text address
@@ -95,14 +95,14 @@ The schema:
 
 1. Append a shop object to `shops`. Include `city`, the new compound `addrKey`, and the inline `cw` / `late?` / `website` blocks. No more separate CWS / LATE / WEBSITES tables — that pattern collided when the same brand opened in two cities.
 2. If it's a new building, add a `"{city}-{num}-{streetslug}": {lat, lng}` entry to `addr` and a matching `neighborhoods` entry. Coords **must** come from an authoritative geocoder (Apple Maps via `CLGeocoder` is the standard — see `outputs/apple_geocode.swift` in scratch). Do not approximate. A wrong coord that lands a shop in a residential subdivision was the bug that triggered the geocoding QA pass.
-3. Bump nothing else — the header freshness count is computed at runtime from `SHOPS.length` scoped to the active city.
-4. If you're adding the first shop in a new city, append the city to `cities`. Once `cities.length > 1`, the City chip row appears automatically. Same for `county` — the County chip row appears once more than one distinct `county` value exists across `shops`, and shares a filter-bar row with City (not a separate one) so it doesn't cost mobile an extra line.
+3. Counts and metadata derive from accepted runtime records and franchise inclusion. Update `checkedMonth` only after verifying that source; never borrow the other source's date.
+4. Keep each venue's city and county accurate. Location chip rows are intentionally absent; users navigate by map or search.
 
-**Multi-county expansion (in progress, `feat/north-atlanta-expansion`):** `public/shops.json` on this branch is the real, unmodified 61-shop Duluth data — byte-identical to `main`. It is NOT the 244-shop (now 198-shop) placeholder fixture; that only ever lives at `scratch/shops-multicounty-test.json` (gitignored), generated on demand by `scripts/bootstrap_multicount.py` and never written to `public/`. To try it locally: `cp scratch/shops-multicounty-test.json public/shops.json`, and revert before committing anything — never let that copy reach a commit.
+**Metro Atlanta expansion:** The September 2026 dataset loads 1,705 venues: 61 curated seed records plus 1,644 regional records admitted from the 1,688-record `public/places.json` after deduplication. Default discovery shows 970 independents; 735 franchises are available via the header toggle. Fallback is 61 seed venues, including 41 independents and 20 franchises. See `TESTS.md` for a reproducible loaded-data summary and dated baselines.
 
-Most of real Duluth is in Gwinnett County, but not all of it: 3 of the 61 shops have Johns Creek addresses and are actually in Fulton (Georgia postal cities and county lines don't reliably align — a `city` of "Duluth" doesn't imply `county: "Gwinnett"`). `scripts/refresh_ratings.py --county <fulton|dekalb|forsyth|gwinnett|cobb|cherokee|hall|dawson|clayton|henry|fayette|coweta|douglas|rockdale>` filters an *existing* `shops` array to audit/refresh one county at a time (it does not discover new shops); a shop's own `county` tag wins if present, otherwise its coordinates are tested against that county's real boundary polygon in `scripts/county_boundaries.geojson` (fetched from OpenStreetMap, not hand-drawn — a simple rectangle cannot represent Fulton, which is long, irregular, and extends much further east at its northern tip near Johns Creek than near Atlanta). Real per-county curated data should eventually replace today's single-region file.
+The seed spans Gwinnett (58 venues) and Fulton (3), despite its Duluth label. Postal city does not determine county. `scripts/refresh_ratings.py --county <county>` audits existing curated records; `scripts/discover_places.py` handles regional discovery. County tags take precedence over coordinate boundary lookup.
 
-At real multi-county scale (~1,500–2,000 shops), revisit `shops.json`'s minification (numeric category/neighborhood keys, abbreviated addresses) — the 100 KB budget below is for `index.html` only, but `shops.json` compounds with shop count and should stay gzip-friendly.
+`scripts/bootstrap_multicount.py` is a legacy synthetic-fixture helper, not the production expansion workflow. Keep its outputs in gitignored scratch space and never publish them to `public/`.
 
 ### Discovered shops — `public/places.json`
 
@@ -133,6 +133,7 @@ To audit, apply, or research curations:
 
 ```sh
 python3 scripts/curate_places.py --audit              # audits coworking & meeting room coverage across counties
+python3 scripts/curate_places.py --research-queue     # top 10 independent venues missing amenities, ranked like the site
 python3 scripts/curate_places.py --apply              # merges scripts/curations.json into public/places.json
 python3 scripts/curate_places.py --research <url>     # inspects a shop website for meeting room & Wi-Fi signals
 python3 -m unittest scripts/test_curate_places.py    # runs curation engine unit tests
@@ -152,10 +153,10 @@ After editing, verify with these console snippets (also available in `TESTS.md` 
 ```js
 SHOPS.length;
 SHOPS.filter(s => !s.lat || !s.lng);                       // must be []
-SHOPS.filter(s => !s.cw);                                  // must be []
+SHOPS.filter(s => s.curated && !s.cw);                                  // must be []
 SHOPS.filter(s => !CATS[s.category]);                      // must be []
 SHOPS.filter(s => !s.addrKey || !ADDR[s.addrKey]);         // must be []
-SHOPS.filter(s => !s.addrKey.startsWith(s.city.toLowerCase() + '-'));  // must be []
+SHOPS.filter(s => !s.curated && !s.addrKey.startsWith('place-')); // must be []
 ```
 
 ### Brand Identity & Design System (`brand/caffeye-v1/` & `public/brand/`)
@@ -195,14 +196,14 @@ These are decisions, not accidents — don't undo them without reading the linke
 | **Viewport-filtered list.** The right-side list only shows shops whose pins lie in the current map viewport. | Show what the user can see. | §3 |
 | **Same-coord shops are radially nudged** ~20 m via `spreadCoincidentShops()`. | Pins must not stack. | §7 |
 | **16-angle label placer.** Labels prefer cardinal angles, fall back through diagonals + in-betweens; obstacles are other labels, all pins, all `.coffee-cluster` bubbles. Higher-weighted shops claim space first. | Labels must never lie. | §7 |
-| **Label threshold is `LABEL_MIN_ZOOM = 13`** (the default fit-bounds zoom), so labels show on first paint. | — | — |
+| **Label threshold is `LABEL_MIN_ZOOM = 13`**; the regional overview starts farther out, so labels appear after zooming in. | — | — |
 | **Bayesian weighted rating** formula `WR = (v/(v+m))·R + (m/(v+m))·C` — `C` = mean rating, `m` = median review count, both computed at load. | Trustworthy ranking. | §2 |
 | **County filter row removed** (`#locationRow` removed). Type and Useful For rows provide clean categorization while matching the top-right franchise toggle state; preserves 5 visible cards on mobile at 375px. | Density on phones & simplified regional navigation. | §4 |
-| **List pagination bounds the *default* render at 200 items** (`LIST_PAGE_SIZE`), not an absolute ceiling — clicking "Load more" repeatedly grows `state.listLimit` and re-renders the whole list each time, so the DOM does grow past 200 if a user pages through everything. Any filter/search/viewport change resets the window back to 200. Below 200 matches — every single-region dataset today — this is a no-op. A true hard cap would need list virtualization (windowed/spacer rendering with recycled DOM nodes), deliberately not implemented here — it needs fixed-row-height CSS and risks breaking the assumption elsewhere that every filtered `.shop-item` is in the DOM. | Bound the common case cheaply; don't take on virtualization's complexity until real usage shows it's needed. | §9 |
-| **`placeLabels()`'s 300-simultaneously-visible-pin safety cap** hides labels above that count rather than running its O(items × angles × obstacles) collision pass — untested against real data today (clustering keeps counts well below 300 in practice, including on the 244-shop test fixture), verify the 300/301 boundary directly per TESTS.md T3.x before relying on it. | Guard the pathological case instead of claiming it's exercised by ordinary use. | §7 |
-| **Mobile: map fixed at 220 px**, panel takes the rest, footer hidden. | Density on phones — iPhone 14 Pro target = 5 cards visible on single-region data; 4 when the County/City row is also shown (see R8.5) — that row costs ~48 px, deliberately not clawed back from card spacing shared with the 5-card baseline. | §4 |
+| **List pagination bounds the *default* render at 200 items** (`LIST_PAGE_SIZE`), not an absolute ceiling — clicking "Load more" repeatedly grows `state.listLimit` and re-renders the whole list each time, so the DOM does grow past 200 if a user pages through everything. New filter/search changes reset the window to 200; viewport changes and return from detail preserve it. Below 200 matches — every single-region dataset today — this is a no-op. A true hard cap would need list virtualization (windowed/spacer rendering with recycled DOM nodes), deliberately not implemented here — it needs fixed-row-height CSS and risks breaking the assumption elsewhere that every filtered `.shop-item` is in the DOM. | Bound the common case cheaply; don't take on virtualization's complexity until real usage shows it's needed. | §9 |
+| **`placeLabels()`'s 300-simultaneously-visible-pin safety cap** hides labels above that count rather than running its O(items × angles × obstacles) collision pass — clustering usually keeps counts below 300 in regional browsing, verify the 300/301 boundary directly per TESTS.md T3.x before relying on it. | Guard the pathological case instead of claiming it's exercised by ordinary use. | §7 |
+| **Mobile: map uses `clamp(130px, 22vh, 185px)`**, 125 px on short screens; panel takes the rest, footer hidden. | Target 5 fully visible cards at 375×750 and 3 at 320×568. Location rows are omitted. | §4 |
 | **"Until midnight"** is the label for the midnight tier — not "Past midnight" (most close at 12am sharp). | Truth in labeling. | — |
-| **Map bounded to Greater Atlanta (`ATL_BOUNDS`: `[33.25, -85.00]` to `[34.75, -83.30]`)** with `minZoom: 8`, `maxZoom: 19`, and `maxBoundsViscosity: 1.0`. `L.tileLayer` specifies `bounds: ATL_BOUNDS` to prevent fetching or rendering tiles outside the region. `minZoom: 8` ensures mobile's 220px map can display the entire multi-county spread without markers being clipped on initial `fitBounds`. | Prevent stray panning, eliminate unnecessary tile bandwidth, ensure mobile full-extent display. | §3, §4 |
+| **Map bounded to Greater Atlanta (`ATL_BOUNDS`: `[33.15, -85.05]` to `[34.75, -83.30]`)** with `minZoom: 7`, `maxZoom: 19`, and `maxBoundsViscosity: 1.0`. `L.tileLayer` specifies `bounds: ATL_BOUNDS` to prevent fetching or rendering tiles outside the region. `minZoom: 7` ensures the mobile map can display the entire multi-county spread without markers being clipped on initial `fitBounds`. | Prevent stray panning, eliminate unnecessary tile bandwidth, ensure mobile full-extent display. | §3, §4 |
 
 ## Working with the user (Rahul)
 

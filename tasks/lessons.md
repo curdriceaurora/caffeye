@@ -17,3 +17,7 @@ Patterns from user corrections. Review at session start.
 
 ## Geocoding
 - `mcp__Control_your_Mac__osascript` + `do shell script "swift ..."` fails silently for CLGeocoder scripts. Run `swift <file>.swift` via the Bash tool instead (script lives in the session scratchpad as `apple_geocode.swift`). Nominatim is an acceptable cross-check but Apple Maps is the reference geocoder for this project.
+
+## Local map tiles and referrer restrictions
+- **User clarification (2026-09):** Local “API key required” basemap tiles are caused by the key’s referrer restriction. The deployed website uses the correct referrer and renders correctly.
+- **Rule:** Treat this known localhost behavior as a preview limitation. Do not classify it as a production defect or propose changing the key restrictions based solely on local screenshots.

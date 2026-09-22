@@ -1,14 +1,16 @@
 # caffeye
 
-A one-page, single-tap map of every coffee shop, bakery, and tea house in **Duluth, GA** — built so a local can decide where to go in under thirty seconds.
+A one-page, single-tap map of coffee shops, bakeries, and tea houses across **Metro Atlanta** — built so a local can decide where to go in under thirty seconds.
 
 🌐 **Live:** <https://duluth-coffee-shoppes.sra-e69.workers.dev>
 
-![pin labels avoiding overlap](https://img.shields.io/badge/shops-59-6f4e37) ![category count](https://img.shields.io/badge/categories-6-b89464) ![host](https://img.shields.io/badge/hosted%20on-Cloudflare%20Workers-orange)
+![category count](https://img.shields.io/badge/categories-6-b89464) ![host](https://img.shields.io/badge/hosted%20on-Cloudflare%20Workers-orange)
 
 ## What it is
 
-A static HTML file. No build step, no backend. Loads Leaflet + MarkerCluster from CDN, renders 59 curated shops with category-colored emoji pins, and lets you filter by category, work-friendly, meeting room, open-late, or open-until-midnight. The right-side list mirrors what's in the current map viewport, sorted by Bayesian weighted rating (IMDB Top 250 formula).
+A static HTML file. No build step, no backend. Uses Leaflet + MarkerCluster from CDN to map a curated Duluth seed plus discovered regional venues (1,705 after deduplication in the September 2026 snapshot) with category-colored emoji pins, and lets you filter by category, work-friendly, meeting room, open-late, or open-until-midnight. The right-side list mirrors what's in the current map viewport, sorted by Bayesian weighted rating (IMDB Top 250 formula).
+
+The default view shows 970 independent venues; enable **Include franchise stores** for all 1,705 across 14 counties. Counts, region labels, and verification months come from the loaded JSON. The 61-venue seed remains available if regional loading fails (41 independent venues by default). These counts are a dated snapshot; use the data-summary snippet in [TESTS.md](TESTS.md) after a refresh.
 
 For the product principles and design decisions, see **[PRODUCT.md](PRODUCT.md)**.
 For the spec, see **[REQUIREMENTS.md](REQUIREMENTS.md)**.
@@ -22,11 +24,13 @@ python3 -m http.server 8765
 # open http://127.0.0.1:8765
 ```
 
-You can also just `open public/index.html` directly — the file is fully self-contained except for CDN assets.
+Use HTTP rather than opening the file directly: the page fetches `shops.json` and `places.json`.
+
+Run regression checks from the repository root with `npm ci`, `npx playwright install chromium`, and `npm test`.
 
 ## Deploy
 
-Hosted on Cloudflare Workers static assets. **Pushing to `main` auto-deploys** via Cloudflare's Git integration — `wrangler.jsonc` points `assets.directory` at `./public/`, which contains only `index.html`, so nothing else in the repo ever ends up publicly served.
+Hosted on Cloudflare Workers static assets. **Pushing to `main` auto-deploys** via Cloudflare's Git integration — `wrangler.jsonc` points `assets.directory` at `./public/`, which publishes the app shell, JSON datasets, manifest, and brand assets. Scripts and repository documentation stay outside the published directory.
 
 To deploy manually (e.g. for a hotfix while bypassing Git):
 
@@ -38,20 +42,27 @@ wrangler deploy
 
 ## Add a new shop
 
-1. In `index.html`, append a new entry to `SHOPS` with `lat: 0, lng: 0` placeholders.
-2. If it's a new address, add a `"{num}-{street}"` key to `ADDR` with the verified coords, then map it in `SHOP_ADDR`. Add to `NEIGHBORHOODS`.
-3. Add the shop's name as a key in `CWS`, `WEBSITES`, and (if applicable) `LATE`.
-4. Update the freshness count in the header and the `resultsCount` placeholder.
-5. Verify locally — `js> SHOPS.length` and `js> Object.keys(CWS).filter(k => !SHOPS.some(s => s.name === k))` should be `[]`.
+1. Add curated venues to `public/shops.json`, with per-venue `cw`, optional `late`, `website`, category, business model, and verified coordinates. Add new building coordinates to `addr` and the matching area to `neighborhoods`.
+2. Maintain regional editorial overlays in `scripts/curations.json`; refresh generated `public/places.json` through `scripts/discover_places.py` and its replay workflow (see [CLAUDE.md](CLAUDE.md)). Do not hand-edit generated regional records.
+3. Update the source's `checkedMonth` only when its data has actually been verified. The page derives visible counts, region, and metadata; no HTML count placeholder needs editing.
+4. Verify the merged data and both franchise-toggle states using [TESTS.md](TESTS.md), including fallback and retry behavior.
 
-Coords should be verified against an authoritative geocoder (e.g. Apple Maps via `CLGeocoder`) — see `PRODUCT.md` §8.
+To prioritize editorial research, run `python3 scripts/curate_places.py --research-queue`. It returns the ten highest-ranked independent venues missing coworking data, with place IDs, addresses, and website/map links. This command makes no network calls or data changes; verify amenities before adding an overlay.
+
+Curated coordinates use an authoritative geocoder (Apple Maps via `CLGeocoder`); discovered coordinates come from Google Places. See `PRODUCT.md` §8.
 
 ## Project structure
 
 ```
 caffeye/
 ├── public/
-│   └── index.html    # the entire app (~91 KB) — only file Cloudflare publishes
+│   ├── index.html    # app shell; fetches both datasets
+│   ├── shops.json    # curated Duluth seed and fallback
+│   ├── places.json   # generated regional discovery data
+│   ├── manifest.webmanifest
+│   └── brand/        # logos, icons, social media assets and tokens
+├── scripts/          # discovery, curation, refresh and Python tests
+├── tests/            # Playwright browser regressions
 ├── wrangler.jsonc    # Cloudflare deploy config (assets.directory = ./public)
 ├── README.md         # this file
 ├── PRODUCT.md        # principles + design rationale (single source of truth)

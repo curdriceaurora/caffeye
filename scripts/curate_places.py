@@ -6,6 +6,8 @@ and signature items.
 Usage:
     python3 scripts/curate_places.py --audit
         Prints coverage of coworking tiers and meeting rooms across counties.
+    python3 scripts/curate_places.py --research-queue
+        Lists independent venues missing coworking notes in site ranking order.
     python3 scripts/curate_places.py --apply
         Merges scripts/curations.json into public/places.json.
     python3 scripts/curate_places.py --research <url>
@@ -146,7 +148,8 @@ def classify_specialty(places: list) -> tuple:
     return updated, upgraded
 
 
-def audit(places: list, shops: list = None) -> dict:
+def merge_venues(places: list, shops: list = None) -> list:
+    """Merge the seed and discovery records using the audit deduplication rules."""
     if shops:
         all_venues = list(shops)
         seen_pids = {s["placeId"] for s in shops if s.get("placeId")}
@@ -189,6 +192,43 @@ def audit(places: list, shops: list = None) -> dict:
     else:
         all_venues = list(places)
 
+    return all_venues
+
+
+def research_queue(venues: list, limit: int = 10) -> list:
+    """Read-only priorities, using the site's global Bayesian ranking.
+
+    Missing coworking data is unknown, never evidence of unsuitable amenities.
+    Score the full merged dataset before restricting to independent candidates.
+    """
+    rated = [v["rating"] for v in venues if isinstance(v.get("rating"), (int, float))]
+    mean = sum(rated) / len(rated) if rated else 0
+    counts = sorted(v.get("ratingNum") or 0 for v in venues)
+    median = counts[len(counts) // 2] if counts else 0
+    candidates = []
+    for venue in venues:
+        if venue.get("model") == "franchise" or (venue.get("cw") or {}).get("tier"):
+            continue
+        votes = venue.get("ratingNum") or 0
+        rating = venue.get("rating")
+        if not isinstance(rating, (int, float)):
+            rating = mean
+        score = (votes * rating + median * mean) / (votes + median) if votes + median else mean
+        candidates.append({
+            "placeId": venue.get("placeId"),
+            "name": venue.get("name"),
+            "city": venue.get("city"),
+            "county": venue.get("county"),
+            "address": venue.get("address"),
+            "weightedRating": score,
+            "website": venue.get("website"),
+            "googleUrl": venue.get("googleUrl"),
+        })
+    return sorted(candidates, key=lambda v: v["weightedRating"], reverse=True)[:limit]
+
+
+def audit(places: list, shops: list = None) -> dict:
+    all_venues = merge_venues(places, shops)
     by_county = Counter()
     work_by_county = Counter()
     meeting_by_county = Counter()
@@ -285,6 +325,7 @@ def research_website(url: str, timeout: float = 6.0) -> dict:
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--audit", action="store_true", help="Print coworking, meeting room, and specialty coverage audit")
+    parser.add_argument("--research-queue", action="store_true", help="Print the top 10 independent venues missing coworking data as JSON; no network calls or writes")
     parser.add_argument("--apply", action="store_true", help="Merge curations and classify roasters and specialty in public/places.json")
     parser.add_argument("--classify-specialty", action="store_true", help="Reclassify roasters and specialty venues in public/places.json")
     parser.add_argument("--research", type=str, default="", help="Fetch and analyze URL for signals")
@@ -298,7 +339,7 @@ def main() -> int:
         print(json.dumps(res, indent=2))
         return 0
 
-    if args.audit:
+    if args.audit or args.research_queue:
         places_data = json.loads(PLACES_PATH.read_text())
         shops_data = json.loads(SHOPS_PATH.read_text())
         shops = shops_data.get("shops", [])
@@ -307,6 +348,9 @@ def main() -> int:
             if "lat" not in s and s.get("addrKey") in addr:
                 s["lat"] = addr[s["addrKey"]].get("lat")
                 s["lng"] = addr[s["addrKey"]].get("lng")
+        if args.research_queue:
+            print(json.dumps(research_queue(merge_venues(places_data["places"], shops)), indent=2, ensure_ascii=False))
+            return 0
         res = audit(places_data["places"], shops)
         print("=== CAFFEYE CURATION AUDIT ===")
         print(f"Total Venues: {res['total_venues']}")
