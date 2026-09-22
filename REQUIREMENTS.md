@@ -1,4 +1,4 @@
-# Coffee in Duluth — Requirements
+# Caffeye — Metro Atlanta — Requirements
 
 Functional and non-functional requirements for the current state of the page. Each requirement is numbered for traceability from the test suite. Principles referenced map to `PRODUCT.md`.
 
@@ -6,15 +6,15 @@ Functional and non-functional requirements for the current state of the page. Ea
 
 | ID | Requirement | Principle |
 |---|---|---|
-| R1.1 | The page shows **1,705** shops across 14 Metro Atlanta counties (1,644 discovered regional venues plus the 61-shop curated Duluth baseline seed). | Curation > count |
-| R1.2 | Every shop has: `name`, full street address, lat/lng, category, star rating *or* `null`, review-count string, numeric review count, hours, USP description, 3 "loved" items, signature drink/dish, Google Maps URL, Yelp URL. | — |
-| R1.3 | Every shop has an inline `cw` object with `tier` ∈ {`excellent`, `good`, `limited`} and an optional reservable-meeting-room flag. | — |
+| R1.1 | The September 2026 snapshot loads **1,705** venues across 14 Metro Atlanta counties: 61 curated seed venues plus 1,644 admitted regional venues after deduplicating the 1,688-record `places.json`. Default discovery shows 970 independents; enabling franchises shows all 1,705. Runtime totals derive from accepted records, not a hardcoded target. | Curation > count |
+| R1.2 | Every shop has identity, address, coordinates, category, rating (or `null`), review counts, and a Google Maps link. Curated seed records additionally have hours, USP description, 3 "loved" items, and a signature drink/dish. Regional editorial fields may be empty until verified overlays supply them; do not fabricate recommendations to fill gaps. | — |
+| R1.3 | Coworking data is an optional inline `cw` object with `tier` ∈ {`excellent`, `good`, `limited`} and an optional reservable-meeting-room flag. All curated seed venues have it; regional records without verified editorial data show unknown work suitability. | — |
 | R1.4 | Every shop has a `website` field (URL string or `null`). | — |
 | R1.5 | Shops with late hours (≥ 10 pm) carry an inline `late` object with `tier` ∈ {`10pm+`, `midnight`} and a `when` description. Shops closing earlier omit `late` entirely. | — |
 | R1.6 | Coworking/late/website data is **per-shop**, not keyed by name — two locations of the same brand in different cities can have different coworking notes, hours, and URLs. | Data integrity |
 | R1.7 | Every shop's `category` exists in `CATS`. | Data integrity |
-| R1.8 | All 42 unique building addresses (`ADDR`) are geocoded via Apple Maps with a verified `subThoroughfare` (house-number) match. | Geocode authoritatively |
-| R1.9 | The freshness label in the header reflects the live count and per-source verification months (curated baseline vs regional dataset); a source with an unknown verification date contributes no claim. | — |
+| R1.8 | Curated building addresses (`shops.json.addr`) use Apple Maps geocoding with a verified house-number match; discovered venues use Google Places coordinates. Runtime `ADDR` includes both sources. | Geocode authoritatively |
+| R1.9 | First paint uses a neutral Caffeye brand and loading text, with no asserted count. After load or retry, title, region, and metadata derive from the accepted datasets. Header count follows franchise inclusion; page/social descriptions use the total loaded count. Freshness attributes differing or partially known verification months to their sources; an unknown source date contributes no claim. Static crawler/manifest copy describes Metro Atlanta without embedding counts. | — |
 
 ## R2. Map
 
@@ -29,7 +29,7 @@ Functional and non-functional requirements for the current state of the page. Ea
 | R2.7 | Shops at the same building coords are fanned out in a ~20 m ring so pins don't fully overlap. | Labels must not lie |
 | R2.8 | Tapping a pin selects the shop directly (no preview popup). | One tap to the answer |
 | R2.9 | "Back to list" runs `fitBounds(clusterGroup.getBounds())` to reset the view to all markers. | — |
-| R2.10 | The map zoom is bounded between `minZoom: 8` and `maxZoom: 19`. Viewport panning and tile network requests are strictly bounded to Greater Atlanta via `ATL_BOUNDS` (`[33.25, -85.00]` to `[34.75, -83.30]`) with `maxBoundsViscosity: 1.0`, preventing users from panning away from the coverage area and eliminating unnecessary tile rendering/requests. | Bound performance and avoid stray navigation |
+| R2.10 | The map zoom is bounded between `minZoom: 7` and `maxZoom: 19`. Viewport panning and tile network requests are strictly bounded to Greater Atlanta via `ATL_BOUNDS` (`[33.15, -85.05]` to `[34.75, -83.30]`) with `maxBoundsViscosity: 1.0`, preventing users from panning away from the coverage area and eliminating unnecessary tile rendering/requests. | Bound performance and avoid stray navigation |
 
 ## R3. Pin labels
 
@@ -68,7 +68,7 @@ Functional and non-functional requirements for the current state of the page. Ea
 | R5.2 | Sort is fixed: descending Bayesian weighted rating `WR = (v/(v+m))·R + (m/(v+m))·C`, where `C` is the mean rating across rated shops and `m` is the median review count, computed at page load. | The right default |
 | R5.3 | Shops with no rating use `C` (the global mean) as `R` in the formula. | — |
 | R5.4 | Each list item shows: a small (22 px) category-color circular emoji tile, the shop name, a meta row (category · ◆ score · neighborhood), and up to three compact tags. The ◆ score is the Bayesian weighted rating from R5.2 rounded to 1 decimal — the number the list is ordered by — never Google's raw star. The results bar carries the legend `◆ = weighted score` at every breakpoint (tooltips don't fire on touch). Unrated shops show "no rating". | Playfulness is information; Labels must never lie |
-| R5.5 | Each list item has a left border in the category color. | — |
+| R5.5 | Each list item communicates category through a colored emoji icon tile. | — |
 | R5.6 | The results header shows the live filtered count. When the viewport is the active constraint (list count < global-filter count), the label reads **"X in view"**; otherwise **"X spots"**. | Show what's available |
 | R5.7 | The shop list scrolls vertically inside its panel; the rest of the layout does not scroll. | Density on phones |
 | R5.8 | Empty state copy hints at zooming out or clearing filters. | — |
@@ -82,12 +82,12 @@ Functional and non-functional requirements for the current state of the page. Ea
 |---|---|---|
 | R6.1 | Shown when a shop is selected, replacing the list view via a compositor-only crossfade (list slides left + fades; detail slides in from right + fades). No layout shift. | One tap to the answer |
 | R6.2 | Top section: category + neighborhood, shop name (heading), the ◆ score (large, labelled "score") with Google's raw ★ rating and review count in muted text directly beneath it, USP description. This is the only place Google's raw rating is shown. | Labels must never lie |
-| R6.3 | "Best for" pills auto-derived from CWS / LATE data: 💻 Work, 🤝 Meetings, 🌙 Open late, 🦉 Until midnight. | — |
-| R6.4 | "Known for" pills (the loved-items list) plus a "Try the **{signature}**" line. | — |
+| R6.3 | "Best for" pills auto-derived from per-venue `cw` / `late` data: 💻 Work, 🤝 Meetings, 🌙 Open late, 🦉 Until midnight. | — |
+| R6.4 | “Known for” pills when loved items exist, plus a “Try the **{signature}**” line when a signature exists. | — |
 | R6.5 | Location & hours section with the full street address and weekly hours. | — |
 | R6.6 | Coworking section: tier label ("Coworking-ready" / "Workable" / "Quick-grab") + descriptive note + meeting-room callout if reservable. | — |
 | R6.7 | Late-night section if applicable, with "Open until midnight" or "Open till 10pm+" header. | — |
-| R6.8 | Action row: Google Maps button, Yelp button, and (if a website exists) a Website button labeled by host (Instagram / Facebook / Linktree / Website). URLs are sanitized: only `http:`/`https:` links render a button; anything else renders nothing. | — |
+| R6.8 | Action row: Google Maps button, Yelp button when supplied, and (if a website exists) a Website button labeled by host (Instagram / Facebook / Linktree / Website). URLs are sanitized: only `http:`/`https:` links render a button; anything else renders nothing. | — |
 | R6.9 | "← Back to list" button at the top hides the detail and resets the map. | — |
 | R6.10 | Action URLs are trimmed and scheme-validated (`sanitizeActionUrl`); `javascript:`, `data:`, relative, and malformed URLs never produce a clickable link. | Data integrity |
 | R6.11 | Coworking sections on curated venues carry provenance (verification date + source). Venues without verified amenities show an explicit "Unknown · amenities not yet verified" state instead of omitting the section. | Labels must never lie |
@@ -106,7 +106,7 @@ Functional and non-functional requirements for the current state of the page. Ea
 |---|---|---|
 | R8.1 | Desktop (≥ 821 px wide): map on left flex-grow, 380 px panel on right. | — |
 | R8.2 | Mobile (≤ 820 px): single column. Map height is `clamp(130px, 22vh, 185px)` (125 px on short screens), panel takes remaining vertical space. | Density on phones |
-| R8.3 | On mobile, filter chips compress (padding 2 × 7 px, 11.5 px font); freshness/brand shrink. | — |
+| R8.3 | On mobile, filter chips compress (padding 2 × 7 px, 11.5 px font); brand shrinks and freshness is hidden. At ≤ 380 px, the heading shows the region without the “Coffee in” prefix, stays on one line, and retains the full accessible home label and page title. | — |
 | R8.4 | On mobile, the footer disclaimer is hidden. | — |
 | R8.5 | On mobile, at least 5 list cards are fully visible above the fold at 375×750, and at least 3 at 320×568. Interactive targets keep a ≥ 44 px touch height. | Density on phones |
 
@@ -117,7 +117,7 @@ Functional and non-functional requirements for the current state of the page. Ea
 | R9.1 | The page is a single HTML file ≤ 100 KB. | Operating constraint |
 | R9.2 | No JS errors on initial load, on filter changes, on selection, or on zoom. | — |
 | R9.3 | All Leaflet, MarkerCluster, and Google Fonts assets load via CDN with SRI hashes where applicable. | — |
-| R9.4 | Renders correctly with no build step — open the `.html` file directly in a browser and it works. | Operating constraint |
+| R9.4 | Renders with no build step when served over HTTP; JSON fetches require a local server or the deployed site. | Operating constraint |
 | R9.5 | All transitions and animations use compositor-only properties (`opacity`, `transform`). `will-change: transform` on `.pin` and `.pin-label`; `will-change: opacity, transform` on `.list-view` and `.detail-view`. `.panel` carries `contain: layout style` to scope reflow. Target 60 fps with no Layout or Paint during list↔detail transitions. | — |
 | R9.6 | If the regional dataset (`places.json`) fails to load or times out, the page boots the curated baseline and shows a degraded-coverage banner with the live baseline count and an in-place retry action — never a silent fallback. | Show what's available |
 

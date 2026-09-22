@@ -47,3 +47,24 @@ test.describe('responsive layout', () => {
     expect(slop).toBeGreaterThanOrEqual(44);
   });
 });
+
+test('compact header preserves region and full accessible title', async ({ page }) => {
+  await gotoHome(page);
+  const width = page.viewportSize().width;
+  const prefix = page.locator('.brand-prefix');
+  if (width <= 380) {
+    await expect(prefix).toBeHidden();
+    expect(await page.locator('.brand').innerText()).toBe('Metro Atlanta');
+    const size = await page.locator('.brand').evaluate(el => ({
+      height: el.getBoundingClientRect().height,
+      lineHeight: parseFloat(getComputedStyle(el).lineHeight),
+      overflow: el.scrollWidth > el.clientWidth,
+    }));
+    expect(size.height).toBeLessThanOrEqual(size.lineHeight + 1);
+    expect(size.overflow).toBe(false);
+  } else {
+    await expect(prefix).toBeVisible();
+  }
+  await expect(page).toHaveTitle('Coffee in Metro Atlanta');
+  await expect(page.locator('#brandHomeBtn')).toHaveAccessibleName('Caffeye — Coffee in Metro Atlanta — Reset filters');
+});

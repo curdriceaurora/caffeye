@@ -1,7 +1,7 @@
 {
   "name": "Caffeye",
   "short_name": "Caffeye",
-  "description": "A local with an eye for good spots. Coffee, bakeries & tea in North Atlanta.",
+  "description": "A local with an eye for good spots. Coffee, bakeries & tea in Metro Atlanta.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#F4F3ED",

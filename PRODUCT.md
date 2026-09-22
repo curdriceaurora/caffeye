@@ -2,11 +2,11 @@
 
 ## Purpose
 
-A curated, opinionated map of every café, bakery, and tea house in the Duluth, GA area. Ranked by Bayesian-weighted rating so the best answer is always on top. Exists because generic platforms make you work too hard to find a genuinely good local spot. Success looks like: user opens it, sees the answer in under 10 seconds, puts the phone away and goes.
+A curated, opinionated map of cafés, bakeries, and tea houses across Metro Atlanta. Ranked by Bayesian-weighted rating so the best answer is always on top. Exists because generic platforms make you work too hard to find a genuinely good local spot. Success looks like: user opens it, sees the answer in under 10 seconds, puts the phone away and goes.
 
 ## Users
 
-Duluth, GA locals and regulars who already know the coffee scene. Primary job: quick lookup on a specific need ("open late tonight?", "good wifi for a call?", "which boba spot is actually worth it?"). Session length is 30 seconds to 2 minutes. They trust the data because they've been here before and it was right.
+Metro Atlanta locals and regulars who already know the coffee scene. Primary job: quick lookup on a specific need ("open late tonight?", "good wifi for a call?", "which boba spot is actually worth it?"). Session length is 30 seconds to 2 minutes. They trust the data because they've been here before and it was right.
 
 They know the city loosely, not exhaustively. They want to compare options visually, not scroll a thousand reviews. They don't want to install an app.
 
@@ -40,21 +40,21 @@ Sorting controls force the user to decide what they want before they know what's
 
 ### §3. Show what the user can see
 
-If the map is zoomed into Pleasant Hill, the right-side list should not still be showing every shop in Duluth. The view *is* a filter — using it to filter the list keeps the two panels coherent. But a list that silently changes count without explanation breaks that coherence — the user sees the number drop and doesn't know why.
+If the map is zoomed into Pleasant Hill, the right-side list should not still be showing every shop across Metro Atlanta. The view *is* a filter — using it to filter the list keeps the two panels coherent. But a list that silently changes count without explanation breaks that coherence — the user sees the number drop and doesn't know why.
 
 → The list shows only shops whose pins are inside the current viewport. When the viewport is the active constraint, the header reads **"X in view"** instead of **"X spots"**. List items stagger in on each refresh (28 ms per row, capped at 140 ms) so the update reads as a deliberate response to the map. The count pops to accent color when it changes.
 
 ### §4. Local first, not tourist-first
 
-The user already knows Duluth exists. Don't explain it to them. No hero banners, no taglines, no introductory copy. The core session is 30 seconds — every layer of UI is a tax on that.
+The user already knows their area. Don't explain it to them. No hero banners, no taglines, no introductory copy. The core session is 30 seconds — every layer of UI is a tax on that.
 
-→ No onboarding, no splash, no "Welcome to caffeye" copy. The page opens directly to the map with all shops visible.
+→ No onboarding, no splash, no "Welcome to caffeye" copy. The page opens directly to the map with all independent venues in scope; a header toggle adds franchises and chains.
 
 ### §5. Density matters on phones
 
 Mobile users want to see as many options as the map allows. Every pixel of chrome competes with a list row. Cap the map, compress the chips, trim the padding, hide the disclaimer footer — give the list real estate.
 
-→ Map fixed at 220 px on mobile; chips compressed to 11.5 px font with tight padding; footer hidden below 820 px. About 5 cards visible on an iPhone 14 Pro instead of 2.
+→ Map uses `clamp(130px, 22vh, 185px)` on mobile (125 px on short screens); chips compressed to 11.5 px font with tight padding; footer hidden below 820 px. About 5 cards visible on an iPhone 14 Pro instead of 2.
 
 ### §6. Playfulness is information
 
@@ -72,7 +72,7 @@ If two shop names overlap on the map, the map is lying about which name belongs 
 
 A pin in a residential subdivision when the shop is actually in a strip mall undermines the whole map. We don't approximate coordinates — we geocode every address against the source that maps the country, then verify the house number matches.
 
-→ All unique buildings geocoded via macOS `CLGeocoder` (Apple Maps data); a result is only accepted when its `subThoroughfare` matches the expected house number.
+→ Curated seed buildings are geocoded via macOS `CLGeocoder` (Apple Maps data), with a matching `subThoroughfare`. Regional discovery uses Google Places coordinates. Keep the source distinction explicit; do not claim Apple verification for discovered venues.
 
 ### §9. Motion communicates cause
 
@@ -84,13 +84,13 @@ When the UI changes in response to user action, the animation should make the ca
 
 - **Static, single HTML file.** No build step. No backend. Deploys via Cloudflare Workers static assets. Anyone can grok the whole codebase in a sitting.
 - **CDN-loaded libraries only.** Leaflet, MarkerCluster, Inter, Fraunces. No npm install needed to edit.
-- **Manual curation.** The shop list is hand-curated. Adding a shop is a code edit, deliberately — because the value is in the curation, not the count.
+- **Discovery with editorial curation.** A hand-curated Duluth seed is merged with generated Metro Atlanta discovery data. Verified overlays supply regional work-friendly and meeting-room notes. Discovery does not imply every venue has been editorially reviewed.
 
 ## What this is not
 
 - **Not a booking app.** Each card links out to Google Maps, Yelp, and the shop's own site. We don't try to own the next click.
 - **Not a review aggregator.** We show the star rating and review count as inputs to our ranking, not as the destination.
-- **Not a generic POI app.** Scope is intentionally narrow: coffee, tea, bakeries, and dessert cafés in one suburb. Narrow scope is what makes the curation valuable.
+- **Not a generic POI app.** Scope is intentionally narrow: coffee, tea, bakeries, and dessert cafés across the Metro Atlanta region. Narrow scope is what makes the curation valuable.
 
 ## Accessibility & Inclusion
 
@@ -106,4 +106,4 @@ A first-time visitor on a phone should:
 4. Use the "Work-friendly" chip to filter to the shops with desks they can actually work at.
 5. Trust that the pin is on the right block.
 
-The day a Duluth resident texts the link to a friend without explaining what it is, we won.
+The day a Metro Atlanta resident texts the link to a friend without explaining what it is, we won.

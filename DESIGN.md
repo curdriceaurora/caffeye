@@ -4,7 +4,7 @@ Design system spec for AI agents generating UI for the **caffeye** project. Ever
 
 ## What this product is
 
-**caffeye** — *"A one-page, single-tap map of every coffee shop, bakery, and tea house in Duluth, GA — built so a local can decide where to go in under thirty seconds."* (`README.md`)
+**caffeye** — *"A one-page, single-tap map of coffee shops, bakeries, and tea houses across Metro Atlanta — built so a local can decide where to go in under thirty seconds."* (`README.md`)
 
 The page is the product. There is one screen, one HTML file, fetched once. Everything else is filter and detail. The map is the spine. The list mirrors the map's current viewport. The detail card replaces the list when a shop is selected.
 
@@ -14,7 +14,7 @@ Pulled verbatim from the running app — these are the only label strings that e
 
 | Surface | Copy |
 |---|---|
-| Page title | `Coffee in {scope}` where `scope` is the active city or `regionLabel` |
+| Page title | `Coffee in {scope}` where `scope` is the loaded region label (Duluth only in seed fallback) |
 | Brand wordmark | Same as page title |
 | Freshness line | `{count} cafés, bakeries & tea shops in {scope} · checked {checkedMonth}` |
 | Search placeholder | `Search by name, drink, or area…` |
@@ -185,7 +185,7 @@ As the map pans or zooms, the right-side list re-filters to the visible markers.
 
 ### Ranking is implicit
 
-There is no sort dropdown. The list is always ordered by Bayesian weighted rating, descending — IMDB's Top-250 formula with `C` = mean rating across the active city's shops and `m` = median review count in that city. (PRODUCT §2.)
+There is no sort dropdown. The list is always ordered by Bayesian weighted rating, descending — IMDB's Top-250 formula with `C` = mean rating across all loaded shops and `m` = median review count across all loaded shops. (PRODUCT §2.)
 
 ### Labels never lie
 
@@ -193,37 +193,24 @@ No two shop labels overlap. No label sits over a pin or cluster. Higher-rated sh
 
 ### Density on mobile
 
-Below 820 px viewport: map fixed at 220 px (180 min), panel fills the remaining vertical space, footer hidden, chip rows scroll horizontally if needed. Target: 5 list cards visible above the fold on a 750 px Safari viewport. (PRODUCT §5.)
+Below 820 px viewport: map uses `clamp(130px, 22vh, 185px)` (125 px on short screens), panel fills the remaining vertical space, footer hidden, chip rows scroll horizontally if needed. Target: 5 list cards visible above the fold on a 750 px Safari viewport. (PRODUCT §5.)
 
 ## Page anatomy
 
+```text
+Header       Caffeye / Coffee in {loaded region}    Franchise toggle · Theme
+             {in-scope count} spots · {source verification months}
+Filters      Type: All + six category chips with derived counts
+             Useful for: Work-friendly · Meeting room · Open late · Until midnight
+Main         Map (Leaflet + clustering) | Search
+                                        | {count} spots / in view · ◆ = weighted score
+                                        | Ranked venue cards, 200 per page
+                                        | Selected venue detail replaces the list
+Footer       Ratings, hours, and addresses change. Verify before visiting.
 ```
-┌─────────────────────────────────────────────────────────────┐
-│ Coffee in Duluth   59 cafés, bakeries & tea shops in       │  header
-│                    Duluth · checked May 2026                │
-├─────────────────────────────────────────────────────────────┤
-│ City   [All cities] [Duluth] …                              │  filter-bar
-│ Type   [All 59] [☕ Coffee 10] [🥐 Bakery 18] …             │  (City row
-│ Useful [💻 Work 19] [🤝 Meeting 4] [🌙 Late 39] …            │   hidden if
-│                                                             │   1 city)
-├──────────────────────────────────┬──────────────────────────┤
-│                                  │ ⌕ Search…                │
-│                                  ├──────────────────────────┤
-│                                  │ 59 SPOTS                 │
-│              [MAP]               ├──────────────────────────┤
-│         (Leaflet + CARTO         │ │ 🥐 Bread Museum       │
-│          + MarkerCluster)        │ │ Bakery & Cafe · ★ 4.9 │
-│                                  │ │ Open late · salt bread│
-│                                  ├──────────────────────────┤
-│                                  │ │ 🧋 Chuchat            │  list (scrolls)
-│                                  │ │ Tea/Boba · ★ 4.8      │
-│                                  │ │ Open late · sea salt  │
-│                                  ├──────────────────────────┤
-│                                  │ …                        │
-└──────────────────────────────────┴──────────────────────────┘
-│ Ratings, hours, and addresses change. Verify before visiting│  footer
-└─────────────────────────────────────────────────────────────┘
-```
+
+Before data arrives, the brand reads “Caffeye” and counts read “Loading spots…”. Location chip rows are omitted. September 2026 default scope is 970 independent venues across Metro Atlanta; franchise inclusion expands it to 1,705. Counts are illustrative snapshot values, never HTML placeholders.
+
 
 **Hierarchy** (top-down weight):
 
@@ -268,8 +255,8 @@ Every UI surface maps to a slice of this record. Don't render anything that isn'
 Map on the left flex-grow, 380 px panel on the right, 1 px vertical divider.
 
 ### Mobile (≤ 820 px)
-- Layout flips to column. Map fixed at 220 px (min 180 px), panel `flex: 1` taking the rest.
-- Header tightens: brand 17 px / 800, freshness 10.5 px.
+- Layout flips to column. Map uses `clamp(130px, 22vh, 185px)` (125 px on short screens), panel `flex: 1` taking the rest.
+- Header tightens: brand 15 px / 800; freshness is hidden on phones. At widths ≤ 380 px, omit the visible “Coffee in” prefix and retain the full region in the page title and home button accessible name.
 - Filter bar shrinks: padding 4 × 12 px, chip padding 2 × 7 px, chip font 11.5 px, label hidden.
 - Filter rows become horizontal-scroll (`overflow-x: auto`, hidden scrollbar).
 - Footer hidden.

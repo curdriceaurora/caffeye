@@ -1,4 +1,4 @@
-# Coffee in Duluth — Test Suite
+# Caffeye — Metro Atlanta — Test Suite
 
 Each test is traced to a requirement in `REQUIREMENTS.md`. Tests are split into:
 
@@ -6,11 +6,11 @@ Each test is traced to a requirement in `REQUIREMENTS.md`. Tests are split into:
 - **Behavioral / UI checks** — manual steps with explicit pass criteria, or browser-automation pseudocode.
 - **Visual checks** — eyeball-test at specified zoom + viewport.
 
-Snippets prefixed with `js>` are meant to be pasted into the page's DevTools console (or run via a Playwright/Puppeteer `evaluate` call) — they assume `SHOPS`, `CATS`, `CWS`, `LATE`, `WEBSITES`, `map`, `markers`, and `clusterGroup` are defined globals.
+Snippets prefixed with `js>` are meant to be pasted into the page's DevTools console (or run via a Playwright/Puppeteer `evaluate` call) — they assume `SHOPS`, `CATS`, `ADDR`, `state`, `map`, `markers`, and `clusterGroup` are defined globals.
 
 ## How to run
 
-Local: `python3 -m http.server 8765` in the project root, open `http://127.0.0.1:8765/`. For mobile-breakpoint tests, narrow the window or use DevTools device emulation. Use the production URL `https://duluth-coffee-shoppes.sra-e69.workers.dev` for end-to-end checks.
+Local: `python3 -m http.server 8765 --directory public` in the project root, open `http://127.0.0.1:8765/`. For mobile-breakpoint tests, narrow the window or use DevTools device emulation. Use the production URL `https://duluth-coffee-shoppes.sra-e69.workers.dev` for end-to-end checks.
 
 ---
 
@@ -19,21 +19,21 @@ Local: `python3 -m http.server 8765` in the project root, open `http://127.0.0.1
 | ID | Trace | Test | Pass |
 |---|---|---|---|
 | T1.1 | R1.1 | `js> SHOPS.length` | `1705` with `places.json` loaded (Sept 2026); `61` in baseline-only mode |
-| T1.2 | R1.2 | `js> SHOPS.every(s => s.name && s.address && s.lat && s.lng && s.category && s.hours && s.usp && s.signature && Array.isArray(s.loved) && s.loved.length === 3 && s.googleUrl && s.yelpUrl)` | `true` |
+| T1.2 | R1.2 | `js> SHOPS.every(s => s.name && s.address && s.lat && s.lng && s.category && s.googleUrl) && SHOPS.filter(s => s.curated).every(s => s.yelpUrl && s.hours && s.usp && s.signature && Array.isArray(s.loved) && s.loved.length === 3)` | `true` |
 | T1.3 | R1.2 | `js> SHOPS.filter(s => !s.lat \|\| !s.lng \|\| s.lat === 0).length` | `0` |
-| T1.4 | R1.3 | `js> SHOPS.every(s => s.cw && ['excellent','good','limited'].includes(s.cw.tier))` | `true` |
+| T1.4 | R1.3 | `js> SHOPS.filter(s => s.cw).every(s => ['excellent','good','limited'].includes(s.cw.tier)) && SHOPS.filter(s => s.curated).every(s => s.cw)` | `true` |
 | T1.5 | R1.4 | `js> SHOPS.every(s => 'website' in s)` | `true` |
 | T1.6 | R1.5 | `js> SHOPS.filter(s => s.late).every(s => ['10pm+','midnight'].includes(s.late.tier) && typeof s.late.when === 'string')` | `true` |
-| T1.7 | R1.6 | `js> SHOPS.filter(s => !s.addrKey.startsWith(s.city.toLowerCase() + '-'))` | `[]` |
+| T1.7 | R1.6 | `js> SHOPS.filter(s => !ADDR[s.addrKey] \|\| (!s.curated && !s.addrKey.startsWith('place-')))` | `[]` |
 | T1.8 | R1.7 | `js> SHOPS.filter(s => !CATS[s.category]).map(s => s.name)` | `[]` |
-| T1.9 | R1.9 | Open page, check header text. | Reads "**1705** spots in Metro Atlanta · verified **September 2026**" (or "**61** spots in Duluth" in baseline-only mode). |
+| T1.9 | R1.9 | Open page, check header text. | At ≤ 380 px the loaded visual brand omits “Coffee in”; accessible naming and page title retain it. Before load: “Caffeye” and “Loading spots…”, no numeric result count. After load: “**970** spots in Metro Atlanta · verified **September 2026**”; franchise toggle ON: **1705**. Fallback: **41** spots in Duluth by default, **61** with franchises. Page/social descriptions use the full loaded total (1,705 or 61). Unknown verification months make no claim; one known month in a mixed-source dataset is source-attributed. |
 
 ## T2. Map setup (R2)
 
 | ID | Trace | Test | Pass |
 |---|---|---|---|
 | T2.1 | R2.1 | `js> typeof L !== 'undefined' && typeof L.markerClusterGroup === 'function'` | `true` |
-| T2.2 | R2.2 | Hard reload, wait 1.5 s, then `js> { let v = map.getBounds(); SHOPS.filter(s => !v.contains([s.lat, s.lng])).length }` | `0` (all `SHOPS.length` in viewport) |
+| T2.2 | R2.2 | Hard reload, wait 1.5 s, then `js> { let v = map.getBounds(); SHOPS.filter(s => (state.includeFranchises \|\| s.model !== 'franchise') && !v.contains([s.lat, s.lng])).length }` | `0` (all in-scope venues in viewport) |
 | T2.3 | R2.3 | `js> document.querySelectorAll('.pin').length > 0 && [...document.querySelectorAll('.pin')].every(p => p.textContent.length > 0)` | `true` (every visible pin shows its emoji) |
 | T2.4 | R2.4 | `js> document.querySelectorAll('.pin.late').length > 0` | `true` (≥ 1 late pin visible) |
 | T2.5 | R2.5 | Click a pin. Check `js> document.querySelectorAll('.pin.selected').length === 1` | `true` |
@@ -126,7 +126,7 @@ recovery, not just the threshold function in isolation.
 | ID | Trace | Test | Pass |
 |---|---|---|---|
 | T4.1 | R4.1 | `js> document.querySelectorAll('#categoryChips .chip').length` | `7` (All + 6 categories) |
-| T4.2 | R4.1 | Each category chip displays its emoji + label + count; sum of category counts = inScope.length. | Six category counts sum to inScope.length matching the franchise toggle state (970 indie shops when toggle OFF; 1,705 total shops when toggle ON; or 61 in baseline Duluth mode). Category and feature chip counts intentionally reflect global category totals and ignore search text input. |
+| T4.2 | R4.1 | Each category chip displays its emoji + label + count; sum of category counts = inScope.length. | Six category counts sum to inScope.length matching the franchise toggle state (970 indie shops when toggle OFF; 1,705 total shops when toggle ON; or 41 indie / 61 total in baseline Duluth mode). Category and feature chip counts intentionally reflect global category totals and ignore search text input. |
 | T4.3 | R4.2 | Click "All". `js> [...document.querySelectorAll('#categoryChips .chip')][0].classList.contains('active')` | `true` |
 | T4.4 | R4.3 | `js> document.querySelectorAll('#featureChips .chip').length` | `4` (Work-friendly, Meeting room, Open late, Until midnight) |
 | T4.5 | R4.3 | Feature chip text matches `['💻Work-friendly{n}', '🤝Meeting room{n}', '🌙Open late{n}', '🦉Until midnight{n}']` (spaces normalized). | All four present. |
@@ -148,22 +148,22 @@ recovery, not just the threshold function in isolation.
 | ID | Trace | Test | Pass |
 |---|---|---|---|
 | T5.1 | R5.1 | Hard reload, after settle: `js> document.getElementById('resultsCount').textContent` and `document.querySelectorAll('.shop-item').length` | `resultsCount` shows `970` (count of independent shops in scope on boot); rendered `.shop-item` count is `200` (initial pagination page limit). |
-| T5.2 | R5.2 | First 3 list items by name. | Top of list reflects weighted-rating order (Douceur De France, Yibna Cafe, Lumier's Chimney Cake as of Sept 2026). |
-| T5.3 | R5.2 | `js> Math.abs(SHOPS.filter(s=>typeof s.rating==='number').reduce((a,s)=>a+s.rating,0)/SHOPS.filter(s=>typeof s.rating==='number').length - 4.36) < 0.1` | `true` (C ≈ 4.36 across 990 rated shops) |
-| T5.4 | R5.3 | `js> SHOPS.filter(s => s.rating == null).every(s => typeof s.weightedRating === 'number')` | `true` (vacuously true while every shop is rated — as of Sept 2026 none is null; the branch is exercised whenever one is) |
+| T5.2 | R5.2 | First 3 list items by name. | Default independent view: Fuel Coffee Bar-Fayetteville; Douceur De France - Bakery & Brunch (Marietta); Black Coffee Atlanta (September 2026 snapshot). Recompute after crawls using the summary below. |
+| T5.3 | R5.2 | `js> Math.abs(SHOPS.filter(s=>typeof s.rating==='number').reduce((a,s)=>a+s.rating,0)/SHOPS.filter(s=>typeof s.rating==='number').length - 4.32) < 0.001` | `true` (C ≈ 4.32 across 1,640 rated shops in the September 2026 expanded snapshot) |
+| T5.4 | R5.3 | `js> SHOPS.filter(s => s.rating == null).every(s => typeof s.weightedRating === 'number')` | `true` (65 unrated venues in the September 2026 expanded snapshot) |
 | T5.5 | R5.4 | Inspect any list item. | Shows: colored circular icon tile, name, meta row, ≤ 3 tags. |
-| T5.5b | R5.4 | Hard reload, no chips, no search (all shops in viewport). `js> document.querySelector('.shop-item .score').textContent === '◆ ' + Math.max(...SHOPS.map(s => s.weightedRating)).toFixed(1)` | `true` |
+| T5.5b | R5.4 | Hard reload, no chips, no search (all shops in viewport). `js> document.querySelector('.shop-item .score').textContent === '◆ ' + Math.max(...SHOPS.filter(s => state.includeFranchises \|\| s.model !== 'franchise').map(s => s.weightedRating)).toFixed(1)` | `true` |
 | T5.5c | R5.4 | `js> [...document.querySelectorAll('.shop-item .score')].map(e => +e.textContent.slice(2)).every((v, i, a) => i === 0 \|\| a[i-1] >= v)` | `true` — displayed scores never increase down the list (order uses full precision, display rounds). |
 | T5.5d | R5.4 | `js> [...document.querySelectorAll('.shop-meta')].every(m => !m.innerHTML.includes('★')) && document.querySelector('.results-meta .score-legend').textContent === '◆ = weighted score'` | `true` — no ★ anywhere on a card (attributes included); the legend is present. |
-| T5.6 | R5.5 | `js> document.querySelector('.shop-item').style.borderLeftColor` | Non-empty (a category color). |
-| T5.7 | R5.6 | Filter to "Meeting room". `js> document.getElementById('resultsCount').textContent` | `"9"` (independent meeting room venues on boot in Metro Atlanta; `"10"` with franchise toggle ON; `"4"` in baseline Duluth mode). |
+| T5.6 | R5.5 | `js> document.querySelector('.shop-item .shop-icon-tile').style.background` | Non-empty (the category color); no category stripe is required. |
+| T5.7 | R5.6 | Filter to "Meeting room". `js> document.getElementById('resultsCount').textContent` | `"18"` with only Meeting room selected, search cleared, and full-region bounds (independent mode); `"22"` with franchises. Baseline fallback: `"0"` independent / `"3"` with franchises. Counts must equal the in-scope `cw.hasMeetingRoom` predicate, not raw JSON totals. |
 | T5.7b | R5.6 | Hard reload (all shops in viewport). `js> document.getElementById('resultsLabel').textContent` | `" spots"` |
 | T5.7c | R5.6 | Zoom in until fewer than `SHOPS.length` shops are visible in the map. `js> document.getElementById('resultsLabel').textContent` | `" in view"` |
 | T5.8 | R5.7 | Scroll the shop list. | Inner list scrolls; header, filters, map don't. |
 | T5.9 | R5.8 | Set zoom 18 in an empty area + search "xyzqwerty". | Empty state reads: "Nothing here — try zooming out or clearing a filter." |
 | T5.10 | R5.9 | Open DevTools → Elements. After any pan/zoom, inspect first `.shop-item`. | Has `animation-delay` inline style ≥ 0ms and CSS animation `itemEnter`. |
-| T5.11 | R5.9 | After a viewport-triggered list refresh, inspect `.results-meta`. | Briefly has class `viewport-flash`, then class is removed after `transitionend`. |
-| T5.12 | R5.10 | On data with > 200 matching shops (e.g. all-counties view, no filters): `js> document.querySelectorAll('.shop-item').length` | `200`, plus one `.load-more-btn` reading "Load N more (N left)". |
+| T5.11 | R5.9 | After a viewport-triggered list refresh, inspect `.results-meta`. | The background briefly pulses through the Web Animations API; no transient class is required. With reduced motion enabled, the pulse is skipped. |
+| T5.12 | R5.10 | On data with > 200 matching shops (e.g. full-region view, no filters): `js> document.querySelectorAll('.shop-item').length` | `200`, plus one `.load-more-btn` reading "Load N more (N left)". |
 | T5.13 | R5.10 | Click `.load-more-btn` repeatedly until it disappears. | `js> document.querySelectorAll('.shop-item').length === document.getElementById('resultsCount').textContent - 0` — all matches eventually render; scores stay monotonic across the full list (T5.5c still holds). |
 | T5.14 | R5.10 | With the list paginated (> 200 matches), type in the search box. | List resets to the first page of the new result set — no stale "Load more" pointing at the old filter's remainder. |
 | T5.15 | R5.10 | `js> document.querySelector('.load-more-btn').click(); document.activeElement.tagName === 'LI' && document.activeElement.dataset.id && [...document.querySelectorAll('.shop-item')].indexOf(document.activeElement) === 200` | `true` — activating "Load more" (`renderList()` rebuilds the whole `<ul>`, which would otherwise drop focus to `<body>`) moves focus to the first newly-revealed card, not off the list entirely. Real keyboard users trigger this via Enter/Space on the focused button, which the browser turns into the same `click` event this test fires directly. |
@@ -176,12 +176,12 @@ recovery, not just the threshold function in isolation.
 | T6.1 | R6.1 | Click any list item. | Detail card slides in from the right while list slides left; no jump/flash. |
 | T6.10 | R6.1 | While detail is open: `js> getComputedStyle(document.querySelector('.list-view')).opacity` | `"0"` (compositor-hidden, not `display:none`) |
 | T6.2 | R6.2 | Inspect a high-rated shop card (e.g. Bread Museum). | Shows category + neighborhood badge, name as `<h2>`, a large `◆ n.n` with the label "weighted score", a muted line `Google ★ n.n · N reviews` beneath it (always one decimal, exact count, no `+`), USP paragraph. |
-| T6.3 | R6.3 | Open Cafe Rothem. | "Best for" pills include 💻 Work and 🤝 Meetings. |
+| T6.3 | R6.3 | Open Fuel Coffee Bar-Fayetteville (regional mode). | "Best for" pills include 💻 Work and 🤝 Meetings. |
 | T6.4 | R6.3 | Open Hayat Coffee. | "Best for" includes 💻 Work and 🦉 Until midnight. |
-| T6.5 | R6.4 | Every detail view has a "Known for" pill row and a "Try the **X**" line. | True for every shop. |
-| T6.6 | R6.6 | Open Sweet Hut. | Coworking section shows "Coworking-ready" + meeting-room callout. |
+| T6.5 | R6.4 | Open a curated seed venue, then a regional venue without editorial notes. | “Known for” and “Try the **X**” appear only when the corresponding loved-items/signature data exists. |
+| T6.6 | R6.6 | Enable franchises, search Sweet Hut, and open the curated Duluth venue. | Coworking section shows "Coworking-ready" + meeting-room callout. |
 | T6.7 | R6.7 | Open a shop without late hours (e.g. Land of a Thousand Hills). | No Late-night section. |
-| T6.8 | R6.8 | Every detail view has Google Maps + Yelp action buttons, and a Website button when the shop has a URL. | True. |
+| T6.8 | R6.8 | Inspect action buttons on a curated seed venue and a discovered venue. | Google Maps appears for valid links; Yelp and Website appear only when their source fields contain valid HTTP(S) URLs. |
 | T6.9 | R6.9 | Click "← Back to list". | Detail hides, list returns, map fits bounds. |
 | T6.11 | R6.10 | Open any detail view: `js> [...document.querySelectorAll('.actions a')].every(a => /^https?:\/\//.test(a.getAttribute('href')))` | `true` — no `javascript:`/`data:`/relative hrefs; unsafe URLs render no button. |
 | T6.12 | R6.11 | Open a curated shop (e.g. Chrome Yellow) and an uncurated one. | Curated shows "Verified {month} · {source}"; uncurated shows "Work suitability: Unknown · amenities not yet verified for this venue." |
@@ -200,11 +200,11 @@ recovery, not just the threshold function in isolation.
 | ID | Trace | Test | Pass |
 |---|---|---|---|
 | T8.1 | R8.1 | Window width ≥ 821 px. | Map left + 380 px panel right. |
-| T8.2 | R8.2 | Width 390 px (mobile). | Column layout: map on top (220 px), panel below filling remainder. |
+| T8.2 | R8.2 | Width 390 px (mobile). | Column layout: map on top (`clamp(130px, 22vh, 185px)`, 125 px below 600 px viewport height), panel below filling remainder. |
 | T8.3 | R8.3 | At 390 px width, chip computed font-size. | `11.5px`. |
 | T8.4 | R8.4 | At 390 px width: `js> getComputedStyle(document.querySelector('footer')).display` | `"none"`. |
-| T8.5 | R8.5 | Mobile, 375×812 viewport with `#locationRow` hidden. Count *fully* visible cards (not merely intersecting the viewport): `js> (() => { const r = document.getElementById('shopList').getBoundingClientRect(); return [...document.querySelectorAll('.shop-item')].filter(li => { const cr = li.getBoundingClientRect(); return cr.top >= r.top - 0.5 && cr.bottom <= r.bottom + 0.5; }).length; })()` | `5` (measured: 356 px available ÷ 68.64 px/card). |
-| T8.5b | R8.5 | Mobile 375×812 viewport preserves 5 visible cards across both Indie-only and Franchise-included modes. | `5` fully visible cards in list view. |
+| T8.5 | R8.5 | Mobile, 375×750 viewport. Count *fully* visible cards (not merely intersecting the viewport): `js> (() => { const r = document.getElementById('shopList').getBoundingClientRect(); return [...document.querySelectorAll('.shop-item')].filter(li => { const cr = li.getBoundingClientRect(); return cr.top >= r.top - 0.5 && cr.bottom <= r.bottom + 0.5; }).length; })()` | `≥ 5`; measure current cards instead of assuming a fixed card height. |
+| T8.5b | R8.5 | Mobile 375×812 viewport preserves 5 visible cards across both Indie-only and Franchise-included modes. | `≥ 5` fully visible cards in list view. |
 | T8.5c | R8.5 | Same fully-visible-card count at 375×750 and 320×568 viewports. | `≥ 5` at 375×750; `≥ 3` at 320×568. |
 
 ## T9. Performance & errors (R9)
@@ -214,7 +214,7 @@ recovery, not just the threshold function in isolation.
 | T9.1 | R9.1 | File size of `index.html`. | `≤ 100 KB`. |
 | T9.2 | R9.2 | Load with DevTools console open. Click around, zoom, filter. | No errors logged. |
 | T9.3 | R9.3 | Network tab on hard reload. | Leaflet CSS/JS + MarkerCluster CSS/JS + Google Fonts all return 200; the two SRI'd files match their hashes. |
-| T9.4 | R9.4 | `open index.html` directly from filesystem (no server). | Page loads and map renders. |
+| T9.4 | R9.4 | `python3 -m http.server 8765 --directory public`, then open the local URL. | App and JSON load with no build step. |
 | T9.5 | R9.5 | DevTools → Performance: record a list↔detail click and a zoom/pan. | Frames row stays green (60fps). No `Layout` or `Paint` blocks during the panel transition. Compositor thread handles the slide. |
 | T9.6 | R9.6 | DevTools → Network: block `places.json`, hard reload. | Baseline boots with a `#dataStatusBanner` (`role="alert"`) showing the live baseline count; unblocking + Retry ingests regional data and dismisses the banner. |
 
@@ -230,26 +230,55 @@ recovery, not just the threshold function in isolation.
 
 ## Regression checklist (post-deploy smoke test)
 
-Run after every `wrangler deploy`:
+Run after each deployment:
 
-1. Open the live URL on desktop. Expect `SHOPS.length` markers (1,705 across Metro Atlanta as of Sept 2026; 61 in baseline-only mode), all 6 category chips, 4 feature chips, the full list sorted by weighted rating. Results header reads "970 spots" (independent mode on boot; "61 spots" in baseline mode).
+1. Open the live URL on desktop. Expect 970 in-scope markers (41 in baseline fallback), all 6 category chips, 4 feature chips, and the first 200 ranked cards (41 in fallback). Results header reads “970 spots” (“41 spots” in fallback). Enable franchises for all 1,705 venues (61 in fallback). Reset to independent mode before the next checks.
 2. Click Bread Museum (or Chrome Yellow in Metro Atlanta) → detail card slides in (list slides left). Click "← Back to list" → list slides back in, map fits bounds.
-3. Click "Until midnight" → expect late-night shops (114 venues across Metro Atlanta; 8 venues in baseline Duluth mode).
-4. Search "matcha" → ≥ 10 results.
-5. Zoom in until fewer than all shops appear in the list. Confirm header changes to "X in view" and list items cascade in. Zoom back out — header returns to "970 spots" ("61 spots" in baseline mode).
+3. Reset filters, then click "Until midnight" → expect late-night shops (41 independents / 78 total across Metro Atlanta; 6 independents / 9 total in baseline fallback).
+4. Reset filters, then search "matcha" → ≥ 10 results.
+5. Reset filters, then zoom in until fewer than all shops appear in the list. Confirm header changes to "X in view" and list items cascade in. Zoom back out — header returns to "970 spots" ("41 spots" in baseline mode).
 6. Resize window below 820 px → mobile layout kicks in, footer disappears, cards visible and scrollable.
 7. Zoom in to a single shop, confirm label appears with no overlap. Zoom out to default fit, confirm clusters reform.
 8. Open DevTools console → no errors.
 
-## Known-good fixture data (September 2026)
+## Known-good loaded data (September 2026)
 
-| Field | Metro Atlanta (Expanded) | Duluth Baseline (Fallback) |
+Counts below were measured after the browser's validation and deduplication. The files contain 61 seed records and 1,688 regional records; 1,644 regional records are admitted. Do not add raw file lengths to predict UI counts. To check fallback, block `places.json` and reload; to recover, unblock it and click Retry.
+
+| Field | Metro Atlanta (Expanded) | Duluth seed (Fallback) |
 |---|---|---|
-| Total shops | 1,705 | 61 |
-| Independent shops | 970 | 61 |
-| Franchise shops | 735 | 0 |
-| Counties | 14 | 1 |
-| Work-friendly | 47 (29 indie) | 19 |
-| Meeting room | 10 (9 indie) | 4 |
-| Bayesian C | ≈ 4.36 | ≈ 4.50 |
-| #1 by weighted rating | Douceur De France (Yibna Cafe #2) | Yibna Cafe |
+| Total venues | 1,705 | 61 |
+| Independent venues (default) | 970 | 41 |
+| Franchise venues | 735 | 20 |
+| Counties represented | 14 | 2 (Gwinnett and Fulton) |
+| Work-friendly, indie / total | 51 / 63 | 8 / 18 |
+| Meeting room, indie / total | 18 / 22 | 0 / 3 |
+| Open late, indie / total | 134 / 336 | 24 / 40 |
+| Until midnight, indie / total | 41 / 78 | 6 / 9 |
+| Bayesian C (all rated venues) | ≈ 4.3200 | ≈ 4.5197 |
+| #1 by weighted rating | Fuel Coffee Bar-Fayetteville | Yibna Cafe |
+
+Recompute after each crawl, in the loaded page's console. Repeat with regional loading blocked for the fallback column. Ranking uses all loaded venues even when franchises are hidden.
+
+```js
+const summary = shops => ({
+  total: shops.length,
+  independent: shops.filter(s => s.model !== 'franchise').length,
+  franchise: shops.filter(s => s.model === 'franchise').length,
+  counties: new Set(shops.map(s => s.county).filter(Boolean)).size,
+  work: shops.filter(s => s.cw?.tier === 'excellent').length,
+  meeting: shops.filter(s => s.cw?.hasMeetingRoom).length,
+  late: shops.filter(s => s.late).length,
+  midnight: shops.filter(s => s.late?.tier === 'midnight').length,
+  rated: shops.filter(s => typeof s.rating === 'number').length,
+  mean: shops.filter(s => typeof s.rating === 'number').reduce((n, s) => n + s.rating, 0)
+    / shops.filter(s => typeof s.rating === 'number').length,
+  topThree: [...shops].sort((a, b) => b.weightedRating - a.weightedRating)
+    .slice(0, 3).map(s => `${s.name} (${s.city})`).join('; ')
+});
+console.table({ all: summary(SHOPS), independent: summary(SHOPS.filter(s => s.model !== 'franchise')) });
+console.table(Object.fromEntries(Object.keys(CATS).map(category => [category, {
+  all: SHOPS.filter(s => s.category === category).length,
+  independent: SHOPS.filter(s => s.category === category && s.model !== 'franchise').length
+}])));
+```

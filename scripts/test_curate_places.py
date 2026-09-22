@@ -255,6 +255,36 @@ class CuratePlacesTests(unittest.TestCase):
         self.assertEqual(spec_count2, 0)  # 0 new upgrades on second run
         self.assertEqual(pass1_classified, pass2_classified)
 
+    def test_research_queue_uses_global_ranking_and_unknown_amenities(self):
+        venues = [
+            {"name": "Established", "rating": 4.8, "ratingNum": 1000, "website": "https://example.com"},
+            {"name": "New", "rating": 5.0, "ratingNum": 1, "cw": None},
+            {"name": "Known", "rating": 4.9, "ratingNum": 500, "cw": {"tier": "good"}},
+            {"name": "Chain", "rating": 3.0, "ratingNum": 900, "model": "franchise"},
+            {"name": "Unrated", "rating": None, "ratingNum": 0},
+        ]
+        queue = CP.research_queue(venues)
+        self.assertEqual([v["name"] for v in queue], ["Established", "New", "Unrated"])
+        # The ranking population includes the known venue and the franchise.
+        mean = (4.8 + 5.0 + 4.9 + 3.0) / 4
+        self.assertAlmostEqual(queue[0]["weightedRating"], (1000 * 4.8 + 500 * mean) / 1500)
+        self.assertEqual(queue[0]["website"], "https://example.com")
+        self.assertNotIn("cw", venues[0])  # never infer or mutate amenities
+        self.assertEqual(len(CP.research_queue(venues, limit=1)), 1)
+
+    def test_research_queue_handles_empty_and_unrated_data(self):
+        self.assertEqual(CP.research_queue([]), [])
+        self.assertEqual(CP.research_queue([{"name": "Unknown"}])[0]["weightedRating"], 0)
+
+    def test_research_queue_deduplicates_curated_locations(self):
+        seed = {"placeId": "seed", "name": "Unique Coffee", "lat": 33.7, "lng": -84.4,
+                "cw": {"tier": "good"}, "rating": 4.5, "ratingNum": 100}
+        places = [dict(seed, cw=None),
+                  dict(seed, placeId="relisted", cw=None),
+                  {"placeId": "new", "name": "Other", "rating": 4.5, "ratingNum": 100}]
+        queue = CP.research_queue(CP.merge_venues(places, [seed]))
+        self.assertEqual([v["placeId"] for v in queue], ["new"])
+
     def test_audit_computation(self):
         places = [
             {"name": "P1", "county": "Fulton", "category": "Specialty", "cw": {"tier": "excellent", "hasMeetingRoom": True}},
