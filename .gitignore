@@ -12,6 +12,12 @@ wrangler-account.json
 *.log
 *.pid
 
+# Node / Playwright
+node_modules/
+test-results/
+playwright-report/
+.playwright/
+
 # Scratch
 scratch/
 tmp/

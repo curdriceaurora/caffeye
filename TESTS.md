@@ -167,6 +167,7 @@ recovery, not just the threshold function in isolation.
 | T5.13 | R5.10 | Click `.load-more-btn` repeatedly until it disappears. | `js> document.querySelectorAll('.shop-item').length === document.getElementById('resultsCount').textContent - 0` — all matches eventually render; scores stay monotonic across the full list (T5.5c still holds). |
 | T5.14 | R5.10 | With the list paginated (> 200 matches), type in the search box. | List resets to the first page of the new result set — no stale "Load more" pointing at the old filter's remainder. |
 | T5.15 | R5.10 | `js> document.querySelector('.load-more-btn').click(); document.activeElement.tagName === 'LI' && document.activeElement.dataset.id && [...document.querySelectorAll('.shop-item')].indexOf(document.activeElement) === 200` | `true` — activating "Load more" (`renderList()` rebuilds the whole `<ul>`, which would otherwise drop focus to `<body>`) moves focus to the first newly-revealed card, not off the list entirely. Real keyboard users trigger this via Enter/Space on the focused button, which the browser turns into the same `click` event this test fires directly. |
+| T5.16 | R5.11 | Zoom into Duluth, search "Portrait". | Empty state offers "Show matches outside this view"; clicking fits the map to all matches and the match renders. When some matches are visible, a "+N outside view" pill appears in the results-meta bar. |
 
 ## T6. Detail card (R6)
 
@@ -182,6 +183,8 @@ recovery, not just the threshold function in isolation.
 | T6.7 | R6.7 | Open a shop without late hours (e.g. Land of a Thousand Hills). | No Late-night section. |
 | T6.8 | R6.8 | Every detail view has Google Maps + Yelp action buttons, and a Website button when the shop has a URL. | True. |
 | T6.9 | R6.9 | Click "← Back to list". | Detail hides, list returns, map fits bounds. |
+| T6.11 | R6.10 | Open any detail view: `js> [...document.querySelectorAll('.actions a')].every(a => /^https?:\/\//.test(a.getAttribute('href')))` | `true` — no `javascript:`/`data:`/relative hrefs; unsafe URLs render no button. |
+| T6.12 | R6.11 | Open a curated shop (e.g. Chrome Yellow) and an uncurated one. | Curated shows "Verified {month} · {source}"; uncurated shows "Work suitability: Unknown · amenities not yet verified for this venue." |
 
 ## T7. Search (R7)
 
@@ -202,6 +205,7 @@ recovery, not just the threshold function in isolation.
 | T8.4 | R8.4 | At 390 px width: `js> getComputedStyle(document.querySelector('footer')).display` | `"none"`. |
 | T8.5 | R8.5 | Mobile, 375×812 viewport with `#locationRow` hidden. Count *fully* visible cards (not merely intersecting the viewport): `js> (() => { const r = document.getElementById('shopList').getBoundingClientRect(); return [...document.querySelectorAll('.shop-item')].filter(li => { const cr = li.getBoundingClientRect(); return cr.top >= r.top - 0.5 && cr.bottom <= r.bottom + 0.5; }).length; })()` | `5` (measured: 356 px available ÷ 68.64 px/card). |
 | T8.5b | R8.5 | Mobile 375×812 viewport preserves 5 visible cards across both Indie-only and Franchise-included modes. | `5` fully visible cards in list view. |
+| T8.5c | R8.5 | Same fully-visible-card count at 375×750 and 320×568 viewports. | `≥ 5` at 375×750; `≥ 3` at 320×568. |
 
 ## T9. Performance & errors (R9)
 
@@ -212,6 +216,7 @@ recovery, not just the threshold function in isolation.
 | T9.3 | R9.3 | Network tab on hard reload. | Leaflet CSS/JS + MarkerCluster CSS/JS + Google Fonts all return 200; the two SRI'd files match their hashes. |
 | T9.4 | R9.4 | `open index.html` directly from filesystem (no server). | Page loads and map renders. |
 | T9.5 | R9.5 | DevTools → Performance: record a list↔detail click and a zoom/pan. | Frames row stays green (60fps). No `Layout` or `Paint` blocks during the panel transition. Compositor thread handles the slide. |
+| T9.6 | R9.6 | DevTools → Network: block `places.json`, hard reload. | Baseline boots with a `#dataStatusBanner` (`role="alert"`) showing the live baseline count; unblocking + Retry ingests regional data and dismisses the banner. |
 
 ## T10. Deployment (R10)
 

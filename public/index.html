@@ -310,6 +310,22 @@
   .chip.themed .num { color: inherit; opacity: 0.65; }
   .chip.themed.active .num { color: rgba(255,255,255,0.7); opacity: 1; }
   .chip-divider { width: 1px; align-self: stretch; background: var(--border-strong); margin: 2px 2px; }
+  .data-status-banner {
+    position: relative; z-index: 5;
+    display: flex; align-items: center; gap: 8px;
+    margin: 8px 16px 0; padding: 6px 10px;
+    border: 1px solid var(--border-strong); border-left: 3px solid var(--accent);
+    border-radius: 8px; background: var(--surface-alt);
+    font-size: 12px; color: var(--text);
+  }
+  .data-status-banner.success { border-left-color: #2e7d4f; }
+  .banner-retry-btn {
+    margin-left: auto; flex-shrink: 0; min-height: 44px; padding: 6px 14px;
+    border-radius: 6px; border: 1px solid var(--border-strong);
+    background: var(--bg); color: var(--text); font-family: inherit;
+    font-size: 12.5px; font-weight: 600; cursor: pointer;
+  }
+  .banner-retry-btn:disabled { opacity: 0.6; cursor: default; }
 
 
   .layout { flex: 1; display: flex; min-height: 0; }
@@ -337,6 +353,13 @@
   }
   .results-meta.viewport-flash { background: var(--accent-soft); }
   .results-meta .score-legend { float: right; font-weight: 400; color: var(--muted); }
+  .outside-matches-pill {
+    margin-left: 8px; padding: 2px 8px; border-radius: 10px;
+    border: 1px solid var(--border-strong); background: var(--surface-alt);
+    color: var(--text); font-family: inherit; font-size: 10px; font-weight: 600;
+    letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer;
+  }
+  .empty-state .outside-matches-btn { margin-top: 10px; }
   #resultsCount { display: inline-block; transform-origin: left center; }
   @keyframes countPop {
     0%   { transform: scale(1); }
@@ -620,17 +643,27 @@
     .chip .num { font-size: 10px; }
 
     .layout { flex-direction: column; }
-    #map { flex: 0 0 220px; min-height: 180px; }
+    #map { flex: 0 0 clamp(130px, 22vh, 185px); min-height: 125px; }
     .panel { width: 100%; height: auto; flex: 1; min-height: 0; border-left: none; border-top: 1px solid var(--border); }
-    .search { padding: 8px 14px 6px; }
-    .search input { padding: 6px 10px; font-size: 12.5px; }
-    .results-meta { padding: 5px 14px 4px; font-size: 10px; }
-    .shop-item { padding: 7px 14px; }
-    .shop-name { font-size: 13px; gap: 6px; margin: 0 0 3px 0; }
+    .search { padding: 4px 10px; }
+    .search input { height: 30px; padding: 4px 10px; font-size: 12px; }
+    .results-meta { padding: 3px 10px; font-size: 10px; }
+    .filter-bar { padding: 3px 10px 4px; }
+    .shop-item { padding: 5px 12px; }
+    .shop-name { font-size: 13px; gap: 6px; margin: 0 0 2px 0; line-height: 1.25; }
     .shop-name .shop-icon-tile { width: 18px; height: 18px; font-size: 10px; }
     .shop-meta { font-size: 11px; margin-bottom: 2px; }
     .shop-tags { font-size: 10.5px; }
     footer { display: none; }
+    /* 44px touch targets without visual bulk: invisible hit-slop on chips. */
+    .chip { position: relative; }
+    .chip::after { content: ''; position: absolute; left: 0; right: 0; top: -10px; bottom: -10px; }
+  }
+
+  @media (max-width: 820px) and (max-height: 600px) {
+    #map { flex: 0 0 125px; min-height: 125px; }
+    header { padding: 4px 10px; }
+    .search { padding: 4px 10px; }
   }
 
   @media (max-width: 820px) and (max-height: 500px) {
@@ -710,6 +743,138 @@ const CATS = {
 
   let SHOPS, ADDR, NEIGHBORHOODS, CITIES, COUNTIES, REGION_LABEL, SHOPS_MONTH, PLACES_MONTH;
 
+  // Module-scope registries shared by initial load and regional retry.
+  let seenPlaceIds = new Set();   // placeIds already ingested (dedupe across retries)
+  const seenShopIds = new Set();  // assigned shop ids (uniqueness across retries)
+  let shopsDataGlobal = null;     // baseline payload, retained for retry scope calc
+  let retryRegionalLoad = null;   // assigned by boot(); banner button calls it
+
+  const slug = s => (s || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+
+  // Per-shop finalization shared by boot and retry: resolve coords from ADDR,
+  // validate, stash base coords (spread is derived from base, so re-runs are
+  // idempotent), assign a unique id, fill display defaults. Returns false to drop.
+  function prepareShop(s) {
+    const key = s.addrKey;
+    if (key && ADDR[key]) { s.lat = ADDR[key].lat; s.lng = ADDR[key].lng; }
+    if (typeof s.lat !== 'number' || !Number.isFinite(s.lat) || typeof s.lng !== 'number' || !Number.isFinite(s.lng) || (s.lat === 0 && s.lng === 0)) {
+      console.warn('Skipping shop with invalid coordinates:', s.name);
+      return false;
+    }
+    s.baseLat = s.lat;
+    s.baseLng = s.lng;
+    const baseId = s.placeId || (slug(s.city || 'duluth') + '-' + slug(s.name || 'spot'));
+    let uniqueId = baseId;
+    let counter = 1;
+    while (seenShopIds.has(uniqueId)) {
+      uniqueId = `${baseId}-${counter++}`;
+    }
+    seenShopIds.add(uniqueId);
+    s.id = uniqueId;
+    s.neighborhood = s.neighborhood || NEIGHBORHOODS[key] || s.city || "Duluth";
+    s.model = s.model || 'independent';
+    return true;
+  }
+
+  // Fan same-building shops into a ~20 m ring. Derived from base coords, so
+  // re-running after a retry re-derives instead of double-offsetting.
+  function spreadCoincidentShops() {
+    const LABEL_POSITIONS = ['bottom', 'right', 'top', 'left'];
+    const groups = new Map();
+    SHOPS.forEach(s => {
+      const la = (typeof s.baseLat === 'number') ? s.baseLat : s.lat;
+      const ln = (typeof s.baseLng === 'number') ? s.baseLng : s.lng;
+      const k = `${la.toFixed(5)},${ln.toFixed(5)}`;
+      if (!groups.has(k)) groups.set(k, []);
+      groups.get(k).push(s);
+    });
+    const radiusDeg = 0.00018; // ~20m
+    groups.forEach(group => {
+      if (group.length === 1) {
+        const s = group[0];
+        if (typeof s.baseLat === 'number') { s.lat = s.baseLat; s.lng = s.baseLng; }
+        s.labelPos = 'bottom';
+        return;
+      }
+      const n = group.length;
+      group.forEach((s, i) => {
+        const la = (typeof s.baseLat === 'number') ? s.baseLat : s.lat;
+        const ln = (typeof s.baseLng === 'number') ? s.baseLng : s.lng;
+        const angle = (i / n) * 2 * Math.PI - Math.PI / 2; // start at top, go clockwise
+        const latCorrection = Math.cos(la * Math.PI / 180) || 1;
+        s.lat = la + radiusDeg * Math.cos(angle);
+        s.lng = ln + (radiusDeg * Math.sin(angle)) / latCorrection;
+        s.labelPos = LABEL_POSITIONS[i % LABEL_POSITIONS.length];
+      });
+    });
+  }
+
+  // Bayesian weighted rating (IMDB Top 250 formula). Recomputed over all
+  // SHOPS so a retry that grows the dataset also refreshes C and m.
+  function computeWeightedRatings() {
+    const rated = SHOPS.filter(s => typeof s.rating === 'number');
+    const C = rated.reduce((acc, s) => acc + s.rating, 0) / rated.length;
+    const counts = SHOPS.map(s => s.ratingNum || 0).slice().sort((a, b) => a - b);
+    const m = counts[Math.floor(counts.length / 2)]; // median
+    SHOPS.forEach(s => {
+      s.rated = typeof s.rating === 'number';
+      const R = s.rated ? s.rating : C;
+      const v = s.ratingNum || 0;
+      s.weightedRating = (v / (v + m)) * R + (m / (v + m)) * C;
+      // Display strings, derived once so every renderer shows the same precision.
+      s.scoreText = s.weightedRating.toFixed(1);
+      s.ratingText = s.rated ? s.rating.toFixed(1) : null;
+    });
+  }
+
+  // Validate + dedupe one regional payload into new shop objects (not yet
+  // finalized or pushed). Used identically by initial load and retry.
+  function ingestPlaces(placesData) {
+    const out = [];
+    if (!placesData || !Array.isArray(placesData.places)) return out;
+    placesData.places.forEach(p => {
+      if (!p || typeof p !== 'object') return;
+      if (typeof p.lat !== 'number' || !Number.isFinite(p.lat) || typeof p.lng !== 'number' || !Number.isFinite(p.lng)) return;
+      if (p.lat === 0 && p.lng === 0) return;
+      if (!p.name || typeof p.name !== 'string') return;
+      if (!p.category || typeof p.category !== 'string' || !CATS[p.category]) return;
+      if (p.placeId && seenPlaceIds.has(p.placeId)) return;
+      // Guard against relisted duplicate of a curated shop (<60m and shared non-generic name token)
+      const isRelistedDupe = SHOPS.some(s => {
+        if (!s.curated) return false;
+        const c = ADDR[s.addrKey] || s;
+        if (!c.lat || !c.lng || !p.lat || !p.lng) return false;
+        if (Math.abs(p.lat - c.lat) > 0.0006 || Math.abs(p.lng - c.lng) > 0.0006) return false;
+        const pTokens = (p.name || '').toLowerCase().split(/[^a-z0-9]+/).filter(t => t.length >= 3 && !['cafe', 'coffee', 'bakery', 'tea'].includes(t));
+        const sTokens = (s.name || '').toLowerCase().split(/[^a-z0-9]+/).filter(t => t.length >= 3 && !['cafe', 'coffee', 'bakery', 'tea'].includes(t));
+        return pTokens.some(t => sTokens.includes(t));
+      });
+      if (isRelistedDupe) return;
+
+      if (p.placeId) seenPlaceIds.add(p.placeId);
+      const addrKey = `place-${p.placeId || Math.random().toString(36).slice(2)}`;
+      ADDR[addrKey] = { lat: p.lat, lng: p.lng };
+      NEIGHBORHOODS[addrKey] = p.neighborhood || p.city;
+      out.push({
+        ...p,
+        addrKey: addrKey,
+        curated: false
+      });
+    });
+    return out;
+  }
+
+  // Region scope labels + per-source verification months. "unknown" (or
+  // missing) means the source never established its observation date — it
+  // must not borrow the other's.
+  function updateScopes(shopsData, placesData) {
+    CITIES = Array.from(new Set(SHOPS.map(s => s.city).filter(Boolean))).sort();
+    COUNTIES = (placesData && placesData.region && placesData.region.counties) || (shopsData && shopsData.counties) || Array.from(new Set(SHOPS.map(s => s.county).filter(Boolean))).sort();
+    REGION_LABEL = (placesData && placesData.region && placesData.region.label) || (shopsData && shopsData.regionLabel) || (CITIES.length === 1 ? CITIES[0] : 'North Atlanta');
+    SHOPS_MONTH = (shopsData && shopsData.checkedMonth) || '';
+    PLACES_MONTH = (placesData && placesData.checkedMonth) || '';
+  }
+
 const placesController = new AbortController();
 const placesTimeout = setTimeout(() => placesController.abort(), 7500);
 
@@ -738,126 +903,36 @@ Promise.allSettled([
   SHOPS = (shopsData && shopsData.shops) ? shopsData.shops.map(s => ({ ...s, curated: s.curated !== false })) : [];
   ADDR = (shopsData && shopsData.addr) ? { ...shopsData.addr } : {};
   NEIGHBORHOODS = (shopsData && shopsData.neighborhoods) ? { ...shopsData.neighborhoods } : {};
+  shopsDataGlobal = shopsData;
 
-  const seenPlaceIds = new Set(SHOPS.map(s => s.placeId).filter(Boolean));
+  seenPlaceIds = new Set(SHOPS.map(s => s.placeId).filter(Boolean));
 
-  if (placesData && Array.isArray(placesData.places)) {
-    placesData.places.forEach(p => {
-      if (!p || typeof p !== 'object') return;
-      if (typeof p.lat !== 'number' || !Number.isFinite(p.lat) || typeof p.lng !== 'number' || !Number.isFinite(p.lng)) return;
-      if (p.lat === 0 && p.lng === 0) return;
-      if (!p.name || typeof p.name !== 'string') return;
-      if (!p.category || typeof p.category !== 'string' || !CATS[p.category]) return;
-      if (p.placeId && seenPlaceIds.has(p.placeId)) return;
-      // Guard against relisted duplicate of a curated shop (<60m and shared non-generic name token)
-      const isRelistedDupe = SHOPS.some(s => {
-        if (!s.curated) return false;
-        const c = ADDR[s.addrKey] || s;
-        if (!c.lat || !c.lng || !p.lat || !p.lng) return false;
-        if (Math.abs(p.lat - c.lat) > 0.0006 || Math.abs(p.lng - c.lng) > 0.0006) return false;
-        const pTokens = (p.name || '').toLowerCase().split(/[^a-z0-9]+/).filter(t => t.length >= 3 && !['cafe', 'coffee', 'bakery', 'tea'].includes(t));
-        const sTokens = (s.name || '').toLowerCase().split(/[^a-z0-9]+/).filter(t => t.length >= 3 && !['cafe', 'coffee', 'bakery', 'tea'].includes(t));
-        return pTokens.some(t => sTokens.includes(t));
-      });
-      if (isRelistedDupe) return;
+  const placesOk = !!(placesData && Array.isArray(placesData.places));
+  SHOPS.push(...ingestPlaces(placesData));
 
-      if (p.placeId) seenPlaceIds.add(p.placeId);
-      const addrKey = `place-${p.placeId || Math.random().toString(36).slice(2)}`;
-      ADDR[addrKey] = { lat: p.lat, lng: p.lng };
-      NEIGHBORHOODS[addrKey] = p.neighborhood || p.city;
-      SHOPS.push({
-        ...p,
-        addrKey: addrKey,
-        curated: false
-      });
-    });
-  }
-
-  CITIES = Array.from(new Set(SHOPS.map(s => s.city).filter(Boolean))).sort();
-  COUNTIES = (placesData && placesData.region && placesData.region.counties) || (shopsData && shopsData.counties) || Array.from(new Set(SHOPS.map(s => s.county).filter(Boolean))).sort();
-  REGION_LABEL = (placesData && placesData.region && placesData.region.label) || (shopsData && shopsData.regionLabel) || (CITIES.length === 1 ? CITIES[0] : 'North Atlanta');
-  // Per-source verification months. "unknown" (or missing) means the source
-  // never established its observation date — it must not borrow the other's.
-  SHOPS_MONTH = (shopsData && shopsData.checkedMonth) || '';
-  PLACES_MONTH = (placesData && placesData.checkedMonth) || '';
-  boot();
+  updateScopes(shopsData, placesData);
+  boot({ placesFailed: !placesOk });
 })
 .catch(err => {
   document.body.innerHTML = '<div style="padding:40px;font-family:Inter,sans-serif;color:#1f1f1f">Failed to load shop data. Try refreshing.<br><br><code>' + (err && err.message ? err.message : err) + '</code></div>';
 });
 
-function boot() {
+function boot(opts) {
+  const placesFailed = !!(opts && opts.placesFailed);
   // DERIVED
-  const slug = s => (s || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-  const seenIds = new Set();
-  SHOPS = SHOPS.filter(s => {
-    const key = s.addrKey;
-    if (key && ADDR[key]) { s.lat = ADDR[key].lat; s.lng = ADDR[key].lng; }
-    if (typeof s.lat !== 'number' || !Number.isFinite(s.lat) || typeof s.lng !== 'number' || !Number.isFinite(s.lng) || (s.lat === 0 && s.lng === 0)) {
-      console.warn('Skipping shop with invalid coordinates:', s.name);
-      return false;
-    }
-    const baseId = s.placeId || (slug(s.city || 'duluth') + '-' + slug(s.name || 'spot'));
-    let uniqueId = baseId;
-    let counter = 1;
-    while (seenIds.has(uniqueId)) {
-      uniqueId = `${baseId}-${counter++}`;
-    }
-    seenIds.add(uniqueId);
-    s.id = uniqueId;
-    s.neighborhood = s.neighborhood || NEIGHBORHOODS[key] || s.city || "Duluth";
-    s.model = s.model || 'independent';
-    return true;
-  });
+  SHOPS = SHOPS.filter(s => prepareShop(s));
 
   // Multiple shops can sit at the exact same building. Without offsetting,
   // their pins (and labels) stack on top of each other. Group by coord and
   // fan each group out in a tiny ring (~15m radius), and assign distinct
   // label positions so the labels point in different directions.
-  (function spreadCoincidentShops() {
-    const LABEL_POSITIONS = ['bottom', 'right', 'top', 'left'];
-    const groups = new Map();
-    SHOPS.forEach(s => {
-      const k = `${s.lat.toFixed(5)},${s.lng.toFixed(5)}`;
-      if (!groups.has(k)) groups.set(k, []);
-      groups.get(k).push(s);
-    });
-    const radiusDeg = 0.00018; // ~20m
-    groups.forEach(group => {
-      if (group.length === 1) {
-        group[0].labelPos = 'bottom';
-        return;
-      }
-      const n = group.length;
-      group.forEach((s, i) => {
-        const angle = (i / n) * 2 * Math.PI - Math.PI / 2; // start at top, go clockwise
-        const latCorrection = Math.cos(s.lat * Math.PI / 180) || 1;
-        s.lat += radiusDeg * Math.cos(angle);
-        s.lng += (radiusDeg * Math.sin(angle)) / latCorrection;
-        s.labelPos = LABEL_POSITIONS[i % LABEL_POSITIONS.length];
-      });
-    });
-  })();
+  spreadCoincidentShops();
 
   // Bayesian weighted rating (IMDB Top 250 formula):
   //   WR = (v / (v + m)) * R + (m / (v + m)) * C
   // Pulls under-reviewed shops toward the global mean so a 4.9 with 14 reviews
   // doesn't outrank a 4.6 with 1,680. Sort order = "best overall".
-  (function computeWeightedRatings() {
-    const rated = SHOPS.filter(s => typeof s.rating === 'number');
-    const C = rated.reduce((acc, s) => acc + s.rating, 0) / rated.length;
-    const counts = SHOPS.map(s => s.ratingNum || 0).slice().sort((a, b) => a - b);
-    const m = counts[Math.floor(counts.length / 2)]; // median
-    SHOPS.forEach(s => {
-      s.rated = typeof s.rating === 'number';
-      const R = s.rated ? s.rating : C;
-      const v = s.ratingNum || 0;
-      s.weightedRating = (v / (v + m)) * R + (m / (v + m)) * C;
-      // Display strings, derived once so every renderer shows the same precision.
-      s.scoreText = s.weightedRating.toFixed(1);
-      s.ratingText = s.rated ? s.rating.toFixed(1) : null;
-    });
-  })();
+  computeWeightedRatings();
 
   function websiteHost(url) {
     if (!url) return null;
@@ -1076,6 +1151,22 @@ function boot() {
     return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   }
 
+  // Action URLs land in href="..." via string interpolation. Only http(s)
+  // survives; everything else (javascript:, data:, relative, malformed)
+  // renders no button at all rather than a clickable exploit.
+  function sanitizeActionUrl(url) {
+    if (!url || typeof url !== 'string') return null;
+    const trimmed = url.trim();
+    if (!trimmed) return null;
+    try {
+      const parsed = new URL(trimmed);
+      if (parsed.protocol !== 'http:' && parsed.protocol !== 'https:') return null;
+      return escapeHtml(trimmed);
+    } catch {
+      return null;
+    }
+  }
+
   function makeIcon(shop, isSelected) {
     const c = CATS[shop.category] || { hex: '#999', icon: '•' };
     const late = shop.late ? ' late' : '';
@@ -1093,15 +1184,22 @@ function boot() {
 
 
 
-  const markers = SHOPS.map(shop => {
-    const m = L.marker([shop.lat, shop.lng], { icon: makeIcon(shop, false) });
-    m.shopRef = shop;
-    m.isOnMap = true;
-    m.on('click', () => selectShop(shop));
-    return m;
-  });
-  clusterGroup.addLayers(markers);
-  const markerByShopId = new Map(markers.map(m => [m.shopRef.id, m]));
+  const markers = [];
+  const markerByShopId = new Map();
+  function addShopMarkers(shops) {
+    const added = [];
+    shops.forEach(shop => {
+      const m = L.marker([shop.lat, shop.lng], { icon: makeIcon(shop, false) });
+      m.shopRef = shop;
+      m.isOnMap = true;
+      m.on('click', () => selectShop(shop));
+      markers.push(m);
+      markerByShopId.set(shop.id, m);
+      added.push(m);
+    });
+    if (added.length) clusterGroup.addLayers(added);
+  }
+  addShopMarkers(SHOPS);
 
   // Fit the map to all markers on first paint (instead of the hardcoded center+zoom)
   if (clusterGroup.getLayers().length > 0) {
@@ -1454,6 +1552,37 @@ function boot() {
     return li;
   }
 
+  // Fit the map to every globally-matching shop (used by the
+  // "outside this view" search action).
+  function showAllMatches() {
+    if (!cachedGlobalShops || !cachedGlobalShops.length) return;
+    map.fitBounds(
+      L.latLngBounds(cachedGlobalShops.map(s => [s.lat, s.lng])),
+      { padding: [40, 40], animate: true }
+    );
+  }
+
+  // Compact "+N outside view" pill in the results-meta bar. Shown only while
+  // some matches are visible and more exist beyond the viewport.
+  function updateOutsideMatchesUI(outsideCount, visibleCount) {
+    const existing = document.getElementById('outsideMatchesPill');
+    if (outsideCount > 0 && visibleCount > 0) {
+      if (existing) {
+        existing.textContent = `+${outsideCount} outside view`;
+        return;
+      }
+      const pill = document.createElement('button');
+      pill.id = 'outsideMatchesPill';
+      pill.type = 'button';
+      pill.className = 'outside-matches-pill';
+      pill.textContent = `+${outsideCount} outside view`;
+      pill.addEventListener('click', showAllMatches);
+      resultsMetaEl.appendChild(pill);
+    } else if (existing) {
+      existing.remove();
+    }
+  }
+
   function renderList(source) {
     // A fresh filter/search context starts back at the top of the list;
     // explicit "Load more", returning from detail, and viewport updates preserve pagination.
@@ -1503,8 +1632,7 @@ function boot() {
     }
 
     // Label and pulse: "17 in view" vs "59 spots" (Web Animations API: zero forced reflow)
-    resultsLabelEl.textContent = isViewportFiltering ? ' in view' : ' spots';
-    if (source === 'viewport') {
+    resultsLabelEl.textContent = isViewportFiltering ? ' in view' : ' spots';    if (source === 'viewport') {
       if (resultsMetaEl.animate && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
         resultsMetaEl.animate([
           { background: 'var(--accent-soft)' },
@@ -1512,6 +1640,13 @@ function boot() {
         ], { duration: 350, easing: 'cubic-bezier(0.22, 1, 0.36, 1)' });
       }
     }
+
+    // Search matches beyond the viewport: offer a one-tap expansion instead
+    // of a dead end. cachedGlobalShops holds every global match; filtered is
+    // the in-viewport subset.
+    const searchActive = state.search.trim() !== '';
+    const outsideCount = searchActive ? (globalCount - filtered.length) : 0;
+    updateOutsideMatchesUI(outsideCount, filtered.length);
 
     // Fast-path: if displayed ordered IDs, selection state, and list count are identical, skip DOM reconciliation
     let idsMatch = shown.length === lastRenderedShopIds.length;
@@ -1532,6 +1667,19 @@ function boot() {
     // Keyed DOM reconciliation
     if (filtered.length === 0) {
       shopListEl.innerHTML = '<li class="empty-state"><img src="./brand/logos/caffeye-symbol-forest.svg" alt="" width="28" height="28" style="opacity:0.35;display:block;margin:0 auto 8px;">Nothing here — try zooming out or clearing a filter.</li>';
+      if (outsideCount > 0) {
+        const li = document.createElement('li');
+        li.className = 'empty-state';
+        const plural = outsideCount === 1 ? '' : 's';
+        li.innerHTML = `<div>No matches in the current map view — found ${outsideCount} matching spot${plural} elsewhere.</div>`;
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'action-btn outside-matches-btn';
+        btn.textContent = `Show all ${outsideCount} match${plural}`;
+        btn.addEventListener('click', showAllMatches);
+        li.appendChild(btn);
+        shopListEl.appendChild(li);
+      }
       lastRenderedShopIds = [];
       lastRenderedSelectedId = currentSelectedId;
       if (typeof scheduleLabels === 'function') scheduleLabels();
@@ -1688,13 +1836,19 @@ function boot() {
     </div>`;
     if (cw) {
       const tierLabel = { excellent: 'Coworking-ready', good: 'Workable', limited: 'Quick-grab' }[cw.tier];
+      const prov = cw.verified ? `<div class="detail-text-muted" style="margin-top:6px;font-size:11px;">Verified ${escapeHtml(cw.verified)} · ${escapeHtml(cw.source || 'Editorial review')}</div>` : '';
       html += `<div class="detail-section">
         <div class="detail-section-label">Coworking</div>
         <div class="detail-text"><b>${tierLabel}.</b> ${escapeHtml(cw.note || '')}</div>
         ${cw.hasMeetingRoom ? `<div class="callout">
           <div class="callout-label">Meeting room</div>
           <div class="callout-text">${escapeHtml(cw.meetingRoomNote || 'Private/meeting room available on demand')}</div>
-        </div>` : ''}
+        </div>` : ''}${prov}
+      </div>`;
+    } else {
+      html += `<div class="detail-section">
+        <div class="detail-section-label">Work suitability</div>
+        <div class="detail-text-muted">Unknown · amenities not yet verified for this venue.</div>
       </div>`;
     }
     if (ln) {
@@ -1705,9 +1859,12 @@ function boot() {
       </div>`;
     }
     const actions = [];
-    if (shop.googleUrl) actions.push(`<a class="action-btn" href="${shop.googleUrl}" target="_blank" rel="noopener">Google Maps</a>`);
-    if (shop.yelpUrl) actions.push(`<a class="action-btn" href="${shop.yelpUrl}" target="_blank" rel="noopener">Yelp</a>`);
-    if (site) actions.push(`<a class="action-btn" href="${site}" target="_blank" rel="noopener">${host}</a>`);
+    const gUrl = sanitizeActionUrl(shop.googleUrl);
+    const yUrl = sanitizeActionUrl(shop.yelpUrl);
+    const wUrl = sanitizeActionUrl(site);
+    if (gUrl) actions.push(`<a class="action-btn" href="${gUrl}" target="_blank" rel="noopener">Google Maps</a>`);
+    if (yUrl) actions.push(`<a class="action-btn" href="${yUrl}" target="_blank" rel="noopener">Yelp</a>`);
+    if (wUrl) actions.push(`<a class="action-btn" href="${wUrl}" target="_blank" rel="noopener">${host}</a>`);
     if (actions.length) {
       html += `<div class="actions">${actions.join('')}</div>`;
     }
@@ -1930,6 +2087,68 @@ function boot() {
   });
 
   updateThemeUI(getCurrentTheme());
+
+  // Degraded-coverage banner + in-place retry. The retry re-fetches the
+  // regional dataset and runs it through the same ingest/finalize path as
+  // initial load; selection and search survive, pagination restarts (same as
+  // any filter change). Concurrent taps are ignored while one is in flight.
+  let retryInFlight = false;
+  retryRegionalLoad = async () => {
+    if (retryInFlight) return;
+    const banner = document.getElementById('dataStatusBanner');
+    const btn = document.getElementById('retryPlacesBtn');
+    retryInFlight = true;
+    if (btn) { btn.disabled = true; btn.textContent = 'Retrying…'; }
+    const ctrl = new AbortController();
+    const timer = setTimeout(() => ctrl.abort(), 10000);
+    try {
+      const r = await fetch('./places.json', { signal: ctrl.signal });
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      const placesData = await r.json();
+      const fresh = ingestPlaces(placesData).filter(s => prepareShop(s));
+      updateScopes(shopsDataGlobal, placesData);
+      if (fresh.length) {
+        SHOPS.push(...fresh);
+        spreadCoincidentShops();
+        computeWeightedRatings();
+        addShopMarkers(fresh);
+        cachedGlobalShops = null;
+      }
+      render();
+      if (banner) {
+        banner.classList.add('success');
+        const msg = banner.querySelector('span');
+        if (msg) msg.textContent = `Regional coverage loaded — ${SHOPS.length} spots.`;
+        if (btn) btn.remove();
+        setTimeout(() => banner.remove(), 1500);
+      }
+    } catch (err) {
+      if (btn) { btn.disabled = false; btn.textContent = 'Retry failed — tap to try again'; }
+    } finally {
+      clearTimeout(timer);
+      retryInFlight = false;
+    }
+  };
+
+  if (placesFailed) {
+    const panel = document.getElementById('panel');
+    if (panel && !document.getElementById('dataStatusBanner')) {
+      const banner = document.createElement('div');
+      banner.id = 'dataStatusBanner';
+      banner.className = 'data-status-banner';
+      banner.setAttribute('role', 'alert');
+      const msg = document.createElement('span');
+      msg.textContent = `Showing ${SHOPS.length} local curated spots. Regional coverage could not be loaded.`;
+      const btn = document.createElement('button');
+      btn.id = 'retryPlacesBtn';
+      btn.type = 'button';
+      btn.className = 'banner-retry-btn';
+      btn.textContent = 'Retry';
+      btn.addEventListener('click', () => { if (retryRegionalLoad) retryRegionalLoad(); });
+      banner.append(msg, btn);
+      panel.insertBefore(banner, panel.firstChild);
+    }
+  }
 
   render();
 

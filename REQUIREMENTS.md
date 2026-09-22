@@ -6,7 +6,7 @@ Functional and non-functional requirements for the current state of the page. Ea
 
 | ID | Requirement | Principle |
 |---|---|---|
-| R1.1 | The page shows **59** curated shops covering Duluth, Berkeley Lake, Johns Creek border, and adjacent commercial strips. | Curation > count |
+| R1.1 | The page shows **1,705** shops across 14 Metro Atlanta counties (1,644 discovered regional venues plus the 61-shop curated Duluth baseline seed). | Curation > count |
 | R1.2 | Every shop has: `name`, full street address, lat/lng, category, star rating *or* `null`, review-count string, numeric review count, hours, USP description, 3 "loved" items, signature drink/dish, Google Maps URL, Yelp URL. | — |
 | R1.3 | Every shop has an inline `cw` object with `tier` ∈ {`excellent`, `good`, `limited`} and an optional reservable-meeting-room flag. | — |
 | R1.4 | Every shop has a `website` field (URL string or `null`). | — |
@@ -14,14 +14,14 @@ Functional and non-functional requirements for the current state of the page. Ea
 | R1.6 | Coworking/late/website data is **per-shop**, not keyed by name — two locations of the same brand in different cities can have different coworking notes, hours, and URLs. | Data integrity |
 | R1.7 | Every shop's `category` exists in `CATS`. | Data integrity |
 | R1.8 | All 42 unique building addresses (`ADDR`) are geocoded via Apple Maps with a verified `subThoroughfare` (house-number) match. | Geocode authoritatively |
-| R1.9 | The freshness label in the header reflects the live count and the month the data was last verified. | — |
+| R1.9 | The freshness label in the header reflects the live count and per-source verification months (curated baseline vs regional dataset); a source with an unknown verification date contributes no claim. | — |
 
 ## R2. Map
 
 | ID | Requirement | Principle |
 |---|---|---|
 | R2.1 | The map uses Leaflet with CARTO light tiles and MarkerCluster. | — |
-| R2.2 | On first paint, the map fits all 59 markers (`fitBounds` with 40 px padding). | Show what's available |
+| R2.2 | On first paint, the map fits all in-scope markers (`fitBounds` with 40 px padding). | Show what's available |
 | R2.3 | Each marker is a 26 px circular pin in the category color with the category emoji centered inside (☕ Coffee, 🫘 Roasters, 🥐 Bakery & Cafe, 🧋 Tea/Boba, 🍰 Dessert Cafe, ✦ Specialty). | Playfulness is information |
 | R2.4 | Late-night shops have a blue glow ring on their pin. | — |
 | R2.5 | The selected shop's pin grows to 32 px with a brown selection ring. | — |
@@ -55,7 +55,7 @@ Functional and non-functional requirements for the current state of the page. Ea
 | R4.4 | Category and feature chips are toggleable independently; multiple can be active. | — |
 | R4.5 | "Until midnight" is the wording (not "Past midnight") — accurate for shops closing *at* 12 am. | Truth in labeling |
 | R4.6 | Sort controls are intentionally absent. The list is always ordered by Bayesian weighted rating, descending. | The right default |
-| R4.7 | The filter bar presents two streamlined rows: Type (All + 5 categories) and Useful for (4 utility features). County/city filter rows are omitted to preserve vertical space and guarantee at least 5 visible cards on mobile viewports. | Density on phones; clean defaults |
+| R4.7 | The filter bar presents two streamlined rows: Type (All + 6 categories) and Useful for (4 utility features). County/city filter rows are omitted to preserve vertical space and guarantee at least 5 visible cards on mobile viewports. | Density on phones; clean defaults |
 | R4.8 | Dedicated top-right header toggle switch (`#franchiseToggle`) controls franchise and chain inclusion, defaulting to Indie-only discovery on boot (`state.includeFranchises = false`). "Useful for" section contains only utility feature chips (Work-friendly, Meeting room, Open late, Until midnight). | Clean defaults; truth in labeling |
 | R4.9 | Regional scope covers Metro Atlanta across 14 counties (Gwinnett, Fulton, Forsyth, DeKalb, Cobb, Cherokee, Hall, Dawson, Clayton, Henry, Fayette, Coweta, Douglas, Rockdale), encompassing North Georgia foothills, central/ITP Atlanta (Downtown, Midtown, West Midtown, Old Fourth Ward, Inman Park, Decatur), and South Metro (Clayton, Henry, Fayette, Coweta, Douglas, Rockdale). | Curated regional discovery |
 | R4.10 | Dedicated top-right header dark mode toggle (`#themeToggle`) switches between light and dark themes, defaulting to browser/system color scheme (`prefers-color-scheme: dark`) with zero-FOUC inline detection. Manual toggles persist to `localStorage` (`caffeye-theme`). Dark mode themes the UI using official Caffeye brand tokens (`--caffeye-ink` `#222721` & forest background, `--caffeye-paper` `#F4F3ED` text at 13.5:1 contrast, `--caffeye-gold` `#DCAF59` accents) and switches Leaflet basemap tiles to CARTO `dark_all`. | Playfulness is information; Clean defaults |
@@ -74,6 +74,7 @@ Functional and non-functional requirements for the current state of the page. Ea
 | R5.8 | Empty state copy hints at zooming out or clearing filters. | — |
 | R5.9 | On every list refresh, items animate in with a staggered fade + translateY (28 ms per item, max 140 ms total delay). When triggered by a viewport change, the results-meta bar briefly flashes `--accent-soft` to signal "the map caused this". | Show what's available |
 | R5.10 | When the current filter set (chips + search + viewport) matches more than 200 shops, only the first 200 render by default; a "Load N more" row grows the visible window by 200 on click, and clicking through to the end does render the full matched set (this bounds the *default* render, not an absolute maximum — see CLAUDE.md). Any new filter or search change resets the window back to 200, while returning from detail card view preserves the user's pagination window and browsing position. Loading more must not lose keyboard focus: activating "Load more" moves focus to the first newly-revealed item. Below 200 matches, behavior is unchanged (all render at once) — this is the case for every single-region dataset today. | Bounds the common-case render cost at multi-county scale without changing today's behavior, and without breaking keyboard navigation |
+| R5.11 | When a search matches shops outside the current map viewport, the list offers a "Show matches outside this view" action (full-width button in the empty state; compact pill when some matches are already visible) that fits the map to all matching shops. | Show what's available |
 
 ## R6. Detail card
 
@@ -86,8 +87,10 @@ Functional and non-functional requirements for the current state of the page. Ea
 | R6.5 | Location & hours section with the full street address and weekly hours. | — |
 | R6.6 | Coworking section: tier label ("Coworking-ready" / "Workable" / "Quick-grab") + descriptive note + meeting-room callout if reservable. | — |
 | R6.7 | Late-night section if applicable, with "Open until midnight" or "Open till 10pm+" header. | — |
-| R6.8 | Action row: Google Maps button, Yelp button, and (if a website exists) a Website button labeled by host (Instagram / Facebook / Linktree / Website). | — |
+| R6.8 | Action row: Google Maps button, Yelp button, and (if a website exists) a Website button labeled by host (Instagram / Facebook / Linktree / Website). URLs are sanitized: only `http:`/`https:` links render a button; anything else renders nothing. | — |
 | R6.9 | "← Back to list" button at the top hides the detail and resets the map. | — |
+| R6.10 | Action URLs are trimmed and scheme-validated (`sanitizeActionUrl`); `javascript:`, `data:`, relative, and malformed URLs never produce a clickable link. | Data integrity |
+| R6.11 | Coworking sections on curated venues carry provenance (verification date + source). Venues without verified amenities show an explicit "Unknown · amenities not yet verified" state instead of omitting the section. | Labels must never lie |
 
 ## R7. Search
 
@@ -102,10 +105,10 @@ Functional and non-functional requirements for the current state of the page. Ea
 | ID | Requirement | Principle |
 |---|---|---|
 | R8.1 | Desktop (≥ 821 px wide): map on left flex-grow, 380 px panel on right. | — |
-| R8.2 | Mobile (≤ 820 px): single column. Map height fixed at 220 px (min 180), panel takes remaining vertical space. | Density on phones |
+| R8.2 | Mobile (≤ 820 px): single column. Map height is `clamp(130px, 22vh, 185px)` (125 px on short screens), panel takes remaining vertical space. | Density on phones |
 | R8.3 | On mobile, filter chips compress (padding 2 × 7 px, 11.5 px font); freshness/brand shrink. | — |
 | R8.4 | On mobile, the footer disclaimer is hidden. | — |
-| R8.5 | On mobile at iPhone 14 Pro viewport (~750 px usable), at least 5 list cards are fully visible above the fold on single-region data (no County/City filter row shown — true of every dataset shipped today). When the County/City row is also shown (multi-county data), this relaxes to 4: that row is itself ~48 px, and card height (~69 px) wasn't reduced to compensate, since doing so would also shrink cards on the already-correct 5-card single-region case. | Density on phones; don't trade a validated baseline for an unshipped feature's density |
+| R8.5 | On mobile, at least 5 list cards are fully visible above the fold at 375×750, and at least 3 at 320×568. Interactive targets keep a ≥ 44 px touch height. | Density on phones |
 
 ## R9. Performance & errors
 
@@ -116,6 +119,7 @@ Functional and non-functional requirements for the current state of the page. Ea
 | R9.3 | All Leaflet, MarkerCluster, and Google Fonts assets load via CDN with SRI hashes where applicable. | — |
 | R9.4 | Renders correctly with no build step — open the `.html` file directly in a browser and it works. | Operating constraint |
 | R9.5 | All transitions and animations use compositor-only properties (`opacity`, `transform`). `will-change: transform` on `.pin` and `.pin-label`; `will-change: opacity, transform` on `.list-view` and `.detail-view`. `.panel` carries `contain: layout style` to scope reflow. Target 60 fps with no Layout or Paint during list↔detail transitions. | — |
+| R9.6 | If the regional dataset (`places.json`) fails to load or times out, the page boots the curated baseline and shows a degraded-coverage banner with the live baseline count and an in-place retry action — never a silent fallback. | Show what's available |
 
 ## R10. Deployment
 

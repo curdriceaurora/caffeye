@@ -167,6 +167,54 @@ class CuratePlacesTests(unittest.TestCase):
         self.assertEqual(p_map["t1"], "Tea/Boba")
         self.assertEqual(p_map["r1"], "Roasters")
 
+    def test_provenance_inherited_from_file_defaults(self):
+        places = [
+            {"placeId": "p1", "name": "Dummy Cafe", "city": "Roswell", "county": "Fulton"},
+        ]
+        curations = {
+            "p1": {
+                "name": "Dummy Cafe",
+                "cw": {"tier": "excellent", "hasMeetingRoom": True},
+            }
+        }
+        updated, count = CP.apply_curations(
+            places, curations, defaults=("September 2026", "editorial"))
+        self.assertEqual(count, 1)
+        self.assertEqual(updated[0]["cw"]["source"], "editorial")
+        self.assertEqual(updated[0]["cw"]["verified"], "September 2026")
+        self.assertEqual(updated[0]["cw"]["tier"], "excellent")
+
+    def test_provenance_per_record_override_wins(self):
+        places = [
+            {"placeId": "p1", "name": "Dummy Cafe", "city": "Roswell", "county": "Fulton"},
+        ]
+        curations = {
+            "p1": {
+                "name": "Dummy Cafe",
+                "source": "site-visit",
+                "verified": "August 2026",
+                "cw": {"tier": "good", "hasMeetingRoom": False},
+            }
+        }
+        updated, _ = CP.apply_curations(
+            places, curations, defaults=("September 2026", "editorial"))
+        self.assertEqual(updated[0]["cw"]["source"], "site-visit")
+        self.assertEqual(updated[0]["cw"]["verified"], "August 2026")
+
+    def test_provenance_unknown_stays_absent(self):
+        places = [
+            {"placeId": "p1", "name": "Dummy Cafe", "city": "Roswell", "county": "Fulton"},
+        ]
+        curations = {
+            "p1": {
+                "name": "Dummy Cafe",
+                "cw": {"tier": "good", "hasMeetingRoom": False},
+            }
+        }
+        updated, _ = CP.apply_curations(places, curations, defaults=(None, "editorial"))
+        self.assertEqual(updated[0]["cw"]["source"], "editorial")
+        self.assertNotIn("verified", updated[0]["cw"])
+
     def test_curation_category_override(self):
         places = [
             {"placeId": "p1", "name": "Some Artisanal Roaster", "category": "Coffee"}

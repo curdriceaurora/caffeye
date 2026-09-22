@@ -261,37 +261,60 @@ def county_label(components, lat: float):
     return None
 
 
-def category_for(place: dict):
-    """Category from primaryType (allowlist), with specialty, roastery, and tea-house overrides. None = drop.
+def classify_category(
+    name: str,
+    primary_type: str | None = None,
+    current_cat: str | None = None,
+    types: list | None = None,
+) -> str | None:
+    """Single-source category decision shared by discovery and curation.
 
-    Precedence & Guard rules:
-    1. Concept cafes by primaryType ('cat_cafe', 'dog_cafe') -> 'Specialty'.
-    2. Bakery+Cafe / Dessert Cafe: guarded against heuristic specialty name matches.
-       Only an explicit roastery match in ROASTERY_NAMES can override them.
-    3. Tea/Boba: if primary is tea_house or name matches TEA_NAME, 'Tea/Boba' takes
-       precedence over loose cultural/specialty name patterns (e.g. 'Yemeni Boba Tea House' -> 'Tea/Boba').
-    4. Roastery brands and coffee roaster names -> 'Roasters'; cultural/concept names -> 'Specialty'.
+    Discovery path (primary_type given): CATEGORY_BY_PRIMARY allowlist decides
+    the base category; unknown types return None (drop the record). The
+    name/type overrides below then apply.
+    Curation path (current_cat given): the stored category is the base;
+    "Roasters" is never downgraded. Never returns None — falls back to the
+    stored category.
+
+    Shared rules (in order):
+    1. Concept cafes (cat_cafe/dog_cafe types, or Specialty at crawl) -> Specialty.
+    2. Bakery+Cafe / Dessert Cafe / Tea/Boba are guarded: generic specialty
+       name patterns cannot move them; only an explicit roastery-list match
+       upgrades to Roasters (concept types still yield Specialty on the
+       curation path).
+    3. Tea/Boba (tea_house primary or TEA_NAME) takes precedence over loose
+       cultural/specialty patterns, unless a known roastery.
+    4. Roastery brands / roaster names -> Roasters; cultural/concept names ->
+       Specialty; otherwise the base category stands.
     """
-    cat = CATEGORY_BY_PRIMARY.get(place.get("primaryType"))
-    if not cat:
-        return None
-    name = (place.get("displayName") or {}).get("text", "") or place.get("name", "")
+    types = [t.lower() for t in (types or [])]
+    name = name or ""
     n_lower = name.lower()
-
-    if cat == "Specialty":
-        return "Specialty"
+    if primary_type is not None:
+        cat = CATEGORY_BY_PRIMARY.get(primary_type)
+        if not cat:
+            return None
+        if cat == "Specialty":
+            return "Specialty"
+    else:
+        cat = current_cat
+        if cat == "Roasters":
+            return "Roasters"
+        if any(t in ("cat_cafe", "dog_cafe") for t in types):
+            return "Specialty"
 
     is_roastery = any(r in n_lower for r in ROASTERY_NAMES)
     is_spec_name = bool(SPECIALTY_NAME.search(name))
     is_tea = (cat == "Tea/Boba") or bool(TEA_NAME.search(name))
 
-    # Guard: Bakeries and Dessert cafes don't get converted by generic specialty name patterns
-    if cat in ("Bakery+Cafe", "Dessert Cafe"):
+    # Guard: bakeries, dessert cafes, and tea houses don't convert on generic
+    # specialty name patterns.
+    if cat in ("Bakery+Cafe", "Dessert Cafe", "Tea/Boba"):
         if is_roastery:
             return "Roasters"
         return cat
 
-    # Precedence: Tea/Boba wins over generic specialty unless it's a known roastery
+    # Precedence: Tea/Boba wins over generic specialty unless a known roastery.
     if is_tea:
         if is_roastery:
             return "Roasters"
@@ -304,6 +327,16 @@ def category_for(place: dict):
         return "Specialty"
 
     return cat
+
+
+def category_for(place: dict):
+    """Category from primaryType (allowlist), with specialty, roastery, and tea-house overrides. None = drop."""
+    name = (place.get("displayName") or {}).get("text", "") or place.get("name", "")
+    return classify_category(
+        name,
+        primary_type=place.get("primaryType"),
+        types=place.get("types"),
+    )
 
 
 def is_chain(name: str) -> bool:
@@ -634,7 +667,7 @@ def late_for(periods):
     return {"tier": tier, "when": "; ".join(parts)}
 
 
-def to_record(place: dict, brand_counts=None, curations=None):
+def to_record(place: dict, brand_counts=None, curations=None, curation_defaults=None):
     """(record, None) for an in-scope place, else (None, reason)."""
     status = place.get("businessStatus") or "OPERATIONAL"
     if status != "OPERATIONAL":
@@ -697,10 +730,12 @@ def to_record(place: dict, brand_counts=None, curations=None):
     rec["googleUrl"] = place.get("googleMapsUri")
     if curations and place.get("id") in curations:
         cur = curations[place["id"]]
+        if curation_defaults is None:
+            curation_defaults = load_curation_defaults()
         if "category" in cur:
             rec["category"] = cur["category"]
         if "cw" in cur:
-            rec["cw"] = cur["cw"]
+            rec["cw"] = stamp_provenance(cur["cw"], cur, curation_defaults)
         if "usp" in cur:
             rec["usp"] = cur["usp"]
         if "loved" in cur:
@@ -717,10 +752,39 @@ def load_curations() -> dict:
     return data.get("places", {})
 
 
-def build_places(raw: dict, exclude_ids=frozenset(), curations=None):
+def load_curation_defaults(path=None) -> tuple:
+    """(defaultVerified, defaultSource) from the curation file's top-level
+    metadata. (None, 'editorial') when the file is missing or silent —
+    provenance is inherited from metadata, never hardcoded or stamped 'now'."""
+    p = Path(path) if path else CURATIONS_PATH
+    try:
+        data = json.loads(p.read_text())
+    except (OSError, ValueError):
+        return (None, "editorial")
+    if not isinstance(data, dict):
+        return (None, "editorial")
+    return (data.get("defaultVerified"), data.get("defaultSource", "editorial"))
+
+
+def stamp_provenance(cw: dict, cur: dict, defaults: tuple) -> dict:
+    """Copy a curated cw block with per-record source/verified attribution.
+    Per-record values win; file-level defaults fill gaps; unknown stays absent."""
+    out = dict(cw)
+    def_ver, def_src = defaults
+    out["source"] = cur.get("source", def_src)
+    verified = cur.get("verified", def_ver)
+    if verified:
+        out["verified"] = verified
+    return out
+
+
+def build_places(raw: dict, exclude_ids=frozenset(), curations=None,
+                 curation_defaults=None):
     """raw: {placeId: place} -> (records sorted by placeId, stats)."""
     if curations is None:
         curations = load_curations()
+    if curation_defaults is None:
+        curation_defaults = load_curation_defaults()
     brand_counts = Counter(
         clean_brand((p.get("displayName") or {}).get("text", ""))
         for p in raw.values()
@@ -730,7 +794,7 @@ def build_places(raw: dict, exclude_ids=frozenset(), curations=None):
         if pid in exclude_ids:
             dropped["excluded"] += 1
             continue
-        rec, reason = to_record(place, brand_counts, curations)
+        rec, reason = to_record(place, brand_counts, curations, curation_defaults)
         if rec is None:
             dropped[reason] += 1
             continue
