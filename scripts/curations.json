@@ -1602,8 +1602,7 @@
       "verified": "September 2026",
       "cw": {
         "tier": "good",
-        "note": "FREE WiFi",
-        "hasMeetingRoom": false
+        "note": "FREE WiFi"
       },
       "usp": "Independent coffee in Atlanta serving specialty coffee and fresh menu offerings."
     },
@@ -1614,24 +1613,10 @@
       "source": "website-crawl",
       "verified": "September 2026",
       "cw": {
-        "tier": "excellent",
-        "note": "Verified work-friendly spot: We offer free WiFi, a (dog-friendly) enclosed patio space, and a calm environment for anyone who needs to get out of their house or the office to enjoy some much-needed \"me-time\" and a good cup of coffee.",
-        "hasMeetingRoom": false
+        "tier": "good",
+        "note": "Verified work-friendly spot: We offer free WiFi, a (dog-friendly) enclosed patio space, and a calm environment for anyone who needs to get out of their house or the office to enjoy some much-needed \"me-time\" and a good cup of coffee."
       },
-      "usp": "Work-friendly coffee in Alpharetta with verified Wi-Fi and comfortable seating."
-    },
-    "ChIJWdUhZCQL9YgRz3Y26AYMN2U": {
-      "name": "Ground & Pound Coffee",
-      "city": "Alpharetta",
-      "county": "Fulton",
-      "source": "website-crawl",
-      "verified": "September 2026",
-      "cw": {
-        "tier": "excellent",
-        "note": "Verified work-friendly spot: High-speed Wi-Fi access (Indoor Outdoor Seating)",
-        "hasMeetingRoom": false
-      },
-      "usp": "Work-friendly coffee in Alpharetta with verified Wi-Fi and comfortable seating."
+      "usp": "Work-friendly coffee in Alpharetta with verified Wi-Fi."
     },
     "ChIJb-uOTPgD9YgR6vk5lZyikek": {
       "name": "Revolution Doughnuts & Coffee",
@@ -1641,8 +1626,7 @@
       "verified": "September 2026",
       "cw": {
         "tier": "limited",
-        "note": "No, we do not offer WiFI at either of our shops.",
-        "hasMeetingRoom": false
+        "note": "No, we do not offer WiFI at either of our shops."
       },
       "usp": "Independent bakery+cafe in Atlanta serving specialty coffee and fresh menu offerings."
     },
@@ -1659,12 +1643,11 @@
       "name": "Blue Mountain Coffee Roasters",
       "city": "Suwanee",
       "county": "Gwinnett",
-      "source": "website-crawl",
+      "source": "atlanta-coffee-shops-directory",
       "verified": "September 2026",
       "cw": {
         "tier": "good",
-        "note": "✓ Free Wi-Fi",
-        "hasMeetingRoom": false
+        "note": "✓ Free Wi-Fi"
       },
       "usp": "Independent roasters in Suwanee serving specialty coffee and fresh menu offerings."
     },
@@ -1672,12 +1655,11 @@
       "name": "Tada Coffee and Dessert",
       "city": "Suwanee",
       "county": "Gwinnett",
-      "source": "website-crawl",
+      "source": "atlanta-coffee-shops-directory",
       "verified": "September 2026",
       "cw": {
         "tier": "good",
-        "note": "✓ Free Wi-Fi",
-        "hasMeetingRoom": false
+        "note": "✓ Free Wi-Fi"
       },
       "usp": "Independent coffee in Suwanee serving specialty coffee and fresh menu offerings."
     },
@@ -1689,8 +1671,7 @@
       "verified": "September 2026",
       "cw": {
         "tier": "good",
-        "note": "Yes, customers can access free Wi-Fi under the network “Taproom-Public”.",
-        "hasMeetingRoom": false
+        "note": "Yes, customers can access free Wi-Fi under the network “Taproom-Public”."
       },
       "usp": "Independent roasters in Atlanta serving specialty coffee and fresh menu offerings."
     },
@@ -1702,8 +1683,7 @@
       "verified": "September 2026",
       "cw": {
         "tier": "good",
-        "note": "Coworking Laptop-friendly Built for coworking",
-        "hasMeetingRoom": false
+        "note": "Laptop-friendly per venue policy"
       },
       "usp": "Independent coffee in Canton serving specialty coffee and fresh menu offerings."
     },

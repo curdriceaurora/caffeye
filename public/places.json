@@ -2330,8 +2330,7 @@
    "googleUrl": "https://maps.google.com/?cid=5762979685633533575&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
    "cw": {
     "tier": "good",
-    "note": "Coworking Laptop-friendly Built for coworking",
-    "hasMeetingRoom": false,
+    "note": "Laptop-friendly per venue policy",
     "source": "website-crawl",
     "verified": "September 2026"
    },
@@ -5424,8 +5423,7 @@
    "cw": {
     "tier": "good",
     "note": "✓ Free Wi-Fi",
-    "hasMeetingRoom": false,
-    "source": "website-crawl",
+    "source": "atlanta-coffee-shops-directory",
     "verified": "September 2026"
    },
    "usp": "Independent roasters in Suwanee serving specialty coffee and fresh menu offerings."
@@ -15977,7 +15975,6 @@
    "cw": {
     "tier": "good",
     "note": "FREE WiFi",
-    "hasMeetingRoom": false,
     "source": "website-crawl",
     "verified": "September 2026"
    },
@@ -21165,13 +21162,12 @@
    "website": "http://www.thecreekjc.com/",
    "googleUrl": "https://maps.google.com/?cid=17283857878180295717&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
    "cw": {
-    "tier": "excellent",
+    "tier": "good",
     "note": "Verified work-friendly spot: We offer free WiFi, a (dog-friendly) enclosed patio space, and a calm environment for anyone who needs to get out of their house or the office to enjoy some much-needed \"me-time\" and a good cup of coffee.",
-    "hasMeetingRoom": false,
     "source": "website-crawl",
     "verified": "September 2026"
    },
-   "usp": "Work-friendly coffee in Alpharetta with verified Wi-Fi and comfortable seating."
+   "usp": "Work-friendly coffee in Alpharetta with verified Wi-Fi."
   },
   {
    "placeId": "ChIJWXFkXpD39YgR0hfmZFE6G3c",
@@ -21267,15 +21263,7 @@
     "when": "Thu-Sat till 10pm"
    },
    "website": "http://groundandpoundcoffee.com/",
-   "googleUrl": "https://maps.google.com/?cid=7293311345355028175&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-   "cw": {
-    "tier": "excellent",
-    "note": "Verified work-friendly spot: High-speed Wi-Fi access (Indoor Outdoor Seating)",
-    "hasMeetingRoom": false,
-    "source": "website-crawl",
-    "verified": "September 2026"
-   },
-   "usp": "Work-friendly coffee in Alpharetta with verified Wi-Fi and comfortable seating."
+   "googleUrl": "https://maps.google.com/?cid=7293311345355028175&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJWzlSNoID9YgRmhyw_lVu21U",
@@ -24652,7 +24640,6 @@
    "cw": {
     "tier": "limited",
     "note": "No, we do not offer WiFI at either of our shops.",
-    "hasMeetingRoom": false,
     "source": "website-crawl",
     "verified": "September 2026"
    },
@@ -26802,7 +26789,6 @@
    "cw": {
     "tier": "good",
     "note": "Yes, customers can access free Wi-Fi under the network “Taproom-Public”.",
-    "hasMeetingRoom": false,
     "source": "website-crawl",
     "verified": "September 2026"
    },
@@ -29902,8 +29888,7 @@
    "cw": {
     "tier": "good",
     "note": "✓ Free Wi-Fi",
-    "hasMeetingRoom": false,
-    "source": "website-crawl",
+    "source": "atlanta-coffee-shops-directory",
     "verified": "September 2026"
    },
    "usp": "Independent coffee in Suwanee serving specialty coffee and fresh menu offerings."

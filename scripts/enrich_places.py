@@ -63,6 +63,14 @@ DEFAULT_COUNTY_QUOTAS = {
     "Rockdale": 1,
 }
 
+# Major cities/districts in Metro Atlanta for branch isolation
+OTHER_MAJOR_CITIES = [
+    "alpharetta", "roswell", "duluth", "decatur", "marietta", "smyrna",
+    "woodstock", "cumming", "lawrenceville", "suwanee", "buford", "canton",
+    "peachtree city", "newnan", "midtown", "buckhead", "inman park", "west end",
+    "johns creek", "sandy springs", "dunwoody", "kennesaw", "norcross", "snellville"
+]
+
 # Subpage URL keywords of high research value
 RELEVANT_PATH_KEYWORDS = [
     "location", "locations", "hours", "visit", "contact", "find-us",
@@ -81,16 +89,100 @@ SKIP_PATH_PATTERNS = [
     re.compile(r"/wp-content/|/cdn-cgi/|/cart|/checkout|/login|/account|/feed|/tag/|/category/|/author/", re.I),
 ]
 
+DIRECTORY_DOMAINS = {
+    "atlantacoffeeshops.com", "menutoeat.com", "facebook.com", "instagram.com",
+    "toasttab.com", "yelp.com", "tripadvisor.com"
+}
+
+EVENT_PAGE_PATTERNS = [
+    re.compile(r"/location-events\b", re.I),
+    re.compile(r"/location-scouts\b", re.I),
+    re.compile(r"/private-events\b", re.I),
+    re.compile(r"/private-dining\b", re.I),
+    re.compile(r"/event-rentals?\b", re.I),
+    re.compile(r"/venue-rentals?\b", re.I),
+    re.compile(r"/private-event-hire\b", re.I),
+    re.compile(r"/space-rental\b", re.I),
+    re.compile(r"/party-rentals?\b", re.I),
+    re.compile(r"/host-your-event\b", re.I),
+    re.compile(r"/weddings?\b", re.I),
+]
+
+ERROR_CACHE_TTL_SEC = 3600  # 1 hour retry for failed fetches
+MAX_CACHE_AGE_DAYS = 14     # 14 days freshness for cached content
+
 
 # ==============================================================================
-# 1. Balanced Queue Generator
+# 1. Balanced Queue Generator with Proportional Allocation
 # ==============================================================================
+
+def compute_scaled_quotas(base_quotas: dict, target_total: int, available_by_county: dict = None) -> dict:
+    """Proportionally scales county quotas so they sum exactly to target_total,
+    distributing across diverse counties without tail truncation and capped by candidate availability."""
+    if target_total <= 0:
+        return {c: 0 for c in base_quotas}
+
+    if available_by_county is None:
+        available_by_county = {c: 999999 for c in base_quotas}
+
+    active_counties = [c for c in base_quotas if available_by_county.get(c, 0) > 0]
+    if not active_counties:
+        return {}
+
+    total_base_weight = sum(base_quotas[c] for c in active_counties)
+    if total_base_weight == 0:
+        return {}
+
+    alloc = {c: 0 for c in active_counties}
+    exact_shares = {
+        c: (base_quotas[c] / total_base_weight) * target_total
+        for c in active_counties
+    }
+
+    rem = target_total
+    # When target_total >= number of active counties, give 1 to each active county
+    if target_total >= len(active_counties):
+        for c in active_counties:
+            take = min(1, available_by_county.get(c, 0))
+            alloc[c] = take
+            rem -= take
+    else:
+        # For small limits (< len(active_counties)), distribute across distinct counties (at most 1 per county)
+        # to maximize geographical diversity across Metro Atlanta
+        sorted_counties = sorted(
+            active_counties,
+            key=lambda c: (exact_shares[c], base_quotas[c]),
+            reverse=True
+        )
+        for c in sorted_counties[:target_total]:
+            take = min(1, available_by_county.get(c, 0))
+            alloc[c] = take
+            rem -= take
+
+    # Distribute remaining quota by highest residual share (exact_shares[c] - alloc[c])
+    while rem > 0:
+        candidates_to_add = [
+            c for c in active_counties
+            if alloc[c] < available_by_county.get(c, 0)
+        ]
+        if not candidates_to_add:
+            break
+        best_c = max(candidates_to_add, key=lambda c: (exact_shares[c] - alloc[c], base_quotas[c]))
+        alloc[best_c] += 1
+        rem -= 1
+
+    return alloc
+
 
 def generate_balanced_queue(places: list, shops: list = None,
-                            quotas: dict = None, target_total: int = 100) -> list:
+                            quotas: dict = None, target_total: int = 100,
+                            recheck: bool = False,
+                            facts_path: Path = FACTS_PATH,
+                            researched_facts: dict = None) -> list:
     """Generates a balanced research queue across all 14 counties.
 
     Filters to independent venues with valid websites that lack cw qualitative assessments.
+    Skips venues already recorded in research_facts.json unless recheck=True.
     Ranks within each county by Bayesian weighted rating.
     """
     if quotas is None:
@@ -98,6 +190,17 @@ def generate_balanced_queue(places: list, shops: list = None,
 
     all_venues = merge_venues(places, shops)
     curated = load_curations()
+
+    # Load research ledger to avoid repeating completed research
+    researched_pids = set()
+    if researched_facts is not None:
+        researched_pids = set(researched_facts.keys())
+    elif facts_path and Path(facts_path).exists():
+        try:
+            facts_data = json.loads(Path(facts_path).read_text())
+            researched_pids = set(facts_data.get("places", {}).keys())
+        except Exception:
+            pass
 
     # Precompute Bayesian rating over the whole population
     rated = [v["rating"] for v in all_venues if isinstance(v.get("rating"), (int, float))]
@@ -123,6 +226,11 @@ def generate_balanced_queue(places: list, shops: list = None,
         if existing_cw and isinstance(existing_cw, dict) and existing_cw.get("tier"):
             continue
         if pid in curated and (curated[pid].get("cw") or {}).get("tier"):
+            continue
+        # Deduplicate against research facts ledger unless recheck is requested
+        if not recheck and pid in researched_pids:
+            continue
+        if recheck and pid not in researched_pids:
             continue
 
         county = v.get("county") or "Unknown"
@@ -150,34 +258,16 @@ def generate_balanced_queue(places: list, shops: list = None,
     for county in candidates_by_county:
         candidates_by_county[county].sort(key=lambda c: (c["weightedRating"], c["ratingNum"]), reverse=True)
 
-    # Allocate according to quota, redistributing unused quota if a county has fewer candidates
+    available_by_county = {c: len(candidates_by_county.get(c, [])) for c in quotas}
+    scaled_quotas = compute_scaled_quotas(quotas, target_total, available_by_county)
+
     queue = []
-    allocated_counts = Counter()
-    unfilled_quota = 0
-
-    for county, quota in quotas.items():
-        cands = candidates_by_county.get(county, [])
-        take = min(quota, len(cands))
-        queue.extend(cands[:take])
-        allocated_counts[county] = take
-        if take < quota:
-            unfilled_quota += (quota - take)
-
-    # Distribute any unfilled quota to largest candidate pools (Fulton, Gwinnett, Cobb, DeKalb)
-    if unfilled_quota > 0:
-        for county in ["Fulton", "Gwinnett", "Cobb", "DeKalb", "Cherokee"]:
-            if unfilled_quota <= 0:
-                break
+    for county, q in scaled_quotas.items():
+        if q > 0:
             cands = candidates_by_county.get(county, [])
-            current_take = allocated_counts[county]
-            available = len(cands) - current_take
-            if available > 0:
-                more = min(available, unfilled_quota)
-                queue.extend(cands[current_take:current_take + more])
-                allocated_counts[county] += more
-                unfilled_quota -= more
+            queue.extend(cands[:q])
 
-    return queue[:target_total] if target_total else queue
+    return queue
 
 
 # ==============================================================================
@@ -204,15 +294,31 @@ def cache_key_for_url(url: str) -> str:
 
 
 def fetch_page(url: str, timeout: float = 6.0, cache_dir: Path = CACHE_DIR,
-               force_refresh: bool = False) -> dict:
-    """Fetches a URL with disk caching, polite headers, and error capture."""
+               force_refresh: bool = False,
+               error_ttl_sec: float = ERROR_CACHE_TTL_SEC,
+               max_age_days: float = MAX_CACHE_AGE_DAYS) -> dict:
+    """Fetches a URL with disk caching, polite headers, and error retry rules."""
     cache_dir.mkdir(parents=True, exist_ok=True)
     c_key = cache_key_for_url(url)
     c_file = cache_dir / f"{c_key}.json"
 
     if not force_refresh and c_file.exists():
         try:
-            return json.loads(c_file.read_text())
+            cached = json.loads(c_file.read_text())
+            fetched_at_str = cached.get("fetchedAt")
+            is_valid = True
+            if fetched_at_str:
+                try:
+                    fetched_dt = datetime.fromisoformat(fetched_at_str.replace("Z", "+00:00"))
+                    age_sec = (datetime.now(timezone.utc) - fetched_dt).total_seconds()
+                    if not cached.get("ok") and age_sec > error_ttl_sec:
+                        is_valid = False  # Expire error cache
+                    elif cached.get("ok") and age_sec > max_age_days * 86400:
+                        is_valid = False  # Expire old content
+                except Exception:
+                    pass
+            if is_valid:
+                return cached
         except Exception:
             pass
 
@@ -263,12 +369,6 @@ def fetch_page(url: str, timeout: float = 6.0, cache_dir: Path = CACHE_DIR,
         pass
 
     return result
-
-
-DIRECTORY_DOMAINS = {
-    "atlantacoffeeshops.com", "menutoeat.com", "facebook.com", "instagram.com",
-    "toasttab.com", "yelp.com", "tripadvisor.com"
-}
 
 
 def discover_subpages(homepage_url: str, html: str, max_pages: int = 8) -> list:
@@ -328,9 +428,10 @@ def discover_subpages(homepage_url: str, html: str, max_pages: int = 8) -> list:
 
 
 def crawl_venue_website(url: str, place_meta: dict = None, max_pages: int = 8,
-                        cache_dir: Path = CACHE_DIR, pause_sec: float = 0.2) -> dict:
-    """Crawls venue homepage and prioritized subpages, respecting bounds and caching."""
-    home_res = fetch_page(url, cache_dir=cache_dir)
+                        cache_dir: Path = CACHE_DIR, pause_sec: float = 0.2,
+                        force_refresh: bool = False) -> dict:
+    """Crawls venue homepage and prioritized subpages, respecting bounds, caching, and force_refresh."""
+    home_res = fetch_page(url, cache_dir=cache_dir, force_refresh=force_refresh)
     pages = {canonicalize_url(url): home_res}
 
     if not home_res.get("ok"):
@@ -340,14 +441,14 @@ def crawl_venue_website(url: str, place_meta: dict = None, max_pages: int = 8,
     for sub_url in subpages:
         if pause_sec > 0:
             time.sleep(pause_sec)
-        sub_res = fetch_page(sub_url, cache_dir=cache_dir)
+        sub_res = fetch_page(sub_url, cache_dir=cache_dir, force_refresh=force_refresh)
         pages[canonicalize_url(sub_url)] = sub_res
 
     return pages
 
 
 # ==============================================================================
-# 3. Branch & Multi-Location Disambiguation
+# 3. Branch Disambiguation, Section & Table Preservation
 # ==============================================================================
 
 def clean_text_from_html(html: str) -> str:
@@ -373,11 +474,118 @@ def extract_sentences(text: str) -> list:
     return sentences
 
 
-def match_branch_pages(pages: dict, address: str, city: str) -> dict:
-    """Examines crawled pages and tags them as branch_match (True/False/General).
+def extract_table_facts(html: str, target_city: str = "", address: str = "") -> list:
+    """Extracts text from HTML tables, matching columns to the target venue location."""
+    tables = re.findall(r"<table[^>]*>(.*?)</table>", html, re.I | re.S)
+    results = []
+    target_city_norm = norm(target_city or "")
+    street_num = ""
+    num_match = re.search(r"^\d+", address or "")
+    if num_match:
+        street_num = num_match.group(0)
 
-    Ensures that location-specific subpages for a different branch are ignored
-    for location-specific amenities (e.g. meeting rooms, patio).
+    for table_html in tables:
+        rows = re.findall(r"<tr[^>]*>(.*?)</tr>", table_html, re.I | re.S)
+        if not rows:
+            continue
+        parsed_rows = []
+        for r in rows:
+            cells = re.findall(r"<(?:td|th)[^>]*>(.*?)</(?:td|th)>", r, re.I | re.S)
+            cleaned_cells = [
+                re.sub(r"<[^>]+>", " ", c).replace("&nbsp;", " ").replace("&amp;", "&").replace("&#39;", "'").strip()
+                for c in cells
+            ]
+            if any(cleaned_cells):
+                parsed_rows.append(cleaned_cells)
+        if len(parsed_rows) < 2:
+            continue
+
+        target_col_idx = None
+        for r_idx, r in enumerate(parsed_rows[:3]):
+            for c_idx, cell in enumerate(r):
+                cell_norm = norm(cell)
+                if target_city_norm and target_city_norm in cell_norm:
+                    target_col_idx = c_idx
+                    break
+                if street_num and street_num in cell_norm:
+                    target_col_idx = c_idx
+                    break
+            if target_col_idx is not None:
+                break
+
+        if target_col_idx is not None:
+            for r in parsed_rows[r_idx + 1:]:
+                if len(r) > target_col_idx:
+                    label = r[0] if len(r) > 1 and target_col_idx > 0 else ""
+                    val = r[target_col_idx]
+                    if val and val.lower() not in ("yes", "no"):
+                        results.append(f"{label}: {val}" if label else val)
+                    elif val:
+                        results.append(f"{label}: {val}")
+    return results
+
+
+def extract_location_scoped_sentences(html: str, target_city: str, address: str = "") -> list:
+    """Extracts candidate sentences from HTML while isolating sections/tables
+    that belong to different branches."""
+    target_city_norm = norm(target_city or "")
+    street_num = ""
+    num_match = re.search(r"^\d+", address or "")
+    if num_match:
+        street_num = num_match.group(0)
+
+    # 1. Extract table facts matching this location
+    table_lines = extract_table_facts(html, target_city)
+
+    # 2. Remove <table>...</table> to avoid flattening cross-column text
+    clean_html = re.sub(r"<table[^>]*>.*?</table>", " ", html, flags=re.I | re.S)
+
+    # 3. Split HTML by structural sections (headings, section, article)
+    section_chunks = re.split(r"(<h[1-6][^>]*>|<section[^>]*>|<article[^>]*>)", clean_html, flags=re.I)
+
+    current_section_ok = True
+    all_sentences = []
+
+    for l in table_lines:
+        for sent in extract_sentences(l):
+            all_sentences.append(sent)
+
+    for chunk in section_chunks:
+        chunk_text = clean_text_from_html(chunk)
+        if not chunk_text:
+            continue
+        chunk_norm = norm(chunk_text)
+
+        mentions_target = (target_city_norm and target_city_norm in chunk_norm) or (street_num and street_num in chunk_norm)
+        mentions_other = any(
+            re.search(r"\b" + re.escape(oc) + r"\b", chunk_norm)
+            for oc in OTHER_MAJOR_CITIES if oc != target_city_norm
+        )
+
+        if mentions_other and not mentions_target and len(chunk_text) < 150:
+            current_section_ok = False
+            continue
+        elif mentions_target and len(chunk_text) < 150:
+            current_section_ok = True
+
+        if not current_section_ok and mentions_other and not mentions_target:
+            continue
+
+        for sent in extract_sentences(chunk_text):
+            s_norm = norm(sent)
+            # Skip sentences that explicitly name another branch without mentioning our city
+            if target_city_norm and target_city_norm not in s_norm:
+                if any(re.search(r"\b" + re.escape(oc) + r"\b", s_norm) for oc in OTHER_MAJOR_CITIES if oc != target_city_norm):
+                    continue
+            all_sentences.append(sent)
+
+    return all_sentences
+
+
+def match_branch_pages(pages: dict, address: str, city: str) -> dict:
+    """Examines crawled pages and tags them as branch_match (True/False).
+
+    Filters out subpages dedicated to other branches based on URL path and content.
     """
     addr_norm = norm(address or "")
     city_norm = norm(city or "")
@@ -396,34 +604,48 @@ def match_branch_pages(pages: dict, address: str, city: str) -> dict:
         text_norm = norm(text)
         path = urllib.parse.urlparse(page_url).path.lower()
 
-        is_loc = any(kw in path for kw in ("location", "locations", "contact", "visit"))
+        # Check if URL explicitly points to another city/locality
+        url_mentions_other = any(
+            re.search(r"\b" + re.escape(oc) + r"\b", path)
+            for oc in OTHER_MAJOR_CITIES if oc != city_norm
+        )
+        url_mentions_target = city_norm and (city_norm in path)
 
-        other_major_cities = [
-            "alpharetta", "roswell", "duluth", "decatur", "marietta", "smyrna",
-            "woodstock", "cumming", "lawrenceville", "suwanee", "buford", "canton",
-            "peachtree city", "newnan", "midtown", "buckhead", "inman park", "west end"
-        ]
+        if url_mentions_other and not url_mentions_target:
+            tagged_pages[page_url] = {"data": p_data, "branch_match": False, "is_location_page": True}
+            continue
 
-        if is_loc:
-            matches_us = (city_norm and city_norm in text_norm) or (street_num and street_num in text_norm)
-            mentions_other = any(
-                c in text_norm and c != city_norm
-                for c in other_major_cities
-            )
-            if matches_us:
-                tagged_pages[page_url] = {"data": p_data, "branch_match": True, "is_location_page": True}
-            elif mentions_other and not matches_us:
-                tagged_pages[page_url] = {"data": p_data, "branch_match": False, "is_location_page": True}
-            else:
-                tagged_pages[page_url] = {"data": p_data, "branch_match": True, "is_location_page": True}
+        is_loc = any(kw in path for kw in ("location", "locations", "contact", "visit", "stores", "about"))
+        mentions_other_in_text = any(
+            re.search(r"\b" + re.escape(oc) + r"\b", text_norm)
+            for oc in OTHER_MAJOR_CITIES if oc != city_norm
+        )
+        matches_us = (city_norm and city_norm in text_norm) or (street_num and street_num in text_norm)
+
+        if is_loc and mentions_other_in_text and not matches_us:
+            tagged_pages[page_url] = {"data": p_data, "branch_match": False, "is_location_page": True}
         else:
-            tagged_pages[page_url] = {"data": p_data, "branch_match": True, "is_location_page": False}
+            tagged_pages[page_url] = {"data": p_data, "branch_match": True, "is_location_page": is_loc}
 
     return tagged_pages
 
 
+def is_event_rental_page(url: str, html: str = "") -> bool:
+    """Detects pages dedicated to private event venue / banquet / party rentals."""
+    path = urllib.parse.urlparse(url).path.lower()
+    if any(p.search(path) for p in EVENT_PAGE_PATTERNS):
+        return True
+    if html:
+        title_match = re.search(r"<title[^>]*>(.*?)</title>", html, re.I | re.S)
+        if title_match:
+            title = title_match.group(1).lower()
+            if any(w in title for w in ("host your event", "private event venue", "wedding venue", "venue rental", "party buyout")):
+                return True
+    return False
+
+
 # ==============================================================================
-# 4. Tri-State Evidence & Fact Extractor
+# 4. Tri-State Evidence & Fact Extractor with Negation Guards
 # ==============================================================================
 
 PATTERNS_LAPTOP_NEGATIVE = [
@@ -468,15 +690,17 @@ PATTERNS_SEATING_POSITIVE = [
     re.compile(r"\b(communal\s+tables?|community\s+tables?|spacious\s+(?:indoor\s+)?seating|outdoor\s+patio|indoor\s+(?:and\s+)?outdoor\s+seating|covered\s+patio|patio\s+seating|enclosed\s+patio|picnic\s+benches|comfortable\s+booths?|bar\s+seating|large\s+tables?|zen\s+garden\s+seating)\b", re.I),
 ]
 
+PATTERNS_MEETING_NEGATIVE = [
+    re.compile(r"\b(?:we\s+)?(?:do\s+not|don['’]t)\s+have\s+(?:a\s+)?(?:meeting|conference|board|study|seminar)\s*(?:room|space|hall)\b", re.I),
+    re.compile(r"\bno\s+(?:meeting|conference|board|study|seminar)\s*(?:room|space|hall)s?\b", re.I),
+    re.compile(r"\b(?:meeting|conference|board|study|seminar)\s*(?:room|space|hall)s?\s+(?:are\s+)?(?:not\s+available|unavailable|not\s+offered|do\s+not\s+exist)\b", re.I),
+    re.compile(r"\bwithout\s+(?:a\s+)?(?:meeting|conference|board|study)\s*(?:room|space)\b", re.I),
+]
+
 PATTERNS_MEETING_POSITIVE = [
     re.compile(r"\b(?:private\s+)?(?:meeting|conference|board|study|seminar)\s*(?:room|space|hall)\b", re.I),
     re.compile(r"\b(?:reservable|reserve|rent|book)\s+(?:a\s+)?(?:meeting\s+room|conference\s+room|study\s+room|private\s+room)\b", re.I),
     re.compile(r"\bbook\s+(?:our|the)\s+(?:conference|meeting)\s+room\b", re.I),
-]
-
-PATTERNS_PARTY_ONLY = [
-    re.compile(r"\b(?:host|book)\s+(?:your\s+)?(?:private\s+party|wedding|reception|birthday|shower|buyout)\b", re.I),
-    re.compile(r"\bfull\s+venue\s+buyout\b", re.I),
 ]
 
 PATTERNS_ROASTER = [
@@ -485,7 +709,8 @@ PATTERNS_ROASTER = [
 
 
 def extract_facts(pages: dict, address: str = "", city: str = "") -> dict:
-    """Extracts structured facts as confirmed, unavailable, or unknown with supporting excerpts."""
+    """Extracts structured facts as confirmed, unavailable, or unknown with supporting excerpts,
+    guarded against negation and multi-match policy conflicts."""
     tagged = match_branch_pages(pages, address, city)
     now_str = datetime.now(timezone.utc).strftime("%B %Y")
 
@@ -500,105 +725,120 @@ def extract_facts(pages: dict, address: str = "", city: str = "") -> dict:
         "hoursMention": None,
     }
 
+    laptop_candidates = []
+    wifi_candidates = []
+    outlet_candidates = []
+    seating_candidates = []
+    meeting_candidates = []
+    roaster_candidates = []
+
     for page_url, p_info in tagged.items():
         if not p_info.get("branch_match"):
             continue
         p_data = p_info["data"]
-        text = clean_text_from_html(p_data.get("content", ""))
-        sentences = extract_sentences(text)
+        raw_content = p_data.get("content", "")
+        fetched_at = p_data.get("fetchedAt")
+        date_str = now_str
+        if fetched_at:
+            try:
+                date_str = datetime.fromisoformat(fetched_at.replace("Z", "+00:00")).strftime("%B %Y")
+            except Exception:
+                pass
+
+        is_event_page = is_event_rental_page(page_url, raw_content)
+        sentences = extract_location_scoped_sentences(raw_content, city, address)
 
         for sent in sentences:
-            # Laptop Policy
-            if facts["laptopPolicy"]["status"] == "unknown":
+            # Laptop Policy (exclude event hall rental pages)
+            if not is_event_page:
                 if any(p.search(sent) for p in PATTERNS_LAPTOP_NEGATIVE):
-                    facts["laptopPolicy"] = {
-                        "status": "unavailable",
-                        "excerpt": sent,
-                        "sourceUrl": page_url,
-                        "checkedDate": now_str,
-                    }
+                    laptop_candidates.append(("unavailable", sent, page_url, date_str))
                 elif any(p.search(sent) for p in PATTERNS_LAPTOP_POSITIVE):
-                    facts["laptopPolicy"] = {
-                        "status": "confirmed",
-                        "excerpt": sent,
-                        "sourceUrl": page_url,
-                        "checkedDate": now_str,
-                    }
+                    laptop_candidates.append(("confirmed", sent, page_url, date_str))
 
-            # Wi-Fi
-            if facts["wifi"]["status"] == "unknown":
+            # Wi-Fi (exclude event hall rental pages)
+            if not is_event_page:
                 if any(p.search(sent) for p in PATTERNS_WIFI_NEGATIVE):
-                    facts["wifi"] = {
-                        "status": "unavailable",
-                        "excerpt": sent,
-                        "sourceUrl": page_url,
-                        "checkedDate": now_str,
-                    }
+                    wifi_candidates.append(("unavailable", sent, page_url, date_str))
                 elif any(p.search(sent) for p in PATTERNS_WIFI_POSITIVE):
-                    facts["wifi"] = {
-                        "status": "confirmed",
-                        "excerpt": sent,
-                        "sourceUrl": page_url,
-                        "checkedDate": now_str,
-                    }
+                    wifi_candidates.append(("confirmed", sent, page_url, date_str))
 
             # Outlets
-            if facts["outlets"]["status"] == "unknown":
+            if not is_event_page:
                 if any(p.search(sent) for p in PATTERNS_OUTLETS_POSITIVE):
-                    facts["outlets"] = {
-                        "status": "confirmed",
-                        "excerpt": sent,
-                        "sourceUrl": page_url,
-                        "checkedDate": now_str,
-                    }
+                    outlet_candidates.append(("confirmed", sent, page_url, date_str))
 
             # Seating
-            if facts["seating"]["status"] == "unknown":
-                m = [p.search(sent) for p in PATTERNS_SEATING_POSITIVE if p.search(sent)]
-                if m:
-                    facts["seating"] = {
-                        "status": "confirmed",
-                        "excerpt": sent,
-                        "sourceUrl": page_url,
-                        "checkedDate": now_str,
-                    }
+            if not is_event_page:
+                if any(p.search(sent) for p in PATTERNS_SEATING_POSITIVE):
+                    seating_candidates.append(("confirmed", sent, page_url, date_str))
 
-            # Meeting Room
-            if facts["meetingRoom"]["status"] != "confirmed":
-                if any(p.search(sent) for p in PATTERNS_MEETING_POSITIVE):
-                    facts["meetingRoom"] = {
-                        "status": "confirmed",
-                        "excerpt": sent,
-                        "sourceUrl": page_url,
-                        "checkedDate": now_str,
-                    }
-                elif facts["meetingRoom"]["status"] == "unknown" and any(p.search(sent) for p in PATTERNS_PARTY_ONLY):
-                    facts["meetingRoom"] = {
-                        "status": "unavailable",
-                        "excerpt": sent,
-                        "sourceUrl": page_url,
-                        "checkedDate": now_str,
-                        "note": "Private party and event rentals only; no work/study meeting room.",
-                    }
+            # Meeting Room: check negation first, then positive.
+            # Private party mentions do NOT make meeting room unavailable; absence remains unknown.
+            if any(p.search(sent) for p in PATTERNS_MEETING_NEGATIVE):
+                meeting_candidates.append(("unavailable", sent, page_url, date_str))
+            elif any(p.search(sent) for p in PATTERNS_MEETING_POSITIVE):
+                meeting_candidates.append(("confirmed", sent, page_url, date_str))
 
             # Roaster status
-            if facts["roaster"]["status"] == "unknown":
-                if any(p.search(sent) for p in PATTERNS_ROASTER):
-                    facts["roaster"] = {
-                        "status": "confirmed",
-                        "excerpt": sent,
-                        "sourceUrl": page_url,
-                        "checkedDate": now_str,
-                    }
+            if any(p.search(sent) for p in PATTERNS_ROASTER):
+                roaster_candidates.append(("confirmed", sent, page_url, date_str))
 
         # Menu Highlights from menu pages
         path = urllib.parse.urlparse(page_url).path.lower()
         if "menu" in path or "drink" in path or "coffee" in path or "food" in path:
+            text = clean_text_from_html(raw_content)
             spec_matches = re.findall(r"(?:signature|house\s+special|featured|specialty):\s*([A-Za-z0-9\s&'-]{3,40})", text, re.I)
             for m in spec_matches:
                 clean_item = m.strip()
                 if len(clean_item) >= 3 and clean_item not in facts["menuHighlights"]:
                     facts["menuHighlights"].append(clean_item)
+
+    # Multi-candidate resolution:
+    # 1. Laptop policy: Specific negative restrictions override general positive statements
+    unavail_laptop = [c for c in laptop_candidates if c[0] == "unavailable"]
+    conf_laptop = [c for c in laptop_candidates if c[0] == "confirmed"]
+    if unavail_laptop:
+        st, sent, url, dt = unavail_laptop[0]
+        facts["laptopPolicy"] = {"status": "unavailable", "excerpt": sent, "sourceUrl": url, "checkedDate": dt}
+    elif conf_laptop:
+        st, sent, url, dt = conf_laptop[0]
+        facts["laptopPolicy"] = {"status": "confirmed", "excerpt": sent, "sourceUrl": url, "checkedDate": dt}
+
+    # 2. Wi-Fi
+    unavail_wifi = [c for c in wifi_candidates if c[0] == "unavailable"]
+    conf_wifi = [c for c in wifi_candidates if c[0] == "confirmed"]
+    if unavail_wifi:
+        st, sent, url, dt = unavail_wifi[0]
+        facts["wifi"] = {"status": "unavailable", "excerpt": sent, "sourceUrl": url, "checkedDate": dt}
+    elif conf_wifi:
+        st, sent, url, dt = conf_wifi[0]
+        facts["wifi"] = {"status": "confirmed", "excerpt": sent, "sourceUrl": url, "checkedDate": dt}
+
+    # 3. Outlets
+    if outlet_candidates:
+        st, sent, url, dt = outlet_candidates[0]
+        facts["outlets"] = {"status": "confirmed", "excerpt": sent, "sourceUrl": url, "checkedDate": dt}
+
+    # 4. Seating
+    if seating_candidates:
+        st, sent, url, dt = seating_candidates[0]
+        facts["seating"] = {"status": "confirmed", "excerpt": sent, "sourceUrl": url, "checkedDate": dt}
+
+    # 5. Meeting Room: Negation wins; absence stays unknown
+    unavail_mr = [c for c in meeting_candidates if c[0] == "unavailable"]
+    conf_mr = [c for c in meeting_candidates if c[0] == "confirmed"]
+    if unavail_mr:
+        st, sent, url, dt = unavail_mr[0]
+        facts["meetingRoom"] = {"status": "unavailable", "excerpt": sent, "sourceUrl": url, "checkedDate": dt}
+    elif conf_mr:
+        st, sent, url, dt = conf_mr[0]
+        facts["meetingRoom"] = {"status": "confirmed", "excerpt": sent, "sourceUrl": url, "checkedDate": dt}
+
+    # 6. Roaster
+    if roaster_candidates:
+        st, sent, url, dt = roaster_candidates[0]
+        facts["roaster"] = {"status": "confirmed", "excerpt": sent, "sourceUrl": url, "checkedDate": dt}
 
     return facts
 
@@ -608,71 +848,115 @@ def extract_facts(pages: dict, address: str = "", city: str = "") -> dict:
 # ==============================================================================
 
 def derive_curation_overlay(facts: dict, place_meta: dict) -> dict:
-    """Derives qualitative curation overlay (cw, usp, signature, loved, category)
+    """Derives grounded curation overlay (cw, usp, category, menu items).
 
-    strictly grounded in factual evidence. Missing facts remain unassessed.
+    Guarantees:
+    - Only true coworking or confirmed meeting room receives 'excellent'.
+    - Unknown meeting room is preserved as unknown/omitted (never false).
+    - No unevidenced 'comfortable seating' claims.
+    - Third-party directories receive third-party source attribution.
     """
-    now_str = datetime.now(timezone.utc).strftime("%B %Y")
+    website = place_meta.get("website", "")
+    domain = urllib.parse.urlparse(website).netloc.lower().replace("www.", "")
+    source = "website-crawl"
+    if domain in DIRECTORY_DOMAINS:
+        source = f"{domain.split('.')[0]}-directory"
+        if "atlantacoffeeshops" in domain:
+            source = "atlanta-coffee-shops-directory"
+
     overlay = {
         "name": place_meta.get("name"),
         "city": place_meta.get("city"),
         "county": place_meta.get("county"),
-        "source": "website-crawl",
-        "verified": now_str,
+        "source": source,
+        "verified": "September 2026",
     }
 
     lp = facts.get("laptopPolicy", {})
     wifi = facts.get("wifi", {})
-    seating = facts.get("seating", {})
     mr = facts.get("meetingRoom", {})
+    seating = facts.get("seating", {})
     roaster = facts.get("roaster", {})
 
     cw = None
+
+    # Case A: Explicit restriction
     if lp.get("status") == "unavailable" or wifi.get("status") == "unavailable":
         note = lp.get("excerpt") or wifi.get("excerpt") or "Laptop use or Wi-Fi restricted per venue policy."
         cw = {
             "tier": "limited",
             "note": note,
-            "hasMeetingRoom": False,
+            "source": source,
+            "verified": lp.get("checkedDate") or wifi.get("checkedDate") or "September 2026",
         }
+        if mr.get("status") == "unavailable":
+            cw["hasMeetingRoom"] = False
+        elif mr.get("status") == "confirmed":
+            cw["hasMeetingRoom"] = True
+            cw["meetingRoomNote"] = mr.get("excerpt")
+
+    # Case B: Confirmed reservable meeting room -> excellent
     elif mr.get("status") == "confirmed":
         note = "Work-friendly space with reservable meeting room."
         if wifi.get("status") == "confirmed":
-            note = f"Features verified Wi-Fi and reservable meeting space."
+            note = "Features verified Wi-Fi and reservable meeting space."
         cw = {
             "tier": "excellent",
             "note": note,
             "hasMeetingRoom": True,
             "meetingRoomNote": mr.get("excerpt", "Reservable meeting space available."),
+            "source": source,
+            "verified": mr.get("checkedDate") or "September 2026",
         }
-    elif wifi.get("status") == "confirmed" and (lp.get("status") == "confirmed" or seating.get("status") == "confirmed"):
+
+    # Case C: Confirmed laptop-friendly AND confirmed Wi-Fi
+    elif wifi.get("status") == "confirmed" and lp.get("status") == "confirmed":
         w_ex = wifi.get("excerpt", "").strip()
-        s_ex = seating.get("excerpt", "").strip()
-        if w_ex and s_ex and w_ex == s_ex:
-            note = f"Verified work-friendly spot: {w_ex}"
-        elif w_ex and s_ex:
-            note = f"Verified work-friendly spot: {w_ex} ({s_ex})"
-        else:
-            note = f"Verified work-friendly spot: {w_ex or s_ex}"
+        l_ex = lp.get("excerpt", "").strip()
+        note = f"Verified work-friendly spot: {l_ex}" if l_ex else f"Verified work-friendly spot: {w_ex}"
+        is_dedicated_cowork = any(
+            re.search(r"\b(built\s+for\s+coworking|coworking\s+space|dedicated\s+(?:work\s+)?desks?)\b", ex, re.I)
+            for ex in (w_ex, l_ex)
+        )
+        tier = "excellent" if is_dedicated_cowork else "good"
         cw = {
-            "tier": "excellent",
+            "tier": tier,
             "note": note,
-            "hasMeetingRoom": False,
+            "source": source,
+            "verified": wifi.get("checkedDate") or lp.get("checkedDate") or "September 2026",
         }
+        if mr.get("status") == "unavailable":
+            cw["hasMeetingRoom"] = False
+
+    # Case D: Confirmed Wi-Fi or confirmed laptop policy (patio, tables, general study)
     elif wifi.get("status") == "confirmed" or lp.get("status") == "confirmed":
+        note = wifi.get("excerpt") or lp.get("excerpt") or "Verified guest Wi-Fi available for patrons."
+        if seating.get("status") == "confirmed" and wifi.get("status") == "confirmed":
+            s_ex = seating.get("excerpt", "").strip()
+            w_ex = wifi.get("excerpt", "").strip()
+            if s_ex and s_ex != w_ex:
+                note = f"{w_ex} ({s_ex})"
         cw = {
             "tier": "good",
-            "note": wifi.get("excerpt") or lp.get("excerpt") or "Verified guest Wi-Fi available for patrons.",
-            "hasMeetingRoom": False,
+            "note": note,
+            "source": source,
+            "verified": wifi.get("checkedDate") or lp.get("checkedDate") or "September 2026",
         }
+        if mr.get("status") == "unavailable":
+            cw["hasMeetingRoom"] = False
+
+    # Case E: Only meeting room unavailable is verified
     elif mr.get("status") == "unavailable":
         cw = {
             "hasMeetingRoom": False,
+            "source": source,
+            "verified": mr.get("checkedDate") or "September 2026",
         }
 
     if cw:
         overlay["cw"] = cw
 
+    # Roasters
     is_roastery_name = "roast" in place_meta.get("name", "").lower()
     if (roaster.get("status") == "confirmed" or is_roastery_name) and place_meta.get("category") in ("Coffee", "Specialty"):
         overlay["category"] = "Roasters"
@@ -680,12 +964,23 @@ def derive_curation_overlay(facts: dict, place_meta: dict) -> dict:
     name = place_meta.get("name", "Local venue")
     city = place_meta.get("city", "Metro Atlanta")
     cat = overlay.get("category") or place_meta.get("category", "Cafe")
+
+    # Check if text explicitly evidenced comfortable seating
+    has_explicit_comfort = False
+    for ex in [seating.get("excerpt", ""), wifi.get("excerpt", ""), lp.get("excerpt", "")]:
+        if re.search(r"\bcomfortable\s+seating\b", ex, re.I):
+            has_explicit_comfort = True
+            break
+
     if roaster.get("status") == "confirmed":
         overlay["usp"] = f"Independent craft coffee roaster in {city} offering house-roasted specialty coffee."
     elif cw and cw.get("hasMeetingRoom"):
         overlay["usp"] = f"Community {cat.lower()} in {city} featuring reservable meeting space and craft beverages."
     elif cw and cw.get("tier") == "excellent":
-        overlay["usp"] = f"Work-friendly {cat.lower()} in {city} with verified Wi-Fi and comfortable seating."
+        seating_str = "comfortable seating" if has_explicit_comfort else "study-friendly space"
+        overlay["usp"] = f"Work-friendly {cat.lower()} in {city} with verified Wi-Fi and {seating_str}."
+    elif cw and cw.get("tier") == "good":
+        overlay["usp"] = f"Independent {cat.lower()} in {city} with verified guest Wi-Fi and specialty coffee."
     else:
         overlay["usp"] = f"Independent {cat.lower()} in {city} serving specialty coffee and fresh menu offerings."
 
@@ -709,7 +1004,7 @@ def detect_contradictions(proposed: dict, existing: dict) -> list:
 
     if exist_cw.get("hasMeetingRoom") is True and prop_cw.get("hasMeetingRoom") is False:
         contradictions.append(
-            f"Meeting room conflict: existing record has hasMeetingRoom=True, but crawl indicates no meeting room."
+            "Meeting room conflict: existing record has hasMeetingRoom=True, but crawl indicates no meeting room."
         )
 
     if exist_cw.get("tier") == "excellent" and prop_cw.get("tier") == "limited":
@@ -720,6 +1015,35 @@ def detect_contradictions(proposed: dict, existing: dict) -> list:
     return contradictions
 
 
+def field_preserving_merge(existing: dict, prop: dict) -> dict:
+    """Merges proposed crawl data into an existing curation without clobbering editorial fields."""
+    merged = dict(existing)
+    if prop.get("category") == "Roasters":
+        merged["category"] = "Roasters"
+    if prop.get("loved") and not merged.get("loved"):
+        merged["loved"] = prop["loved"]
+    if prop.get("signature") and not merged.get("signature"):
+        merged["signature"] = prop["signature"]
+    if prop.get("usp") and not merged.get("usp"):
+        merged["usp"] = prop["usp"]
+
+    if prop.get("cw"):
+        exist_cw = merged.get("cw") or {}
+        merged_cw = dict(exist_cw)
+        for k, v in prop["cw"].items():
+            # Don't clobber confirmed meeting rooms unless explicitly verified unavailable
+            if k == "hasMeetingRoom" and exist_cw.get("hasMeetingRoom") is True and v is not True:
+                continue
+            merged_cw[k] = v
+        merged["cw"] = merged_cw
+
+    if prop.get("source"):
+        merged["source"] = prop["source"]
+    if prop.get("verified"):
+        merged["verified"] = prop["verified"]
+    return merged
+
+
 # ==============================================================================
 # 6. Pipeline CLI Actions
 # ==============================================================================
@@ -727,9 +1051,16 @@ def detect_contradictions(proposed: dict, existing: dict) -> list:
 def cmd_queue(args) -> int:
     places_data = json.loads(PLACES_PATH.read_text())
     shops_data = json.loads(SHOPS_PATH.read_text())
-    queue = generate_balanced_queue(places_data["places"], shops_data.get("shops", []), target_total=args.limit)
+    recheck = getattr(args, "recheck", False)
+    queue = generate_balanced_queue(
+        places_data["places"],
+        shops_data.get("shops", []),
+        target_total=args.limit,
+        recheck=recheck
+    )
 
-    print(f"=== BALANCED RESEARCH QUEUE ({len(queue)} venues) ===")
+    mode_str = "RECHECK" if recheck else "NEW RESEARCH"
+    print(f"=== BALANCED QUEUE ({len(queue)} venues, Mode: {mode_str}) ===")
     county_counts = Counter(c["county"] for c in queue)
     for county, count in sorted(county_counts.items()):
         print(f"  {county:12s}: {count:2d} venues")
@@ -742,9 +1073,17 @@ def cmd_queue(args) -> int:
 def cmd_crawl_batch(args) -> int:
     places_data = json.loads(PLACES_PATH.read_text())
     shops_data = json.loads(SHOPS_PATH.read_text())
-    queue = generate_balanced_queue(places_data["places"], shops_data.get("shops", []), target_total=args.limit)
+    force_refresh = getattr(args, "force_refresh", False)
+    recheck = getattr(args, "recheck", False)
 
-    print(f"Crawling {len(queue)} venues (cache: {CACHE_DIR})...")
+    queue = generate_balanced_queue(
+        places_data["places"],
+        shops_data.get("shops", []),
+        target_total=args.limit,
+        recheck=recheck
+    )
+
+    print(f"Crawling {len(queue)} venues (cache: {CACHE_DIR}, force_refresh={force_refresh})...")
     staged = {}
     facts_repo = {}
     if FACTS_PATH.exists():
@@ -764,7 +1103,10 @@ def cmd_crawl_batch(args) -> int:
         city = venue.get("city", "")
 
         print(f"[{i:3d}/{len(queue):3d}] {name} ({city}, {venue.get('county')}) -> {website}")
-        pages = crawl_venue_website(website, venue, max_pages=6, cache_dir=CACHE_DIR, pause_sec=args.pause)
+        pages = crawl_venue_website(
+            website, venue, max_pages=6, cache_dir=CACHE_DIR,
+            pause_sec=args.pause, force_refresh=force_refresh
+        )
         facts = extract_facts(pages, address=addr, city=city)
 
         overlay = derive_curation_overlay(facts, venue)
@@ -774,12 +1116,31 @@ def cmd_crawl_batch(args) -> int:
             for c in contradictions:
                 print(f"  ⚠ {c}")
 
+        page_fetches = [
+            {
+                "url": p_info.get("url", u),
+                "status": p_info.get("status", 0),
+                "ok": p_info.get("ok", False),
+                "fetchedAt": p_info.get("fetchedAt"),
+                "error": p_info.get("error"),
+            }
+            for u, p_info in pages.items()
+        ]
+
+        now_iso = datetime.now(timezone.utc).isoformat()
+        earliest_fetch = min((p.get("fetchedAt") for p in pages.values() if p.get("fetchedAt")), default=now_iso)
+
         staged[pid] = {
             "venue": venue,
             "facts": facts,
             "proposed": overlay,
             "contradictions": contradictions,
+            "hasContradictions": bool(contradictions),
+            "status": "pending",
             "pagesCrawled": list(pages.keys()),
+            "pageFetches": page_fetches,
+            "fetchedAt": earliest_fetch,
+            "extractedAt": now_iso,
         }
 
         facts_repo[pid] = {
@@ -788,7 +1149,11 @@ def cmd_crawl_batch(args) -> int:
             "county": venue.get("county"),
             "website": website,
             "pagesChecked": list(pages.keys()),
+            "pageFetches": page_fetches,
             "checkedDate": datetime.now(timezone.utc).strftime("%Y-%m-%d"),
+            "fetchedAt": earliest_fetch,
+            "extractedAt": now_iso,
+            "reviewedAt": None,
             "facts": facts,
         }
 
@@ -827,7 +1192,7 @@ def cmd_review(args) -> int:
         if entry.get("contradictions"):
             contradictions += len(entry["contradictions"])
 
-    print(f"Summary of findings:")
+    print("Summary of findings:")
     print(f"  Work-Friendly (excellent/good): {cw_tiers.get('excellent', 0) + cw_tiers.get('good', 0)}")
     print(f"    - Excellent: {cw_tiers.get('excellent', 0)}")
     print(f"    - Good:      {cw_tiers.get('good', 0)}")
@@ -869,19 +1234,39 @@ def cmd_approve(args) -> int:
         except Exception:
             pass
 
+    allow_contradictions = getattr(args, "allow_contradictions", False)
+    target_pid = getattr(args, "pid", None)
+
     committed = 0
+    skipped_contradictions = 0
+
     for pid, entry in staged.items():
+        if target_pid and pid != target_pid:
+            continue
+
         prop = entry.get("proposed")
-        facts_repo[pid] = {
+        contradictions = entry.get("contradictions", [])
+        if contradictions and not allow_contradictions:
+            print(f"Skipping {pid} ({entry['venue']['name']}): unresolved contradictions ({len(contradictions)}). Use --allow-contradictions to override.")
+            skipped_contradictions += 1
+            continue
+
+        # Persist to facts repo with separate reviewedAt timestamp
+        facts_entry = facts_repo.setdefault(pid, {})
+        facts_entry.update({
             "name": entry["venue"]["name"],
             "city": entry["venue"]["city"],
             "county": entry["venue"]["county"],
             "website": entry["venue"]["website"],
             "pagesChecked": entry.get("pagesCrawled", []),
+            "pageFetches": entry.get("pageFetches", []),
             "checkedDate": datetime.now(timezone.utc).strftime("%Y-%m-%d"),
+            "fetchedAt": entry.get("fetchedAt"),
+            "extractedAt": entry.get("extractedAt"),
+            "reviewedAt": datetime.now(timezone.utc).isoformat(),
             "facts": entry.get("facts", {}),
-        }
-        # Only commit an overlay to curations.json if qualitative findings exist
+        })
+
         has_curation = bool(
             prop and (
                 prop.get("cw")
@@ -891,7 +1276,11 @@ def cmd_approve(args) -> int:
             )
         )
         if has_curation:
-            places_cur[pid] = prop
+            if pid in places_cur:
+                places_cur[pid] = field_preserving_merge(places_cur[pid], prop)
+            else:
+                places_cur[pid] = prop
+
             committed += 1
 
     CURATIONS_PATH.write_text(json.dumps(curations_data, indent=2, ensure_ascii=False) + "\n")
@@ -903,15 +1292,27 @@ def cmd_approve(args) -> int:
     }, indent=2, ensure_ascii=False) + "\n")
 
     print(f"Committed {committed} overlays to {CURATIONS_PATH}")
+    if skipped_contradictions > 0:
+        print(f"Skipped {skipped_contradictions} venues due to unresolved contradictions.")
     print(f"Persisted facts for {len(facts_repo)} venues to {FACTS_PATH}")
     print("Now run: python3 scripts/curate_places.py --apply")
     return 0
 
 
 def cmd_crawl_url(args) -> int:
-    pages = crawl_venue_website(args.crawl_url, max_pages=8, cache_dir=CACHE_DIR)
+    force_refresh = getattr(args, "force_refresh", False)
+    pages = crawl_venue_website(
+        args.crawl_url,
+        max_pages=8,
+        cache_dir=CACHE_DIR,
+        force_refresh=force_refresh
+    )
     facts = extract_facts(pages, address=args.address or "", city=args.city or "")
-    overlay = derive_curation_overlay(facts, {"name": "Test Venue", "city": args.city or "Atlanta"})
+    overlay = derive_curation_overlay(facts, {
+        "name": "Test Venue",
+        "city": args.city or "Atlanta",
+        "website": args.crawl_url,
+    })
     print(json.dumps({
         "url": args.crawl_url,
         "pagesCrawled": list(pages.keys()),
@@ -925,12 +1326,16 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--queue", action="store_true", help="Print balanced research queue")
     parser.add_argument("--limit", type=int, default=100, help="Total venues in queue (default: 100)")
+    parser.add_argument("--recheck", action="store_true", help="Select venues that already exist in research facts ledger for rechecking")
     parser.add_argument("--json", action="store_true", help="Output queue as JSON")
     parser.add_argument("--crawl-batch", action="store_true", help="Crawl websites and stage proposals")
     parser.add_argument("--pause", type=float, default=0.2, help="Pause between page requests (default: 0.2s)")
+    parser.add_argument("--force-refresh", action="store_true", help="Force re-fetching cached pages")
     parser.add_argument("--review", action="store_true", help="Review staged proposals")
     parser.add_argument("--verbose", action="store_true", help="Detailed review breakdown")
     parser.add_argument("--approve", action="store_true", help="Commit staged proposals to curations.json and research_facts.json")
+    parser.add_argument("--allow-contradictions", action="store_true", help="Allow committing entries with unresolved contradictions")
+    parser.add_argument("--pid", type=str, default=None, help="Target specific placeId for approval")
     parser.add_argument("--crawl-url", type=str, default="", help="Crawl single URL and extract facts")
     parser.add_argument("--address", type=str, default="", help="Address for single URL crawl")
     parser.add_argument("--city", type=str, default="", help="City for single URL crawl")

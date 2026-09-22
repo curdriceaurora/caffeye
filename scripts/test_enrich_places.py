@@ -100,9 +100,8 @@ class TestEnrichPlaces(unittest.TestCase):
             },
         }
         facts = EP.extract_facts(pages)
-        # Party rental should NOT be confirmed as a work meeting room
-        self.assertEqual(facts["meetingRoom"]["status"], "unavailable")
-        self.assertIn("private party", facts["meetingRoom"]["excerpt"].lower())
+        # Party rental should NOT establish meeting room unavailable; absence of evidence must stay unknown
+        self.assertEqual(facts["meetingRoom"]["status"], "unknown")
 
     def test_extract_facts_meeting_room_confirmed(self):
         pages = {
@@ -114,6 +113,68 @@ class TestEnrichPlaces(unittest.TestCase):
         facts = EP.extract_facts(pages)
         self.assertEqual(facts["meetingRoom"]["status"], "confirmed")
         self.assertIn("conference room", facts["meetingRoom"]["excerpt"].lower())
+
+    def test_extract_facts_negative_meeting_room_explicit_negation(self):
+        pages = {
+            "https://cafe.com/faq": {
+                "ok": True,
+                "content": "<p>We do not have a meeting room or conference space available.</p>",
+            },
+        }
+        facts = EP.extract_facts(pages)
+        self.assertEqual(facts["meetingRoom"]["status"], "unavailable")
+        self.assertIn("do not have a meeting room", facts["meetingRoom"]["excerpt"].lower())
+
+        meta = {"name": "No Room Cafe", "city": "Roswell", "county": "Fulton", "category": "Coffee"}
+        overlay = EP.derive_curation_overlay(facts, meta)
+        # Explicit negation must not produce confirmed meeting room or excellent tier
+        if "cw" in overlay:
+            self.assertFalse(overlay["cw"].get("hasMeetingRoom", True))
+            self.assertNotEqual(overlay["cw"].get("tier"), "excellent")
+
+    def test_extract_facts_policy_restriction_overrides_homepage_positive(self):
+        pages = {
+            "https://cafe.com/": {
+                "ok": True,
+                "content": "<p>Welcome to our cafe! Laptops welcome in our cozy space.</p>",
+            },
+            "https://cafe.com/house-rules": {
+                "ok": True,
+                "content": "<p>House Rules: No laptops allowed during peak lunch hours or on weekends.</p>",
+            },
+        }
+        facts = EP.extract_facts(pages)
+        # Negative restriction must override earlier positive mention
+        self.assertEqual(facts["laptopPolicy"]["status"], "unavailable")
+        self.assertIn("no laptops allowed", facts["laptopPolicy"]["excerpt"].lower())
+
+    def test_branch_table_column_and_location_isolation(self):
+        html_table = """
+        <table>
+            <tr><th>Canton Location</th><th>Woodstock Location</th></tr>
+            <tr>
+                <td>120 Marietta Rd, Canton GA<br>Laptop-friendly workspace</td>
+                <td>8588 Main St, Woodstock GA<br>Private meeting room and coworking desks</td>
+            </tr>
+        </table>
+        """
+        table_facts = EP.extract_table_facts(html_table, target_city="Canton", address="120 Marietta Rd")
+        self.assertTrue(any("Laptop-friendly" in f for f in table_facts))
+        self.assertFalse(any("Woodstock" in f for f in table_facts))
+        self.assertFalse(any("Private meeting room" in f for f in table_facts))
+
+        pages = {"https://cafe.com/locations": {"ok": True, "content": html_table}}
+        canton_facts = EP.extract_facts(pages, city="Canton", address="120 Marietta Rd")
+        self.assertEqual(canton_facts["laptopPolicy"]["status"], "confirmed")
+        # Canton must NOT inherit Woodstock's meeting room
+        self.assertEqual(canton_facts["meetingRoom"]["status"], "unknown")
+
+    def test_is_event_rental_page_filters_private_rentals(self):
+        self.assertTrue(EP.is_event_rental_page("http://groundandpoundcoffee.com/location-events"))
+        self.assertTrue(EP.is_event_rental_page("https://cafe.com/venue-rental"))
+        self.assertTrue(EP.is_event_rental_page("https://cafe.com/private-event-hire/"))
+        self.assertFalse(EP.is_event_rental_page("https://cafe.com/menu"))
+        self.assertFalse(EP.is_event_rental_page("https://cafe.com/about-us"))
 
     def test_derive_curation_overlay_limited_policy(self):
         facts = {
@@ -133,7 +194,8 @@ class TestEnrichPlaces(unittest.TestCase):
         overlay = EP.derive_curation_overlay(facts, meta)
         self.assertIsNotNone(overlay.get("cw"))
         self.assertEqual(overlay["cw"]["tier"], "limited")
-        self.assertFalse(overlay["cw"]["hasMeetingRoom"])
+        # Unknown meeting rooms are NOT defaulted to false
+        self.assertNotIn("hasMeetingRoom", overlay["cw"])
         self.assertIn("No laptops on weekends", overlay["cw"]["note"])
 
     def test_derive_curation_overlay_meeting_room(self):
@@ -159,6 +221,31 @@ class TestEnrichPlaces(unittest.TestCase):
         self.assertTrue(overlay["cw"]["hasMeetingRoom"])
         self.assertEqual(overlay["cw"]["meetingRoomNote"], "Reservable conference room with presentation monitor.")
         self.assertEqual(overlay["signature"], "Honey Lavender Latte")
+
+    def test_derive_curation_overlay_directory_attribution_and_seating_claim(self):
+        facts = {
+            "laptopPolicy": {"status": "unknown"},
+            "wifi": {
+                "status": "confirmed",
+                "excerpt": "✓ Free Wi-Fi",
+                "sourceUrl": "https://www.atlantacoffeeshops.com/suwanee-cafe",
+            },
+            "meetingRoom": {"status": "unknown"},
+            "seating": {"status": "unknown"},
+            "roaster": {"status": "unknown"},
+            "menuHighlights": [],
+        }
+        meta = {"name": "Directory Cafe", "city": "Suwanee", "county": "Gwinnett", "category": "Coffee",
+                "website": "https://www.atlantacoffeeshops.com/suwanee-cafe"}
+        overlay = EP.derive_curation_overlay(facts, meta)
+        # Must attribute directory
+        self.assertEqual(overlay["source"], "atlanta-coffee-shops-directory")
+        # Tier must be good (not excellent)
+        self.assertEqual(overlay["cw"]["tier"], "good")
+        # USP must NOT claim comfortable seating without text evidence
+        self.assertNotIn("comfortable seating", overlay.get("usp", "").lower())
+        # Unknown meeting room omitted
+        self.assertNotIn("hasMeetingRoom", overlay["cw"])
 
     def test_derive_curation_overlay_unknown_facts_leaves_cw_unassessed(self):
         facts = {
@@ -194,6 +281,69 @@ class TestEnrichPlaces(unittest.TestCase):
         self.assertTrue(any("Meeting room conflict" in c for c in conflicts))
         self.assertTrue(any("Tier downgrade conflict" in c for c in conflicts))
 
+    def test_field_preserving_merge_protects_existing_editorial_fields(self):
+        existing = {
+            "name": "Historic Roaster",
+            "city": "Alpharetta",
+            "county": "Fulton",
+            "description": "Handcrafted legacy description.",
+            "loved": ["cortado", "house croissant"],
+            "signature": "Cortado Especial",
+            "usp": "Historic Alpharetta roaster with direct trade heritage.",
+            "cw": {
+                "tier": "excellent",
+                "hasMeetingRoom": True,
+                "meetingRoomNote": "Executive Boardroom seats 12.",
+                "note": "Verified quiet work space.",
+            }
+        }
+        proposed = {
+            "name": "Historic Roaster",
+            "city": "Alpharetta",
+            "county": "Fulton",
+            "source": "website-crawl",
+            "verified": "September 2026",
+            "cw": {
+                "tier": "good",
+                "note": "Free Wi-Fi available.",
+            },
+            "usp": "Work-friendly coffee in Alpharetta with verified Wi-Fi.",
+        }
+        merged = EP.field_preserving_merge(existing, proposed)
+        self.assertEqual(merged["description"], "Handcrafted legacy description.")
+        self.assertEqual(merged["loved"], ["cortado", "house croissant"])
+        self.assertEqual(merged["signature"], "Cortado Especial")
+        self.assertEqual(merged["usp"], "Historic Alpharetta roaster with direct trade heritage.")
+        self.assertTrue(merged["cw"]["hasMeetingRoom"])
+        self.assertEqual(merged["cw"]["meetingRoomNote"], "Executive Boardroom seats 12.")
+
+    def test_compute_scaled_quotas_preserves_tail_counties(self):
+        base_quotas = {
+            "Fulton": 20, "Gwinnett": 18, "Cobb": 15, "DeKalb": 12,
+            "Cherokee": 6, "Forsyth": 6, "Henry": 5, "Hall": 5,
+            "Clayton": 4, "Coweta": 3, "Fayette": 3, "Douglas": 2,
+            "Rockdale": 1, "Dawson": 1,
+        }
+        # Small limit 10 distributes 1 each across 10 distinct counties
+        quotas_10 = EP.compute_scaled_quotas(base_quotas, 10)
+        self.assertEqual(sum(quotas_10.values()), 10)
+        self.assertEqual(len([c for c, q in quotas_10.items() if q > 0]), 10)
+
+        # Limit 14 ensures all 14 counties get at least 1, preserving Dawson and Rockdale
+        quotas_14 = EP.compute_scaled_quotas(base_quotas, 14)
+        self.assertEqual(sum(quotas_14.values()), 14)
+        self.assertIn("Rockdale", quotas_14)
+        self.assertIn("Dawson", quotas_14)
+        self.assertEqual(quotas_14["Rockdale"], 1)
+        self.assertEqual(quotas_14["Dawson"], 1)
+
+        # Limit 100 scales proportionally without tail truncation
+        quotas_100 = EP.compute_scaled_quotas(base_quotas, 100)
+        self.assertEqual(sum(quotas_100.values()), 100)
+        self.assertGreaterEqual(quotas_100["Dawson"], 1)
+        self.assertGreaterEqual(quotas_100["Rockdale"], 1)
+        self.assertGreater(quotas_100["Fulton"], quotas_100["Cherokee"])
+
     def test_generate_balanced_queue_distribution(self):
         places = [
             {"placeId": f"p_fulton_{i}", "name": f"Fulton Cafe {i}", "county": "Fulton", "city": "Atlanta",
@@ -216,6 +366,30 @@ class TestEnrichPlaces(unittest.TestCase):
         self.assertEqual(c_count, 5)
         # Franchises excluded
         self.assertFalse(any(c["name"] == "Starbucks" for c in queue))
+
+    def test_queue_deduplication_against_existing_research_facts(self):
+        places = [
+            {"placeId": "p1", "name": "Cafe 1", "county": "Fulton", "city": "Atlanta",
+             "rating": 4.8, "ratingNum": 500, "website": "https://cafe1.com", "model": "independent"},
+            {"placeId": "p2", "name": "Cafe 2", "county": "Fulton", "city": "Atlanta",
+             "rating": 4.7, "ratingNum": 400, "website": "https://cafe2.com", "model": "independent"},
+        ]
+        quotas = {"Fulton": 2}
+        existing_facts = {"p1": {"name": "Cafe 1", "checkedDate": "2026-09-22"}}
+
+        queue_norecheck = EP.generate_balanced_queue(
+            places, shops=[], quotas=quotas, target_total=2,
+            researched_facts=existing_facts, recheck=False
+        )
+        self.assertEqual(len(queue_norecheck), 1)
+        self.assertEqual(queue_norecheck[0]["placeId"], "p2")
+
+        queue_recheck = EP.generate_balanced_queue(
+            places, shops=[], quotas=quotas, target_total=2,
+            researched_facts=existing_facts, recheck=True
+        )
+        self.assertEqual(len(queue_recheck), 1)
+        self.assertEqual(queue_recheck[0]["placeId"], "p1")
 
 
 if __name__ == "__main__":

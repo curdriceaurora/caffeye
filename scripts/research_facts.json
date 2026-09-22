@@ -245,19 +245,13 @@
           "status": "unknown"
         },
         "wifi": {
-          "status": "confirmed",
-          "excerpt": "High-speed Wi-Fi access",
-          "sourceUrl": "http://groundandpoundcoffee.com/location-events",
-          "checkedDate": "September 2026"
+          "status": "unknown"
         },
         "outlets": {
           "status": "unknown"
         },
         "seating": {
-          "status": "confirmed",
-          "excerpt": "Indoor Outdoor Seating",
-          "sourceUrl": "http://groundandpoundcoffee.com/location-events",
-          "checkedDate": "September 2026"
+          "status": "unknown"
         },
         "meetingRoom": {
           "status": "unknown"
@@ -2449,7 +2443,7 @@
       "facts": {
         "laptopPolicy": {
           "status": "confirmed",
-          "excerpt": "Coworking Laptop-friendly Built for coworking",
+          "excerpt": "Laptop-friendly",
           "sourceUrl": "https://www.cafefloralia.com/locations",
           "checkedDate": "September 2026"
         },
