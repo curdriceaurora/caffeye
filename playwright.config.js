@@ -26,7 +26,7 @@ module.exports = defineConfig({
       // Mobile projects run the baseline plus mobile-specific specs only,
       // so per-file suites don't triple CI runtime.
       name: 'mobile-375',
-      testMatch: [/browser\.spec\.js/, /responsive-mobile\.spec\.js/],
+      testMatch: [/browser\.spec\.js/, /responsive-mobile\.spec\.js/, /map-rendering\.spec\.js/],
       use: {
         viewport: { width: 375, height: 750 },
         isMobile: true,
@@ -35,7 +35,7 @@ module.exports = defineConfig({
     },
     {
       name: 'mobile-320',
-      testMatch: [/browser\.spec\.js/, /responsive-mobile\.spec\.js/],
+      testMatch: [/browser\.spec\.js/, /responsive-mobile\.spec\.js/, /map-rendering\.spec\.js/],
       use: {
         viewport: { width: 320, height: 568 },
         isMobile: true,

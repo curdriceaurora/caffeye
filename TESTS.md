@@ -282,3 +282,18 @@ console.table(Object.fromEntries(Object.keys(CATS).map(category => [category, {
   independent: SHOPS.filter(s => s.category === category && s.model !== 'franchise').length
 }])));
 ```
+
+---
+
+## T13. Performance Budget & Fluidity (R13)
+
+| ID | Trace | Metric / Assertion | Target | Measurement |
+|---|---|---|---|---|
+| T13.1 | R13.1 | **Largest Contentful Paint (LCP)** | ≤ 1.0s (4G) / ≤ 1.5s (Fast 3G) | `PerformanceObserver({ type: 'largest-contentful-paint' })` |
+| T13.2 | R13.2 | **Total Blocking Time (TBT)** | ≤ 300ms | Startup bootstrap task execution |
+| T13.3 | R13.3 | **Vector First Ready** | ≤ 1.8s (typical) / ≤ 5.0s (fallback) | `window.__telemetryLog.find(e => e.event === 'vector_ready')` |
+| T13.4 | R13.4 | **Regional Cache Hydration** | < 150ms | `window.caches` match on `caffeye-v5` namespace |
+| T13.5 | R13.5 | **Mobile Map Stability & Density** | `clamp(130px, 22vh, 185px)` (min 125px) | Preserves R8.5 card density without keyboard layout shifts |
+| T13.6 | R13.6 | **Interaction Pan/Zoom Fluidity** | ≥ 55 FPS | WebGL circle layer rendering during drag/zoom |
+| T13.7 | R13.7 | **Accessibility Announcements** | Active on selection, filters & search | `#srAnnounce` polite live region with debounced updates |
+

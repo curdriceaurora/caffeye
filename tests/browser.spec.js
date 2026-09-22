@@ -117,7 +117,7 @@ test.describe('regional failure and retry', () => {
     await page.locator('.shop-item').first().waitFor({ timeout: 30000 });
     const banner = page.locator('#dataStatusBanner');
     await expect(banner).toBeVisible();
-    expect(await banner.getAttribute('role')).toBe('alert');
+    expect(await banner.getAttribute('role')).toBe('status');
     expect(await page.locator('#retryPlacesBtn')).toBeVisible();
 
     await page.unroute('**/places.json');

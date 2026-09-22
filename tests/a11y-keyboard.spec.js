@@ -48,4 +48,21 @@ test.describe('keyboard and aria', () => {
     await page.locator('#backBtn').click();
     await expect(page.locator('#detailView')).toHaveAttribute('inert', '');
   });
+
+  test('live region announces selection, detail exit, and franchise toggle', async ({ page }) => {
+    const srAnnounce = page.locator('#srAnnounce');
+    await expect(srAnnounce).toHaveAttribute('aria-live', 'polite');
+    await page.locator('.shop-item').first().click();
+    await expect.poll(() => srAnnounce.textContent()).toContain('Selected ');
+    await expect.poll(() => srAnnounce.textContent()).toContain('Showing details.');
+    await page.locator('#backBtn').click();
+    await expect.poll(() => srAnnounce.textContent()).toBe('Closed details.');
+    await page.locator('label[for="franchiseToggle"]').click();
+    await expect.poll(() => srAnnounce.textContent()).toContain('Including franchise stores.');
+    await page.locator('#categoryChips .chip', { hasText: 'Tea/Boba' }).click();
+    await expect.poll(() => srAnnounce.textContent()).toContain('Tea/Boba');
+    await page.locator('#searchInput').fill('Portrait');
+    await expect.poll(() => srAnnounce.textContent()).toContain('Portrait');
+  });
 });
+
