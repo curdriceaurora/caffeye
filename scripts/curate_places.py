@@ -327,11 +327,14 @@ def main() -> int:
         places_data = json.loads(PLACES_PATH.read_text())
         places = places_data["places"]
         cur_count = 0
+        # Heuristics first, editorial last: explicit curation overlays must
+        # win over classifier guesses (e.g. a concept-cafe overlay pinning
+        # Specialty must survive a tea-name match).
+        places, spec_count = classify_specialty(places)
+        print(f"Reclassified {spec_count} venues as Roasters or Specialty")
         if args.apply:
             places, cur_count = apply_curations(places, curations, curation_defaults)
             print(f"Applied {cur_count} curations from {CURATIONS_PATH.name}")
-        places, spec_count = classify_specialty(places)
-        print(f"Reclassified {spec_count} venues as Roasters or Specialty")
         places_data["places"] = places
         PLACES_PATH.write_text(json.dumps(places_data, indent=1, ensure_ascii=False) + "\n")
         print(f"Saved -> {PLACES_PATH} ({PLACES_PATH.stat().st_size // 1024} KB)")
