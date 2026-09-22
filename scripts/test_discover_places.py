@@ -558,6 +558,48 @@ class CrawlTests(unittest.TestCase):
             Path(temp_path).unlink(missing_ok=True)
 
 
+class ClassifierParityTests(unittest.TestCase):
+    CASES = [
+        ("East Pole Coffee Co.", "coffee_shop", ["coffee_shop", "cafe"]),
+        ("Qamaria Yemeni Coffee Co.", "cafe", ["cafe"]),
+        ("Scenttok Craft Cafe", "coffee_shop", ["cafe"]),
+        ("Radio Roasters Coffee", "cafe", ["cafe"]),
+        ("Sunday Roast Cafe", "cafe", ["cafe"]),
+        ("Sunday Roasting Cafe", "cafe", ["cafe"]),
+        ("Sunday Roasters Bakery", "bakery", ["bakery"]),
+        ("Tiger Sugar Boba", "cafe", ["cafe"]),
+        ("Yemeni Boba Tea House", "coffee_shop", ["coffee_shop"]),
+        ("Generic Boba", "restaurant", ["restaurant"]),
+    ]
+
+    def test_shared_function_matches_category_for(self):
+        for name, primary, types in self.CASES:
+            with self.subTest(name=name):
+                self.assertEqual(
+                    D.classify_category(name, primary_type=primary, types=types),
+                    D.category_for({"primaryType": primary,
+                                    "displayName": {"text": name},
+                                    "types": types}),
+                )
+
+    def test_curation_path_tea_precedence_unified(self):
+        """Same input, one answer: discovery and curation agree on Tea/Boba."""
+        via_discovery = D.classify_category(
+            "Yemeni Boba Tea House", primary_type="coffee_shop")
+        via_curation = D.classify_category(
+            "Yemeni Boba Tea House", current_cat="Coffee")
+        self.assertEqual(via_discovery, "Tea/Boba")
+        self.assertEqual(via_curation, "Tea/Boba")
+
+    def test_curation_path_never_drops_or_downgrades_roasters(self):
+        self.assertEqual(
+            D.classify_category("East Pole Coffee Co.", current_cat="Roasters"),
+            "Roasters",
+        )
+        self.assertEqual(D.classify_category("Mystery Spot", current_cat="Coffee"), "Coffee")
+        self.assertIsNone(D.classify_category("Mystery Spot", primary_type="bowling_alley"))
+
+
 class OverlayTests(unittest.TestCase):
     def test_to_record_preserves_curated_category(self):
         """Bug 3: discovery replay must not undo curated category overrides."""
@@ -576,6 +618,35 @@ class OverlayTests(unittest.TestCase):
     def test_to_record_without_overlay_keeps_classified_category(self):
         rec, _ = D.to_record(BY_NAME["Boba Mocha"], None, {})
         self.assertEqual(rec["category"], "Tea/Boba")
+
+    def test_to_record_stamps_provenance_on_curated_cw(self):
+        curations = {
+            BY_NAME["Boba Mocha"]["id"]: {
+                "name": "Boba Mocha",
+                "cw": {"tier": "good", "hasMeetingRoom": False},
+                "usp": "Neighborhood boba counter",
+            }
+        }
+        rec, reason = D.to_record(
+            BY_NAME["Boba Mocha"], None, curations,
+            curation_defaults=("September 2026", "editorial"))
+        self.assertIsNone(reason)
+        self.assertEqual(rec["cw"]["source"], "editorial")
+        self.assertEqual(rec["cw"]["verified"], "September 2026")
+
+    def test_load_curation_defaults(self):
+        import tempfile
+        with tempfile.NamedTemporaryFile("w", suffix=".json", delete=False) as f:
+            json.dump({"defaultVerified": "January 2024",
+                       "defaultSource": "site-visit"}, f)
+            path = f.name
+        try:
+            self.assertEqual(D.load_curation_defaults(path),
+                             ("January 2024", "site-visit"))
+        finally:
+            Path(path).unlink(missing_ok=True)
+        self.assertEqual(D.load_curation_defaults("/nonexistent/x.json"),
+                         (None, "editorial"))
 
 
 class BudgetTests(unittest.TestCase):

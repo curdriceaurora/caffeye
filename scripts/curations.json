@@ -1,6 +1,9 @@
 {
   "version": 1,
   "description": "Curated qualitative intelligence (coworking tiers, meeting rooms, signature items, and USPs) overlaid onto discovered and curated places.",
+  "defaultSource": "editorial",
+  "defaultVerified": "September 2026",
+  "stalenessPolicyMonths": 12,
   "places": {
     "ChIJG1KP8qDq9YgReCfFZvohgwo": {
       "name": "TradeWind Coffee Co.",

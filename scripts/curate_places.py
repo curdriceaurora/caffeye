@@ -28,7 +28,11 @@ CURATIONS_PATH = ROOT / "scripts" / "curations.json"
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from refresh_ratings import norm  # noqa: E402
-from discover_places import ROASTERY_NAMES, ROASTER_NAME, SPECIALTY_NAME  # noqa: E402
+from discover_places import (  # noqa: E402
+    classify_category,
+    load_curation_defaults,
+    stamp_provenance,
+)
 
 
 def load_curations(path=CURATIONS_PATH) -> dict:
@@ -38,13 +42,19 @@ def load_curations(path=CURATIONS_PATH) -> dict:
     return data.get("places", {})
 
 
-def apply_curation_to_place(place: dict, cur: dict) -> dict:
-    """Returns a copy of place updated with curated fields."""
+def apply_curation_to_place(place: dict, cur: dict, defaults=None) -> dict:
+    """Returns a copy of place updated with curated fields.
+
+    defaults is (defaultVerified, defaultSource) from the curation file's
+    top-level metadata; the cw block is stamped with per-record source and
+    verification date (per-record values win, unknown stays absent)."""
+    if defaults is None:
+        defaults = (None, "editorial")
     rec = dict(place)
     if "category" in cur:
         rec["category"] = cur["category"]
     if "cw" in cur:
-        rec["cw"] = cur["cw"]
+        rec["cw"] = stamp_provenance(cur["cw"], cur, defaults)
     if "usp" in cur:
         rec["usp"] = cur["usp"]
     if "loved" in cur:
@@ -54,7 +64,7 @@ def apply_curation_to_place(place: dict, cur: dict) -> dict:
     return rec
 
 
-def apply_curations(places: list, curations: dict) -> tuple:
+def apply_curations(places: list, curations: dict, defaults=None) -> tuple:
     """(updated_places, applied_count). Matches by placeId first, then unambiguous norm(name)+city."""
     # Count how many places share each (name, city) key to detect ambiguity
     place_key_counts = Counter(
@@ -103,7 +113,7 @@ def apply_curations(places: list, curations: dict) -> tuple:
                     print(f"curate: ambiguous name+city fallback skipped for {p.get('name')} in {p.get('city')}")
 
         if cur:
-            updated.append(apply_curation_to_place(p, cur))
+            updated.append(apply_curation_to_place(p, cur, defaults))
             applied += 1
         else:
             updated.append(p)
@@ -114,34 +124,23 @@ def apply_curations(places: list, curations: dict) -> tuple:
 def classify_specialty(places: list) -> tuple:
     """Separates Roasters from cultural and concept venues classified as Specialty.
 
-    Guards Bakery+Cafe, Dessert Cafe, and Tea/Boba from heuristic name overrides;
-    only deliberate curation or explicit roasteries/concept types can cross those category boundaries.
+    Delegates to discover_places.classify_category (curation path: stored
+    category + name + types), preserving its guards: Bakery+Cafe, Dessert
+    Cafe, and Tea/Boba move only on explicit roastery matches or concept
+    types — never on loose specialty-name patterns.
     """
     updated = []
     upgraded = 0
     for p in places:
         rec = dict(p)
         current_cat = rec.get("category")
-        if current_cat == "Roasters":
-            updated.append(rec)
-            continue
-
-        name = rec.get("name", "")
-        n_lower = name.lower()
-        types = [t.lower() for t in rec.get("types", [])]
-        is_concept = any(t in ("cat_cafe", "dog_cafe") for t in types)
-        is_roastery = any(r in n_lower for r in ROASTERY_NAMES)
-        is_spec_name = bool(SPECIALTY_NAME.search(name))
-
-        guarded = current_cat in ("Bakery+Cafe", "Dessert Cafe", "Tea/Boba")
-        if is_concept:
-            rec["category"] = "Specialty"
-        elif is_roastery or (not guarded and ROASTER_NAME.search(name)):
-            rec["category"] = "Roasters"
-        elif not guarded and is_spec_name:
-            rec["category"] = "Specialty"
-
-        if rec.get("category") != current_cat:
+        new_cat = classify_category(
+            rec.get("name", ""),
+            current_cat=current_cat,
+            types=rec.get("types"),
+        )
+        if new_cat != current_cat:
+            rec["category"] = new_cat
             upgraded += 1
         updated.append(rec)
     return updated, upgraded
@@ -292,6 +291,7 @@ def main() -> int:
     args = parser.parse_args()
 
     curations = load_curations()
+    curation_defaults = load_curation_defaults()
 
     if args.research:
         res = research_website(args.research)
@@ -328,7 +328,7 @@ def main() -> int:
         places = places_data["places"]
         cur_count = 0
         if args.apply:
-            places, cur_count = apply_curations(places, curations)
+            places, cur_count = apply_curations(places, curations, curation_defaults)
             print(f"Applied {cur_count} curations from {CURATIONS_PATH.name}")
         places, spec_count = classify_specialty(places)
         print(f"Reclassified {spec_count} venues as Roasters or Specialty")
