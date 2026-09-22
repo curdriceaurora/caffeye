@@ -380,6 +380,30 @@ class CuratePlacesTests(unittest.TestCase):
         self.assertEqual(count, 1)
         self.assertEqual(updated[0]["category"], "Specialty")
 
+    def test_extract_signals_negative_laptop_disables_work_friendly(self):
+        html_sample = """
+        <html>
+            <body>
+                <p>Fast Wi-Fi available. Notice: no laptops allowed on weekends!</p>
+            </body>
+        </html>
+        """
+        signals = CP.extract_signals_from_text(html_sample)
+        self.assertTrue(signals["laptop_restricted"])
+        self.assertFalse(signals["likely_work_friendly"])
+
+    def test_audit_includes_curated_by_county(self):
+        places = [
+            {"placeId": "p1", "county": "Fulton", "cw": {"tier": "excellent"}},
+            {"placeId": "p2", "county": "Fulton"},
+            {"placeId": "p3", "county": "Cobb", "cw": {"tier": "good"}},
+        ]
+        res = CP.audit(places)
+        self.assertEqual(res["total_venues"], 3)
+        self.assertEqual(res["total_curated"], 2)
+        self.assertEqual(res["curated_by_county"]["Fulton"], 1)
+        self.assertEqual(res["curated_by_county"]["Cobb"], 1)
+
 
 if __name__ == "__main__":
     unittest.main()

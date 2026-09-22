@@ -1593,6 +1593,108 @@
         "iced vanilla latte"
       ],
       "signature": "Southern Seven-Flavor Pound Cake"
+    },
+    "ChIJOfalBUMD9YgRd0hSjtV1Tvk": {
+      "name": "Black Coffee Atlanta",
+      "city": "Atlanta",
+      "county": "Fulton",
+      "source": "website-crawl",
+      "verified": "September 2026",
+      "cw": {
+        "tier": "good",
+        "note": "FREE WiFi"
+      },
+      "usp": "Independent coffee in Atlanta serving specialty coffee and fresh menu offerings."
+    },
+    "ChIJWVlDyv6f9YgRJfRFmSqZ3O8": {
+      "name": "The Creek Café + Gelato",
+      "city": "Alpharetta",
+      "county": "Fulton",
+      "source": "website-crawl",
+      "verified": "September 2026",
+      "cw": {
+        "tier": "good",
+        "note": "Verified work-friendly spot: We offer free WiFi, a (dog-friendly) enclosed patio space, and a calm environment for anyone who needs to get out of their house or the office to enjoy some much-needed \"me-time\" and a good cup of coffee."
+      },
+      "usp": "Work-friendly coffee in Alpharetta with verified Wi-Fi."
+    },
+    "ChIJb-uOTPgD9YgR6vk5lZyikek": {
+      "name": "Revolution Doughnuts & Coffee",
+      "city": "Atlanta",
+      "county": "Fulton",
+      "source": "website-crawl",
+      "verified": "September 2026",
+      "cw": {
+        "tier": "limited",
+        "note": "No, we do not offer WiFI at either of our shops."
+      },
+      "usp": "Independent bakery+cafe in Atlanta serving specialty coffee and fresh menu offerings."
+    },
+    "ChIJiY6Amwi79YgRlu9LlJzP3Hc": {
+      "name": "Beans and Butter Coffeehouse",
+      "city": "Lawrenceville",
+      "county": "Gwinnett",
+      "source": "website-crawl",
+      "verified": "September 2026",
+      "category": "Roasters",
+      "usp": "Independent craft coffee roaster in Lawrenceville offering house-roasted specialty coffee."
+    },
+    "ChIJ7TehoAaX9YgRrz6_zveDftQ": {
+      "name": "Blue Mountain Coffee Roasters",
+      "city": "Suwanee",
+      "county": "Gwinnett",
+      "source": "atlanta-coffee-shops-directory",
+      "verified": "September 2026",
+      "cw": {
+        "tier": "good",
+        "note": "✓ Free Wi-Fi"
+      },
+      "usp": "Independent roasters in Suwanee serving specialty coffee and fresh menu offerings."
+    },
+    "ChIJkzWckImX9YgRa9Q7nXG3NOI": {
+      "name": "Tada Coffee and Dessert",
+      "city": "Suwanee",
+      "county": "Gwinnett",
+      "source": "atlanta-coffee-shops-directory",
+      "verified": "September 2026",
+      "cw": {
+        "tier": "good",
+        "note": "✓ Free Wi-Fi"
+      },
+      "usp": "Independent coffee in Suwanee serving specialty coffee and fresh menu offerings."
+    },
+    "ChIJf3sUcjIB9YgRKkVdGSDG-t0": {
+      "name": "Taproom Coffee",
+      "city": "Atlanta",
+      "county": "DeKalb",
+      "source": "website-crawl",
+      "verified": "September 2026",
+      "cw": {
+        "tier": "good",
+        "note": "Yes, customers can access free Wi-Fi under the network “Taproom-Public”."
+      },
+      "usp": "Independent roasters in Atlanta serving specialty coffee and fresh menu offerings."
+    },
+    "ChIJ2_lvDCdv9YgRh6b6kX03-k8": {
+      "name": "Cafe Floralia",
+      "city": "Canton",
+      "county": "Cherokee",
+      "source": "website-crawl",
+      "verified": "September 2026",
+      "cw": {
+        "tier": "good",
+        "note": "Laptop-friendly per venue policy"
+      },
+      "usp": "Independent coffee in Canton serving specialty coffee and fresh menu offerings."
+    },
+    "ChIJB00NZ-Zr9YgRn2Wgk9ddV0M": {
+      "name": "Apotheos Coffee Woodstock",
+      "city": "Woodstock",
+      "county": "Cherokee",
+      "source": "website-crawl",
+      "verified": "September 2026",
+      "category": "Roasters",
+      "usp": "Independent craft coffee roaster in Woodstock offering house-roasted specialty coffee."
     }
   }
 }
