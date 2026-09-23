@@ -404,6 +404,9 @@ def main() -> int:
             print(f"Applied {cur_count} curations from {CURATIONS_PATH.name}")
         places_data["places"] = places
         PLACES_PATH.write_text(json.dumps(places_data, indent=1, ensure_ascii=False) + "\n")
+        from rating_priors import update as update_rating_priors
+        if PLACES_PATH == ROOT / "public" / "places.json":
+            update_rating_priors()
         print(f"Saved -> {PLACES_PATH} ({PLACES_PATH.stat().st_size // 1024} KB)")
 
         # Show audit after apply

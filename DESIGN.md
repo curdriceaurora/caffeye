@@ -14,16 +14,18 @@ Pulled verbatim from the running app — these are the only label strings that e
 
 | Surface | Copy |
 |---|---|
-| Page title | `Coffee in {scope}` where `scope` is the loaded region label (Duluth only in seed fallback) |
+| Page title | `Coffee in {scope}`; `scope` is always `Metro Atlanta`, including seed fallback |
 | Brand wordmark | Same as page title |
-| Freshness line | `{count} cafés, bakeries & tea shops in {scope} · checked {checkedMonth}` |
+| Freshness line | `{count} spots in {scope} · verified {month}` (prefixed `Loading Metro Atlanta… ` while regional data is pending) |
 | Search placeholder | `Search by name, drink, or area…` |
 | Results header | `{n} SPOTS` (uppercase, letter-spaced) |
 | Empty state | `No shops in this view. Try zooming out, clearing filters, or changing search.` |
 | Footer | `Ratings, hours, and addresses change. Verify before visiting.` (hidden on mobile) |
 | Back action | `← Back to list` |
 | Detail action row | `Google Maps` · `Yelp` · `{host}` (host = `Instagram`/`Facebook`/`Linktree`/`Website`) |
-| Filter row labels | `City` · `Type` · `Useful for` (hidden on mobile) |
+| Filter row labels | `Type` · `Useful for` (hidden on mobile) |
+| Coverage status | `Loading Metro Atlanta… {n} spots so far` · `Regional coverage unavailable · {n} spots` + Retry · `Retry failed · {n} spots` · `Regional coverage loaded · {n} spots` · `{n} more spots loaded` + Update list |
+| Vector preview note | `Vector map preview · Standard map` · `Vector preview unavailable. Showing the standard map · Standard map` · `Some map detail could not load. Shop search and the list are still available.` |
 | Coworking tier copy | `Coworking-ready` (excellent) · `Workable` (good) · `Quick-grab` (limited) |
 | Late-night header | `Open until midnight` (midnight tier) · `Open till 10pm+` (10pm+ tier) |
 
@@ -209,7 +211,7 @@ Main         Map (Leaflet + clustering) | Search
 Footer       Ratings, hours, and addresses change. Verify before visiting.
 ```
 
-Before data arrives, the brand reads “Caffeye” and counts read “Loading spots…”. Location chip rows are omitted. September 2026 default scope is 970 independent venues across Metro Atlanta; franchise inclusion expands it to 1,705. Counts are illustrative snapshot values, never HTML placeholders.
+Before data arrives, the brand reads “Metro Atlanta” and the freshness line reads “Loading Metro Atlanta…”. Location chip rows are omitted. September 2026 default scope is 970 independent venues across Metro Atlanta; franchise inclusion expands it to 1,705. Counts are illustrative snapshot values, never HTML placeholders.
 
 
 **Hierarchy** (top-down weight):

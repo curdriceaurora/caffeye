@@ -2352,5 +2352,11 @@
   "cities": [
     "Duluth"
   ],
-  "regionLabel": "Duluth"
+  "regionLabel": "Duluth",
+  "ratingPriors": {
+    "C": 4.320000000000005,
+    "m": 238,
+    "population": 1705,
+    "source": "shops.json + places.json; rating_priors.py"
+  }
 }

@@ -33,6 +33,8 @@ async function gotoHome(page, attempts = 3) {
     }
   }
   await page.locator('.shop-item').first().waitFor({ timeout: 30000 });
+  await page.waitForFunction(() => window.mapReady && window.dataLoadState?.regional !== 'loading');
+  await expect.poll(() => page.evaluate(() => Number(document.getElementById('resultsCount').textContent) === document.querySelectorAll('.shop-item').length || !!document.querySelector('.load-more-btn'))).toBe(true);
 }
 
 async function openFirstDetail(page) {

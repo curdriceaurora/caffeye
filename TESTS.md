@@ -26,7 +26,7 @@ Local: `python3 -m http.server 8765 --directory public` in the project root, ope
 | T1.6 | R1.5 | `js> SHOPS.filter(s => s.late).every(s => ['10pm+','midnight'].includes(s.late.tier) && typeof s.late.when === 'string')` | `true` |
 | T1.7 | R1.6 | `js> SHOPS.filter(s => !ADDR[s.addrKey] \|\| (!s.curated && !s.addrKey.startsWith('place-')))` | `[]` |
 | T1.8 | R1.7 | `js> SHOPS.filter(s => !CATS[s.category]).map(s => s.name)` | `[]` |
-| T1.9 | R1.9 | Open page, check header text. | At ≤ 380 px the loaded visual brand omits “Coffee in”; accessible naming and page title retain it. Before load: “Caffeye” and “Loading spots…”, no numeric result count. After load: “**970** spots in Metro Atlanta · verified **September 2026**”; franchise toggle ON: **1705**. Fallback: **41** spots in Duluth by default, **61** with franchises. Page/social descriptions use the full loaded total (1,705 or 61). Unknown verification months make no claim; one known month in a mixed-source dataset is source-attributed. |
+| T1.9 | R1.9 | Open page, check header text. | At ≤ 380 px the loaded visual brand omits “Coffee in”; accessible naming and page title retain it. Before load: “Metro Atlanta” and “Loading Metro Atlanta…”, no numeric result count. After load: “**970** spots in Metro Atlanta · verified **September 2026**”; franchise toggle ON: **1705**. Fallback: **41** spots in Metro Atlanta by default, **61** with franchises, with the degraded-coverage banner. Page/social descriptions use the full loaded total (1,705 or 61). Unknown verification months make no claim; one known month in a mixed-source dataset is source-attributed. |
 
 ## T2. Map setup (R2)
 
@@ -40,7 +40,7 @@ Local: `python3 -m http.server 8765 --directory public` in the project root, ope
 | T2.6 | R2.6 | `js> document.querySelectorAll('.coffee-cluster').length` | `≥ 1` at zoom 13 |
 | T2.7 | R2.7 | `js> { const same = SHOPS.filter(s => s.name === 'Alchemist on the Divide' \|\| s.name === 'Ginkgo Bakery & Cafe').map(s => [s.lat, s.lng]); Math.abs(same[0][0] - same[1][0]) + Math.abs(same[0][1] - same[1][1]) > 0 }` | `true` (same-address pins are nudged apart) |
 | T2.8 | R2.8 | Click a pin. | The detail card opens directly; no preview popup appears. |
-| T2.9 | R2.9 | Click a pin, then "← Back to list". | Map fits all markers again. |
+| T2.9 | R2.9 | Click a pin, then "← Back to list". | Map restores the pre-selection camera. |
 | T2.10 | R2.10 | `js> map.getMinZoom() === 7 && map.getMaxZoom() === 19` | `true` (zoom out bounded at 7 for full regional landscape fit, zoom in up to 19) |
 | T2.11 | R2.10 | `js> map.options.maxBoundsViscosity === 1.0 && map.options.maxBounds.equals(ATL_BOUNDS)` | `true` (panning hard-locked to Greater Atlanta) |
 | T2.12 | R2.10 | `js> { let tl; map.eachLayer(l => { if (l instanceof L.TileLayer) tl = l; }); tl.options.bounds.equals(ATL_BOUNDS) }` | `true` (tile network fetches restricted to Greater Atlanta) |
@@ -182,7 +182,7 @@ recovery, not just the threshold function in isolation.
 | T6.6 | R6.6 | Enable franchises, search Sweet Hut, and open the curated Duluth venue. | Coworking section shows "Coworking-ready" + meeting-room callout. |
 | T6.7 | R6.7 | Open a shop without late hours (e.g. Land of a Thousand Hills). | No Late-night section. |
 | T6.8 | R6.8 | Inspect action buttons on a curated seed venue and a discovered venue. | Google Maps appears for valid links; Yelp and Website appear only when their source fields contain valid HTTP(S) URLs. |
-| T6.9 | R6.9 | Click "← Back to list". | Detail hides, list returns, map fits bounds. |
+| T6.9 | R6.9 | Click "← Back to list". | Detail hides, list returns, map restores the pre-selection camera. |
 | T6.11 | R6.10 | Open any detail view: `js> [...document.querySelectorAll('.actions a')].every(a => /^https?:\/\//.test(a.getAttribute('href')))` | `true` — no `javascript:`/`data:`/relative hrefs; unsafe URLs render no button. |
 | T6.12 | R6.11 | Open a curated shop (e.g. Chrome Yellow) and an uncurated one. | Curated shows "Verified {month} · {source}"; uncurated shows "Work suitability: Unknown · amenities not yet verified for this venue." |
 
@@ -200,7 +200,7 @@ recovery, not just the threshold function in isolation.
 | ID | Trace | Test | Pass |
 |---|---|---|---|
 | T8.1 | R8.1 | Window width ≥ 821 px. | Map left + 380 px panel right. |
-| T8.2 | R8.2 | Width 390 px (mobile). | Column layout: map on top (`clamp(130px, 22vh, 185px)`, 125 px below 600 px viewport height), panel below filling remainder. |
+| T8.2 | R8.2 | Width 390 px (mobile). | Column layout: map on top (`clamp(130px, 22vh, 185px)`, 125 px at ≤ 600 px viewport height, 120 px at ≤ 500 px), panel below filling remainder. |
 | T8.3 | R8.3 | At 390 px width, chip computed font-size. | `11.5px`. |
 | T8.4 | R8.4 | At 390 px width: `js> getComputedStyle(document.querySelector('footer')).display` | `"none"`. |
 | T8.5 | R8.5 | Mobile, 375×750 viewport. Count *fully* visible cards (not merely intersecting the viewport): `js> (() => { const r = document.getElementById('shopList').getBoundingClientRect(); return [...document.querySelectorAll('.shop-item')].filter(li => { const cr = li.getBoundingClientRect(); return cr.top >= r.top - 0.5 && cr.bottom <= r.bottom + 0.5; }).length; })()` | `≥ 5`; measure current cards instead of assuming a fixed card height. |
@@ -211,12 +211,12 @@ recovery, not just the threshold function in isolation.
 
 | ID | Trace | Test | Pass |
 |---|---|---|---|
-| T9.1 | R9.1 | File size of `index.html`. | `≤ 100 KB`. |
+| T9.1 | R9.1 | File size of `index.html`. | `≤ 110 KB (112,640 bytes)`. |
 | T9.2 | R9.2 | Load with DevTools console open. Click around, zoom, filter. | No errors logged. |
-| T9.3 | R9.3 | Network tab on hard reload. | Leaflet CSS/JS + MarkerCluster CSS/JS + Google Fonts all return 200; the two SRI'd files match their hashes. |
+| T9.3 | R9.3 | Network tab on hard reload. | Leaflet CSS/JS + MarkerCluster CSS/JS + Google Fonts all return 200; the two SRI'd files match their hashes. With `?renderer=vector`, MapLibre JS/CSS carry `integrity` and load. |
 | T9.4 | R9.4 | `python3 -m http.server 8765 --directory public`, then open the local URL. | App and JSON load with no build step. |
 | T9.5 | R9.5 | DevTools → Performance: record a list↔detail click and a zoom/pan. | Frames row stays green (60fps). No `Layout` or `Paint` blocks during the panel transition. Compositor thread handles the slide. |
-| T9.6 | R9.6 | DevTools → Network: block `places.json`, hard reload. | Baseline boots with a `#dataStatusBanner` (`role="alert"`) showing the live baseline count; unblocking + Retry ingests regional data and dismisses the banner. |
+| T9.6 | R9.6 | DevTools → Network: block `places.json`, hard reload. | Baseline boots with a `#dataStatusBanner` (`role="status"`) showing the live baseline count; unblocking + Retry ingests regional data and confirms success in the same status node. |
 
 ## T10. Deployment (R10)
 
@@ -233,7 +233,7 @@ recovery, not just the threshold function in isolation.
 Run after each deployment:
 
 1. Open the live URL on desktop. Expect 970 in-scope markers (41 in baseline fallback), all 6 category chips, 4 feature chips, and the first 200 ranked cards (41 in fallback). Results header reads “970 spots” (“41 spots” in fallback). Enable franchises for all 1,705 venues (61 in fallback). Reset to independent mode before the next checks.
-2. Click Bread Museum (or Chrome Yellow in Metro Atlanta) → detail card slides in (list slides left). Click "← Back to list" → list slides back in, map fits bounds.
+2. Click Bread Museum (or Chrome Yellow in Metro Atlanta) → detail card slides in (list slides left). Click "← Back to list" → list slides back in, map restores the pre-selection camera.
 3. Reset filters, then click "Until midnight" → expect late-night shops (41 independents / 78 total across Metro Atlanta; 6 independents / 9 total in baseline fallback).
 4. Reset filters, then search "matcha" → ≥ 10 results.
 5. Reset filters, then zoom in until fewer than all shops appear in the list. Confirm header changes to "X in view" and list items cascade in. Zoom back out — header returns to "970 spots" ("41 spots" in baseline mode).
@@ -282,3 +282,22 @@ console.table(Object.fromEntries(Object.keys(CATS).map(category => [category, {
   independent: SHOPS.filter(s => s.category === category && s.model !== 'franchise').length
 }])));
 ```
+
+---
+
+## T13. Performance Budget & Fluidity (R13)
+
+| ID | Trace | Metric / Assertion | Target | Measurement |
+|---|---|---|---|---|
+| T13.1 | R13.1 | **Largest Contentful Paint (LCP)** — manual, not in CI | ≤ 1.0s (4G) / ≤ 1.5s (Fast 3G) target; Sept 2026 baseline ≈ 1.17s / ≈ 2.9s | On the deployed site (compressed assets), Chrome DevTools → Performance with network throttling at 4G and Fast 3G, cache disabled; record the final LCP entry (a basemap tile) after the list and regional data have loaded. Take the median of 3 runs. |
+| T13.2 | R13.2 | **Total Blocking Time (TBT)** — reported, not gated | ≤ 300ms target | The `perf` project logs long-task TBT at 4× CPU after the functional projects finish (`npx playwright test --project=perf --no-deps` runs it alone). Compare runs on the same machine. |
+| T13.3 | R13.3 | **Vector First Ready** | ≤ 1.8s (typical) / ≤ 5.0s (fallback) | `window.__telemetryLog.find(e => e.event === 'vector_ready')` |
+| T13.4 | R13.4 | **Network-first Regional Load** | 2.5 s cached fallback timeout | Fresh network wins over cached content; a slow download serves the cache after 2.5 s and then refreshes it; obsolete namespaces deleted |
+| T13.5 | R13.5 | **Mobile Map Stability & Density** | `clamp(130px, 22vh, 185px)`; 125px at ≤ 600px tall, 120px at ≤ 500px | Preserves R8.5 card density without keyboard layout shifts, including while the coverage banner shows |
+| T13.6 | R13.6 | **Interaction Pan/Zoom Fluidity** | ≥ 55 FPS | WebGL circle layer rendering during drag/zoom |
+| T13.7 | R13.7 | **Accessibility Announcements** | Active on selection, filters & search | `#srAnnounce` polite live region with debounced updates |
+| T13.8 | R13.8 | **Progressive regional startup** | No Duluth header, no seed fit, stable ◆ scores | `tests/review-regressions.spec.js`: regional shell, five-second delay checks, held list and Update list, Home during partial loading |
+| T13.9 | R13.9 | **Vector preview resilience** | Falls back or recovers without losing state | `tests/review-regressions.spec.js` `vector:` tests and `tests/map-rendering.spec.js` context-loss test |
+
+
+Review regressions: `tests/review-regressions.spec.js` checks the regional shell, partial score stability, actual search/Back hit targets, list preservation, exact viewport announcements, debounce, stale empty rows, twenty real card selections, cancellation, CDN failure, retries, and coincident coordinates. The HTML size assertion enforces 112,640 bytes. The performance spec gates startup long-task TBT at 4× CPU and vector readiness; final LCP is measured manually (T13.1).

@@ -35,6 +35,32 @@ test.describe('responsive layout', () => {
     expect(visible).toBeGreaterThanOrEqual(minCards);
   });
 
+  test('card density holds while regional coverage is unavailable', async ({ page }) => {
+    test.skip(page.viewportSize().width > 820, 'mobile-only assertion');
+    await page.route('**/places.json', route => route.abort());
+    await page.evaluate(() => caches.delete('caffeye-v6')); // no cached fallback for this visit
+    await page.goto('/');
+    await expect(page.locator('#retryPlacesBtn')).toBeVisible();
+    const width = page.viewportSize().width;
+    const height = page.viewportSize().height;
+    const minCards = width <= 360 && height <= 600 ? 3 : 5;
+    const visible = await page.evaluate(() => {
+      const r = document.getElementById('shopList').getBoundingClientRect();
+      return [...document.querySelectorAll('.shop-item')].filter((li) => {
+        const cr = li.getBoundingClientRect();
+        return cr.top >= r.top - 0.5 && cr.bottom <= r.bottom + 0.5;
+      }).length;
+    });
+    expect(visible).toBeGreaterThanOrEqual(minCards);
+    // The banner's Retry keeps a 44 px touch target.
+    const target = await page.locator('#retryPlacesBtn').evaluate(el => {
+      const r = el.getBoundingClientRect(), after = getComputedStyle(el, '::after');
+      // ::after is positioned against the padding box, so borders don't count.
+      return el.clientHeight - parseFloat(after.top) - parseFloat(after.bottom);
+    });
+    expect(target).toBeGreaterThanOrEqual(44);
+  });
+
   test('chip hit-slop provides 44px touch targets on mobile', async ({ page }) => {
     test.skip(page.viewportSize().width > 820, 'mobile-only assertion');
     const slop = await page.evaluate(() => {
@@ -67,4 +93,14 @@ test('compact header preserves region and full accessible title', async ({ page 
   }
   await expect(page).toHaveTitle('Coffee in Metro Atlanta');
   await expect(page.locator('#brandHomeBtn')).toHaveAccessibleName('Caffeye — Coffee in Metro Atlanta — Reset filters');
+});
+
+ test('mobile map height follows the viewport contract before and after search focus', async ({page}) => {
+  test.skip(page.viewportSize().width > 820, 'Mobile layout only');
+  await gotoHome(page);
+  const expected = await page.evaluate(() => innerHeight <= 500 ? 120 : innerHeight <= 600 ? 125 : Math.min(185,Math.max(130,innerHeight*.22)));
+  const height = () => page.locator('#map').evaluate(el=>el.getBoundingClientRect().height);
+  expect(await height()).toBeCloseTo(expected,0);
+  await page.locator('#searchInput').click();
+  expect(await height()).toBeCloseTo(expected,0);
 });

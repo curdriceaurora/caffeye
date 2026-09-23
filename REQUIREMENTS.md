@@ -14,22 +14,22 @@ Functional and non-functional requirements for the current state of the page. Ea
 | R1.6 | Coworking/late/website data is **per-shop**, not keyed by name — two locations of the same brand in different cities can have different coworking notes, hours, and URLs. | Data integrity |
 | R1.7 | Every shop's `category` exists in `CATS`. | Data integrity |
 | R1.8 | Curated building addresses (`shops.json.addr`) use Apple Maps geocoding with a verified house-number match; discovered venues use Google Places coordinates. Runtime `ADDR` includes both sources. | Geocode authoritatively |
-| R1.9 | First paint uses a neutral Caffeye brand and loading text, with no asserted count. After load or retry, title, region, and metadata derive from the accepted datasets. Header count follows franchise inclusion; page/social descriptions use the total loaded count. Freshness attributes differing or partially known verification months to their sources; an unknown source date contributes no claim. Static crawler/manifest copy describes Metro Atlanta without embedding counts. | — |
+| R1.9 | First paint shows the regional shell (“Metro Atlanta” brand, “Loading Metro Atlanta…”) with no asserted count; the header never names the seed city. After load or retry, title, region, and metadata derive from the accepted datasets. Header count follows franchise inclusion; page/social descriptions use the total loaded count. Freshness attributes differing or partially known verification months to their sources; an unknown source date contributes no claim. Static crawler/manifest copy describes Metro Atlanta without embedding counts. | — |
 
 ## R2. Map
 
 | ID | Requirement | Principle |
 |---|---|---|
 | R2.1 | The map uses Leaflet with CARTO light tiles and MarkerCluster. | — |
-| R2.2 | On first paint, the map fits all in-scope markers (`fitBounds` with 40 px padding). | Show what's available |
+| R2.2 | The first map frame is regional. Fit all in-scope markers only when regional data is ready; partial seed coverage retains the regional camera. | Show what's available |
 | R2.3 | Each marker is a 26 px circular pin in the category color with the category emoji centered inside (☕ Coffee, 🫘 Roasters, 🥐 Bakery & Cafe, 🧋 Tea/Boba, 🍰 Dessert Cafe, ✦ Specialty). | Playfulness is information |
 | R2.4 | Late-night shops have a blue glow ring on their pin. | — |
 | R2.5 | The selected shop's pin grows to 32 px with a brown selection ring. | — |
 | R2.6 | Marker clusters use a dark brown bubble with white count text, customized via `iconCreateFunction` (class `coffee-cluster`). | — |
 | R2.7 | Shops at the same building coords are fanned out in a ~20 m ring so pins don't fully overlap. | Labels must not lie |
 | R2.8 | Tapping a pin selects the shop directly (no preview popup). | One tap to the answer |
-| R2.9 | "Back to list" runs `fitBounds(clusterGroup.getBounds())` to reset the view to all markers. | — |
-| R2.10 | The map zoom is bounded between `minZoom: 7` and `maxZoom: 19`. Viewport panning and tile network requests are strictly bounded to Greater Atlanta via `ATL_BOUNDS` (`[33.15, -85.05]` to `[34.75, -83.30]`) with `maxBoundsViscosity: 1.0`, preventing users from panning away from the coverage area and eliminating unnecessary tile rendering/requests. | Bound performance and avoid stray navigation |
+| R2.9 | "Back to list" restores the camera saved before the first selection. Switching selections preserves that camera. | — |
+| R2.10 | The map zoom is bounded between `minZoom: 7` and `maxZoom: 19`. Viewport panning and tile network requests are strictly bounded to Greater Atlanta via `ATL_BOUNDS` (`[33.15, -85.05]` to `[34.75, -83.30]`) with `maxBoundsViscosity: 1.0`, preventing users from panning away from the coverage area and eliminating unnecessary tile rendering/requests. Applies to the default Leaflet renderer; the opt-in vector preview uses the padded bounds in R13.9. | Bound performance and avoid stray navigation |
 
 ## R3. Pin labels
 
@@ -65,7 +65,7 @@ Functional and non-functional requirements for the current state of the page. Ea
 | ID | Requirement | Principle |
 |---|---|---|
 | R5.1 | Displays the subset of shops that pass all active chip filters AND lie inside the current map viewport AND match the search query. | Show what's available |
-| R5.2 | Sort is fixed: descending Bayesian weighted rating `WR = (v/(v+m))·R + (m/(v+m))·C`, where `C` is the mean rating across rated shops and `m` is the median review count, computed at page load. | The right default |
+| R5.2 | Sort is fixed: descending Bayesian weighted rating `WR = (v/(v+m))·R + (m/(v+m))·C`, where `C` is the mean rating across rated shops and `m` is the median review count, generated from the complete deduplicated regional population and shipped in `shops.json.ratingPriors` for stable partial-load scores. | The right default |
 | R5.3 | Shops with no rating use `C` (the global mean) as `R` in the formula. | — |
 | R5.4 | Each list item shows: a small (22 px) category-color circular emoji tile, the shop name, a meta row (category · ◆ score · neighborhood), and up to three compact tags. The ◆ score is the Bayesian weighted rating from R5.2 rounded to 1 decimal — the number the list is ordered by — never Google's raw star. The results bar carries the legend `◆ = weighted score` at every breakpoint (tooltips don't fire on touch). Unrated shops show "no rating". | Playfulness is information; Labels must never lie |
 | R5.5 | Each list item communicates category through a colored emoji icon tile. | — |
@@ -88,7 +88,7 @@ Functional and non-functional requirements for the current state of the page. Ea
 | R6.6 | Coworking section: tier label ("Coworking-ready" / "Workable" / "Quick-grab") + descriptive note + meeting-room callout if reservable. | — |
 | R6.7 | Late-night section if applicable, with "Open until midnight" or "Open till 10pm+" header. | — |
 | R6.8 | Action row: Google Maps button, Yelp button when supplied, and (if a website exists) a Website button labeled by host (Instagram / Facebook / Linktree / Website). URLs are sanitized: only `http:`/`https:` links render a button; anything else renders nothing. | — |
-| R6.9 | "← Back to list" button at the top hides the detail and resets the map. | — |
+| R6.9 | "← Back to list" button at the top hides the detail and restores the pre-selection camera. | — |
 | R6.10 | Action URLs are trimmed and scheme-validated (`sanitizeActionUrl`); `javascript:`, `data:`, relative, and malformed URLs never produce a clickable link. | Data integrity |
 | R6.11 | Coworking sections on curated venues carry provenance (verification date + source). Venues without verified amenities show an explicit "Unknown · amenities not yet verified" state instead of omitting the section. | Labels must never lie |
 
@@ -105,7 +105,7 @@ Functional and non-functional requirements for the current state of the page. Ea
 | ID | Requirement | Principle |
 |---|---|---|
 | R8.1 | Desktop (≥ 821 px wide): map on left flex-grow, 380 px panel on right. | — |
-| R8.2 | Mobile (≤ 820 px): single column. Map height is `clamp(130px, 22vh, 185px)` (125 px on short screens), panel takes remaining vertical space. | Density on phones |
+| R8.2 | Mobile (≤ 820 px): single column. Map height is `clamp(130px, 22vh, 185px)` (125 px at viewport heights ≤ 600 px, 120 px at ≤ 500 px), panel takes remaining vertical space. | Density on phones |
 | R8.3 | On mobile, filter chips compress (padding 2 × 7 px, 11.5 px font); brand shrinks and freshness is hidden. At ≤ 380 px, the heading shows the region without the “Coffee in” prefix, stays on one line, and retains the full accessible home label and page title. | — |
 | R8.4 | On mobile, the footer disclaimer is hidden. | — |
 | R8.5 | On mobile, at least 5 list cards are fully visible above the fold at 375×750, and at least 3 at 320×568. Interactive targets keep a ≥ 44 px touch height. | Density on phones |
@@ -114,12 +114,12 @@ Functional and non-functional requirements for the current state of the page. Ea
 
 | ID | Requirement | Principle |
 |---|---|---|
-| R9.1 | The page is a single HTML file ≤ 100 KB. | Operating constraint |
+| R9.1 | The page is a single HTML file ≤ 110 KB. | Operating constraint |
 | R9.2 | No JS errors on initial load, on filter changes, on selection, or on zoom. | — |
-| R9.3 | All Leaflet, MarkerCluster, and Google Fonts assets load via CDN with SRI hashes where applicable. | — |
+| R9.3 | All Leaflet, MarkerCluster, and Google Fonts assets load via CDN with SRI hashes where applicable. The opt-in vector preview loads MapLibre GL JS and CSS with sha384 SRI and `crossorigin=anonymous`. | — |
 | R9.4 | Renders with no build step when served over HTTP; JSON fetches require a local server or the deployed site. | Operating constraint |
 | R9.5 | All transitions and animations use compositor-only properties (`opacity`, `transform`). `will-change: transform` on `.pin` and `.pin-label`; `will-change: opacity, transform` on `.list-view` and `.detail-view`. `.panel` carries `contain: layout style` to scope reflow. Target 60 fps with no Layout or Paint during list↔detail transitions. | — |
-| R9.6 | If the regional dataset (`places.json`) fails to load or times out, the page boots the curated baseline and shows a degraded-coverage banner with the live baseline count and an in-place retry action — never a silent fallback. | Show what's available |
+| R9.6 | If the regional dataset (`places.json`) fails to load or times out, the page boots the curated baseline and shows a persistent `role="status"` degraded-coverage banner over the top of the map (it never covers the list, search or Back) with the live available count and an in-place retry action — never a silent fallback. | Show what's available |
 
 ## R10. Deployment
 
@@ -128,3 +128,19 @@ Functional and non-functional requirements for the current state of the page. Ea
 | R10.1 | Live at `https://duluth-coffee-shoppes.sra-e69.workers.dev`. | — |
 | R10.2 | Deployment is `wrangler deploy` from `/tmp/cof-clean` with `wrangler.jsonc` pointing assets at `./public/` (clean folder containing only `index.html`). | Operating constraint |
 | R10.3 | No internal wrangler files (e.g. `.wrangler/cache/wrangler-account.json`) are ever uploaded as assets. | Security |
+
+## R13. Performance and progressive loading
+
+| ID | Requirement | Rationale |
+|---|---|---|
+| R13.1 | Target: final LCP on the default renderer ≤ 1.0 s on 4G and ≤ 1.5 s on Fast 3G. Measured manually, not gated in CI: the LCP element is a CARTO basemap tile. September 2026 baseline with compressed delivery: ≈ 1.17 s (4G) and ≈ 2.9 s (Fast 3G), the same as before progressive loading. | Measure visible startup |
+| R13.2 | Target: startup long-task TBT ≤ 300 ms at 4× CPU slowdown. Reported by the perf spec but not gated in CI: the reading swings with machine load (192 ms to 398 ms on the same build). | Responsive startup |
+| R13.3 | Vector ready ≤ 1.8 s typically; fallback ≤ 5 s. | Preview budget |
+| R13.4 | Prefer revalidated network datasets; when a cached copy exists, use it after 2.5 s and let the download finish in the background to refresh the cache. Delete obsolete app cache namespaces. Record dataset fetch duration (`dataset_load`) separately from when regional data reaches the UI (`regional_ready`, path `boot` or `hydrate`). | Avoid a stale whole visit |
+| R13.5 | Mobile map height is clamp(130px, 22vh, 185px), 125px at viewport heights ≤ 600px and 120px at ≤ 500px, including focused search. | Stable card density |
+| R13.6 | Interaction pan/zoom target ≥ 55 FPS. | Fluid navigation |
+| R13.7 | Debounced search and filter announcements report in-view and outside counts, active search and detail closure. | Accurate accessible feedback |
+| R13.8 | Show Metro Atlanta immediately. Wait up to 1.8 s for regional data, then expose clearly labelled partial seed coverage without a seed camera fit. Seed scores use generated regional rating priors. Hydration preserves a reading list (scrolled, focused, or a detail card open) until Update list, a filter/search, or a map gesture; the map itself always shows the new data. Map interaction or an open detail prevents the regional camera fit; Home during partial loading returns to the regional frame. | Stable discovery |
+| R13.9 | Opt-in vector preview (`?renderer=vector`): the list waits at most 3 s for MapLibre (JS and CSS) before falling back to Leaflet; after a WebGL context loss MapLibre's own restore gets 3 s of visible time before the one-time fallback, and changes made meanwhile are applied on restore; bounds are ATL_BOUNDS padded by 2° longitude and 1° latitude (MapLibre bounds must contain the whole viewport, unlike Leaflet's) so the whole-region fit still fits; a basemap outage notice stays until tiles load; the canvas label names the matching count and selection. | Preview fails safe |
+
+Selection centres at Leaflet zoom 16 or closer, MapLibre zoom 15 or closer. MapLibre zoom N corresponds to Leaflet zoom N+1. Back restores the original browsing camera.

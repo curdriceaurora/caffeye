@@ -18,7 +18,7 @@ async function expectLoadedMetadata(page, region) {
   }
 }
 
-test('first paint makes no count or fallback-region claim while data loads', async ({ page }) => {
+test('first paint shows the regional shell without a count while data loads', async ({ page }) => {
   let release;
   const pending = new Promise(resolve => { release = resolve; });
   await page.route(/\/(shops|places)\.json$/, async route => {
@@ -27,8 +27,8 @@ test('first paint makes no count or fallback-region claim while data loads', asy
   });
   try {
     await page.goto('/', { waitUntil: 'domcontentloaded' });
-    await expect(page.locator('.brand')).toHaveText('Caffeye');
-    await expect(page.locator('.freshness')).toHaveText('Loading spots…');
+    await expect(page.locator('.brand')).toHaveText('Metro Atlanta');
+    await expect(page.locator('.freshness')).toHaveText('Loading Metro Atlanta…');
     await expect(page.locator('#resultsCount')).toBeEmpty();
     await expect(page.locator('#resultsLabel')).toHaveText('Loading spots…');
     for (const meta of await page.locator(descriptions).all()) {
@@ -93,13 +93,14 @@ test('fallback metadata recovers with the regional retry', async ({ page }) => {
   await page.route('**/places.json', route => route.abort());
   await page.goto('/');
   await page.locator('.shop-item').first().waitFor();
-  await expectLoadedMetadata(page, 'Duluth');
+  await expectLoadedMetadata(page, 'Metro Atlanta');
   const baseline = await (await page.request.get('/shops.json')).json();
   if (baseline.checkedMonth && baseline.checkedMonth !== 'unknown') {
     await expect(page.locator('.freshness')).toContainText(`· verified ${baseline.checkedMonth}`);
   }
   await page.unroute('**/places.json');
   await page.locator('#retryPlacesBtn').click();
+  await page.waitForFunction(() => dataLoadState.regional === 'ready');
   await expect(page.locator('.brand')).toHaveText('Coffee in Metro Atlanta');
   await expectLoadedMetadata(page, 'Metro Atlanta');
   expect(await page.evaluate(() => window.REGION_LABEL)).toBe('Metro Atlanta');

@@ -83,7 +83,7 @@ When the UI changes in response to user action, the animation should make the ca
 ## Operating constraints
 
 - **Static, single HTML file.** No build step. No backend. Deploys via Cloudflare Workers static assets. Anyone can grok the whole codebase in a sitting.
-- **CDN-loaded libraries only.** Leaflet, MarkerCluster, Inter, Fraunces. No npm install needed to edit.
+- **CDN-loaded libraries only.** Leaflet, MarkerCluster, Inter, Fraunces; the opt-in `?renderer=vector` preview adds MapLibre GL JS and OpenFreeMap tiles. No npm install needed to edit.
 - **Discovery with editorial curation.** A hand-curated Duluth seed is merged with generated Metro Atlanta discovery data. Verified overlays supply regional work-friendly and meeting-room notes. Discovery does not imply every venue has been editorially reviewed.
 
 ## What this is not

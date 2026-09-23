@@ -545,6 +545,9 @@ def main() -> int:
     for s, u in updates:
         s.update(u)
     SHOPS_PATH.write_text(json.dumps(data, indent=2))  # file has no trailing newline
+    from rating_priors import update as update_rating_priors
+    if SHOPS_PATH == ROOT / "public" / "shops.json":
+        update_rating_priors()
     print(f"wrote {len(updates)} shops -> {SHOPS_PATH}")
     return 0
 
