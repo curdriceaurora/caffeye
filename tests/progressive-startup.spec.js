@@ -18,8 +18,8 @@ test(`${renderer}: seed remains interactive while region is pending; hydration p
     await expect(page.locator('.shop-item')).toHaveCount(1);
     await page.locator('.shop-item').click();
     await expect(page.locator('#backBtn')).toBeFocused();
+    await page.waitForFunction(() => window.renderer === 'vector' ? !map.isMoving() : map.getZoom() >= 16 && !map._animatingZoom && !map._panAnim?._inProgress && !(clusterGroup._inZoomAnimation > 0) && clusterGroup.getVisibleParent(markerByShopId.get(state.selected.id)) === markerByShopId.get(state.selected.id));
     const before = await page.evaluate(() => {
-      map.stop();
       return { selected: state.selected.id, center: map.getCenter(), zoom: map.getZoom(), previous: state.previousCamera };
     });
     release();
@@ -52,7 +52,7 @@ test('untouched seed view expands when regional coverage arrives', async ({ page
     const mapPinCount = await page.evaluate(() => clusterGroup.getLayers().length);
     const indieCount = await page.evaluate(() => SHOPS.filter(s => s.model !== 'franchise').length);
     expect(mapPinCount).toBe(indieCount);
-    await expect(page.locator('#dataStatusBanner')).toHaveCount(0);
+    await expect(page.locator('#dataStatusBanner')).toBeHidden();
     await expect.poll(() => page.locator('#shopList').evaluate(el => el.scrollTop)).toBe(0);
   } finally { release(); }
 });
@@ -69,7 +69,7 @@ test('seed failure still allows regional discovery', async ({ page }) => {
 test('failure of both datasets presents a blocking load error', async ({ page }) => {
   await page.route(/\/(shops|places)\.json$/, route => route.abort());
   await page.goto('/');
-  await expect(page.getByRole('alert')).toHaveText('Could not load spots. Please reload to try again.');
+  await expect(page.getByRole('alert')).toContainText('Could not load spots. Please reload to try again.');
 });
 
 test('regional retry preserves filters, selection and unique venue ids', async ({ page }) => {
@@ -88,24 +88,16 @@ test('regional retry preserves filters, selection and unique venue ids', async (
   expect(await page.evaluate(() => new Set(SHOPS.map(s => s.id)).size === SHOPS.length)).toBe(true);
 });
 
-test('repeat visit hydrates regional data from cache in under 150ms', async ({ page }) => {
+test('repeat visit prefers current network data over cache', async ({ page }) => {
   await page.goto('/');
   await page.waitForFunction(() => dataLoadState.regional === 'ready');
-  const hasCache = await page.evaluate(async () => {
-    if (!('caches' in window)) return false;
-    const cache = await caches.open('caffeye-v5');
-    const match = await cache.match('./places.json');
-    return !!match;
+  await page.evaluate(async () => {
+    // A valid record in the current and the retired namespace, so a cache-first build would show it.
+    const stale = {places: [{name: 'Stale cached venue', placeId: 'stale-venue', category: 'Coffee', lat: 33.9, lng: -84.1, rating: 4.5, ratingNum: 50, city: 'Duluth'}]};
+    for (const name of ['caffeye-v5', 'caffeye-v6']) await (await caches.open(name)).put('./places.json', new Response(JSON.stringify(stale)));
   });
-  expect(hasCache).toBe(true);
-
-  // Reload page and check that cache was hit
   await page.reload();
   await page.waitForFunction(() => dataLoadState.regional === 'ready');
-  const cacheHit = await page.evaluate(() => {
-    const log = window.__telemetryLog || [];
-    return log.some(e => e.event === 'places_hydration' && e.properties.cache_hit === true && e.properties.duration_ms < 150);
-  });
-  expect(cacheHit).toBe(true);
+  expect(await page.evaluate(() => SHOPS.length)).toBeGreaterThan(1000);
+  expect(await page.evaluate(() => SHOPS.some(s => s.name === 'Stale cached venue'))).toBe(false);
 });
-

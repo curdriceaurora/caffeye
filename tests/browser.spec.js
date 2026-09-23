@@ -123,7 +123,7 @@ test.describe('regional failure and retry', () => {
     await page.unroute('**/places.json');
     const before = Number(await page.locator('#resultsCount').textContent());
     await page.locator('#retryPlacesBtn').click();
-    await expect(banner).toBeHidden({ timeout: 20000 });
+    await expect(banner).toContainText('Regional coverage loaded', { timeout: 20000 });
     expect(Number(await page.locator('#resultsCount').textContent())).toBeGreaterThan(before);
   });
 });

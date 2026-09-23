@@ -57,6 +57,7 @@ Curated coordinates use an authoritative geocoder (Apple Maps via `CLGeocoder`);
 caffeye/
 ├── public/
 │   ├── index.html    # app shell; fetches both datasets
+│   ├── maplibre-preview.js # opt-in ?renderer=vector preview
 │   ├── shops.json    # curated Duluth seed and fallback
 │   ├── places.json   # generated regional discovery data
 │   ├── manifest.webmanifest
@@ -66,7 +67,7 @@ caffeye/
 ├── wrangler.jsonc    # Cloudflare deploy config (assets.directory = ./public)
 ├── README.md         # this file
 ├── PRODUCT.md        # principles + design rationale (single source of truth)
-├── REQUIREMENTS.md   # numbered requirements (R1.x – R10.x)
+├── REQUIREMENTS.md   # numbered requirements (R1.x – R10.x, R13.x)
 ├── TESTS.md          # test suite traced to requirements
 └── CLAUDE.md         # operating notes for AI sessions
 ```
@@ -75,6 +76,7 @@ caffeye/
 
 - **[Leaflet 1.9.4](https://leafletjs.com/)** — open-source map library
 - **[Leaflet.markercluster 1.5.3](https://github.com/Leaflet/Leaflet.markercluster)** — pin clustering
+- **[MapLibre GL JS 5.24.0](https://maplibre.org/)** + **[OpenFreeMap](https://openfreemap.org/)** tiles — only for the opt-in `?renderer=vector` preview
 - **[CARTO Light](https://carto.com/help/building-maps/basemap-list/)** — basemap tiles
 - **[OpenStreetMap](https://www.openstreetmap.org/)** — underlying map data
 - **Inter** + **Fraunces** via Google Fonts

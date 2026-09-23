@@ -7,10 +7,10 @@ module.exports = defineConfig({
   retries: process.env.CI ? 2 : 0,
   reporter: 'list',
   use: {
-    baseURL: 'http://127.0.0.1:8765',
+    baseURL: process.env.TEST_BASE_URL || 'http://127.0.0.1:8765',
     trace: 'retain-on-failure',
   },
-  webServer: {
+  webServer: process.env.TEST_BASE_URL ? undefined : {
     command: 'node tests/static-server.js 8765',
     url: 'http://127.0.0.1:8765',
     reuseExistingServer: !process.env.CI,
@@ -20,6 +20,7 @@ module.exports = defineConfig({
     {
       // Desktop runs the full matrix.
       name: 'desktop',
+      testIgnore: /perf-budget\.spec\.js/,
       use: { viewport: { width: 1280, height: 800 } },
     },
     {
@@ -41,6 +42,13 @@ module.exports = defineConfig({
         isMobile: true,
         hasTouch: true,
       },
+    },
+    {
+      // Timing budgets run after the functional projects so no other worker competes for the CPU.
+      name: 'perf',
+      testMatch: /perf-budget\.spec\.js/,
+      dependencies: ['desktop', 'mobile-375', 'mobile-320'],
+      use: { viewport: { width: 1280, height: 800 } },
     },
   ],
 });

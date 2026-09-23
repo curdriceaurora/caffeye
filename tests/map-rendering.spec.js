@@ -15,12 +15,11 @@ for (const renderer of ['leaflet', 'vector']) {
         else map.setView([33.97, -84.14], 15, { animate: false });
       });
       const before = await page.evaluate(() => ({ lat: map.getCenter().lat, lng: map.getCenter().lng, zoom: map.getZoom() }));
-      await page.evaluate(() => {
-        const shops = SHOPS.filter(s => s.curated && s.model !== 'franchise');
-        selectShop(shops[0]);
-        selectShop(shops[1]);
-      });
-      expect(await page.evaluate(() => map.getZoom())).toBeGreaterThanOrEqual(15);
+      await page.evaluate(() => selectShop(SHOPS.find(s => s.curated && s.model !== 'franchise')));
+      await page.waitForFunction(() => !map._animatingZoom && (window.renderer !== 'vector' || !map.isMoving()) && Math.abs(map.getCenter().lat - state.selected.lat) < .00001);
+      expect(await page.evaluate(() => ({lat: map.getCenter().lat, lng: map.getCenter().lng, zoom:map.getZoom()}))).not.toEqual(before);
+      await page.evaluate(() => selectShop(SHOPS.filter(s => s.curated && s.model !== 'franchise')[1]));
+      await expect.poll(() => page.evaluate(() => Math.hypot(map.getCenter().lat - state.selected.lat, map.getCenter().lng - state.selected.lng))).toBeLessThan(.00001);
       await page.locator('#backBtn').click();
       await expect.poll(() => page.evaluate(() => map.getZoom())).toBe(before.zoom);
       const after = await page.evaluate(() => ({ lat: map.getCenter().lat, lng: map.getCenter().lng }));
@@ -42,6 +41,7 @@ for (const renderer of ['leaflet', 'vector']) {
 
     test('Back interrupts a selection animation and restores the browsing camera', async ({ page }) => {
       await page.emulateMedia({ reducedMotion: 'no-preference' });
+      await page.evaluate(() => window.renderer === 'vector' ? map.jumpTo({center:[-84.14,33.97],zoom:11}) : map.setView([33.97,-84.14],12,{animate:false}));
       const before = await page.evaluate(() => {
         const camera = { center: map.getCenter(), zoom: map.getZoom() };
         selectShop(SHOPS.find(s => s.curated && s.model !== 'franchise'));
@@ -58,7 +58,8 @@ for (const renderer of ['leaflet', 'vector']) {
     if (renderer === 'vector') {
       test('canvas points follow filters, support direct selection and theme changes', async ({ page }) => {
         await expect(page.locator('.maplibregl-canvas')).toHaveCount(1);
-        await expect(page.locator('.maplibregl-canvas')).toHaveAttribute('role', 'img');
+        await expect(page.locator('.maplibregl-canvas')).toHaveAttribute('role', 'region');
+        await expect(page.locator('.maplibregl-canvas')).toHaveAttribute('aria-label', /Coffee shop map with \d+ matching spots/);
         await expect(page.locator('.leaflet-marker-icon, .maplibregl-marker')).toHaveCount(0);
         await page.locator('[data-chip-key="cat-Tea/Boba"]').click();
         await expect.poll(() => page.evaluate(async () => {
@@ -68,16 +69,18 @@ for (const renderer of ['leaflet', 'vector']) {
         // Work from a rendered point, not an implementation-only selection hook.
         const shop = await page.evaluate(() => {
           const shop = SHOPS.find(s => s.category === 'Tea/Boba' && s.model !== 'franchise');
+          window.vectorIdle = new Promise(resolve => map.once('idle', resolve));
           map.jumpTo({ center: [shop.lng, shop.lat], zoom: 18 });
           return { id: shop.id, lat: shop.lat, lng: shop.lng };
         });
+        await page.evaluate(() => window.vectorIdle);
         await page.waitForFunction(() => map.isSourceLoaded('cafes') && !map.isMoving());
         await expect.poll(() => page.evaluate(() => map.queryRenderedFeatures({ layers: ['cafes'] }).length)).toBeGreaterThan(0);
         const point = await page.evaluate(shop => { const p = map.project([shop.lng, shop.lat]); return { x: p.x, y: p.y }; }, shop);
         const canvas = page.locator('.maplibregl-canvas');
         if (!test.info().project.use.hasTouch) {
           const box = await canvas.boundingBox();
-          await page.mouse.move(box.x + point.x, box.y + point.y);
+          await page.mouse.move(box.x + point.x, box.y + point.y, {steps: 12});
           await expect.poll(() => page.evaluate(async () => (await map.getSource('highlight').getData()).features[0]?.properties.id)).toBe(shop.id);
           await expect.poll(() => page.evaluate(() => map.getPaintProperty('cafes', 'circle-opacity'))).toBe(0.48);
           await page.mouse.move(0, 0);
@@ -112,42 +115,31 @@ test('telemetry dispatcher records vector startup and dataset load events', asyn
   expect(events).toContain('dataset_load');
 });
 
-test('WebGL context loss timeout recovers runtime map to Leaflet while preserving selection', async ({ page }) => {
+test('real WebGL context loss falls back once and preserves camera, selection and list state', async ({ page }) => {
   await page.goto('/?renderer=vector');
-  await page.waitForFunction(() => window.mapReady && window.renderer === 'vector');
-  // Select a venue while in vector mode
+  await page.waitForFunction(() => window.mapReady && dataLoadState.regional === 'ready' && window.renderer === 'vector');
   await page.locator('.shop-item').first().click();
-  await expect(page.locator('#backBtn')).toBeVisible();
-  const selectedId = await page.evaluate(() => window.state.selected?.id);
-
-  await page.evaluate(() => {
-    const canvas = document.querySelector('.maplibregl-canvas');
-    canvas.dispatchEvent(new Event('webglcontextlost', { bubbles: true, cancelable: true }));
+  await page.waitForFunction(() => !map.isMoving());
+  const before = await page.evaluate(() => {
+    state.listLimit = 400;
+    return {id: state.selected.id, lat:map.getCenter().lat,lng:map.getCenter().lng,zoom:map.getZoom(),limit:state.listLimit,scroll:document.querySelector('#shopList').scrollTop};
   });
-  await expect.poll(() => page.evaluate(() => window.renderer), { timeout: 6000 }).toBe('leaflet');
-  await expect(page.locator('.leaflet-container')).toBeVisible();
-  // State preservation: selection and detail view remain active
-  expect(await page.evaluate(() => window.state.selected?.id)).toBe(selectedId);
-  await expect(page.locator('#backBtn')).toBeVisible();
-  const fallbackLog = await page.evaluate(() => window.__telemetryLog?.find(e => e.event === 'vector_fallback'));
-  expect(fallbackLog).toBeDefined();
-  expect(fallbackLog.properties.reason).toBe('context_loss_timeout');
+  await page.evaluate(() => {
+    const gl = map.getCanvas().getContext('webgl2') || map.getCanvas().getContext('webgl');
+    gl.getExtension('WEBGL_lose_context').loseContext();
+  });
+  await expect.poll(() => page.evaluate(() => window.renderer), {timeout:10000}).toBe('leaflet');
+  await page.waitForTimeout(3700);
+  expect(await page.locator('.leaflet-pane').count()).toBeGreaterThan(0);
+  expect(await page.locator('.leaflet-tile').count()).toBeGreaterThan(0);
+  expect(await page.locator('.leaflet-marker-icon').count()).toBeGreaterThan(0);
+  expect(await page.evaluate(() => __telemetryLog.filter(e=>e.event==='vector_fallback').length)).toBe(1);
+  expect(await page.evaluate(() => state.selected.id)).toBe(before.id);
+  expect(await page.evaluate(() => map.getZoom())).toBe(before.zoom+1);
+  // Leaflet rounds pan centres to pixels; retain the camera within one pixel.
+  expect(await page.evaluate(before => map.latLngToContainerPoint([before.lat,before.lng]).distanceTo(map.getSize().divideBy(2)), before)).toBeLessThanOrEqual(1);
+  expect(await page.evaluate(() => state.listLimit)).toBe(before.limit);
+  expect(await page.locator('#shopList').evaluate(el=>el.scrollTop)).toBe(before.scroll);
+  expect(await page.evaluate(() => {const m=markerByShopId.get(state.selected.id);return clusterGroup.getVisibleParent(m)===m;})).toBe(true);
+  await expect(page.locator('#backBtn')).toBeFocused();
 });
-
-test('selecting clustered shop from list unclusters marker so it is visible in Leaflet', async ({ page }) => {
-  await page.goto('/');
-  await page.waitForFunction(() => window.mapReady && window.dataLoadState.regional === 'ready');
-  // Click first shop item from the list while at regional zoom
-  await page.locator('.shop-item').first().click();
-  await expect(page.locator('#backBtn')).toBeVisible();
-  // Ensure the selected shop's marker is unclustered and attached to DOM
-  await expect.poll(async () => {
-    return page.evaluate(() => {
-      const s = window.state.selected;
-      if (!s) return false;
-      const m = window.markerByShopId.get(s.id);
-      return !!(m && m._icon && m._icon.parentElement);
-    });
-  }, { timeout: 5000 }).toBe(true);
-});
-

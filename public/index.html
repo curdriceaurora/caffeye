@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="color-scheme" content="light dark" />
 <script>
   (function() {
@@ -46,6 +46,7 @@
 <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
+[hidden] { display: none !important; }
   :root {
     color-scheme: light dark;
     --bg: oklch(97% 0.008 75);
@@ -325,30 +326,32 @@
   @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .chip.active:not(.themed) .num { color: inherit; opacity: 0.6; } }
   .chip.themed .num { color: inherit; opacity: 0.65; }
   .chip.themed.active .num { color: rgba(255,255,255,0.7); opacity: 1; }
-  .chip-divider { width: 1px; align-self: stretch; background: var(--border-strong); margin: 2px 2px; }
+  /* Overlays the top of the map: never covers search/Back, never resizes the map, never costs list rows. */
   .data-status-banner {
-    position: relative; z-index: 5;
-    display: flex; align-items: center; gap: 8px;
-    margin: 8px 16px 0; padding: 6px 10px;
+    position: absolute; z-index: 1001; top: 10px; left: 56px; right: 392px;
+    display: flex; align-items: center; gap: 8px; padding: 6px 10px;
     border: 1px solid var(--border-strong); border-left: 3px solid var(--accent);
-    border-radius: 8px; background: var(--surface-alt);
+    border-radius: 8px; background: var(--surface-alt); box-shadow: 0 2px 8px rgba(0,0,0,0.15);
     font-size: 12px; color: var(--text);
   }
   .data-status-banner.success { border-left-color: #2e7d4f; }
   .banner-retry-btn {
-    margin-left: auto; flex-shrink: 0; min-height: 44px; padding: 6px 14px;
+    margin-left: auto; flex-shrink: 0; position: relative; min-height: 30px; padding: 4px 12px;
     border-radius: 6px; border: 1px solid var(--border-strong);
     background: var(--bg); color: var(--text); font-family: inherit;
     font-size: 12.5px; font-weight: 600; cursor: pointer;
   }
   .banner-retry-btn:disabled { opacity: 0.6; cursor: default; }
+  .banner-retry-btn::after { content: ''; position: absolute; left: 0; right: 0; top: -7px; bottom: -7px; } /* 44px target */
 
 
-  .layout { flex: 1; display: flex; min-height: 0; }
+  .layout { flex: 1; display: flex; min-height: 0; position: relative; }
   #map { flex: 1; background: var(--map-bg); position: relative; min-width: 0; }
   .map-load-status { position: absolute; z-index: 5; bottom: 28px; left: 12px; right: 12px; padding: 8px 12px; background: var(--surface); color: var(--text); border: 1px solid var(--border); border-radius: 8px; font-size: 12px; }
   .maplibregl-ctrl-group { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
   [data-theme="dark"] .maplibregl-ctrl-icon { filter: invert(1); }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .maplibregl-ctrl-icon { filter: invert(1); } }
+  .maplibregl-ctrl-group button + button { border-top-color: var(--border); }
   .maplibregl-ctrl-attrib { color: #222721; }
   .renderer-note { font-size: 11px; padding: 6px 12px; background: var(--accent-soft); color: var(--text); }
   .renderer-note a { color: inherit; }
@@ -383,12 +386,6 @@
   }
   .empty-state .outside-matches-btn { margin-top: 10px; }
   #resultsCount { display: inline-block; transform-origin: left center; }
-  @keyframes countPop {
-    0%   { transform: scale(1); }
-    40%  { transform: scale(1.3); color: var(--accent); }
-    100% { transform: scale(1); color: inherit; }
-  }
-  .count-pop { animation: countPop 280ms var(--ease-out); }
   @keyframes itemEnter {
     from { opacity: 0; transform: translateY(5px); }
     to   { opacity: 1; transform: translateY(0); }
@@ -568,13 +565,6 @@
   .marker-cluster-small, .marker-cluster-medium, .marker-cluster-large { background: none !important; }
   .marker-cluster-small div, .marker-cluster-medium div, .marker-cluster-large div { background: none !important; }
 
-  .leaflet-popup-content-wrapper {
-    border-radius: 6px; padding: 0; background: var(--surface);
-    box-shadow: 0 4px 16px rgba(0,0,0,0.18);
-  }
-  .leaflet-popup-content { margin: 0; width: auto !important; min-width: 180px; }
-  .leaflet-popup-tip { background: var(--surface); }
-
   [data-theme="dark"] .model-tag.indie {
     background: rgba(46, 125, 79, 0.22);
     color: #6ece91;
@@ -722,6 +712,9 @@
     #map { flex: 0 0 clamp(130px, 22vh, 185px); min-height: 125px; }
     .panel { width: 100%; height: auto; flex: 1; min-height: 0; border-left: none; border-top: 1px solid var(--border); }
     .search { padding: 4px 10px; }
+    .data-status-banner { top: 6px; left: 48px; right: 8px; padding: 3px 6px; gap: 6px; font-size: 11px; }
+    .banner-retry-btn { min-height: 26px; padding: 2px 10px; }
+    .banner-retry-btn::after { top: -9px; bottom: -9px; }
     .search input { height: 30px; padding: 4px 10px; font-size: 16px; }
     .results-meta { padding: 3px 10px; font-size: 10px; }
     .filter-bar { padding: 3px 10px 4px; }
@@ -763,9 +756,9 @@
   <header>
     <div class="brand-group" id="brandHomeBtn" role="button" tabindex="0" title="Caffeye — Reset filters" aria-label="Caffeye — Reset filters">
       <img src="./brand/logos/caffeye-symbol-forest.svg" alt="Caffeye" class="brand-logo" id="brandLogoImg" width="22" height="22">
-      <div class="brand">Caffeye</div>
+      <div class="brand">Metro Atlanta</div>
     </div>
-    <div class="freshness">Loading spots…</div>
+    <div class="freshness">Loading Metro Atlanta…</div>
     <div class="header-actions">
       <div class="header-toggle">
         <label class="toggle-label" for="franchiseToggle" title="Include chains & franchise stores">
@@ -812,8 +805,15 @@
 </div>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-<script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+
 <script>
+// Do not execute MarkerCluster if Leaflet failed; start() owns the error UI.
+const clusterRequest = typeof L === 'undefined' ? Promise.resolve() : new Promise(resolve => {
+  const script = document.createElement('script');
+  script.src = 'https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js';
+  script.onload = script.onerror = resolve;
+  document.head.append(script);
+});
 const CATS = {
   "Coffee":       { hex: "#6f4e37", activeBg: "#6f4e37", icon: "☕" },
   "Roasters":     { hex: "#a65332", activeBg: "#8b4024", icon: "🫘" },
@@ -895,9 +895,9 @@ const CATS = {
   // SHOPS so a retry that grows the dataset also refreshes C and m.
   function computeWeightedRatings() {
     const rated = SHOPS.filter(s => typeof s.rating === 'number');
-    const C = rated.length ? rated.reduce((acc, s) => acc + s.rating, 0) / rated.length : 0;
+    const C = shopsDataGlobal?.ratingPriors?.C ?? (rated.length ? rated.reduce((acc, s) => acc + s.rating, 0) / rated.length : 0);
     const counts = SHOPS.map(s => s.ratingNum || 0).slice().sort((a, b) => a - b);
-    const m = counts[Math.floor(counts.length / 2)] || 1; // median
+    const m = shopsDataGlobal?.ratingPriors?.m ?? (counts[Math.floor(counts.length / 2)] || 1); // median
     SHOPS.forEach(s => {
       s.rated = typeof s.rating === 'number';
       const R = s.rated ? s.rating : C;
@@ -952,7 +952,7 @@ const CATS = {
   function updateScopes(shopsData, placesData) {
     CITIES = Array.from(new Set(SHOPS.map(s => s.city).filter(Boolean))).sort();
     COUNTIES = (placesData && placesData.region && placesData.region.counties) || (shopsData && shopsData.counties) || Array.from(new Set(SHOPS.map(s => s.county).filter(Boolean))).sort();
-    REGION_LABEL = (placesData && placesData.region && placesData.region.label) || (shopsData && shopsData.regionLabel) || (CITIES.length === 1 ? CITIES[0] : 'the region');
+    REGION_LABEL = placesData?.region?.label || 'Metro Atlanta';
     SHOPS_MONTH = (shopsData && shopsData.checkedMonth) || '';
     PLACES_MONTH = (placesData && placesData.checkedMonth) || '';
   }
@@ -969,7 +969,6 @@ function trackMetric(event, properties = {}) {
   window.__telemetryLog = window.__telemetryLog || [];
   window.__telemetryLog.push(payload);
 }
-window.trackMetric = trackMetric;
 
 // Start both transfers together, but never hold the seed UI behind the region.
 const dataLoadState = window.dataLoadState = { seed: 'loading', regional: 'loading' };
@@ -987,67 +986,68 @@ const vectorRendererRequest = vectorRequested
   : Promise.resolve(null);
 async function fetchDataset(url, field) {
   const startTime = performance.now();
+  const valid = data => data && Array.isArray(data[field]) && data[field].length ? data : null;
+  const loaded = (data, cacheHit) => {
+    trackMetric('dataset_load', { url, field, cache_hit: cacheHit, duration_ms: Math.round(performance.now() - startTime) });
+    return data;
+  };
   let cache = null;
   try {
     if ('caches' in window) {
-      cache = await caches.open('caffeye-v5');
-      const cached = await cache.match(url);
-      if (cached) {
-        const data = await cached.json();
-        if (data && Array.isArray(data[field]) && data[field].length) {
-          fetch(url).then(r => {
-            if (r.ok) cache.put(url, r.clone());
-          }).catch(() => {});
-          const duration = Math.round(performance.now() - startTime);
-          trackMetric('dataset_load', { url, field, cache_hit: true, duration_ms: duration });
-          if (field === 'places') trackMetric('places_hydration', { duration_ms: duration, cache_hit: true });
-          return data;
-        }
+      cache = await caches.open('caffeye-v6');
+      for (const name of await caches.keys()) {
+        if (name.startsWith('caffeye-') && name !== 'caffeye-v6') await caches.delete(name);
       }
     }
   } catch {}
-
+  const cached = cache && await cache.match(url).catch(() => null);
+  // Network first. With a cached copy, stop waiting after 2.5 s but let the download
+  // finish in the background so a slow connection still refreshes the cache.
   const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), 7500);
+  const timeout = setTimeout(() => controller.abort(), cached ? 30000 : 7500);
+  const network = fetch(url, { signal: controller.signal })
+    .then(response => {
+      if (!response.ok) return null;
+      const copy = response.clone();
+      return response.json().then(data => {
+        if (valid(data) && cache) cache.put(url, copy).catch(() => {});
+        return valid(data);
+      });
+    })
+    .catch(() => null)
+    .finally(() => clearTimeout(timeout));
+  const fresh = await (cached ? Promise.race([network, new Promise(resolve => setTimeout(resolve, 2500, null))]) : network);
+  if (fresh) return loaded(fresh, false);
   try {
-    const response = await fetch(url, { signal: controller.signal });
-    if (!response.ok) throw new Error('Dataset unavailable');
-    const data = await response.json();
-    if (!data || !Array.isArray(data[field]) || !data[field].length) throw new Error('Invalid dataset');
-    if (cache) {
-      try {
-        await cache.put(url, new Response(JSON.stringify(data), {
-          headers: { 'Content-Type': 'application/json' }
-        }));
-      } catch {}
-    }
-    const duration = Math.round(performance.now() - startTime);
-    trackMetric('dataset_load', { url, field, cache_hit: false, duration_ms: duration });
-    if (field === 'places') trackMetric('places_hydration', { duration_ms: duration, cache_hit: false });
-    return data;
-  } catch {
-    return null;
-  } finally {
-    clearTimeout(timeout);
-  }
+    const data = cached && valid(await cached.json());
+    if (data) return loaded(data, true);
+  } catch {}
+  return null;
 }
 let regionalResult;
 const regionalRequest = fetchDataset('./places.json', 'places').then(data => {
   regionalResult = data;
   return data;
 });
+function showBootError() {
+  const alert = document.createElement('div');
+  alert.setAttribute('role', 'alert');
+  alert.textContent = 'Could not load spots. Please reload to try again.';
+  const reload = document.createElement('button');
+  reload.textContent = 'Reload';
+  reload.onclick = () => location.reload();
+  alert.append(reload);
+  document.querySelector('.app').replaceChildren(alert);
+}
 (async function start() {
+  try {
   const seed = await fetchDataset('./shops.json', 'shops');
   dataLoadState.seed = seed ? 'ready' : 'failed';
   // If the seed failed, the region can still provide a usable map.
-  const initialRegion = seed ? regionalResult : await regionalRequest;
+  const initialRegion = seed ? await Promise.race([regionalRequest, new Promise(resolve => setTimeout(resolve, 1800))]) : await regionalRequest;
   if (!seed && !initialRegion) {
     dataLoadState.regional = 'failed';
-    const error = document.createElement('p');
-    error.setAttribute('role', 'alert');
-    error.style.padding = '24px';
-    error.textContent = 'Could not load spots. Please reload to try again.';
-    document.querySelector('.app').replaceChildren(error);
+    showBootError();
     return;
   }
   shopsDataGlobal = seed || { shops: [], addr: {}, neighborhoods: {} };
@@ -1057,19 +1057,25 @@ const regionalRequest = fetchDataset('./places.json', 'places').then(data => {
   seenPlaceIds = new Set(SHOPS.map(s => s.placeId).filter(Boolean));
   if (initialRegion) SHOPS.push(...ingestPlaces(initialRegion));
   const vectorFactory = await vectorRendererRequest;
+  await clusterRequest;
   const app = boot({ shopsData: shopsDataGlobal, placesData: initialRegion || null, vectorFactory });
   if (initialRegion !== undefined) {
     dataLoadState.regional = initialRegion ? 'ready' : 'failed';
+    if (initialRegion) trackMetric('regional_ready', { path: 'boot', duration_ms: Math.round(performance.now() - vectorStart) });
     app.showCoverageStatus();
   } else {
     app.showCoverageStatus();
     const data = await regionalRequest;
-    if (data) app.hydrateRegion(data);
+    if (data) {
+      try { app.hydrateRegion(data); }
+      catch { dataLoadState.regional = 'failed'; app.showCoverageStatus(); }
+    }
     else {
       dataLoadState.regional = 'failed';
       app.showCoverageStatus();
     }
   }
+  } catch { showBootError(); }
 })();
 
 function boot(opts) {
@@ -1178,18 +1184,30 @@ function boot(opts) {
     return b;
   }
 
-  function announceFilterChange() {
-    const count = cachedGlobalShops ? cachedGlobalShops.length : filteredForMap().length;
-    if (state.categories.size === 0 && state.features.size === 0) {
-      announce(`Showing all ${count} spots in ${REGION_LABEL}.`);
-    } else {
-      const activeCats = Array.from(state.categories).map(c => c.replace('+', ' and '));
-      const activeFeats = Array.from(state.features).map(k => {
-        return k === 'work' ? 'work-friendly' : k === 'meeting' ? 'meeting room' : k === 'late' ? 'open late' : 'until midnight';
-      });
-      const labels = [...activeCats, ...activeFeats];
-      announce(`Showing ${count} spot${count === 1 ? '' : 's'} for ${labels.join(', ')}.`);
-    }
+  const FEATURES = [
+    { key: 'work', label: 'Work-friendly', icon: '💻', themeColor: '#2e7d4f', matches: s => s.cw?.tier === 'excellent' },
+    { key: 'meeting', label: 'Meeting room', icon: '🤝', themeColor: '#7a5635', matches: s => s.cw?.hasMeetingRoom },
+    { key: 'late', label: 'Open late', icon: '🌙', themeColor: '#3f4f8a', matches: s => s.late },
+    { key: 'midnight', label: 'Until midnight', icon: '🦉', themeColor: '#2a2f5c', matches: s => s.late?.tier === 'midnight' }
+  ];
+  let searchAnnouncementTimer, lastSearchAnnouncement = '', closedByFilter = false;
+  function cancelSearchAnnouncement() { clearTimeout(searchAnnouncementTimer); }
+  function resultsAnnouncement(prefix = '') {
+    const count = Number(resultsCountEl.textContent);
+    const total = filteredForMap().length;
+    const labels = [...state.categories].map(c => c.replace('+', ' and '));
+    labels.push(...FEATURES.filter(f => state.features.has(f.key)).map(f => f.label.toLowerCase()));
+    if (state.search.trim()) labels.push(`"${state.search.trim()}"`);
+    const context = labels.length ? ` for ${labels.join(', ')}` : '';
+    const result = total === 0 ? `No spots found${context}.`
+      : `${count} spot${count === 1 ? '' : 's'} in view${total > count ? `, ${total - count} more outside the map` : ''}${context}.`;
+    const closed = closedByFilter ? 'Closed details. ' : '';
+    closedByFilter = false;
+    return closed + prefix + result;
+  }
+  function announceFilterChange(prefix = '') {
+    cancelSearchAnnouncement();
+    announce(resultsAnnouncement(prefix));
   }
 
   function renderChips() {
@@ -1231,19 +1249,9 @@ function boot(opts) {
     featChipsEl.style.gap = '6px';
     featChipsEl.style.flexWrap = 'wrap';
 
-    const workCount = inScope.filter(s => (s.cw||{}).tier === 'excellent').length;
-    const meetingCount = inScope.filter(s => (s.cw||{}).hasMeetingRoom).length;
-    const lateCount = inScope.filter(s => s.late).length;
-    const midnightCount = inScope.filter(s => (s.late||{}).tier === 'midnight').length;
-    const features = [
-      { key: 'work',     label: 'Work-friendly', icon: '💻', themeColor: '#2e7d4f', count: workCount },
-      { key: 'meeting',  label: 'Meeting room',  icon: '🤝', themeColor: '#7a5635', count: meetingCount },
-      { key: 'late',     label: 'Open late',     icon: '🌙', themeColor: '#3f4f8a', count: lateCount },
-      { key: 'midnight', label: 'Until midnight', icon: '🦉', themeColor: '#2a2f5c', count: midnightCount }
-    ];
-    features.forEach(f => {
+    FEATURES.forEach(f => {
       featChipsEl.appendChild(makeChip({
-        label: f.label, count: f.count, icon: f.icon, themeColor: f.themeColor,
+        label: f.label, count: inScope.filter(f.matches).length, icon: f.icon, themeColor: f.themeColor,
         chipKey: 'feat-' + f.key,
         onClick: () => {
           if (state.features.has(f.key)) state.features.delete(f.key);
@@ -1261,10 +1269,10 @@ function boot(opts) {
     }
   }
 
-  let userHasInteracted = false;
-  const noteInteraction = () => { userHasInteracted = true; };
+  let userHasInteracted = false, mapGesture = false;
+  const noteInteraction = () => { userHasInteracted = true; mapGesture = true; };
   for (const event of ['pointerdown', 'keydown', 'wheel']) {
-    document.querySelector('.app').addEventListener(event, noteInteraction, { capture: true, passive: true });
+    document.getElementById('map').addEventListener(event, noteInteraction, { capture: true, passive: true });
   }
   const reducedMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   let announceTimer = null;
@@ -1277,7 +1285,6 @@ function boot(opts) {
       announceTimer = setTimeout(() => { el.textContent = message; }, 60);
     }
   }
-  window.announce = announce;
 
   // MAP
   // Bounding box for Greater Atlanta region: bounds panning and restricts tile requests
@@ -1301,61 +1308,7 @@ function boot(opts) {
     document.querySelector('.layout').before(note);
   }
 
-  if (typeof L !== 'undefined') {
-    if (L.Map && L.Map.prototype.hasLayer && !L.Map.prototype._hasLayerGuarded) {
-      const origHasLayer = L.Map.prototype.hasLayer;
-      L.Map.prototype.hasLayer = function (layer) {
-        if (!layer) return false;
-        return origHasLayer.call(this, layer);
-      };
-      L.Map.prototype._hasLayerGuarded = true;
-    }
-    if (L.MarkerClusterGroup && L.MarkerClusterGroup.prototype.zoomToShowLayer && !L.MarkerClusterGroup.prototype._zoomToShowLayerGuarded) {
-      L.MarkerClusterGroup.prototype.zoomToShowLayer = function (layer, callback) {
-        if (!layer) return;
-        var map = this._map;
-        if (typeof callback !== 'function') callback = function () {};
-        var showMarker = () => {
-          if (!layer || (!map.hasLayer(layer) && (!layer.__parent || !map.hasLayer(layer.__parent)))) {
-            this._map.off('moveend', showMarker, this);
-            this.off('animationend', showMarker, this);
-            return;
-          }
-          if ((map.hasLayer(layer) || (layer.__parent && map.hasLayer(layer.__parent))) && !this._inZoomAnimation) {
-            this._map.off('moveend', showMarker, this);
-            this.off('animationend', showMarker, this);
-            if (map.hasLayer(layer)) {
-              callback();
-            } else if (layer.__parent && layer.__parent._icon) {
-              this.once('spiderfied', callback, this);
-              layer.__parent.spiderfy();
-            }
-          }
-        };
-        if (layer._icon && this._map.getBounds().contains(layer.getLatLng())) {
-          callback();
-        } else if (layer.__parent && layer.__parent._zoom < Math.round(this._map._zoom)) {
-          this._map.on('moveend', showMarker, this);
-          this._map.panTo(layer.getLatLng());
-        } else if (layer.__parent) {
-          this._map.on('moveend', showMarker, this);
-          this.on('animationend', showMarker, this);
-          layer.__parent.zoomToBounds();
-        } else {
-          callback();
-        }
-      };
-      L.MarkerClusterGroup.prototype._zoomToShowLayerGuarded = true;
-    }
-  }
-
-  let map = vectorRenderer ? vectorRenderer.map : L.map('map', {
-    zoomControl: true,
-    minZoom: 7,
-    maxZoom: 19,
-    maxBounds: ATL_BOUNDS,
-    maxBoundsViscosity: 1.0
-  }).setView([33.972, -84.142], 13); // initial view; refit to markers below
+  let map, tileLayer, clusterGroup;
   // CARTO's raster basemaps require an authorized API key in production, which is
   // domain-restricted to the Cloudflare Workers origin. On localhost / file: protocol,
   // omit the key query parameter to prevent 403s during local dev and automated tests.
@@ -1366,71 +1319,20 @@ function boot(opts) {
       ? `https://{s}.basemaps.cartocdn.com/${style}/{z}/{x}/{y}{r}.png`
       : `https://{s}.basemaps.cartocdn.com/${style}/{z}/{x}/{y}{r}.png?key=cb1_3qiv_1_0583eea1ec1b7dd298410338`;
   }
-  let tileLayer = vectorRenderer ? null : L.tileLayer(getCartoTileUrl(initialTheme), {
-    attribution: '&copy; OpenStreetMap &copy; CARTO',
-    subdomains: 'abcd',
-    minZoom: 7,
-    maxZoom: 19,
-    bounds: ATL_BOUNDS,
-    updateWhenIdle: true,
-    updateWhenZooming: false,
-    keepBuffer: 2
-  }).addTo(map);
-
-  let clusterGroup = vectorRenderer ? null : L.markerClusterGroup({
-    showCoverageOnHover: false,
-    zoomToBoundsOnClick: true,
-    spiderfyOnMaxZoom: true,
-    spiderfyDistanceMultiplier: 1.4,
-    maxClusterRadius: function(zoom) {
-      return zoom >= 15 ? 35 : (zoom >= 13 ? 45 : 55);
-    },
-    chunkedLoading: true,
-    chunkInterval: 100,
-    chunkDelay: 10,
-    removeOutsideVisibleBounds: true,
-    animateAddingMarkers: false,
-    iconCreateFunction: function(cluster) {
-      const count = cluster.getChildCount();
-      const size = count >= 10 ? 36 : count >= 5 ? 32 : 28;
-      return L.divIcon({
-        html: `<div style="background:#2b1d12;color:#fff;border-radius:50%;width:${size}px;height:${size}px;display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-weight:600;font-size:${count>=10?13:12}px;border:2px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,0.3);">${count}</div>`,
-        className: 'coffee-cluster',
-        iconSize: [size, size]
-      });
-    }
-  });
-  if (clusterGroup) map.addLayer(clusterGroup);
-
-  function initLeafletFallback(reason) {
-    let savedCenter = null;
-    let savedZoom = null;
-    const savedSelected = state.selected;
-    const savedScroll = shopListEl ? shopListEl.scrollTop : 0;
-    try {
-      if (map) {
-        const c = map.getCenter();
-        if (c) savedCenter = [c.lat !== undefined ? c.lat : c[1], c.lng !== undefined ? c.lng : c[0]];
-        savedZoom = map.getZoom();
-        if (map.remove) map.remove();
-      }
-    } catch {}
-    const mapDiv = document.getElementById('map');
-    mapDiv.replaceChildren();
-    vectorRenderer = null;
-    window.renderer = 'leaflet';
+  // Regional shell camera (Leaflet zoom; MapLibre uses zoom - 1).
+  const REGION_VIEW = { center: [33.95, -84.17], zoom: 9 };
+  function showRegionalFrame(animate) {
+    if (vectorRenderer) map.easeTo({ center: [REGION_VIEW.center[1], REGION_VIEW.center[0]], zoom: REGION_VIEW.zoom - 1, duration: animate && !reducedMotion() ? 800 : 0 });
+    else map.setView(REGION_VIEW.center, REGION_VIEW.zoom, { animate: animate && !reducedMotion() });
+  }
+  function createLeafletMap(center = REGION_VIEW.center, zoom = REGION_VIEW.zoom) {
     map = L.map('map', {
       zoomControl: true,
       minZoom: 7,
       maxZoom: 19,
       maxBounds: ATL_BOUNDS,
       maxBoundsViscosity: 1.0
-    });
-    if (savedCenter && savedZoom != null) {
-      map.setView(savedCenter, Math.round(savedZoom));
-    } else {
-      map.setView([33.972, -84.142], 13);
-    }
+    }).setView(center, zoom);
     tileLayer = L.tileLayer(getCartoTileUrl(getCurrentTheme()), {
       attribution: '&copy; OpenStreetMap &copy; CARTO',
       subdomains: 'abcd',
@@ -1441,12 +1343,15 @@ function boot(opts) {
       updateWhenZooming: false,
       keepBuffer: 2
     }).addTo(map);
+
     clusterGroup = L.markerClusterGroup({
       showCoverageOnHover: false,
       zoomToBoundsOnClick: true,
       spiderfyOnMaxZoom: true,
       spiderfyDistanceMultiplier: 1.4,
-      maxClusterRadius: function(zoom) { return zoom >= 15 ? 35 : (zoom >= 13 ? 45 : 55); },
+      maxClusterRadius: function(zoom) {
+        return zoom >= 15 ? 35 : (zoom >= 13 ? 45 : 55);
+      },
       chunkedLoading: true,
       chunkInterval: 100,
       chunkDelay: 10,
@@ -1463,11 +1368,38 @@ function boot(opts) {
       }
     });
     map.addLayer(clusterGroup);
+  }
+  if (vectorRenderer) map = vectorRenderer.map;
+  else createLeafletMap();
+
+  function initLeafletFallback(reason) {
+    let savedCenter = null;
+    let savedZoom = null;
+    const savedSelected = state.selected;
+    const active = document.activeElement;
+    const focusedId = active?.id;
+    const detailFocus = active && detailEl.contains(active) ? [...detailEl.querySelectorAll('a, button')].indexOf(active) : -1;
+    const canvasFocused = !!active?.classList?.contains('maplibregl-canvas');
+    const savedScroll = shopListEl ? shopListEl.scrollTop : 0;
+    try {
+      if (map) {
+        const c = map.getCenter();
+        if (c) savedCenter = [c.lat !== undefined ? c.lat : c[1], c.lng !== undefined ? c.lng : c[0]];
+        savedZoom = map.getZoom();
+        if (map.remove) map.remove();
+      }
+    } catch {}
+    const mapDiv = document.getElementById('map');
+    mapDiv.replaceChildren();
+    vectorRenderer = null;
+    window.renderer = 'leaflet';
+    // MapLibre zoom N = Leaflet zoom N+1; floor so the Leaflet view contains the vector view.
+    createLeafletMap(savedCenter || undefined, savedZoom == null ? 9 : Math.floor(savedZoom + 1));
+    if (state.previousCamera) state.previousCamera.zoom = Math.floor(state.previousCamera.zoom + 1);
     markers.length = 0;
     markerByShopId.clear();
     addShopMarkers(SHOPS);
-    map.on('moveend', onMapMoveEnd);
-    map.on('zoomend', onMapMoveEnd);
+    bindMapListeners(map, clusterGroup);
     mapResizeObserver.disconnect();
     mapResizeObserver.observe(mapDiv);
     window.map = map;
@@ -1477,16 +1409,23 @@ function boot(opts) {
       fitMapToShops(filteredForMap());
     }
     renderChips();
-    renderList('filter');
+    window.mapReady = true;
+    renderList('viewport');
     if (savedSelected) {
       state.selected = savedSelected;
       setMarkerSelected(savedSelected);
       renderDetail(savedSelected);
+      revealMarker(markerByShopId.get(savedSelected.id), selectionToken, () => {});
     }
     if (typeof scheduleLabels === 'function') scheduleLabels();
-    if (shopListEl && savedScroll) shopListEl.scrollTop = savedScroll;
+    if (shopListEl) shopListEl.scrollTop = savedScroll;
+    const focusTarget = (focusedId && document.getElementById(focusedId))
+      || (detailFocus >= 0 && detailEl.querySelectorAll('a, button')[detailFocus])
+      || (canvasFocused && map.getContainer());
+    if (focusTarget) focusTarget.focus({ preventScroll: true });
   }
   window.addEventListener('vector-fallback', (e) => {
+    if (!vectorRenderer) return;
     trackMetric('vector_fallback', { reason: e.detail?.reason || 'runtime_error' });
     const note = document.querySelector('.renderer-note');
     if (note) {
@@ -1580,7 +1519,7 @@ function boot(opts) {
     const pad = mapH < 160 ? [12, 12] : [40, 40];
     if (vectorRenderer) {
       map.fitBounds([[bounds.getWest(), bounds.getSouth()], [bounds.getEast(), bounds.getNorth()]], {
-        padding: pad[0], maxZoom: 16, duration: animate && !reducedMotion() ? 800 : 0
+        padding: pad[0], maxZoom: 15, duration: animate && !reducedMotion() ? 800 : 0
       });
     } else {
       map.fitBounds(bounds, { padding: pad, maxZoom: 16, animate: animate && !reducedMotion() });
@@ -1592,7 +1531,7 @@ function boot(opts) {
     return L.latLngBounds([bounds.getSouth(), bounds.getWest()], [bounds.getNorth(), bounds.getEast()]);
   }
   if (!vectorRenderer) {
-    fitMapToShops(SHOPS.filter(passesGlobalFilters));
+    if (opts.placesData) fitMapToShops(SHOPS.filter(passesGlobalFilters));
     window.mapReady = true;
   }
 
@@ -1614,8 +1553,7 @@ function boot(opts) {
       }
     }, 80);
   };
-  map.on('moveend', onMapMoveEnd);
-  map.on('zoomend', onMapMoveEnd);
+
 
   // Show shop-name labels under pins. Below LABEL_MIN_ZOOM they're hidden;
   // at or above, each visible label is greedily placed in the first of
@@ -1794,16 +1732,6 @@ function boot(opts) {
       });
     }, 60);
   }
-  map.on('zoomstart', () => {
-    clearTimeout(__labelTimer);
-    if (__labelRaf) cancelAnimationFrame(__labelRaf);
-  });
-  map.on('zoomend', () => { toggleLabels(); scheduleLabels(); });
-  map.on('moveend', scheduleLabels);
-  clusterGroup?.on('animationend spiderfied unspiderfied', scheduleLabels);
-  toggleLabels();
-  scheduleLabels();
-
   let selectedMarker = null;
 
   function updatePinSelectedDOM(marker, isSelected) {
@@ -1833,12 +1761,27 @@ function boot(opts) {
   }
 
   // Ensure selection persists when clusters explode/spiderfy and mount marker DOM
+  function bindMapListeners(map, clusterGroup) {
+    map.on('moveend', onMapMoveEnd);
+    map.on('zoomend', onMapMoveEnd);
+  map.on('zoomstart', () => {
+    clearTimeout(__labelTimer);
+    if (__labelRaf) cancelAnimationFrame(__labelRaf);
+  });
+  map.on('zoomend', () => { toggleLabels(); scheduleLabels(); });
+  map.on('moveend', scheduleLabels);
+  clusterGroup?.on('animationend spiderfied unspiderfied', scheduleLabels);
+  toggleLabels();
+  scheduleLabels();
+
   clusterGroup?.on('layeradd', e => {
     if (e.layer && e.layer.shopRef && state.selected && e.layer.shopRef.id === state.selected.id) {
       updatePinSelectedDOM(e.layer, true);
       selectedMarker = e.layer;
     }
   });
+  }
+  bindMapListeners(map, clusterGroup);
 
   // LIST
   const shopListEl = document.getElementById('shopList');
@@ -1898,23 +1841,20 @@ function boot(opts) {
     return cachedGlobalShops.filter(s => view.contains([s.lat, s.lng]));
   }
 
-  function sortShops(arr) {
-    // Always sort by Bayesian weighted rating (best → worst).
-    return arr.slice().sort((x, y) => y.weightedRating - x.weightedRating);
-  }
-
   let lastRenderedShopIds = [];
   let lastRenderedSelectedId = null;
 
+  function cardAriaLabel(shop) {
+    return `${shop.name}, ${(shop.category || '').replace('+', ' and ')} in ${shop.neighborhood}${shop.rated ? `, score ${shop.scoreText}` : ''}`;
+  }
   function buildShopCard(shop) {
     const li = document.createElement('li');
     li.className = 'shop-item' + (state.selected && state.selected.id === shop.id ? ' active' : '');
     li.dataset.id = shop.id;
     li.setAttribute('tabindex', '0');
     li.setAttribute('role', 'button');
-    const catStr = (typeof shop.category === 'string') ? shop.category : '';
-    const cleanCat = catStr.replace('+', ' and ');
-    li.setAttribute('aria-label', `${shop.name}, ${cleanCat} in ${shop.neighborhood}${shop.rated ? `, score ${shop.scoreText}` : ''}`);
+    const catStr = shop.category || '';
+    li.setAttribute('aria-label', cardAriaLabel(shop));
 
     const cat = CATS[shop.category] || {};
     const catColor = cat.hex || '#999';
@@ -1976,6 +1916,14 @@ function boot(opts) {
   }
 
   function renderList(source) {
+    // A held reading list survives programmatic moves; a map gesture, filter or search refreshes it.
+    if (pendingListUpdate && (source === 'viewport' || source === 'detail-back') && !mapGesture) return;
+    if (source === 'filter' || source === 'search') listInteracted = false;
+    if (pendingListUpdate) {
+      pendingListUpdate = false;
+      showCoverageStatus();
+      if (source === 'viewport' || source === 'detail-back') source = 'hydrate';
+    }
     // A fresh filter/search context starts back at the top of the list;
     // explicit "Load more", returning from detail, and viewport updates preserve pagination.
     if (source === 'filter' || source === 'search' || source === 'hydrate') {
@@ -2015,16 +1963,6 @@ function boot(opts) {
     const globalCount = cachedGlobalShops ? cachedGlobalShops.length : SHOPS.length;
     const isViewportFiltering = filtered.length < globalCount;
     const currentSelectedId = state.selected ? state.selected.id : null;
-
-    if (source === 'search' && state.search.trim()) {
-      const term = state.search.trim();
-      const count = filtered.length;
-      if (count === 0) {
-        announce(`No spots found for "${term}".`);
-      } else {
-        announce(`Showing ${count} spot${count === 1 ? '' : 's'} for "${term}".`);
-      }
-    }
 
     // Count pop when number changes (Web Animations API: zero forced reflow)
     const prevCount = parseInt(resultsCountEl.textContent) || -1;
@@ -2112,8 +2050,7 @@ function boot(opts) {
       }
     }
 
-    const emptyEl = shopListEl.querySelector('.empty-state');
-    if (emptyEl) emptyEl.remove();
+    shopListEl.querySelectorAll('.empty-state').forEach(el => el.remove());
 
     const oldMore = shopListEl.querySelector('.load-more');
     if (oldMore) oldMore.remove();
@@ -2133,7 +2070,7 @@ function boot(opts) {
         if (source === 'hydrate') {
           const score = li.querySelector('.score');
           if (score) score.textContent = `◆ ${shop.scoreText}`;
-          li.setAttribute('aria-label', `${shop.name}, ${shop.category.replace('+', ' and')} in ${shop.neighborhood}${shop.rated ? `, score ${shop.scoreText}` : ''}`);
+          li.setAttribute('aria-label', cardAriaLabel(shop));
         }
         const shouldBeActive = currentSelectedId === shop.id;
         if (li.classList.contains('active') !== shouldBeActive) {
@@ -2286,8 +2223,67 @@ function boot(opts) {
     document.getElementById('backBtn').addEventListener('click', deselectShop);
   }
 
+  let selectionToken = 0;
+  let cancelReveal = () => {};
+  function cancelPendingReveal() {
+    selectionToken++;
+    cancelReveal();
+  }
+  // Centre on the marker at zoom 16+, then zoom one level at a time until its cluster
+  // splits. Each step waits for the map and cluster animations to finish (moveend /
+  // animationend); listeners attach after map.stop() so its synchronous moveend is ignored.
+  // Steps run in a fresh task: moving the map inside MarkerCluster's animationend (fired
+  // from its queue processor) re-enters that processor and unbalances _inZoomAnimation.
+  function revealMarker(marker, token, cb) {
+    cancelReveal();
+    map.stop();
+    if (!marker) return;
+    const animate = !reducedMotion();
+    const current = () => token === selectionToken && clusterGroup.hasLayer(marker);
+    const busy = () => map._animatingZoom || clusterGroup._inZoomAnimation > 0 || (map._panAnim && map._panAnim._inProgress);
+    let stepTimer = null;
+    const schedule = () => { clearTimeout(stepTimer); stepTimer = setTimeout(reveal, 0); };
+    const cleanup = () => {
+      clearTimeout(stepTimer);
+      map.off('moveend', schedule);
+      clusterGroup.off('animationend', schedule);
+    };
+    cancelReveal = cleanup;
+    let centred = false;
+    function reveal() {
+      if (!current()) { cleanup(); return; }
+      if (busy()) return;
+      const target = marker.getLatLng();
+      const zoom = map.getZoom();
+      // Centre once; maxBounds can clamp the centre, so never retry it.
+      if (!centred) {
+        centred = true;
+        if (zoom < 16 || map.distance(map.getCenter(), target) > 1) {
+          map.setView(target, Math.max(zoom, 16), { animate });
+          return;
+        }
+      }
+      const parent = clusterGroup.getVisibleParent(marker);
+      if (parent && parent !== marker && zoom < map.getMaxZoom()) {
+        map.setView(target, zoom + 1, { animate });
+        return;
+      }
+      cleanup();
+      if (parent && parent !== marker) parent.spiderfy();
+      cb();
+    }
+    map.on('moveend', schedule);
+    clusterGroup.on('animationend', schedule);
+    reveal();
+  }
+
   function selectShop(shop, opts) {
     opts = opts || {};
+    cancelSearchAnnouncement();
+    cancelPendingReveal();
+    // Apply a pending search now so its timer cannot close the detail being opened.
+    if (searchTimer) { clearTimeout(searchTimer); searchTimer = null; renderList('search'); }
+    closedByFilter = false;
     // Save scroll position and pagination limit of the list before entering detail mode
     if (!state.selected) {
       state.lastScrollTop = shopListEl.scrollTop;
@@ -2325,22 +2321,13 @@ function boot(opts) {
         map.easeTo({ center: [shop.lng, shop.lat], zoom: Math.max(map.getZoom(), 15), duration: reducedMotion() ? 0 : 800, offset: [0, 0] });
       } else {
         const m = markerByShopId.get(shop.id);
-        if (m) {
-          if (m._icon && map.getBounds().contains(m.getLatLng())) {
-            map.setView([shop.lat, shop.lng], Math.max(map.getZoom(), 16), { animate: !reducedMotion() });
-          } else {
-            clusterGroup.zoomToShowLayer(m, () => {
-              if (state.selected && state.selected.id === shop.id) {
-                map.setView([shop.lat, shop.lng], Math.max(map.getZoom(), 16), { animate: !reducedMotion() });
-              }
-            });
-          }
-        }
+        revealMarker(m, selectionToken, () => setMarkerSelected(shop));
       }
     }
   }
 
   function deselectShop(opts) {
+    cancelPendingReveal();
     const skipFit = !!(opts && opts.skipFit);
     const lastSelectedId = state.selected ? state.selected.id : null;
     state.selected = null;
@@ -2363,7 +2350,7 @@ function boot(opts) {
     }
 
     // Restore keyboard focus to the list item that was open
-    if (lastSelectedId) {
+    if (lastSelectedId && !(opts && opts.keepFocus)) {
       const el = shopListEl.querySelector(`[data-id="${lastSelectedId}"]`);
       if (el) el.focus({ preventScroll: true });
     }
@@ -2371,10 +2358,19 @@ function boot(opts) {
     const camera = state.previousCamera;
     state.previousCamera = null;
     if (!skipFit && camera) {
-      state.returningFromDetail = lastSelectedId;
       map.stop();
-      if (vectorRenderer) map.easeTo({ center: camera.center, zoom: camera.zoom, duration: reducedMotion() ? 0 : 800 });
-      else map.setView(camera.center, camera.zoom, { animate: !reducedMotion(), duration: 0.8 });
+      const token = selectionToken;
+      const restore = () => {
+        if (token !== selectionToken) return;
+        // Only the restoring move's moveend may consume the scroll/focus flag.
+        clearTimeout(__viewportTimer);
+        state.returningFromDetail = lastSelectedId;
+        if (vectorRenderer) map.easeTo({ center: camera.center, zoom: camera.zoom, duration: reducedMotion() ? 0 : 800 });
+        else map.setView(camera.center, camera.zoom, { animate: !reducedMotion() });
+      };
+      // Leaflet ignores setView during a CSS zoom; restore once it ends, outside its event dispatch.
+      if (!vectorRenderer && map._animatingZoom) map.once('zoomend', () => setTimeout(restore, 0));
+      else restore();
     }
   }
 
@@ -2413,7 +2409,7 @@ function boot(opts) {
       document.getElementById('brandHomeBtn').setAttribute('aria-label', `Caffeye — ${title} — Reset filters`);
     }
     if (freshnessEl) {
-      freshnessEl.textContent = count + ' spots in ' + REGION_LABEL + freshnessSuffix();
+      freshnessEl.textContent = (dataLoadState.regional === 'loading' && !opts.placesData ? 'Loading Metro Atlanta… ' : '') + count + ' spots in ' + REGION_LABEL + freshnessSuffix();
     }
   }
 
@@ -2423,6 +2419,8 @@ function boot(opts) {
   // re-renders from the render() caller below.
   function syncSelectionToFilters() {
     if (state.selected && !passesGlobalFilters(state.selected)) {
+      cancelPendingReveal();
+      closedByFilter = true;
       state.selected = null;
       state.previousCamera = null;
       const prevActive = shopListEl.querySelector('.shop-item.active');
@@ -2440,13 +2438,20 @@ function boot(opts) {
     syncSelectionToFilters();
     if (state.selected) renderDetail(state.selected);
     renderList('filter');
+    showCoverageStatus();
   }
 
   let searchTimer = null;
   searchInput.addEventListener('input', e => {
     state.search = e.target.value;
     clearTimeout(searchTimer);
-    searchTimer = setTimeout(() => { renderList('search'); }, 80);
+    cancelSearchAnnouncement();
+    searchTimer = setTimeout(() => { searchTimer = null; syncSelectionToFilters(); renderList('search'); }, 80);
+    searchAnnouncementTimer = setTimeout(() => {
+      if (state.selected) return;
+      const message = resultsAnnouncement(state.search.trim() ? '' : 'Search cleared. ');
+      if (message !== lastSearchAnnouncement) { announce(message); lastSearchAnnouncement = message; }
+    }, 700);
   });
 
   const franchiseToggle = document.getElementById('franchiseToggle');
@@ -2456,8 +2461,7 @@ function boot(opts) {
       state.includeFranchises = e.target.checked;
       // Incompatible selections are cleared centrally in render().
       render();
-      const count = cachedGlobalShops ? cachedGlobalShops.length : filteredForMap().length;
-      announce(`${state.includeFranchises ? 'Including' : 'Excluding'} franchise stores. Showing ${count} spots.`);
+      announceFilterChange(`${state.includeFranchises ? 'Including' : 'Excluding'} franchise stores. `);
     });
   }
 
@@ -2473,11 +2477,23 @@ function boot(opts) {
       if (searchInput) searchInput.value = '';
       // Close any open detail without fitting (membership is still stale),
       // rebuild markers for the cleared filters, then fit the full spread.
-      deselectShop({ skipFit: true });
+      cancelSearchAnnouncement();
+      deselectShop({ skipFit: true, keepFocus: true });
       render();
-      fitMapToShops(filteredForMap(), true);
-      const count = cachedGlobalShops ? cachedGlobalShops.length : filteredForMap().length;
-      announce(`Reset all filters. Showing all ${count} spots in ${REGION_LABEL}.`);
+      let announced = false;
+      const announceReset = () => {
+        if (announced) return;
+        announced = true;
+        clearTimeout(__viewportTimer); // the debounced render would re-anchor the old scroll
+        renderList('viewport');
+        shopListEl.scrollTop = 0;
+        announceFilterChange('Reset filters. ');
+      };
+      map.once('moveend', () => setTimeout(announceReset, 0));
+      setTimeout(announceReset, 1500); // in case the fit does not move the camera
+      // While only the seed is loaded, return to the regional frame rather than fitting the seed.
+      if (dataLoadState.regional === 'loading') showRegionalFrame(true);
+      else fitMapToShops(filteredForMap(), true);
     };
     brandHomeBtn.addEventListener('click', resetAll);
     brandHomeBtn.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') resetAll(e); });
@@ -2539,30 +2555,41 @@ function boot(opts) {
 
   // Coverage status is informational when either dataset is usable.
   // Only startup failure of both sources is a blocking alert.
+  let coverageMessage = '', coverageTimer = null, pendingCount = 0;
+  const status = document.createElement('div');
+  status.id = 'dataStatusBanner';
+  status.className = 'data-status-banner';
+  status.setAttribute('role', 'status');
+  document.querySelector('.layout').append(status);
   function showCoverageStatus() {
-    document.getElementById('dataStatusBanner')?.remove();
-    if (dataLoadState.regional === 'ready' && dataLoadState.seed === 'ready') return;
-    const status = document.createElement('div');
-    status.id = 'dataStatusBanner';
-    status.className = 'data-status-banner';
-    status.setAttribute('role', 'status');
-    const text = document.createElement('span');
-    text.textContent = dataLoadState.regional === 'loading'
-      ? 'Local spots ready. Loading regional coverage…'
-      : dataLoadState.regional === 'failed'
-        ? 'Showing local spots. Regional coverage is unavailable.'
-        : 'Showing regional spots. Curated local coverage is unavailable.';
-    status.append(text);
-    if (dataLoadState.regional === 'failed') {
-      const button = document.createElement('button');
-      button.id = 'retryPlacesBtn';
-      button.className = 'banner-retry-btn';
-      button.textContent = 'Retry';
-      button.addEventListener('click', () => retryRegionalLoad());
-      status.append(button);
+    updateHeader();
+    const count = SHOPS.filter(s => state.includeFranchises || s.model !== 'franchise').length;
+    const focused = status.contains(document.activeElement) ? document.activeElement.id : null;
+    const button = (id, label, onclick) => Object.assign(document.createElement('button'), { id, className: 'banner-retry-btn', textContent: label, onclick });
+    status.replaceChildren();
+    status.classList.toggle('success', coverageMessage === 'ready' && !pendingListUpdate);
+    if (pendingListUpdate) {
+      status.hidden = false;
+      status.append(`${pendingCount} more spot${pendingCount === 1 ? '' : 's'} loaded`, button('updateListBtn', 'Update list', () => {
+        pendingListUpdate = false;
+        renderList('hydrate');
+        showCoverageStatus();
+      }));
+    } else {
+      status.hidden = !coverageMessage && dataLoadState.regional === 'ready' && dataLoadState.seed === 'ready';
+      status.append(coverageMessage === 'retry-failed' ? `Retry failed · ${count} spots`
+        : coverageMessage === 'ready' ? `Regional coverage loaded · ${count} spots`
+        : dataLoadState.regional === 'loading' ? `Loading Metro Atlanta… ${count} spots so far`
+        : dataLoadState.regional === 'failed' ? `Regional coverage unavailable · ${count} spots`
+        : `Showing regional spots (${count}) · curated picks unavailable`);
+      if (dataLoadState.regional === 'failed') status.append(button('retryPlacesBtn', 'Retry', () => retryRegionalLoad()));
     }
-    document.getElementById('panel').prepend(status);
+    // Rebuilding drops focus from a banner button; keep keyboard users in place.
+    if (focused) (document.getElementById(focused) || shopListEl.querySelector('.shop-item') || searchInput).focus({ preventScroll: true });
   }
+  let listInteracted = false, pendingListUpdate = false;
+  shopListEl.addEventListener('scroll', () => { listInteracted = true; }, { passive: true });
+  shopListEl.addEventListener('pointerdown', () => { listInteracted = true; }, { passive: true });
 
   function hydrateRegion(placesData) {
     const fresh = ingestPlaces(placesData).filter(prepareShop);
@@ -2570,12 +2597,21 @@ function boot(opts) {
       SHOPS.push(...fresh);
       spreadCoincidentShops();
       computeWeightedRatings();
-      addShopMarkers(fresh);
+      if (clusterGroup) {
+        const moved = markers.filter(m => !m.getLatLng().equals([m.shopRef.lat, m.shopRef.lng]));
+        clusterGroup.removeLayers(moved);
+        moved.forEach(m => m.setLatLng([m.shopRef.lat, m.shopRef.lng]));
+        clusterGroup.addLayers(moved.filter(m => m.isOnMap));
+      }
     }
+    // Also recovers shops from an earlier hydrate that threw before their markers existed.
+    addShopMarkers(SHOPS.filter(shop => !markerByShopId.has(shop.id)));
     updateScopes(shopsDataGlobal, placesData);
     window.REGION_LABEL = REGION_LABEL;
     cachedGlobalShops = null;
     dataLoadState.regional = 'ready';
+    // The map shows the new data even while a reader's list is held.
+    if (vectorRenderer) vectorRenderer.setShops(filteredForMap());
     updateHeader();
     renderChips();
     if (state.selected) {
@@ -2585,14 +2621,18 @@ function boot(opts) {
       detailEl.scrollTop = detailScroll;
       if (focusedId) document.getElementById(focusedId)?.focus({ preventScroll: true });
     }
-    renderList('hydrate');
+    // Hold the list only for someone reading it: scrolled, focused in it, or on a detail card.
+    pendingListUpdate = listInteracted && (shopListEl.scrollTop > 0 || !!state.selected || shopListEl.contains(document.activeElement));
+    pendingCount = fresh.filter(passesGlobalFilters).length;
+    mapGesture = false;
+    if (!pendingListUpdate) renderList('hydrate');
     // Expand untouched startup/retry views only. Never move a browsing user.
     if (!userHasInteracted && !state.selected) {
       fitMapToShops(filteredForMap());
-      renderList('viewport');
-      shopListEl.scrollTop = 0;
+      if (!pendingListUpdate) { renderList('viewport'); shopListEl.scrollTop = 0; }
     }
     showCoverageStatus();
+    trackMetric('regional_ready', { path: 'hydrate', duration_ms: Math.round(performance.now() - vectorStart) });
   }
 
   let retryInFlight = false;
@@ -2601,16 +2641,26 @@ function boot(opts) {
     retryInFlight = true;
     const button = document.getElementById('retryPlacesBtn');
     if (button) { button.disabled = true; button.textContent = 'Loading…'; }
-    const data = await fetchDataset('./places.json', 'places');
-    if (data) hydrateRegion(data);
-    else showCoverageStatus();
-    retryInFlight = false;
+    try {
+      const data = await fetchDataset('./places.json', 'places');
+      if (!data) throw new Error('Regional load failed');
+      hydrateRegion(data);
+      coverageMessage = 'ready';
+      clearTimeout(coverageTimer);
+      coverageTimer = setTimeout(() => { coverageMessage = ''; showCoverageStatus(); }, 4000);
+    } catch {
+      dataLoadState.regional = 'failed';
+      coverageMessage = 'retry-failed';
+    } finally {
+      retryInFlight = false;
+      showCoverageStatus();
+    }
   };
 
   render();
   if (vectorRenderer) {
     vectorRenderer.whenReady.then(() => {
-      if (!userHasInteracted) fitMapToShops(filteredForMap());
+      if (!userHasInteracted && dataLoadState.regional === 'ready') fitMapToShops(filteredForMap());
       window.mapReady = true;
       trackMetric('vector_ready', { duration_ms: Math.round(performance.now() - vectorStart) });
       renderList('viewport');

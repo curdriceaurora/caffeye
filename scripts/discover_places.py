@@ -1097,6 +1097,9 @@ def write_places(recs, generated_at: str) -> None:
         "places": recs,
     }
     PLACES_PATH.write_text(json.dumps(data, indent=1, ensure_ascii=False) + "\n")
+    from rating_priors import update as update_rating_priors
+    if PLACES_PATH == ROOT / "public" / "places.json":
+        update_rating_priors()
     print(
         f"wrote {len(recs)} places -> {PLACES_PATH} ({PLACES_PATH.stat().st_size // 1024} KB)"
     )
