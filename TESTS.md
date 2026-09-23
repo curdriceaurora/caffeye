@@ -290,7 +290,7 @@ console.table(Object.fromEntries(Object.keys(CATS).map(category => [category, {
 | ID | Trace | Metric / Assertion | Target | Measurement |
 |---|---|---|---|---|
 | T13.1 | R13.1 | **Largest Contentful Paint (LCP)** — manual, not in CI | ≤ 1.0s (4G) / ≤ 1.5s (Fast 3G) target; Sept 2026 baseline ≈ 1.17s / ≈ 2.9s | On the deployed site (compressed assets), Chrome DevTools → Performance with network throttling at 4G and Fast 3G, cache disabled; record the final LCP entry (a basemap tile) after the list and regional data have loaded. Take the median of 3 runs. |
-| T13.2 | R13.2 | **Total Blocking Time (TBT)** | ≤ 300ms | Startup bootstrap task execution |
+| T13.2 | R13.2 | **Total Blocking Time (TBT)** — reported, not gated | ≤ 300ms target | The `perf` project logs long-task TBT at 4× CPU after the functional projects finish (`npx playwright test --project=perf --no-deps` runs it alone). Compare runs on the same machine. |
 | T13.3 | R13.3 | **Vector First Ready** | ≤ 1.8s (typical) / ≤ 5.0s (fallback) | `window.__telemetryLog.find(e => e.event === 'vector_ready')` |
 | T13.4 | R13.4 | **Network-first Regional Load** | 2.5 s cached fallback timeout | Fresh network wins over cached content; a slow download serves the cache after 2.5 s and then refreshes it; obsolete namespaces deleted |
 | T13.5 | R13.5 | **Mobile Map Stability & Density** | `clamp(130px, 22vh, 185px)`; 125px at ≤ 600px tall, 120px at ≤ 500px | Preserves R8.5 card density without keyboard layout shifts, including while the coverage banner shows |

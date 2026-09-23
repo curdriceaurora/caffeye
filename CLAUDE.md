@@ -233,7 +233,7 @@ Patterns from prior sessions:
 
 ## Rendering and dataset loading
 
-The default renderer is Leaflet. `?renderer=vector` opts into MapLibre GL JS from unpkg and vector tiles/fonts from OpenFreeMap (additional third-party requests). Selection uses Leaflet zoom 16 / MapLibre zoom 15, then zooms one level at a time until the pin leaves its cluster; Back restores the prior camera. Camera moves and cluster split/merge animate unless `prefers-reduced-motion` is set. Runtime fallback converts MapLibre zoom to Leaflet by adding one.
+The default renderer is Leaflet. `?renderer=vector` opts into MapLibre GL JS from unpkg and vector tiles/fonts from OpenFreeMap (additional third-party requests). Selection uses Leaflet zoom 16 / MapLibre zoom 15, then zooms one level at a time until the pin leaves its cluster; Back restores the prior camera. Camera moves and cluster split/merge animate unless `prefers-reduced-motion` is set. Runtime fallback converts MapLibre zoom to Leaflet by adding one and flooring, so the Leaflet view contains the vector view. Vector-only CSS and the preview note live in `maplibre-preview.js`, so the default page doesn't carry them.
 
 Cache Storage `caffeye-v6` is network-first. With a cached copy, the page uses it after 2.5 seconds while the download finishes in the background and refreshes the cache; uncached requests may take up to 7.5 seconds. Older `caffeye-*` caches are deleted. `dataset_load` measures acquisition; `regional_ready` (path `boot` or `hydrate`) marks when regional data reaches the UI. The regional shell waits 1.8 seconds before exposing explicitly partial seed coverage. The coverage banner overlays the top of the map, so it never resizes the map or costs list rows.
 

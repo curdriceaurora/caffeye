@@ -29,7 +29,7 @@ Functional and non-functional requirements for the current state of the page. Ea
 | R2.7 | Shops at the same building coords are fanned out in a ~20 m ring so pins don't fully overlap. | Labels must not lie |
 | R2.8 | Tapping a pin selects the shop directly (no preview popup). | One tap to the answer |
 | R2.9 | "Back to list" restores the camera saved before the first selection. Switching selections preserves that camera. | — |
-| R2.10 | The map zoom is bounded between `minZoom: 7` and `maxZoom: 19`. Viewport panning and tile network requests are strictly bounded to Greater Atlanta via `ATL_BOUNDS` (`[33.15, -85.05]` to `[34.75, -83.30]`) with `maxBoundsViscosity: 1.0`, preventing users from panning away from the coverage area and eliminating unnecessary tile rendering/requests. | Bound performance and avoid stray navigation |
+| R2.10 | The map zoom is bounded between `minZoom: 7` and `maxZoom: 19`. Viewport panning and tile network requests are strictly bounded to Greater Atlanta via `ATL_BOUNDS` (`[33.15, -85.05]` to `[34.75, -83.30]`) with `maxBoundsViscosity: 1.0`, preventing users from panning away from the coverage area and eliminating unnecessary tile rendering/requests. Applies to the default Leaflet renderer; the opt-in vector preview uses the padded bounds in R13.9. | Bound performance and avoid stray navigation |
 
 ## R3. Pin labels
 
@@ -134,14 +134,13 @@ Functional and non-functional requirements for the current state of the page. Ea
 | ID | Requirement | Rationale |
 |---|---|---|
 | R13.1 | Target: final LCP on the default renderer ≤ 1.0 s on 4G and ≤ 1.5 s on Fast 3G. Measured manually, not gated in CI: the LCP element is a CARTO basemap tile. September 2026 baseline with compressed delivery: ≈ 1.17 s (4G) and ≈ 2.9 s (Fast 3G), the same as before progressive loading. | Measure visible startup |
-| R13.2 | Startup long-task TBT ≤ 300 ms at 4× CPU slowdown. | Responsive startup |
+| R13.2 | Target: startup long-task TBT ≤ 300 ms at 4× CPU slowdown. Reported by the perf spec but not gated in CI: the reading swings with machine load (192 ms to 398 ms on the same build). | Responsive startup |
 | R13.3 | Vector ready ≤ 1.8 s typically; fallback ≤ 5 s. | Preview budget |
 | R13.4 | Prefer revalidated network datasets; when a cached copy exists, use it after 2.5 s and let the download finish in the background to refresh the cache. Delete obsolete app cache namespaces. Record dataset fetch duration (`dataset_load`) separately from when regional data reaches the UI (`regional_ready`, path `boot` or `hydrate`). | Avoid a stale whole visit |
 | R13.5 | Mobile map height is clamp(130px, 22vh, 185px), 125px at viewport heights ≤ 600px and 120px at ≤ 500px, including focused search. | Stable card density |
 | R13.6 | Interaction pan/zoom target ≥ 55 FPS. | Fluid navigation |
 | R13.7 | Debounced search and filter announcements report in-view and outside counts, active search and detail closure. | Accurate accessible feedback |
 | R13.8 | Show Metro Atlanta immediately. Wait up to 1.8 s for regional data, then expose clearly labelled partial seed coverage without a seed camera fit. Seed scores use generated regional rating priors. Hydration preserves a reading list (scrolled, focused, or a detail card open) until Update list, a filter/search, or a map gesture; the map itself always shows the new data. Map interaction or an open detail prevents the regional camera fit; Home during partial loading returns to the regional frame. | Stable discovery |
-
-| R13.9 | Opt-in vector preview (`?renderer=vector`): the list waits at most 3 s for MapLibre (JS and CSS) before falling back to Leaflet; after a WebGL context loss MapLibre's own restore gets 3 s of visible time before the one-time fallback, and changes made meanwhile are applied on restore; bounds are ATL_BOUNDS padded so the whole-region fit still fits; a basemap outage notice stays until tiles load; the canvas label names the matching count and selection. | Preview fails safe |
+| R13.9 | Opt-in vector preview (`?renderer=vector`): the list waits at most 3 s for MapLibre (JS and CSS) before falling back to Leaflet; after a WebGL context loss MapLibre's own restore gets 3 s of visible time before the one-time fallback, and changes made meanwhile are applied on restore; bounds are ATL_BOUNDS padded by 2° longitude and 1° latitude (MapLibre bounds must contain the whole viewport, unlike Leaflet's) so the whole-region fit still fits; a basemap outage notice stays until tiles load; the canvas label names the matching count and selection. | Preview fails safe |
 
 Selection centres at Leaflet zoom 16 or closer, MapLibre zoom 15 or closer. MapLibre zoom N corresponds to Leaflet zoom N+1. Back restores the original browsing camera.

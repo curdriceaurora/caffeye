@@ -34,8 +34,13 @@ def regional_priors(seed, region):
     """Mirror index.html's admission rules (prepareShop + ingestPlaces) exactly."""
     addr = seed.get('addr') or {}
 
+    def coords_for(shop):
+        # JS `ADDR[key] || shop`: any object (even an empty one) wins.
+        coords = addr.get(shop.get('addrKey'))
+        return coords if isinstance(coords, dict) else shop
+
     def seed_coords(shop):
-        coords = addr.get(shop.get('addrKey')) or shop
+        coords = coords_for(shop)
         return coords.get('lat'), coords.get('lng')
 
     curated = [s for s in seed['shops'] if s.get('curated') is not False]
@@ -52,8 +57,11 @@ def regional_priors(seed, region):
             continue
         duplicate = False
         for shop in curated:
-            c = addr.get(shop.get('addrKey')) or shop
-            if not c.get('lat') or not c.get('lng'):
+            c = coords_for(shop)
+            # JS skips the check when any coordinate is falsy; non-numbers cannot match here.
+            if not _number(c.get('lat')) or not _number(c.get('lng')) or not c['lat'] or not c['lng']:
+                continue
+            if not place['lat'] or not place['lng']:
                 continue
             if (abs(place['lat'] - c['lat']) <= .0006 and abs(place['lng'] - c['lng']) <= .0006
                     and _tokens(place['name']) & _tokens(shop.get('name'))):
@@ -65,6 +73,7 @@ def regional_priors(seed, region):
             seen.add(place['placeId'])
         shops.append(place)
     rated = [s['rating'] for s in shops if _number(s.get('rating'))]
+    # Stricter than JS `ratingNum || 0` for non-numeric counts (none exist in the data).
     counts = sorted(s['ratingNum'] if _number(s.get('ratingNum')) else 0 for s in shops)
     return {'C': sum(rated) / len(rated), 'm': counts[len(counts) // 2] or 1,
             'population': len(shops), 'source': 'shops.json + places.json; rating_priors.py'}

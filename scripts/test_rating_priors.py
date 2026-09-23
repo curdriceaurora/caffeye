@@ -43,3 +43,14 @@ class RatingPriorsTests(unittest.TestCase):
         seed = {'addr': {}, 'shops': [{'name': 'Example Roasters', 'curated': False, 'lat': 33.9, 'lng': -84.1, 'rating': 4}]}
         region = {'places': [{'name': 'Example Roasters', 'placeId': 'p', 'category': 'Coffee', 'lat': 33.9, 'lng': -84.1, 'rating': 5}]}
         self.assertEqual(regional_priors(seed, region)['population'], 2)
+
+    def test_empty_addr_entry_and_zero_latitude_follow_js(self):
+        # ADDR[key] = {} is truthy in JS, so the seed uses it and is dropped for missing coordinates.
+        seed = {'addr': {'empty': {}}, 'shops': [
+            {'name': 'Empty Addr Seed', 'addrKey': 'empty', 'lat': 33.9, 'lng': -84.1, 'rating': 5},
+            {'name': 'Example Roasters', 'lat': 33.9, 'lng': -84.1, 'rating': 4}]}
+        # A place at latitude 0 skips the relisting check, so it is admitted despite the shared name.
+        region = {'places': [{'name': 'Example Roasters', 'placeId': 'z', 'category': 'Coffee', 'lat': 0, 'lng': -84.1, 'rating': 3}]}
+        priors = regional_priors(seed, region)
+        self.assertEqual(priors['population'], 2)
+        self.assertEqual(priors['C'], 3.5)

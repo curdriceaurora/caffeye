@@ -341,20 +341,12 @@
     background: var(--bg); color: var(--text); font-family: inherit;
     font-size: 12.5px; font-weight: 600; cursor: pointer;
   }
-  .banner-retry-btn:disabled { opacity: 0.6; cursor: default; }
-  .banner-retry-btn::after { content: ''; position: absolute; left: 0; right: 0; top: -7px; bottom: -7px; } /* 44px target */
+  .banner-retry-btn[aria-disabled="true"] { opacity: 0.6; cursor: default; }
+  .banner-retry-btn::after { content: ''; position: absolute; left: 0; right: 0; top: -8px; bottom: -8px; } /* 44px target */
 
 
   .layout { flex: 1; display: flex; min-height: 0; position: relative; }
   #map { flex: 1; background: var(--map-bg); position: relative; min-width: 0; }
-  .map-load-status { position: absolute; z-index: 5; bottom: 28px; left: 12px; right: 12px; padding: 8px 12px; background: var(--surface); color: var(--text); border: 1px solid var(--border); border-radius: 8px; font-size: 12px; }
-  .maplibregl-ctrl-group { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
-  [data-theme="dark"] .maplibregl-ctrl-icon { filter: invert(1); }
-  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .maplibregl-ctrl-icon { filter: invert(1); } }
-  .maplibregl-ctrl-group button + button { border-top-color: var(--border); }
-  .maplibregl-ctrl-attrib { color: #222721; }
-  .renderer-note { font-size: 11px; padding: 6px 12px; background: var(--accent-soft); color: var(--text); }
-  .renderer-note a { color: inherit; }
   .panel {
     width: 380px; background: var(--surface);
     border-left: 1px solid var(--border);
@@ -714,7 +706,7 @@
     .search { padding: 4px 10px; }
     .data-status-banner { top: 6px; left: 48px; right: 8px; padding: 3px 6px; gap: 6px; font-size: 11px; }
     .banner-retry-btn { min-height: 26px; padding: 2px 10px; }
-    .banner-retry-btn::after { top: -9px; bottom: -9px; }
+    .banner-retry-btn::after { top: -10px; bottom: -10px; }
     .search input { height: 30px; padding: 4px 10px; font-size: 16px; }
     .results-meta { padding: 3px 10px; font-size: 10px; }
     .filter-bar { padding: 3px 10px 4px; }
@@ -1270,7 +1262,7 @@ function boot(opts) {
   }
 
   let userHasInteracted = false, mapGesture = false;
-  const noteInteraction = () => { userHasInteracted = true; mapGesture = true; };
+  const noteInteraction = () => { userHasInteracted = true; mapGesture = true; cancelPendingReveal(); };
   for (const event of ['pointerdown', 'keydown', 'wheel']) {
     document.getElementById('map').addEventListener(event, noteInteraction, { capture: true, passive: true });
   }
@@ -1297,16 +1289,6 @@ function boot(opts) {
   }
   window.renderer = vectorRenderer ? 'vector' : 'leaflet';
   window.mapReady = false;
-  if (vectorRequested) {
-    const note = document.createElement('div');
-    note.className = 'renderer-note';
-    note.append(vectorRenderer ? 'Vector map preview · ' : 'Vector preview unavailable. Showing the standard map · ');
-    const link = document.createElement('a');
-    link.href = location.pathname;
-    link.textContent = 'Standard map';
-    note.append(link);
-    document.querySelector('.layout').before(note);
-  }
 
   let map, tileLayer, clusterGroup;
   // CARTO's raster basemaps require an authorized API key in production, which is
@@ -1372,7 +1354,7 @@ function boot(opts) {
   if (vectorRenderer) map = vectorRenderer.map;
   else createLeafletMap();
 
-  function initLeafletFallback(reason) {
+  function initLeafletFallback() {
     let savedCenter = null;
     let savedZoom = null;
     const savedSelected = state.selected;
@@ -1380,11 +1362,9 @@ function boot(opts) {
     const focusedId = active?.id;
     const detailFocus = active && detailEl.contains(active) ? [...detailEl.querySelectorAll('a, button')].indexOf(active) : -1;
     const canvasFocused = !!active?.classList?.contains('maplibregl-canvas');
-    const savedScroll = shopListEl ? shopListEl.scrollTop : 0;
     try {
       if (map) {
-        const c = map.getCenter();
-        if (c) savedCenter = [c.lat !== undefined ? c.lat : c[1], c.lng !== undefined ? c.lng : c[0]];
+        savedCenter = map.getCenter();
         savedZoom = map.getZoom();
         if (map.remove) map.remove();
       }
@@ -1418,7 +1398,6 @@ function boot(opts) {
       revealMarker(markerByShopId.get(savedSelected.id), selectionToken, () => {});
     }
     if (typeof scheduleLabels === 'function') scheduleLabels();
-    if (shopListEl) shopListEl.scrollTop = savedScroll;
     const focusTarget = (focusedId && document.getElementById(focusedId))
       || (detailFocus >= 0 && detailEl.querySelectorAll('a, button')[detailFocus])
       || (canvasFocused && map.getContainer());
@@ -1427,16 +1406,7 @@ function boot(opts) {
   window.addEventListener('vector-fallback', (e) => {
     if (!vectorRenderer) return;
     trackMetric('vector_fallback', { reason: e.detail?.reason || 'runtime_error' });
-    const note = document.querySelector('.renderer-note');
-    if (note) {
-      note.replaceChildren(
-        'Vector preview unavailable. Showing the standard map · ',
-        Object.assign(document.createElement('a'), { href: location.pathname, textContent: 'Standard map' })
-      );
-    }
-    if (vectorRenderer) {
-      initLeafletFallback(e.detail?.reason);
-    }
+    initLeafletFallback();
   });
   let resizeFrame;
   const mapResizeObserver = new ResizeObserver(() => {
@@ -1518,6 +1488,7 @@ function boot(opts) {
     const mapH = map.getSize ? map.getSize().y : (document.getElementById('map')?.clientHeight || 300);
     const pad = mapH < 160 ? [12, 12] : [40, 40];
     if (vectorRenderer) {
+      map.resize();
       map.fitBounds([[bounds.getWest(), bounds.getSouth()], [bounds.getEast(), bounds.getNorth()]], {
         padding: pad[0], maxZoom: 15, duration: animate && !reducedMotion() ? 800 : 0
       });
@@ -2224,8 +2195,9 @@ function boot(opts) {
     document.getElementById('backBtn').addEventListener('click', deselectShop);
   }
 
-  let selectionToken = 0;
+  let selectionToken = 0, zoomQueued = false;
   let cancelReveal = () => {};
+  const zooming = () => map._animatingZoom || zoomQueued;
   function cancelPendingReveal() {
     selectionToken++;
     cancelReveal();
@@ -2241,7 +2213,13 @@ function boot(opts) {
     if (!marker) return;
     const animate = !reducedMotion();
     const current = () => token === selectionToken && clusterGroup.hasLayer(marker);
-    const busy = () => map._animatingZoom || clusterGroup._inZoomAnimation > 0 || (map._panAnim && map._panAnim._inProgress);
+    const busy = () => zooming() || clusterGroup._inZoomAnimation > 0 || (map._panAnim && map._panAnim._inProgress);
+    const zoomStarted = () => { zoomQueued = false; map.off('zoomanim zoomend', zoomStarted); };
+    const step = (zoom) => {
+      zoomQueued = animate && zoom !== map.getZoom();
+      if (zoomQueued) map.on('zoomanim zoomend', zoomStarted);
+      map.setView(marker.getLatLng(), zoom, { animate });
+    };
     let stepTimer = null;
     const schedule = () => { clearTimeout(stepTimer); stepTimer = setTimeout(reveal, 0); };
     const cleanup = () => {
@@ -2250,7 +2228,7 @@ function boot(opts) {
       clusterGroup.off('animationend', schedule);
     };
     cancelReveal = cleanup;
-    let centred = false;
+    let centred = false, recentred = false;
     function reveal() {
       if (!current()) { cleanup(); return; }
       if (busy()) return;
@@ -2259,16 +2237,12 @@ function boot(opts) {
       // Centre once; maxBounds can clamp the centre, so never retry it.
       if (!centred) {
         centred = true;
-        if (zoom < 16 || map.distance(map.getCenter(), target) > 1) {
-          map.setView(target, Math.max(zoom, 16), { animate });
-          return;
-        }
+        if (zoom < 16 || map.distance(map.getCenter(), target) > 1) return step(Math.max(zoom, 16));
       }
       const parent = clusterGroup.getVisibleParent(marker);
-      if (parent && parent !== marker && zoom < map.getMaxZoom()) {
-        map.setView(target, zoom + 1, { animate });
-        return;
-      }
+      // No visible parent means the pin is off-screen: centre on it once more.
+      if (!parent && !recentred) { recentred = true; return step(zoom); }
+      if (parent && parent !== marker && zoom < map.getMaxZoom()) return step(zoom + 1);
       cleanup();
       if (parent && parent !== marker) parent.spiderfy();
       cb();
@@ -2283,7 +2257,7 @@ function boot(opts) {
     cancelSearchAnnouncement();
     cancelPendingReveal();
     // Apply a pending search now so its timer cannot close the detail being opened.
-    if (searchTimer) { clearTimeout(searchTimer); searchTimer = null; renderList('search'); }
+    if (searchTimer) { clearTimeout(searchTimer); searchTimer = null; renderList('search'); if (!passesGlobalFilters(shop)) return; }
     closedByFilter = false;
     // Save scroll position and pagination limit of the list before entering detail mode
     if (!state.selected) {
@@ -2370,7 +2344,7 @@ function boot(opts) {
         else map.setView(camera.center, camera.zoom, { animate: !reducedMotion() });
       };
       // Leaflet ignores setView during a CSS zoom; restore once it ends, outside its event dispatch.
-      if (!vectorRenderer && map._animatingZoom) map.once('zoomend', () => setTimeout(restore, 0));
+      if (!vectorRenderer && zooming()) map.once('zoomend', () => setTimeout(restore, 0));
       else restore();
     }
   }
@@ -2490,11 +2464,16 @@ function boot(opts) {
         shopListEl.scrollTop = 0;
         announceFilterChange('Reset filters. ');
       };
-      map.once('moveend', () => setTimeout(announceReset, 0));
-      setTimeout(announceReset, 1500); // in case the fit does not move the camera
+      map.stop();
       // While only the seed is loaded, return to the regional frame rather than fitting the seed.
-      if (dataLoadState.regional === 'loading') showRegionalFrame(true);
-      else fitMapToShops(filteredForMap(), true);
+      const go = () => {
+        map.once('moveend', () => setTimeout(announceReset, 0));
+        if (dataLoadState.regional === 'loading') showRegionalFrame(true);
+        else fitMapToShops(filteredForMap(), true);
+      };
+      setTimeout(announceReset, 1500); // in case the fit does not move the camera
+      if (!vectorRenderer && zooming()) map.once('zoomend', () => setTimeout(go, 0));
+      else go();
     };
     brandHomeBtn.addEventListener('click', resetAll);
     brandHomeBtn.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') resetAll(e); });
@@ -2561,12 +2540,14 @@ function boot(opts) {
   status.id = 'dataStatusBanner';
   status.className = 'data-status-banner';
   status.setAttribute('role', 'status');
-  document.querySelector('.layout').append(status);
+  document.querySelector('.layout').prepend(status);
   function showCoverageStatus() {
     updateHeader();
     const count = SHOPS.filter(s => state.includeFranchises || s.model !== 'franchise').length;
     const focused = status.contains(document.activeElement) ? document.activeElement.id : null;
     const button = (id, label, onclick) => Object.assign(document.createElement('button'), { id, className: 'banner-retry-btn', textContent: label, onclick });
+    const loading = button('retryPlacesBtn', 'Loading…');
+    loading.setAttribute('aria-disabled', 'true');
     status.replaceChildren();
     status.classList.toggle('success', coverageMessage === 'ready' && !pendingListUpdate);
     if (pendingListUpdate) {
@@ -2583,14 +2564,13 @@ function boot(opts) {
         : dataLoadState.regional === 'loading' ? `Loading Metro Atlanta… ${count} spots so far`
         : dataLoadState.regional === 'failed' ? `Regional coverage unavailable · ${count} spots`
         : `Showing regional spots (${count}) · curated picks unavailable`);
-      if (dataLoadState.regional === 'failed') status.append(button('retryPlacesBtn', 'Retry', () => retryRegionalLoad()));
+      if (dataLoadState.regional === 'failed') status.append(retryInFlight ? loading : button('retryPlacesBtn', 'Retry', () => retryRegionalLoad()));
     }
     // Rebuilding drops focus from a banner button; keep keyboard users in place.
     if (focused) (document.getElementById(focused) || shopListEl.querySelector('.shop-item') || searchInput).focus({ preventScroll: true });
   }
   let listInteracted = false, pendingListUpdate = false;
-  shopListEl.addEventListener('scroll', () => { listInteracted = true; }, { passive: true });
-  shopListEl.addEventListener('pointerdown', () => { listInteracted = true; }, { passive: true });
+  for (const type of ['scroll', 'pointerdown', 'focusin']) shopListEl.addEventListener(type, () => { listInteracted = true; }, { passive: true });
 
   function hydrateRegion(placesData) {
     const fresh = ingestPlaces(placesData).filter(prepareShop);
@@ -2623,8 +2603,8 @@ function boot(opts) {
       if (focusedId) document.getElementById(focusedId)?.focus({ preventScroll: true });
     }
     // Hold the list only for someone reading it: scrolled, focused in it, or on a detail card.
-    pendingListUpdate = listInteracted && (shopListEl.scrollTop > 0 || !!state.selected || shopListEl.contains(document.activeElement));
     pendingCount = fresh.filter(passesGlobalFilters).length;
+    pendingListUpdate = pendingCount > 0 && listInteracted && (shopListEl.scrollTop > 0 || !!state.selected || shopListEl.contains(document.activeElement));
     mapGesture = false;
     if (!pendingListUpdate) renderList('hydrate');
     // Expand untouched startup/retry views only. Never move a browsing user.
@@ -2640,8 +2620,7 @@ function boot(opts) {
   retryRegionalLoad = async () => {
     if (retryInFlight) return;
     retryInFlight = true;
-    const button = document.getElementById('retryPlacesBtn');
-    if (button) { button.disabled = true; button.textContent = 'Loading…'; }
+    showCoverageStatus();
     try {
       const data = await fetchDataset('./places.json', 'places');
       if (!data) throw new Error('Regional load failed');

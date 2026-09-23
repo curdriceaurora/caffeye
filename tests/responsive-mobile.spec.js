@@ -55,7 +55,8 @@ test.describe('responsive layout', () => {
     // The banner's Retry keeps a 44 px touch target.
     const target = await page.locator('#retryPlacesBtn').evaluate(el => {
       const r = el.getBoundingClientRect(), after = getComputedStyle(el, '::after');
-      return r.height - parseFloat(after.top) - parseFloat(after.bottom);
+      // ::after is positioned against the padding box, so borders don't count.
+      return el.clientHeight - parseFloat(after.top) - parseFloat(after.bottom);
     });
     expect(target).toBeGreaterThanOrEqual(44);
   });

@@ -24,7 +24,8 @@ Pulled verbatim from the running app — these are the only label strings that e
 | Back action | `← Back to list` |
 | Detail action row | `Google Maps` · `Yelp` · `{host}` (host = `Instagram`/`Facebook`/`Linktree`/`Website`) |
 | Filter row labels | `Type` · `Useful for` (hidden on mobile) |
-| Coverage status | `Loading Metro Atlanta… {n} spots so far` · `Regional coverage unavailable · {n} spots` + Retry · `{n} more spots loaded` + Update list |
+| Coverage status | `Loading Metro Atlanta… {n} spots so far` · `Regional coverage unavailable · {n} spots` + Retry · `Retry failed · {n} spots` · `Regional coverage loaded · {n} spots` · `{n} more spots loaded` + Update list |
+| Vector preview note | `Vector map preview · Standard map` · `Vector preview unavailable. Showing the standard map · Standard map` · `Some map detail could not load. Shop search and the list are still available.` |
 | Coworking tier copy | `Coworking-ready` (excellent) · `Workable` (good) · `Quick-grab` (limited) |
 | Late-night header | `Open until midnight` (midnight tier) · `Open till 10pm+` (10pm+ tier) |
 

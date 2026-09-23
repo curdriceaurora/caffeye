@@ -39,10 +39,36 @@ function styleFor(theme) {
   };
 }
 
+// Vector-only styles live here so the default page doesn't carry them. Appended after the
+// app's styles (maplibre-gl.css is inserted before them), so these overrides win.
+const overrides = document.createElement('style');
+overrides.textContent = `
+  .map-load-status { position: absolute; z-index: 5; bottom: 28px; left: 12px; right: 12px; padding: 8px 12px; background: var(--surface); color: var(--text); border: 1px solid var(--border); border-radius: 8px; font-size: 12px; }
+  .maplibregl-ctrl-group { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+  .maplibregl-ctrl-group button + button { border-top-color: var(--border); }
+  [data-theme="dark"] .maplibregl-ctrl-icon { filter: invert(1); }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .maplibregl-ctrl-icon { filter: invert(1); } }
+  .maplibregl-ctrl-attrib { color: #222721; }
+  .renderer-note { font-size: 11px; padding: 6px 12px; background: var(--accent-soft); color: var(--text); }
+  .renderer-note a { color: inherit; }`;
+document.head.append(overrides);
+
+// One line above the map saying which renderer is showing, with a link to the standard map.
+function showNote(vector) {
+  let note = document.querySelector('.renderer-note');
+  if (!note) {
+    note = Object.assign(document.createElement('div'), { className: 'renderer-note' });
+    document.querySelector('.layout').before(note);
+  }
+  note.replaceChildren(vector ? 'Vector map preview · ' : 'Vector preview unavailable. Showing the standard map · ',
+    Object.assign(document.createElement('a'), { href: location.pathname, textContent: 'Standard map' }));
+}
+
 let fellBack = false;
 export function fallbackToLeaflet({ reason }) {
   if (fellBack) return;
   fellBack = true;
+  showNote(false);
   const mapDiv = document.getElementById('map');
   if (mapDiv) {
     mapDiv.setAttribute('data-vector-failed', reason || 'unknown');
@@ -56,17 +82,35 @@ const SRI = {
   js: 'sha384-5+cfbwT0iiub6VsQAdn6yz16nr6sDiQoHx6tm4O8OVYXHYOxcffFmCJBL0dgdvGp',
   css: 'sha384-uTttxo/aOKbdE5RlD/SPzSDoDmNvGlUYPjONi2MN/b7c9HPSvW07OIuyP7uL6jxK'
 };
-// ATL_BOUNDS from index.html padded by ~5° longitude and ~3° latitude. MapLibre's maxBounds
+// ATL_BOUNDS from index.html padded by 2° longitude and 1° latitude. MapLibre's maxBounds
 // must contain the whole viewport (Leaflet's only clamps the centre), so the exact region
-// box would block zooming out far enough to fit every spot. This still keeps the map in
-// the Southeast instead of letting it wander to other cities.
-const MAX_BOUNDS = [[-90.2, 30.1], [-78.2, 37.8]];
+// box would block zooming out far enough to fit every spot on wide or short maps.
+const MAX_BOUNDS = [[-87.05, 32.15], [-81.30, 35.75]];
 // The list waits for the renderer, so a slow or hanging CDN falls back quickly.
 const DOWNLOAD_TIMEOUT_MS = 3000;
 // Give MapLibre time to restore its own context before downgrading to Leaflet.
 const CONTEXT_RESTORE_MS = 3000;
 
 export async function loadVectorRenderer() {
+  try {
+    await load();
+  } catch (error) {
+    showNote(false);
+    throw error;
+  }
+  // The note goes in before the map exists so MapLibre starts at its final size.
+  return options => {
+    showNote(true);
+    try {
+      return createVectorRenderer(options);
+    } catch (error) {
+      showNote(false);
+      throw error;
+    }
+  };
+}
+
+async function load() {
   const isSupported = (() => {
     try {
       const canvas = document.createElement('canvas');
@@ -100,7 +144,6 @@ export async function loadVectorRenderer() {
   if (typeof maplibregl === 'undefined') {
     throw new Error('MapLibre failed to initialize');
   }
-  return createVectorRenderer;
 }
 
 function createVectorRenderer({ theme, onSelect, categories }) {

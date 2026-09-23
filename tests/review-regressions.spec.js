@@ -226,12 +226,72 @@ test('reduced motion: switching selections keeps MarkerCluster animation state b
 test('a card opened just after typing stays open without a stale closing announcement', async ({page}) => {
   await gotoHome(page);
   const id = await page.locator('.shop-item').first().getAttribute('data-id');
-  // The list still shows the old cards for the 80 ms search debounce.
-  await page.locator('#searchInput').fill('zzzz-no-such-spot');
+  const name = await page.evaluate(id => SHOPS.find(s => s.id === id).name, id);
+  // The list still shows the old cards for the 80 ms search debounce; this term still matches the card.
+  await page.locator('#searchInput').fill(name);
   await page.evaluate(id => document.querySelector(`.shop-item[data-id="${id}"]`).click(), id);
   await page.waitForTimeout(900);
   await expect(page.locator('#panel')).toHaveClass(/detail-mode/);
   await expect(page.locator('#srAnnounce')).not.toContainText('Closed details');
+});
+
+test('a stale card that the new search excludes does not open', async ({page}) => {
+  await gotoHome(page);
+  const id = await page.locator('.shop-item').first().getAttribute('data-id');
+  await page.locator('#searchInput').fill('zzzz-no-such-spot');
+  await page.evaluate(id => document.querySelector(`.shop-item[data-id="${id}"]`)?.click(), id);
+  await page.waitForTimeout(500);
+  await expect(page.locator('#panel')).not.toHaveClass(/detail-mode/);
+  expect(await page.evaluate(() => state.selected)).toBeNull();
+});
+
+test('Home during a reveal zoom returns to the full-region frame', async ({page}) => {
+  await gotoHome(page);
+  const zoom = await page.evaluate(() => map.getZoom());
+  const id = await clusteredAtSixteen(page);
+  // The first reveal step jumps to zoom 16 without animating; Home lands during the next, animated step.
+  await page.evaluate(id => new Promise(resolve => {
+    map.once('zoomanim', () => { document.getElementById('brandHomeBtn').click(); resolve(); });
+    document.querySelector(`.shop-item[data-id="${id}"]`).click();
+  }), id);
+  await expect.poll(() => page.evaluate(() => map.getZoom())).toBe(zoom);
+  await page.waitForTimeout(800);
+  expect(await page.evaluate(() => map.getZoom())).toBe(zoom);
+});
+
+test('Back in the frame before a queued reveal zoom starts still restores the camera', async ({page}) => {
+  await gotoHome(page);
+  const camera = await page.evaluate(() => ({lat: map.getCenter().lat, lng: map.getCenter().lng, zoom: map.getZoom()}));
+  const id = await clusteredAtSixteen(page);
+  await page.evaluate(id => {
+    // Leaflet queues an animated zoom for one frame before it starts; press Back inside that frame.
+    const setView = map.setView;
+    let done = false;
+    map.setView = function (center, zoom, options) {
+      const queued = !done && options?.animate && zoom !== this.getZoom() && Math.abs(zoom - this.getZoom()) <= 4;
+      const result = setView.call(this, center, zoom, options);
+      if (queued) { done = true; queueMicrotask(() => document.getElementById('backBtn').click()); }
+      return result;
+    };
+    document.querySelector(`.shop-item[data-id="${id}"]`).click();
+  }, id);
+  await page.waitForTimeout(1500);
+  expect(await page.evaluate(() => state.selected)).toBeNull();
+  expect(await page.evaluate(() => map.getZoom())).toBe(camera.zoom);
+  expect(await page.evaluate(c => map.distance(map.getCenter(), [c.lat, c.lng]), camera)).toBeLessThan(2);
+});
+
+test('a wheel zoom during a reveal is not pulled back in', async ({page}) => {
+  await gotoHome(page);
+  const id = await clusteredAtSixteen(page);
+  await page.locator(`.shop-item[data-id="${id}"]`).click();
+  await page.locator('#map').hover();
+  await page.mouse.wheel(0, 400);
+  await page.waitForTimeout(400);
+  const afterWheel = await page.evaluate(() => map.getZoom());
+  expect(afterWheel).toBeLessThan(16);
+  await page.waitForTimeout(1500);
+  expect(await page.evaluate(() => map.getZoom())).toBe(afterWheel);
 });
 
 test('missing MarkerCluster produces an actionable load alert', async ({page}) => {
@@ -262,6 +322,56 @@ test('retry reports failure and success in the same counted status node', async 
   expect(await page.evaluate(() => originalStatus === document.querySelector('#dataStatusBanner'))).toBe(true);
   // The success confirmation must not permanently take list space.
   await expect(page.locator('#dataStatusBanner')).toBeHidden({timeout: 8000});
+});
+
+test('keyboard: Retry comes before the list and keeps focus through failure and success', async ({page}) => {
+  await page.route('**/places.json', route => route.abort());
+  await page.goto('/');
+  await expect(page.locator('#retryPlacesBtn')).toBeVisible();
+  expect(await page.evaluate(() => !!(document.getElementById('retryPlacesBtn').compareDocumentPosition(document.querySelector('.shop-item')) & Node.DOCUMENT_POSITION_FOLLOWING))).toBe(true);
+  await page.locator('#retryPlacesBtn').focus();
+  await page.keyboard.press('Enter');
+  await expect(page.locator('#dataStatusBanner')).toContainText('Retry failed');
+  await expect(page.locator('#retryPlacesBtn')).toBeFocused();
+  await page.unroute('**/places.json');
+  await page.keyboard.press('Enter');
+  await expect(page.locator('#dataStatusBanner')).toContainText('Regional coverage loaded');
+  expect(await page.evaluate(() => document.activeElement.classList.contains('shop-item'))).toBe(true);
+});
+
+test('keyboard-only readers get the list hold', async ({page}) => {
+  let release;
+  const pending = new Promise(r => release = r);
+  await page.route('**/places.json', async route => { await pending; await route.continue(); });
+  try {
+    await page.goto('/');
+    await expect(page.locator('.shop-item').first()).toBeVisible();
+    await page.locator('.shop-item').nth(2).focus();
+    release();
+    await page.waitForFunction(() => dataLoadState.regional === 'ready');
+    await expect(page.getByRole('button', {name: 'Update list', exact: true})).toBeVisible();
+  } finally { release(); }
+});
+
+test('no Update list prompt when the regional data adds nothing in scope', async ({page}) => {
+  let release;
+  const pending = new Promise(r => release = r);
+  await page.route('**/places.json', async route => {
+    await pending;
+    const data = await (await route.fetch()).json();
+    data.places = data.places.filter(p => p.model === 'franchise'); // hidden in the default Indie view
+    await route.fulfill({json: data});
+  });
+  try {
+    await page.goto('/');
+    await expect(page.locator('.shop-item').first()).toBeVisible();
+    await page.locator('#shopList').hover();
+    await page.mouse.wheel(0, 300);
+    await page.waitForTimeout(150);
+    release();
+    await page.waitForFunction(() => dataLoadState.regional === 'ready');
+    await expect(page.getByRole('button', {name: 'Update list', exact: true})).toHaveCount(0);
+  } finally { release(); }
 });
 
 async function holdRegionWhileReading(page, {abort = false} = {}) {
@@ -580,7 +690,8 @@ test('vector: a context lost in a hidden tab waits for visibility before falling
 });
 
 test('vector: the regional fit shows every spot at phone and desktop sizes; the map stays in the Southeast', async ({page}) => {
-  for (const size of [{width: 1280, height: 800}, {width: 375, height: 750}, {width: 320, height: 568}]) {
+  // 821x600 is the narrowest desktop layout. Below about 150 px of map height both renderers hit minZoom first.
+  for (const size of [{width: 1280, height: 800}, {width: 821, height: 600}, {width: 375, height: 750}, {width: 320, height: 568}]) {
     await page.setViewportSize(size);
     await vectorReady(page);
     await page.waitForFunction(() => !map.isMoving());
@@ -589,7 +700,7 @@ test('vector: the regional fit shows every spot at phone and desktop sizes; the 
   }
   await page.setViewportSize({width: 1280, height: 800});
   await page.evaluate(() => map.jumpTo({center: [-74.0, 40.7], zoom: 10}));
-  expect(await page.evaluate(() => map.getCenter().lng)).toBeLessThan(-78.2);
+  expect(await page.evaluate(() => map.getCenter().lng)).toBeLessThan(-81.3);
   await page.evaluate(() => map.jumpTo({center: [-84.3, 33.85], zoom: 8}));
   await page.locator('[data-chip-key="cat-Tea/Boba"]').click();
   const tea = await page.evaluate(() => SHOPS.filter(s => s.category === 'Tea/Boba' && s.model !== 'franchise').length);
@@ -657,13 +768,32 @@ test('vector: a list-mode fallback floors the zoom and keeps the list scroll', a
   await page.evaluate(() => map.jumpTo({center: [-84.2, 33.9], zoom: 10.6}));
   await page.waitForTimeout(300);
   await page.locator('#shopList').evaluate(el => el.scrollTop = 300);
-  const scroll = await page.locator('#shopList').evaluate(el => el.scrollTop);
-  expect(scroll).toBeGreaterThan(0);
+  // The card crossing the top edge is the one the list keeps in place.
+  const topCard = () => { const list = document.getElementById('shopList'); const li = [...list.querySelectorAll('.shop-item')].find(li => li.offsetTop + li.offsetHeight > list.scrollTop); return {id: li.dataset.id, offset: list.scrollTop - li.offsetTop}; };
+  const top = await page.evaluate(topCard);
   await page.evaluate(loseContext);
   await expect.poll(() => page.evaluate(() => window.renderer), {timeout: 10000}).toBe('leaflet');
   // MapLibre 10.6 is Leaflet 11.6; flooring to 11 keeps everything the user could see.
   expect(await page.evaluate(() => map.getZoom())).toBe(11);
-  expect(await page.locator('#shopList').evaluate(el => el.scrollTop)).toBe(scroll);
+  // The list grows for the wider view; the card the user was reading stays at the top.
+  expect(await page.evaluate(topCard)).toEqual(top);
+});
+
+test('vector: a fallback keeps focus on a detail link or moves it from the canvas to the map', async ({page}) => {
+  await vectorReady(page);
+  await page.locator('.shop-item').first().click();
+  await page.waitForFunction(() => !map.isMoving());
+  await page.locator('#detailView .actions a').first().focus();
+  const link = await page.evaluate(() => document.activeElement.textContent);
+  await page.evaluate(loseContext);
+  await expect.poll(() => page.evaluate(() => window.renderer), {timeout: 10000}).toBe('leaflet');
+  expect(await page.evaluate(() => document.activeElement.textContent)).toBe(link);
+  await page.goto('/?renderer=vector');
+  await page.waitForFunction(() => window.mapReady && dataLoadState.regional === 'ready' && window.renderer === 'vector');
+  await page.locator('.maplibregl-canvas').focus();
+  await page.evaluate(loseContext);
+  await expect.poll(() => page.evaluate(() => window.renderer), {timeout: 10000}).toBe('leaflet');
+  expect(await page.evaluate(() => document.activeElement.classList.contains('leaflet-container'))).toBe(true);
 });
 
 test('vector: Back after a fallback restores the pre-selection camera in Leaflet zoom', async ({page}) => {
