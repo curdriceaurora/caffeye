@@ -1916,6 +1916,7 @@ function boot(opts) {
   }
 
   function renderList(source) {
+    if (source === 'viewport' && state.selected) return;
     // A held reading list survives programmatic moves; a map gesture, filter or search refreshes it.
     if (pendingListUpdate && (source === 'viewport' || source === 'detail-back') && !mapGesture) return;
     if (source === 'filter' || source === 'search') listInteracted = false;

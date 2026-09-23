@@ -312,6 +312,8 @@ test('hydration with a detail open keeps the reader\'s list for Back', async ({p
     await page.locator(`.shop-item[data-id="${id}"]`).click();
     const scroll = await page.evaluate(() => state.lastScrollTop);
     expect(scroll).toBeGreaterThan(0);
+    // Read the detail for a moment first: the selection's camera move must not rewrite the held list.
+    await page.waitForTimeout(400);
     release();
     await page.waitForFunction(() => dataLoadState.regional === 'ready');
     await page.locator('#backBtn').click();
