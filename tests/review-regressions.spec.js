@@ -823,7 +823,7 @@ test('vector: a hanging renderer download falls back to the standard map within 
 // weighted score, so it must not inherit the score's accent color and 700 weight.
 test('"no rating" is styled as muted text, not as a score', async ({page}) => {
   await gotoHome(page);
-  const name = await page.evaluate(() => SHOPS.find(s => !s.ratingNum && s.model === 'independent')?.name);
+  const name = await page.evaluate(() => SHOPS.find(s => !s.rated && s.model === 'independent')?.name);
   test.skip(!name, 'dataset has no unrated independent venue');
   await page.locator('#searchInput').fill(name);
   await page.waitForTimeout(300);
@@ -953,4 +953,42 @@ test('every third-party asset on the default path is integrity-checked and execu
   // A wrong hash blocks the resource silently, so assert the code actually ran.
   expect(await page.evaluate(() => typeof L.markerClusterGroup === 'function')).toBe(true);
   expect(await page.evaluate(() => !!document.querySelector('.leaflet-cluster-anim, .coffee-cluster') || clusterGroup._featureGroup != null)).toBe(true);
+});
+
+// A later declaration holding var() is parsed, then substituted; if the result does not
+// parse it is invalid at computed-value time and the property takes its INITIAL value,
+// not the declaration above it. So the lifted colors must sit behind @supports, with the
+// raw hex in the base rule, or engines without relative color syntax lose the bar, the
+// dot and the header rule entirely.
+test('the category color degrades to the raw hex without relative color syntax', async ({page}) => {
+  await gotoHome(page);
+  const css = await page.evaluate(() => {
+    const inSupports = new Set(), base = new Set();
+    for (const sheet of document.styleSheets) {
+      let rules;
+      try { rules = sheet.cssRules; } catch { continue; }
+      // CSS Nesting gives every CSSStyleRule a (usually empty) cssRules list, so a
+      // style rule has to be collected first and only then recursed into.
+      const walk = (list, guarded) => {
+        for (const rule of list) {
+          if (rule.style) {
+            for (const prop of ['box-shadow', 'border-top-color', 'background', 'border-top']) {
+              const v = rule.style.getPropertyValue(prop);
+              if (v && v.includes('--venue-color')) (guarded ? inSupports : base).add(`${rule.selectorText}|${prop}|${v.includes('oklch(from')}`);
+            }
+          }
+          if (rule.cssRules && rule.cssRules.length) walk(rule.cssRules, guarded || (rule.conditionText || '').includes('oklch(from'));
+        }
+      };
+      walk(rules, false);
+    }
+    return {base: [...base], inSupports: [...inSupports]};
+  });
+  // Nothing outside an @supports guard may depend on relative color syntax...
+  expect(css.base.filter(d => d.endsWith('|true')), JSON.stringify(css.base)).toEqual([]);
+  // ...and all three surfaces keep a raw-hex declaration to fall back to.
+  for (const sel of ['.shop-item.active', '.detail-header', '.detail-cat .dot']) {
+    expect(css.base.some(d => d.startsWith(sel + '|')), `${sel} has no unguarded declaration`).toBe(true);
+    expect(css.inSupports.some(d => d.startsWith(sel + '|')), `${sel} is not enhanced`).toBe(true);
+  }
 });

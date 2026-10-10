@@ -154,8 +154,8 @@ recovery, not just the threshold function in isolation.
 | T5.5 | R5.4 | Inspect any list item. | Shows: colored circular icon tile, name, meta row, ≤ 3 tags. |
 | T5.5b | R5.4 | Hard reload, no chips, no search (all shops in viewport). `js> document.querySelector('.shop-item .score').textContent === '◆ ' + Math.max(...SHOPS.filter(s => state.includeFranchises \|\| s.model !== 'franchise').map(s => s.weightedRating)).toFixed(1)` | `true` |
 | T5.5c | R5.4 | `js> [...document.querySelectorAll('.shop-item .score')].map(e => +e.textContent.slice(2)).every((v, i, a) => i === 0 \|\| a[i-1] >= v)` | `true` — displayed scores never increase down the list (order uses full precision, display rounds). |
-| T5.5d | R5.4 | `js> [...document.querySelectorAll('.shop-meta')].every(m => !m.innerHTML.includes('★')) && document.querySelector('.results-meta .score-legend').textContent === '◆ = weighted score'` | `true` — no ★ anywhere on a card (attributes included); the legend is present. |
-| T5.6 | R5.5 | `js> document.querySelector('.shop-item .shop-icon-tile').style.background` | Non-empty (the category color); no category stripe is required. |
+| T5.5d | R5.4 | `js> [...document.querySelectorAll('.shop-item')].every(m => !m.innerHTML.includes('★')) && document.querySelector('.results-meta .score-legend').textContent === '◆ = weighted score'` | `true` — no ★ anywhere on a card (the score column included, not just `.shop-meta`); the legend is present. |
+| T5.6 | R5.5 | `js> getComputedStyle(document.querySelector('.shop-item .shop-icon-tile')).backgroundColor` | The category color. The tile reads `--venue-color` from its card rather than carrying an inline background. |
 | T5.7 | R5.6 | Filter to "Meeting room". `js> document.getElementById('resultsCount').textContent` | `"18"` with only Meeting room selected, search cleared, and full-region bounds (independent mode); `"22"` with franchises. Baseline fallback: `"0"` independent / `"3"` with franchises. Counts must equal the in-scope `cw.hasMeetingRoom` predicate, not raw JSON totals. |
 | T5.7b | R5.6 | Hard reload (all shops in viewport). `js> document.getElementById('resultsLabel').textContent` | `" spots"` |
 | T5.7c | R5.6 | Zoom in until fewer than `SHOPS.length` shops are visible in the map. `js> document.getElementById('resultsLabel').textContent` | `" in view"` |
@@ -199,7 +199,7 @@ recovery, not just the threshold function in isolation.
 
 | ID | Trace | Test | Pass |
 |---|---|---|---|
-| T8.1 | R8.1 | Window width ≥ 821 px. | Map left + 380 px panel right. |
+| T8.1 | R8.1 | Window width ≥ 821 px. | Map left + 400 px panel right, both inside the `<main>` landmark. |
 | T8.2 | R8.2 | Width 390 px (mobile). | Column layout: map on top (`clamp(130px, 22vh, 185px)`, 125 px at ≤ 600 px viewport height, 120 px at ≤ 500 px), panel below filling remainder. |
 | T8.3 | R8.3 | At 390 px width, chip computed font-size. | `11.5px`. |
 | T8.4 | R8.4 | At 390 px width: `js> getComputedStyle(document.querySelector('footer')).display` | `"none"`. |
@@ -213,7 +213,7 @@ recovery, not just the threshold function in isolation.
 |---|---|---|---|
 | T9.1 | R9.1 | File size of `index.html`. | `≤ 200 KB (204,800 bytes)`. |
 | T9.2 | R9.2 | Load with DevTools console open. Click around, zoom, filter. | No errors logged. |
-| T9.3 | R9.3 | Network tab on hard reload. | Leaflet CSS/JS + MarkerCluster CSS/JS + Google Fonts all return 200; the two SRI'd files match their hashes. With `?renderer=vector`, MapLibre JS/CSS carry `integrity` and load. |
+| T9.3 | R9.3 | Network tab on hard reload. | Leaflet CSS/JS + MarkerCluster CSS/JS + Google Fonts all return 200; all five non-font files (Leaflet CSS/JS, both MarkerCluster stylesheets, the injected MarkerCluster script) match their hashes. With `?renderer=vector`, MapLibre JS/CSS carry `integrity` and load. |
 | T9.4 | R9.4 | `python3 -m http.server 8765 --directory public`, then open the local URL. | App and JSON load with no build step. |
 | T9.5 | R9.5 | DevTools → Performance: record a list↔detail click and a zoom/pan. | Frames row stays green (60fps). No `Layout` or `Paint` blocks during the panel transition. Compositor thread handles the slide. |
 | T9.6 | R9.6 | DevTools → Network: block `places.json`, hard reload. | Baseline boots with a `#dataStatusBanner` (`role="status"`) showing the live baseline count; unblocking + Retry ingests regional data and confirms success in the same status node. |

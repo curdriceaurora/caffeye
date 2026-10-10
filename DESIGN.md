@@ -69,7 +69,7 @@ From `CATS` in `public/index.html`. Each category has both a color and an emoji 
 | Dessert Cafe | `#c66980` | 🍰 | `--c-dessert` |
 | Specialty | `#7b6cb8` | ✦ | `--c-specialty` |
 
-Category hexes are pin colors, chosen to read against the map. Drawn as a thin bar on a panel surface they need a lightness correction, or the darker categories vanish in dark mode and the paler ones in light mode. Selection bars therefore render as `oklch(from var(--venue-color) calc(l + var(--venue-dl)) c h)` — hue and chroma intact, lightness shifted down 0.12 in light mode and up 0.22 in dark. Every category then clears the 3:1 WCAG non-text minimum on both the selected-row and detail-header surfaces (lowest: Bakery+Cafe 3.47 light, Coffee 3.68 dark). Browsers without relative color syntax fall back to the raw hex.
+Category hexes are pin colors, chosen to read against the map. Drawn as a thin bar on a panel surface they need a lightness correction, or the darker categories vanish in dark mode and the paler ones in light mode. Selection bars therefore render as `oklch(from var(--venue-color) calc(l + var(--venue-dl)) c h)` — hue and chroma intact, lightness shifted down 0.12 in light mode and up 0.22 in dark. Every category then clears the 3:1 WCAG non-text minimum on both the selected-row and detail-header surfaces (lowest: Bakery+Cafe 3.47 light, Coffee 3.68 dark). The lifted values sit inside `@supports (color: oklch(from red l c h))`, with the raw hex in the base rule. The guard is required, not tidiness: a later declaration containing `var()` that fails to parse after substitution is invalid at computed-value time, so it takes the property's *initial* value — `box-shadow: none`, `border-top-color: currentColor` — rather than the declaration above it.
 
 ### Feature theme colors
 
@@ -291,4 +291,4 @@ These come from product principles and prior incidents — don't re-introduce th
 
 ## September 2026 field-guide refinement
 
-The list leads with the name and separately aligned weighted score, then location and category. Existing amenity/editorial tags use body text contrast. The desktop panel is 400 px; phone density and map height remain unchanged. The detail header repeats the selected category color without adding another navigation step. See `tasks/design-exploration-plan.md` and `tasks/design-exploration-results.md`.
+The list leads with the name and separately aligned weighted score, then location and category. Existing amenity/editorial tags use body text contrast. The desktop panel is 400 px; phone density and map height remain unchanged. The detail header repeats the selected category color without adding another navigation step. This direction was chosen from a four-variant exploration evaluating scanability, visual hierarchy, and card density.

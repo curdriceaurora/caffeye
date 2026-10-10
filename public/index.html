@@ -413,7 +413,7 @@
   .load-more-btn:hover { background: var(--accent-soft); }
   .shop-item:hover { background: var(--surface-alt); }
   .shop-item:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; background: var(--surface-alt); }
-  .shop-item.active { background: var(--accent-soft); box-shadow: inset 3px 0 var(--venue-color); box-shadow: inset 3px 0 oklch(from var(--venue-color) calc(l + var(--venue-dl)) c h); }
+  .shop-item.active { background: var(--accent-soft); box-shadow: inset 3px 0 var(--venue-color); }
   .shop-name {
     min-width: 0; overflow-wrap: anywhere;
     font-weight: 700; font-size: 14px;
@@ -456,14 +456,19 @@
   }
   .back-btn:hover { color: var(--text); }
 
-  .detail-header { padding: 16px 20px 14px; border-bottom: 1px solid var(--border); background: var(--surface-alt); border-top: 3px solid var(--venue-color); border-top-color: oklch(from var(--venue-color) calc(l + var(--venue-dl)) c h); }
+  .detail-header { padding: 16px 20px 14px; border-bottom: 1px solid var(--border); background: var(--surface-alt); border-top: 3px solid var(--venue-color); }
   .detail-cat {
     font-size: 11px; color: var(--muted);
     text-transform: uppercase; letter-spacing: 0.06em;
     font-weight: 600; display: inline-flex; align-items: center; gap: 6px;
     margin-bottom: 6px;
   }
-  .detail-cat .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--venue-color); background: oklch(from var(--venue-color) calc(l + var(--venue-dl)) c h); }
+  .detail-cat .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--venue-color); }
+  @supports (color: oklch(from red l c h)) {
+    .shop-item.active { box-shadow: inset 3px 0 oklch(from var(--venue-color) calc(l + var(--venue-dl)) c h); }
+    .detail-header { border-top-color: oklch(from var(--venue-color) calc(l + var(--venue-dl)) c h); }
+    .detail-cat .dot { background: oklch(from var(--venue-color) calc(l + var(--venue-dl)) c h); }
+  }
   .detail-name {
     font-family: 'Inter', sans-serif;
     font-weight: 700; font-size: 19px; line-height: 1.2;
