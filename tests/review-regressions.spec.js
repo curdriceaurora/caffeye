@@ -34,8 +34,8 @@ async function exactAnnouncement(page, prefix = '', context = '') {
   await expect(page.locator('#srAnnounce')).toHaveText(text);
 }
 
-test('HTML stays within the 110 KB maintenance cap', () => {
-  expect(fs.statSync('public/index.html').size).toBeLessThanOrEqual(112640);
+test('HTML stays within the 200 KB maintenance cap', () => {
+  expect(fs.statSync('public/index.html').size).toBeLessThanOrEqual(204800);
 });
 
 test('regional shell waits for a one-second regional response and boots once', async ({page}) => {

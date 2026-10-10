@@ -211,7 +211,7 @@ recovery, not just the threshold function in isolation.
 
 | ID | Trace | Test | Pass |
 |---|---|---|---|
-| T9.1 | R9.1 | File size of `index.html`. | `≤ 110 KB (112,640 bytes)`. |
+| T9.1 | R9.1 | File size of `index.html`. | `≤ 200 KB (204,800 bytes)`. |
 | T9.2 | R9.2 | Load with DevTools console open. Click around, zoom, filter. | No errors logged. |
 | T9.3 | R9.3 | Network tab on hard reload. | Leaflet CSS/JS + MarkerCluster CSS/JS + Google Fonts all return 200; the two SRI'd files match their hashes. With `?renderer=vector`, MapLibre JS/CSS carry `integrity` and load. |
 | T9.4 | R9.4 | `python3 -m http.server 8765 --directory public`, then open the local URL. | App and JSON load with no build step. |

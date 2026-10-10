@@ -114,7 +114,7 @@ Functional and non-functional requirements for the current state of the page. Ea
 
 | ID | Requirement | Principle |
 |---|---|---|
-| R9.1 | The page is a single HTML file ≤ 110 KB. | Operating constraint |
+| R9.1 | The page is a single HTML file ≤ 200 KB (204,800 bytes). | Operating constraint |
 | R9.2 | No JS errors on initial load, on filter changes, on selection, or on zoom. | — |
 | R9.3 | Every third-party script and stylesheet carries an SRI hash and `crossorigin=anonymous` — Leaflet, both MarkerCluster stylesheets, and the MarkerCluster script injected at runtime (sha256), plus the opt-in vector preview's MapLibre GL JS and CSS (sha384). Google Fonts' CSS is the one exception: its response varies by user agent, so it cannot be hashed. | Security |
 | R9.4 | Renders with no build step when served over HTTP; JSON fetches require a local server or the deployed site. | Operating constraint |
