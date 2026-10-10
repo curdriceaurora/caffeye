@@ -39,15 +39,22 @@ CSS variables on `:root` in `public/index.html`:
 
 | Token | Value | Used for |
 |---|---|---|
-| `--bg` | `#f7f6f2` | App background (cream) |
-| `--surface` | `#ffffff` | Cards, header, panel |
-| `--surface-alt` | `#faf9f5` | Hover surfaces |
-| `--text` | `#1f1f1f` | Body text |
-| `--muted` | `#6f6f6f` | Secondary text, captions, counts |
-| `--border` | `#e3e0d6` | Subtle dividers |
-| `--border-strong` | `#c9c4b4` | Action button borders |
-| `--accent` | `#7a5635` | Brand accent (warm coffee brown) |
-| `--accent-soft` | `#ebe1d2` | Selected list item background, callouts |
+| `--bg` | `oklch(97% 0.008 75)` | App background (cream) |
+| `--surface` | `oklch(99.5% 0.006 75)` | Cards, header, panel |
+| `--surface-alt` | `oklch(98% 0.007 75)` | Hover surfaces |
+| `--text` | `oklch(17% 0.005 70)` | Body text |
+| `--muted` | `oklch(50% 0.005 70)` | Secondary text, captions, counts |
+| `--border` | `oklch(89% 0.012 78)` | Subtle dividers |
+| `--border-strong` | `oklch(80% 0.016 78)` | Action button borders |
+| `--accent` | `oklch(43% 0.10 52)` | UI accent (warm coffee brown) |
+| `--accent-soft` | `oklch(91% 0.025 70)` | Selected list item background, callouts |
+| `--venue-dl` | `-0.12` (dark: `0.22`) | OKLCH lightness shift applied to the category-color selection bar |
+
+### Brand and theme roles
+
+The Bean Eye identity uses forest `#293F34`, gold `#DCAF59`, paper `#F4F3ED`, ink `#222721`, and muted `#60645F`. These brand tokens coexist with the UI surface tokens above. Gold is not small text on a light surface. Preserve existing logo artwork and category colors.
+
+Dark mode uses background `#181e19`, surface `#212822`, alternate surface `#28322a`, text `#F4F3ED`, muted `#9da29b`, border `#2e3930`, strong border `#3f4e42`, gold accent at 12 % for `--accent-soft`, and `--venue-dl: 0.22`. The selected-row tint is capped at 12 % because muted meta text on top of it falls under 4.5:1 above that. Explicit light/dark and system preference must remain consistent.
 
 ### Category colors (the playful layer)
 
@@ -61,6 +68,8 @@ From `CATS` in `public/index.html`. Each category has both a color and an emoji 
 | Tea/Boba | `#5b8a72` | 🧋 | `--c-tea` |
 | Dessert Cafe | `#c66980` | 🍰 | `--c-dessert` |
 | Specialty | `#7b6cb8` | ✦ | `--c-specialty` |
+
+Category hexes are pin colors, chosen to read against the map. Drawn as a thin bar on a panel surface they need a lightness correction, or the darker categories vanish in dark mode and the paler ones in light mode. Selection bars therefore render as `oklch(from var(--venue-color) calc(l + var(--venue-dl)) c h)` — hue and chroma intact, lightness shifted down 0.12 in light mode and up 0.22 in dark. Every category then clears the 3:1 WCAG non-text minimum on both the selected-row and detail-header surfaces (lowest: Bakery+Cafe 3.47 light, Coffee 3.68 dark). Browsers without relative color syntax fall back to the raw hex.
 
 ### Feature theme colors
 
@@ -85,22 +94,23 @@ Type scale (every size that exists in the codebase):
 |---|---|
 | Brand wordmark | 22 / 800 |
 | Detail name (`<h2>`) | 19 / 700 |
-| Shop name (list) | 14 / 600 |
+| Shop name (list) | 14 / 700; 13 / 700 on mobile |
 | Body / detail text | 13.5 / 400 |
 | Detail meta, chip | 12.5 / 500 |
 | Freshness, shop meta | 12 / 400 |
 | Detail muted, tags | 11.5 / 400 |
 | Section labels (uppercase) | 11 / 600 |
-| Counts, search input on mobile | 10.5–11 / 500 |
+| Counts | 10–11 / 500 |
+| Search input on mobile | 16 / 400 |
 | Footer | 11 (10.5 mobile) / 400 |
 
 Uppercase labels use `letter-spacing: 0.06em`. There are no italic styles.
 
 ### Spacing & radii
 
-- **Spacing scale:** 2, 4, 6, 8, 10, 12, 14, 16, 20 px. No values outside this set.
+- **Spacing:** small increments from 2–20 px; actual component and responsive values in `public/index.html` take precedence.
 - **Radii:** 4 px (pill tags, callouts), 6 px (chips, search input, action buttons), 50% (pin, dot, icon tile, cluster bubble).
-- **Borders:** 1 px solid `--border` for surfaces; 2–3 px for pin outlines; 3 px solid `--accent` for the selected-item left bar.
+- **Borders:** 1 px solid `--border` for surfaces; 2–3 px for pin outlines; 3 px inset category-color bar for the selected item.
 
 ### Shadows
 
@@ -142,19 +152,20 @@ Uppercase labels use `letter-spacing: 0.06em`. There are no italic styles.
 
 ### List item
 
-- Padding `10px 16px 10px 13px`, 1 px bottom border, 3 px transparent left border that takes the category color.
-- Hover: `--surface-alt`. Active: `--accent-soft`.
-- Three lines: name with category icon tile, meta row (category · ★ rating (count) · neighborhood), up to three compact tags separated by `·`.
-- Each item is `role="button"`, `tabindex="0"`, `data-id="{cityslug}-{shopslug}"` for keyboard nav.
+- Desktop padding `10px 16px`, 1 px bottom border. Selected row uses an inset 3 px category-color bar. Mobile padding remains `5px 12px`.
+- Hover: `--surface-alt`. Active: `--accent-soft` with the category-colored inset bar; visible keyboard focus uses `--accent`.
+- The active mark survives Back — closing a detail card leaves its row marked (`state.viewedId`), so returning to the list shows where you were. A new filter, search or chip clears it; viewport changes and pagination preserve it. One helper (`setMarked`) applies the mark everywhere, including to rows rebuilt after a pan, and pairs the colored bar with `aria-current="true"`.
+- Name with category icon tile and a weighted score in a separate right-aligned column; location/category and model/curation provenance below; up to three existing verified tags separated by a `--muted` `·`. Unknown amenities do not become claims. Model badges are `#215c3a` (indie) and `#434b59` (franchise) in light mode so they clear 4.5:1 on a selected row, with dedicated dark-mode overrides.
+- Each item is `role="button"`, `tabindex="0"`, `data-id="{cityslug}-{shopslug}"` for keyboard nav. The accessible name is `name, category in neighborhood, score N` — or `, no rating`, matching what the card shows.
 
 ### Icon tile (list)
 
-- 22 × 22 px circle, category-color background, white emoji at 11.5 px, soft shadow. 6 px gap before the name.
+- 22 × 22 px circle, `--venue-color` background, white emoji at 11.5 px, soft shadow. 6 px gap before the name.
 
 ### Detail card
 
 - Replaces the list view via `.panel.detail-mode` class.
-- Header: 16 × 20 px padding, category dot + neighborhood (uppercase 11 px), shop name (19 px / 700), star line (`★ 4.9 · 190+ reviews`).
+- Header: 16 × 20 px padding, category dot + neighborhood (uppercase 11 px), shop name (19 px / 700), weighted score plus its explicit label. Google stars and review counts appear beneath as provenance. A category-color top rule links the detail to its map pin.
 - Body sections: `Best for`, `Known for`, `Location & hours`, `Coworking`, `Late-night` — each preceded by an 11 px uppercase letter-spaced label.
 - Pill tags (11.5 px, 4 px radius) for loved-items and best-for badges.
 - Meeting-room callout: 10 px padding, `--accent-soft` background, 3 px `--accent` left border, 10.5 px / 700 uppercase label.
@@ -168,7 +179,7 @@ Uppercase labels use `letter-spacing: 0.06em`. There are no italic styles.
 ### Filter bar
 
 - Background `--surface`, 10 × 20 px padding, bottom border.
-- Three rows: City (hidden until `cities.length > 1`), Type, Useful for.
+- Two rows: Type and Useful for. Geography is controlled through map navigation and search; location-chip rows are omitted.
 - Row label is 11 px uppercase muted at 70 px min-width; hidden below 820 px.
 
 ## Patterns
@@ -216,9 +227,9 @@ Before data arrives, the brand reads “Metro Atlanta” and the freshness line 
 
 **Hierarchy** (top-down weight):
 
-1. The map — claims the largest pixel area on every viewport. Pins are the most chromatic element on the page.
+1. The map — largest content area on desktop; capped on phones to prioritize list density. Pins carry category color.
 2. The filter bar — drives both the map and the list.
-3. The right-side list — scrollable, secondary to the map but always visible alongside.
+3. The list — scrollable beside the map on desktop, below it on phones.
 4. The detail card — replaces the list in place, never the map.
 5. Header and footer — chrome, smallest visual weight.
 
@@ -254,7 +265,7 @@ Every UI surface maps to a slice of this record. Don't render anything that isn'
 ## Responsive rules
 
 ### Desktop (≥ 821 px)
-Map on the left flex-grow, 380 px panel on the right, 1 px vertical divider.
+Map on the left flex-grow, 400 px panel on the right, 1 px vertical divider.
 
 ### Mobile (≤ 820 px)
 - Layout flips to column. Map uses `clamp(130px, 22vh, 185px)` (125 px on short screens), panel `flex: 1` taking the rest.
@@ -262,7 +273,7 @@ Map on the left flex-grow, 380 px panel on the right, 1 px vertical divider.
 - Filter bar shrinks: padding 4 × 12 px, chip padding 2 × 7 px, chip font 11.5 px, label hidden.
 - Filter rows become horizontal-scroll (`overflow-x: auto`, hidden scrollbar).
 - Footer hidden.
-- Shop item compresses: padding 7 × 14 px, icon tile 18 × 18 px, name 13 px.
+- Shop item compresses: padding 5 × 12 px, icon tile 18 × 18 px, name 13 px / 700. Score remains in the right column.
 
 ## Don'ts
 
@@ -271,9 +282,13 @@ These come from product principles and prior incidents — don't re-introduce th
 - **No sort dropdown.** The default beats the control. (PRODUCT §2)
 - **No preview popup on pin click.** One tap to the answer. (PRODUCT §1)
 - **No floating action buttons, no modals, no toasts.** The detail card is the only secondary surface.
-- **No approximate coordinates.** Coords come from Apple Maps via `CLGeocoder` only. Linear interpolation has put pins in residential subdivisions before.
+- **No approximate coordinates.** Curated seed addresses use Apple Maps via `CLGeocoder`; generated regional records use Google Places coordinates.
 - **No emoji outside the category / feature system.** No decorative emoji in copy.
 - **No additional fonts.** Inter + Fraunces is the entire family.
 - **No color outside the listed tokens.** Anywhere a new accent feels needed, it's already in `CATS` or `--c-late`/`--c-work`.
-- **No image assets in `public/`.** The only file under `public/` other than `index.html` and `shops.json` is what wrangler will publish — anything you drop there ships publicly.
+- **Only intentional public assets in `public/`.** Brand logos, icons, social images, manifest, datasets, and renderer code are published there. Keep prototypes, screenshots, tooling, and private data outside it.
 - **No "Past midnight" label.** Most "midnight" shops close *at* 12 am. The label is **Until midnight**. (Truth in labeling.)
+
+## September 2026 field-guide refinement
+
+The list leads with the name and separately aligned weighted score, then location and category. Existing amenity/editorial tags use body text contrast. The desktop panel is 400 px; phone density and map height remain unchanged. The detail header repeats the selected category color without adding another navigation step. See `tasks/design-exploration-plan.md` and `tasks/design-exploration-results.md`.

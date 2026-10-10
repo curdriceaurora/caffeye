@@ -42,8 +42,8 @@
 <meta name="twitter:description" content="A local with an eye for good spots. Coffee, bakeries & tea across Metro Atlanta.">
 <meta name="twitter:image" content="https://duluth-coffee-shoppes.sra-e69.workers.dev/brand/social/caffeye-share-1200x630.png">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
-<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" integrity="sha256-YU3qCpj/P06tdPBJGPax0bm6Q1wltfwjsho5TR4+TYc=" crossorigin="" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" integrity="sha256-YSWCMtmNZNwqex4CEw1nQhvFub2lmU7vcCKP+XVwwXA=" crossorigin="" />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 [hidden] { display: none !important; }
@@ -58,6 +58,7 @@
     --border-strong: oklch(80% 0.016 78);
     --accent: oklch(43% 0.10 52);
     --accent-soft: oklch(91% 0.025 70);
+    --venue-dl: -0.12;
     --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
     --c-coffee: #6f4e37;
     --c-bakery: #b89464;
@@ -87,7 +88,8 @@
       --border: #2e3930;
       --border-strong: #3f4e42;
       --accent: #DCAF59;
-      --accent-soft: rgba(220, 175, 89, 0.16);
+      --accent-soft: rgba(220, 175, 89, 0.12);
+      --venue-dl: 0.22;
       --map-bg: #191e1a;
       --c-work: #7ce0a3;
       --brand-title-color: var(--caffeye-paper);
@@ -104,7 +106,8 @@
     --border: #2e3930;
     --border-strong: #3f4e42;
     --accent: #DCAF59;
-    --accent-soft: rgba(220, 175, 89, 0.16);
+    --accent-soft: rgba(220, 175, 89, 0.12);
+    --venue-dl: 0.22;
     --map-bg: #191e1a;
     --c-work: #7ce0a3;
     --brand-title-color: var(--caffeye-paper);
@@ -348,7 +351,7 @@
   .layout { flex: 1; display: flex; min-height: 0; position: relative; }
   #map { flex: 1; background: var(--map-bg); position: relative; min-width: 0; }
   .panel {
-    width: 380px; background: var(--surface);
+    width: 400px; background: var(--surface);
     border-left: 1px solid var(--border);
     display: flex; flex-direction: column; min-height: 0;
     position: relative; contain: layout style;
@@ -390,6 +393,7 @@
     transition: opacity 220ms var(--ease-out), transform 220ms var(--ease-out);
     will-change: opacity, transform;
   }
+  #categoryChips, #featureChips { display: inline-flex; gap: 6px; flex-wrap: wrap; }
   .shop-list { flex: 1; overflow-y: auto; margin: 0; padding: 0; list-style: none; min-height: 0; }
   .shop-item {
     padding: 10px 16px;
@@ -409,27 +413,29 @@
   .load-more-btn:hover { background: var(--accent-soft); }
   .shop-item:hover { background: var(--surface-alt); }
   .shop-item:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; background: var(--surface-alt); }
-  .shop-item.active { background: var(--accent-soft); }
+  .shop-item.active { background: var(--accent-soft); box-shadow: inset 3px 0 var(--venue-color); box-shadow: inset 3px 0 oklch(from var(--venue-color) calc(l + var(--venue-dl)) c h); }
   .shop-name {
-    font-weight: 600; font-size: 14px;
+    min-width: 0; overflow-wrap: anywhere;
+    font-weight: 700; font-size: 14px;
     margin: 0 0 4px 0; line-height: 1.25;
     display: flex; align-items: center; gap: 8px;
   }
   .shop-name .shop-icon-tile {
     display: inline-flex; align-items: center; justify-content: center;
-    width: 22px; height: 22px; border-radius: 50%;
+    width: 22px; height: 22px; border-radius: 50%; background: var(--venue-color);
     font-size: 11.5px; line-height: 1;
     flex-shrink: 0; color: #fff;
     box-shadow: 0 1px 2px rgba(0,0,0,0.12);
   }
   .shop-meta { font-size: 12px; color: var(--muted); margin-bottom: 4px; }
-  .shop-meta .score { color: var(--accent); font-weight: 600; }
-  .shop-tags { font-size: 11.5px; color: var(--muted); line-height: 1.4; }
-  .shop-tags .tag-sep { color: var(--border-strong); margin: 0 4px; }
+  .shop-score { float: right; margin-left: 8px; font-size: 12px; font-weight: 700; color: var(--accent); white-space: nowrap; }
+  .shop-score .muted { color: var(--muted); font-weight: 400; }
+  .shop-tags { font-size: 11.5px; color: var(--text); line-height: 1.4; }
+  .shop-tags .tag-sep { color: var(--muted); margin: 0 4px; }
   .curated-tag { color: var(--c-work); font-weight: 600; white-space: nowrap; }
   .model-tag { font-weight: 500; font-size: 11px; padding: 1px 5px; border-radius: 4px; white-space: nowrap; }
-  .model-tag.indie { background: #2e7d4f18; color: #2e7d4f; border: 1px solid #2e7d4f33; }
-  .model-tag.franchise { background: #5a647418; color: #5a6474; border: 1px solid #5a647433; }
+  .model-tag.indie { background: #215c3a18; color: #215c3a; border: 1px solid #215c3a33; }
+  .model-tag.franchise { background: #434b5918; color: #434b59; border: 1px solid #434b5933; }
 
   .detail-view {
     position: absolute; inset: 0;
@@ -450,14 +456,14 @@
   }
   .back-btn:hover { color: var(--text); }
 
-  .detail-header { padding: 16px 20px 14px; border-bottom: 1px solid var(--border); }
+  .detail-header { padding: 16px 20px 14px; border-bottom: 1px solid var(--border); background: var(--surface-alt); border-top: 3px solid var(--venue-color); border-top-color: oklch(from var(--venue-color) calc(l + var(--venue-dl)) c h); }
   .detail-cat {
     font-size: 11px; color: var(--muted);
     text-transform: uppercase; letter-spacing: 0.06em;
     font-weight: 600; display: inline-flex; align-items: center; gap: 6px;
     margin-bottom: 6px;
   }
-  .detail-cat .dot { width: 8px; height: 8px; border-radius: 50%; }
+  .detail-cat .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--venue-color); background: oklch(from var(--venue-color) calc(l + var(--venue-dl)) c h); }
   .detail-name {
     font-family: 'Inter', sans-serif;
     font-weight: 700; font-size: 19px; line-height: 1.2;
@@ -745,6 +751,7 @@
 </head>
 <body>
 <div class="app">
+  <h1 class="sr-only">Caffeye — coffee, bakeries and tea across Metro Atlanta</h1>
   <header>
     <div class="brand-group" id="brandHomeBtn" role="button" tabindex="0" title="Caffeye — Reset filters" aria-label="Caffeye — Reset filters">
       <img src="./brand/logos/caffeye-symbol-forest.svg" alt="Caffeye" class="brand-logo" id="brandLogoImg" width="22" height="22">
@@ -778,7 +785,7 @@
     </div>
   </div>
 
-  <div class="layout">
+  <main class="layout">
     <div id="map"></div>
     <div id="srAnnounce" class="sr-only" aria-live="polite" aria-atomic="true"></div>
     <aside class="panel" id="panel">
@@ -791,7 +798,7 @@
       </div>
       <div class="detail-view" id="detailView"></div>
     </aside>
-  </div>
+  </main>
 
   <footer><span class="footer-brand">caffeye</span> · We know a spot. · Ratings, hours, and addresses change. Verify before visiting.</footer>
 </div>
@@ -803,6 +810,8 @@
 const clusterRequest = typeof L === 'undefined' ? Promise.resolve() : new Promise(resolve => {
   const script = document.createElement('script');
   script.src = 'https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js';
+  script.integrity = 'sha256-Hk4dIpcqOSb0hZjgyvFOP+cEmDXUKKNE/tT542ZbNQg=';
+  script.crossOrigin = '';
   script.onload = script.onerror = resolve;
   document.head.append(script);
 });
@@ -1129,6 +1138,7 @@ function boot(opts) {
     features: new Set(),
     search: '',
     selected: null,
+    viewedId: null,
     listLimit: LIST_PAGE_SIZE
   };
 
@@ -1210,9 +1220,6 @@ function boot(opts) {
     const catCounts = inScope.reduce((acc, s) => { acc[s.category] = (acc[s.category]||0)+1; return acc; }, {});
 
     catChipsEl.innerHTML = '';
-    catChipsEl.style.display = 'inline-flex';
-    catChipsEl.style.gap = '6px';
-    catChipsEl.style.flexWrap = 'wrap';
     catChipsEl.appendChild(makeChip({
       label: 'All', count: inScope.length, chipKey: 'cat-all',
       onClick: () => { state.categories.clear(); render(); announceFilterChange(); },
@@ -1237,9 +1244,6 @@ function boot(opts) {
     });
 
     featChipsEl.innerHTML = '';
-    featChipsEl.style.display = 'inline-flex';
-    featChipsEl.style.gap = '6px';
-    featChipsEl.style.flexWrap = 'wrap';
 
     FEATURES.forEach(f => {
       featChipsEl.appendChild(makeChip({
@@ -1816,20 +1820,30 @@ function boot(opts) {
   let lastRenderedSelectedId = null;
 
   function cardAriaLabel(shop) {
-    return `${shop.name}, ${(shop.category || '').replace('+', ' and ')} in ${shop.neighborhood}${shop.rated ? `, score ${shop.scoreText}` : ''}`;
+    return `${shop.name}, ${(shop.category || '').replace('+', ' and ')} in ${shop.neighborhood}${shop.rated ? `, score ${shop.scoreText}` : ', no rating'}`;
+  }
+  // The open card, or the one just closed (state.viewedId), stays marked in the list.
+  function markedId() { return state.selected ? state.selected.id : state.viewedId; }
+  function setMarked(el, on) {
+    if (!el) return;
+    el.classList.toggle('active', on);
+    if (on) el.setAttribute('aria-current', 'true');
+    else el.removeAttribute('aria-current');
   }
   function buildShopCard(shop) {
     const li = document.createElement('li');
-    li.className = 'shop-item' + (state.selected && state.selected.id === shop.id ? ' active' : '');
+    li.className = 'shop-item';
     li.dataset.id = shop.id;
     li.setAttribute('tabindex', '0');
     li.setAttribute('role', 'button');
+    setMarked(li, markedId() === shop.id);
     const catStr = shop.category || '';
     li.setAttribute('aria-label', cardAriaLabel(shop));
 
     const cat = CATS[shop.category] || {};
     const catColor = cat.hex || '#999';
     const catIcon = cat.icon || '';
+    li.style.setProperty('--venue-color', catColor);
     const tags = compactTags(shop);
     const tagsHtml = tags.map((t, i) => (i > 0 ? '<span class="tag-sep">·</span>' : '') + escapeHtml(t)).join('');
     const catLabel = escapeHtml(catStr.replace('+', ' & '));
@@ -1841,8 +1855,9 @@ function boot(opts) {
       : ' · <span class="model-tag indie">Indie</span>';
     const curatedTag = shop.curated ? ' · <span class="curated-tag">✔ curated</span>' : '';
     li.innerHTML = `
-      <div class="shop-name"><span class="shop-icon-tile" style="background:${catColor}">${catIcon}</span>${escapeHtml(shop.name)}</div>
-      <div class="shop-meta">${catLabel} · ${ratingHtml} · ${escapeHtml(shop.neighborhood)}${modelTag}${curatedTag}</div>
+      <div class="shop-score">${ratingHtml}</div>
+      <div class="shop-name"><span class="shop-icon-tile">${catIcon}</span>${escapeHtml(shop.name)}</div>
+      <div class="shop-meta">${escapeHtml(shop.neighborhood)} · ${catLabel}${modelTag}${curatedTag}</div>
       <div class="shop-tags">${tagsHtml}</div>
     `;
 
@@ -1902,6 +1917,7 @@ function boot(opts) {
       if (source !== 'hydrate') {
         state.listLimit = LIST_PAGE_SIZE;
         state.savedListLimit = LIST_PAGE_SIZE;
+        state.viewedId = null;
       }
       updateGlobalFilteredShops();
 
@@ -1934,7 +1950,7 @@ function boot(opts) {
     const shown = filtered.slice(0, state.listLimit);
     const globalCount = cachedGlobalShops ? cachedGlobalShops.length : SHOPS.length;
     const isViewportFiltering = filtered.length < globalCount;
-    const currentSelectedId = state.selected ? state.selected.id : null;
+    const currentSelectedId = state.selected ? state.selected.id : state.viewedId;
 
     // Count pop when number changes (Web Animations API: zero forced reflow)
     const prevCount = parseInt(resultsCountEl.textContent) || -1;
@@ -2045,9 +2061,7 @@ function boot(opts) {
           li.setAttribute('aria-label', cardAriaLabel(shop));
         }
         const shouldBeActive = currentSelectedId === shop.id;
-        if (li.classList.contains('active') !== shouldBeActive) {
-          li.classList.toggle('active', shouldBeActive);
-        }
+        if (li.classList.contains('active') !== shouldBeActive) setMarked(li, shouldBeActive);
         li.style.animation = 'none'; // preserve existing node, do not replay entry animation
         if (currentChild !== li) {
           shopListEl.insertBefore(li, currentChild || null);
@@ -2126,8 +2140,8 @@ function boot(opts) {
 
     let html = `
       <button class="back-btn" id="backBtn">← Back to list</button>
-      <div class="detail-header">
-        <div class="detail-cat"><span class="dot" style="background:${cat.hex || '#999'}"></span>${escapeHtml(shop.category.replace('+',' & '))} · ${escapeHtml(shop.neighborhood)}${modelTag}${curatedTag}</div>
+      <div class="detail-header" style="--venue-color:${cat.hex || '#999'}">
+        <div class="detail-cat"><span class="dot"></span>${escapeHtml(shop.category.replace('+',' & '))} · ${escapeHtml(shop.neighborhood)}${modelTag}${curatedTag}</div>
         <h2 class="detail-name">${escapeHtml(shop.name)}</h2>
         <div class="detail-rating">${ratingHtml}</div>
       </div>
@@ -2269,13 +2283,8 @@ function boot(opts) {
 
     // In-place active class update on list cards
     const prevActive = shopListEl.querySelector('.shop-item.active');
-    if (prevActive && (!shop || prevActive.dataset.id !== shop.id)) {
-      prevActive.classList.remove('active');
-    }
-    if (shop) {
-      const nextActive = shopListEl.querySelector(`.shop-item[data-id="${shop.id}"]`);
-      if (nextActive) nextActive.classList.add('active');
-    }
+    if (prevActive && (!shop || prevActive.dataset.id !== shop.id)) setMarked(prevActive, false);
+    if (shop) setMarked(shopListEl.querySelector(`.shop-item[data-id="${shop.id}"]`), true);
 
     renderDetail(shop);
     panelEl.classList.add('detail-mode');
@@ -2306,8 +2315,7 @@ function boot(opts) {
     const skipFit = !!(opts && opts.skipFit);
     const lastSelectedId = state.selected ? state.selected.id : null;
     state.selected = null;
-    const prevActive = shopListEl.querySelector('.shop-item.active');
-    if (prevActive) prevActive.classList.remove('active');
+    state.viewedId = lastSelectedId;
 
     panelEl.classList.remove('detail-mode');
     if (listViewEl) listViewEl.removeAttribute('inert');
@@ -2398,8 +2406,7 @@ function boot(opts) {
       closedByFilter = true;
       state.selected = null;
       state.previousCamera = null;
-      const prevActive = shopListEl.querySelector('.shop-item.active');
-      if (prevActive) prevActive.classList.remove('active');
+      setMarked(shopListEl.querySelector('.shop-item.active'), false);
       panelEl.classList.remove('detail-mode');
       if (listViewEl) listViewEl.removeAttribute('inert');
       if (detailEl) detailEl.setAttribute('inert', '');
