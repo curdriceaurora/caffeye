@@ -70,12 +70,12 @@ for (const theme of ['light', 'dark']) {
     for (const selector of ['.model-tag.indie', '.model-tag.franchise', '.curated-tag', '.shop-tags .tag-sep']) {
       expect(await textContrast(page.locator(selector).first()), `${theme} ${selector}`).toBeGreaterThanOrEqual(4.5);
     }
-    // Open a card and come back, so the row carries the selected tint.
-    await page.locator('.shop-item').nth(2).click();
+    // Open a curated venue and come back, so the row carries the selected tint.
+    await page.locator('.shop-item', { has: page.locator('.curated-tag') }).first().click();
     await page.locator('#backBtn').waitFor({ timeout: 15000 });
     await page.locator('#backBtn').click();
     await expect(page.locator('.shop-item.active')).toHaveCount(1);
-    for (const selector of ['.shop-item.active .shop-meta', '.shop-item.active .shop-tags', '.shop-item.active .shop-score']) {
+    for (const selector of ['.shop-item.active .shop-meta', '.shop-item.active .curated-tag', '.shop-item.active .shop-tags', '.shop-item.active .shop-score']) {
       expect(await textContrast(page.locator(selector).first()), `${theme} ${selector}`).toBeGreaterThanOrEqual(4.5);
     }
   });

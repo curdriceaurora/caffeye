@@ -433,6 +433,7 @@
   .shop-tags { font-size: 11.5px; color: var(--text); line-height: 1.4; }
   .shop-tags .tag-sep { color: var(--muted); margin: 0 4px; }
   .curated-tag { color: var(--c-work); font-weight: 600; white-space: nowrap; }
+  .shop-item.active .curated-tag { color: #215c3a; }
   .model-tag { font-weight: 500; font-size: 11px; padding: 1px 5px; border-radius: 4px; white-space: nowrap; }
   .model-tag.indie { background: #215c3a18; color: #215c3a; border: 1px solid #215c3a33; }
   .model-tag.franchise { background: #434b5918; color: #434b59; border: 1px solid #434b5933; }
@@ -573,11 +574,17 @@
     color: #6ece91;
     border-color: rgba(46, 125, 79, 0.4);
   }
+  [data-theme="dark"] .shop-item.active .curated-tag {
+    color: var(--c-work);
+  }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) .model-tag.indie {
       background: rgba(46, 125, 79, 0.22);
       color: #6ece91;
       border-color: rgba(46, 125, 79, 0.4);
+    }
+    :root:not([data-theme="light"]) .shop-item.active .curated-tag {
+      color: var(--c-work);
     }
   }
   [data-theme="dark"] .model-tag.franchise {
