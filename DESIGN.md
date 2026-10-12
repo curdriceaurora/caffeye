@@ -292,3 +292,14 @@ These come from product principles and prior incidents — don't re-introduce th
 ## September 2026 field-guide refinement
 
 The list leads with the name and separately aligned weighted score, then location and category. Existing amenity/editorial tags use body text contrast. The desktop panel is 400 px; phone density and map height remain unchanged. The detail header repeats the selected category color without adding another navigation step. This direction was chosen from a four-variant exploration evaluating scanability, visual hierarchy, and card density.
+
+All four shared one baseline, dataset and regional fit, and were compared from screenshots at 1280, 375 and 320 px in both themes:
+
+| Variant | From | Change | Verdict |
+|---|---|---|---|
+| A | baseline | Heavier names, stronger tag contrast, layout unchanged | Useful refinement, but too subtle to fix the crowded metadata line |
+| B | A | Name and score split from location and provenance; 400 px panel; category color repeated in selection and detail | **Selected** |
+| C | A | Stronger selection and panel separation, card information order unchanged | Helped selection, not the initial scan |
+| D | B | Fraunces venue names, tinted search and results surfaces | Repeated display type competed with the brand wordmark |
+
+The rejections are recorded so they are not re-proposed. They are judgments from screenshot comparison, not measured usability findings; the ten-second choice target remains unmeasured. The variant prototypes and full capture set were local scratch and are not in version control, so they will not survive a clean checkout.
