@@ -1,0 +1,88 @@
+name: Caffeye
+options:
+  deploymentTarget:
+    iOS: '18.0'
+    macOS: '15.0'
+  createIntermediateGroups: true
+settings:
+  base:
+    SWIFT_VERSION: '6.0'
+    GENERATE_INFOPLIST_FILE: YES
+    MARKETING_VERSION: '1.0'
+    PRODUCT_MODULE_NAME: Caffeye
+    CURRENT_PROJECT_VERSION: '1'
+    CODE_SIGN_STYLE: Automatic
+packages:
+  CaffeyeCore:
+    path: Core
+targets:
+  Caffeye-iOS:
+    type: application
+    platform: iOS
+    sources: [Caffeye]
+    dependencies:
+      - package: CaffeyeCore
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.caffeye.native
+        PRODUCT_NAME: Caffeye
+        TARGETED_DEVICE_FAMILY: '1,2'
+        INFOPLIST_KEY_UILaunchScreen_Generation: YES
+        INFOPLIST_KEY_UIApplicationSceneManifest_Generation: YES
+        INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents: YES
+        INFOPLIST_KEY_LSApplicationCategoryType: public.app-category.food-and-drink
+  Caffeye-macOS:
+    type: application
+    platform: macOS
+    sources: [Caffeye]
+    dependencies:
+      - package: CaffeyeCore
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.caffeye.native.mac
+        PRODUCT_NAME: Caffeye
+        ENABLE_APP_SANDBOX: YES
+        ENABLE_HARDENED_RUNTIME: YES
+        INFOPLIST_KEY_LSApplicationCategoryType: public.app-category.food-and-drink
+    entitlements:
+      path: Caffeye/Caffeye.entitlements
+      properties:
+        com.apple.security.app-sandbox: true
+        com.apple.security.network.client: true
+        com.apple.security.files.user-selected.read-only: true
+  CaffeyeUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources: [CaffeyeUITests]
+    dependencies:
+      - target: Caffeye-iOS
+    settings:
+      base:
+        PRODUCT_MODULE_NAME: CaffeyeUITests
+        PRODUCT_BUNDLE_IDENTIFIER: com.caffeye.native.uitests
+  CaffeyeTests:
+    type: bundle.unit-test
+    platform: macOS
+    sources: [CaffeyeTests]
+    dependencies:
+      - target: Caffeye-macOS
+      - package: CaffeyeCore
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.caffeye.native.tests
+        PRODUCT_MODULE_NAME: CaffeyeTests
+        TEST_HOST: "$(BUILT_PRODUCTS_DIR)/Caffeye.app/Contents/MacOS/Caffeye"
+        BUNDLE_LOADER: "$(TEST_HOST)"
+schemes:
+  Caffeye-iOS:
+    build:
+      targets:
+        Caffeye-iOS: all
+    test:
+      targets: [CaffeyeUITests]
+  Caffeye-macOS:
+    build:
+      targets:
+        Caffeye-macOS: all
+    test:
+      targets: [CaffeyeTests]

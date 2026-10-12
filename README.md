@@ -162,3 +162,7 @@ caffeye/
 ## License
 
 MIT. See [LICENSE](LICENSE).
+
+## Native SwiftUI app
+
+The standalone iPhone, iPad, and macOS implementation is in [`native/`](native/README.md). It uses MapKit and platform controls, supports provider-neutral offline snapshots, and retains Bayesian ranking. Open `native/Caffeye.xcodeproj` to run it. The native bundle includes the existing 1,705 venues with ratings and review counts omitted. It lists venues alphabetically; Bayesian ranking remains available for rated snapshot imports.

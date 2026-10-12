@@ -1,0 +1,27 @@
+name: Native SwiftUI
+on:
+  pull_request:
+    paths: ['native/**', 'public/shops.json', 'public/places.json', '.github/workflows/native.yml']
+  push:
+    branches: ['agent/standalone-swiftui', main]
+    paths: ['native/**', 'public/shops.json', 'public/places.json', '.github/workflows/native.yml']
+
+jobs:
+  native:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check rating-free venue export
+        run: |
+          python3 native/scripts/export_venues.py --check
+          python3 -m unittest discover -s native/scripts -p 'test_*.py'
+      - name: Domain and offline storage tests
+        run: swift test --package-path native/Core
+      - name: macOS build and discovery tests
+        run: >-
+          xcodebuild -project native/Caffeye.xcodeproj -scheme Caffeye-macOS
+          -destination 'platform=macOS' CODE_SIGN_IDENTITY=- test
+      - name: iPhone and iPad simulator build
+        run: >-
+          xcodebuild -project native/Caffeye.xcodeproj -scheme Caffeye-iOS
+          -destination 'generic/platform=iOS Simulator' CODE_SIGNING_ALLOWED=NO build
