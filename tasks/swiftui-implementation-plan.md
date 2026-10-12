@@ -1,7 +1,7 @@
 # Standalone SwiftUI implementation plan
 
 Date: 2026-09-25. Branch: `agent/standalone-swiftui`.
-Scope confirmed: iPhone, iPad, and native macOS. Planning only; no application implementation yet.
+Scope confirmed: iPhone, iPad, and native macOS. Implementation is now available under `native/`; see the status below.
 
 ## Recommendation
 
@@ -19,7 +19,7 @@ The documented snapshot is 1,705 accepted venues, including 970 independents, fr
 
 **Data portability must be resolved before shipping the MapKit version.** Regional coordinates and operational data, plus ranking inputs, come from Google Places. Google's published Places API policy says results shown on a map must be on a Google Map and restricts storage beyond permitted exceptions. Existing JSON files are not evidence of permission to redistribute the content in an Apple Maps app. Review the applicable account terms and provenance before choosing a shipping dataset. This also affects bundled/offline snapshots and derived ranking inputs.
 
-Preferred native-default path: independently sourced or appropriately licensed venue data and ranking inputs. If that cannot preserve the current inputs, explicitly redesign ranking and coverage; Apple Maps is not a drop-in source for Google's rating/review counts or Caffeye's editorial fields. A Google Maps implementation would be a separate provider decision outside this platform-default plan. Use synthetic fixtures to develop the native shell while resolving this dependency.
+Preferred native-default path: independently sourced or appropriately licensed venue data and ranking inputs. Bayesian ranking remains required: replace restricted inputs with permitted ratings and recompute source-appropriate priors; Apple Maps is not a drop-in source for Google's rating/review counts or Caffeye's editorial fields. A Google Maps implementation would be a separate provider decision outside this platform-default plan. Use synthetic fixtures to develop the native shell while resolving this dependency.
 
 Source: [Google Places API policies](https://developers.google.com/maps/documentation/places/web-service/policies).
 
@@ -52,7 +52,7 @@ Standard controls do not require replacing every category emoji with an SF Symbo
 
 **iPhone and compact iPad windows:** One `NavigationStack` owns a discovery screen. Keep the map above a native list, with adaptive height rather than the web's pixel clamp. Use `.searchable` and toolbar filter menus. Selection replaces the lower results content with scrollable detail and a Back action while keeping the map mounted. This small amount of custom composition preserves the product's central interaction. At accessibility text sizes or constrained landscape height, prioritize readable content and allow the map to contract; simultaneous visibility is best effort, not a fixed density contract. Avoid a persistent map sheet in v1 because it introduces map occlusion and gesture complexity.
 
-**iPad regular width:** Native resizable split layout, results sidebar and map/detail workspace. Detail appears beside or below the map according to available width. Selection must not replace the whole map column. Handle resizing and compact transitions without losing selection or search.
+**iPad regular width:** Results sidebar and map/detail workspace, with sidebar width adapting to the available window width. Detail appears beside or below the map according to available width. Selection must not replace the whole map column. Handle resizing and compact transitions without losing selection or search.
 
 **macOS:** Native SwiftUI app, not Catalyst. Results sidebar, map workspace, and detail inspector when width permits. Native toolbar search, menus, keyboard list navigation, Back/Escape, and Reset command. Window-scoped selection/camera/filter state; shared read-only dataset service. A second window must not move the first window's map.
 
@@ -113,4 +113,18 @@ Use domain tests for observable behavior: ingestion/deduplication, priors, ranki
 
 Manual matrix: small iPhone plus large Dynamic Type; iPad portrait/landscape and narrow windows; macOS narrow/wide and two windows; light/dark, VoiceOver, keyboard-only, offline and slow/failing refresh. Check that attribution stays visible and that the usable map rectangle matches the area used for list filtering.
 
-No application tests ran for this plan. Research verified current code paths, installed Xcode version/MapKit interface, and the cited vendor documentation. The next concrete deliverable is the map/layout spike after the dataset decision; implementation has not begun.
+At the planning stage, no application tests ran. Research verified code paths, the installed Xcode version/MapKit interface, and the cited vendor documentation. The implementation and subsequent validation are recorded below.
+
+## Implementation status — 2026-10-12
+
+The standalone implementation now lives under `native/`, with a shared Swift package, iOS/iPadOS and native macOS app targets, provider-neutral atomic offline snapshots, JSON import and optional HTTPS updates, Bayesian ranking, filter/search semantics, adaptive map/list/detail layouts, native MapKit clustering, cluster member selection, and staged refreshes. It follows system appearance and uses the Caffeye app icon. XcodeGen configuration and generated projects are included.
+
+The initial implementation used fictional demo data. The default bundle now contains the existing venue-only dataset described below; the rated demo remains an explicit UI-test fixture. Source redistribution requirements and release signing/metadata remain external release dependencies. Bayesian ranking is retained, including unrounded ordering and fixed snapshot priors. The native store uses its own snapshot schema; the deterministic exporter below adapts the existing repository datasets. See `native/README.md` for the data contract, running instructions, validation, and remaining manual release QA.
+
+Validation on 2026-10-12: 10 shared domain/storage tests, seven macOS state tests, and three UI tests each on iPhone and iPad passed. Native builds succeeded on Xcode 27.2, and exported XCTest screenshots were inspected. Source redistribution requirements, signing/release metadata, physical-device profiling, and the manual accessibility matrix remain release work.
+
+## Venue-only bundle — 2026-10-12
+
+Per the user's instruction to add everything except ratings, `native/scripts/export_venues.py` now exports all 1,705 accepted venue records (970 independents), preserving operational/editorial fields and original provenance while excluding ratings, review counts, and rating-derived priors. The app loads this bundle by default and lists venues alphabetically without scores. Bayesian ranking remains implemented for future snapshots with rating inputs and valid priors. Removing ratings does not relabel the remaining Google-derived fields as independent content.
+
+The franchise scope control is visible in the discovery header on all platforms. It defaults to independent venues and changes both map candidates and list results without affecting the viewport constraint.

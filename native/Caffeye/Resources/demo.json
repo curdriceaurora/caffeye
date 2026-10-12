@@ -1,0 +1,972 @@
+{
+  "schemaVersion": 1,
+  "revision": "demo-v1",
+  "region": "Metro Atlanta",
+  "isDemo": true,
+  "priors": {
+    "mean": 4.32,
+    "weight": 238,
+    "provenance": {
+      "source": "Synthetic demo",
+      "attribution": "Fictional venue data for interface testing; not a place recommendation."
+    }
+  },
+  "venues": [
+    {
+      "id": "demo-00",
+      "name": "Demo Coffee 1",
+      "category": "Coffee",
+      "coordinate": {
+        "latitude": 33.96,
+        "longitude": -84.14
+      },
+      "address": "Fictional address \u00b7 demo only",
+      "city": "Metro Atlanta",
+      "model": "independent",
+      "provenance": {
+        "source": "Synthetic demo",
+        "attribution": "Fictional venue data for interface testing; not a place recommendation."
+      },
+      "hours": "Demo: 8am\u201310pm",
+      "summary": "A fictional venue for testing Caffeye\u2019s native interface.",
+      "loved": [
+        "Demo espresso",
+        "Demo pastries"
+      ],
+      "signature": "demo house drink",
+      "rating": {
+        "average": 4.1,
+        "count": 20,
+        "provenance": {
+          "source": "Synthetic demo",
+          "attribution": "Fictional venue data for interface testing; not a place recommendation."
+        }
+      },
+      "work": {
+        "tier": "excellent",
+        "note": "Demo work suitability note.",
+        "hasMeetingRoom": true,
+        "meetingRoomNote": "Demo meeting room information.",
+        "provenance": {
+          "source": "Synthetic demo",
+          "attribution": "Fictional venue data for interface testing; not a place recommendation."
+        }
+      },
+      "late": {
+        "tier": "midnight",
+        "when": "Demo late hours; not real opening times."
+      }
+    },
+    {
+      "id": "demo-01",
+      "name": "Demo Roasters 2",
+      "category": "Roasters",
+      "coordinate": {
+        "latitude": 33.96,
+        "longitude": -84.14
+      },
+      "address": "Fictional address \u00b7 demo only",
+      "city": "Metro Atlanta",
+      "model": "independent",
+      "provenance": {
+        "source": "Synthetic demo",
+        "attribution": "Fictional venue data for interface testing; not a place recommendation."
+      },
+      "hours": "Demo: 8am\u201310pm",
+      "summary": "A fictional venue for testing Caffeye\u2019s native interface.",
+      "loved": [
+        "Demo espresso",
+        "Demo pastries"
+      ],
+      "signature": "demo house drink",
+      "rating": {
+        "average": 4.2,
+        "count": 110,
+        "provenance": {
+          "source": "Synthetic demo",
+          "attribution": "Fictional venue data for interface testing; not a place recommendation."
+        }
+      },
+      "work": {
+        "tier": "good",
+        "note": "Demo work suitability note.",
+        "hasMeetingRoom": false,
+        "meetingRoomNote": "Demo meeting room information.",
+        "provenance": {
+          "source": "Synthetic demo",
+          "attribution": "Fictional venue data for interface testing; not a place recommendation."
+        }
+      }
+    },
+    {
+      "id": "demo-02",
+      "name": "Demo Bakery & Cafe 3",
+      "category": "Bakery+Cafe",
+      "coordinate": {
+        "latitude": 33.96,
+        "longitude": -84.084
+      },
+      "address": "Fictional address \u00b7 demo only",
+      "city": "Metro Atlanta",
+      "model": "independent",
+      "provenance": {
+        "source": "Synthetic demo",
+        "attribution": "Fictional venue data for interface testing; not a place recommendation."
+      },
+      "hours": "Demo: 8am\u201310pm",
+      "summary": "A fictional venue for testing Caffeye\u2019s native interface.",
+      "loved": [
+        "Demo espresso",
+        "Demo pastries"
+      ],
+      "signature": "demo house drink",
+      "rating": {
+        "average": 4.3,
+        "count": 200,
+        "provenance": {
+          "source": "Synthetic demo",
+          "attribution": "Fictional venue data for interface testing; not a place recommendation."
+        }
+      },
+      "work": {
+        "tier": "limited",
+        "note": "Demo work suitability note.",
+        "hasMeetingRoom": false,
+        "meetingRoomNote": "Demo meeting room information.",
+        "provenance": {
+          "source": "Synthetic demo",
+          "attribution": "Fictional venue data for interface testing; not a place recommendation."
+        }
+      }
+    },
+    {
+      "id": "demo-03",
+      "name": "Demo Tea/Boba 4",
+      "category": "Tea/Boba",
+      "coordinate": {
+        "latitude": 33.96,
+        "longitude": -84.056
+      },
+      "address": "Fictional address \u00b7 demo only",
+      "city": "Metro Atlanta",
+      "model": "independent",
+      "provenance": {
+        "source": "Synthetic demo",
+        "attribution": "Fictional venue data for interface testing; not a place recommendation."
+      },
+      "hours": "Demo: 8am\u201310pm",
+      "summary": "A fictional venue for testing Caffeye\u2019s native interface.",
+      "loved": [
+        "Demo espresso",
+        "Demo pastries"
+      ],
+      "signature": "demo house drink",
+      "rating": {
+        "average": 4.4,
+        "count": 290,
+        "provenance": {
+          "source": "Synthetic demo",
+          "attribution": "Fictional venue data for interface testing; not a place recommendation."
+        }
+      },
+      "late": {
+        "tier": "10pm+",
+        "when": "Demo late hours; not real opening times."
+      }
+    },
+    {
+      "id": "demo-04",
+      "name": "Demo Dessert Cafe 5",
+      "category": "Dessert Cafe",
+      "coordinate": {
+        "latitude": 33.96,
+        "longitude": -84.028
+      },
+      "address": "Fictional address \u00b7 demo only",
+      "city": "Metro Atlanta",
+      "model": "independent",
+      "provenance": {
+        "source": "Synthetic demo",
+        "attribution": "Fictional venue data for interface testing; not a place recommendation."
+      },
+      "hours": "Demo: 8am\u201310pm",
+      "summary": "A fictional venue for testing Caffeye\u2019s native interface.",
+      "loved": [
+        "Demo espresso",
+        "Demo pastries"
+      ],
+      "signature": "demo house drink",
+      "rating": {
+        "average": 4.5,
+        "count": 380,
+        "provenance": {
+          "source": "Synthetic demo",
+          "attribution": "Fictional venue data for interface testing; not a place recommendation."
+        }
+      },
+      "work": {
+        "tier": "good",
+        "note": "Demo work suitability note.",
+        "hasMeetingRoom": false,
+        "meetingRoomNote": "Demo meeting room information.",
+        "provenance": {
+          "source": "Synthetic demo",
+          "attribution": "Fictional venue data for interface testing; not a place recommendation."
+        }
+      }
+    },
+    {
+      "id": "demo-05",
+      "name": "Demo Specialty 6",
+      "category": "Specialty",
+      "coordinate": {
+        "latitude": 33.96,
+        "longitude": -84.0
+      },
+      "address": "Fictional address \u00b7 demo only",
+      "city": "Metro Atlanta",
+      "model": "independent",
+      "provenance": {
+        "source": "Synthetic demo",
+        "attribution": "Fictional venue data for interface testing; not a place recommendation."
+      },
+      "hours": "Demo: 8am\u201310pm",
+      "summary": "A fictional venue for testing Caffeye\u2019s native interface.",
+      "loved": [
+        "Demo espresso",
+        "Demo pastries"
+      ],
+      "signature": "demo house drink",
+      "rating": {
+        "average": 4.6,
+        "count": 470,
+        "provenance": {
+          "source": "Synthetic demo",
+          "attribution": "Fictional venue data for interface testing; not a place recommendation."
+        }
+      },
+      "work": {
+        "tier": "limited",
+        "note": "Demo work suitability note.",
+        "hasMeetingRoom": false,
+        "meetingRoomNote": "Demo meeting room information.",
+        "provenance": {
+          "source": "Synthetic demo",
+          "attribution": "Fictional venue data for interface testing; not a place recommendation."
+        }
+      }
+    },
+    {
+      "id": "demo-06",
+      "name": "Demo Coffee 7",
+      "category": "Coffee",
+      "coordinate": {
+        "latitude": 33.982,
+        "longitude": -84.14
+      },
+      "address": "Fictional address \u00b7 demo only",
+      "city": "Metro Atlanta",
+      "model": "franchise",
+      "provenance": {
+        "source": "Synthetic demo",
+        "attribution": "Fictional venue data for interface testing; not a place recommendation."
+      },
+      "hours": "Demo: 8am\u201310pm",
+      "summary": "A fictional venue for testing Caffeye\u2019s native interface.",
+      "loved": [
+        "Demo espresso",
+        "Demo pastries"
+      ],
+      "signature": "demo house drink",
+      "rating": {
+        "average": 4.7,
+        "count": 560,
+        "provenance": {
+          "source": "Synthetic demo",
+          "attribution": "Fictional venue data for interface testing; not a place recommendation."
+        }
+      },
+      "work": {
+        "tier": "excellent",
+        "note": "Demo work suitability note.",
+        "hasMeetingRoom": true,
+        "meetingRoomNote": "Demo meeting room information.",
+        "provenance": {
+          "source": "Synthetic demo",
+          "attribution": "Fictional venue data for interface testing; not a place recommendation."
+        }
+      },
+      "late": {
+        "tier": "midnight",
+        "when": "Demo late hours; not real opening times."
+      }
+    },
+    {
+      "id": "demo-07",
+      "name": "Demo Roasters 8",
+      "category": "Roasters",
+      "coordinate": {
+        "latitude": 33.982,
+        "longitude": -84.112
+      },
+      "address": "Fictional address \u00b7 demo only",
+      "city": "Metro Atlanta",
+      "model": "independent",
+      "provenance": {
+        "source": "Synthetic demo",
+        "attribution": "Fictional venue data for interface testing; not a place recommendation."
+      },
+      "hours": "Demo: 8am\u201310pm",
+      "summary": "A fictional venue for testing Caffeye\u2019s native interface.",
+      "loved": [
+        "Demo espresso",
+        "Demo pastries"
+      ],
+      "signature": "demo house drink",
+      "rating": {
+        "average": 4.8,
+        "count": 650,
+        "provenance": {
+          "source": "Synthetic demo",
+          "attribution": "Fictional venue data for interface testing; not a place recommendation."
+        }
+      }
+    },
+    {
+      "id": "demo-08",
+      "name": "Demo Bakery & Cafe 9",
+      "category": "Bakery+Cafe",
+      "coordinate": {
+        "latitude": 33.982,
+        "longitude": -84.084
+      },
+      "address": "Fictional address \u00b7 demo only",
+      "city": "Metro Atlanta",
+      "model": "independent",
+      "provenance": {
+        "source": "Synthetic demo",
+        "attribution": "Fictional venue data for interface testing; not a place recommendation."
+      },
+      "hours": "Demo: 8am\u201310pm",
+      "summary": "A fictional venue for testing Caffeye\u2019s native interface.",
+      "loved": [
+        "Demo espresso",
+        "Demo pastries"
+      ],
+      "signature": "demo house drink",
+      "rating": {
+        "average": 4.9,
+        "count": 740,
+        "provenance": {
+          "source": "Synthetic demo",
+          "attribution": "Fictional venue data for interface testing; not a place recommendation."
+        }
+      },
+      "work": {
+        "tier": "limited",
+        "note": "Demo work suitability note.",
+        "hasMeetingRoom": false,
+        "meetingRoomNote": "Demo meeting room information.",
+        "provenance": {
+          "source": "Synthetic demo",
+          "attribution": "Fictional venue data for interface testing; not a place recommendation."
+        }
+      }
+    },
+    {
+      "id": "demo-09",
+      "name": "Demo Tea/Boba 10",
+      "category": "Tea/Boba",
+      "coordinate": {
+        "latitude": 33.982,
+        "longitude": -84.056
+      },
+      "address": "Fictional address \u00b7 demo only",
+      "city": "Metro Atlanta",
+      "model": "independent",
+      "provenance": {
+        "source": "Synthetic demo",
+        "attribution": "Fictional venue data for interface testing; not a place recommendation."
+      },
+      "hours": "Demo: 8am\u201310pm",
+      "summary": "A fictional venue for testing Caffeye\u2019s native interface.",
+      "loved": [
+        "Demo espresso",
+        "Demo pastries"
+      ],
+      "signature": "demo house drink",
+      "rating": {
+        "average": 4.1,
+        "count": 830,
+        "provenance": {
+          "source": "Synthetic demo",
+          "attribution": "Fictional venue data for interface testing; not a place recommendation."
+        }
+      },
+      "work": {
+        "tier": "excellent",
+        "note": "Demo work suitability note.",
+        "hasMeetingRoom": false,
+        "meetingRoomNote": "Demo meeting room information.",
+        "provenance": {
+          "source": "Synthetic demo",
+          "attribution": "Fictional venue data for interface testing; not a place recommendation."
+        }
+      },
+      "late": {
+        "tier": "10pm+",
+        "when": "Demo late hours; not real opening times."
+      }
+    },
+    {
+      "id": "demo-10",
+      "name": "Demo Dessert Cafe 11",
+      "category": "Dessert Cafe",
+      "coordinate": {
+        "latitude": 33.982,
+        "longitude": -84.028
+      },
+      "address": "Fictional address \u00b7 demo only",
+      "city": "Metro Atlanta",
+      "model": "independent",
+      "provenance": {
+        "source": "Synthetic demo",
+        "attribution": "Fictional venue data for interface testing; not a place recommendation."
+      },
+      "hours": "Demo: 8am\u201310pm",
+      "summary": "A fictional venue for testing Caffeye\u2019s native interface.",
+      "loved": [
+        "Demo espresso",
+        "Demo pastries"
+      ],
+      "signature": "demo house drink",
+      "rating": {
+        "average": 4.2,
+        "count": 920,
+        "provenance": {
+          "source": "Synthetic demo",
+          "attribution": "Fictional venue data for interface testing; not a place recommendation."
+        }
+      },
+      "work": {
+        "tier": "good",
+        "note": "Demo work suitability note.",
+        "hasMeetingRoom": false,
+        "meetingRoomNote": "Demo meeting room information.",
+        "provenance": {
+          "source": "Synthetic demo",
+          "attribution": "Fictional venue data for interface testing; not a place recommendation."
+        }
+      }
+    },
+    {
+      "id": "demo-11",
+      "name": "Demo Specialty 12",
+      "category": "Specialty",
+      "coordinate": {
+        "latitude": 33.982,
+        "longitude": -84.0
+      },
+      "address": "Fictional address \u00b7 demo only",
+      "city": "Metro Atlanta",
+      "model": "independent",
+      "provenance": {
+        "source": "Synthetic demo",
+        "attribution": "Fictional venue data for interface testing; not a place recommendation."
+      },
+      "hours": "Demo: 8am\u201310pm",
+      "summary": "A fictional venue for testing Caffeye\u2019s native interface.",
+      "loved": [
+        "Demo espresso",
+        "Demo pastries"
+      ],
+      "signature": "demo house drink",
+      "rating": {
+        "average": 4.3,
+        "count": 1010,
+        "provenance": {
+          "source": "Synthetic demo",
+          "attribution": "Fictional venue data for interface testing; not a place recommendation."
+        }
+      }
+    },
+    {
+      "id": "demo-12",
+      "name": "Demo Coffee 13",
+      "category": "Coffee",
+      "coordinate": {
+        "latitude": 34.004,
+        "longitude": -84.14
+      },
+      "address": "Fictional address \u00b7 demo only",
+      "city": "Metro Atlanta",
+      "model": "independent",
+      "provenance": {
+        "source": "Synthetic demo",
+        "attribution": "Fictional venue data for interface testing; not a place recommendation."
+      },
+      "hours": "Demo: 8am\u201310pm",
+      "summary": "A fictional venue for testing Caffeye\u2019s native interface.",
+      "loved": [
+        "Demo espresso",
+        "Demo pastries"
+      ],
+      "signature": "demo house drink",
+      "rating": {
+        "average": 4.4,
+        "count": 1100,
+        "provenance": {
+          "source": "Synthetic demo",
+          "attribution": "Fictional venue data for interface testing; not a place recommendation."
+        }
+      },
+      "work": {
+        "tier": "excellent",
+        "note": "Demo work suitability note.",
+        "hasMeetingRoom": true,
+        "meetingRoomNote": "Demo meeting room information.",
+        "provenance": {
+          "source": "Synthetic demo",
+          "attribution": "Fictional venue data for interface testing; not a place recommendation."
+        }
+      },
+      "late": {
+        "tier": "midnight",
+        "when": "Demo late hours; not real opening times."
+      }
+    },
+    {
+      "id": "demo-13",
+      "name": "Demo Roasters 14",
+      "category": "Roasters",
+      "coordinate": {
+        "latitude": 34.004,
+        "longitude": -84.112
+      },
+      "address": "Fictional address \u00b7 demo only",
+      "city": "Metro Atlanta",
+      "model": "franchise",
+      "provenance": {
+        "source": "Synthetic demo",
+        "attribution": "Fictional venue data for interface testing; not a place recommendation."
+      },
+      "hours": "Demo: 8am\u201310pm",
+      "summary": "A fictional venue for testing Caffeye\u2019s native interface.",
+      "loved": [
+        "Demo espresso",
+        "Demo pastries"
+      ],
+      "signature": "demo house drink",
+      "rating": {
+        "average": 4.5,
+        "count": 1190,
+        "provenance": {
+          "source": "Synthetic demo",
+          "attribution": "Fictional venue data for interface testing; not a place recommendation."
+        }
+      },
+      "work": {
+        "tier": "good",
+        "note": "Demo work suitability note.",
+        "hasMeetingRoom": false,
+        "meetingRoomNote": "Demo meeting room information.",
+        "provenance": {
+          "source": "Synthetic demo",
+          "attribution": "Fictional venue data for interface testing; not a place recommendation."
+        }
+      }
+    },
+    {
+      "id": "demo-14",
+      "name": "Demo Bakery & Cafe 15",
+      "category": "Bakery+Cafe",
+      "coordinate": {
+        "latitude": 34.004,
+        "longitude": -84.084
+      },
+      "address": "Fictional address \u00b7 demo only",
+      "city": "Metro Atlanta",
+      "model": "independent",
+      "provenance": {
+        "source": "Synthetic demo",
+        "attribution": "Fictional venue data for interface testing; not a place recommendation."
+      },
+      "hours": "Demo: 8am\u201310pm",
+      "summary": "A fictional venue for testing Caffeye\u2019s native interface.",
+      "loved": [
+        "Demo espresso",
+        "Demo pastries"
+      ],
+      "signature": "demo house drink",
+      "rating": {
+        "average": 4.6,
+        "count": 1280,
+        "provenance": {
+          "source": "Synthetic demo",
+          "attribution": "Fictional venue data for interface testing; not a place recommendation."
+        }
+      },
+      "work": {
+        "tier": "limited",
+        "note": "Demo work suitability note.",
+        "hasMeetingRoom": false,
+        "meetingRoomNote": "Demo meeting room information.",
+        "provenance": {
+          "source": "Synthetic demo",
+          "attribution": "Fictional venue data for interface testing; not a place recommendation."
+        }
+      }
+    },
+    {
+      "id": "demo-15",
+      "name": "Demo Tea/Boba 16",
+      "category": "Tea/Boba",
+      "coordinate": {
+        "latitude": 34.004,
+        "longitude": -84.056
+      },
+      "address": "Fictional address \u00b7 demo only",
+      "city": "Metro Atlanta",
+      "model": "independent",
+      "provenance": {
+        "source": "Synthetic demo",
+        "attribution": "Fictional venue data for interface testing; not a place recommendation."
+      },
+      "hours": "Demo: 8am\u201310pm",
+      "summary": "A fictional venue for testing Caffeye\u2019s native interface.",
+      "loved": [
+        "Demo espresso",
+        "Demo pastries"
+      ],
+      "signature": "demo house drink",
+      "rating": {
+        "average": 4.7,
+        "count": 1370,
+        "provenance": {
+          "source": "Synthetic demo",
+          "attribution": "Fictional venue data for interface testing; not a place recommendation."
+        }
+      },
+      "late": {
+        "tier": "10pm+",
+        "when": "Demo late hours; not real opening times."
+      }
+    },
+    {
+      "id": "demo-16",
+      "name": "Demo Dessert Cafe 17",
+      "category": "Dessert Cafe",
+      "coordinate": {
+        "latitude": 34.004,
+        "longitude": -84.028
+      },
+      "address": "Fictional address \u00b7 demo only",
+      "city": "Metro Atlanta",
+      "model": "independent",
+      "provenance": {
+        "source": "Synthetic demo",
+        "attribution": "Fictional venue data for interface testing; not a place recommendation."
+      },
+      "hours": "Demo: 8am\u201310pm",
+      "summary": "A fictional venue for testing Caffeye\u2019s native interface.",
+      "loved": [
+        "Demo espresso",
+        "Demo pastries"
+      ],
+      "signature": "demo house drink",
+      "rating": {
+        "average": 4.8,
+        "count": 1460,
+        "provenance": {
+          "source": "Synthetic demo",
+          "attribution": "Fictional venue data for interface testing; not a place recommendation."
+        }
+      },
+      "work": {
+        "tier": "good",
+        "note": "Demo work suitability note.",
+        "hasMeetingRoom": false,
+        "meetingRoomNote": "Demo meeting room information.",
+        "provenance": {
+          "source": "Synthetic demo",
+          "attribution": "Fictional venue data for interface testing; not a place recommendation."
+        }
+      }
+    },
+    {
+      "id": "demo-17",
+      "name": "Demo Specialty 18",
+      "category": "Specialty",
+      "coordinate": {
+        "latitude": 34.004,
+        "longitude": -84.0
+      },
+      "address": "Fictional address \u00b7 demo only",
+      "city": "Metro Atlanta",
+      "model": "independent",
+      "provenance": {
+        "source": "Synthetic demo",
+        "attribution": "Fictional venue data for interface testing; not a place recommendation."
+      },
+      "hours": "Demo: 8am\u201310pm",
+      "summary": "A fictional venue for testing Caffeye\u2019s native interface.",
+      "loved": [
+        "Demo espresso",
+        "Demo pastries"
+      ],
+      "signature": "demo house drink",
+      "rating": {
+        "average": 4.9,
+        "count": 1550,
+        "provenance": {
+          "source": "Synthetic demo",
+          "attribution": "Fictional venue data for interface testing; not a place recommendation."
+        }
+      },
+      "work": {
+        "tier": "limited",
+        "note": "Demo work suitability note.",
+        "hasMeetingRoom": false,
+        "meetingRoomNote": "Demo meeting room information.",
+        "provenance": {
+          "source": "Synthetic demo",
+          "attribution": "Fictional venue data for interface testing; not a place recommendation."
+        }
+      }
+    },
+    {
+      "id": "demo-18",
+      "name": "Demo Coffee 19",
+      "category": "Coffee",
+      "coordinate": {
+        "latitude": 34.026,
+        "longitude": -84.14
+      },
+      "address": "Fictional address \u00b7 demo only",
+      "city": "Metro Atlanta",
+      "model": "independent",
+      "provenance": {
+        "source": "Synthetic demo",
+        "attribution": "Fictional venue data for interface testing; not a place recommendation."
+      },
+      "hours": "Demo: 8am\u201310pm",
+      "summary": "A fictional venue for testing Caffeye\u2019s native interface.",
+      "loved": [
+        "Demo espresso",
+        "Demo pastries"
+      ],
+      "signature": "demo house drink",
+      "rating": {
+        "average": 4.1,
+        "count": 1640,
+        "provenance": {
+          "source": "Synthetic demo",
+          "attribution": "Fictional venue data for interface testing; not a place recommendation."
+        }
+      },
+      "work": {
+        "tier": "excellent",
+        "note": "Demo work suitability note.",
+        "hasMeetingRoom": true,
+        "meetingRoomNote": "Demo meeting room information.",
+        "provenance": {
+          "source": "Synthetic demo",
+          "attribution": "Fictional venue data for interface testing; not a place recommendation."
+        }
+      },
+      "late": {
+        "tier": "midnight",
+        "when": "Demo late hours; not real opening times."
+      }
+    },
+    {
+      "id": "demo-19",
+      "name": "Demo Roasters 20",
+      "category": "Roasters",
+      "coordinate": {
+        "latitude": 34.026,
+        "longitude": -84.112
+      },
+      "address": "Fictional address \u00b7 demo only",
+      "city": "Metro Atlanta",
+      "model": "independent",
+      "provenance": {
+        "source": "Synthetic demo",
+        "attribution": "Fictional venue data for interface testing; not a place recommendation."
+      },
+      "hours": "Demo: 8am\u201310pm",
+      "summary": "A fictional venue for testing Caffeye\u2019s native interface.",
+      "loved": [
+        "Demo espresso",
+        "Demo pastries"
+      ],
+      "signature": "demo house drink",
+      "rating": {
+        "average": 4.2,
+        "count": 1730,
+        "provenance": {
+          "source": "Synthetic demo",
+          "attribution": "Fictional venue data for interface testing; not a place recommendation."
+        }
+      }
+    },
+    {
+      "id": "demo-20",
+      "name": "Demo Bakery & Cafe 21",
+      "category": "Bakery+Cafe",
+      "coordinate": {
+        "latitude": 34.026,
+        "longitude": -84.084
+      },
+      "address": "Fictional address \u00b7 demo only",
+      "city": "Metro Atlanta",
+      "model": "franchise",
+      "provenance": {
+        "source": "Synthetic demo",
+        "attribution": "Fictional venue data for interface testing; not a place recommendation."
+      },
+      "hours": "Demo: 8am\u201310pm",
+      "summary": "A fictional venue for testing Caffeye\u2019s native interface.",
+      "loved": [
+        "Demo espresso",
+        "Demo pastries"
+      ],
+      "signature": "demo house drink",
+      "rating": {
+        "average": 4.3,
+        "count": 1820,
+        "provenance": {
+          "source": "Synthetic demo",
+          "attribution": "Fictional venue data for interface testing; not a place recommendation."
+        }
+      },
+      "work": {
+        "tier": "limited",
+        "note": "Demo work suitability note.",
+        "hasMeetingRoom": false,
+        "meetingRoomNote": "Demo meeting room information.",
+        "provenance": {
+          "source": "Synthetic demo",
+          "attribution": "Fictional venue data for interface testing; not a place recommendation."
+        }
+      }
+    },
+    {
+      "id": "demo-21",
+      "name": "Demo Tea/Boba 22",
+      "category": "Tea/Boba",
+      "coordinate": {
+        "latitude": 34.026,
+        "longitude": -84.056
+      },
+      "address": "Fictional address \u00b7 demo only",
+      "city": "Metro Atlanta",
+      "model": "independent",
+      "provenance": {
+        "source": "Synthetic demo",
+        "attribution": "Fictional venue data for interface testing; not a place recommendation."
+      },
+      "hours": "Demo: 8am\u201310pm",
+      "summary": "A fictional venue for testing Caffeye\u2019s native interface.",
+      "loved": [
+        "Demo espresso",
+        "Demo pastries"
+      ],
+      "signature": "demo house drink",
+      "rating": {
+        "average": 4.4,
+        "count": 1910,
+        "provenance": {
+          "source": "Synthetic demo",
+          "attribution": "Fictional venue data for interface testing; not a place recommendation."
+        }
+      },
+      "work": {
+        "tier": "excellent",
+        "note": "Demo work suitability note.",
+        "hasMeetingRoom": false,
+        "meetingRoomNote": "Demo meeting room information.",
+        "provenance": {
+          "source": "Synthetic demo",
+          "attribution": "Fictional venue data for interface testing; not a place recommendation."
+        }
+      },
+      "late": {
+        "tier": "10pm+",
+        "when": "Demo late hours; not real opening times."
+      }
+    },
+    {
+      "id": "demo-22",
+      "name": "Demo Dessert Cafe 23",
+      "category": "Dessert Cafe",
+      "coordinate": {
+        "latitude": 34.026,
+        "longitude": -84.028
+      },
+      "address": "Fictional address \u00b7 demo only",
+      "city": "Metro Atlanta",
+      "model": "independent",
+      "provenance": {
+        "source": "Synthetic demo",
+        "attribution": "Fictional venue data for interface testing; not a place recommendation."
+      },
+      "hours": "Demo: 8am\u201310pm",
+      "summary": "A fictional venue for testing Caffeye\u2019s native interface.",
+      "loved": [
+        "Demo espresso",
+        "Demo pastries"
+      ],
+      "signature": "demo house drink",
+      "rating": {
+        "average": 4.5,
+        "count": 2000,
+        "provenance": {
+          "source": "Synthetic demo",
+          "attribution": "Fictional venue data for interface testing; not a place recommendation."
+        }
+      },
+      "work": {
+        "tier": "good",
+        "note": "Demo work suitability note.",
+        "hasMeetingRoom": false,
+        "meetingRoomNote": "Demo meeting room information.",
+        "provenance": {
+          "source": "Synthetic demo",
+          "attribution": "Fictional venue data for interface testing; not a place recommendation."
+        }
+      }
+    },
+    {
+      "id": "demo-23",
+      "name": "Demo Specialty 24",
+      "category": "Specialty",
+      "coordinate": {
+        "latitude": 34.026,
+        "longitude": -84.0
+      },
+      "address": "Fictional address \u00b7 demo only",
+      "city": "Metro Atlanta",
+      "model": "independent",
+      "provenance": {
+        "source": "Synthetic demo",
+        "attribution": "Fictional venue data for interface testing; not a place recommendation."
+      },
+      "hours": "Demo: 8am\u201310pm",
+      "summary": "A fictional venue for testing Caffeye\u2019s native interface.",
+      "loved": [
+        "Demo espresso",
+        "Demo pastries"
+      ],
+      "signature": "demo house drink",
+      "rating": {
+        "average": 4.6,
+        "count": 2090,
+        "provenance": {
+          "source": "Synthetic demo",
+          "attribution": "Fictional venue data for interface testing; not a place recommendation."
+        }
+      }
+    }
+  ]
+}
