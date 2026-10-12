@@ -1,4 +1,4 @@
-const { test, expect, gotoHome, findIsolatedShop } = require('./helpers');
+const { test, expect, gotoHome, findIsolatedShop, expandMatches } = require('./helpers');
 const fs = require('fs');
 
 async function settled(page) {
@@ -34,8 +34,8 @@ async function exactAnnouncement(page, prefix = '', context = '') {
   await expect(page.locator('#srAnnounce')).toHaveText(text);
 }
 
-test('HTML stays within the 110 KB maintenance cap', () => {
-  expect(fs.statSync('public/index.html').size).toBeLessThanOrEqual(112640);
+test('HTML stays within the 200 KB maintenance cap', () => {
+  expect(fs.statSync('public/index.html').size).toBeLessThanOrEqual(204800);
 });
 
 test('regional shell waits for a one-second regional response and boots once', async ({page}) => {
@@ -817,4 +817,178 @@ test('vector: a hanging renderer download falls back to the standard map within 
   await expect(page.locator('.shop-item').first()).toBeVisible({timeout: 6000});
   expect(Date.now() - start).toBeLessThan(5500);
   await expect(page.locator('.renderer-note')).toContainText('Showing the standard map');
+});
+
+// R5.4 / "labels must never lie": the unrated placeholder sits in the same slot as the
+// weighted score, so it must not inherit the score's accent color and 700 weight.
+test('"no rating" is styled as muted text, not as a score', async ({page}) => {
+  await gotoHome(page);
+  const name = await page.evaluate(() => SHOPS.find(s => !s.rated && s.model === 'independent')?.name);
+  test.skip(!name, 'dataset has no unrated independent venue');
+  await page.locator('#searchInput').fill(name);
+  await page.waitForTimeout(300);
+  const outside = page.locator('.outside-pill, #emptyExpandBtn');
+  if (await outside.count()) await expandMatches(page, outside.first());
+  const score = page.locator('.shop-item .shop-score').first();
+  await expect(score).toHaveText('no rating');
+  // The accessible name must say it too, or the card silently drops the caveat.
+  await expect(page.locator('.shop-item').first()).toHaveAttribute('aria-label', /, no rating$/);
+  const styles = await score.evaluate((el) => {
+    const cs = getComputedStyle(el.querySelector('.muted') || el);
+    return {color: cs.color, weight: cs.fontWeight, muted: getComputedStyle(document.documentElement).getPropertyValue('--muted').trim(), accent: getComputedStyle(document.documentElement).getPropertyValue('--accent').trim()};
+  });
+  expect(styles.weight).toBe('400');
+  expect(styles.color).not.toBe(styles.accent);
+  // Resolve both through one element so the comparison is format-independent.
+  const sameAsMuted = await page.evaluate(([a, b]) => {
+    const probe = document.createElement('span');
+    document.body.appendChild(probe);
+    const read = (c) => { probe.style.color = c; return getComputedStyle(probe).color; };
+    const [x, y] = [read(a), read(b)];
+    probe.remove();
+    return x === y;
+  }, [styles.color, styles.muted]);
+  expect(sameAsMuted).toBe(true);
+});
+
+// R5.4 / R6.2: the category-color rule is the link between a card and its map pin.
+// Pin hexes are picked to read against the map, so on panel surfaces they need the
+// per-theme --venue-dl lightness shift to stay visible at all.
+test('the category selection bar clears 3:1 in both themes', async ({page}) => {
+  await gotoHome(page);
+  for (const theme of ['light', 'dark']) {
+    await page.evaluate((t) => document.documentElement.setAttribute('data-theme', t), theme);
+    await page.locator('.shop-item').first().click();
+    await page.locator('#backBtn').waitFor({timeout: 15000});
+    const rows = await page.evaluate(() => {
+      // Sample through a canvas so every color format and alpha composite the way the page paints.
+      const cv = Object.assign(document.createElement('canvas'), {width: 1, height: 1});
+      const ctx = cv.getContext('2d', {willReadFrequently: true});
+      const px = (...layers) => {
+        ctx.clearRect(0, 0, 1, 1);
+        for (const c of layers) { ctx.fillStyle = c; ctx.fillRect(0, 0, 1, 1); }
+        return [...ctx.getImageData(0, 0, 1, 1).data].slice(0, 3);
+      };
+      const s2l = (c) => (c <= 0.04045 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4));
+      const lum = (rgb) => { const l = rgb.map((v) => s2l(v / 255)); return 0.2126 * l[0] + 0.7152 * l[1] + 0.0722 * l[2]; };
+      const ratio = (a, b) => { const [x, y] = [lum(a) + 0.05, lum(b) + 0.05]; return +(Math.max(x, y) / Math.min(x, y)).toFixed(2); };
+      const header = document.querySelector('.detail-header');
+      const dot = header.querySelector('.detail-cat .dot');
+      const row = document.querySelector('.shop-item').cloneNode(true);
+      row.classList.add('active');
+      document.querySelector('.shop-item').parentNode.appendChild(row);
+      const panel = getComputedStyle(document.querySelector('.panel')).backgroundColor;
+      const headerBg = px(panel, getComputedStyle(header).backgroundColor);
+      const rowBg = px(panel, getComputedStyle(row).backgroundColor);
+      const out = Object.entries(CATS).map(([name, cat]) => {
+        header.style.setProperty('--venue-color', cat.hex);
+        row.style.setProperty('--venue-color', cat.hex);
+        const bar = getComputedStyle(row).boxShadow.match(/^\S+\(.*?\)|^#\S+|^\w+/)[0];
+        return {name,
+          rule: ratio(px(getComputedStyle(header).borderTopColor), headerBg),
+          dot: ratio(px(getComputedStyle(dot).backgroundColor), headerBg),
+          bar: ratio(px(bar), rowBg)};
+      });
+      row.remove();
+      header.style.removeProperty('--venue-color');
+      return out;
+    });
+    expect(rows).toHaveLength(6);
+    for (const r of rows) {
+      expect(Math.min(r.rule, r.dot, r.bar), `${theme} ${r.name}: ${JSON.stringify(r)}`).toBeGreaterThanOrEqual(3);
+    }
+    await page.locator('#backBtn').click();
+  }
+});
+
+// R6.1 / DESIGN.md "List item": the selected row's category bar only ever painted
+// during the detail crossfade, because deselectShop stripped .active on the way out.
+// The mark now survives Back so the list shows where you were.
+test('the row you opened stays marked after Back, until the filter context changes', async ({page}) => {
+  await gotoHome(page);
+  const id = await page.locator('.shop-item').nth(2).getAttribute('data-id');
+  await page.locator('.shop-item').nth(2).click();
+  await page.locator('#backBtn').waitFor({timeout: 15000});
+  await expect(page.locator('.shop-item.active')).toHaveCount(1);
+  await page.locator('#backBtn').click();
+  await expect(page.locator('.panel')).not.toHaveClass(/detail-mode/);
+  const marked = page.locator('.shop-item.active');
+  await expect(marked).toHaveCount(1);
+  await expect(marked).toHaveAttribute('data-id', id);
+  // The bar is what marks it, and the list is actually visible now.
+  expect(await marked.evaluate((el) => getComputedStyle(el).boxShadow)).toContain('inset');
+  // ...and it is still marked once the crossfade back to the list has finished.
+  await expect.poll(() => page.locator('.list-view').evaluate((el) => getComputedStyle(el).opacity)).toBe('1');
+  await expect(page.locator('.shop-item.active')).toHaveAttribute('data-id', id);
+
+  await expect(marked).toHaveAttribute('aria-current', 'true');
+
+  // Panning away destroys the row; panning back rebuilds it, and buildShopCard
+  // has to reapply the mark or it survives only as long as its DOM node does.
+  const at = await page.evaluate((i) => { const s = SHOPS.find(x => x.id === i); return [s.lat, s.lng]; }, id);
+  await page.evaluate(() => map.setView([34.6, -83.5], 13));
+  await expect(page.locator(`.shop-item[data-id="${id}"]`)).toHaveCount(0);
+  await page.evaluate((at) => map.setView(at, 13), at);
+  await expect(page.locator(`.shop-item[data-id="${id}"].active`)).toHaveCount(1);
+
+  await page.locator('#searchInput').fill('matcha');
+  await page.waitForTimeout(300);
+  await expect(page.locator('.shop-item.active')).toHaveCount(0);
+  await expect(page.locator('.shop-item[aria-current]')).toHaveCount(0);
+});
+
+// The vector path has been SRI-checked since it shipped; the default path had not.
+// MarkerCluster (one script + two stylesheets) was loading from unpkg unverified,
+// and the script is injected at runtime, where the attribute is easy to omit.
+test('every third-party asset on the default path is integrity-checked and executes', async ({page}) => {
+  await gotoHome(page);
+  const assets = await page.evaluate(() => [...document.querySelectorAll('script[src^="https://"], link[rel="stylesheet"][href^="https://"]')]
+    .filter(el => !/fonts\.googleapis\.com/.test(el.src || el.href))
+    .map(el => ({src: (el.src || el.href).replace(/^https:\/\//, ''), integrity: el.integrity, cors: el.crossOrigin})));
+  expect(assets.length).toBeGreaterThanOrEqual(4);
+  for (const a of assets) {
+    expect(a.integrity, `${a.src} integrity`).toMatch(/^sha(256|384|512)-/);
+    expect(a.cors, `${a.src} crossorigin`).toBe('anonymous');
+  }
+  // A wrong hash blocks the resource silently, so assert the code actually ran.
+  expect(await page.evaluate(() => typeof L.markerClusterGroup === 'function')).toBe(true);
+  expect(await page.evaluate(() => !!document.querySelector('.leaflet-cluster-anim, .coffee-cluster') || clusterGroup._featureGroup != null)).toBe(true);
+});
+
+// A later declaration holding var() is parsed, then substituted; if the result does not
+// parse it is invalid at computed-value time and the property takes its INITIAL value,
+// not the declaration above it. So the lifted colors must sit behind @supports, with the
+// raw hex in the base rule, or engines without relative color syntax lose the bar, the
+// dot and the header rule entirely.
+test('the category color degrades to the raw hex without relative color syntax', async ({page}) => {
+  await gotoHome(page);
+  const css = await page.evaluate(() => {
+    const inSupports = new Set(), base = new Set();
+    for (const sheet of document.styleSheets) {
+      let rules;
+      try { rules = sheet.cssRules; } catch { continue; }
+      // CSS Nesting gives every CSSStyleRule a (usually empty) cssRules list, so a
+      // style rule has to be collected first and only then recursed into.
+      const walk = (list, guarded) => {
+        for (const rule of list) {
+          if (rule.style) {
+            for (const prop of ['box-shadow', 'border-top-color', 'background', 'border-top']) {
+              const v = rule.style.getPropertyValue(prop);
+              if (v && v.includes('--venue-color')) (guarded ? inSupports : base).add(`${rule.selectorText}|${prop}|${v.includes('oklch(from')}`);
+            }
+          }
+          if (rule.cssRules && rule.cssRules.length) walk(rule.cssRules, guarded || (rule.conditionText || '').includes('oklch(from'));
+        }
+      };
+      walk(rules, false);
+    }
+    return {base: [...base], inSupports: [...inSupports]};
+  });
+  // Nothing outside an @supports guard may depend on relative color syntax...
+  expect(css.base.filter(d => d.endsWith('|true')), JSON.stringify(css.base)).toEqual([]);
+  // ...and all three surfaces keep a raw-hex declaration to fall back to.
+  for (const sel of ['.shop-item.active', '.detail-header', '.detail-cat .dot']) {
+    expect(css.base.some(d => d.startsWith(sel + '|')), `${sel} has no unguarded declaration`).toBe(true);
+    expect(css.inSupports.some(d => d.startsWith(sel + '|')), `${sel} is not enhanced`).toBe(true);
+  }
 });

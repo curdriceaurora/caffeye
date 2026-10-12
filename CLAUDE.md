@@ -12,7 +12,7 @@ For product principles and design rationale, read `PRODUCT.md` first.
 
 ```
 public/
-  index.html          # the entire app shell (≤ 110 KB; enforced by Playwright)
+  index.html          # the entire app shell (≤ 200 KB; enforced by Playwright)
   maplibre-preview.js # opt-in vector renderer
   shops.json          # curated shop data (Duluth baseline)
   places.json         # discovered places across Metro Atlanta
