@@ -20,6 +20,14 @@ public enum Category: String, Codable, CaseIterable, Sendable, Identifiable {
 public enum Feature: String, CaseIterable, Sendable, Identifiable {
     case work, meeting, late, midnight
     public var id: String { rawValue }
+    public var glyph: String {
+        switch self {
+        case .work: "💻"
+        case .meeting: "🤝"
+        case .late: "🌙"
+        case .midnight: "🦉"
+        }
+    }
     public var label: String {
         switch self {
         case .work: "Work-friendly"
