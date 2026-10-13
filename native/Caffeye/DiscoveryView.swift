@@ -51,6 +51,9 @@ struct DiscoveryView: View {
             .navigationBarTitleDisplayMode(.inline)
             #endif
             .searchable(text: $state.filters.search, prompt: "Search by name, drink, or area")
+            #if os(iOS)
+            .searchPresentationToolbarBehavior(.avoidHidingContent)
+            #endif
             .searchFocused($searchFocused)
             .toolbar { toolbar }
             .onChange(of: state.selection) { old, selected in
@@ -113,6 +116,7 @@ struct DiscoveryView: View {
                 Text((state.filters.categories.sorted { $0.rawValue < $1.rawValue }.map { "\($0.glyph) \($0.label)" }
                       + state.filters.features.sorted { $0.rawValue < $1.rawValue }.map { "\($0.glyph) \($0.label)" }).joined(separator: " · "))
                     .font(.caption).foregroundStyle(.secondary)
+                    .accessibilityIdentifier("active-filters")
             }
         }
         .padding(.horizontal).padding(.vertical, 8)
@@ -134,6 +138,7 @@ struct DiscoveryView: View {
             resultHeader(rows.count).padding()
             if rows.count < state.matches.count {
                 Button("Show all \(state.matches.count) matches") { state.showAll() }
+                    .accessibilityIdentifier("show-all")
                     .padding(.bottom, 8)
             }
             ScrollViewReader { proxy in
@@ -143,9 +148,15 @@ struct DiscoveryView: View {
                     }
                 })) {
                     if !state.clusterMembers.isEmpty {
-                        Section("Venues in selected cluster") {
+                        Section {
                             ForEach(state.clusterVenues) { venue in row(venue) }
-                            Button("Close cluster") { state.clusterMembers = [] }
+                        } header: {
+                            HStack {
+                                Text("Venues in selected cluster")
+                                Spacer()
+                                Button("Close cluster") { state.clusterMembers = [] }
+                                    .accessibilityIdentifier("close-cluster")
+                            }
                         }
                     }
                     Section {
@@ -169,7 +180,7 @@ struct DiscoveryView: View {
         }
     }
     @ViewBuilder private func resultHeader(_ count: Int) -> some View {
-        let label = "\(count) \(count < state.matches.count ? "in view" : "spots")"
+        let label = "\(count) \(count < state.matches.count ? "in view" : count == 1 ? "spot" : "spots")"
         let legend = state.listSnapshot?.priors == nil ? "Alphabetical · ratings omitted" : "◆ = weighted score"
         if typeSize.isAccessibilitySize {
             VStack(alignment: .leading, spacing: 6) {
@@ -213,13 +224,16 @@ struct DiscoveryView: View {
         ToolbarItemGroup {
             Menu("☕ Type") {
                 Button("All (\(state.inScope.count))") { state.filters.categories = [] }
+                    .accessibilityIdentifier("category-all")
                 ForEach(CaffeyeCore.Category.allCases) { category in
                     Toggle("\(category.glyph) \(category.label) (\(state.categoryCounts[category, default: 0]))", isOn: categoryBinding(category))
+                        .accessibilityIdentifier("category-\(category.rawValue)")
                 }
             }.accessibilityLabel("Type").accessibilityIdentifier("type-filter")
             Menu("💻 Useful for") {
                 ForEach(Feature.allCases) { feature in
                     Toggle("\(feature.glyph) \(feature.label) (\(state.featureCounts[feature, default: 0]))", isOn: featureBinding(feature))
+                        .accessibilityIdentifier("feature-\(feature.rawValue)")
                 }
             }.accessibilityLabel("Useful for").accessibilityIdentifier("feature-filter")
             Button("Reset", systemImage: "arrow.counterclockwise") { state.reset() }

@@ -70,6 +70,7 @@ struct VenueDetail: View {
                     .font(.caption).foregroundStyle(.secondary)
             }.frame(maxWidth: .infinity, alignment: .leading).padding()
         }
+        .accessibilityIdentifier("detail-scroll")
         .id(venue.id)
         .task(id: venue.id) { headingFocused = true }
     }

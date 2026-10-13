@@ -1,3 +1,4 @@
+import Foundation
 import Testing
 import MapKit
 import CaffeyeCore
@@ -197,6 +198,95 @@ struct DiscoveryStateTests {
         state.showAll()
         #expect(state.cameraCommand == command)
         #expect(MKMapRectEqualToRect(state.cameraRect, camera))
+    }
+
+    private func demoSnapshot() throws -> Snapshot {
+        try #require(CaffeyeCore.Category.allCases.count == 6)
+        try #require(Feature.allCases.count == 4)
+        let url = try #require(Bundle.main.url(forResource: "demo", withExtension: "json"))
+        let data = try SnapshotStore.decode(SnapshotStore.readFile(url))
+        try #require(Set(data.venues.map(\.id)) == Set((0..<24).map(demoID)))
+        return data
+    }
+    private func demoID(_ index: Int) -> String { String(format: "demo-%02d", index) }
+
+    // Fixed classifications describe the bundled fixture, independently of Filters.matches,
+    // Feature.matches, search indexes and the values computed by DiscoveryState.
+    private var demoCategories: [CaffeyeCore.Category: Set<Int>] {
+        [.coffee: [0, 6, 12, 18], .roasters: [1, 7, 13, 19],
+         .bakery: [2, 8, 14, 20], .tea: [3, 9, 15, 21],
+         .dessert: [4, 10, 16, 22], .specialty: [5, 11, 17, 23]]
+    }
+    private var demoFeatures: [Feature: Set<Int>] {
+        [.work: [0, 6, 9, 12, 18, 21], .meeting: [0, 6, 12, 18],
+         .late: [0, 3, 6, 9, 12, 15, 18, 21], .midnight: [0, 6, 12, 18]]
+    }
+
+    @Test("All 2,048 category/feature/franchise combinations preserve fixture membership and rank order",
+          arguments: Array(0..<64))
+    func finiteFilterCombinations(_ categoryMask: Int) throws {
+        let data = try demoSnapshot()
+        let state = DiscoveryState(); state.accept(data)
+        let categories = CaffeyeCore.Category.allCases.enumerated().compactMap { index, category in
+            categoryMask & (1 << index) == 0 ? nil : category
+        }
+        let categoryIDs = categories.isEmpty ? Set(0..<24) : categories.reduce(into: Set<Int>()) {
+            $0.formUnion(demoCategories[$1] ?? [])
+        }
+        for featureMask in 0..<16 {
+            let features = Feature.allCases.enumerated().compactMap { index, feature in
+                featureMask & (1 << index) == 0 ? nil : feature
+            }
+            let featureIDs = features.reduce(categoryIDs) { $0.intersection(demoFeatures[$1] ?? []) }
+            for includeFranchises in [false, true] {
+                let expectedIDs = Set((includeFranchises ? featureIDs : featureIDs.subtracting([6, 13, 20])).map(demoID))
+                let expectedOrder = data.ranked.map(\.id).filter { expectedIDs.contains($0) }
+                var filters = Filters()
+                filters.categories = Set(categories); filters.features = Set(features)
+                filters.includeFranchises = includeFranchises
+                state.filters = filters
+                #expect(state.matches.map(\.id) == expectedOrder,
+                        "Category mask \(categoryMask), feature mask \(featureMask), franchises \(includeFranchises)")
+                #expect(state.rows.map(\.id) == expectedOrder)
+                #expect(state.browsingRows.map(\.id) == expectedOrder)
+            }
+        }
+    }
+
+    @Test("Search and viewport compose with category/feature/franchise filters without reranking",
+          arguments: [false, true])
+    func composedFiltersSearchAndViewport(_ includeFranchises: Bool) throws {
+        let data = try demoSnapshot()
+        let state = DiscoveryState(); state.accept(data)
+        var filters = Filters()
+        filters.includeFranchises = includeFranchises
+        filters.categories = [.coffee, .tea]; filters.features = [.work, .late]
+        filters.search = "  DeMo   CoFFee  "
+        state.filters = filters
+        let expectedIDs = Set((includeFranchises ? [0, 6, 12, 18] : [0, 12, 18]).map(demoID))
+        let expectedOrder = data.ranked.map(\.id).filter { expectedIDs.contains($0) }
+        #expect(state.matches.map(\.id) == expectedOrder)
+
+        // A small viewport around the known colocated 00/01 fixture leaves only coffee 00.
+        let point = MKMapPoint(CLLocationCoordinate2D(latitude: 33.96, longitude: -84.14))
+        let viewport = MKMapRect(x: point.x - 100, y: point.y - 100, width: 200, height: 200)
+        state.cameraChanged(viewport, userInitiated: true)
+        #expect(state.rows.map(\.id) == ["demo-00"])
+        #expect(state.matches.map(\.id) == expectedOrder)
+        #expect(state.categoryCounts[.coffee] == 4 - (includeFranchises ? 0 : 1))
+        #expect(state.featureCounts[.meeting] == 4 - (includeFranchises ? 0 : 1))
+
+        // Editorial words add an independent known query class; all coffee fixtures have both.
+        state.filters.search = "espresso pastries"
+        let editorialIDs = Set((includeFranchises ? [0, 6, 9, 12, 18, 21] : [0, 9, 12, 18, 21]).map(demoID))
+        #expect(state.matches.map(\.id) == data.ranked.map(\.id).filter { editorialIDs.contains($0) })
+        #expect(state.rows.map(\.id) == ["demo-00"])
+        state.filters.search = "coffee missing-word"
+        #expect(state.matches.isEmpty)
+        #expect(state.rows.isEmpty)
+        state.reset()
+        let indieIDs = Set((0..<24).filter { ![6, 13, 20].contains($0) }.map(demoID))
+        #expect(state.rows.map(\.id) == data.ranked.map(\.id).filter { indieIDs.contains($0) })
     }
 
 }
