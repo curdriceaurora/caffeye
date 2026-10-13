@@ -98,6 +98,8 @@ public struct Venue: Codable, Hashable, Identifiable, Sendable {
     public var neighborhood: String?
     public var model: BusinessModel
     public var provenance: Provenance
+    /// Missing field entries inherit the record's provenance; they are not independent sources.
+    public var fieldProvenance: [String: Provenance]?
     public var providerIDs: [String: String]?
     public var types: [String]?
     public var rating: Rating?
@@ -180,6 +182,11 @@ public struct Snapshot: Codable, Equatable, Sendable {
                   !venue.provenance.source.isEmpty, ids.insert(venue.id).inserted else {
                 throw SnapshotError.invalidVenue(venue.id)
             }
+            if let fields = venue.fieldProvenance {
+                guard fields.allSatisfy({ !$0.key.isEmpty && !$0.value.source.isEmpty }) else {
+                    throw SnapshotError.invalidVenue(venue.id)
+                }
+            }
             if let rating = venue.rating {
                 guard rating.average.isFinite, (0...5).contains(rating.average), rating.count >= 0,
                       !rating.provenance.source.isEmpty else { throw SnapshotError.invalidVenue(venue.id) }
@@ -199,7 +206,7 @@ public struct Snapshot: Codable, Equatable, Sendable {
     }
 }
 
-public enum SnapshotError: LocalizedError {
+public enum SnapshotError: LocalizedError, Equatable {
     case unsupportedVersion, invalidMetadata, invalidVenue(String), tooLarge, insecureEndpoint
     public var errorDescription: String? {
         switch self {

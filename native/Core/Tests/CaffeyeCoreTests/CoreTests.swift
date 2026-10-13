@@ -90,6 +90,9 @@ struct StoreTests {
         #expect(throws: (any Error).self) { try Snapshot(revision: "test", priors: priors, venues: [a, a]).validated() }
         let bad = RatingPriors(mean: 4.3, weight: 0, provenance: source)
         #expect(throws: (any Error).self) { try Snapshot(revision: "test", priors: bad, venues: [a]).validated() }
+        var invalidSource = a
+        invalidSource.fieldProvenance = ["coordinate": Provenance(source: "")]
+        #expect(throws: (any Error).self) { try Snapshot(revision: "source", priors: priors, venues: [invalidSource]).validated() }
     }
     @Test("Unsupported schema and malformed input never replace data")
     func decoding() throws {
@@ -127,5 +130,6 @@ struct UnratedSnapshotTests {
         #expect(!snapshot.isDemo)
         #expect(snapshot.priors == nil)
         #expect(snapshot.venues.allSatisfy { $0.rating == nil })
+        #expect(snapshot.venues.filter { $0.fieldProvenance?["coordinate"]?.source == "Apple geocoding (curated seed)" }.count == 61)
     }
 }

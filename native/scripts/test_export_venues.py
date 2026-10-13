@@ -43,6 +43,9 @@ class ExportTests(unittest.TestCase):
         for original in seed["shops"]:
             venue = next(v for v in result["venues"] if v.get("providerIDs", {}).get("google") == original["placeId"])
             self.assertTrue(venue["curated"])
+            self.assertEqual(venue["fieldProvenance"]["coordinate"]["source"], "Apple geocoding (curated seed)")
+            self.assertNotIn("verified", venue["fieldProvenance"]["coordinate"])
+            self.assertEqual(venue["fieldProvenance"]["work"], venue["work"]["provenance"])
             self.assertEqual(venue["providerIDs"]["caffeyeAddress"], original["addrKey"])
             self.assertEqual(venue["coordinate"], {
                 "latitude": seed["addr"][original["addrKey"]]["lat"],

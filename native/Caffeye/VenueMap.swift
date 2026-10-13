@@ -1,5 +1,6 @@
 import SwiftUI
 import MapKit
+import os
 import CaffeyeCore
 
 private final class VenueAnnotation: NSObject, MKAnnotation {
@@ -33,7 +34,10 @@ private final class VenueAnnotation: NSObject, MKAnnotation {
             map.cameraZoomRange = MKMapView.CameraZoomRange(minCenterCoordinateDistance: 300, maxCenterCoordinateDistance: 300_000)
             map.setVisibleMapRect(DiscoveryState.regionalRect, animated: false)
         }
+        private static let performance = OSLog(subsystem: "com.caffeye.native", category: .pointsOfInterest)
         func update(_ map: MKMapView, state: DiscoveryState) {
+            os_signpost(.begin, log: Self.performance, name: "Map annotations")
+            defer { os_signpost(.end, log: Self.performance, name: "Map annotations") }
             self.state = state
             let venues = state.matches
             let ids = Set(venues.map(\.id))
@@ -117,6 +121,16 @@ private final class VenueAnnotation: NSObject, MKAnnotation {
             let userInitiated = !programmatic
             let rect = mapView.visibleMapRect
             DispatchQueue.main.async { self.state.cameraChanged(rect, userInitiated: userInitiated) }
+        }
+        func mapViewDidFailLoadingMap(_ mapView: MKMapView, withError error: any Error) {
+            DispatchQueue.main.async {
+                if !self.state.mapImageryUnavailable { self.state.mapImageryUnavailable = true }
+            }
+        }
+        func mapViewDidFinishLoadingMap(_ mapView: MKMapView) {
+            DispatchQueue.main.async {
+                if self.state.mapImageryUnavailable { self.state.mapImageryUnavailable = false }
+            }
         }
     }
 }

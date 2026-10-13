@@ -9,11 +9,13 @@
 /* Begin PBXBuildFile section */
 		029E47A65EC7F81F234E3F66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5569F51C8AF19AC80D41CF0 /* Assets.xcassets */; };
 		1CCE730142A34F30AC02C7D6 /* demo.json in Resources */ = {isa = PBXBuildFile; fileRef = 21D8FFFDEEA2B349E99B1CBA /* demo.json */; };
+		1F2F52A19207E6DD317A7BF2 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 63ED8B34383C3304A22C869E /* PrivacyInfo.xcprivacy */; };
 		2F42685F2C9A33282455E3C8 /* DiscoveryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF94F00081ACA4791DC02FBD /* DiscoveryView.swift */; };
 		2F82E284FF61D83528CB9F89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5569F51C8AF19AC80D41CF0 /* Assets.xcassets */; };
 		2FCE66D43A890337A28D3C45 /* DiscoveryState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A820523AAAD6A8BEFE0B2BDF /* DiscoveryState.swift */; };
 		3A33910D7D8293717379F254 /* venues.json in Resources */ = {isa = PBXBuildFile; fileRef = F6B0037DCB6D0495268D78A7 /* venues.json */; };
 		3E3E4A166B90599DE89E247B /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA93ECE1A812FFF6B55B6C5 /* AppModel.swift */; };
+		53DF2B5674C697BD2E708260 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 63ED8B34383C3304A22C869E /* PrivacyInfo.xcprivacy */; };
 		5E221CFA583CEA9225849AD0 /* DiscoveryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106EF70B6B26EB29D71612FA /* DiscoveryUITests.swift */; };
 		5FA4A0C39A9EABE689F4B15E /* CaffeyeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EEB7B02370209A474B3206 /* CaffeyeApp.swift */; };
 		5FDB70E753418A5857256979 /* VenueDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65934EA70C931123FCDEA1F /* VenueDetail.swift */; };
@@ -29,6 +31,7 @@
 		CA7F4BEA790CCCF6B04F2FF6 /* VenueDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65934EA70C931123FCDEA1F /* VenueDetail.swift */; };
 		DB4A627E531EC255F21A536C /* demo.json in Resources */ = {isa = PBXBuildFile; fileRef = 21D8FFFDEEA2B349E99B1CBA /* demo.json */; };
 		DBF4E019D2D41EA64EB7B938 /* CaffeyeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EEB7B02370209A474B3206 /* CaffeyeApp.swift */; };
+		E272436E68981B85075B7960 /* AppModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C00A70395A03B6DEE3823B /* AppModelTests.swift */; };
 		E7CD9A3363421F3707E623B4 /* CaffeyeCore in Frameworks */ = {isa = PBXBuildFile; productRef = 39D52D3133152910A451B831 /* CaffeyeCore */; };
 /* End PBXBuildFile section */
 
@@ -55,12 +58,14 @@
 		247F4FEB9F9A143F5E4B560F /* VenueMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueMap.swift; sourceTree = "<group>"; };
 		4C143B4D741ECA24AA276E6A /* Caffeye-macOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Caffeye-macOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52B794831C1E4E5EA167EB51 /* Caffeye-iOS.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "Caffeye-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		63ED8B34383C3304A22C869E /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		6815340F377F0BAB9B9A5EFD /* Core */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Core; path = Core; sourceTree = SOURCE_ROOT; };
 		69411CAC3A9A444467EB05D6 /* CaffeyeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CaffeyeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BA93ECE1A812FFF6B55B6C5 /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
 		72B6FEAB9DC781BEE485AD41 /* DiscoveryStateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryStateTests.swift; sourceTree = "<group>"; };
 		760F14245650EE87DBFAD978 /* Caffeye.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Caffeye.entitlements; sourceTree = "<group>"; };
 		89475095AEA70B9A8B55E17F /* CaffeyeUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = CaffeyeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		92C00A70395A03B6DEE3823B /* AppModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModelTests.swift; sourceTree = "<group>"; };
 		A1EEB7B02370209A474B3206 /* CaffeyeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaffeyeApp.swift; sourceTree = "<group>"; };
 		A5569F51C8AF19AC80D41CF0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A820523AAAD6A8BEFE0B2BDF /* DiscoveryState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryState.swift; sourceTree = "<group>"; };
@@ -100,6 +105,7 @@
 		223160468ABCDEA10F47EA9B /* CaffeyeTests */ = {
 			isa = PBXGroup;
 			children = (
+				92C00A70395A03B6DEE3823B /* AppModelTests.swift */,
 				72B6FEAB9DC781BEE485AD41 /* DiscoveryStateTests.swift */,
 			);
 			path = CaffeyeTests;
@@ -144,6 +150,7 @@
 			children = (
 				A5569F51C8AF19AC80D41CF0 /* Assets.xcassets */,
 				21D8FFFDEEA2B349E99B1CBA /* demo.json */,
+				63ED8B34383C3304A22C869E /* PrivacyInfo.xcprivacy */,
 				F6B0037DCB6D0495268D78A7 /* venues.json */,
 			);
 			path = Resources;
@@ -304,6 +311,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F82E284FF61D83528CB9F89 /* Assets.xcassets in Resources */,
+				1F2F52A19207E6DD317A7BF2 /* PrivacyInfo.xcprivacy in Resources */,
 				DB4A627E531EC255F21A536C /* demo.json in Resources */,
 				3A33910D7D8293717379F254 /* venues.json in Resources */,
 			);
@@ -314,6 +322,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				029E47A65EC7F81F234E3F66 /* Assets.xcassets in Resources */,
+				53DF2B5674C697BD2E708260 /* PrivacyInfo.xcprivacy in Resources */,
 				1CCE730142A34F30AC02C7D6 /* demo.json in Resources */,
 				9D36E3DE4F9EBDFB0423C14B /* venues.json in Resources */,
 			);
@@ -339,6 +348,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E272436E68981B85075B7960 /* AppModelTests.swift in Sources */,
 				8C12EDDF9B0BF7088FAE7EA5 /* DiscoveryStateTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
