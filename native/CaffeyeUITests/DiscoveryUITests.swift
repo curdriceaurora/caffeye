@@ -58,7 +58,6 @@ final class DiscoveryUITests: XCTestCase {
         app.launchArguments = ["--ui-testing", "--bundled-venues-testing"]
         app.launch()
         XCTAssertTrue(app.staticTexts["Alphabetical · ratings omitted"].waitForExistence(timeout: 20))
-        XCTAssertFalse(app.staticTexts["No rating"].exists)
         let search = app.searchFields.firstMatch
         search.tap(); search.typeText("Cloud Tea")
         let row = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'venue-'")).firstMatch
@@ -67,6 +66,7 @@ final class DiscoveryUITests: XCTestCase {
         XCTAssertTrue(app.staticTexts["detail-name"].waitForExistence(timeout: 5))
         XCTAssertFalse(app.keyboards.firstMatch.exists, "Opening detail should dismiss the search keyboard")
         XCTAssertTrue(app.staticTexts["Ratings omitted from this snapshot"].exists)
+        XCTAssertFalse(app.staticTexts["No rating"].exists)
         XCTAssertFalse(app.staticTexts.matching(NSPredicate(format: "label CONTAINS 'weighted score'")).firstMatch.exists)
         let detail = XCTAttachment(screenshot: app.screenshot())
         detail.name = "Real venue without ratings"; detail.lifetime = .keepAlways

@@ -116,3 +116,13 @@ Deferred map callbacks use weak coordinator references. A lifecycle regression c
 The memory capture script checks `proc_pidpath` failure and polls a developer-only stdout signal after offline data loads instead of sleeping a fixed five seconds. The signal does not assert tile readiness or settled layout. Three new Python tests cover path lookup, readiness/timeout/early exit, and missing versus zero leak measurements. A five-second live capture verified the new handshake.
 
 Validation: eight Python tests, 21 shared Swift tests across four suites, and 14 macOS tests across two suites passed. All five UI tests passed on both iPhone and iPad. Manually checked native Mac row mouse selection, arrow-key navigation, and non-duplicated accessibility labels. The macOS Release package and the snapshot-readiness capture handshake succeeded. Full spoken VoiceOver navigation and the unresolved Instruments/device/data-rights release work remain separate.
+
+### Additional review corrections — 2026-10-13
+
+Profiler readiness polling tolerates incomplete JSON and partial UTF-8 output while retaining its deadline. Regression tests cover a line completed on the next poll and permanently malformed output.
+
+Snapshot downloads now accumulate URLSession data-delegate chunks instead of iterating AsyncBytes elements. The foreground task delegate retains HTTPS/credential checks, redirect restrictions, cancellation, response validation and the 20 MiB limit. Tests cover exact-limit and one-byte-over-limit chunked responses, as well as allowed/rejected redirect decisions. The oversized mock-response test took 1.268 seconds with the prior loop and 0.043 seconds with chunk delivery in isolated local runs; this fixture comparison does not measure real-network throughput, app memory, or physical-device performance.
+
+Detail presentation treats blank hours as unverified and omits empty editorial sections. Tests cover hours, rated/unrated/omitted-rating states, Bayesian score/provenance, and absent or unsafe links. Direct Show All tests cover normal/coincident coordinates and empty results. These test presentation and state decisions, not rendered layout or spoken VoiceOver announcements; full VoiceOver/rotor delivery remains manual QA. No numerical coverage percentage or claim that all hazards are eliminated is inferred from these tests.
+
+The real-bundle UI test checks the absent rating placeholder after opening detail, avoiding a failed accessibility query across the full venue list. Automated validation results for this follow-up are recorded in the pull request.
