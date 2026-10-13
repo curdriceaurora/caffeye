@@ -1,0 +1,292 @@
+{
+  "measuredAtUTC": "2026-10-13T02:53:00.529104+00:00",
+  "appSourceCommit": "47bc6ec814808eba7d9af0f85d5310ea07da82db",
+  "configuration": "Release",
+  "executableSHA256": "9f68a5fa7ac3730a6c3455681305ef8c76421a0382ee045b3f768fab652f7fa6",
+  "datasetSHA256": "75db5af2068dd891fbf4f12c07aaa893dccad45d4399829c71bb7c9e50a9121b",
+  "os": "27.2",
+  "toolchain": "Xcode 27.2\nBuild version 27B5028f",
+  "scope": "Two short local macOS runs with isolated bundled venue storage. Manual zoom/franchise/reset operations and accessibility-tree inspection. Heap graphs and vmmap are usable; no valid Instruments Allocations/Leaks recording was produced. Not physical-device, cold-launch, FPS, or a proven retention diagnosis.",
+  "runs": [
+    {
+      "scenario": "Three zoom/franchise/reset cycles, one attempted pan, then unmatched search; graph capture overlapped Reset so this is an interaction checkpoint, not a controlled zero-result checkpoint.",
+      "mallocStackLoggingRequested": true,
+      "initialVMPhysicalFootprint": "356.1M",
+      "checkpoint": {
+        "physicalFootprint": "520.7M",
+        "leaks": {
+          "count": 174,
+          "bytes": 11136
+        },
+        "largestIdentifiedTypes": [
+          {
+            "count": 4,
+            "bytes": 11206656,
+            "type": "malloc in md::DaVinciMetaLayerDataSource::createLayerData(gdc::LayerDataRequestKey const&, geo::linear_map<unsigned short, std::unordered_map<gdc::ResourceKey, std::shared_ptr<gdc::Resource>, gdc::ResourceKeyHash>, std::vector<std::pair<unsigned short, std::unordered_map<gdc::ResourceKey, std::shared_ptr<gdc::Resource>, gdc::ResourceKeyHash>>>> const&, long long) const",
+            "binary": "VectorKit"
+          },
+          {
+            "count": 5920,
+            "bytes": 11126464,
+            "type": "calloc in _NSBitSetResize",
+            "binary": "CoreAutoLayout"
+          },
+          {
+            "count": 24,
+            "bytes": 7077888,
+            "type": "malloc in std::vector<gdc::TriangularDCEL::HalfEdge>::resize(unsigned long, gdc::TriangularDCEL::HalfEdge const&)",
+            "binary": "VectorKit"
+          },
+          {
+            "count": 12,
+            "bytes": 5963776,
+            "type": "malloc in gdc::TriangularDCEL::TriangularDCEL(unsigned int, unsigned int, std::function<void (gdc::DCELBase const*, gdc::DCELBase::Warning, unsigned int)>)",
+            "binary": "VectorKit"
+          },
+          {
+            "count": 64,
+            "bytes": 4325376,
+            "type": "calloc in weak_resize(weak_table_t*, unsigned long)",
+            "binary": "libobjc.A.dylib"
+          },
+          {
+            "count": 237,
+            "bytes": 4216768,
+            "type": "Swift Metadata",
+            "binary": "libswiftCore.dylib"
+          },
+          {
+            "count": 78526,
+            "bytes": 3769248,
+            "type": "NSKeyValueDependency",
+            "binary": "AppKit"
+          },
+          {
+            "count": 2342,
+            "bytes": 3597312,
+            "type": "MKMarkerAnnotationView",
+            "binary": "MapKit"
+          },
+          {
+            "count": 47208,
+            "bytes": 3021312,
+            "type": "CFSet",
+            "binary": "CoreFoundation"
+          },
+          {
+            "count": 4436,
+            "bytes": 2890896,
+            "type": "malloc in md::RibbonLayer<md::Ribbons::RoadRibbonDescriptor>::RibbonLayer(ggl::ResourceAccessor*, std::unordered_map<md::RoadBatchKey, std::vector<std::unique_ptr<md::RoadRibbon, mdm::TypeDeleter<md::RoadRibbon>>, geo::allocator_adapter<std::unique_ptr<md::RoadRibbon, mdm::TypeDeleter<md::RoadRibbon>>, mdm::zone_mallocator>>>&&, std::shared_ptr<ggl::ConstantDataTyped<ggl::Tile::View>> const&, std::shared_ptr<ggl::ConstantDataTyped<ggl::Tile::Transform>> const&)",
+            "binary": "VectorKit"
+          },
+          {
+            "count": 1843,
+            "bytes": 2830848,
+            "type": "std::__shared_ptr_emplace<md::Label>",
+            "binary": "VectorKit"
+          },
+          {
+            "count": 17145,
+            "bytes": 2711408,
+            "type": "PropertyList.Element",
+            "binary": "SwiftUICore"
+          },
+          {
+            "count": 6044,
+            "bytes": 2707712,
+            "type": "_NSViewLayoutAux",
+            "binary": "AppKit"
+          },
+          {
+            "count": 1516,
+            "bytes": 2578432,
+            "type": "malloc in _engineVar_addForVariableIfNeeded",
+            "binary": "CoreAutoLayout"
+          },
+          {
+            "count": 3,
+            "bytes": 2424832,
+            "type": "Swift._ContiguousArrayStorage<CaffeyeCore.Venue>",
+            "binary": "libswiftCore.dylib"
+          }
+        ],
+        "appObjects": [
+          {
+            "count": 2342,
+            "bytes": 3597312,
+            "type": "MKMarkerAnnotationView",
+            "binary": "MapKit"
+          },
+          {
+            "count": 1192,
+            "bytes": 762880,
+            "type": "VenueAnnotation",
+            "binary": "Caffeye"
+          },
+          {
+            "count": 1,
+            "bytes": 768,
+            "type": "DiscoveryState",
+            "binary": "Caffeye"
+          },
+          {
+            "count": 1,
+            "bytes": 224,
+            "type": "AppModel",
+            "binary": "Caffeye"
+          },
+          {
+            "count": 1,
+            "bytes": 64,
+            "type": "VenueMap.Coordinator",
+            "binary": "Caffeye"
+          }
+        ],
+        "liveHeapBytes": 219866384
+      }
+    },
+    {
+      "scenario": "One zoom/franchise/reset cycle, then unmatched search left at zero results for the settled checkpoint.",
+      "mallocStackLoggingRequested": false,
+      "initialVMPhysicalFootprint": "443.2M",
+      "checkpoint": {
+        "physicalFootprint": "286.1M",
+        "leaks": {
+          "count": 74,
+          "bytes": 3552
+        },
+        "largestIdentifiedTypes": [
+          {
+            "count": 238,
+            "bytes": 3401664,
+            "type": "Swift Metadata",
+            "binary": "libswiftCore.dylib"
+          },
+          {
+            "count": 2079,
+            "bytes": 3193344,
+            "type": "MKMarkerAnnotationView",
+            "binary": "MapKit"
+          },
+          {
+            "count": 3,
+            "bytes": 2424832,
+            "type": "Swift._ContiguousArrayStorage<CaffeyeCore.Venue>",
+            "binary": "libswiftCore.dylib"
+          },
+          {
+            "count": 15406,
+            "bytes": 2415456,
+            "type": "PropertyList.Element",
+            "binary": "SwiftUICore"
+          },
+          {
+            "count": 615,
+            "bytes": 2019312,
+            "type": "CFData",
+            "binary": "CoreFoundation"
+          },
+          {
+            "count": 19104,
+            "bytes": 1861120,
+            "type": "Swift.StringStorage",
+            "binary": "libswiftCore.dylib"
+          },
+          {
+            "count": 1187,
+            "bytes": 1823232,
+            "type": "std::__shared_ptr_emplace<md::Label>",
+            "binary": "VectorKit"
+          },
+          {
+            "count": 3669,
+            "bytes": 1643712,
+            "type": "_NSViewLayoutAux",
+            "binary": "AppKit"
+          },
+          {
+            "count": 1838,
+            "bytes": 1620832,
+            "type": "Class.methodCache._buckets (bucket_t)",
+            "binary": "libobjc.A.dylib"
+          },
+          {
+            "count": 1831,
+            "bytes": 1441152,
+            "type": "Swift._DictionaryStorage<Swift.ObjectIdentifier, SwiftUI.(AnyTrackedValue in $19c78fae8)>",
+            "binary": "libswiftCore.dylib"
+          },
+          {
+            "count": 57,
+            "bytes": 1268608,
+            "type": "CFData (Bytes Storage)",
+            "binary": "CoreFoundation"
+          },
+          {
+            "count": 35621,
+            "bytes": 1139872,
+            "type": "NSKeyValueDependency",
+            "binary": "AppKit"
+          },
+          {
+            "count": 21981,
+            "bytes": 1055088,
+            "type": "CFSet",
+            "binary": "CoreFoundation"
+          },
+          {
+            "count": 7207,
+            "bytes": 922496,
+            "type": "NSMapTable",
+            "binary": "Foundation"
+          },
+          {
+            "count": 21964,
+            "bytes": 894464,
+            "type": "CFSet (Value Storage)",
+            "binary": "CoreFoundation"
+          }
+        ],
+        "appObjects": [
+          {
+            "count": 2079,
+            "bytes": 3193344,
+            "type": "MKMarkerAnnotationView",
+            "binary": "MapKit"
+          },
+          {
+            "count": 865,
+            "bytes": 442880,
+            "type": "VenueAnnotation",
+            "binary": "Caffeye"
+          },
+          {
+            "count": 1,
+            "bytes": 768,
+            "type": "DiscoveryState",
+            "binary": "Caffeye"
+          },
+          {
+            "count": 1,
+            "bytes": 224,
+            "type": "AppModel",
+            "binary": "Caffeye"
+          },
+          {
+            "count": 1,
+            "bytes": 48,
+            "type": "VenueMap.Coordinator",
+            "binary": "Caffeye"
+          }
+        ],
+        "liveHeapBytes": 138990505
+      }
+    }
+  ],
+  "instrumentsFailures": [
+    "120-second attached Allocations+Leaks did not finalize within a further 30 seconds; incomplete trace excluded.",
+    "30-second attached Allocations did not finalize within a further 60 seconds; incomplete trace excluded.",
+    "Launch-based attempt resolved another installed Debug Caffeye instance and reported _lockKPerf: could not lock kperf; excluded.",
+    "Uniquely named copy verified correct executable but recording startup stalled and its child remained stopped; owned processes were terminated, incomplete trace excluded."
+  ]
+}
