@@ -38,6 +38,8 @@ python3 native/scripts/benchmark.py --output native/build/benchmark.json
 
 `mac-profile-2026-10-12.json` records a separately verified Release macOS executable with the bundled 1,705 venues and isolated storage. A 10-second attached Time Profiler capture succeeded; 15 once-per-second RSS samples reached 462,143,488 bytes (about 441 MiB). This is one short idle discovery run, not an allocation diagnosis or a memory budget. The earliest sample precedes initialization. Investigate retained allocations and repeated map interactions before setting performance targets. Launch-template attempts resolved another installed app copy and were excluded; the accepted capture attached to a PID whose executable path was checked directly. Raw traces stay local.
 
+The follow-up [memory investigation](memory-investigation-2026-10-12.md) records VM/heap/leak evidence, map-view and annotation references, and the unsuccessful Instruments recording attempts. It does not establish a completed allocation diagnosis or a memory fix. `native/scripts/profile_memory.py` provides a bounded, repeatable local heap/VM capture workflow.
+
 For real app profiling, build Release and use Instruments **Time Profiler**, **Allocations**, and **Points of Interest**. Filter signposts by subsystem `com.caffeye.native`: `Load snapshot`, `Filter venues`, and `Map annotations`. Signposts include phase names only, not queries, venue names or coordinates. Record device model, OS, toolchain, dataset hash, cold/warm launch conditions, duration, memory before/after repeated pan/zoom, and representative category/search/franchise operations. Record Instruments traces locally; do not commit them.
 
 ## Release QA evidence still required
