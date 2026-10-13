@@ -88,4 +88,58 @@ struct DiscoveryStateTests {
         #expect(state.matches.last?.id == "scale-1704")
     }
 
+    @Test("Search indexes refresh for edited venues while a reading list stays staged")
+    func indexedUpdates() {
+        let state = DiscoveryState()
+        var data = snapshot()
+        data.venues[0].loved = ["Honey espresso"]
+        state.accept(data)
+        state.filters.search = "honey nearby"
+        #expect(state.rows.map(\.id) == ["near"])
+        state.reading = true
+        // Revisions are labels, not cache keys: changed fields must always be indexed.
+        data.venues[0].loved = ["Matcha"]
+        state.accept(data)
+        #expect(state.matches.isEmpty)
+        #expect(state.rows.map(\.id) == ["near"])
+        state.applyPending()
+        #expect(state.rows.isEmpty)
+        state.filters.search = "MATCHA nearby"
+        #expect(state.rows.map(\.id) == ["near"])
+    }
+
+    @Test("Scope counts ignore search and viewport and refresh when franchises change")
+    func scopeCounts() throws {
+        let state = DiscoveryState()
+        var data = snapshot()
+        data.venues[1].category = .tea
+        data.venues[1].model = .franchise
+        data.venues[1].late = try JSONDecoder().decode(LateInfo.self, from: Data(#"{"tier":"midnight","when":"Daily"}"#.utf8))
+        state.accept(data)
+        #expect(state.inScope.count == 1)
+        #expect(state.categoryCounts[.tea, default: 0] == 0)
+        state.filters.includeFranchises = true
+        state.filters.search = "Nearby"
+        let point = MKMapPoint(data.venues[0].coordinate.location)
+        state.cameraChanged(MKMapRect(x: point.x - 100, y: point.y - 100, width: 200, height: 200), userInitiated: true)
+        #expect(state.rows.map(\.id) == ["near"])
+        #expect(state.inScope.count == 2)
+        #expect(state.categoryCounts[.tea] == 1)
+        #expect(state.featureCounts[.midnight] == 1)
+        state.filters.includeFranchises = false
+        #expect(state.inScope.count == 1)
+        #expect(state.featureCounts[.midnight, default: 0] == 0)
+    }
+
+    @Test("Map selection supplies a sidebar scroll target and Reset clears it")
+    func pinScrollTarget() {
+        let state = DiscoveryState(); let data = snapshot(); state.accept(data)
+        state.select(data.venues[1])
+        #expect(state.scrollID == "far")
+        state.select(data.venues[0])
+        #expect(state.scrollID == "near")
+        state.reset()
+        #expect(state.scrollID == nil)
+    }
+
 }

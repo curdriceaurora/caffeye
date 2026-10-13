@@ -219,12 +219,22 @@ public struct Filters: Equatable, Sendable {
     public var search = ""
     public init() {}
     public func matches(_ venue: Venue) -> Bool {
+        matches(venue, words: searchWords, indexedText: nil)
+    }
+    /// Normalize the query once per pass; snapshot owners can reuse their search index.
+    public func matching(_ venues: [Venue], searchIndex: [String: String]) -> [Venue] {
+        let words = searchWords
+        return venues.filter { matches($0, words: words, indexedText: searchIndex[$0.id]) }
+    }
+    private var searchWords: [Substring] {
+        search.lowercased().split(whereSeparator: { $0.isWhitespace })
+    }
+    private func matches(_ venue: Venue, words: [Substring], indexedText: String?) -> Bool {
         guard includeFranchises || venue.model == .independent,
               categories.isEmpty || categories.contains(venue.category),
               features.allSatisfy({ $0.matches(venue) }) else { return false }
-        let words = search.lowercased().split(whereSeparator: { $0.isWhitespace })
         guard !words.isEmpty else { return true }
-        let text = venue.searchText
+        let text = indexedText ?? venue.searchText
         return words.allSatisfy { text.contains($0) }
     }
 }
