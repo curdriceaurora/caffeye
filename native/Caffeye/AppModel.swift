@@ -31,8 +31,10 @@ final class AppModel {
             status = "Venues loaded"
         } catch {
             do {
-                guard let url = Bundle.main.url(forResource: ProcessInfo.processInfo.arguments.contains("--ui-testing")
-                    && !ProcessInfo.processInfo.arguments.contains("--bundled-venues-testing") ? "demo" : "venues", withExtension: "json") else {
+                let arguments = ProcessInfo.processInfo.arguments
+                let testing = arguments.contains("--ui-testing") && !arguments.contains("--bundled-venues-testing")
+                let resource = testing ? (arguments.contains("--ui-edge-cases-testing") ? "ui-edge-cases" : "demo") : "venues"
+                guard let url = Bundle.main.url(forResource: resource, withExtension: "json") else {
                     throw CocoaError(.fileNoSuchFile)
                 }
                 snapshot = try SnapshotStore.decode(SnapshotStore.readFile(url))

@@ -60,6 +60,16 @@ targets:
       base:
         PRODUCT_MODULE_NAME: CaffeyeUITests
         PRODUCT_BUNDLE_IDENTIFIER: com.caffeye.native.uitests
+  CaffeyeMacUITests:
+    type: bundle.ui-testing
+    platform: macOS
+    sources: [CaffeyeMacUITests]
+    dependencies:
+      - target: Caffeye-macOS
+    settings:
+      base:
+        PRODUCT_MODULE_NAME: CaffeyeMacUITests
+        PRODUCT_BUNDLE_IDENTIFIER: com.caffeye.native.mac.uitests
   CaffeyeTests:
     type: bundle.unit-test
     platform: macOS
@@ -85,4 +95,4 @@ schemes:
       targets:
         Caffeye-macOS: all
     test:
-      targets: [CaffeyeTests]
+      targets: [CaffeyeTests, CaffeyeMacUITests]

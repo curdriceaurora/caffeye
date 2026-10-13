@@ -19,9 +19,15 @@ private final class VenueAnnotation: NSObject, MKAnnotation {
         private var annotations: [String: VenueAnnotation] = [:]
         var lastCommand = -1
         var programmatic = false
+        private var selectionEvent = 0
         init(_ state: DiscoveryState) { self.state = state }
 
         func configure(_ map: MKMapView) {
+            #if os(iOS)
+            map.accessibilityIdentifier = "venue-map"
+            #else
+            map.setAccessibilityIdentifier("venue-map")
+            #endif
             programmatic = true
             map.delegate = self
             map.register(MKMarkerAnnotationView.self, forAnnotationViewWithReuseIdentifier: "venue")
@@ -86,6 +92,8 @@ private final class VenueAnnotation: NSObject, MKAnnotation {
                 view.accessibilityTraits = .button
                 view.accessibilityLabel = annotation.venue.name
                 view.accessibilityIdentifier = "pin-\(annotation.venue.id)"
+                #else
+                view.setAccessibilityIdentifier("pin-\(annotation.venue.id)")
                 #endif
                 return view
             }
@@ -99,21 +107,35 @@ private final class VenueAnnotation: NSObject, MKAnnotation {
                 view.accessibilityTraits = .button
                 view.accessibilityIdentifier = "cluster-pins"
                 view.accessibilityLabel = "\(annotation.memberAnnotations.count) venues. Show members."
+                #else
+                view.setAccessibilityIdentifier("cluster-pins")
                 #endif
                 return view
             }
             return nil
         }
         func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+            selectionEvent += 1
+            let event = selectionEvent
+            let command = state.cameraCommand
+            let filters = state.filters
             if let annotation = view.annotation as? VenueAnnotation {
                 if state.selection != annotation.venue.id {
-                    DispatchQueue.main.async { [weak self] in self?.state.select(annotation.venue) }
+                    let id = annotation.venue.id
+                    DispatchQueue.main.async { [weak self] in
+                        guard let self, self.selectionEvent == event, self.state.cameraCommand == command, self.state.filters == filters,
+                              let venue = self.state.matches.first(where: { $0.id == id }) else { return }
+                        self.state.select(venue)
+                    }
                 }
             } else if let cluster = view.annotation as? MKClusterAnnotation {
                 let ids = cluster.memberAnnotations.compactMap { ($0 as? VenueAnnotation)?.venue.id }
                 DispatchQueue.main.async { [weak self, weak mapView] in
-                    guard let self, let mapView else { return }
-                    self.state.showCluster(ids)
+                    guard let self, let mapView, self.selectionEvent == event, self.state.cameraCommand == command,
+                          self.state.filters == filters else { return }
+                    let currentIDs = ids.filter { id in self.state.matches.contains { $0.id == id } }
+                    guard !currentIDs.isEmpty else { return }
+                    self.state.showCluster(currentIDs)
                     mapView.deselectAnnotation(cluster, animated: false)
                 }
             }

@@ -50,6 +50,18 @@
                ReferencedContainer = "container:Caffeye.xcodeproj">
             </BuildableReference>
          </TestableReference>
+
+      <TestableReference
+            skipped = "NO"
+            parallelizable = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "9E729A3D511BB870B2691659"
+               BuildableName = "CaffeyeMacUITests.xctest"
+               BlueprintName = "CaffeyeMacUITests"
+               ReferencedContainer = "container:Caffeye.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <CommandLineArguments>
       </CommandLineArguments>

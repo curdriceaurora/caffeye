@@ -22,15 +22,19 @@
 		5FDB70E753418A5857256979 /* VenueDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65934EA70C931123FCDEA1F /* VenueDetail.swift */; };
 		61AA53D2A6E805880549D873 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA93ECE1A812FFF6B55B6C5 /* AppModel.swift */; };
 		6CC35F14ED8D9A7C3FBDFFF5 /* DiscoveryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF94F00081ACA4791DC02FBD /* DiscoveryView.swift */; };
+		7AC868857052F719FBEFDC4E /* ui-edge-cases.json in Resources */ = {isa = PBXBuildFile; fileRef = F5D6C265B30B25D20B57EDF7 /* ui-edge-cases.json */; };
 		8129BFE44E904BC88CB6CB5B /* CaffeyeCore in Frameworks */ = {isa = PBXBuildFile; productRef = 78DA853C69482696BFEED377 /* CaffeyeCore */; };
 		8A6F843495BF20A5E72D20F1 /* CaffeyeCore in Frameworks */ = {isa = PBXBuildFile; productRef = F321AB028788661E8F9D5299 /* CaffeyeCore */; };
 		8C12EDDF9B0BF7088FAE7EA5 /* DiscoveryStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B6FEAB9DC781BEE485AD41 /* DiscoveryStateTests.swift */; };
 		8EA1484A27AA020ED22C0056 /* DiscoveryState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A820523AAAD6A8BEFE0B2BDF /* DiscoveryState.swift */; };
 		9D36E3DE4F9EBDFB0423C14B /* venues.json in Resources */ = {isa = PBXBuildFile; fileRef = F6B0037DCB6D0495268D78A7 /* venues.json */; };
+		AE13123143B2F239CD7F411E /* DiscoveryMacUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE75AD2614CB95B1325FF9C6 /* DiscoveryMacUITests.swift */; };
 		C5564C7B207D4BED681A7B4E /* VenueMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247F4FEB9F9A143F5E4B560F /* VenueMap.swift */; };
 		C661133FC78F05AF25DDA72E /* VenueMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247F4FEB9F9A143F5E4B560F /* VenueMap.swift */; };
 		CA7F4BEA790CCCF6B04F2FF6 /* VenueDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65934EA70C931123FCDEA1F /* VenueDetail.swift */; };
+		D8901977E6D956EF2696D762 /* ui-edge-cases.json in Resources */ = {isa = PBXBuildFile; fileRef = F5D6C265B30B25D20B57EDF7 /* ui-edge-cases.json */; };
 		DB4A627E531EC255F21A536C /* demo.json in Resources */ = {isa = PBXBuildFile; fileRef = 21D8FFFDEEA2B349E99B1CBA /* demo.json */; };
+		DB90D0066CB68A55565011C8 /* MapInteractionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E98E3DF986DA2CBA520FC5 /* MapInteractionTests.swift */; };
 		DBF4E019D2D41EA64EB7B938 /* CaffeyeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EEB7B02370209A474B3206 /* CaffeyeApp.swift */; };
 		E272436E68981B85075B7960 /* AppModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C00A70395A03B6DEE3823B /* AppModelTests.swift */; };
 		E7CD9A3363421F3707E623B4 /* CaffeyeCore in Frameworks */ = {isa = PBXBuildFile; productRef = 39D52D3133152910A451B831 /* CaffeyeCore */; };
@@ -38,6 +42,13 @@
 
 /* Begin PBXContainerItemProxy section */
 		B692D92101EFA2E278AE4E52 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3FB4D0502F787FD2A10B526A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F787D9F3911C655B7D2B9EE3;
+			remoteInfo = "Caffeye-macOS";
+		};
+		DAA89992C1DBB9F97CCB9F56 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3FB4D0502F787FD2A10B526A /* Project object */;
 			proxyType = 1;
@@ -57,6 +68,8 @@
 		106EF70B6B26EB29D71612FA /* DiscoveryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryUITests.swift; sourceTree = "<group>"; };
 		21D8FFFDEEA2B349E99B1CBA /* demo.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = demo.json; sourceTree = "<group>"; };
 		247F4FEB9F9A143F5E4B560F /* VenueMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueMap.swift; sourceTree = "<group>"; };
+		28E98E3DF986DA2CBA520FC5 /* MapInteractionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapInteractionTests.swift; sourceTree = "<group>"; };
+		45095EFE7D1C9D090CD6B4EA /* CaffeyeMacUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CaffeyeMacUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C143B4D741ECA24AA276E6A /* Caffeye-macOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Caffeye-macOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52B794831C1E4E5EA167EB51 /* Caffeye-iOS.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "Caffeye-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		63ED8B34383C3304A22C869E /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
@@ -70,8 +83,10 @@
 		A1EEB7B02370209A474B3206 /* CaffeyeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaffeyeApp.swift; sourceTree = "<group>"; };
 		A5569F51C8AF19AC80D41CF0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A820523AAAD6A8BEFE0B2BDF /* DiscoveryState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryState.swift; sourceTree = "<group>"; };
+		BE75AD2614CB95B1325FF9C6 /* DiscoveryMacUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryMacUITests.swift; sourceTree = "<group>"; };
 		D40FC8C84EE1C9C4325988B0 /* VenueDetailTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueDetailTests.swift; sourceTree = "<group>"; };
 		DF94F00081ACA4791DC02FBD /* DiscoveryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryView.swift; sourceTree = "<group>"; };
+		F5D6C265B30B25D20B57EDF7 /* ui-edge-cases.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "ui-edge-cases.json"; sourceTree = "<group>"; };
 		F65934EA70C931123FCDEA1F /* VenueDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueDetail.swift; sourceTree = "<group>"; };
 		F6B0037DCB6D0495268D78A7 /* venues.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = venues.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -104,11 +119,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E0E71325A63CAA483182C99 /* CaffeyeMacUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BE75AD2614CB95B1325FF9C6 /* DiscoveryMacUITests.swift */,
+			);
+			path = CaffeyeMacUITests;
+			sourceTree = "<group>";
+		};
 		223160468ABCDEA10F47EA9B /* CaffeyeTests */ = {
 			isa = PBXGroup;
 			children = (
 				92C00A70395A03B6DEE3823B /* AppModelTests.swift */,
 				72B6FEAB9DC781BEE485AD41 /* DiscoveryStateTests.swift */,
+				28E98E3DF986DA2CBA520FC5 /* MapInteractionTests.swift */,
 				D40FC8C84EE1C9C4325988B0 /* VenueDetailTests.swift */,
 			);
 			path = CaffeyeTests;
@@ -119,6 +143,7 @@
 			children = (
 				52B794831C1E4E5EA167EB51 /* Caffeye-iOS.app */,
 				4C143B4D741ECA24AA276E6A /* Caffeye-macOS.app */,
+				45095EFE7D1C9D090CD6B4EA /* CaffeyeMacUITests.xctest */,
 				69411CAC3A9A444467EB05D6 /* CaffeyeTests.xctest */,
 				89475095AEA70B9A8B55E17F /* CaffeyeUITests.xctest */,
 			);
@@ -154,6 +179,7 @@
 				A5569F51C8AF19AC80D41CF0 /* Assets.xcassets */,
 				21D8FFFDEEA2B349E99B1CBA /* demo.json */,
 				63ED8B34383C3304A22C869E /* PrivacyInfo.xcprivacy */,
+				F5D6C265B30B25D20B57EDF7 /* ui-edge-cases.json */,
 				F6B0037DCB6D0495268D78A7 /* venues.json */,
 			);
 			path = Resources;
@@ -163,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				6346533501C67ACDC81FFE54 /* Caffeye */,
+				0E0E71325A63CAA483182C99 /* CaffeyeMacUITests */,
 				223160468ABCDEA10F47EA9B /* CaffeyeTests */,
 				4D9A6F6D7C3AF9C8CA6F7A02 /* CaffeyeUITests */,
 				B462F051FE6372682B043A26 /* Packages */,
@@ -200,6 +227,24 @@
 			productName = "Caffeye-iOS";
 			productReference = 52B794831C1E4E5EA167EB51 /* Caffeye-iOS.app */;
 			productType = "com.apple.product-type.application";
+		};
+		9E729A3D511BB870B2691659 /* CaffeyeMacUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A14FCF8DD41C187326F382DF /* Build configuration list for PBXNativeTarget "CaffeyeMacUITests" */;
+			buildPhases = (
+				8418A8B22D80977FC99D2C13 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				031280B1A9730B9C0B17D819 /* PBXTargetDependency */,
+			);
+			name = CaffeyeMacUITests;
+			packageProductDependencies = (
+			);
+			productName = CaffeyeMacUITests;
+			productReference = 45095EFE7D1C9D090CD6B4EA /* CaffeyeMacUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 		B1FEA02BBD6CAA009CC86108 /* CaffeyeTests */ = {
 			isa = PBXNativeTarget;
@@ -271,6 +316,10 @@
 					41C05503D44F4AC27FAF5B84 = {
 						ProvisioningStyle = Automatic;
 					};
+					9E729A3D511BB870B2691659 = {
+						ProvisioningStyle = Automatic;
+						TestTargetID = F787D9F3911C655B7D2B9EE3;
+					};
 					B1FEA02BBD6CAA009CC86108 = {
 						ProvisioningStyle = Automatic;
 					};
@@ -303,6 +352,7 @@
 				41C05503D44F4AC27FAF5B84 /* Caffeye-iOS */,
 				F787D9F3911C655B7D2B9EE3 /* Caffeye-macOS */,
 				F1783BC714401516FD5158EF /* CaffeyeUITests */,
+				9E729A3D511BB870B2691659 /* CaffeyeMacUITests */,
 				B1FEA02BBD6CAA009CC86108 /* CaffeyeTests */,
 			);
 		};
@@ -316,6 +366,7 @@
 				2F82E284FF61D83528CB9F89 /* Assets.xcassets in Resources */,
 				1F2F52A19207E6DD317A7BF2 /* PrivacyInfo.xcprivacy in Resources */,
 				DB4A627E531EC255F21A536C /* demo.json in Resources */,
+				D8901977E6D956EF2696D762 /* ui-edge-cases.json in Resources */,
 				3A33910D7D8293717379F254 /* venues.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -327,6 +378,7 @@
 				029E47A65EC7F81F234E3F66 /* Assets.xcassets in Resources */,
 				53DF2B5674C697BD2E708260 /* PrivacyInfo.xcprivacy in Resources */,
 				1CCE730142A34F30AC02C7D6 /* demo.json in Resources */,
+				7AC868857052F719FBEFDC4E /* ui-edge-cases.json in Resources */,
 				9D36E3DE4F9EBDFB0423C14B /* venues.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -353,6 +405,7 @@
 			files = (
 				E272436E68981B85075B7960 /* AppModelTests.swift in Sources */,
 				8C12EDDF9B0BF7088FAE7EA5 /* DiscoveryStateTests.swift in Sources */,
+				DB90D0066CB68A55565011C8 /* MapInteractionTests.swift in Sources */,
 				46E130414FEC79D48F8B1185 /* VenueDetailTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -370,6 +423,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8418A8B22D80977FC99D2C13 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE13123143B2F239CD7F411E /* DiscoveryMacUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DB4D2B63E2D75D25EAFAA48F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -381,6 +442,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		031280B1A9730B9C0B17D819 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F787D9F3911C655B7D2B9EE3 /* Caffeye-macOS */;
+			targetProxy = DAA89992C1DBB9F97CCB9F56 /* PBXContainerItemProxy */;
+		};
 		1D9F83B72CEFDFD240F6B94B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = F787D9F3911C655B7D2B9EE3 /* Caffeye-macOS */;
@@ -394,6 +460,23 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		21A27FC0328806DC9DD3EECC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.caffeye.native.mac.uitests;
+				PRODUCT_MODULE_NAME = CaffeyeMacUITests;
+				SDKROOT = macosx;
+				TEST_TARGET_NAME = "Caffeye-macOS";
+			};
+			name = Release;
+		};
 		3ADB01A9A5240B6237F65A07 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -483,6 +566,23 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.caffeye.native.mac;
 				PRODUCT_NAME = Caffeye;
 				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		6E396686B1EACED7E9161308 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.caffeye.native.mac.uitests;
+				PRODUCT_MODULE_NAME = CaffeyeMacUITests;
+				SDKROOT = macosx;
+				TEST_TARGET_NAME = "Caffeye-macOS";
 			};
 			name = Debug;
 		};
@@ -686,6 +786,15 @@
 			buildConfigurations = (
 				AEF4EBA790C2AD5959C48973 /* Debug */,
 				BA601AF79A50DF1AB0A74EA0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		A14FCF8DD41C187326F382DF /* Build configuration list for PBXNativeTarget "CaffeyeMacUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6E396686B1EACED7E9161308 /* Debug */,
+				21A27FC0328806DC9DD3EECC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
