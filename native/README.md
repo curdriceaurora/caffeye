@@ -2,6 +2,8 @@
 
 Standalone SwiftUI app for iPhone, iPad, and native macOS. Requires iOS/iPadOS 18 or macOS 15. Uses system appearance and MapKit, without a WebView, account, or location permission.
 
+The current interface hides snapshot import, manual download, endpoint/data settings, and offline capability messaging on all platforms. Local loading, persistence, validation, and Bayesian ranking remain implemented internally. Earlier UI validation notes below describe the controls available at the time of those checks.
+
 Open `Caffeye.xcodeproj` in Xcode. Choose **Caffeye-iOS** for iPhone/iPad or **Caffeye-macOS** for Mac. For a physical device, select your own development team in Signing & Capabilities. The project is checked in; XcodeGen is needed only after editing `project.yml`:
 
 ```sh

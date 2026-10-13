@@ -27,7 +27,7 @@ struct VenueDetailTests {
         let priors = RatingPriors(mean: 4.2, weight: 10, provenance: .init(source: "Fixture"))
         let omitted = VenueDetailPresentation(venue: venue, priors: nil)
         #expect(omitted.rating == nil)
-        #expect(omitted.ratingMessage == "Ratings omitted from this snapshot")
+        #expect(omitted.ratingMessage == "Ratings omitted")
         let unrated = VenueDetailPresentation(venue: venue, priors: priors)
         #expect(unrated.rating == nil)
         #expect(unrated.ratingMessage == "No public rating yet")

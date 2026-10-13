@@ -115,7 +115,7 @@ struct VenueDetailPresentation {
     var signature: String? { nonBlank(venue.signature) }
     var loved: [String] { (venue.loved ?? []).compactMap(nonBlank) }
     var hours: String { nonBlank(venue.hours) ?? "Hours not verified" }
-    var ratingMessage: String { priors == nil ? "Ratings omitted from this snapshot" : "No public rating yet" }
+    var ratingMessage: String { priors == nil ? "Ratings omitted" : "No public rating yet" }
     var rating: (average: Double, count: Int, provenance: Provenance, score: Double)? {
         guard let rating = venue.rating, let priors else { return nil }
         return (rating.average, rating.count, rating.provenance, priors.score(venue))
