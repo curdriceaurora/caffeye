@@ -67,7 +67,7 @@ Functional and non-functional requirements for the current state of the page. Ea
 | R5.1 | Displays the subset of shops that pass all active chip filters AND lie inside the current map viewport AND match the search query. | Show what's available |
 | R5.2 | Sort is fixed: descending Bayesian weighted rating `WR = (v/(v+m))·R + (m/(v+m))·C`, where `C` is the mean rating across rated shops and `m` is the median review count, generated from the complete deduplicated regional population and shipped in `shops.json.ratingPriors` for stable partial-load scores. | The right default |
 | R5.3 | Shops with no rating use `C` (the global mean) as `R` in the formula. | — |
-| R5.4 | Each list item shows: a small (22 px) category-color circular emoji tile, the shop name, a meta row (category · ◆ score · neighborhood), and up to three compact tags. The ◆ score is the Bayesian weighted rating from R5.2 rounded to 1 decimal — the number the list is ordered by — never Google's raw star. The results bar carries the legend `◆ = weighted score` at every breakpoint (tooltips don't fire on touch). Unrated shops show "no rating". | Playfulness is information; Labels must never lie |
+| R5.4 | Each list item shows: a small (22 px) category-color circular emoji tile, the shop name, a right-aligned ◆ score beside the name, a meta row (neighborhood · category), and up to three compact tags. The ◆ score is the Bayesian weighted rating from R5.2 rounded to 1 decimal — the number the list is ordered by — never Google's raw star. The results bar carries the legend `◆ = weighted score` at every breakpoint (tooltips don't fire on touch). Unrated shops show "no rating" in muted text at normal weight — never in the score's accent color or weight — and the card's accessible name carries the same caveat. Every badge, separator and meta line on a card clears 4.5:1 in both themes, including on a selected row's tint. | Playfulness is information; Labels must never lie |
 | R5.5 | Each list item communicates category through a colored emoji icon tile. | — |
 | R5.6 | The results header shows the live filtered count. When the viewport is the active constraint (list count < global-filter count), the label reads **"X in view"**; otherwise **"X spots"**. | Show what's available |
 | R5.7 | The shop list scrolls vertically inside its panel; the rest of the layout does not scroll. | Density on phones |
@@ -104,7 +104,7 @@ Functional and non-functional requirements for the current state of the page. Ea
 
 | ID | Requirement | Principle |
 |---|---|---|
-| R8.1 | Desktop (≥ 821 px wide): map on left flex-grow, 380 px panel on right. | — |
+| R8.1 | Desktop (≥ 821 px wide): map on left flex-grow, 400 px panel on right. The map and panel sit in a `<main>` landmark, under a visually-hidden `<h1>`, so the document has one heading root and a jump target. | — |
 | R8.2 | Mobile (≤ 820 px): single column. Map height is `clamp(130px, 22vh, 185px)` (125 px at viewport heights ≤ 600 px, 120 px at ≤ 500 px), panel takes remaining vertical space. | Density on phones |
 | R8.3 | On mobile, filter chips compress (padding 2 × 7 px, 11.5 px font); brand shrinks and freshness is hidden. At ≤ 380 px, the heading shows the region without the “Coffee in” prefix, stays on one line, and retains the full accessible home label and page title. | — |
 | R8.4 | On mobile, the footer disclaimer is hidden. | — |
@@ -114,9 +114,9 @@ Functional and non-functional requirements for the current state of the page. Ea
 
 | ID | Requirement | Principle |
 |---|---|---|
-| R9.1 | The page is a single HTML file ≤ 110 KB. | Operating constraint |
+| R9.1 | The page is a single HTML file ≤ 200 KB (204,800 bytes). | Operating constraint |
 | R9.2 | No JS errors on initial load, on filter changes, on selection, or on zoom. | — |
-| R9.3 | All Leaflet, MarkerCluster, and Google Fonts assets load via CDN with SRI hashes where applicable. The opt-in vector preview loads MapLibre GL JS and CSS with sha384 SRI and `crossorigin=anonymous`. | — |
+| R9.3 | Every third-party script and stylesheet carries an SRI hash and `crossorigin=anonymous` — Leaflet, both MarkerCluster stylesheets, and the MarkerCluster script injected at runtime (sha256), plus the opt-in vector preview's MapLibre GL JS and CSS (sha384). Google Fonts' CSS is the one exception: its response varies by user agent, so it cannot be hashed. | Security |
 | R9.4 | Renders with no build step when served over HTTP; JSON fetches require a local server or the deployed site. | Operating constraint |
 | R9.5 | All transitions and animations use compositor-only properties (`opacity`, `transform`). `will-change: transform` on `.pin` and `.pin-label`; `will-change: opacity, transform` on `.list-view` and `.detail-view`. `.panel` carries `contain: layout style` to scope reflow. Target 60 fps with no Layout or Paint during list↔detail transitions. | — |
 | R9.6 | If the regional dataset (`places.json`) fails to load or times out, the page boots the curated baseline and shows a persistent `role="status"` degraded-coverage banner over the top of the map (it never covers the list, search or Back) with the live available count and an in-place retry action — never a silent fallback. | Show what's available |

@@ -53,7 +53,30 @@ test('explicit light theme overrides a dark system', async ({ page }) => {
   await page.emulateMedia({ colorScheme: 'dark' });
   await page.addInitScript(() => localStorage.setItem('caffeye-theme', 'light'));
   await gotoHome(page);
-  await expect(page.locator('.model-tag.indie').first()).toHaveCSS('color', 'rgb(46, 125, 79)');
+  await expect(page.locator('.model-tag.indie').first()).toHaveCSS('color', 'rgb(33, 92, 58)');
   await page.locator('label[for="franchiseToggle"]').click();
   await expect(page.locator('.toggle-switch')).toHaveCSS('background-color', 'rgb(41, 63, 52)');
 });
+
+// The dark-mode loop above has guarded badge legibility since it was written, but
+// light mode was never covered — and the tint a selected row adds is what pushes
+// small text closest to the line, in either theme.
+for (const theme of ['light', 'dark']) {
+  test(`badges and card meta stay legible on a selected row (${theme})`, async ({ page }) => {
+    await page.emulateMedia({ colorScheme: theme });
+    await page.addInitScript((t) => localStorage.setItem('caffeye-theme', t), theme);
+    await gotoHome(page);
+    await page.locator('label[for="franchiseToggle"]').click();
+    for (const selector of ['.model-tag.indie', '.model-tag.franchise', '.curated-tag', '.shop-tags .tag-sep']) {
+      expect(await textContrast(page.locator(selector).first()), `${theme} ${selector}`).toBeGreaterThanOrEqual(4.5);
+    }
+    // Open a curated venue and come back, so the row carries the selected tint.
+    await page.locator('.shop-item', { has: page.locator('.curated-tag') }).first().click();
+    await page.locator('#backBtn').waitFor({ timeout: 15000 });
+    await page.locator('#backBtn').click();
+    await expect(page.locator('.shop-item.active')).toHaveCount(1);
+    for (const selector of ['.shop-item.active .shop-meta', '.shop-item.active .curated-tag', '.shop-item.active .shop-tags', '.shop-item.active .shop-score']) {
+      expect(await textContrast(page.locator(selector).first()), `${theme} ${selector}`).toBeGreaterThanOrEqual(4.5);
+    }
+  });
+}
