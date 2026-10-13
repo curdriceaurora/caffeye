@@ -35,7 +35,7 @@ struct DiscoveryView: View {
                                 .frame(height: max(100, min(typeSize.isAccessibilitySize ? 140 : 230, geometry.size.height * 0.32)))
                             Divider()
                             ZStack {
-                                results(state.browsingRows)
+                                results(state.browsingRows, followsSelection: false)
                                     .opacity(state.selected == nil ? 1 : 0)
                                     .allowsHitTesting(state.selected == nil)
                                     .accessibilityHidden(state.selected != nil)
@@ -54,7 +54,6 @@ struct DiscoveryView: View {
             #endif
             .searchable(text: $state.filters.search, prompt: "Search by name, drink, or area")
             .toolbar { toolbar }
-            .onChange(of: state.filters) { state.filtersChanged() }
             .onChange(of: model.generation, initial: true) {
                 if let snapshot = model.snapshot { state.accept(snapshot) }
             }
@@ -72,6 +71,13 @@ struct DiscoveryView: View {
             } message: { Text(model.failure ?? "") }
             #if os(macOS)
             .onExitCommand { state.back() }
+            .focusedSceneValue(\.discoveryCommands, DiscoveryCommandActions(
+                reset: state.reset, back: state.back,
+                importSnapshot: { importing = true },
+                updateSnapshot: { Task { await model.refresh(endpoint) } },
+                settings: { settings = true },
+                canUpdate: !endpoint.isEmpty && !model.busy,
+                canGoBack: state.selection != nil))
             #endif
         }
     }
@@ -116,7 +122,7 @@ struct DiscoveryView: View {
         }
     }
 
-    private func results(_ rows: [Venue]) -> some View {
+    private func results(_ rows: [Venue], followsSelection: Bool = true) -> some View {
         VStack(spacing: 0) {
             HStack {
                 Text("\(rows.count) \(rows.count < state.matches.count ? "in view" : "spots")")
@@ -131,7 +137,6 @@ struct DiscoveryView: View {
             ScrollViewReader { proxy in
                 List(selection: Binding<String?>(get: { state.selection }, set: { id in
                     if let id, let venue = state.current?.venues.first(where: { $0.id == id }) {
-                        state.scrollID = id
                         state.select(venue)
                     }
                 })) {
@@ -153,12 +158,21 @@ struct DiscoveryView: View {
                 .onAppear {
                     if let id = state.scrollID { proxy.scrollTo(id, anchor: .center) }
                 }
+                .onChange(of: state.scrollID) {
+                    if followsSelection, let id = state.scrollID { proxy.scrollTo(id, anchor: .center) }
+                }
+                .onChange(of: rows.map(\.id)) { scrollToSelection(proxy, rows: rows, followsSelection: followsSelection) }
+
             }
+        }
+    }
+    private func scrollToSelection(_ proxy: ScrollViewProxy, rows: [Venue], followsSelection: Bool) {
+        if followsSelection, let id = state.selection, rows.contains(where: { $0.id == id }) {
+            proxy.scrollTo(id, anchor: .center)
         }
     }
     private func row(_ venue: Venue) -> some View {
         Button {
-            state.scrollID = venue.id
             state.select(venue)
         } label: {
             VenueRow(venue: venue, priors: state.listSnapshot?.priors)
@@ -175,17 +189,19 @@ struct DiscoveryView: View {
             Menu("Type", systemImage: "cup.and.saucer") {
                 Button("All (\(state.inScope.count))") { state.filters.categories = [] }
                 ForEach(CaffeyeCore.Category.allCases) { category in
-                    Toggle("\(category.glyph) \(category.label) (\(state.inScope.filter { $0.category == category }.count))", isOn: categoryBinding(category))
+                    Toggle("\(category.glyph) \(category.label) (\(state.categoryCounts[category, default: 0]))", isOn: categoryBinding(category))
                 }
             }.accessibilityIdentifier("type-filter")
             Menu("Useful for", systemImage: "line.3.horizontal.decrease") {
                 ForEach(Feature.allCases) { feature in
-                    Toggle("\(feature.label) (\(state.inScope.filter(feature.matches).count))", isOn: featureBinding(feature))
+                    Toggle("\(feature.label) (\(state.featureCounts[feature, default: 0]))", isOn: featureBinding(feature))
                 }
             }.accessibilityIdentifier("feature-filter")
             Button("Reset", systemImage: "arrow.counterclockwise") { state.reset() }
                 .accessibilityIdentifier("reset")
+                #if os(iOS)
                 .keyboardShortcut("r", modifiers: [.command, .shift])
+                #endif
             Menu("Data", systemImage: "externaldrive") {
                 Button("Import offline snapshot…") { importing = true }
                 Button("Update snapshot") { Task { await model.refresh(endpoint) } }

@@ -54,7 +54,7 @@ struct VenueDetail: View {
                 }
                 section("Open in") {
                     Button("Apple Maps", systemImage: "map") {
-                        let item = MKMapItem(placemark: MKPlacemark(coordinate: venue.coordinate.location))
+                        let item = mapItem()
                         item.name = venue.name
                         item.openInMaps()
                     }
@@ -68,6 +68,16 @@ struct VenueDetail: View {
             }.frame(maxWidth: .infinity, alignment: .leading).padding()
         }
         .id(venue.id)
+    }
+    private func mapItem() -> MKMapItem {
+        // Xcode 16 CI has the older SDK; newer SDKs provide this initializer.
+        #if compiler(>=6.2)
+        if #available(iOS 26, macOS 26, *) {
+            let location = CLLocation(latitude: venue.coordinate.latitude, longitude: venue.coordinate.longitude)
+            return MKMapItem(location: location, address: nil)
+        }
+        #endif
+        return MKMapItem(placemark: MKPlacemark(coordinate: venue.coordinate.location))
     }
     private func section<Content: View>(_ title: String, @ViewBuilder content: () -> Content) -> some View {
         VStack(alignment: .leading, spacing: 8) {
