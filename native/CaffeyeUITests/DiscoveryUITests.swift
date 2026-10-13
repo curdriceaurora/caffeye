@@ -65,6 +65,7 @@ final class DiscoveryUITests: XCTestCase {
         XCTAssertTrue(row.waitForExistence(timeout: 10))
         row.tap()
         XCTAssertTrue(app.staticTexts["detail-name"].waitForExistence(timeout: 5))
+        XCTAssertFalse(app.keyboards.firstMatch.exists, "Opening detail should dismiss the search keyboard")
         XCTAssertTrue(app.staticTexts["Ratings omitted from this snapshot"].exists)
         XCTAssertFalse(app.staticTexts.matching(NSPredicate(format: "label CONTAINS 'weighted score'")).firstMatch.exists)
         let detail = XCTAttachment(screenshot: app.screenshot())
@@ -72,4 +73,21 @@ final class DiscoveryUITests: XCTestCase {
         add(detail)
     }
 
+    @MainActor func testAccessibleDiscoveryAndLargeTextDetail() throws {
+        let app = XCUIApplication()
+        app.launchArguments = ["--ui-testing", "-UIPreferredContentSizeCategoryName", "UICTContentSizeCategoryAccessibilityXXXL"]
+        app.launch()
+        XCTAssertTrue(app.switches["include-franchises"].waitForExistence(timeout: 15))
+        try app.performAccessibilityAudit(for: [.sufficientElementDescription])
+        let row = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'venue-demo-'")).firstMatch
+        XCTAssertTrue(row.waitForExistence(timeout: 10))
+        row.tap()
+        XCTAssertTrue(app.staticTexts["detail-name"].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.buttons["back-to-list"].isHittable)
+        try app.performAccessibilityAudit(for: [.sufficientElementDescription])
+        let shot = XCTAttachment(screenshot: app.screenshot())
+        shot.name = "Large text detail"; shot.lifetime = .keepAlways; add(shot)
+        app.buttons["back-to-list"].tap()
+        XCTAssertTrue(row.waitForExistence(timeout: 5))
+    }
 }

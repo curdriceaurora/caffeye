@@ -1,5 +1,6 @@
 import SwiftUI
 import MapKit
+import os
 import CaffeyeCore
 
 @MainActor @Observable
@@ -22,6 +23,7 @@ final class DiscoveryState {
     private var currentRanked: [Venue] = []
     private var listRanked: [Venue] = []
     var reading = false
+    var mapImageryUnavailable = false
     var clusterMembers: [String] = []
     var scrollID: String?
     private var browsingRect: MKMapRect?
@@ -38,7 +40,10 @@ final class DiscoveryState {
     private(set) var featureCounts: [Feature: Int] = [:]
     var selected: Venue? { current?.venues.first { $0.id == selection } }
 
+    private static let performance = OSLog(subsystem: "com.caffeye.native", category: .pointsOfInterest)
     private func rebuildFilters() {
+        os_signpost(.begin, log: Self.performance, name: "Filter venues")
+        defer { os_signpost(.end, log: Self.performance, name: "Filter venues") }
         matches = filters.matching(currentRanked, searchIndex: currentSearch)
         listMatches = filters.matching(listRanked, searchIndex: listSearch)
         rebuildRows()

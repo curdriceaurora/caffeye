@@ -15,8 +15,12 @@ jobs:
         run: |
           python3 native/scripts/export_venues.py --check
           python3 -m unittest discover -s native/scripts -p 'test_*.py'
+          python3 native/scripts/audit_snapshot.py native/Caffeye/Resources/venues.json > /tmp/dataset-inventory.json
+          diff -u native/release/dataset-inventory.json /tmp/dataset-inventory.json
       - name: Domain and offline storage tests
-        run: swift test --package-path native/Core
+        run: |
+          swift test --package-path native/Core
+          swift run --package-path native/Core CaffeyeTools validate native/Caffeye/Resources/venues.json
       - name: macOS build and discovery tests
         run: >-
           xcodebuild -project native/Caffeye.xcodeproj -scheme Caffeye-macOS

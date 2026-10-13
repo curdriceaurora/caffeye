@@ -6,14 +6,18 @@ struct VenueDetail: View {
     let venue: Venue
     let priors: RatingPriors?
     var back: () -> Void
+    @AccessibilityFocusState private var headingFocused: Bool
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 20) {
-                Button("Back to list", systemImage: "chevron.left", action: back)
+                Button(action: back) {
+                    Label("Back to list", systemImage: "chevron.left").frame(minHeight: 44)
+                }
                     .accessibilityIdentifier("back-to-list")
                 VStack(alignment: .leading, spacing: 8) {
                     Text("\(venue.category.glyph) \(venue.category.label) · \(venue.area)").foregroundStyle(.secondary)
                     Text(venue.name).font(.title2.bold()).accessibilityIdentifier("detail-name")
+                        .accessibilityAddTraits(.isHeader).accessibilityFocused($headingFocused)
                     Text(venue.model == .franchise ? "Franchise" : "Independent spot").font(.caption)
                     if venue.curated == true { Label("Curated", systemImage: "checkmark.seal").font(.caption) }
                     if let rating = venue.rating, let priors {
@@ -68,6 +72,7 @@ struct VenueDetail: View {
             }.frame(maxWidth: .infinity, alignment: .leading).padding()
         }
         .id(venue.id)
+        .task(id: venue.id) { headingFocused = true }
     }
     private func mapItem() -> MKMapItem {
         // Xcode 16 CI has the older SDK; newer SDKs provide this initializer.
@@ -81,7 +86,7 @@ struct VenueDetail: View {
     }
     private func section<Content: View>(_ title: String, @ViewBuilder content: () -> Content) -> some View {
         VStack(alignment: .leading, spacing: 8) {
-            Text(title).font(.headline)
+            Text(title).font(.headline).accessibilityAddTraits(.isHeader)
             content()
         }
     }

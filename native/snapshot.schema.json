@@ -294,6 +294,20 @@
               "type": "null"
             }
           ]
+        },
+        "fieldProvenance": {
+          "anyOf": [
+            {
+              "type": "object",
+              "additionalProperties": {
+                "$ref": "#/$defs/provenance"
+              }
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Field source overrides. Missing entries inherit venue provenance; no source permissions are inferred."
         }
       },
       "required": [

@@ -80,6 +80,12 @@ def export(seed, regional):
                 venue["work"]["provenance"]["verified"] = work["verified"]
         if record.get("late"):
             venue["late"] = {"tier": record["late"]["tier"], "when": record["late"].get("when") or ""}
+        venue["fieldProvenance"] = {"coordinate": {
+            "source": "Apple geocoding (curated seed)" if curated else "Google Places place pin"
+        }}
+        if venue.get("work", {}).get("provenance"):
+            venue["fieldProvenance"]["work"] = dict(venue["work"]["provenance"])
+        # Coordinate-specific verification dates were not recorded. Do not invent one.
         accepted.append(venue)
         if place_id:
             seen_places.add(place_id)

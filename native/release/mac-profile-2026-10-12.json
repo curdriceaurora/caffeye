@@ -1,0 +1,17 @@
+{
+  "executableVerified": true,
+  "scope": "Release macOS app with bundled 1,705 venues and isolated storage; RSS sampled once per second after direct launch. Attached Time Profiler starts after launch, so no cold-launch latency or GPU/FPS claim.",
+  "samples": 15,
+  "minRSSBytes": 32768,
+  "maxRSSBytes": 462143488,
+  "traceExitCode": 0,
+  "recordedOn": "2026-10-12",
+  "configuration": "Release",
+  "datasetSHA256": "75db5af2068dd891fbf4f12c07aaa893dccad45d4399829c71bb7c9e50a9121b",
+  "executableSHA256": "9f68a5fa7ac3730a6c3455681305ef8c76421a0382ee045b3f768fab652f7fa6",
+  "toolchain": "Xcode 27.2\nBuild version 27B5028f",
+  "os": "27.2",
+  "samplingIntervalSeconds": 1,
+  "traceDurationSeconds": 10,
+  "limitations": "One short idle discovery run with MapKit and Instruments attached. Startup RSS includes an early pre-initialization sample. No repeated pan/zoom, retained allocation analysis, peak guarantee, cold-launch latency, GPU/FPS, or physical-device measurement."
+}

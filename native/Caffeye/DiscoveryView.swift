@@ -5,6 +5,9 @@ import CaffeyeCore
 struct DiscoveryView: View {
     @Bindable var model: AppModel
     @State private var state = DiscoveryState()
+    @FocusState private var searchFocused: Bool
+    @AccessibilityFocusState private var accessibleVenue: String?
+    @AccessibilityFocusState private var resultsFocused: Bool
     @State private var importing = false
     @State private var settings = false
     @State private var importAfterSettings = false
@@ -32,7 +35,7 @@ struct DiscoveryView: View {
                     } else {
                         VStack(spacing: 0) {
                             VenueMap(state: state)
-                                .frame(height: max(100, min(typeSize.isAccessibilitySize ? 140 : 230, geometry.size.height * 0.32)))
+                                .frame(height: max(typeSize.isAccessibilitySize ? 60 : 100, min(typeSize.isAccessibilitySize ? 100 : 230, geometry.size.height * (typeSize.isAccessibilitySize ? 0.18 : 0.32))))
                             Divider()
                             ZStack {
                                 results(state.browsingRows, followsSelection: false)
@@ -53,14 +56,30 @@ struct DiscoveryView: View {
             .navigationBarTitleDisplayMode(.inline)
             #endif
             .searchable(text: $state.filters.search, prompt: "Search by name, drink, or area")
+            .searchFocused($searchFocused)
             .toolbar { toolbar }
+            .onChange(of: state.selection) { old, selected in
+                if selected != nil { searchFocused = false }
+                if selected == nil, let old {
+                    Task { @MainActor in
+                        await Task.yield()
+                        if state.selection == nil {
+                            if state.browsingRows.contains(where: { $0.id == old }) { accessibleVenue = old }
+                            else { resultsFocused = true }
+                        }
+                    }
+                }
+            }
             .onChange(of: model.generation, initial: true) {
                 if let snapshot = model.snapshot { state.accept(snapshot) }
             }
             .fileImporter(isPresented: $importing, allowedContentTypes: [.json]) { result in
                 switch result {
                 case .success(let url): Task { await model.importSnapshot(url) }
-                case .failure(let error): model.failure = error.localizedDescription
+                case .failure(let error):
+                    if (error as NSError).domain != NSCocoaErrorDomain || (error as NSError).code != CocoaError.userCancelled.rawValue {
+                        model.failure = error.localizedDescription
+                    }
                 }
             }
             .sheet(isPresented: $settings, onDismiss: {
@@ -85,17 +104,29 @@ struct DiscoveryView: View {
     @ViewBuilder private var coverage: some View {
         VStack(alignment: .leading, spacing: 6) {
             HStack {
-                if model.busy { ProgressView().controlSize(.small) }
-                Text(state.current?.isDemo == true ? "Demo data · fictional venues and ratings" : model.status)
+                if model.busy { ProgressView().controlSize(.small).accessibilityLabel("Loading snapshot") }
+                if model.canCancelUpdate {
+                    Button("Cancel update") { model.cancelUpdate() }
+                }
+                Text(typeSize.isAccessibilitySize && !model.busy && state.current != nil
+                     ? (state.current?.isDemo == true ? "Fictional demo" : "Offline venues")
+                     : (state.current?.isDemo == true ? "Demo data · fictional venues and ratings" : model.status))
                     .font(.caption).foregroundStyle(.secondary)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .accessibilityLabel(state.current?.isDemo == true ? "Demo data · fictional venues and ratings" : model.status)
                 Spacer()
-                if state.current?.isDemo == true {
+                if state.current?.isDemo == true && !typeSize.isAccessibilitySize {
                     Button("Import data") { importing = true }.font(.caption)
                 }
             }
-            Toggle("Include franchise stores", isOn: $state.filters.includeFranchises)
-                .font(.subheadline)
+            Toggle(isOn: $state.filters.includeFranchises) {
+                Text("Include franchise stores").fixedSize(horizontal: false, vertical: true)
+            }.font(.subheadline)
                 .accessibilityIdentifier("include-franchises")
+            if state.mapImageryUnavailable {
+                Text("Map imagery unavailable · venue data remains available")
+                    .font(.caption).foregroundStyle(.secondary)
+            }
             if state.pending != nil {
                 HStack {
                     Text("Updated venues available").font(.caption)
@@ -124,12 +155,7 @@ struct DiscoveryView: View {
 
     private func results(_ rows: [Venue], followsSelection: Bool = true) -> some View {
         VStack(spacing: 0) {
-            HStack {
-                Text("\(rows.count) \(rows.count < state.matches.count ? "in view" : "spots")")
-                    .font(.headline).accessibilityIdentifier("results-count")
-                Spacer()
-                Text(state.listSnapshot?.priors == nil ? "Alphabetical · ratings omitted" : "◆ = weighted score").font(.caption).foregroundStyle(.secondary)
-            }.padding()
+            resultHeader(rows.count).padding()
             if rows.count < state.matches.count {
                 Button("Show all \(state.matches.count) matches") { state.showAll() }
                     .padding(.bottom, 8)
@@ -166,6 +192,22 @@ struct DiscoveryView: View {
             }
         }
     }
+    @ViewBuilder private func resultHeader(_ count: Int) -> some View {
+        let label = "\(count) \(count < state.matches.count ? "in view" : "spots")"
+        let legend = state.listSnapshot?.priors == nil ? "Alphabetical · ratings omitted" : "◆ = weighted score"
+        if typeSize.isAccessibilitySize {
+            VStack(alignment: .leading, spacing: 6) {
+                Text(label).font(.headline).accessibilityIdentifier("results-count").accessibilityAddTraits(.isHeader).accessibilityFocused($resultsFocused)
+                Text(legend).font(.caption).foregroundStyle(.secondary)
+            }.frame(maxWidth: .infinity, alignment: .leading)
+        } else {
+            HStack {
+                Text(label).font(.headline).accessibilityIdentifier("results-count").accessibilityAddTraits(.isHeader).accessibilityFocused($resultsFocused)
+                Spacer()
+                Text(legend).font(.caption).foregroundStyle(.secondary)
+            }
+        }
+    }
     private func scrollToSelection(_ proxy: ScrollViewProxy, rows: [Venue], followsSelection: Bool) {
         if followsSelection, let id = state.selection, rows.contains(where: { $0.id == id }) {
             proxy.scrollTo(id, anchor: .center)
@@ -181,6 +223,8 @@ struct DiscoveryView: View {
         .buttonStyle(.plain)
         .tag(venue.id)
         .accessibilityIdentifier("venue-\(venue.id)")
+        .accessibilityFocused($accessibleVenue, equals: venue.id)
+        .accessibilityHint("Opens venue details and focuses the map")
         .accessibilityLabel("\(venue.name), \(venue.category.label), \(state.listSnapshot?.priors == nil ? "ratings omitted" : venue.rating == nil ? "no public rating" : "weighted score " + String(format: "%.1f", state.listSnapshot?.priors?.score(venue) ?? 0)), \(venue.area)")
     }
 
