@@ -65,7 +65,7 @@ final class DiscoveryUITests: XCTestCase {
         row.tap()
         XCTAssertTrue(app.staticTexts["detail-name"].waitForExistence(timeout: 5))
         XCTAssertFalse(app.keyboards.firstMatch.exists, "Opening detail should dismiss the search keyboard")
-        XCTAssertTrue(app.staticTexts["Ratings omitted from this snapshot"].exists)
+        XCTAssertTrue(app.staticTexts["Ratings omitted"].exists)
         XCTAssertFalse(app.staticTexts["No rating"].exists)
         XCTAssertFalse(app.staticTexts.matching(NSPredicate(format: "label CONTAINS 'weighted score'")).firstMatch.exists)
         let detail = XCTAttachment(screenshot: app.screenshot())

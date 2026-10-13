@@ -19,10 +19,6 @@ struct CaffeyeApp: App {
 struct DiscoveryCommandActions {
     var reset: @MainActor () -> Void
     var back: @MainActor () -> Void
-    var importSnapshot: @MainActor () -> Void
-    var updateSnapshot: @MainActor () -> Void
-    var settings: @MainActor () -> Void
-    var canUpdate: Bool
     var canGoBack: Bool
 }
 
@@ -40,18 +36,6 @@ extension FocusedValues {
 @MainActor struct DiscoveryCommands: Commands {
     @FocusedValue(\.discoveryCommands) private var actions
     var body: some Commands {
-        CommandGroup(after: .newItem) {
-            Button("Import offline snapshot…") { actions?.importSnapshot() }
-                .keyboardShortcut("o", modifiers: [.command, .shift])
-                .disabled(actions == nil)
-            Button("Update snapshot") { actions?.updateSnapshot() }
-                .disabled(actions?.canUpdate != true)
-        }
-        CommandGroup(replacing: .appSettings) {
-            Button("Data settings…") { actions?.settings() }
-                .keyboardShortcut(",", modifiers: .command)
-                .disabled(actions == nil)
-        }
         CommandGroup(after: .toolbar) {
             Button("Back to list") { actions?.back() }
                 .keyboardShortcut("[", modifiers: .command)

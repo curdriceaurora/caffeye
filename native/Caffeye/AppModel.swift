@@ -5,7 +5,7 @@ import os
 @MainActor @Observable
 final class AppModel {
     var snapshot: Snapshot?
-    var status = "Loading offline venues…"
+    var status = "Loading venues…"
     var failure: String?
     var busy = false
     var loaded = false
@@ -28,7 +28,7 @@ final class AppModel {
         defer { os_signpost(.end, log: Self.performance, name: "Load snapshot") }
         do {
             snapshot = try await store.load()
-            status = "Offline snapshot loaded"
+            status = "Venues loaded"
         } catch {
             do {
                 guard let url = Bundle.main.url(forResource: ProcessInfo.processInfo.arguments.contains("--ui-testing")
@@ -36,8 +36,8 @@ final class AppModel {
                     throw CocoaError(.fileNoSuchFile)
                 }
                 snapshot = try SnapshotStore.decode(SnapshotStore.readFile(url))
-                status = snapshot?.isDemo == true ? "Demo data · fictional venues and ratings" : "Bundled venues · ratings omitted"
-            } catch { failure = error.localizedDescription; status = "No offline snapshot available" }
+                status = snapshot?.isDemo == true ? "Demo data · fictional venues and ratings" : "Venues · ratings omitted"
+            } catch { failure = error.localizedDescription; status = "Venues unavailable" }
         }
         generation += 1
         // Developer profiling waits for venue data, not for network-dependent basemap tiles.
@@ -54,7 +54,7 @@ final class AppModel {
         defer { if access { url.stopAccessingSecurityScopedResource() } }
         do {
             snapshot = try await store.importFile(url)
-            status = "Imported snapshot · available offline"
+            status = "Venues loaded"
             failure = nil; generation += 1
         } catch { failure = error.localizedDescription }
     }
@@ -70,13 +70,13 @@ final class AppModel {
         defer { busy = false; updateTask = nil }
         do {
             snapshot = try await task.value
-            status = "Snapshot updated · available offline"
+            status = "Venues updated"
             failure = nil; generation += 1
         } catch where task.isCancelled {
-            status = "Update cancelled · offline snapshot retained"
+            status = "Update cancelled · current venues retained"
             failure = nil
         } catch {
-            failure = "Update failed: \(error.localizedDescription) Your offline snapshot is still available."
+            failure = "Update failed: \(error.localizedDescription) Your current venues are still available."
         }
     }
 }

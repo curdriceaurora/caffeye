@@ -16,7 +16,7 @@ struct AppModelTests {
         await model.load()
         #expect(model.snapshot?.venues.count == 1705)
         #expect(model.failure == nil)
-        #expect(model.status == "Bundled venues · ratings omitted")
+        #expect(model.status == "Venues · ratings omitted")
         let imported = root.appendingPathComponent("import.json")
         let replacement = Snapshot(revision: "replacement", venues: [Venue(id: "test", name: "Test", coordinate: .init(latitude: 33.96, longitude: -84.14), provenance: .init(source: "Test"))])
         try JSONEncoder().encode(replacement).write(to: imported)

@@ -1,5 +1,4 @@
 import SwiftUI
-import UniformTypeIdentifiers
 import CaffeyeCore
 
 struct DiscoveryView: View {
@@ -8,10 +7,6 @@ struct DiscoveryView: View {
     @FocusState private var searchFocused: Bool
     @AccessibilityFocusState private var accessibleVenue: String?
     @AccessibilityFocusState private var resultsFocused: Bool
-    @State private var importing = false
-    @State private var settings = false
-    @State private var importAfterSettings = false
-    @AppStorage("snapshotEndpoint") private var endpoint = ""
     @Environment(\.dynamicTypeSize) private var typeSize
 
     var body: some View {
@@ -76,29 +71,13 @@ struct DiscoveryView: View {
             .onChange(of: model.generation, initial: true) {
                 if let snapshot = model.snapshot { state.accept(snapshot) }
             }
-            .fileImporter(isPresented: $importing, allowedContentTypes: [.json]) { result in
-                switch result {
-                case .success(let url): Task { await model.importSnapshot(url) }
-                case .failure(let error):
-                    if (error as NSError).domain != NSCocoaErrorDomain || (error as NSError).code != CocoaError.userCancelled.rawValue {
-                        model.failure = error.localizedDescription
-                    }
-                }
-            }
-            .sheet(isPresented: $settings, onDismiss: {
-                if importAfterSettings { importAfterSettings = false; importing = true }
-            }) { dataSettings }
-            .alert("Snapshot unavailable", isPresented: Binding(get: { model.failure != nil }, set: { if !$0 { model.failure = nil } })) {
+            .alert("Venues unavailable", isPresented: Binding(get: { model.failure != nil }, set: { if !$0 { model.failure = nil } })) {
                 Button("OK") { model.failure = nil }
             } message: { Text(model.failure ?? "") }
             #if os(macOS)
             .onExitCommand { state.back() }
             .focusedSceneValue(\.discoveryCommands, DiscoveryCommandActions(
                 reset: state.reset, back: state.back,
-                importSnapshot: { importing = true },
-                updateSnapshot: { Task { await model.refresh(endpoint) } },
-                settings: { settings = true },
-                canUpdate: !endpoint.isEmpty && !model.busy,
                 canGoBack: state.selection != nil))
             #endif
         }
@@ -107,27 +86,21 @@ struct DiscoveryView: View {
     @ViewBuilder private var coverage: some View {
         VStack(alignment: .leading, spacing: 6) {
             HStack {
-                if model.busy { ProgressView().controlSize(.small).accessibilityLabel("Loading snapshot") }
-                if model.canCancelUpdate {
-                    Button("Cancel update") { model.cancelUpdate() }
-                }
+                if model.busy { ProgressView().controlSize(.small).accessibilityLabel("Loading venues") }
                 Text(typeSize.isAccessibilitySize && !model.busy && state.current != nil
-                     ? (state.current?.isDemo == true ? "Fictional demo" : "Offline venues")
+                     ? (state.current?.isDemo == true ? "Fictional demo" : "Venues")
                      : (state.current?.isDemo == true ? "Demo data · fictional venues and ratings" : model.status))
                     .font(.caption).foregroundStyle(.secondary)
                     .fixedSize(horizontal: false, vertical: true)
                     .accessibilityLabel(state.current?.isDemo == true ? "Demo data · fictional venues and ratings" : model.status)
                 Spacer()
-                if state.current?.isDemo == true && !typeSize.isAccessibilitySize {
-                    Button("Import data") { importing = true }.font(.caption)
-                }
             }
             Toggle(isOn: $state.filters.includeFranchises) {
                 Text("Include franchise stores").fixedSize(horizontal: false, vertical: true)
             }.font(.subheadline)
                 .accessibilityIdentifier("include-franchises")
             if state.mapImageryUnavailable {
-                Text("Map imagery unavailable · venue data remains available")
+                Text("Map imagery unavailable")
                     .font(.caption).foregroundStyle(.secondary)
             }
             if state.pending != nil {
@@ -254,12 +227,6 @@ struct DiscoveryView: View {
                 #if os(iOS)
                 .keyboardShortcut("r", modifiers: [.command, .shift])
                 #endif
-            Menu("Data", systemImage: "externaldrive") {
-                Button("Import offline snapshot…") { importing = true }
-                Button("Update snapshot") { Task { await model.refresh(endpoint) } }
-                    .disabled(endpoint.isEmpty || model.busy)
-                Button("Data settings…") { settings = true }
-            }
         }
     }
     private func categoryBinding(_ category: CaffeyeCore.Category) -> Binding<Bool> {
@@ -271,39 +238,6 @@ struct DiscoveryView: View {
         Binding(get: { state.filters.features.contains(feature) }, set: {
             if $0 { state.filters.features.insert(feature) } else { state.filters.features.remove(feature) }
         })
-    }
-    private var dataSettings: some View {
-        NavigationStack {
-            Form {
-                Section("Offline data") {
-                    Text("Import a Caffeye snapshot to use venues, editorial notes, and Bayesian scores without a connection. Map imagery may still need internet access.")
-                    Button("Import snapshot…") { importAfterSettings = true; settings = false }
-                }
-                Section("Optional updates") {
-                    TextField("HTTPS snapshot URL", text: $endpoint)
-                        .autocorrectionDisabled()
-                        #if os(iOS)
-                        .textInputAutocapitalization(.never).keyboardType(.URL)
-                        #endif
-                    Text("Updates replace the local snapshot only after validation. Source verification dates are kept separately from download time.").font(.caption)
-                }
-                if let snapshot = state.current {
-                    Section("Current snapshot") {
-                        LabeledContent("Revision", value: snapshot.revision)
-                        LabeledContent("Venues", value: "\(snapshot.venues.count)")
-                        if let priors = snapshot.priors {
-                            LabeledContent("Prior mean", value: String(format: "%.3f", priors.mean))
-                            LabeledContent("Prior weight", value: String(format: "%.0f", priors.weight))
-                            Text("Ranking source: \(priors.provenance.source)")
-                        } else { Text("Ratings omitted · alphabetical order") }
-                    }
-                }
-            }
-            .formStyle(.grouped)
-            .navigationTitle("Data settings")
-            .toolbar { Button("Done") { settings = false } }
-        }
-        .frame(minWidth: 320, idealWidth: 500, minHeight: 440)
     }
 }
 
