@@ -32,11 +32,16 @@ def wait_for_snapshot(app, marker, timeout=30, clock=time.monotonic, pause=time.
         if app.poll() is not None:
             raise RuntimeError("app exited before its offline snapshot loaded")
         if marker.is_file():
-            line = next((line for line in marker.read_text().splitlines() if line.startswith("CAFFEYE_SNAPSHOT_READY ")), None)
-            readiness = json.loads(line.removeprefix("CAFFEYE_SNAPSHOT_READY ")) if line else None
-            if readiness is not None and (readiness.get("phase") != "offlineSnapshotLoaded" or not isinstance(readiness.get("venues"), int) or readiness["venues"] <= 0):
-                raise RuntimeError("invalid snapshot readiness marker")
-            if readiness is not None:
+            for line in marker.read_text(errors="replace").splitlines():
+                if not line.startswith("CAFFEYE_SNAPSHOT_READY "):
+                    continue
+                try:
+                    readiness = json.loads(line.removeprefix("CAFFEYE_SNAPSHOT_READY "))
+                except json.JSONDecodeError:
+                    # stdout may still be appending this line; retry within the same deadline.
+                    continue
+                if not isinstance(readiness, dict) or readiness.get("phase") != "offlineSnapshotLoaded" or type(readiness.get("venues")) is not int or readiness["venues"] <= 0:
+                    raise RuntimeError("invalid snapshot readiness marker")
                 return readiness
         if clock() >= deadline:
             raise RuntimeError("timed out waiting for offline snapshot readiness; basemap readiness is not measured")

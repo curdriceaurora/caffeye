@@ -174,4 +174,29 @@ struct DiscoveryStateTests {
         #expect(!state.mapImageryUnavailable)
     }
 
+    @Test("Show all includes offscreen matches and handles colocated venues", arguments: [false, true])
+    func showAllMatches(_ colocated: Bool) {
+        let state = DiscoveryState(); var data = snapshot()
+        if colocated { data.venues[1].coordinate = data.venues[0].coordinate }
+        state.accept(data)
+        let point = MKMapPoint(data.venues[0].coordinate.location)
+        state.cameraChanged(MKMapRect(x: point.x - 10, y: point.y - 10, width: 20, height: 20), userInitiated: true)
+        let command = state.cameraCommand
+        state.showAll()
+        #expect(state.cameraCommand == command + 1)
+        #expect(state.cameraRect.width.isFinite && state.cameraRect.width > 20)
+        #expect(state.cameraRect.height.isFinite && state.cameraRect.height > 20)
+        #expect(state.matches.allSatisfy { state.cameraRect.contains(MKMapPoint($0.coordinate.location)) })
+        state.cameraChanged(state.cameraRect, userInitiated: false)
+        #expect(state.rows.count == 2)
+    }
+    @Test("Show all with no matches leaves the camera unchanged")
+    func showAllEmpty() {
+        let state = DiscoveryState(); state.accept(snapshot()); state.filters.search = "no matching venue"
+        let camera = state.cameraRect; let command = state.cameraCommand
+        state.showAll()
+        #expect(state.cameraCommand == command)
+        #expect(MKMapRectEqualToRect(state.cameraRect, camera))
+    }
+
 }

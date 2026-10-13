@@ -15,6 +15,7 @@
 		2FCE66D43A890337A28D3C45 /* DiscoveryState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A820523AAAD6A8BEFE0B2BDF /* DiscoveryState.swift */; };
 		3A33910D7D8293717379F254 /* venues.json in Resources */ = {isa = PBXBuildFile; fileRef = F6B0037DCB6D0495268D78A7 /* venues.json */; };
 		3E3E4A166B90599DE89E247B /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA93ECE1A812FFF6B55B6C5 /* AppModel.swift */; };
+		46E130414FEC79D48F8B1185 /* VenueDetailTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40FC8C84EE1C9C4325988B0 /* VenueDetailTests.swift */; };
 		53DF2B5674C697BD2E708260 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 63ED8B34383C3304A22C869E /* PrivacyInfo.xcprivacy */; };
 		5E221CFA583CEA9225849AD0 /* DiscoveryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106EF70B6B26EB29D71612FA /* DiscoveryUITests.swift */; };
 		5FA4A0C39A9EABE689F4B15E /* CaffeyeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EEB7B02370209A474B3206 /* CaffeyeApp.swift */; };
@@ -69,6 +70,7 @@
 		A1EEB7B02370209A474B3206 /* CaffeyeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaffeyeApp.swift; sourceTree = "<group>"; };
 		A5569F51C8AF19AC80D41CF0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A820523AAAD6A8BEFE0B2BDF /* DiscoveryState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryState.swift; sourceTree = "<group>"; };
+		D40FC8C84EE1C9C4325988B0 /* VenueDetailTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueDetailTests.swift; sourceTree = "<group>"; };
 		DF94F00081ACA4791DC02FBD /* DiscoveryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryView.swift; sourceTree = "<group>"; };
 		F65934EA70C931123FCDEA1F /* VenueDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueDetail.swift; sourceTree = "<group>"; };
 		F6B0037DCB6D0495268D78A7 /* venues.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = venues.json; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 			children = (
 				92C00A70395A03B6DEE3823B /* AppModelTests.swift */,
 				72B6FEAB9DC781BEE485AD41 /* DiscoveryStateTests.swift */,
+				D40FC8C84EE1C9C4325988B0 /* VenueDetailTests.swift */,
 			);
 			path = CaffeyeTests;
 			sourceTree = "<group>";
@@ -350,6 +353,7 @@
 			files = (
 				E272436E68981B85075B7960 /* AppModelTests.swift in Sources */,
 				8C12EDDF9B0BF7088FAE7EA5 /* DiscoveryStateTests.swift in Sources */,
+				46E130414FEC79D48F8B1185 /* VenueDetailTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

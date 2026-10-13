@@ -45,6 +45,26 @@ class ProfileMemoryTests(unittest.TestCase):
             leaks.write_text("Permission denied")
             self.assertIsNone(summarize(heap, leaks, vm)["leaks"])
 
+    def test_readiness_survives_split_json_and_unrelated_partial_utf8(self):
+        with tempfile.TemporaryDirectory() as folder:
+            marker = Path(folder) / "app.log"
+            marker.write_text('CAFFEYE_SNAPSHOT_READY {"phase":')
+            def finish_line(_):
+                with marker.open("ab") as output:
+                    output.write(b'"offlineSnapshotLoaded","venues":1705}\n' + b'\xc3')
+            result = wait_for_snapshot(SimpleNamespace(poll=lambda: None), marker,
+                                       clock=lambda: 0, pause=finish_line)
+            self.assertEqual(result["venues"], 1705)
+
+    def test_malformed_json_is_bounded_by_the_readiness_deadline(self):
+        with tempfile.TemporaryDirectory() as folder:
+            marker = Path(folder) / "app.log"
+            marker.write_text('CAFFEYE_SNAPSHOT_READY {"phase":')
+            ticks = iter([0, 1])
+            with self.assertRaisesRegex(RuntimeError, "timed out"):
+                wait_for_snapshot(SimpleNamespace(poll=lambda: None), marker,
+                                  timeout=1, clock=lambda: next(ticks))
+
 
 if __name__ == "__main__":
     unittest.main()

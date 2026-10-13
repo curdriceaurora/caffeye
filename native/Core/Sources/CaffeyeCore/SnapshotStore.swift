@@ -14,7 +14,7 @@ public actor SnapshotStore {
         let configuration = URLSessionConfiguration.ephemeral
         configuration.timeoutIntervalForRequest = 20
         configuration.timeoutIntervalForResource = 30
-        return URLSession(configuration: configuration, delegate: HTTPSRedirects(), delegateQueue: nil)
+        return URLSession(configuration: configuration)
     }
     public static func isSecureEndpoint(_ url: URL) -> Bool {
         url.scheme?.lowercased() == "https" && !(url.host ?? "").isEmpty
@@ -57,24 +57,8 @@ public actor SnapshotStore {
         guard Self.isSecureEndpoint(url) else { throw SnapshotError.insecureEndpoint }
         var request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 20)
         request.setValue("application/json", forHTTPHeaderField: "Accept")
-        let (bytes, response) = try await session.bytes(for: request)
-        guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode),
-              let finalURL = response.url, Self.isSecureEndpoint(finalURL) else { throw URLError(.badServerResponse) }
-        guard response.expectedContentLength <= Self.maximumBytes else { throw SnapshotError.tooLarge }
-        var data = Data()
-        for try await byte in bytes {
-            guard data.count < Self.maximumBytes else { throw SnapshotError.tooLarge }
-            data.append(byte)
-        }
+        let data = try await SnapshotDownload().data(for: request, session: session)
         try Task.checkCancellation()
         return try save(data)
-    }
-}
-
-private final class HTTPSRedirects: NSObject, URLSessionTaskDelegate, @unchecked Sendable {
-    func urlSession(_ session: URLSession, task: URLSessionTask,
-                    willPerformHTTPRedirection response: HTTPURLResponse, newRequest request: URLRequest,
-                    completionHandler: @escaping (URLRequest?) -> Void) {
-        completionHandler(request.url.map(SnapshotStore.isSecureEndpoint) == true ? request : nil)
     }
 }

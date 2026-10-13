@@ -25,11 +25,15 @@ private final class SnapshotProtocol: URLProtocol, @unchecked Sendable {
         handler(self)
     }
     override func stopLoading() {}
-    func respond(_ data: Data, status: Int = 200, length: Int? = nil, finish: Bool = true) {
+    func respond(_ data: Data, status: Int = 200, length: Int? = nil, finish: Bool = true, chunkSize: Int? = nil) {
         let headers = length.map { ["Content-Length": String($0)] }
         let response = HTTPURLResponse(url: request.url!, statusCode: status, httpVersion: "HTTP/1.1", headerFields: headers)!
         client?.urlProtocol(self, didReceive: response, cacheStoragePolicy: .notAllowed)
-        client?.urlProtocol(self, didLoad: data)
+        if let chunkSize {
+            for offset in stride(from: 0, to: data.count, by: chunkSize) {
+                client?.urlProtocol(self, didLoad: data.subdata(in: offset..<min(offset + chunkSize, data.count)))
+            }
+        } else { client?.urlProtocol(self, didLoad: data) }
         if finish { client?.urlProtocolDidFinishLoading(self) }
     }
 }
@@ -122,6 +126,29 @@ struct RefreshTests {
         #expect(try await store.refresh(from: url).revision == "new")
         #expect(try await SnapshotStore(file: root.appendingPathComponent("snapshot.json")).load().revision == "new")
     }
+    @Test("Chunked responses accept exactly the cap and reject a trailing byte", arguments: [false, true])
+    func chunkBoundary(_ extraByte: Bool) async throws {
+        let root = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString)
+        defer { try? FileManager.default.removeItem(at: root) }
+        let file = root.appendingPathComponent("snapshot.json")
+        let url = URL(string: "https://snapshot.test/" + UUID().uuidString)!
+        defer { SnapshotProtocol.responses.remove(url) }
+        var body = try JSONEncoder().encode(good("new"))
+        body.append(Data(repeating: 32, count: SnapshotStore.maximumBytes - body.count + (extraByte ? 1 : 0)))
+        let payload = body
+        SnapshotProtocol.responses.set(url) { $0.respond(payload, chunkSize: 64 * 1024) }
+        let connection = session(); defer { connection.invalidateAndCancel() }
+        let store = SnapshotStore(file: file, session: connection)
+        try await store.save(JSONEncoder().encode(good()))
+        let original = try SnapshotStore.readFile(file)
+        if extraByte {
+            await #expect(throws: SnapshotError.tooLarge) { try await store.refresh(from: url) }
+            #expect(try SnapshotStore.readFile(file) == original)
+        } else {
+            #expect(try await store.refresh(from: url).revision == "new")
+            #expect(try SnapshotStore.readFile(file) == payload)
+        }
+    }
     @Test("Corrupt and oversized local files fail bounded reads and imports preserve good data")
     func localFiles() async throws {
         let root = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString)
@@ -175,5 +202,22 @@ struct RefreshTests {
     func endpoints(_ value: String) async {
         let store = SnapshotStore(file: FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString))
         await #expect(throws: SnapshotError.insecureEndpoint) { try await store.refresh(from: URL(string: value)!) }
+    }
+    @Test("Task-specific redirect policy allows HTTPS and refuses insecure or credential URLs", arguments: [
+        "https://snapshot.test/next", "http://snapshot.test/next", "https://user:pass@snapshot.test/next"
+    ])
+    func redirects(_ value: String) throws {
+        let connection = session(); defer { connection.invalidateAndCancel() }
+        let initial = try #require(URL(string: "https://snapshot.test/source"))
+        let transport = connection.dataTask(with: initial) // Not resumed: no network request.
+        let response = try #require(HTTPURLResponse(url: initial, statusCode: 302, httpVersion: nil, headerFields: nil))
+        let redirected = URLRequest(url: try #require(URL(string: value)))
+        var received: URLRequest?
+        var called = false
+        SnapshotDownload().urlSession(connection, task: transport, willPerformHTTPRedirection: response, newRequest: redirected) {
+            received = $0; called = true
+        }
+        #expect(called)
+        #expect((received != nil) == (value == "https://snapshot.test/next"))
     }
 }
