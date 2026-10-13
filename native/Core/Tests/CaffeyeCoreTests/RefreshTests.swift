@@ -86,12 +86,14 @@ struct RefreshTests {
         let connection = session(); defer { connection.invalidateAndCancel() }
         let store = SnapshotStore(file: root.appendingPathComponent("snapshot.json"), session: connection)
         try await store.save(JSONEncoder().encode(good()))
+        let original = try SnapshotStore.readFile(root.appendingPathComponent("snapshot.json"))
         let task = Task { try await store.refresh(from: url) }
         var iterator = started.makeAsyncIterator()
         _ = await iterator.next()
         task.cancel()
         await #expect(throws: (any Error).self) { try await task.value }
         #expect(try await store.load() == good())
+        #expect(try SnapshotStore.readFile(root.appendingPathComponent("snapshot.json")) == original)
     }
     @Test("Unknown-length streams exceeding the limit cannot overwrite the cache")
     func streamedLimit() async throws {
@@ -138,19 +140,34 @@ struct RefreshTests {
         await #expect(throws: SnapshotError.tooLarge) { try await store.importFile(huge) }
         #expect(try await store.load() == good())
     }
-    @Test("Normalization cannot create a cache too large to reload")
-    func normalizedLimit() async throws {
+    @Test("Validated payloads retain future optional fields and original bytes after reopening")
+    func futureFields() async throws {
         let root = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString)
         defer { try? FileManager.default.removeItem(at: root) }
-        let store = SnapshotStore(file: root.appendingPathComponent("snapshot.json"))
-        try await store.save(JSONEncoder().encode(good()))
-        var huge = good("oversized")
-        huge.venues[0].name = String(repeating: "/", count: 11 * 1024 * 1024)
-        let encoder = JSONEncoder(); encoder.outputFormatting = .withoutEscapingSlashes
-        let input = try encoder.encode(huge)
-        #expect(input.count < SnapshotStore.maximumBytes)
-        await #expect(throws: SnapshotError.tooLarge) { try await store.save(input) }
-        #expect(try await store.load() == good())
+        let file = root.appendingPathComponent("snapshot.json")
+        var object = try #require(JSONSerialization.jsonObject(with: JSONEncoder().encode(good())) as? [String: Any])
+        object["futureSnapshot"] = ["arbitrary": [true, false]]
+        var venues = try #require(object["venues"] as? [[String: Any]])
+        venues[0]["futureVenue"] = ["nested": ["value": "retained"]]
+        var coordinate = try #require(venues[0]["coordinate"] as? [String: Any])
+        coordinate["futureCoordinate"] = 123
+        venues[0]["coordinate"] = coordinate
+        object["venues"] = venues
+        let original = try JSONSerialization.data(withJSONObject: object, options: [.prettyPrinted, .sortedKeys])
+        let store = SnapshotStore(file: file)
+        #expect(try await store.save(original) == good())
+        #expect(try SnapshotStore.readFile(file) == original)
+        #expect(try await SnapshotStore(file: file).load() == good())
+    }
+    @Test("Bounded reads accumulate short chunks, accept an exact limit, and reject the next byte")
+    func shortReads() throws {
+        var chunks = [Data([1]), Data([2, 3]), Data([4]), Data()]
+        #expect(try SnapshotStore.readBounded(limit: 4) { _ in chunks.removeFirst() } == Data([1, 2, 3, 4]))
+        var oversized = [Data([1, 2]), Data([3, 4]), Data([5])]
+        #expect(throws: SnapshotError.tooLarge) {
+            try SnapshotStore.readBounded(limit: 4) { _ in oversized.removeFirst() }
+        }
+        #expect(try SnapshotStore.readBounded(limit: 4) { _ in nil }.isEmpty)
     }
     @Test("Reject insecure and credential-bearing update endpoints", arguments: [
         "http://snapshot.test/", "https://user:pass@snapshot.test/", "file:///tmp/data.json"

@@ -28,8 +28,15 @@ public actor SnapshotStore {
     public static func readFile(_ url: URL) throws -> Data {
         let handle = try FileHandle(forReadingFrom: url)
         defer { try? handle.close() }
-        let data = try handle.read(upToCount: maximumBytes + 1) ?? Data()
-        guard data.count <= maximumBytes else { throw SnapshotError.tooLarge }
+        return try readBounded { try handle.read(upToCount: $0) }
+    }
+    /// Short reads are not EOF. Keep one extra byte available to detect oversized input.
+    static func readBounded(limit: Int = maximumBytes, _ readChunk: (Int) throws -> Data?) throws -> Data {
+        var data = Data()
+        while let chunk = try readChunk(min(64 * 1024, limit + 1 - data.count)), !chunk.isEmpty {
+            data.append(chunk)
+            guard data.count <= limit else { throw SnapshotError.tooLarge }
+        }
         return data
     }
     public func load() throws -> Snapshot { try Self.decode(Self.readFile(file)) }
@@ -38,11 +45,10 @@ public actor SnapshotStore {
     @discardableResult
     public func save(_ data: Data) throws -> Snapshot {
         let snapshot = try Self.decode(data)
-        let normalized = try JSONEncoder().encode(snapshot)
-        guard normalized.count <= Self.maximumBytes else { throw SnapshotError.tooLarge }
         try Task.checkCancellation()
         try FileManager.default.createDirectory(at: file.deletingLastPathComponent(), withIntermediateDirectories: true)
-        try normalized.write(to: file, options: .atomic)
+        // Persist the validated input, preserving unknown optional fields at every nesting level.
+        try data.write(to: file, options: .atomic)
         return snapshot
     }
     @discardableResult

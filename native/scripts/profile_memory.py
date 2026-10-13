@@ -18,6 +18,31 @@ def run_to_file(command, destination, timeout=60):
     return result.returncode
 
 
+def executable_path(pid, library=None):
+    library = library or ctypes.CDLL("/usr/lib/libproc.dylib", use_errno=True)
+    buffer = ctypes.create_string_buffer(4096)
+    if library.proc_pidpath(pid, buffer, len(buffer)) <= 0:
+        raise RuntimeError(f"proc_pidpath failed for owned PID {pid}")
+    return buffer.value.decode()
+
+
+def wait_for_snapshot(app, marker, timeout=30, clock=time.monotonic, pause=time.sleep):
+    deadline = clock() + timeout
+    while True:
+        if app.poll() is not None:
+            raise RuntimeError("app exited before its offline snapshot loaded")
+        if marker.is_file():
+            line = next((line for line in marker.read_text().splitlines() if line.startswith("CAFFEYE_SNAPSHOT_READY ")), None)
+            readiness = json.loads(line.removeprefix("CAFFEYE_SNAPSHOT_READY ")) if line else None
+            if readiness is not None and (readiness.get("phase") != "offlineSnapshotLoaded" or not isinstance(readiness.get("venues"), int) or readiness["venues"] <= 0):
+                raise RuntimeError("invalid snapshot readiness marker")
+            if readiness is not None:
+                return readiness
+        if clock() >= deadline:
+            raise RuntimeError("timed out waiting for offline snapshot readiness; basemap readiness is not measured")
+        pause(0.1)
+
+
 def summarize(heap_file, leaks_file, vm_file):
     classes = []
     for line in heap_file.read_text().splitlines():
@@ -53,6 +78,8 @@ def main():
         parser.error("raw profiles must remain outside the published public directory")
     output.mkdir(parents=True)
     environment = dict(os.environ)
+    marker = output / "app.log"
+    environment["CAFFEYE_PROFILE_READY"] = "1"
     if args.stack_logging:
         environment["MallocStackLogging"] = "1"
     else:
@@ -68,13 +95,11 @@ def main():
         app = subprocess.Popen([str(executable), "--ui-testing", "--bundled-venues-testing"],
                                stdout=log, stderr=log, env=environment)
         try:
-            buffer = ctypes.create_string_buffer(4096)
-            ctypes.CDLL("/usr/lib/libproc.dylib").proc_pidpath(app.pid, buffer, len(buffer))
-            if buffer.value.decode() != str(executable):
+            if executable_path(app.pid) != str(executable):
                 raise RuntimeError("launched executable did not match requested app")
             report["executableVerified"] = True
-            print(f"Verified owned PID {app.pid}; preparing initial snapshot", flush=True)
-            time.sleep(5)
+            print(f"Verified owned PID {app.pid}; waiting for offline snapshot", flush=True)
+            report["snapshotReadiness"] = wait_for_snapshot(app, marker)
             for phase in ["initial", "final"]:
                 if phase == "final":
                     print(f"Exercise the launched app for {args.duration} seconds, then leave it settled", flush=True)

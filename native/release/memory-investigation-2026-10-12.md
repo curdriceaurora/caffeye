@@ -33,6 +33,8 @@ python3 native/scripts/profile_memory.py \
   --output native/build/memory-session-new --duration 90 --stack-logging
 ```
 
-The script verifies the directly launched executable, takes initial/final heap and VM snapshots, samples RSS during the interaction interval, records tool exit codes, and terminates its own app. It does not automate UI interactions or run Instruments. Output must be a new directory. A separate 10-second idle run validated this capture path; it is a tooling smoke check, not another interactive experiment.
+The script verifies the directly launched executable, waits for a developer-only offline-snapshot-loaded stdout signal, takes initial/final heap and VM snapshots, samples RSS during the interaction interval, records tool exit codes, and terminates its own app. It does not automate UI interactions or run Instruments. Output must be a new directory. A separate 10-second idle run validated this capture path; it is a tooling smoke check, not another interactive experiment.
 
 For the next diagnosis, obtain a successful Instruments session, mark allocation generations across identical pan/zoom/filter cycles, then settle and close the test window. Compare live annotation/view counts and retained allocation stacks after each generation and window teardown. Use an otherwise identical map-disabled control to isolate SwiftUI/list/storage from MapKit. Repeat on physical iPhone/iPad before setting budgets. The recording failure and retained-view behavior remain open investigations.
+
+The snapshot-loaded signal was added after these measurements; the original runs used the earlier capture timing. A later five-second smoke run validated the signal without serving as a comparable performance measurement. MapKit reuse/clustering retention is a plausible contributor, but these captures do not identify it as the sole root cause or prove that growth is bounded.
