@@ -110,8 +110,8 @@ struct DiscoveryView: View {
                 }
             }
             if !state.filters.categories.isEmpty || !state.filters.features.isEmpty {
-                Text((state.filters.categories.sorted { $0.rawValue < $1.rawValue }.map(\.label)
-                      + state.filters.features.sorted { $0.rawValue < $1.rawValue }.map(\.label)).joined(separator: " · "))
+                Text((state.filters.categories.sorted { $0.rawValue < $1.rawValue }.map { "\($0.glyph) \($0.label)" }
+                      + state.filters.features.sorted { $0.rawValue < $1.rawValue }.map { "\($0.glyph) \($0.label)" }).joined(separator: " · "))
                     .font(.caption).foregroundStyle(.secondary)
             }
         }
@@ -211,17 +211,17 @@ struct DiscoveryView: View {
 
     @ToolbarContentBuilder private var toolbar: some ToolbarContent {
         ToolbarItemGroup {
-            Menu("Type", systemImage: "cup.and.saucer") {
+            Menu("☕ Type") {
                 Button("All (\(state.inScope.count))") { state.filters.categories = [] }
                 ForEach(CaffeyeCore.Category.allCases) { category in
                     Toggle("\(category.glyph) \(category.label) (\(state.categoryCounts[category, default: 0]))", isOn: categoryBinding(category))
                 }
-            }.accessibilityIdentifier("type-filter")
-            Menu("Useful for", systemImage: "line.3.horizontal.decrease") {
+            }.accessibilityLabel("Type").accessibilityIdentifier("type-filter")
+            Menu("💻 Useful for") {
                 ForEach(Feature.allCases) { feature in
-                    Toggle("\(feature.label) (\(state.featureCounts[feature, default: 0]))", isOn: featureBinding(feature))
+                    Toggle("\(feature.glyph) \(feature.label) (\(state.featureCounts[feature, default: 0]))", isOn: featureBinding(feature))
                 }
-            }.accessibilityIdentifier("feature-filter")
+            }.accessibilityLabel("Useful for").accessibilityIdentifier("feature-filter")
             Button("Reset", systemImage: "arrow.counterclockwise") { state.reset() }
                 .accessibilityIdentifier("reset")
                 #if os(iOS)
