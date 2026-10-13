@@ -70,6 +70,9 @@ struct DiscoveryView: View {
                     }
                 }
             }
+            .onChange(of: state.deselectionNotice) {
+                AccessibilityNotification.Announcement(state.deselectionMessage).post()
+            }
             .onChange(of: model.generation, initial: true) {
                 if let snapshot = model.snapshot { state.accept(snapshot) }
             }
@@ -214,13 +217,18 @@ struct DiscoveryView: View {
         }
     }
     private func row(_ venue: Venue) -> some View {
-        Button {
-            state.select(venue)
-        } label: {
+        Group {
+            #if os(macOS)
             VenueRow(venue: venue, priors: state.listSnapshot?.priors)
                 .frame(maxWidth: .infinity, alignment: .leading).contentShape(Rectangle())
+                .accessibilityElement(children: .ignore)
+            #else
+            Button { state.select(venue) } label: {
+                VenueRow(venue: venue, priors: state.listSnapshot?.priors)
+                    .frame(maxWidth: .infinity, alignment: .leading).contentShape(Rectangle())
+            }.buttonStyle(.plain)
+            #endif
         }
-        .buttonStyle(.plain)
         .tag(venue.id)
         .accessibilityIdentifier("venue-\(venue.id)")
         .accessibilityFocused($accessibleVenue, equals: venue.id)

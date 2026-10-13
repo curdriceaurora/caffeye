@@ -107,11 +107,12 @@ private final class VenueAnnotation: NSObject, MKAnnotation {
         func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
             if let annotation = view.annotation as? VenueAnnotation {
                 if state.selection != annotation.venue.id {
-                    DispatchQueue.main.async { self.state.select(annotation.venue) }
+                    DispatchQueue.main.async { [weak self] in self?.state.select(annotation.venue) }
                 }
             } else if let cluster = view.annotation as? MKClusterAnnotation {
                 let ids = cluster.memberAnnotations.compactMap { ($0 as? VenueAnnotation)?.venue.id }
-                DispatchQueue.main.async {
+                DispatchQueue.main.async { [weak self, weak mapView] in
+                    guard let self, let mapView else { return }
                     self.state.showCluster(ids)
                     mapView.deselectAnnotation(cluster, animated: false)
                 }
@@ -120,15 +121,17 @@ private final class VenueAnnotation: NSObject, MKAnnotation {
         func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
             let userInitiated = !programmatic
             let rect = mapView.visibleMapRect
-            DispatchQueue.main.async { self.state.cameraChanged(rect, userInitiated: userInitiated) }
+            DispatchQueue.main.async { [weak self] in self?.state.cameraChanged(rect, userInitiated: userInitiated) }
         }
         func mapViewDidFailLoadingMap(_ mapView: MKMapView, withError error: any Error) {
-            DispatchQueue.main.async {
+            DispatchQueue.main.async { [weak self] in
+                guard let self else { return }
                 if !self.state.mapImageryUnavailable { self.state.mapImageryUnavailable = true }
             }
         }
         func mapViewDidFinishLoadingMap(_ mapView: MKMapView) {
-            DispatchQueue.main.async {
+            DispatchQueue.main.async { [weak self] in
+                guard let self else { return }
                 if self.state.mapImageryUnavailable { self.state.mapImageryUnavailable = false }
             }
         }

@@ -17,6 +17,8 @@ final class DiscoveryState {
     private(set) var listSnapshot: Snapshot?
     private(set) var pending: Snapshot?
     var selection: String?
+    private(set) var deselectionNotice = 0
+    private(set) var deselectionMessage = ""
     private(set) var visibleRect = regionalRect
     var cameraRect = regionalRect
     var cameraCommand = 0
@@ -78,7 +80,11 @@ final class DiscoveryState {
             listSnapshot = snapshot; listRanked = currentRanked; listSearch = currentSearch
         }
         rebuildCounts(); rebuildFilters()
-        if let selection, !matches.contains(where: { $0.id == selection }) { back() }
+        if let selection, !matches.contains(where: { $0.id == selection }) {
+            deselectionMessage = "The selected venue is no longer available in these results."
+            deselectionNotice += 1
+            back()
+        }
     }
     func applyPending() {
         guard let pending else { return }
@@ -91,7 +97,11 @@ final class DiscoveryState {
         applyPending(); clusterMembers = []
         if countsIncludeFranchises != filters.includeFranchises { rebuildCounts() }
         rebuildFilters()
-        if let selection, !matches.contains(where: { $0.id == selection }) { back() }
+        if let selection, !matches.contains(where: { $0.id == selection }) {
+            deselectionMessage = "Venue no longer matches active filters."
+            deselectionNotice += 1
+            back()
+        }
     }
     func select(_ venue: Venue) {
         guard selection != venue.id else { return }
@@ -117,7 +127,7 @@ final class DiscoveryState {
         rebuildRows()
     }
     func reset() {
-        filters = Filters(); selection = nil; clusterMembers = []
+        selection = nil; filters = Filters(); clusterMembers = []
         browsingRect = nil; reading = false; scrollID = nil; applyPending()
         move(to: Self.regionalRect)
         visibleRect = Self.regionalRect

@@ -40,6 +40,12 @@ final class AppModel {
             } catch { failure = error.localizedDescription; status = "No offline snapshot available" }
         }
         generation += 1
+        // Developer profiling waits for venue data, not for network-dependent basemap tiles.
+        if ProcessInfo.processInfo.arguments.contains("--ui-testing"), let snapshot,
+           ProcessInfo.processInfo.environment["CAFFEYE_PROFILE_READY"] == "1",
+           let data = try? JSONSerialization.data(withJSONObject: ["phase": "offlineSnapshotLoaded", "venues": snapshot.venues.count]) {
+            FileHandle.standardOutput.write(Data("CAFFEYE_SNAPSHOT_READY ".utf8) + data + Data("\n".utf8))
+        }
     }
     func importSnapshot(_ url: URL) async {
         guard !busy else { return }

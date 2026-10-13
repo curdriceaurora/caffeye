@@ -142,4 +142,36 @@ struct DiscoveryStateTests {
         #expect(state.scrollID == nil)
     }
 
+    @Test("Only involuntary deselection requests an accessibility announcement")
+    func excludedSelectionAnnouncement() {
+        let state = DiscoveryState(); let data = snapshot(); state.accept(data)
+        state.select(data.venues[0])
+        state.filters.search = "Nearby"
+        #expect(state.deselectionNotice == 0)
+        state.filters.search = "no match"
+        #expect(state.selection == nil)
+        #expect(state.deselectionNotice == 1)
+        #expect(state.deselectionMessage == "Venue no longer matches active filters.")
+        state.reset(); state.select(data.venues[0]); state.back()
+        #expect(state.deselectionNotice == 1)
+        state.select(data.venues[0]); state.reset()
+        #expect(state.deselectionNotice == 1)
+        state.select(data.venues[0])
+        var replacement = data; replacement.venues.removeFirst(); state.accept(replacement)
+        #expect(state.selection == nil)
+        #expect(state.deselectionNotice == 2)
+    }
+
+    @Test("Queued map callbacks do not keep a released coordinator alive")
+    func mapCallbackLifetime() async {
+        let state = DiscoveryState()
+        var coordinator: VenueMap.Coordinator? = VenueMap.Coordinator(state)
+        weak var released = coordinator
+        coordinator?.mapViewDidFailLoadingMap(MKMapView(), withError: URLError(.notConnectedToInternet))
+        coordinator = nil
+        #expect(released == nil)
+        await Task.yield()
+        #expect(!state.mapImageryUnavailable)
+    }
+
 }
