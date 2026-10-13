@@ -122,9 +122,12 @@ public struct Venue: Codable, Hashable, Identifiable, Sendable {
     }
     public var area: String { neighborhood ?? (city.isEmpty ? "Area not listed" : city) }
     public var searchText: String {
-        ([name, category.rawValue, address, city, county ?? "", area,
-          summary ?? "", signature ?? "", work?.tier.rawValue ?? "", work?.note ?? "",
-          late?.tier.rawValue ?? "", late?.when ?? ""] + (loved ?? [])).joined(separator: " ").lowercased()
+        var parts: [String] = [name, category.rawValue, address, city, county ?? "", area]
+        parts.append(contentsOf: [summary ?? "", signature ?? ""])
+        parts.append(contentsOf: [work?.tier.rawValue ?? "", work?.note ?? ""])
+        parts.append(contentsOf: [late?.tier.rawValue ?? "", late?.when ?? ""])
+        if let loved { parts.append(contentsOf: loved) }
+        return parts.joined(separator: " ").lowercased()
     }
     public static func actionURL(_ value: String?) -> URL? {
         guard let value, let url = URL(string: value),
@@ -219,8 +222,9 @@ public struct Filters: Equatable, Sendable {
         guard includeFranchises || venue.model == .independent,
               categories.isEmpty || categories.contains(venue.category),
               features.allSatisfy({ $0.matches(venue) }) else { return false }
-        return search.lowercased().split(whereSeparator: { $0.isWhitespace }).allSatisfy {
-            venue.searchText.contains($0)
-        }
+        let words = search.lowercased().split(whereSeparator: { $0.isWhitespace })
+        guard !words.isEmpty else { return true }
+        let text = venue.searchText
+        return words.allSatisfy { text.contains($0) }
     }
 }
