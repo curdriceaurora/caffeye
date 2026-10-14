@@ -44,16 +44,42 @@ struct DiscoveryStateTests {
         #expect(state.listSnapshot?.revision == "new")
         #expect(state.pending == nil)
     }
-    @Test("Visible sidebar follows the camera while compact browsing rows stay stable")
+    @Test("Sidebar preserves selection context but follows deliberate map gestures")
     func selectedViewport() {
         let state = DiscoveryState(); let data = snapshot(); state.accept(data)
         state.select(data.venues[0])
         state.cameraChanged(state.cameraRect, userInitiated: false)
         #expect(state.rows.map(\.id) == ["near"])
         #expect(state.browsingRows.count == 2)
+        #expect(state.sidebarRows.count == 2)
+        let far = MKMapPoint(data.venues[1].coordinate.location)
+        state.cameraChanged(MKMapRect(x: far.x - 100, y: far.y - 100, width: 200, height: 200), userInitiated: true)
+        #expect(state.sidebarRows.map(\.id) == ["far"])
+        #expect(state.browsingRows.count == 2)
+        state.select(data.venues[1])
+        #expect(state.sidebarRows.count == 2)
         state.back()
         #expect(state.rows.count == 2)
+        #expect(state.sidebarRows.count == 2)
     }
+    @Test("Show all expands a selected sidebar and Back restores its restricted browsing region")
+    func showAllFromSelectedViewport() {
+        let state = DiscoveryState(); let data = snapshot(); state.accept(data)
+        let near = MKMapPoint(data.venues[0].coordinate.location)
+        let browse = MKMapRect(x: near.x - 100, y: near.y - 100, width: 200, height: 200)
+        state.cameraChanged(browse, userInitiated: true)
+        state.select(data.venues[0])
+        state.cameraChanged(state.cameraRect, userInitiated: false)
+        #expect(state.sidebarRows.map(\.id) == ["near"])
+        state.showAll()
+        state.cameraChanged(state.cameraRect, userInitiated: false)
+        #expect(state.selection == "near")
+        #expect(Set(state.sidebarRows.map(\.id)) == ["near", "far"])
+        state.back()
+        #expect(MKMapRectEqualToRect(state.cameraRect, browse))
+        #expect(state.sidebarRows.map(\.id) == ["near"])
+    }
+
     @Test("Selecting a cluster replaces an open detail without moving the map")
     func clusterFromDetail() {
         let state = DiscoveryState(); let data = snapshot(); state.accept(data)
@@ -168,7 +194,9 @@ struct DiscoveryStateTests {
         let state = DiscoveryState()
         var coordinator: VenueMap.Coordinator? = VenueMap.Coordinator(state)
         weak var released = coordinator
-        coordinator?.mapViewDidFailLoadingMap(MKMapView(), withError: URLError(.notConnectedToInternet))
+        let map = MKMapView()
+        coordinator?.configure(map)
+        coordinator?.mapViewDidFailLoadingMap(map, withError: URLError(.notConnectedToInternet))
         coordinator = nil
         #expect(released == nil)
         await Task.yield()

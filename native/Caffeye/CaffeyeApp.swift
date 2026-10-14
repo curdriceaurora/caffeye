@@ -10,6 +10,7 @@ struct CaffeyeApp: App {
         }
         #if os(macOS)
         .defaultSize(width: 1180, height: 780)
+        .windowResizability(.contentMinSize)
         .commands { DiscoveryCommands() }
         #endif
     }

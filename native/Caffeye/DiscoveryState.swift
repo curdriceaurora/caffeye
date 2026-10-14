@@ -29,6 +29,7 @@ final class DiscoveryState {
     var clusterMembers: [String] = []
     var scrollID: String?
     private var browsingRect: MKMapRect?
+    private var userMovedSelectionCamera = false
 
     private var currentSearch: [String: String] = [:]
     private var listSearch: [String: String] = [:]
@@ -37,6 +38,10 @@ final class DiscoveryState {
     private(set) var matches: [Venue] = []
     private(set) var rows: [Venue] = []
     private(set) var browsingRows: [Venue] = []
+    // Focusing a venue preserves keyboard navigation; deliberate map gestures filter it.
+    var sidebarRows: [Venue] {
+        selection != nil && !userMovedSelectionCamera ? browsingRows : rows
+    }
     private(set) var inScope: [Venue] = []
     private(set) var categoryCounts: [CaffeyeCore.Category: Int] = [:]
     private(set) var featureCounts: [Feature: Int] = [:]
@@ -106,6 +111,7 @@ final class DiscoveryState {
     func select(_ venue: Venue) {
         guard selection != venue.id else { return }
         if selection == nil { browsingRect = visibleRect }
+        userMovedSelectionCamera = false
         selection = venue.id; scrollID = venue.id; clusterMembers = []; reading = true
         rebuildRows()
         let point = MKMapPoint(venue.coordinate.location)
@@ -135,6 +141,9 @@ final class DiscoveryState {
     }
     func showAll() {
         guard !matches.isEmpty else { return }
+        // This explicit camera action should reveal matches in the selected sidebar,
+        // while Back still restores the browsing region saved before selection.
+        userMovedSelectionCamera = selection != nil
         let rect = matches.reduce(MKMapRect.null) {
             let p = MKMapPoint($1.coordinate.location)
             return $0.union(MKMapRect(x: p.x, y: p.y, width: 1, height: 1))
@@ -144,7 +153,10 @@ final class DiscoveryState {
     }
     func cameraChanged(_ rect: MKMapRect, userInitiated: Bool) {
         visibleRect = rect
-        if userInitiated { cameraRect = rect; reading = true; applyPending(); clusterMembers = [] }
+        if userInitiated {
+            userMovedSelectionCamera = selection != nil
+            cameraRect = rect; reading = true; applyPending(); clusterMembers = []
+        }
         rebuildRows()
     }
     func move(to rect: MKMapRect) { cameraRect = rect; cameraCommand += 1 }

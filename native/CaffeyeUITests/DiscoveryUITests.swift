@@ -47,11 +47,9 @@ final class DiscoveryUITests: XCTestCase {
         let row = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'venue-demo-'")).firstMatch
         XCTAssertTrue(row.waitForExistence(timeout: 5))
     }
-    @MainActor func testClusterShowsSelectableMembers() {
+    @MainActor func testClusterShowsSelectableMembers() throws {
         let app = launch()
-        let cluster = app.descendants(matching: .any).matching(identifier: "cluster-pins").firstMatch
-        XCTAssertTrue(cluster.waitForExistence(timeout: 15))
-        cluster.tap()
+        try tapVisibleMapButton(app, identifier: "cluster-pins")
         XCTAssertTrue(app.staticTexts["Venues in selected cluster"].waitForExistence(timeout: 5))
         let row = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'venue-demo-'")).firstMatch
         row.tap()
@@ -121,7 +119,17 @@ final class DiscoveryUITests: XCTestCase {
                                   file: StaticString = #filePath, line: UInt = #line) {
         let control = app.buttons[menu]
         XCTAssertTrue(control.waitForExistence(timeout: 5), file: file, line: line)
-        control.tap()
+        // Some SwiftUI/UIKit SDK combinations expose a Menu as an accessibility
+        // wrapper button containing the native actionable button at the same frame.
+        // Target that observed leaf rather than asking XCTest to scroll the wrapper.
+        let nativeButton = control.buttons.firstMatch
+        let reachable = XCTNSPredicateExpectation(predicate: NSPredicate { _, _ in
+            control.isHittable || nativeButton.isHittable
+        }, object: control)
+        XCTAssertEqual(XCTWaiter.wait(for: [reachable], timeout: 5), .completed,
+                       "Filter menu should be reachable: \(control.debugDescription)", file: file, line: line)
+        let target = nativeButton.isHittable ? nativeButton : control
+        target.tap()
         let item = app.descendants(matching: .any).matching(identifier: option).firstMatch
         XCTAssertTrue(item.waitForExistence(timeout: 5), file: file, line: line)
         item.tap()
@@ -132,9 +140,22 @@ final class DiscoveryUITests: XCTestCase {
         let control = app.switches["include-franchises"]
         XCTAssertTrue(control.waitForExistence(timeout: 5), file: file, line: line)
         let expected = control.value as? String == "1" ? "0" : "1"
-        // SwiftUI exposes the entire labeled row as the switch element. The native
-        // switch thumb lives at the trailing edge rather than the label's center.
-        control.coordinate(withNormalizedOffset: CGVector(dx: 0.95, dy: 0.5)).tap()
+        // SwiftUI exposes the full labeled row and a nested native UISwitch.
+        // A percentage of the row width misses the thumb on wide iPad layouts.
+        let nativeSwitch = control.switches.firstMatch
+        let reachable = XCTNSPredicateExpectation(predicate: NSPredicate { _, _ in
+            nativeSwitch.exists ? nativeSwitch.isHittable : control.isHittable
+        }, object: control)
+        XCTAssertEqual(XCTWaiter.wait(for: [reachable], timeout: 5), .completed,
+                       "Franchise switch should be reachable: \(control.debugDescription)", file: file, line: line)
+        if nativeSwitch.exists {
+            XCTAssertTrue(nativeSwitch.isHittable, file: file, line: line)
+            nativeSwitch.tap()
+        } else {
+            // Older SDKs can expose only the labeled wrapper. Its trailing thumb
+            // remains the observed target; verify the state change below.
+            control.coordinate(withNormalizedOffset: CGVector(dx: 0.95, dy: 0.5)).tap()
+        }
         let changed = XCTNSPredicateExpectation(predicate: NSPredicate(format: "value == %@", expected), object: control)
         XCTAssertEqual(XCTWaiter.wait(for: [changed], timeout: 5), .completed,
                        "Franchise switch should change to \(expected); observed \(String(describing: control.value))",
@@ -274,16 +295,14 @@ final class DiscoveryUITests: XCTestCase {
         expectCount(app, 21)
     }
 
-    @MainActor func testClusterCanCloseAndReopenBeforeSelecting() {
+    @MainActor func testClusterCanCloseAndReopenBeforeSelecting() throws {
         let app = launch()
-        let cluster = app.descendants(matching: .any).matching(identifier: "cluster-pins").firstMatch
-        XCTAssertTrue(cluster.waitForExistence(timeout: 15))
-        cluster.tap()
+        try tapVisibleMapButton(app, identifier: "cluster-pins")
         let close = app.buttons["close-cluster"]
         XCTAssertTrue(close.waitForExistence(timeout: 5))
         close.tap()
         XCTAssertFalse(close.exists)
-        cluster.tap()
+        try tapVisibleMapButton(app, identifier: "cluster-pins")
         XCTAssertTrue(close.waitForExistence(timeout: 5))
         let row = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'venue-demo-'")).firstMatch
         row.tap()
@@ -348,6 +367,21 @@ final class DiscoveryUITests: XCTestCase {
         XCTAssertEqual(app.switches["include-franchises"].value as? String, "0")
     }
 
+
+    @MainActor private func tapVisibleMapButton(_ app: XCUIApplication, identifier: String,
+                                              file: StaticString = #filePath, line: UInt = #line) throws {
+        let markers = app.buttons.matching(identifier: identifier)
+        // MapKit can expose reused/covered annotation views alongside the visible
+        // marker. Existence of the first AX node is not evidence it can be tapped.
+        let reachable = XCTNSPredicateExpectation(predicate: NSPredicate { _, _ in
+            markers.allElementsBoundByIndex.contains { $0.isHittable }
+        }, object: app)
+        XCTAssertEqual(XCTWaiter.wait(for: [reachable], timeout: 15), .completed,
+                       "Expected a reachable map marker: \(identifier)", file: file, line: line)
+        let marker = try XCTUnwrap(markers.allElementsBoundByIndex.first { $0.isHittable },
+                                   "Map marker should remain reachable", file: file, line: line)
+        marker.tap()
+    }
 
     @MainActor private func reveal(_ element: XCUIElement, in container: XCUIElement,
                                   file: StaticString = #filePath, line: UInt = #line) {
@@ -493,6 +527,34 @@ final class DiscoveryUITests: XCTestCase {
         XCTAssertTrue(app.buttons["venue-qa-linked"].exists)
     }
 
+    @MainActor private func safariAddress(_ safari: XCUIApplication, identifies host: String) -> Bool {
+        func identifiesHost(_ element: XCUIElement) -> Bool {
+            // Safari inserts directional display marks around domains. Compare the
+            // parsed host rather than requiring those invisible formatting marks.
+            let texts = [element.value as? String, element.label].compactMap { $0 }
+            return texts.contains { text in
+                let address = String(String.UnicodeScalarView(text.unicodeScalars.filter {
+                    $0.properties.generalCategory != .format
+                })).trimmingCharacters(in: .whitespacesAndNewlines)
+                let url = address.contains("://") ? address : "https://" + address
+                return URLComponents(string: url)?.host?.lowercased() == host.lowercased()
+            }
+        }
+        // Read typed accessibility values directly. Safari's address can be a
+        // native text field, a compact title, or a regular-width address button;
+        // none of these selectors searches webpage content.
+        if safari.textFields.matching(NSPredicate(format: "identifier IN %@", ["TabBarItemTitle", "TabBarItemTitleContainer"]))
+            .allElementsBoundByIndex.contains(where: identifiesHost) { return true }
+        for title in safari.otherElements.matching(identifier: "TabBarItemTitle").allElementsBoundByIndex {
+            if title.staticTexts.allElementsBoundByIndex.contains(where: identifiesHost) { return true }
+        }
+        for item in safari.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'SearchFieldItemView?' OR label == 'Address'"))
+            .allElementsBoundByIndex {
+            if identifiesHost(item) || item.staticTexts.allElementsBoundByIndex.contains(where: identifiesHost) { return true }
+        }
+        return false
+    }
+
     @MainActor func testWebsiteHandoffAndReturnPreservesDetailAndSearch() {
         let app = linkedDetailForHandoff()
         let website = app.buttons["Website"].exists ? app.buttons["Website"] : app.links["Website"]
@@ -500,10 +562,11 @@ final class DiscoveryUITests: XCTestCase {
         website.tap()
         let safari = XCUIApplication(bundleIdentifier: "com.apple.mobilesafari")
         XCTAssertTrue(safari.wait(for: .runningForeground, timeout: 10), "Website should open the simulator's Safari browser")
-        let destination = safari.descendants(matching: .any).matching(NSPredicate(
-            format: "(elementType == %d OR elementType == %d) AND (value CONTAINS[c] 'example.com' OR label CONTAINS[c] 'example.com')",
-            XCUIElement.ElementType.textField.rawValue, XCUIElement.ElementType.button.rawValue)).firstMatch
-        XCTAssertTrue(destination.waitForExistence(timeout: 5), "Safari's address should identify the fixture website: \(safari.debugDescription)")
+        let destination = XCTNSPredicateExpectation(predicate: NSPredicate { _, _ in
+            self.safariAddress(safari, identifies: "example.com")
+        }, object: safari)
+        XCTAssertEqual(XCTWaiter.wait(for: [destination], timeout: 5), .completed,
+                       "Safari's address should identify the fixture website: \(safari.debugDescription)")
         // This checks the handoff URL, not network availability or external webpage content.
         returnFromExternalApp(app)
     }
