@@ -185,8 +185,11 @@ final class DiscoveryUITests: XCTestCase {
             clear.tap()
             search.tap()
         }
-        app.typeText(text)
-        let entered = XCTNSPredicateExpectation(predicate: NSPredicate(format: "value == %@", text), object: search)
+        if !text.isEmpty { app.typeText(text) }
+        let entered = XCTNSPredicateExpectation(predicate: NSPredicate { _, _ in
+            guard let value = search.value as? String else { return false }
+            return value == text || (text.isEmpty && value == search.placeholderValue)
+        }, object: search)
         XCTAssertEqual(XCTWaiter.wait(for: [entered], timeout: 5), .completed,
                        "The search field must contain the requested replacement query")
     }
