@@ -177,10 +177,18 @@ final class DiscoveryUITests: XCTestCase {
         let search = app.searchFields.firstMatch
         XCTAssertTrue(search.waitForExistence(timeout: 5))
         search.tap()
-        if let current = search.value as? String, current != search.placeholderValue {
-            search.typeText(String(repeating: XCUIKeyboardKey.delete.rawValue, count: current.count))
+        if let current = search.value as? String, !current.isEmpty, current != search.placeholderValue {
+            // Tapping can put the caret in the middle of the existing query.
+            // The native clear control replaces the whole query regardless of caret.
+            let clear = search.buttons.matching(NSPredicate(format: "label == 'Clear text' OR label == 'Clear'")).firstMatch
+            XCTAssertTrue(clear.waitForExistence(timeout: 5))
+            clear.tap()
+            search.tap()
         }
-        search.typeText(text)
+        app.typeText(text)
+        let entered = XCTNSPredicateExpectation(predicate: NSPredicate(format: "value == %@", text), object: search)
+        XCTAssertEqual(XCTWaiter.wait(for: [entered], timeout: 5), .completed,
+                       "The search field must contain the requested replacement query")
     }
 
     @MainActor func testEveryCategoryCanBeSelectedAndAllRestoresResults() {
