@@ -14,19 +14,19 @@ struct DiscoveryView: View {
             VStack(spacing: 0) {
                 coverage
                 GeometryReader { geometry in
+                    #if os(macOS)
+                    // Preserve the native outline/list while the window is being resized.
+                    HSplitView {
+                        results(state.sidebarRows).frame(minWidth: 280, idealWidth: 330, maxWidth: 430)
+                        workspace.frame(minWidth: 350)
+                    }
+                    #else
                     if geometry.size.width >= 760 {
-                        #if os(macOS)
-                        HSplitView {
-                            results(state.rows).frame(minWidth: 280, idealWidth: 330, maxWidth: 430)
-                            workspace.frame(minWidth: 350)
-                        }
-                        #else
                         HStack(spacing: 0) {
                             results(state.rows).frame(width: min(360, geometry.size.width * 0.36))
                             Divider()
                             workspace
                         }
-                        #endif
                     } else {
                         VStack(spacing: 0) {
                             VenueMap(state: state)
@@ -44,6 +44,7 @@ struct DiscoveryView: View {
                             }
                         }
                     }
+                    #endif
                 }
             }
             .navigationTitle(state.current?.region ?? "Metro Atlanta")
@@ -84,6 +85,9 @@ struct DiscoveryView: View {
                 canGoBack: state.selection != nil))
             #endif
         }
+        #if os(macOS)
+        .frame(minWidth: 650, maxWidth: .infinity, minHeight: 500, maxHeight: .infinity)
+        #endif
     }
 
     @ViewBuilder private var coverage: some View {
@@ -141,6 +145,14 @@ struct DiscoveryView: View {
                     .accessibilityIdentifier("show-all")
                     .padding(.bottom, 8)
             }
+            if !state.clusterMembers.isEmpty {
+                VStack(alignment: .leading, spacing: 4) {
+                    Text("Venues in selected cluster")
+                        .fixedSize(horizontal: false, vertical: true)
+                    Button("Close cluster") { state.clusterMembers = [] }
+                        .accessibilityIdentifier("close-cluster")
+                }.padding(.horizontal).padding(.bottom, 8)
+            }
             ScrollViewReader { proxy in
                 List(selection: Binding<String?>(get: { state.selection }, set: { id in
                     if let id, let venue = state.current?.venues.first(where: { $0.id == id }) {
@@ -150,13 +162,6 @@ struct DiscoveryView: View {
                     if !state.clusterMembers.isEmpty {
                         Section {
                             ForEach(state.clusterVenues) { venue in row(venue) }
-                        } header: {
-                            HStack {
-                                Text("Venues in selected cluster")
-                                Spacer()
-                                Button("Close cluster") { state.clusterMembers = [] }
-                                    .accessibilityIdentifier("close-cluster")
-                            }
                         }
                     }
                     Section {

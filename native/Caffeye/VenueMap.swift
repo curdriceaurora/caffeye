@@ -10,6 +10,15 @@ private final class VenueAnnotation: NSObject, MKAnnotation {
     init(_ venue: Venue) { self.venue = venue }
 }
 
+#if os(macOS)
+/// The monitor observes input without replacing MapKit's native gestures.
+private final class MapInputMonitor {
+    let token: Any
+    init(_ token: Any) { self.token = token }
+    deinit { NSEvent.removeMonitor(token) }
+}
+#endif
+
 @MainActor struct VenueMap {
     var state: DiscoveryState
     func makeCoordinator() -> Coordinator { Coordinator(state) }
@@ -20,6 +29,11 @@ private final class VenueAnnotation: NSObject, MKAnnotation {
         var lastCommand = -1
         var programmatic = false
         private var selectionEvent = 0
+        #if os(macOS)
+        private var userRegionChange = false
+        private var inputMonitor: MapInputMonitor?
+        private var lastRegionSize: CGSize?
+        #endif
         init(_ state: DiscoveryState) { self.state = state }
 
         func configure(_ map: MKMapView) {
@@ -30,6 +44,21 @@ private final class VenueAnnotation: NSObject, MKAnnotation {
             #endif
             programmatic = true
             map.delegate = self
+            #if os(macOS)
+            if let token = NSEvent.addLocalMonitorForEvents(matching: [.leftMouseDown, .leftMouseDragged, .scrollWheel, .magnify], handler: { [weak self, weak map] event in
+                guard let self, let map else { return event }
+                // A pin click is selection, not camera input. Only a drag, zoom,
+                // or double-click arms viewport filtering for region callbacks.
+                if event.type == .leftMouseDown { self.userRegionChange = false }
+                if !self.programmatic, !map.inLiveResize, let window = map.window,
+                   event.window === window,
+                   (event.type != .leftMouseDown || event.clickCount > 1),
+                   map.bounds.contains(map.convert(event.locationInWindow, from: nil)) {
+                    self.userRegionChange = true
+                }
+                return event
+            }) { inputMonitor = MapInputMonitor(token) }
+            #endif
             map.register(MKMarkerAnnotationView.self, forAnnotationViewWithReuseIdentifier: "venue")
             map.register(MKMarkerAnnotationView.self, forAnnotationViewWithReuseIdentifier: "cluster")
             map.pointOfInterestFilter = .excludingAll
@@ -60,6 +89,9 @@ private final class VenueAnnotation: NSObject, MKAnnotation {
             if lastCommand != state.cameraCommand {
                 lastCommand = state.cameraCommand
                 programmatic = true
+                #if os(macOS)
+                userRegionChange = false
+                #endif
                 map.setVisibleMapRect(state.cameraRect, animated: false)
                 // Delegate callbacks may be synchronous; publish geometry on the next run loop.
                 DispatchQueue.main.async { [weak self, weak map] in
@@ -140,10 +172,24 @@ private final class VenueAnnotation: NSObject, MKAnnotation {
                 }
             }
         }
+        #if os(macOS)
+        func mapView(_ mapView: MKMapView, regionWillChangeAnimated animated: Bool) {
+            // Native window resizing can emit several region callbacks at one size.
+            // Suppress them until actual input in this map starts a new gesture.
+            if programmatic || lastRegionSize != mapView.bounds.size { userRegionChange = false }
+        }
+        #endif
         func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+            #if os(macOS)
+            let userInitiated = !programmatic && userRegionChange
+            lastRegionSize = mapView.bounds.size
+            #else
             let userInitiated = !programmatic
+            #endif
             let rect = mapView.visibleMapRect
-            DispatchQueue.main.async { [weak self] in self?.state.cameraChanged(rect, userInitiated: userInitiated) }
+            DispatchQueue.main.async { [weak self] in
+                self?.state.cameraChanged(rect, userInitiated: userInitiated)
+            }
         }
         func mapViewDidFailLoadingMap(_ mapView: MKMapView, withError error: any Error) {
             DispatchQueue.main.async { [weak self] in
