@@ -179,3 +179,12 @@ All 30 hosted tests passed (`macos-deferred-cluster-hosted-1014.log`). Five targ
 ### Committed-source CI checkpoint
 
 On `2bacbcc`, run `38627806944` passed all 15 Mac UI, 30 hosted, 23 shared Swift and ten Python tests, export freshness/inventory checks and the generic simulator build. Web CI also passed. The full iPhone UI job reached the workflow's 20-minute limit, cancelling the test step; its incomplete result bundle is not a passing result. Simulator jobs now receive the same bounded 30-minute limit as the Mac job, allowing the expanded journeys to complete. Final simulator outcomes remain to be checked.
+
+
+### iPad completion and follow-up
+
+Run `38630951339` on `6120544` passed the full Mac job (15 UI, 30 hosted, 23 shared Swift and ten Python tests), web CI and all 23 iPhone UI tests. The iPad job completed all 23 tests: 20 passed, including the listing/street-map regression; three failed. This is not a green iPad suite.
+
+The large-text recording shows the first row remained in a 360-point sidebar at the largest accessibility size and no detail opened after the tap. The revised iOS layout uses its existing full-width list/detail presentation for accessibility text on wide iPads too. The strengthened journey checks row width, a named venue and reachable Back; it passed on a local iPhone and 13-inch iPad. This fixes the demonstrated readability defect without claiming the narrow layout alone proves why the earlier tap was lost.
+
+The Maps return failure coincided with its delayed system location prompt; the next test's default interruption handler denied it. The handoff journey now waits for that exact Maps prompt, chooses only “Don’t Allow” if present, verifies dismissal and then requires the same selected venue/search/Back state. It does not grant location access or accept terms. Safari's final failure hierarchy already contained the correct `example.com` address; enumeration retried stale static-text indices while Safari changed to a native field. The check now reads known native address fields first, avoids enumerating changing title children, retains exact parsed-host comparison and allows a bounded 20-second readiness wait. Full follow-up results remain to be recorded in the PR.

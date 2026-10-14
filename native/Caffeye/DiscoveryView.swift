@@ -21,7 +21,7 @@ struct DiscoveryView: View {
                         workspace.frame(minWidth: 350)
                     }
                     #else
-                    if geometry.size.width >= 760 {
+                    if geometry.size.width >= 760 && !typeSize.isAccessibilitySize {
                         HStack(spacing: 0) {
                             results(state.rows).frame(width: min(360, geometry.size.width * 0.36))
                             Divider()
