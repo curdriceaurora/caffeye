@@ -221,7 +221,8 @@ struct DiscoveryView: View {
             Button { state.select(venue) } label: {
                 VenueRow(venue: venue, priors: state.listSnapshot?.priors)
                     .frame(maxWidth: .infinity, alignment: .leading).contentShape(Rectangle())
-            }.buttonStyle(.plain)
+                    .foregroundStyle(.primary)
+            }.buttonStyle(.automatic)
             #endif
         }
         .tag(venue.id)

@@ -96,7 +96,9 @@ final class DiscoveryUITests: XCTestCase {
         XCTAssertGreaterThan(row.frame.width, app.frame.width * 0.8,
                              "Accessibility text should use the full-width list, including on wide iPads")
         XCTAssertTrue(row.isHittable)
-        row.tap()
+        // The center can be blank at accessibility sizes; the entire native row
+        // must activate, not only the glyph or rendered text.
+        row.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5)).tap()
         XCTAssertTrue(app.staticTexts["detail-name"].waitForExistence(timeout: 10))
         XCTAssertEqual(app.staticTexts["detail-name"].label, "Demo Specialty 18")
         let back = app.buttons["back-to-list"]
@@ -146,11 +148,29 @@ final class DiscoveryUITests: XCTestCase {
         item.tap()
     }
 
+    @MainActor private func switchIsOn(_ control: XCUIElement) -> Bool? {
+        // SDKs expose UISwitch state as either a string or NSNumber.
+        let raw = control.value
+        if let text = raw as? String {
+            if text == "1" { return true }
+            if text == "0" { return false }
+        }
+        if let number = raw as? NSNumber {
+            if number == 1 { return true }
+            if number == 0 { return false }
+        }
+        return nil
+    }
+
     @MainActor private func toggleFranchises(_ app: XCUIApplication,
                                            file: StaticString = #filePath, line: UInt = #line) {
         let control = app.switches["include-franchises"]
         XCTAssertTrue(control.waitForExistence(timeout: 5), file: file, line: line)
-        let expected = control.value as? String == "1" ? "0" : "1"
+        guard let initial = switchIsOn(control) else {
+            XCTFail("Franchise switch must expose a known on/off value", file: file, line: line)
+            return
+        }
+        let expected = !initial
         // SwiftUI exposes the full labeled row and a nested native UISwitch.
         // A percentage of the row width misses the thumb on wide iPad layouts.
         let nativeSwitch = control.switches.firstMatch
@@ -167,7 +187,9 @@ final class DiscoveryUITests: XCTestCase {
             // remains the observed target; verify the state change below.
             control.coordinate(withNormalizedOffset: CGVector(dx: 0.95, dy: 0.5)).tap()
         }
-        let changed = XCTNSPredicateExpectation(predicate: NSPredicate(format: "value == %@", expected), object: control)
+        let changed = XCTNSPredicateExpectation(predicate: NSPredicate { _, _ in
+            self.switchIsOn(control) == expected
+        }, object: control)
         XCTAssertEqual(XCTWaiter.wait(for: [changed], timeout: 5), .completed,
                        "Franchise switch should change to \(expected); observed \(String(describing: control.value))",
                        file: file, line: line)
@@ -263,7 +285,7 @@ final class DiscoveryUITests: XCTestCase {
         expectCount(app, 3)
         app.buttons["reset"].tap()
         expectCount(app, 21)
-        XCTAssertEqual(app.switches["include-franchises"].value as? String, "0")
+        XCTAssertEqual(switchIsOn(app.switches["include-franchises"]), false)
     }
 
     @MainActor func testSearchIgnoresCaseAndWhitespaceAndCanBeCleared() {
@@ -297,7 +319,7 @@ final class DiscoveryUITests: XCTestCase {
         app.buttons["reset"].tap()
         expectCount(app, 21)
         XCTAssertFalse(app.staticTexts["active-filters"].exists)
-        XCTAssertEqual(app.switches["include-franchises"].value as? String, "0")
+        XCTAssertEqual(switchIsOn(app.switches["include-franchises"]), false)
     }
 
     @MainActor func testChangingFiltersDismissesExcludedDetail() {
@@ -386,7 +408,7 @@ final class DiscoveryUITests: XCTestCase {
         XCTAssertTrue(app.buttons["reset"].waitForExistence(timeout: 15))
         expectCount(app, 21)
         XCTAssertFalse(app.staticTexts["active-filters"].exists)
-        XCTAssertEqual(app.switches["include-franchises"].value as? String, "0")
+        XCTAssertEqual(switchIsOn(app.switches["include-franchises"]), false)
     }
 
 
