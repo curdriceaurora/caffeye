@@ -5,10 +5,7 @@ final class DiscoveryMacUITests: XCTestCase {
     override func setUpWithError() throws { continueAfterFailure = false }
 
     @MainActor func testNativeListArrowNavigationAndMenuReset() {
-        let app = XCUIApplication()
-        app.launchArguments = ["--ui-testing", "--ui-edge-cases-testing"]
-        app.launch()
-        XCTAssertTrue(app.buttons["reset"].firstMatch.waitForExistence(timeout: 20))
+        let app = launch(edgeCases: true)
         desktopWindow(app)
         widen(app.windows.firstMatch, in: app)
         let unknown = row("qa-unknown", in: app)
@@ -30,9 +27,11 @@ final class DiscoveryMacUITests: XCTestCase {
 
     @MainActor private func launch(bundled: Bool = false, edgeCases: Bool = false) -> XCUIApplication {
         let app = XCUIApplication()
-        app.launchArguments = ["--ui-testing"] + (bundled ? ["--bundled-venues-testing"] : []) + (edgeCases ? ["--ui-edge-cases-testing"] : [])
+        app.launchArguments = ["-NSTreatUnknownArgumentsAsOpen", "NO", "-ApplePersistenceIgnoreState", "YES", "--ui-testing"] + (bundled ? ["--bundled-venues-testing"] : []) + (edgeCases ? ["--ui-edge-cases-testing"] : [])
         app.launch()
-        XCTAssertTrue(app.buttons["reset"].firstMatch.waitForExistence(timeout: 20))
+        app.activate()
+        XCTAssertTrue(app.windows.firstMatch.waitForExistence(timeout: 15))
+        XCTAssertTrue(app.buttons["reset"].firstMatch.waitForExistence(timeout: 20), app.windows.debugDescription)
         XCTAssertTrue(app.staticTexts["results-count"].waitForExistence(timeout: 10))
         return app
     }
@@ -88,6 +87,13 @@ final class DiscoveryMacUITests: XCTestCase {
         XCTAssertEqual(result, .completed, "Expected \(label); observed \(element.exists ? element.label : "missing")", file: file, line: line)
     }
 
+    @MainActor private func waitUntilHittable(_ element: XCUIElement,
+                                             file: StaticString = #filePath, line: UInt = #line) {
+        let ready = NSPredicate(format: "exists == true AND isHittable == true")
+        XCTAssertEqual(XCTWaiter.wait(for: [XCTNSPredicateExpectation(predicate: ready, object: element)], timeout: 10), .completed,
+                       "The rendered control should settle after navigation or resize", file: file, line: line)
+    }
+
     @MainActor private func gone(_ element: XCUIElement, file: StaticString = #filePath, line: UInt = #line) {
         XCTAssertEqual(XCTWaiter.wait(for: [XCTNSPredicateExpectation(predicate: NSPredicate(format: "exists == false"), object: element)], timeout: 10), .completed, file: file, line: line)
     }
@@ -96,12 +102,63 @@ final class DiscoveryMacUITests: XCTestCase {
         let search = app.searchFields.firstMatch
         XCTAssertTrue(search.waitForExistence(timeout: 5))
         search.click()
-        search.typeKey("a", modifierFlags: .command)
-        search.typeText(text)
+        app.typeKey("a", modifierFlags: .command)
+        app.typeText(text)
+        XCTAssertEqual(XCTWaiter.wait(for: [XCTNSPredicateExpectation(
+            predicate: NSPredicate(format: "value == %@", text), object: search)], timeout: 5), .completed)
     }
 
     @MainActor private func row(_ id: String, in app: XCUIApplication) -> XCUIElement {
         app.descendants(matching: .any).matching(identifier: "venue-\(id)").firstMatch
+    }
+
+    @MainActor private func clickMapMarker(_ id: String, in app: XCUIApplication,
+                                           file: StaticString = #filePath, line: UInt = #line) throws {
+        let markers = app.descendants(matching: .any).matching(identifier: id)
+        let map = app.descendants(matching: .any).matching(identifier: "venue-map").firstMatch
+        let window = app.windows.firstMatch
+        XCTAssertTrue(map.waitForExistence(timeout: 15), "The map must be ready before marker selection", file: file, line: line)
+        func visibleMarker() -> XCUIElement? {
+            guard map.exists, window.exists else { return nil }
+            return markers.allElementsBoundByIndex.first { marker in
+                let frame = marker.frame
+                let point = CGPoint(x: frame.midX, y: frame.midY)
+                return marker.isEnabled && frame.width > 0 && frame.height > 0 &&
+                    point.x.isFinite && point.y.isFinite &&
+                    map.frame.contains(point) && window.frame.contains(point)
+            }
+        }
+        let ready = XCTNSPredicateExpectation(predicate: NSPredicate { _, _ in
+            visibleMarker() != nil
+        }, object: app)
+        XCTAssertEqual(XCTWaiter.wait(for: [ready], timeout: 15), .completed,
+                       "Expected a visible map marker: \(app.debugDescription)", file: file, line: line)
+        let marker = try XCTUnwrap(visibleMarker(), file: file, line: line)
+        // macOS 15 exposes enabled, visible markers as Map wrappers without an
+        // XCTest hit point. Click their observed center through the native window;
+        // the following identity/member assertions still verify actual selection.
+        let frame = marker.frame, origin = window.frame.origin
+        window.coordinate(withNormalizedOffset: .zero)
+            .withOffset(CGVector(dx: frame.midX - origin.x, dy: frame.midY - origin.y)).click()
+    }
+
+    @MainActor private func reachable(_ elements: XCUIElementQuery, in app: XCUIApplication,
+                                      file: StaticString = #filePath, line: UInt = #line) throws -> XCUIElement {
+        // Cluster members can fill the list on a smaller display. Scroll the
+        // native list and choose its rendered copy, avoiding recycled AX rows.
+        for _ in 0..<8 {
+            if let row = elements.allElementsBoundByIndex.first(where: {
+                let frame = $0.frame
+                return frame.origin.x.isFinite && frame.origin.y.isFinite &&
+                    frame.width > 0 && frame.height > 0 && $0.isHittable
+            }) { return row }
+            app.scrollViews.firstMatch.scroll(byDeltaX: 0, deltaY: -350)
+        }
+        return try XCTUnwrap(elements.allElementsBoundByIndex.first { element in
+            let frame = element.frame
+            return frame.origin.x.isFinite && frame.origin.y.isFinite &&
+                frame.width > 0 && frame.height > 0 && element.isHittable
+        }, "Expected a reachable native row", file: file, line: line)
     }
 
     @MainActor private func externalAction(_ label: String, in detail: XCUIElement) -> XCUIElement {
@@ -222,11 +279,9 @@ final class DiscoveryMacUITests: XCTestCase {
         XCTAssertTrue(coffee.isHittable)
     }
 
-    @MainActor func testClusterCloseAndMemberSelection() {
+    @MainActor func testClusterCloseAndMemberSelection() throws {
         let app = launch()
-        let cluster = app.descendants(matching: .any).matching(identifier: "cluster-pins").firstMatch
-        XCTAssertTrue(cluster.waitForExistence(timeout: 15))
-        cluster.click()
+        try clickMapMarker("cluster-pins", in: app)
         XCTAssertTrue(app.staticTexts["Venues in selected cluster"].waitForExistence(timeout: 5))
         let close = app.buttons["close-cluster"]
         XCTAssertTrue(close.waitForExistence(timeout: 5))
@@ -234,10 +289,11 @@ final class DiscoveryMacUITests: XCTestCase {
         XCTAssertTrue(close.isHittable)
         close.click()
         gone(app.staticTexts["Venues in selected cluster"])
-        cluster.click()
+        try clickMapMarker("cluster-pins", in: app)
         XCTAssertTrue(app.staticTexts["Venues in selected cluster"].waitForExistence(timeout: 5))
-        let member = row("demo-00", in: app)
-        XCTAssertTrue(member.waitForExistence(timeout: 5))
+        let members = app.descendants(matching: .any).matching(identifier: "venue-demo-00")
+        let member = try reachable(members, in: app)
+        XCTAssertEqual(members.count, 1, "Cluster members must not repeat in the remaining results")
         member.click()
         wait(app.staticTexts["detail-name"], label: "Demo Coffee 1")
         gone(app.staticTexts["Venues in selected cluster"])
@@ -246,13 +302,11 @@ final class DiscoveryMacUITests: XCTestCase {
         XCTAssertTrue(member.waitForExistence(timeout: 5))
     }
 
-    @MainActor func testMapPinOpensSameVenueDetailAsList() {
+    @MainActor func testMapPinOpensSameVenueDetailAsList() throws {
         let app = launch()
         search("Demo Bakery & Cafe 3", in: app)
         wait(app.staticTexts["results-count"], label: "1 spot")
-        let pin = app.descendants(matching: .any).matching(identifier: "pin-demo-02").firstMatch
-        XCTAssertTrue(pin.waitForExistence(timeout: 15))
-        pin.click()
+        try clickMapMarker("pin-demo-02", in: app)
         wait(app.staticTexts["detail-name"], label: "Demo Bakery & Cafe 3")
         app.buttons["back-to-list"].firstMatch.click()
         gone(app.staticTexts["detail-name"])
@@ -364,7 +418,48 @@ final class DiscoveryMacUITests: XCTestCase {
         XCTAssertTrue(coffee.isHittable)
     }
 
-    @MainActor func testNarrowWindowKeepsSelectedDetailAndBackUsable() {
+    @MainActor func testListingSelectionShowsIndividualPinsAndBackRestoresClusters() throws {
+        let app = launch()
+        search("Demo Coffee 1", in: app)
+        wait(app.staticTexts["results-count"], label: "3 spots")
+        row("demo-00", in: app).click()
+        wait(app.staticTexts["detail-name"], label: "Demo Coffee 1")
+        // Restore all candidates without moving the selected camera. The colocated
+        // 00/01 fixtures must be separate pins immediately, before any manual zoom.
+        search("Demo", in: app)
+        let map = app.descendants(matching: .any).matching(identifier: "venue-map").firstMatch
+        XCTAssertTrue(map.waitForExistence(timeout: 10))
+        func visible(_ element: XCUIElement) -> Bool {
+            let frame = element.frame
+            let center = CGPoint(x: frame.midX, y: frame.midY)
+            return frame.width > 0 && frame.height > 0 && center.x.isFinite && center.y.isFinite && map.frame.contains(center)
+        }
+        let street = XCTNSPredicateExpectation(predicate: NSPredicate { _, _ in
+            guard map.exists else { return false }
+            let pinsVisible = ["pin-demo-00", "pin-demo-01"].allSatisfy { id in
+                app.descendants(matching: .any).matching(identifier: id).allElementsBoundByIndex.contains(where: visible)
+            }
+            let clustersVisible = app.descendants(matching: .any).matching(identifier: "cluster-pins")
+                .allElementsBoundByIndex.contains(where: visible)
+            return pinsVisible && !clustersVisible
+        }, object: app)
+        XCTAssertEqual(XCTWaiter.wait(for: [street], timeout: 15), .completed,
+                       "Opening a listing must render individual street pins, including colocated venues")
+        wait(app.staticTexts["detail-name"], label: "Demo Coffee 1")
+        let image = XCTAttachment(screenshot: app.windows.firstMatch.screenshot())
+        image.name = "Individual pins immediately after opening listing"
+        image.lifetime = .keepAlways; add(image)
+        let mapImage = XCTAttachment(screenshot: map.screenshot())
+        mapImage.name = "Selected street map without clusters"
+        mapImage.lifetime = .keepAlways; add(mapImage)
+        app.buttons["back-to-list"].firstMatch.click()
+        gone(app.staticTexts["detail-name"])
+        wait(app.staticTexts["results-count"], label: "21 spots")
+        try clickMapMarker("cluster-pins", in: app)
+        XCTAssertTrue(app.staticTexts["Venues in selected cluster"].waitForExistence(timeout: 5))
+    }
+
+    @MainActor func testNarrowWindowKeepsSelectedDetailAndBackUsable() throws {
         let app = launch()
         desktopWindow(app)
         let window = app.windows.firstMatch
@@ -381,20 +476,18 @@ final class DiscoveryMacUITests: XCTestCase {
         app.buttons["back-to-list"].firstMatch.click()
         gone(app.staticTexts["detail-name"])
         XCTAssertTrue(coffee.waitForExistence(timeout: 5))
-        XCTAssertTrue(coffee.isHittable)
+        waitUntilHittable(row("demo-00", in: app))
         let attachment = XCTAttachment(screenshot: app.screenshot())
         attachment.name = "macOS compact discovery"; attachment.lifetime = .keepAlways; add(attachment)
         widen(window, in: app)
-        XCTAssertTrue(coffee.isHittable)
+        waitUntilHittable(row("demo-00", in: app))
         search("no-such-venue", in: app)
         narrow(window, in: app)
         XCTAssertTrue(app.staticTexts["No shops in this view"].exists)
         widen(window, in: app)
         app.buttons["reset"].firstMatch.click()
         wait(app.staticTexts["results-count"], label: "21 spots")
-        let cluster = app.descendants(matching: .any).matching(identifier: "cluster-pins").firstMatch
-        XCTAssertTrue(cluster.waitForExistence(timeout: 15))
-        cluster.click()
+        try clickMapMarker("cluster-pins", in: app)
         XCTAssertTrue(app.buttons["close-cluster"].waitForExistence(timeout: 5))
         narrow(window, in: app)
         let closeCluster = app.buttons["close-cluster"].firstMatch

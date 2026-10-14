@@ -138,7 +138,9 @@ struct DiscoveryView: View {
     }
 
     private func results(_ rows: [Venue], followsSelection: Bool = true) -> some View {
-        VStack(spacing: 0) {
+        let memberIDs = Set(state.clusterMembers)
+        let otherRows = rows.filter { !memberIDs.contains($0.id) }
+        return VStack(spacing: 0) {
             resultHeader(rows.count).padding()
             if rows.count < state.matches.count {
                 Button("Show all \(state.matches.count) matches") { state.showAll() }
@@ -164,8 +166,12 @@ struct DiscoveryView: View {
                             ForEach(state.clusterVenues) { venue in row(venue) }
                         }
                     }
-                    Section {
-                        ForEach(rows) { venue in row(venue).id(venue.id) }
+                    if !otherRows.isEmpty {
+                        Section {
+                            ForEach(otherRows) { venue in row(venue).id(venue.id) }
+                        } header: {
+                            if !memberIDs.isEmpty { Text("Other venues in this view") }
+                        }
                     }
                     if rows.isEmpty {
                         ContentUnavailableView("No shops in this view", systemImage: "magnifyingglass", description: Text("Try zooming out, clearing filters, or changing search."))

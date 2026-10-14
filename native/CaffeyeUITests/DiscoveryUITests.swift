@@ -119,17 +119,22 @@ final class DiscoveryUITests: XCTestCase {
                                   file: StaticString = #filePath, line: UInt = #line) {
         let control = app.buttons[menu]
         XCTAssertTrue(control.waitForExistence(timeout: 5), file: file, line: line)
-        // Some SwiftUI/UIKit SDK combinations expose a Menu as an accessibility
-        // wrapper button containing the native actionable button at the same frame.
-        // Target that observed leaf rather than asking XCTest to scroll the wrapper.
-        let nativeButton = control.buttons.firstMatch
-        let reachable = XCTNSPredicateExpectation(predicate: NSPredicate { _, _ in
-            control.isHittable || nativeButton.isHittable
-        }, object: control)
-        XCTAssertEqual(XCTWaiter.wait(for: [reachable], timeout: 5), .completed,
-                       "Filter menu should be reachable: \(control.debugDescription)", file: file, line: line)
-        let target = nativeButton.isHittable ? nativeButton : control
-        target.tap()
+        // SwiftUI's toolbar proxy can throw from isHittable or report an infinite
+        // child frame on some SDKs. Its identified wrapper has the actual button
+        // rectangle. Use that measured rectangle, bounded by the navigation bar
+        // and app window, then require the requested menu item to appear.
+        let frame = control.frame
+        let window = app.frame
+        let bar = app.navigationBars.firstMatch.frame
+        guard frame.origin.x.isFinite, frame.origin.y.isFinite,
+              frame.width.isFinite, frame.height.isFinite,
+              frame.width > 0, frame.height > 0,
+              window.contains(frame), bar.contains(frame) else {
+            XCTFail("Filter menu must have a finite visible navigation-bar frame: \(frame)", file: file, line: line)
+            return
+        }
+        app.coordinate(withNormalizedOffset: .zero).withOffset(CGVector(
+            dx: frame.midX - window.minX, dy: frame.midY - window.minY)).tap()
         let item = app.descendants(matching: .any).matching(identifier: option).firstMatch
         XCTAssertTrue(item.waitForExistence(timeout: 5), file: file, line: line)
         item.tap()
@@ -368,6 +373,52 @@ final class DiscoveryUITests: XCTestCase {
     }
 
 
+    @MainActor func testStreetZoomShowsIndividualPinsAndRegionalZoomRestoresClusters() throws {
+        let app = launch()
+        replaceSearch(app, with: "Demo Coffee 1")
+        expectCount(app, 3)
+        app.buttons["venue-demo-00"].tap()
+        XCTAssertTrue(app.staticTexts["detail-name"].waitForExistence(timeout: 5))
+        XCTAssertEqual(app.staticTexts["detail-name"].label, "Demo Coffee 1")
+        // Keep the selected camera focus while restoring the colocated Roasters
+        // venue and the rest of the demo snapshot through the actual search UI.
+        replaceSearch(app, with: "Demo")
+        XCTAssertEqual(app.searchFields.firstMatch.value as? String, "Demo")
+        let map = app.descendants(matching: .any).matching(identifier: "venue-map").firstMatch
+        XCTAssertTrue(map.waitForExistence(timeout: 5))
+        XCTAssertEqual(app.staticTexts["detail-name"].label, "Demo Coffee 1")
+
+        func isInsideMap(_ frame: CGRect) -> Bool {
+            frame.origin.x.isFinite && frame.origin.y.isFinite && frame.width.isFinite && frame.height.isFinite
+                && frame.width > 0 && frame.height > 0 && map.frame.contains(frame)
+        }
+        func visibleIndividual(_ identifier: String, name: String) -> Bool {
+            app.buttons.matching(identifier: identifier).allElementsBoundByIndex.contains {
+                $0.label == name && isInsideMap($0.frame)
+            }
+        }
+        func expectIndividualPins(_ message: String, line: UInt = #line) {
+            let street = XCTNSPredicateExpectation(predicate: NSPredicate { _, _ in
+                guard visibleIndividual("pin-demo-00", name: "Demo Coffee 1"),
+                      visibleIndividual("pin-demo-01", name: "Demo Roasters 2") else { return false }
+                // MapKit can retain hidden reused annotation nodes; only a finite,
+                // on-map, actionable cluster would contradict the selected map UI.
+                return !app.buttons.matching(identifier: "cluster-pins").allElementsBoundByIndex.contains {
+                    isInsideMap($0.frame) && $0.isHittable
+                }
+            }, object: app)
+            XCTAssertEqual(XCTWaiter.wait(for: [street], timeout: 10), .completed, message, line: line)
+        }
+        expectIndividualPins("Opening a listing must expose both colocated individual pins without requiring a zoom gesture")
+        map.pinch(withScale: 10, velocity: 2)
+        expectIndividualPins("Closest street zoom must retain the individual pins without an actionable cluster")
+        XCTAssertTrue(app.buttons["back-to-list"].isHittable)
+        app.buttons["back-to-list"].tap()
+        expectCount(app, 21)
+        try tapVisibleMapButton(app, identifier: "cluster-pins")
+        XCTAssertTrue(app.staticTexts["Venues in selected cluster"].waitForExistence(timeout: 5))
+    }
+
     @MainActor private func tapVisibleMapButton(_ app: XCUIApplication, identifier: String,
                                               file: StaticString = #filePath, line: UInt = #line) throws {
         let markers = app.buttons.matching(identifier: identifier)
@@ -527,6 +578,12 @@ final class DiscoveryUITests: XCTestCase {
         XCTAssertTrue(app.buttons["venue-qa-linked"].exists)
     }
 
+    @MainActor private func safariAddressContainers(_ safari: XCUIApplication) -> XCUIElementQuery {
+        safari.descendants(matching: .any).matching(NSPredicate(
+            format: "identifier IN %@ OR identifier BEGINSWITH 'SearchFieldItemView?'",
+            ["TabBarItemTitle", "TabBarItemTitleContainer"]))
+    }
+
     @MainActor private func safariAddress(_ safari: XCUIApplication, identifies host: String) -> Bool {
         func identifiesHost(_ element: XCUIElement) -> Bool {
             // Safari inserts directional display marks around domains. Compare the
@@ -540,16 +597,10 @@ final class DiscoveryUITests: XCTestCase {
                 return URLComponents(string: url)?.host?.lowercased() == host.lowercased()
             }
         }
-        // Read typed accessibility values directly. Safari's address can be a
-        // native text field, a compact title, or a regular-width address button;
-        // none of these selectors searches webpage content.
-        if safari.textFields.matching(NSPredicate(format: "identifier IN %@", ["TabBarItemTitle", "TabBarItemTitleContainer"]))
-            .allElementsBoundByIndex.contains(where: identifiesHost) { return true }
-        for title in safari.otherElements.matching(identifier: "TabBarItemTitle").allElementsBoundByIndex {
-            if title.staticTexts.allElementsBoundByIndex.contains(where: identifiesHost) { return true }
-        }
-        for item in safari.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'SearchFieldItemView?' OR label == 'Address'"))
-            .allElementsBoundByIndex {
+        // Only observed browser address containers participate; webpage labels
+        // cannot satisfy this assertion. Use one query to avoid serial full-tree
+        // snapshots while Safari is still creating its accessibility hierarchy.
+        for item in safariAddressContainers(safari).allElementsBoundByIndex {
             if identifiesHost(item) || item.staticTexts.allElementsBoundByIndex.contains(where: identifiesHost) { return true }
         }
         return false
@@ -562,6 +613,9 @@ final class DiscoveryUITests: XCTestCase {
         website.tap()
         let safari = XCUIApplication(bundleIdentifier: "com.apple.mobilesafari")
         XCTAssertTrue(safari.wait(for: .runningForeground, timeout: 10), "Website should open the simulator's Safari browser")
+        // Foreground process state precedes Safari's address UI on a fresh launch.
+        XCTAssertTrue(safariAddressContainers(safari).firstMatch.waitForExistence(timeout: 10),
+                      "Safari should expose its address control after launch")
         let destination = XCTNSPredicateExpectation(predicate: NSPredicate { _, _ in
             self.safariAddress(safari, identifies: "example.com")
         }, object: safari)
