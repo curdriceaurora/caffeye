@@ -91,11 +91,17 @@ final class DiscoveryUITests: XCTestCase {
         app.launch()
         XCTAssertTrue(app.switches["include-franchises"].waitForExistence(timeout: 15))
         try app.performAccessibilityAudit(for: [.sufficientElementDescription])
-        let row = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'venue-demo-'")).firstMatch
+        let row = app.buttons["venue-demo-17"]
         XCTAssertTrue(row.waitForExistence(timeout: 10))
+        XCTAssertGreaterThan(row.frame.width, app.frame.width * 0.8,
+                             "Accessibility text should use the full-width list, including on wide iPads")
+        XCTAssertTrue(row.isHittable)
         row.tap()
-        XCTAssertTrue(app.staticTexts["detail-name"].waitForExistence(timeout: 5))
-        XCTAssertTrue(app.buttons["back-to-list"].isHittable)
+        XCTAssertTrue(app.staticTexts["detail-name"].waitForExistence(timeout: 10))
+        XCTAssertEqual(app.staticTexts["detail-name"].label, "Demo Specialty 18")
+        let back = app.buttons["back-to-list"]
+        XCTAssertEqual(XCTWaiter.wait(for: [XCTNSPredicateExpectation(
+            predicate: NSPredicate(format: "exists == true AND isHittable == true"), object: back)], timeout: 10), .completed)
         try app.performAccessibilityAudit(for: [.sufficientElementDescription])
         let shot = XCTAttachment(screenshot: app.screenshot())
         shot.name = "Large text detail"; shot.lifetime = .keepAlways; add(shot)
@@ -589,8 +595,9 @@ final class DiscoveryUITests: XCTestCase {
         XCTAssertTrue(app.buttons["venue-qa-linked"].exists)
     }
 
-    @MainActor private func safariAddressContainers(_ safari: XCUIApplication) -> XCUIElementQuery {
-        safari.descendants(matching: .any).matching(NSPredicate(
+    @MainActor private func safariAddressContainers(_ safari: XCUIApplication,
+                                                    type: XCUIElement.ElementType = .any) -> XCUIElementQuery {
+        safari.descendants(matching: type).matching(NSPredicate(
             format: "identifier IN %@ OR identifier BEGINSWITH 'SearchFieldItemView?'",
             ["TabBarItemTitle", "TabBarItemTitleContainer"]))
     }
@@ -608,11 +615,14 @@ final class DiscoveryUITests: XCTestCase {
                 return URLComponents(string: url)?.host?.lowercased() == host.lowercased()
             }
         }
-        // Only observed browser address containers participate; webpage labels
-        // cannot satisfy this assertion. Use one query to avoid serial full-tree
-        // snapshots while Safari is still creating its accessibility hierarchy.
+        // Prefer native fields during Safari's compact-title -> address-field
+        // transition. Enumerating changing static-text indices retries stale nodes.
+        if safariAddressContainers(safari, type: .textField).allElementsBoundByIndex.contains(where: identifiesHost) { return true }
+        // Only observed address containers participate; webpage text cannot pass.
         for item in safariAddressContainers(safari).allElementsBoundByIndex {
-            if identifiesHost(item) || item.staticTexts.allElementsBoundByIndex.contains(where: identifiesHost) { return true }
+            if identifiesHost(item) { return true }
+            let title = item.staticTexts.matching(NSPredicate(format: "label CONTAINS[c] %@", host)).firstMatch
+            if title.exists, identifiesHost(title) { return true }
         }
         return false
     }
@@ -630,7 +640,7 @@ final class DiscoveryUITests: XCTestCase {
         let destination = XCTNSPredicateExpectation(predicate: NSPredicate { _, _ in
             self.safariAddress(safari, identifies: "example.com")
         }, object: safari)
-        XCTAssertEqual(XCTWaiter.wait(for: [destination], timeout: 5), .completed,
+        XCTAssertEqual(XCTWaiter.wait(for: [destination], timeout: 20), .completed,
                        "Safari's address should identify the fixture website: \(safari.debugDescription)")
         // This checks the handoff URL, not network availability or external webpage content.
         returnFromExternalApp(app)
@@ -643,8 +653,20 @@ final class DiscoveryUITests: XCTestCase {
         mapsButton.tap()
         let maps = XCUIApplication(bundleIdentifier: "com.apple.Maps")
         XCTAssertTrue(maps.wait(for: .runningForeground, timeout: 10), "Apple Maps action should launch Maps")
-        // Never accept external onboarding, permissions, or terms. Foreground launch
-        // verifies the handoff; real destination presentation is separate platform QA.
+        // A cold Maps launch can show its system location prompt after it becomes
+        // foreground. Deny only that observed prompt before switching back; never
+        // approve location access or accept external onboarding/terms.
+        let springboard = XCUIApplication(bundleIdentifier: "com.apple.springboard")
+        let prompt = springboard.alerts.matching(NSPredicate(format: "label IN %@",
+            ["Allow “Maps” to use your location?", "Allow \"Maps\" to use your location?"])).firstMatch
+        if prompt.waitForExistence(timeout: 20) {
+            let deny = prompt.buttons.matching(NSPredicate(format: "label IN %@", ["Don’t Allow", "Don't Allow"])).firstMatch
+            XCTAssertTrue(deny.exists)
+            deny.tap()
+            XCTAssertEqual(XCTWaiter.wait(for: [XCTNSPredicateExpectation(
+                predicate: NSPredicate(format: "exists == false"), object: prompt)], timeout: 10), .completed)
+        }
+        // Foreground launch verifies handoff, not Maps destination presentation.
         returnFromExternalApp(app)
     }
 
