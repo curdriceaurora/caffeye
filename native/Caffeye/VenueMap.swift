@@ -24,11 +24,19 @@ private final class MapInputMonitor {
     func makeCoordinator() -> Coordinator { Coordinator(state) }
 
     @MainActor final class Coordinator: NSObject, MKMapViewDelegate {
+        static let individualPinDistance: CLLocationDistance = 1_500
+        static func usesIndividualPins(at distance: CLLocationDistance) -> Bool {
+            distance.isFinite && distance > 0 && distance <= individualPinDistance
+        }
         var state: DiscoveryState
         private var annotations: [String: VenueAnnotation] = [:]
         var lastCommand = -1
         var programmatic = false
         private var selectionEvent = 0
+        private(set) var clustersEnabled = true
+        private var appliedClustersEnabled = true
+        private var clusteringGeneration = 0
+        private var pendingClustering: (enabled: Bool, command: Int)?
         #if os(macOS)
         private var userRegionChange = false
         private var inputMonitor: MapInputMonitor?
@@ -92,7 +100,15 @@ private final class MapInputMonitor {
                 #if os(macOS)
                 userRegionChange = false
                 #endif
-                map.setVisibleMapRect(state.cameraRect, animated: false)
+                if let focus = state.cameraFocus {
+                    // A fitted rectangle changes effective zoom with map aspect ratio.
+                    // Venue selection always enters the individual-pin street scale.
+                    let camera = MKMapCamera(lookingAtCenter: focus.location,
+                                             fromDistance: 1_000, pitch: 0, heading: 0)
+                    map.setCamera(camera, animated: false)
+                } else {
+                    map.setVisibleMapRect(state.cameraRect, animated: false)
+                }
                 // Delegate callbacks may be synchronous; publish geometry on the next run loop.
                 DispatchQueue.main.async { [weak self, weak map] in
                     guard let self, let map else { return }
@@ -100,6 +116,10 @@ private final class MapInputMonitor {
                     self.programmatic = false
                 }
             }
+            updateClustering(map)
+            synchronizeSelection(map)
+        }
+        private func synchronizeSelection(_ map: MKMapView) {
             for annotation in map.selectedAnnotations {
                 if let venue = annotation as? VenueAnnotation, venue.venue.id != state.selection {
                     map.deselectAnnotation(annotation, animated: false)
@@ -110,15 +130,56 @@ private final class MapInputMonitor {
                 map.selectAnnotation(annotation, animated: false)
             }
         }
+        private func updateClustering(_ map: MKMapView) {
+            let distance = map.camera.centerCoordinateDistance
+            let enabled = !Self.usesIndividualPins(at: distance)
+            if enabled != clustersEnabled {
+                clustersEnabled = enabled
+                selectionEvent += 1
+            }
+            guard enabled != appliedClustersEnabled else {
+                if pendingClustering != nil {
+                    clusteringGeneration += 1
+                    pendingClustering = nil
+                }
+                return
+            }
+            let command = state.cameraCommand
+            if let pendingClustering, pendingClustering.enabled == enabled, pendingClustering.command == command { return }
+            clusteringGeneration += 1
+            let generation = clusteringGeneration
+            pendingClustering = (enabled, command)
+            // MapKit may call regionDidChange synchronously inside setCamera while
+            // its annotation manager is still updating. Rebuilding there is unsafe.
+            DispatchQueue.main.async { [weak self, weak map] in
+                guard let self, let map, self.clusteringGeneration == generation else { return }
+                self.pendingClustering = nil
+                guard self.state.cameraCommand == command, self.clustersEnabled == enabled,
+                      !Self.usesIndividualPins(at: map.camera.centerCoordinateDistance) == enabled else { return }
+                self.appliedClustersEnabled = enabled
+                // Refresh only at a settled mode boundary, retaining current venue
+                // identities and looking them up after any intervening filter update.
+                let existing = Array(self.annotations.values)
+                // Remove views with their old clustering identifiers intact. The
+                // delegate configures the new mode when MapKit dequeues them again.
+                map.removeAnnotations(existing)
+                map.addAnnotations(existing)
+                self.synchronizeSelection(map)
+                if !enabled { self.state.clusterMembers = [] }
+            }
+        }
+        private func configureMarkerClustering(_ view: MKMarkerAnnotationView) {
+            view.clusteringIdentifier = clustersEnabled ? "venues" : nil
+            view.displayPriority = clustersEnabled ? .defaultHigh : .required
+        }
         func mapView(_ mapView: MKMapView, viewFor annotation: any MKAnnotation) -> MKAnnotationView? {
             if let annotation = annotation as? VenueAnnotation {
                 let view = mapView.dequeueReusableAnnotationView(withIdentifier: "venue", for: annotation) as! MKMarkerAnnotationView
                 view.canShowCallout = false
-                view.clusteringIdentifier = "venues"
+                configureMarkerClustering(view)
                 view.glyphText = annotation.venue.category.glyph
                 view.markerTintColor = annotation.venue.category.platformColor
                 view.titleVisibility = .adaptive
-                view.displayPriority = .defaultHigh
                 #if os(iOS)
                 view.isAccessibilityElement = true
                 view.accessibilityTraits = .button
@@ -147,6 +208,10 @@ private final class MapInputMonitor {
             return nil
         }
         func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+            if view.annotation is MKClusterAnnotation, !clustersEnabled {
+                if let annotation = view.annotation { mapView.deselectAnnotation(annotation, animated: false) }
+                return
+            }
             selectionEvent += 1
             let event = selectionEvent
             let command = state.cameraCommand
@@ -163,7 +228,7 @@ private final class MapInputMonitor {
             } else if let cluster = view.annotation as? MKClusterAnnotation {
                 let ids = cluster.memberAnnotations.compactMap { ($0 as? VenueAnnotation)?.venue.id }
                 DispatchQueue.main.async { [weak self, weak mapView] in
-                    guard let self, let mapView, self.selectionEvent == event, self.state.cameraCommand == command,
+                    guard let self, let mapView, self.clustersEnabled, self.selectionEvent == event, self.state.cameraCommand == command,
                           self.state.filters == filters else { return }
                     let currentIDs = ids.filter { id in self.state.matches.contains { $0.id == id } }
                     guard !currentIDs.isEmpty else { return }
@@ -180,6 +245,7 @@ private final class MapInputMonitor {
         }
         #endif
         func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+            updateClustering(mapView)
             #if os(macOS)
             let userInitiated = !programmatic && userRegionChange
             lastRegionSize = mapView.bounds.size

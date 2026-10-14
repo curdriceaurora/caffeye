@@ -21,6 +21,7 @@ final class DiscoveryState {
     private(set) var deselectionMessage = ""
     private(set) var visibleRect = regionalRect
     var cameraRect = regionalRect
+    private(set) var cameraFocus: Coordinate?
     var cameraCommand = 0
     private var currentRanked: [Venue] = []
     private var listRanked: [Venue] = []
@@ -117,6 +118,7 @@ final class DiscoveryState {
         let point = MKMapPoint(venue.coordinate.location)
         let side = 1300 / MKMetersPerMapPointAtLatitude(venue.coordinate.latitude)
         move(to: MKMapRect(x: point.x - side / 2, y: point.y - side / 2, width: side, height: side))
+        cameraFocus = venue.coordinate
     }
     func showCluster(_ ids: [String]) {
         selection = nil
@@ -154,12 +156,16 @@ final class DiscoveryState {
     func cameraChanged(_ rect: MKMapRect, userInitiated: Bool) {
         visibleRect = rect
         if userInitiated {
+            cameraFocus = nil
             userMovedSelectionCamera = selection != nil
             cameraRect = rect; reading = true; applyPending(); clusterMembers = []
         }
         rebuildRows()
     }
-    func move(to rect: MKMapRect) { cameraRect = rect; cameraCommand += 1 }
+    func move(to rect: MKMapRect) {
+        cameraFocus = nil
+        cameraRect = rect; cameraCommand += 1
+    }
 }
 
 extension Coordinate {

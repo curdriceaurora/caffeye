@@ -3,12 +3,13 @@ on:
   pull_request:
     paths: ['native/**', 'public/shops.json', 'public/places.json', '.github/workflows/native.yml']
   push:
-    branches: ['agent/standalone-swiftui', main]
+    branches: [main]
     paths: ['native/**', 'public/shops.json', 'public/places.json', '.github/workflows/native.yml']
 
 jobs:
   native:
     runs-on: macos-15
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
       - name: Check rating-free venue export
