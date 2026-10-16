@@ -51,9 +51,12 @@ struct DiscoveryView: View {
             #if os(iOS)
             .navigationBarTitleDisplayMode(.inline)
             #endif
-            .searchable(text: $state.filters.search, prompt: "Search by name, drink, or area")
             #if os(iOS)
+            .searchable(text: $state.filters.search, placement: .navigationBarDrawer(displayMode: .always),
+                        prompt: "Search by name, drink, or area")
             .searchPresentationToolbarBehavior(.avoidHidingContent)
+            #else
+            .searchable(text: $state.filters.search, prompt: "Search by name, drink, or area")
             #endif
             .searchFocused($searchFocused)
             .toolbar { toolbar }

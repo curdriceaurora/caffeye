@@ -3,6 +3,15 @@ import SwiftUI
 @main
 struct CaffeyeApp: App {
     @State private var model = AppModel()
+    init() {
+        #if os(iOS)
+        // Assert rendered state rather than waiting on MapKit's long-running
+        // annotation animations during device UI automation.
+        if ProcessInfo.processInfo.arguments.contains("--ui-testing") {
+            UIView.setAnimationsEnabled(false)
+        }
+        #endif
+    }
     var body: some Scene {
         WindowGroup {
             DiscoveryView(model: model)

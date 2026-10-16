@@ -61,6 +61,8 @@ final class DiscoveryUITests: XCTestCase {
         app.launchArguments = ["--ui-testing", "--bundled-venues-testing"]
         app.launch()
         XCTAssertTrue(app.staticTexts["Alphabetical · ratings omitted"].waitForExistence(timeout: 20))
+        XCTAssertTrue(app.links["Legal"].waitForExistence(timeout: 5),
+                      "The bounded map accessibility container must retain native attribution")
         let search = app.searchFields.firstMatch
         search.tap(); search.typeText("Cloud Tea")
         let rowID = "venue-73ee11fc-192f-5906-ac37-f4077a808d69"
@@ -436,7 +438,11 @@ final class DiscoveryUITests: XCTestCase {
         let app = launch()
         replaceSearch(app, with: "Demo Coffee 1")
         expectCount(app, 3)
-        app.buttons["venue-demo-00"].tap()
+        let row = app.buttons["venue-demo-00"]
+        let search = app.searchFields.firstMatch
+        XCTAssertFalse(search.frame.contains(CGPoint(x: row.frame.midX, y: row.frame.midY)),
+                       "Active search must not cover the result row's tap target")
+        row.tap()
         XCTAssertTrue(app.staticTexts["detail-name"].waitForExistence(timeout: 5))
         XCTAssertEqual(app.staticTexts["detail-name"].label, "Demo Coffee 1")
         // Keep the selected camera focus while restoring the colocated Roasters
