@@ -10,6 +10,52 @@ private final class VenueAnnotation: NSObject, MKAnnotation {
     init(_ venue: Venue) { self.venue = venue }
 }
 
+#if os(iOS)
+/// MapKit's default AX container repeatedly walks its entire internal view tree
+/// for each child. Expose the current rendered markers directly instead, without
+/// hiding the map or changing its native interaction and annotation delegates.
+final class AccessibleVenueMapView: MKMapView {
+    private var nativeAccessibilityControls: [Any]?
+    private var accessibilitySize: CGSize = .zero
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        if bounds.size != accessibilitySize {
+            accessibilitySize = bounds.size
+            nativeAccessibilityControls = nil
+        }
+    }
+
+    override var accessibilityElements: [Any]? {
+        get {
+            let rect = visibleMapRect
+            let nearby = rect.insetBy(dx: -rect.width * 0.05, dy: -rect.height * 0.05)
+            let markers = annotations(in: nearby).compactMap { item -> MKAnnotationView? in
+                guard let annotation = item as? any MKAnnotation,
+                      let view = view(for: annotation), view.superview != nil,
+                      !view.isHidden, view.alpha > 0,
+                      convert(view.bounds, from: view).intersects(bounds) else { return nil }
+                return view
+            }.sorted {
+                let left = convert($0.bounds, from: $0)
+                let right = convert($1.bounds, from: $1)
+                if left.midY != right.midY { return left.midY < right.midY }
+                if left.midX != right.midX { return left.midX < right.midX }
+                return ($0.accessibilityIdentifier ?? "") < ($1.accessibilityIdentifier ?? "")
+            }
+            // Ask MapKit once for its native non-marker elements, including its
+            // virtual Legal link. Reuse those controls rather than repeatedly
+            // rebuilding the framework's entire annotation accessibility tree.
+            if nativeAccessibilityControls == nil {
+                nativeAccessibilityControls = (super.accessibilityElements ?? []).filter { !($0 is MKAnnotationView) }
+            }
+            return markers + (nativeAccessibilityControls ?? [])
+        }
+        set { super.accessibilityElements = newValue }
+    }
+}
+#endif
+
 #if os(macOS)
 /// The monitor observes input without replacing MapKit's native gestures.
 private final class MapInputMonitor {
@@ -289,7 +335,7 @@ private final class MapInputMonitor {
 #if os(iOS)
 extension VenueMap: UIViewRepresentable {
     func makeUIView(context: Context) -> MKMapView {
-        let map = MKMapView(); context.coordinator.configure(map); return map
+        let map = AccessibleVenueMapView(); context.coordinator.configure(map); return map
     }
     func updateUIView(_ map: MKMapView, context: Context) { context.coordinator.update(map, state: state) }
 }
