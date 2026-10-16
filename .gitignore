@@ -25,3 +25,10 @@ tmp/
 # Python
 __pycache__/
 *.zip
+
+# Native Swift builds and user-specific Xcode state
+native/.build/
+native/Core/.build/
+native/build/
+**/xcuserdata/
+*.xcuserstate

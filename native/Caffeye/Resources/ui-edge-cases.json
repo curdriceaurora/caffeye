@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "revision": "ui-edge-cases-v1",
+  "region": "Metro Atlanta",
+  "isDemo": true,
+  "priors": {
+    "mean": 4.32,
+    "weight": 238,
+    "provenance": {
+      "source": "Synthetic demo",
+      "attribution": "Fictional venue data for interface testing; not a place recommendation."
+    }
+  },
+  "venues": [
+    {
+      "id": "qa-unknown",
+      "name": "QA Unknown Cafe",
+      "category": "Coffee",
+      "coordinate": {
+        "latitude": 33.96,
+        "longitude": -84.14
+      },
+      "address": "Fictional address · demo only",
+      "city": "Metro Atlanta",
+      "model": "independent",
+      "provenance": {
+        "source": "Synthetic demo",
+        "attribution": "Fictional venue data for interface testing; not a place recommendation."
+      },
+      "hours": " \n",
+      "summary": " "
+    },
+    {
+      "id": "qa-linked",
+      "name": "QA Linked Cafe",
+      "category": "Roasters",
+      "coordinate": {
+        "latitude": 33.96,
+        "longitude": -84.14
+      },
+      "address": "Fictional address · demo only",
+      "city": "Metro Atlanta",
+      "model": "independent",
+      "provenance": {
+        "source": "Synthetic demo",
+        "attribution": "Fictional venue data for interface testing; not a place recommendation."
+      },
+      "hours": "Demo: 8am–10pm",
+      "summary": "A fictional venue for testing Caffeye’s native interface.",
+      "loved": [
+        "Demo espresso",
+        "Demo pastries"
+      ],
+      "signature": "demo house drink",
+      "rating": {
+        "average": 4.2,
+        "count": 110,
+        "provenance": {
+          "source": "Synthetic demo",
+          "attribution": "Fictional venue data for interface testing; not a place recommendation."
+        }
+      },
+      "work": {
+        "tier": "good",
+        "note": "Demo work suitability note.",
+        "hasMeetingRoom": false,
+        "meetingRoomNote": "Demo meeting room information.",
+        "provenance": {
+          "source": "Synthetic demo",
+          "attribution": "Fictional venue data for interface testing; not a place recommendation."
+        }
+      },
+      "googleURL": "https://maps.google.com/?q=33.96,-84.14",
+      "yelpURL": "https://www.yelp.com/",
+      "website": "https://example.com/"
+    }
+  ]
+}

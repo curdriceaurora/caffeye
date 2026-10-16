@@ -1,0 +1,85 @@
+name: Native SwiftUI
+on:
+  pull_request:
+    paths: ['native/**', 'public/shops.json', 'public/places.json', '.github/workflows/native.yml']
+  push:
+    branches: [main]
+    paths: ['native/**', 'public/shops.json', 'public/places.json', '.github/workflows/native.yml']
+
+jobs:
+  native:
+    runs-on: macos-15
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install XcodeGen
+        run: brew install xcodegen
+      - name: Check generated Xcode project
+        run: |
+          xcodegen generate --spec native/project.yml
+          git diff --exit-code -- native/
+      - name: Check rating-free venue export
+        run: |
+          python3 native/scripts/export_venues.py --check
+          python3 -m unittest discover -s native/scripts -p 'test_*.py'
+          python3 native/scripts/audit_snapshot.py native/Caffeye/Resources/venues.json > /tmp/dataset-inventory.json
+          diff -u native/release/dataset-inventory.json /tmp/dataset-inventory.json
+      - name: Domain and offline storage tests
+        run: |
+          swift test --package-path native/Core
+          swift run --package-path native/Core CaffeyeTools validate native/Caffeye/Resources/venues.json
+      - name: macOS build and discovery tests
+        run: >-
+          xcodebuild -project native/Caffeye.xcodeproj -scheme Caffeye-macOS
+          -destination 'platform=macOS' -derivedDataPath native/build/ci-mac
+          -resultBundlePath native/build/ci-mac.xcresult -collect-test-diagnostics never
+          CODE_SIGN_IDENTITY=- test
+      - name: iPhone and iPad simulator build
+        run: >-
+          xcodebuild -project native/Caffeye.xcodeproj -scheme Caffeye-iOS
+          -destination 'generic/platform=iOS Simulator' CODE_SIGNING_ALLOWED=NO build
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: native-mac-ui-results
+          path: native/build/ci-mac.xcresult
+
+  simulator-ui:
+    runs-on: macos-15
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        device: [iphone, ipad]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Select available iPhone and iPad simulators
+        id: devices
+        run: |
+          python3 - <<'PY'
+          import json, os, re, subprocess
+          devices = json.loads(subprocess.check_output(['xcrun', 'simctl', 'list', 'devices', 'available', '--json']))['devices']
+          for runtime in sorted(devices, key=lambda value: tuple(map(int, re.findall(r'\d+', value))), reverse=True):
+              if '.iOS-' not in runtime:
+                  continue
+              available = [device for device in devices[runtime] if device.get('isAvailable')]
+              phone = next((device for device in available if device['name'].startswith('iPhone')), None)
+              tablet = next((device for device in available if device['name'].startswith('iPad')), None)
+              if phone and tablet:
+                  with open(os.environ['GITHUB_OUTPUT'], 'a') as output:
+                      output.write(f"iphone={phone['udid']}\nipad={tablet['udid']}\n")
+                  break
+          else:
+              raise SystemExit('No available iOS runtime supplies both iPhone and iPad simulators')
+          PY
+      - name: User flows (${{ matrix.device }})
+        run: >-
+          xcodebuild -project native/Caffeye.xcodeproj -scheme Caffeye-iOS
+          -destination 'platform=iOS Simulator,id=${{ steps.devices.outputs[matrix.device] }}'
+          -derivedDataPath native/build/ci-ui -collect-test-diagnostics never
+          CODE_SIGNING_ALLOWED=NO test
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: native-simulator-ui-results-${{ matrix.device }}
+          path: native/build/ci-ui/Logs/Test/*.xcresult
