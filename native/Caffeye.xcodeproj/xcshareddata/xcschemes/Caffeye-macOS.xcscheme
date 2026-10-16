@@ -50,8 +50,7 @@
                ReferencedContainer = "container:Caffeye.xcodeproj">
             </BuildableReference>
          </TestableReference>
-
-      <TestableReference
+         <TestableReference
             skipped = "NO"
             parallelizable = "NO">
             <BuildableReference

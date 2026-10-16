@@ -372,6 +372,26 @@ final class DiscoveryUITests: XCTestCase {
         XCTAssertFalse(showAll.exists)
     }
 
+    @MainActor func testShowAllRemainsReachableWhileVenueDetailIsOpen() {
+        let app = launch()
+        expectCount(app, 21)
+        let row = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'venue-demo-'")).firstMatch
+        XCTAssertTrue(row.waitForExistence(timeout: 10))
+        row.tap()
+        let detail = app.staticTexts["detail-name"]
+        XCTAssertTrue(detail.waitForExistence(timeout: 5))
+        let selectedName = detail.label
+        let showAll = app.buttons["show-all"]
+        XCTAssertTrue(showAll.waitForExistence(timeout: 10))
+        XCTAssertTrue(showAll.isHittable, "Show all must be outside the hidden compact results list")
+        showAll.tap()
+        XCTAssertTrue(detail.waitForExistence(timeout: 5))
+        XCTAssertEqual(detail.label, selectedName)
+        XCTAssertTrue(app.buttons["back-to-list"].isHittable)
+        app.buttons["back-to-list"].tap()
+        expectCount(app, 21)
+    }
+
     @MainActor func testRotationPreservesSelectionAndBackNavigation() {
         let app = launch()
         defer { XCUIDevice.shared.orientation = .portrait }
