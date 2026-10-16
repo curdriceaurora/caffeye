@@ -42,3 +42,32 @@ Ignored artifacts (not uploaded or committed):
 - An earlier by-name trace stopped after 1.19 seconds when the app exited during timeout cleanup; a PID-based attempt failed. Neither is counted as a completed diagnosis.
 
 Physical spoken VoiceOver/rotor navigation, sustained Allocations/Leaks/GPU/thermal work, degraded basemap networking, and production distribution signing remain open. Simulator checks and observed snapshot timings do not close those gates.
+
+## Physical iPad follow-up
+
+Tested runtime source `dcbff78` on a physical iPad (A16), iPadOS 27.0 (24A437), using the existing local development signing configuration. **All 10 selected UI tests passed**, zero failures, in 156.3 seconds. No runtime source or test changes were needed for this pass.
+
+| Journey | Duration |
+| --- | ---: |
+| `testAccessibleDiscoveryAndLargeTextDetail` | 12.209s |
+| `testBundledVenuesWithoutRatings` | 21.027s |
+| `testClusterShowsSelectableMembers` | 8.697s |
+| `testFranchiseToggleUpdatesResultsAndCategoryCounts` | 22.327s |
+| `testMapViewportFilteringAndShowAllRecoverMatches` | 16.210s |
+| `testRotationPreservesSelectionAndBackNavigation` | 12.851s |
+| `testSearchEmptyStateAndReset` | 9.630s |
+| `testSelectionAndBack` | 8.928s |
+| `testShowAllRemainsReachableWhileVenueDetailIsOpen` | 13.082s |
+| `testStreetZoomShowsIndividualPinsAndRegionalZoomRestoresClusters` | 31.335s |
+
+The real-data flow includes the accessible native Legal-link assertion. The street-pin flow verifies that active search does not cover the row's center, then verifies individual colocated pins before manual zoom, closest zoom, and regional cluster selection after Back. Fictional fixtures supply deterministic assertions for the other flows; this does not claim exhaustive venue-by-venue testing.
+
+Discovery and venue-detail screenshots from this physical iPad were visually inspected: search is above the results, the wide sidebar/map/detail layout is present, Show all and Back are visible, and the selected venue displays an individual pin. The normal app was relaunched without test arguments afterward, restoring normal animations and the real bundled dataset.
+
+Local evidence remains ignored and is not uploaded:
+
+- `native/build/physical-ipad-smoke-20261016.xcresult`
+- `native/build/physical-ipad-smoke-summary.json`
+- `native/build/physical-ipad-screenshots/`
+
+This pass covers rotation and automated large-text/label checks. It does not establish manual spoken VoiceOver/rotor coverage, narrow Split View/Stage Manager behavior, network degradation behavior, or sustained Instruments memory/GPU/thermal acceptance.
