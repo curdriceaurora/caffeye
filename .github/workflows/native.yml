@@ -12,6 +12,12 @@ jobs:
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
+      - name: Install XcodeGen
+        run: brew install xcodegen
+      - name: Check generated Xcode project
+        run: |
+          xcodegen generate --spec native/project.yml
+          git diff --exit-code -- native/
       - name: Check rating-free venue export
         run: |
           python3 native/scripts/export_venues.py --check

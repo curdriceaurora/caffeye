@@ -34,7 +34,7 @@ private final class MapInputMonitor {
         var programmatic = false
         private var selectionEvent = 0
         private(set) var clustersEnabled = true
-        private var appliedClustersEnabled = true
+        private var staleClusteringIDs: Set<String> = []
         private var clusteringGeneration = 0
         private var pendingClustering: (enabled: Bool, command: Int)?
         #if os(macOS)
@@ -86,6 +86,7 @@ private final class MapInputMonitor {
             let ids = Set(venues.map(\.id))
             let removed = annotations.keys.filter { !ids.contains($0) }
             for id in removed {
+                staleClusteringIDs.remove(id)
                 if let annotation = annotations.removeValue(forKey: id) { map.removeAnnotation(annotation) }
             }
             for venue in venues where annotations[venue.id]?.venue != venue {
@@ -136,8 +137,13 @@ private final class MapInputMonitor {
             if enabled != clustersEnabled {
                 clustersEnabled = enabled
                 selectionEvent += 1
+                staleClusteringIDs = Set(annotations.keys)
             }
-            guard enabled != appliedClustersEnabled else {
+            let nearby = Self.clusteringRefreshRect(map.visibleMapRect)
+            let needsRefresh = annotations.values.contains {
+                staleClusteringIDs.contains($0.venue.id) && nearby.contains(MKMapPoint($0.coordinate))
+            }
+            guard needsRefresh || (!enabled && !state.clusterMembers.isEmpty) else {
                 if pendingClustering != nil {
                     clusteringGeneration += 1
                     pendingClustering = nil
@@ -156,10 +162,14 @@ private final class MapInputMonitor {
                 self.pendingClustering = nil
                 guard self.state.cameraCommand == command, self.clustersEnabled == enabled,
                       !Self.usesIndividualPins(at: map.camera.centerCoordinateDistance) == enabled else { return }
-                self.appliedClustersEnabled = enabled
-                // Refresh only at a settled mode boundary, retaining current venue
-                // identities and looking them up after any intervening filter update.
-                let existing = Array(self.annotations.values)
+                // Only nearby stale annotations need re-registration. Keep distant
+                // IDs pending: a later pan refreshes them, or viewFor configures a
+                // freshly dequeued view with the current mode.
+                let nearby = Self.clusteringRefreshRect(map.visibleMapRect)
+                let existing = self.annotations.values.filter {
+                    self.staleClusteringIDs.contains($0.venue.id) && nearby.contains(MKMapPoint($0.coordinate))
+                }
+                self.staleClusteringIDs.subtract(existing.map { $0.venue.id })
                 // Remove views with their old clustering identifiers intact. The
                 // delegate configures the new mode when MapKit dequeues them again.
                 map.removeAnnotations(existing)
@@ -168,15 +178,19 @@ private final class MapInputMonitor {
                 if !enabled { self.state.clusterMembers = [] }
             }
         }
+        private static func clusteringRefreshRect(_ rect: MKMapRect) -> MKMapRect {
+            rect.insetBy(dx: -rect.size.width, dy: -rect.size.height)
+        }
         private func configureMarkerClustering(_ view: MKMarkerAnnotationView) {
             view.clusteringIdentifier = clustersEnabled ? "venues" : nil
             view.displayPriority = clustersEnabled ? .defaultHigh : .required
         }
         func mapView(_ mapView: MKMapView, viewFor annotation: any MKAnnotation) -> MKAnnotationView? {
             if let annotation = annotation as? VenueAnnotation {
-                let view = mapView.dequeueReusableAnnotationView(withIdentifier: "venue", for: annotation) as! MKMarkerAnnotationView
+                guard let view = mapView.dequeueReusableAnnotationView(withIdentifier: "venue", for: annotation) as? MKMarkerAnnotationView else { return nil }
                 view.canShowCallout = false
                 configureMarkerClustering(view)
+                staleClusteringIDs.remove(annotation.venue.id)
                 view.glyphText = annotation.venue.category.glyph
                 view.markerTintColor = annotation.venue.category.platformColor
                 view.titleVisibility = .adaptive
@@ -191,7 +205,7 @@ private final class MapInputMonitor {
                 return view
             }
             if let annotation = annotation as? MKClusterAnnotation {
-                let view = mapView.dequeueReusableAnnotationView(withIdentifier: "cluster", for: annotation) as! MKMarkerAnnotationView
+                guard let view = mapView.dequeueReusableAnnotationView(withIdentifier: "cluster", for: annotation) as? MKMarkerAnnotationView else { return nil }
                 view.canShowCallout = false
                 view.glyphText = "\(annotation.memberAnnotations.count)"
                 view.titleVisibility = .hidden

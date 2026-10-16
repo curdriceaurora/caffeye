@@ -48,6 +48,6 @@ For real app profiling, build Release and use Instruments **Time Profiler**, **A
 - VoiceOver: discover filters and counts, select individual/cluster pins, traverse detail headings, activate links, and Back to the originating row. Automated label audits are a subset of this review.
 - Accessibility text sizes, portrait/landscape, keyboard-visible discovery, narrow iPad windows/Stage Manager, Mac keyboard-only use and two independent windows.
 - Airplane mode after launch and after restart, failed/expired basemap tiles, valid/malformed update endpoints, interrupted updates and cancellation. Venue data must remain available even when map imagery is unavailable.
-- Production provisioning/signing, required privacy disclosures and SDK review, support/privacy pages, distribution metadata, and notarization/App Store review appropriate to the chosen channel.
+- Production Developer ID signing and notarization for direct Mac distribution, or Apple Distribution signing/provisioning for App Store distribution; required privacy disclosures and SDK review, support/privacy pages, distribution metadata, and notarization/App Store review appropriate to the chosen channel.
 
 See [privacy-api-inventory.md](privacy-api-inventory.md) for the current API review. Do not mark these gates passed from simulator tests alone.

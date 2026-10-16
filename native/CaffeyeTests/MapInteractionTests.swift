@@ -3,6 +3,14 @@ import MapKit
 import CaffeyeCore
 @testable import Caffeye
 
+@MainActor private final class RecordingMapView: MKMapView {
+    var removed: [any MKAnnotation] = []
+    override func removeAnnotations(_ annotations: [any MKAnnotation]) {
+        removed.append(contentsOf: annotations)
+        super.removeAnnotations(annotations)
+    }
+}
+
 @MainActor @Suite("Deferred map interactions")
 struct MapInteractionTests {
     private func streetFixture(size: CGSize = CGSize(width: 800, height: 600)) throws -> (DiscoveryState, MKMapView, VenueMap.Coordinator, [any MKAnnotation]) {
@@ -31,6 +39,55 @@ struct MapInteractionTests {
         await withCheckedContinuation { continuation in
             DispatchQueue.main.async { continuation.resume() }
         }
+    }
+
+    @Test("Unexpected annotation view registrations fail safely")
+    func unexpectedViewClass() throws {
+        let (_, map, coordinator, annotations) = try streetFixture()
+        map.register(MKAnnotationView.self, forAnnotationViewWithReuseIdentifier: "venue")
+        map.register(MKAnnotationView.self, forAnnotationViewWithReuseIdentifier: "cluster")
+        #expect(coordinator.mapView(map, viewFor: annotations[0]) == nil)
+        #expect(coordinator.mapView(map, viewFor: MKClusterAnnotation(memberAnnotations: annotations)) == nil)
+    }
+
+    @Test("Street boundary refresh skips distant annotations and configures them on demand")
+    func boundaryRefreshIsLocal() async throws {
+        let source = Provenance(source: "Test")
+        let state = DiscoveryState()
+        state.accept(Snapshot(revision: "local-refresh", venues: [
+            Venue(id: "near", name: "Near", coordinate: .init(latitude: 33.96, longitude: -84.14), provenance: source),
+            Venue(id: "far", name: "Far", coordinate: .init(latitude: 33.5, longitude: -84.5), provenance: source)
+        ]))
+        let map = RecordingMapView(frame: CGRect(x: 0, y: 0, width: 800, height: 600))
+        let coordinator = VenueMap.Coordinator(state)
+        coordinator.configure(map); coordinator.update(map, state: state)
+        await drainCallbacks()
+        let near = try #require(map.annotations.first { $0.title == "Near" })
+        let far = try #require(map.annotations.first { $0.title == "Far" })
+        map.removed = []
+        setDistance(500, on: map, coordinator: coordinator)
+        await drainCallbacks()
+        #expect(map.removed.contains { $0 === near })
+        #expect(!map.removed.contains { $0 === far })
+        #expect(map.annotations.contains { $0 === far })
+        // Panning at the same zoom must also refresh previously distant cached views.
+        map.removed = []
+        map.setCamera(MKMapCamera(lookingAtCenter: far.coordinate, fromDistance: 500, pitch: 0, heading: 0), animated: false)
+        coordinator.mapView(map, regionDidChangeAnimated: false)
+        await drainCallbacks()
+        // MapKit may dequeue a fresh view during the pan instead of requiring
+        // re-registration; either path must expose the current individual mode.
+        if let visible = map.view(for: far) as? MKMarkerAnnotationView {
+            #expect(visible.clusteringIdentifier == nil)
+            #expect(visible.displayPriority == .required)
+        }
+        let view = try #require(coordinator.mapView(map, viewFor: far) as? MKMarkerAnnotationView)
+        #expect(view.clusteringIdentifier == nil)
+        #expect(view.displayPriority == .required)
+        setDistance(5_000, on: map, coordinator: coordinator)
+        await drainCallbacks()
+        let regional = try #require(coordinator.mapView(map, viewFor: far) as? MKMarkerAnnotationView)
+        #expect(regional.clusteringIdentifier == "venues")
     }
 
     @Test("The 1,500m street boundary is inclusive and invalid camera distances retain regional clustering")

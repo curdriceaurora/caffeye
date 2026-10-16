@@ -106,6 +106,10 @@ struct DiscoveryView: View {
                 Text("Include franchise stores").fixedSize(horizontal: false, vertical: true)
             }.font(.subheadline)
                 .accessibilityIdentifier("include-franchises")
+            if state.rows.count < state.matches.count {
+                Button("Show all \(state.matches.count) matches") { state.showAll() }
+                    .accessibilityIdentifier("show-all")
+            }
             if state.mapImageryUnavailable {
                 Text("Map imagery unavailable")
                     .font(.caption).foregroundStyle(.secondary)
@@ -142,11 +146,6 @@ struct DiscoveryView: View {
         let otherRows = rows.filter { !memberIDs.contains($0.id) }
         return VStack(spacing: 0) {
             resultHeader(rows.count).padding()
-            if rows.count < state.matches.count {
-                Button("Show all \(state.matches.count) matches") { state.showAll() }
-                    .accessibilityIdentifier("show-all")
-                    .padding(.bottom, 8)
-            }
             if !state.clusterMembers.isEmpty {
                 VStack(alignment: .leading, spacing: 4) {
                     Text("Venues in selected cluster")
