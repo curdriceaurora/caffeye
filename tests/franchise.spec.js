@@ -8,17 +8,17 @@ test.describe('franchise model', () => {
 
   test('boot is Indie-only with no franchise cards', async ({ page }) => {
     expect(await page.evaluate(() => window.state.includeFranchises)).toBe(false);
-    expect(await page.locator('#resultsCount').textContent()).toBe('970');
+    expect(await page.locator('#resultsCount').textContent()).toBe('1386');
     expect(await page.locator('.model-tag.franchise').count()).toBe(0);
     expect(await page.locator('.model-tag.indie').count()).toBeGreaterThan(0);
   });
 
-  test('toggle ON shows 1,705 with franchise badges; OFF restores 970', async ({ page }) => {
+  test('toggle ON shows 2,331 with franchise badges; OFF restores 1386', async ({ page }) => {
     await page.locator('label.toggle-label').click();
-    await expect.poll(async () => page.locator('#resultsCount').textContent(), { timeout: 10000 }).toBe('1705');
+    await expect.poll(async () => page.locator('#resultsCount').textContent(), { timeout: 10000 }).toBe('2331');
     expect(await page.locator('.model-tag.franchise').count()).toBeGreaterThan(0);
     await page.locator('label.toggle-label').click();
-    await expect.poll(async () => page.locator('#resultsCount').textContent(), { timeout: 10000 }).toBe('970');
+    await expect.poll(async () => page.locator('#resultsCount').textContent(), { timeout: 10000 }).toBe('1386');
     expect(await page.locator('.model-tag.franchise').count()).toBe(0);
   });
 

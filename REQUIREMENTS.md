@@ -6,7 +6,7 @@ Functional and non-functional requirements for the current state of the page. Ea
 
 | ID | Requirement | Principle |
 |---|---|---|
-| R1.1 | The September 2026 snapshot loads **1,705** venues across 14 Metro Atlanta counties: 61 curated seed venues plus 1,644 admitted regional venues after deduplicating the 1,688-record `places.json`. Default discovery shows 970 independents; enabling franchises shows all 1,705. Runtime totals derive from accepted records, not a hardcoded target. | Curation > count |
+| R1.1 | The November 2026 snapshot loads **2,331** venues across 14 Metro Atlanta counties: 60 curated seed venues plus 2,271 admitted regional venues after deduplicating the 2,316-record `places.json`. Default discovery shows 1,386 independents; enabling franchises shows all 2,331. Runtime totals derive from accepted records, not a hardcoded target. | Curation > count |
 | R1.2 | Every shop has identity, address, coordinates, category, rating (or `null`), review counts, and a Google Maps link. Curated seed records additionally have hours, USP description, 3 "loved" items, and a signature drink/dish. Regional editorial fields may be empty until verified overlays supply them; do not fabricate recommendations to fill gaps. | — |
 | R1.3 | Coworking data is an optional inline `cw` object with `tier` ∈ {`excellent`, `good`, `limited`} and an optional reservable-meeting-room flag. All curated seed venues have it; regional records without verified editorial data show unknown work suitability. | — |
 | R1.4 | Every shop has a `website` field (URL string or `null`). | — |
