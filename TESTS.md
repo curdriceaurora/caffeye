@@ -128,8 +128,8 @@ recovery, not just the threshold function in isolation.
 | T4.1 | R4.1 | `js> document.querySelectorAll('#categoryChips .chip').length` | `7` (All + 6 categories) |
 | T4.2 | R4.1 | Each category chip displays its emoji + label + count; sum of category counts = inScope.length. | Six category counts sum to inScope.length matching the franchise toggle state (970 indie shops when toggle OFF; 1,705 total shops when toggle ON; or 41 indie / 61 total in baseline Duluth mode). Category and feature chip counts intentionally reflect global category totals and ignore search text input. |
 | T4.3 | R4.2 | Click "All". `js> [...document.querySelectorAll('#categoryChips .chip')][0].classList.contains('active')` | `true` |
-| T4.4 | R4.3 | `js> document.querySelectorAll('#featureChips .chip').length` | `4` (Work-friendly, Meeting room, Open late, Until midnight) |
-| T4.5 | R4.3 | Feature chip text matches `['💻Work-friendly{n}', '🤝Meeting room{n}', '🌙Open late{n}', '🦉Until midnight{n}']` (spaces normalized). | All four present. |
+| T4.4 | R4.3 | `js> document.querySelectorAll('#featureChips .chip').length` | `5` (Work-friendly, Meeting room, Early risers, Open late, Until midnight) |
+| T4.5 | R4.3 | Feature chip text matches `['💻Work-friendly{n}', '🤝Meeting room{n}', '🌅Early risers{n}', '🌙Open late{n}', '🦉Until midnight{n}']` (spaces normalized). | All five present. |
 | T4.6 | R4.4 | Click "Coffee" then "Work-friendly". `js> document.querySelectorAll('.shop-item').length` | Returns count of Coffee × Work-friendly intersection. |
 | T4.7 | R4.5 | Search the page DOM for "Past midnight". | Returns no matches. |
 | T4.8 | R4.6 | `js> !document.getElementById('sortSelect')` | `true` |
@@ -301,3 +301,5 @@ console.table(Object.fromEntries(Object.keys(CATS).map(category => [category, {
 
 
 Review regressions: `tests/review-regressions.spec.js` checks the regional shell, partial score stability, actual search/Back hit targets, list preservation, exact viewport announcements, debounce, stale empty rows, twenty real card selections, cancellation, CDN failure, retries, and coincident coordinates. The HTML size assertion enforces 112,640 bytes. The performance spec gates startup long-task TBT at 4× CPU and vector readiness; final LCP is measured manually (T13.1).
+
+Early risers: select the chip and verify both map and list contain only shops opening by 7 a.m. on at least one day (or open 24 hours). Verify 7:00 a.m. qualifies, 7:30 a.m. does not, evening openings with early-morning closing times do not qualify, and missing hours are excluded. Combine with Work-friendly and toggle franchises; check counts and reset via the brand button.

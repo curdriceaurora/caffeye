@@ -849,6 +849,20 @@ const CATS = {
   // Per-shop finalization shared by boot and retry: resolve coords from ADDR,
   // validate, stash base coords (spread is derived from base, so re-runs are
   // idempotent), assign a unique id, fill display defaults. Returns false to drop.
+// Use recorded opening times, never closing times or an assumed schedule.
+// A weekly match means at least one day, not necessarily today.
+function isEarlyRiser(hours) {
+  if (typeof hours !== 'string') return false;
+  return hours.split('·').some(span => {
+    if (/\bopen 24 hours\b/i.test(span)) return true;
+    const opening = span.match(/(?:^|\s)(\d{1,2})(?::(\d{2}))?\s*(am|pm)\s*[-–—]/i);
+    if (!opening || opening[3].toLowerCase() !== 'am') return false;
+    const hour = Number(opening[1]);
+    const minute = Number(opening[2] || 0);
+    return hour >= 1 && hour <= 12 && minute < 60 && (hour % 12) * 60 + minute <= 7 * 60;
+  });
+}
+
   function prepareShop(s) {
     const key = s.addrKey;
     if (key && ADDR[key]) { s.lat = ADDR[key].lat; s.lng = ADDR[key].lng; }
@@ -868,6 +882,7 @@ const CATS = {
     s.id = uniqueId;
     s.neighborhood = s.neighborhood || NEIGHBORHOODS[key] || s.city || "Area not listed";
     s.model = s.model || 'independent';
+    s.earlyRiser = isEarlyRiser(s.hours);
     return true;
   }
 
@@ -1122,6 +1137,7 @@ function boot(opts) {
     const cw = shop.cw || {};
     if (ln && ln.tier === 'midnight') tags.push('Until midnight');
     else if (ln) tags.push('Open late');
+    if (shop.earlyRiser) tags.push('Early risers');
     if (cw.hasMeetingRoom) tags.push('Meeting room');
     else if (cw.tier === 'excellent') tags.push('Work-friendly');
     for (const item of (shop.loved || [])) {
@@ -1135,6 +1151,7 @@ function boot(opts) {
     const tags = [];
     const cw = shop.cw || {};
     const ln = shop.late;
+    if (shop.earlyRiser) tags.push({ label: 'Early risers', cls: 'work', icon: '🌅' });
     if (cw.tier === 'excellent') tags.push({ label: 'Work', cls: 'work', icon: '💻' });
     if (cw.hasMeetingRoom) tags.push({ label: 'Meetings', cls: 'work', icon: '🤝' });
     if (ln && ln.tier === 'midnight') tags.push({ label: 'Until midnight', cls: 'late', icon: '🦉' });
@@ -1201,6 +1218,7 @@ function boot(opts) {
   const FEATURES = [
     { key: 'work', label: 'Work-friendly', icon: '💻', themeColor: '#2e7d4f', matches: s => s.cw?.tier === 'excellent' },
     { key: 'meeting', label: 'Meeting room', icon: '🤝', themeColor: '#7a5635', matches: s => s.cw?.hasMeetingRoom },
+    { key: 'early', label: 'Early risers', icon: '🌅', themeColor: '#7a5635', matches: s => s.earlyRiser },
     { key: 'late', label: 'Open late', icon: '🌙', themeColor: '#3f4f8a', matches: s => s.late },
     { key: 'midnight', label: 'Until midnight', icon: '🦉', themeColor: '#2a2f5c', matches: s => s.late?.tier === 'midnight' }
   ];
@@ -1258,7 +1276,7 @@ function boot(opts) {
     featChipsEl.innerHTML = '';
 
     FEATURES.forEach(f => {
-      featChipsEl.appendChild(makeChip({
+      const chip = makeChip({
         label: f.label, count: inScope.filter(f.matches).length, icon: f.icon, themeColor: f.themeColor,
         chipKey: 'feat-' + f.key,
         onClick: () => {
@@ -1268,7 +1286,9 @@ function boot(opts) {
           announceFilterChange();
         },
         isActive: state.features.has(f.key)
-      }));
+      });
+      if (f.key === 'early') chip.title = 'Opens by 7 a.m. on at least one day (includes 24-hour spots). Check hours for your day.';
+      featChipsEl.appendChild(chip);
     });
 
     if (focusedKey) {
@@ -1786,6 +1806,7 @@ function boot(opts) {
     const ln = s.late;
     if (state.features.has('work') && cw.tier !== 'excellent') return false;
     if (state.features.has('meeting') && !cw.hasMeetingRoom) return false;
+    if (state.features.has('early') && !s.earlyRiser) return false;
     if (state.features.has('late') && !ln) return false;
     if (state.features.has('midnight') && (!ln || ln.tier !== 'midnight')) return false;
     if (!term) return true;
