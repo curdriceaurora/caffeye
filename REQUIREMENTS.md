@@ -6,7 +6,7 @@ Functional and non-functional requirements for the current state of the page. Ea
 
 | ID | Requirement | Principle |
 |---|---|---|
-| R1.1 | The September 2026 snapshot loads **1,705** venues across 14 Metro Atlanta counties: 61 curated seed venues plus 1,644 admitted regional venues after deduplicating the 1,688-record `places.json`. Default discovery shows 970 independents; enabling franchises shows all 1,705. Runtime totals derive from accepted records, not a hardcoded target. | Curation > count |
+| R1.1 | The November 2026 snapshot loads **2,233** venues across 14 Metro Atlanta counties: 60 curated seed venues plus 2,173 admitted regional venues after deduplicating the 2,218-record `places.json`. Default discovery shows 1,323 independents; enabling franchises shows all 2,233. Runtime totals derive from accepted records, not a hardcoded target. | Curation > count |
 | R1.2 | Every shop has identity, address, coordinates, category, rating (or `null`), review counts, and a Google Maps link. Curated seed records additionally have hours, USP description, 3 "loved" items, and a signature drink/dish. Regional editorial fields may be empty until verified overlays supply them; do not fabricate recommendations to fill gaps. | — |
 | R1.3 | Coworking data is an optional inline `cw` object with `tier` ∈ {`excellent`, `good`, `limited`} and an optional reservable-meeting-room flag. All curated seed venues have it; regional records without verified editorial data show unknown work suitability. | — |
 | R1.4 | Every shop has a `website` field (URL string or `null`). | — |
@@ -29,7 +29,7 @@ Functional and non-functional requirements for the current state of the page. Ea
 | R2.7 | Shops at the same building coords are fanned out in a ~20 m ring so pins don't fully overlap. | Labels must not lie |
 | R2.8 | Tapping a pin selects the shop directly (no preview popup). | One tap to the answer |
 | R2.9 | "Back to list" restores the camera saved before the first selection. Switching selections preserves that camera. | — |
-| R2.10 | The map zoom is bounded between `minZoom: 7` and `maxZoom: 19`. Viewport panning and tile network requests are strictly bounded to Greater Atlanta via `ATL_BOUNDS` (`[33.15, -85.05]` to `[34.75, -83.30]`) with `maxBoundsViscosity: 1.0`, preventing users from panning away from the coverage area and eliminating unnecessary tile rendering/requests. Applies to the default Leaflet renderer; the opt-in vector preview uses the padded bounds in R13.9. | Bound performance and avoid stray navigation |
+| R2.10 | The map zoom is bounded between `minZoom: 7` (6 on maps under 165 px tall, which cannot hold the region at 7) and `maxZoom: 19`. Viewport panning and tile network requests are strictly bounded to Greater Atlanta via `ATL_BOUNDS` (`[33.15, -85.05]` to `[34.75, -83.30]`) with `maxBoundsViscosity: 1.0`, preventing users from panning away from the coverage area and eliminating unnecessary tile rendering/requests. Applies to the default Leaflet renderer; the opt-in vector preview uses the padded bounds in R13.9. | Bound performance and avoid stray navigation |
 
 ## R3. Pin labels
 
@@ -51,12 +51,12 @@ Functional and non-functional requirements for the current state of the page. Ea
 |---|---|---|
 | R4.1 | Six category chips (Coffee, Roasters, Bakery & Cafe, Tea/Boba, Dessert Cafe, Specialty) with category-color tinted backgrounds, the category emoji, and a count. | Playfulness is information |
 | R4.2 | An "All" chip toggles all category filters off; active state is solid black. | — |
-| R4.3 | Four feature chips: 💻 Work-friendly, 🤝 Meeting room, 🌙 Open late, 🦉 Until midnight — each with a themed background and live count. | — |
+| R4.3 | Five feature chips: 🌅 Early risers, 💻 Work-friendly, 🤝 Meeting room, 🌙 Open late, 🦉 Until midnight — each with a themed background and live count. | — |
 | R4.4 | Category and feature chips are toggleable independently; multiple can be active. | — |
 | R4.5 | "Until midnight" is the wording (not "Past midnight") — accurate for shops closing *at* 12 am. | Truth in labeling |
 | R4.6 | Sort controls are intentionally absent. The list is always ordered by Bayesian weighted rating, descending. | The right default |
-| R4.7 | The filter bar presents two streamlined rows: Type (All + 6 categories) and Useful for (4 utility features). County/city filter rows are omitted to preserve vertical space and guarantee at least 5 visible cards on mobile viewports. | Density on phones; clean defaults |
-| R4.8 | Dedicated top-right header toggle switch (`#franchiseToggle`) controls franchise and chain inclusion, defaulting to Indie-only discovery on boot (`state.includeFranchises = false`). "Useful for" section contains only utility feature chips (Work-friendly, Meeting room, Open late, Until midnight). | Clean defaults; truth in labeling |
+| R4.7 | The filter bar presents two streamlined rows: Type (All + 6 categories) and Useful for (5 utility features). County/city filter rows are omitted to preserve vertical space and guarantee at least 5 visible cards on mobile viewports. | Density on phones; clean defaults |
+| R4.8 | Dedicated top-right header toggle switch (`#franchiseToggle`) controls franchise and chain inclusion, defaulting to Indie-only discovery on boot (`state.includeFranchises = false`). "Useful for" section contains only utility feature chips (Work-friendly, Meeting room, Early risers, Open late, Until midnight). | Clean defaults; truth in labeling |
 | R4.9 | Regional scope covers Metro Atlanta across 14 counties (Gwinnett, Fulton, Forsyth, DeKalb, Cobb, Cherokee, Hall, Dawson, Clayton, Henry, Fayette, Coweta, Douglas, Rockdale), encompassing North Georgia foothills, central/ITP Atlanta (Downtown, Midtown, West Midtown, Old Fourth Ward, Inman Park, Decatur), and South Metro (Clayton, Henry, Fayette, Coweta, Douglas, Rockdale). | Curated regional discovery |
 | R4.10 | Dedicated top-right header dark mode toggle (`#themeToggle`) switches between light and dark themes, defaulting to browser/system color scheme (`prefers-color-scheme: dark`) with zero-FOUC inline detection. Manual toggles persist to `localStorage` (`caffeye-theme`). Dark mode themes the UI using official Caffeye brand tokens (`--caffeye-ink` `#222721` & forest background, `--caffeye-paper` `#F4F3ED` text at 13.5:1 contrast, `--caffeye-gold` `#DCAF59` accents) and switches Leaflet basemap tiles to CARTO `dark_all`. | Playfulness is information; Clean defaults |
 
@@ -144,3 +144,5 @@ Functional and non-functional requirements for the current state of the page. Ea
 | R13.9 | Opt-in vector preview (`?renderer=vector`): the list waits at most 3 s for MapLibre (JS and CSS) before falling back to Leaflet; after a WebGL context loss MapLibre's own restore gets 3 s of visible time before the one-time fallback, and changes made meanwhile are applied on restore; bounds are ATL_BOUNDS padded by 2° longitude and 1° latitude (MapLibre bounds must contain the whole viewport, unlike Leaflet's) so the whole-region fit still fits; a basemap outage notice stays until tiles load; the canvas label names the matching count and selection. | Preview fails safe |
 
 Selection centres at Leaflet zoom 16 or closer, MapLibre zoom 15 or closer. MapLibre zoom N corresponds to Leaflet zoom N+1. Back restores the original browsing camera.
+
+Early risers matches recorded opening times at or before 7 a.m. on at least one day, including 24-hour schedules. Missing or ambiguous hours do not qualify. Counts respect franchise inclusion; the filter applies to both map and list and combines with other features using AND. Check the detail hours for the applicable days.

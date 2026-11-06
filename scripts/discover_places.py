@@ -54,6 +54,7 @@ from refresh_ratings import (  # noqa: E402
 PLACES_PATH = ROOT / "public" / "places.json"
 EXCLUDE_PATH = ROOT / "scripts" / "places_exclude.json"
 CURATIONS_PATH = ROOT / "scripts" / "curations.json"
+BRAND_REGISTRY_PATH = ROOT / "scripts" / "brand_registry.json"
 
 REGION = {
     "label": "Metro Atlanta",
@@ -141,7 +142,9 @@ GROCERY_PATTERNS = (
     r"\bingles\b",
     r"\blidl\b",
     r"\baldi\b",
-    r"\bbj\s*s\s*wholesale\b",
+    r"\bbj\s*s\s*(?:wholesale|bakery)\b",
+    r"\bwfm coffee bar\b",
+    r"\bfood lion\b",
 )
 
 # Fast-food burger/fried food restaurants are excluded.
@@ -381,7 +384,9 @@ FRANCHISE_KEYWORDS = (
     r"\bingles\b",
     r"\blidl\b",
     r"\baldi\b",
-    r"\bbj\s*s\s*wholesale\b",
+    r"\bbj\s*s\s*(?:wholesale|bakery)\b",
+    r"\bwfm coffee bar\b",
+    r"\bfood lion\b",
     # Coffee franchises / national & regional chains
     r"\bcaribou\b",
     r"\b(the\s+)?human bean\b",
@@ -408,6 +413,18 @@ FRANCHISE_KEYWORDS = (
     r"\bqamaria\b",
     r"\btom n toms\b",
     r"\bcafe intermezzo\b",
+    r"\bgreat american cookies?\b",
+    r"\bpeach cobbler factory\b",
+    r"\bfive daughters\b",
+    r"\bmoge tee\b",
+    r"\bmenchie?\s*s\b",
+    r"\bcosta coffee\b",
+    r"\binsomnia cookies\b",
+    r"\bandy\s*s frozen custard\b",
+    r"\btcby\b",
+    r"\btoastique\b",
+    r"\bsalty donut\b",
+    r"\bpelican\s*s snoballs\b",
     # Bakery / treat franchises / chains
     r"\bcrumbl\b",
     r"\bparis baguette\b",
@@ -496,18 +513,91 @@ def clean_brand(name: str) -> str:
     return re.sub(r"\s+", " ", n).strip()
 
 
-def model_for(name: str, brand_counts=None) -> str:
-    """'franchise' for national/regional chains and multi-location brands, else 'independent'."""
-    cb = clean_brand(name)
-    if cb in BRAND_OVERRIDES:
-        return BRAND_OVERRIDES[cb]
+GENERIC_BRAND_WORDS = {
+    "coffee", "cafe", "bakery", "tea", "shop", "co", "company", "the", "and",
+    "sweet", "sweets", "treats", "cake", "cakes", "cookies", "donuts", "bagels",
+    "bake", "house", "kitchen", "boba", "bubble", "dessert", "desserts", "by",
+}
+# What follows these is a location or tagline: "Foxtail Coffee - Midtown", "Queen Tea (GSU)".
+BRAND_SUFFIX = re.compile(r"\s+[-–—|@/]\s*|\s*[-–—|]\s+|\s*[(（,:\"“#]")
+
+
+def has_distinct_word(stem: str) -> bool:
+    return bool(set(stem.split()) - GENERIC_BRAND_WORDS)
+
+
+def brand_stem(name: str) -> str:
+    """Brand part of a listing name, without location suffixes or a company form."""
+    head = BRAND_SUFFIX.split(name, maxsplit=1)[0]
+    stem = clean_brand(head)
+    # Location stripping must not merge unrelated shops into "coffee"/"cafe".
+    if not has_distinct_word(stem):
+        stem = norm(head)
+    stem = re.sub(r"^the\s+", "", stem)
+    return re.sub(r"\s+(co|company|llc|inc)$", "", stem)
+
+
+def brand_prefixes(stem: str):
+    """The stem, then its leading phrases of two or more words: "yogli mogli dunwoody" -> "yogli mogli"."""
+    words = stem.split()
+    yield stem
+    for size in range(len(words) - 1, 1, -1):
+        yield " ".join(words[:size])
+
+
+def count_brands(names) -> Counter:
+    """Locations per brand. A prefix counts only if some listing uses it as its whole name."""
+    stems = Counter(brand_stem(name) for name in names)
+    counts = Counter()
+    for stem, total in stems.items():
+        for prefix in brand_prefixes(stem):
+            if prefix in stems:
+                counts[prefix] += total
+    return counts
+
+
+def load_brand_registry() -> dict:
+    """Alias -> verified brand. See scripts/brand_registry.json."""
+    brands = json.loads(BRAND_REGISTRY_PATH.read_text())["brands"]
+    return {alias: brand for brand in brands for alias in brand["aliases"]}
+
+
+BRAND_REGISTRY = load_brand_registry()
+
+
+def registered_brand(name: str):
+    for prefix in brand_prefixes(brand_stem(name)):
+        if prefix in BRAND_REGISTRY:
+            return BRAND_REGISTRY[prefix]
+    return None
+
+
+def model_for(name: str) -> str:
+    """'franchise' for verified chains and named chain rules, else 'independent'.
+
+    Location count is deliberately absent: it does not show who owns a business.
+    """
+    brand = registered_brand(name)
+    if brand:
+        return "independent" if brand["independent"] else "franchise"
+    stem = brand_stem(name)
+    if stem in BRAND_OVERRIDES:
+        return BRAND_OVERRIDES[stem]
     n = norm(name)
     for pat in FRANCHISE_KEYWORDS:
         if re.search(pat, n):
             return "franchise"
-    if brand_counts and brand_counts.get(cb, 0) >= 3:
-        return "franchise"
     return "independent"
+
+
+def brand_leads(names) -> list:
+    """Unverified brands with 3+ listings: research leads for the registry, not classifications."""
+    return sorted(
+        (brand, total)
+        for brand, total in count_brands(names).items()
+        if total >= 3 and has_distinct_word(brand)
+        and not registered_brand(brand) and model_for(brand) == "independent"
+    )
 
 
 # ---- derived fields ---------------------------------------------------------
@@ -667,7 +757,7 @@ def late_for(periods):
     return {"tier": tier, "when": "; ".join(parts)}
 
 
-def to_record(place: dict, brand_counts=None, curations=None, curation_defaults=None):
+def to_record(place: dict, curations=None, curation_defaults=None):
     """(record, None) for an in-scope place, else (None, reason)."""
     status = place.get("businessStatus") or "OPERATIONAL"
     if status != "OPERATIONAL":
@@ -686,6 +776,8 @@ def to_record(place: dict, brand_counts=None, curations=None, curation_defaults=
         return None, "grocery"
     if is_fast_food(name):
         return None, "fast_food"
+    if not place.get("userRatingCount") and not (place.get("regularOpeningHours") or {}).get("weekdayDescriptions") and not place.get("websiteUri"):
+        return None, "unsubstantiated listing"
     category = category_for(place)
     if not category:
         return None, f"type:{place.get('primaryType') or 'none'}"
@@ -713,7 +805,7 @@ def to_record(place: dict, brand_counts=None, curations=None, curation_defaults=
             "lat": round(float(lat), 6),
             "lng": round(float(lng), 6),
             "category": category,
-            "model": model_for(name, brand_counts),
+            "model": model_for(name),
             "types": [t for t in place.get("types") or [] if t in CATEGORY_BY_PRIMARY],
             "rating": round(float(place["rating"]), 1)
             if place.get("rating") is not None
@@ -728,10 +820,18 @@ def to_record(place: dict, brand_counts=None, curations=None, curation_defaults=
         rec["late"] = late
     rec["website"] = place.get("websiteUri")
     rec["googleUrl"] = place.get("googleMapsUri")
+    brand = registered_brand(name)
+    if brand and not brand["independent"]:
+        rec["chainScope"] = brand["chainScope"]
+        rec["franchiseProgram"] = brand["franchiseProgram"]
+
     if curations and place.get("id") in curations:
         cur = curations[place["id"]]
         if curation_defaults is None:
             curation_defaults = load_curation_defaults()
+        if cur.get("hoursUnverified"):
+            rec["hoursUnverified"] = True
+            rec.pop("late", None)
         if "category" in cur:
             rec["category"] = cur["category"]
         if "cw" in cur:
@@ -779,25 +879,29 @@ def stamp_provenance(cw: dict, cur: dict, defaults: tuple) -> dict:
 
 
 def build_places(raw: dict, exclude_ids=frozenset(), curations=None,
-                 curation_defaults=None):
+                 curation_defaults=None, previous=None):
     """raw: {placeId: place} -> (records sorted by placeId, stats)."""
     if curations is None:
         curations = load_curations()
     if curation_defaults is None:
         curation_defaults = load_curation_defaults()
-    brand_counts = Counter(
-        clean_brand((p.get("displayName") or {}).get("text", ""))
-        for p in raw.values()
-    )
     recs, dropped = [], Counter()
     for pid, place in raw.items():
         if pid in exclude_ids:
             dropped["excluded"] += 1
             continue
-        rec, reason = to_record(place, brand_counts, curations, curation_defaults)
+        rec, reason = to_record(place, curations, curation_defaults)
         if rec is None:
             dropped[reason] += 1
             continue
+        prior = (previous or {}).get(pid)
+        if prior and (prior.get("ratingNum") or 0) > 0 and (
+            rec["rating"] is None or rec["ratingNum"] < prior["ratingNum"] * 0.5
+        ):
+            for field in ("rating", "ratingNum", "ratingCount"):
+                rec[field] = prior[field]
+            rec["ratingCheckedMonth"] = prior.get("ratingCheckedMonth", "unknown")
+            rec["ratingRefreshIssue"] = "Latest Google response omitted ratings or lost more than half the review count; retained previous observation."
         recs.append(rec)
     recs.sort(key=lambda r: r["placeId"])
     return recs, {"kept": len(recs), "dropped": dict(dropped)}
@@ -1050,6 +1154,9 @@ def report(recs, stats, curated, raw) -> None:
     )
     for d in dupes:
         print(f"   {d['discovered']} ~ {d['curated']} ({d['placeId']})")
+    leads = brand_leads(r["name"] for r in recs if r["model"] == "independent")
+    print(f"unverified brands with 3+ listings (leads for scripts/brand_registry.json): {len(leads)}")
+
 
     # Persist QA leads to scratch for actionable review (F7)
     qa_leads_path = ROOT / "scratch" / "curated_qa_leads.json"
@@ -1137,7 +1244,10 @@ def main() -> int:
         action="store_true",
         help="allow replaying and writing a dump marked with incomplete: true",
     )
+    ap.add_argument("--previous", default=str(PLACES_PATH), help="prior published dataset for rating-regression checks; no API calls")
     args = ap.parse_args()
+    prior_data = json.loads(Path(args.previous).read_text()) if Path(args.previous).exists() else {}
+    previous = {r["placeId"]: {"ratingCheckedMonth": prior_data.get("checkedMonth", "unknown"), **r} for r in prior_data.get("places", [])}
 
     if args.write and not args.replay:
         sys.exit(
@@ -1152,7 +1262,7 @@ def main() -> int:
                 "Writing an incomplete dump could corrupt the public dataset. "
                 "Pass --allow-incomplete to override."
             )
-        recs, stats = build_places(dump["places"], load_exclusions())
+        recs, stats = build_places(dump["places"], load_exclusions(), previous=previous)
         report(recs, stats, curated_with_coords(), dump["places"])
         if args.write:
             write_places(
@@ -1247,7 +1357,7 @@ def main() -> int:
             },
             incomplete=incomplete,
         )
-    recs, stats = build_places(raw, load_exclusions())
+    recs, stats = build_places(raw, load_exclusions(), previous=previous)
     report(recs, stats, curated_with_coords(), raw)
     print(
         f"\npaid calls this run: {client.calls[SKU_FULL]}; ledger now {ledger.used(SKU_FULL)}"

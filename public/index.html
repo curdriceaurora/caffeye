@@ -714,6 +714,7 @@
     .filter-label { display: none; }
     .filter-row { gap: 5px; overflow-x: auto; flex-wrap: nowrap; padding-bottom: 2px; }
     .filter-row::-webkit-scrollbar { display: none; }
+    #categoryChips, #featureChips { flex-wrap: nowrap; flex: 0 0 auto; }
     .chip { flex-shrink: 0; padding: 2px 7px; font-size: 11.5px; gap: 4px; }
     .chip .chip-icon { font-size: 11.5px; }
     .chip .num { font-size: 10px; }
@@ -849,6 +850,29 @@ const CATS = {
   // Per-shop finalization shared by boot and retry: resolve coords from ADDR,
   // validate, stash base coords (spread is derived from base, so re-runs are
   // idempotent), assign a unique id, fill display defaults. Returns false to drop.
+// Use recorded opening times, never closing times or an assumed schedule.
+// A weekly match means at least one day, not necessarily today.
+// A verified chain with no verified franchise program must not be called a franchise.
+function chainLabel(shop) {
+  return shop.chainScope && !shop.franchiseProgram ? 'Chain' : 'Franchise';
+}
+
+function isEarlyRiser(hours) {
+  if (typeof hours !== 'string') return false;
+  return hours.split('·').some(span => {
+    if (/\bopen 24 hours\b/i.test(span)) return true;
+    const opening = span.match(/(?:^|\s)(\d{1,2})(?::(\d{2}))?\s*(am|pm)?\s*[-–—]\s*(\d{1,2})(?::(\d{2}))?\s*(am|pm)\b/i);
+    if (!opening) return false;
+    const hour = Number(opening[1]);
+    const minute = Number(opening[2] || 0);
+    const meridiem = (opening[3] || opening[6]).toLowerCase();
+    if (meridiem !== 'am') return false;
+    // Google elides the first suffix only within the same AM/PM period.
+    if (!opening[3] && ((hour % 12) * 60 + minute > (Number(opening[4]) % 12) * 60 + Number(opening[5] || 0))) return false;
+    return hour >= 1 && hour <= 12 && minute < 60 && (hour % 12) * 60 + minute <= 7 * 60;
+  });
+}
+
   function prepareShop(s) {
     const key = s.addrKey;
     if (key && ADDR[key]) { s.lat = ADDR[key].lat; s.lng = ADDR[key].lng; }
@@ -868,6 +892,7 @@ const CATS = {
     s.id = uniqueId;
     s.neighborhood = s.neighborhood || NEIGHBORHOODS[key] || s.city || "Area not listed";
     s.model = s.model || 'independent';
+    s.earlyRiser = !s.hoursUnverified && isEarlyRiser(s.hours);
     return true;
   }
 
@@ -1122,6 +1147,7 @@ function boot(opts) {
     const cw = shop.cw || {};
     if (ln && ln.tier === 'midnight') tags.push('Until midnight');
     else if (ln) tags.push('Open late');
+    if (shop.earlyRiser) tags.push('Early risers');
     if (cw.hasMeetingRoom) tags.push('Meeting room');
     else if (cw.tier === 'excellent') tags.push('Work-friendly');
     for (const item of (shop.loved || [])) {
@@ -1135,6 +1161,7 @@ function boot(opts) {
     const tags = [];
     const cw = shop.cw || {};
     const ln = shop.late;
+    if (shop.earlyRiser) tags.push({ label: 'Early risers', cls: 'work', icon: '🌅' });
     if (cw.tier === 'excellent') tags.push({ label: 'Work', cls: 'work', icon: '💻' });
     if (cw.hasMeetingRoom) tags.push({ label: 'Meetings', cls: 'work', icon: '🤝' });
     if (ln && ln.tier === 'midnight') tags.push({ label: 'Until midnight', cls: 'late', icon: '🦉' });
@@ -1201,6 +1228,7 @@ function boot(opts) {
   const FEATURES = [
     { key: 'work', label: 'Work-friendly', icon: '💻', themeColor: '#2e7d4f', matches: s => s.cw?.tier === 'excellent' },
     { key: 'meeting', label: 'Meeting room', icon: '🤝', themeColor: '#7a5635', matches: s => s.cw?.hasMeetingRoom },
+    { key: 'early', label: 'Early risers', icon: '🌅', themeColor: '#7a5635', matches: s => s.earlyRiser },
     { key: 'late', label: 'Open late', icon: '🌙', themeColor: '#3f4f8a', matches: s => s.late },
     { key: 'midnight', label: 'Until midnight', icon: '🦉', themeColor: '#2a2f5c', matches: s => s.late?.tier === 'midnight' }
   ];
@@ -1258,7 +1286,7 @@ function boot(opts) {
     featChipsEl.innerHTML = '';
 
     FEATURES.forEach(f => {
-      featChipsEl.appendChild(makeChip({
+      const chip = makeChip({
         label: f.label, count: inScope.filter(f.matches).length, icon: f.icon, themeColor: f.themeColor,
         chipKey: 'feat-' + f.key,
         onClick: () => {
@@ -1268,7 +1296,9 @@ function boot(opts) {
           announceFilterChange();
         },
         isActive: state.features.has(f.key)
-      }));
+      });
+      if (f.key === 'early') chip.title = 'Opens by 7 a.m. on at least one day (includes 24-hour spots). Check hours for your day.';
+      featChipsEl.appendChild(chip);
     });
 
     if (focusedKey) {
@@ -1326,7 +1356,7 @@ function boot(opts) {
   function createLeafletMap(center = REGION_VIEW.center, zoom = REGION_VIEW.zoom) {
     map = L.map('map', {
       zoomControl: true,
-      minZoom: 7,
+      minZoom: 6,
       maxZoom: 19,
       maxBounds: ATL_BOUNDS,
       maxBoundsViscosity: 1.0
@@ -1334,7 +1364,7 @@ function boot(opts) {
     tileLayer = L.tileLayer(getCartoTileUrl(getCurrentTheme()), {
       attribution: '&copy; OpenStreetMap &copy; CARTO',
       subdomains: 'abcd',
-      minZoom: 7,
+      minZoom: 6,
       maxZoom: 19,
       bounds: ATL_BOUNDS,
       updateWhenIdle: true,
@@ -1348,7 +1378,8 @@ function boot(opts) {
       spiderfyOnMaxZoom: true,
       spiderfyDistanceMultiplier: 1.4,
       maxClusterRadius: function(zoom) {
-        return zoom >= 15 ? 35 : (zoom >= 13 ? 45 : 55);
+        // Below zoom 8 the whole region spans under 140 px; a wider radius collapses it to one bubble.
+        return zoom >= 15 ? 35 : (zoom >= 13 ? 45 : (zoom >= 8 ? 55 : 20));
       },
       chunkedLoading: true,
       chunkInterval: 100,
@@ -1502,13 +1533,15 @@ function boot(opts) {
     const bounds = L.latLngBounds(shops.map(shop => [shop.lat, shop.lng]));
     map.stop();
     const mapH = map.getSize ? map.getSize().y : (document.getElementById('map')?.clientHeight || 300);
-    const pad = mapH < 160 ? [12, 12] : [40, 40];
+    const pad = mapH < 200 ? [12, 12] : [40, 40];
     if (vectorRenderer) {
       map.resize();
       map.fitBounds([[bounds.getWest(), bounds.getSouth()], [bounds.getEast(), bounds.getNorth()]], {
         padding: pad[0], maxZoom: 15, duration: animate && !reducedMotion() ? 800 : 0
       });
     } else {
+      // Only short maps need zoom 6 to hold the region; taller ones stop at 7, before the tiles become a speck.
+      map.setMinZoom(mapH < 165 ? 6 : 7);
       map.fitBounds(bounds, { padding: pad, maxZoom: 16, animate: animate && !reducedMotion() });
     }
   }
@@ -1786,6 +1819,7 @@ function boot(opts) {
     const ln = s.late;
     if (state.features.has('work') && cw.tier !== 'excellent') return false;
     if (state.features.has('meeting') && !cw.hasMeetingRoom) return false;
+    if (state.features.has('early') && !s.earlyRiser) return false;
     if (state.features.has('late') && !ln) return false;
     if (state.features.has('midnight') && (!ln || ln.tier !== 'midnight')) return false;
     if (!term) return true;
@@ -1863,7 +1897,7 @@ function boot(opts) {
       ? `<span class="score">◆ ${shop.scoreText}</span>`
       : `<span class="muted">no rating</span>`;
     const modelTag = shop.model === 'franchise'
-      ? ' · <span class="model-tag franchise">Franchise</span>'
+      ? ` · <span class="model-tag franchise">${chainLabel(shop)}</span>`
       : ' · <span class="model-tag indie">Indie</span>';
     const curatedTag = shop.curated ? ' · <span class="curated-tag">✔ curated</span>' : '';
     li.innerHTML = `
@@ -2143,10 +2177,10 @@ function boot(opts) {
     const loved = shop.loved || [];
     const ratingHtml = shop.rated
       ? `<span class="score">◆ ${shop.scoreText}</span><span class="score-label">weighted score</span>` +
-        `<span class="google">Google <span class="star">★</span> ${shop.ratingText}${shop.ratingCount ? ' · ' + shop.ratingCount + ' reviews' : ''}</span>`
+        `<span class="google">Google <span class="star">★</span> ${shop.ratingText}${shop.ratingCount ? ' · ' + shop.ratingCount + ' reviews' : ''}${shop.ratingCheckedMonth ? ' · checked ' + escapeHtml(shop.ratingCheckedMonth) : ''}</span>`
       : `<span class="muted">No public rating yet</span>`;
     const modelTag = shop.model === 'franchise'
-      ? ' · <span class="model-tag franchise">Franchise</span>'
+      ? ` · <span class="model-tag franchise">${chainLabel(shop)}</span>`
       : ' · <span class="model-tag indie">Indie spot</span>';
     const curatedTag = shop.curated ? ' · <span class="curated-tag">✔ curated</span>' : '';
 
@@ -2181,7 +2215,7 @@ function boot(opts) {
     html += `<div class="detail-section">
       <div class="detail-section-label">Location & hours</div>
       <div class="detail-text-muted">${escapeHtml(shop.address || '')}</div>
-      ${shop.hours ? `<div class="detail-text-muted" style="margin-top:4px;">${escapeHtml(shop.hours)}</div>` : ''}
+      ${shop.hours ? `<div class="detail-text-muted" style="margin-top:4px;">${escapeHtml(shop.hours)}${shop.hoursUnverified ? ' (walk-in hours unverified)' : ''}</div>` : ''}
     </div>`;
     if (cw) {
       const tierLabel = { excellent: 'Coworking-ready', good: 'Workable', limited: 'Quick-grab' }[cw.tier];
