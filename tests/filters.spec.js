@@ -14,7 +14,7 @@ test.describe('filter chips', () => {
       return { total: nums[0], sum: nums.slice(1).reduce((a, b) => a + b, 0) };
     });
     expect(sum).toBe(total);
-    expect(total).toBe(970);
+    expect(total).toBe(1323);
   });
 
   test('multi-category selection unions; All resets', async ({ page }) => {
@@ -24,7 +24,7 @@ test.describe('filter chips', () => {
     const union = Number(await page.locator('#resultsCount').textContent());
     expect(union).toBeGreaterThan(Number(coffee));
     await page.locator('#categoryChips .chip', { hasText: 'All' }).click();
-    await expect.poll(async () => page.locator('#resultsCount').textContent()).toBe('970');
+    await expect.poll(async () => page.locator('#resultsCount').textContent()).toBe('1323');
   });
 
   test('feature chips intersect with categories', async ({ page }) => {

@@ -260,15 +260,6 @@ class ModelTests(unittest.TestCase):
         self.assertEqual(D.model_for("Ginkgo Bakery & Cafe"), "independent")
         self.assertEqual(D.model_for("Boba Mocha"), "independent")
 
-    def test_multi_location_brand_frequency(self):
-        brand_counts = Counter({"tier couture bakery": 3, "valor coffee": 2})
-        # 3 locations -> franchise
-        self.assertEqual(
-            D.model_for("Tier Couture Bakery Norcross", brand_counts), "franchise"
-        )
-        # 2 locations without franchise keyword -> independent
-        self.assertEqual(D.model_for("Valor Coffee", brand_counts), "independent")
-
 
 class RecordTests(unittest.TestCase):
     def test_sweet_hut_record(self):
@@ -610,13 +601,13 @@ class OverlayTests(unittest.TestCase):
                 "usp": "Figurine-painting concept cafe",
             }
         }
-        rec, reason = D.to_record(BY_NAME["Boba Mocha"], None, curations)
+        rec, reason = D.to_record(BY_NAME["Boba Mocha"], curations)
         self.assertIsNone(reason)
         self.assertEqual(rec["category"], "Specialty")
         self.assertEqual(rec["usp"], "Figurine-painting concept cafe")
 
     def test_to_record_without_overlay_keeps_classified_category(self):
-        rec, _ = D.to_record(BY_NAME["Boba Mocha"], None, {})
+        rec, _ = D.to_record(BY_NAME["Boba Mocha"], {})
         self.assertEqual(rec["category"], "Tea/Boba")
 
     def test_to_record_stamps_provenance_on_curated_cw(self):
@@ -628,7 +619,7 @@ class OverlayTests(unittest.TestCase):
             }
         }
         rec, reason = D.to_record(
-            BY_NAME["Boba Mocha"], None, curations,
+            BY_NAME["Boba Mocha"], curations,
             curation_defaults=("September 2026", "editorial"))
         self.assertIsNone(reason)
         self.assertEqual(rec["cw"]["source"], "editorial")

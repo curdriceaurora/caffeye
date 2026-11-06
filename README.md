@@ -23,16 +23,16 @@ The list shows only the venues that are in the map view. The list order is the B
 
 ## Data
 
-The September 2026 dataset has 1,705 venues in 14 counties. The page shows 970 independent venues by default. To show all 1,705 venues, set the **Include franchise stores** toggle to on.
+The November 2026 dataset has 2,233 venues in 14 counties. The page shows 1,323 independent venues by default. To show all 2,233 venues, set the **Include franchise stores** toggle to on.
 
 The data comes from two files:
 
-- `public/shops.json` contains 61 curated seed venues in the Duluth area.
+- `public/shops.json` contains 60 curated seed venues in the Duluth area.
 - `public/places.json` contains regional venues. A script makes this file from Google Places data.
 
-If the page cannot load the regional data, it shows the 61 seed venues. By default, 41 of these venues are independent. A banner tells you that the coverage is partial.
+If the page cannot load the regional data, it shows the 60 seed venues. By default, 40 of these venues are independent. A banner tells you that the coverage is partial.
 
-The page calculates all counts, the region name, and the verification month from the JSON files. These counts are for September 2026 only. After a data refresh, use the data-summary procedure in [TESTS.md](TESTS.md) to get the new counts.
+The page calculates all counts, the region name, and the verification month from the JSON files. These counts are for November 2026 only. After a data refresh, use the data-summary procedure in [TESTS.md](TESTS.md) to get the new counts.
 
 ## Documents
 

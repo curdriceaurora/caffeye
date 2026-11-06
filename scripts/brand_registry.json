@@ -1,0 +1,94 @@
+{
+  "description": "Verified brand classifications. These outrank name rules and location counts. franchiseProgram is true when a program was verified and null when none was; null is not proof that none exists. Announced locations do not count.",
+  "checked": "2026-11-06",
+  "brands": [
+    {
+      "brand": "Foxtail Coffee",
+      "aliases": ["foxtail coffee"],
+      "independent": false,
+      "chainScope": "national",
+      "franchiseProgram": true,
+      "evidence": "100+ listed locations across several states; franchising since 2019."
+    },
+    {
+      "brand": "Yogli Mogli",
+      "aliases": ["yogli mogli"],
+      "independent": false,
+      "chainScope": "regional",
+      "franchiseProgram": true,
+      "evidence": "8 listed locations in Georgia and Illinois; active franchise program; part of the U-Swirl family."
+    },
+    {
+      "brand": "Boarding Pass Coffee",
+      "aliases": ["boarding pass coffee"],
+      "independent": false,
+      "chainScope": "regional",
+      "franchiseProgram": true,
+      "evidence": "4 cafes and a roastery in Georgia; advertises franchise opportunities. Does not establish that existing cafes are franchisee-operated."
+    },
+    {
+      "brand": "Dancing Goats Coffee",
+      "aliases": ["dancing goats"],
+      "independent": false,
+      "chainScope": "regional",
+      "franchiseProgram": null,
+      "evidence": "6 Atlanta cafes owned by St. Louis-based Kaldi's Coffee since 2023; no franchise program verified."
+    },
+    {
+      "brand": "Kaldi's Coffee",
+      "aliases": ["kaldi s coffee", "depot by kaldi s coffee"],
+      "independent": false,
+      "chainScope": "regional",
+      "franchiseProgram": null,
+      "evidence": "Parent of Dancing Goats; regional cafe network based in Missouri; no franchise program verified."
+    },
+    {
+      "brand": "Queen Tea",
+      "aliases": ["queen tea"],
+      "independent": true,
+      "chainScope": "local",
+      "franchiseProgram": null,
+      "evidence": "Founded in Kennesaw in 2019; 5 listed Georgia locations; no franchise program verified."
+    },
+    {
+      "brand": "Spiller Park Coffee",
+      "aliases": ["spiller park coffee"],
+      "independent": true,
+      "chainScope": "local",
+      "franchiseProgram": null,
+      "evidence": "Founder-owned Atlanta cafes; no franchise program verified."
+    },
+    {
+      "brand": "Chattahoochee Coffee Company",
+      "aliases": ["chattahoochee coffee"],
+      "independent": true,
+      "chainScope": "local",
+      "franchiseProgram": null,
+      "evidence": "3 metro Atlanta locations; no franchise program verified."
+    },
+    {
+      "brand": "Bellwood Coffee",
+      "aliases": ["bellwood coffee"],
+      "independent": true,
+      "chainScope": "local",
+      "franchiseProgram": null,
+      "evidence": "6 listed metro Atlanta locations; no franchise network or chain ownership verified."
+    },
+    {
+      "brand": "Condesa Coffee",
+      "aliases": ["condesa coffee"],
+      "independent": true,
+      "chainScope": "local",
+      "franchiseProgram": null,
+      "evidence": "2 operating Atlanta cafes; Decatur location planned for January 2027 is not counted."
+    },
+    {
+      "brand": "Little Tart Bakeshop",
+      "aliases": ["little tart bakeshop"],
+      "independent": true,
+      "chainScope": "local",
+      "franchiseProgram": null,
+      "evidence": "3 Atlanta locations: Grant Park, Krog Street Market and Summerhill; no franchise program verified."
+    }
+  ]
+}
