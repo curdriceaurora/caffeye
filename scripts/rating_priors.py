@@ -75,7 +75,7 @@ def regional_priors(seed, region):
     rated = [s['rating'] for s in shops if _number(s.get('rating'))]
     # Stricter than JS `ratingNum || 0` for non-numeric counts (none exist in the data).
     counts = sorted(s['ratingNum'] if _number(s.get('ratingNum')) else 0 for s in shops)
-    return {'C': sum(rated) / len(rated), 'm': counts[len(counts) // 2] or 1,
+    return {'C': math.fsum(rated) / len(rated), 'm': counts[len(counts) // 2] or 1,
             'population': len(shops), 'source': 'shops.json + places.json; rating_priors.py'}
 
 
