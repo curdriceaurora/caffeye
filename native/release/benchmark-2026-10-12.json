@@ -1,0 +1,39 @@
+{
+  "benchmarkSourceSHA256": "a5dce7c90daedf1a145a1dad057dad279d7d6249f33774feb0d1e3fcc81ecd32",
+  "build_search_index": {
+    "checksum": 7071300,
+    "iterations": 30,
+    "median_ms": 1.792542,
+    "p95_ms": 3.191625
+  },
+  "datasetSHA256": "75db5af2068dd891fbf4f12c07aaa893dccad45d4399829c71bb7c9e50a9121b",
+  "decode_validate": {
+    "checksum": 51150,
+    "iterations": 30,
+    "median_ms": 20.453125,
+    "p95_ms": 23.582666
+  },
+  "indexed_search": {
+    "checksum": 26000,
+    "iterations": 100,
+    "median_ms": 4.9225,
+    "p95_ms": 6.659667
+  },
+  "isDemo": false,
+  "logical_processors": 18,
+  "measuredAtUTC": "2026-10-13T01:35:07.183304+00:00",
+  "os": "Version 27.2 (Build 26B5101f)",
+  "peak_process_rss_bytes": 26165248,
+  "ranking": {
+    "checksum": 51150,
+    "iterations": 30,
+    "median_ms": 2.221084,
+    "p95_ms": 2.475208
+  },
+  "ratings": 0,
+  "revision": "venues-no-ratings-55e06807127a44ec",
+  "schemaVersion": 1,
+  "scope": "Release command-line domain harness on this Mac; excludes SwiftUI, MapKit rendering, app launch and GPU performance.",
+  "toolchain": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.2.0",
+  "venues": 1705
+}
