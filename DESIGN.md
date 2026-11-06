@@ -306,4 +306,4 @@ The rejections are recorded so they are not re-proposed. They are judgments from
 
 ## November 2026 refresh review
 
-Current loaded population: 2,234 venues (1,278 independent / 956 chain or franchise). The dated September examples above are historical. Leaflet minimum zoom is 6; MapLibre minimum zoom is 5. Mobile filter containers stay on one line within each horizontal scroll row. See `tasks/refresh-review-2026-11-05.md` for current data provenance and utility-filter counts.
+Current loaded population: 2,233 venues (1,323 independent / 910 chain or franchise). The dated September examples above are historical. Leaflet minimum zoom is 7, or 6 on maps under 165 px tall; MapLibre minimum zoom is 5. Mobile filter containers stay on one line within each horizontal scroll row. See `tasks/refresh-review-2026-11-05.md` for current data provenance and utility-filter counts.

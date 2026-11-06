@@ -852,6 +852,11 @@ const CATS = {
   // idempotent), assign a unique id, fill display defaults. Returns false to drop.
 // Use recorded opening times, never closing times or an assumed schedule.
 // A weekly match means at least one day, not necessarily today.
+// A verified chain with no verified franchise program must not be called a franchise.
+function chainLabel(shop) {
+  return shop.chainScope && !shop.franchiseProgram ? 'Chain' : 'Franchise';
+}
+
 function isEarlyRiser(hours) {
   if (typeof hours !== 'string') return false;
   return hours.split('·').some(span => {
@@ -1373,7 +1378,8 @@ function boot(opts) {
       spiderfyOnMaxZoom: true,
       spiderfyDistanceMultiplier: 1.4,
       maxClusterRadius: function(zoom) {
-        return zoom >= 15 ? 35 : (zoom >= 13 ? 45 : 55);
+        // Below zoom 8 the whole region spans under 140 px; a wider radius collapses it to one bubble.
+        return zoom >= 15 ? 35 : (zoom >= 13 ? 45 : (zoom >= 8 ? 55 : 20));
       },
       chunkedLoading: true,
       chunkInterval: 100,
@@ -1527,13 +1533,15 @@ function boot(opts) {
     const bounds = L.latLngBounds(shops.map(shop => [shop.lat, shop.lng]));
     map.stop();
     const mapH = map.getSize ? map.getSize().y : (document.getElementById('map')?.clientHeight || 300);
-    const pad = mapH < 160 ? [12, 12] : [40, 40];
+    const pad = mapH < 200 ? [12, 12] : [40, 40];
     if (vectorRenderer) {
       map.resize();
       map.fitBounds([[bounds.getWest(), bounds.getSouth()], [bounds.getEast(), bounds.getNorth()]], {
         padding: pad[0], maxZoom: 15, duration: animate && !reducedMotion() ? 800 : 0
       });
     } else {
+      // Only short maps need zoom 6 to hold the region; taller ones stop at 7, before the tiles become a speck.
+      map.setMinZoom(mapH < 165 ? 6 : 7);
       map.fitBounds(bounds, { padding: pad, maxZoom: 16, animate: animate && !reducedMotion() });
     }
   }
@@ -1889,7 +1897,7 @@ function boot(opts) {
       ? `<span class="score">◆ ${shop.scoreText}</span>`
       : `<span class="muted">no rating</span>`;
     const modelTag = shop.model === 'franchise'
-      ? ' · <span class="model-tag franchise">Franchise</span>'
+      ? ` · <span class="model-tag franchise">${chainLabel(shop)}</span>`
       : ' · <span class="model-tag indie">Indie</span>';
     const curatedTag = shop.curated ? ' · <span class="curated-tag">✔ curated</span>' : '';
     li.innerHTML = `
@@ -2172,7 +2180,7 @@ function boot(opts) {
         `<span class="google">Google <span class="star">★</span> ${shop.ratingText}${shop.ratingCount ? ' · ' + shop.ratingCount + ' reviews' : ''}${shop.ratingCheckedMonth ? ' · checked ' + escapeHtml(shop.ratingCheckedMonth) : ''}</span>`
       : `<span class="muted">No public rating yet</span>`;
     const modelTag = shop.model === 'franchise'
-      ? ' · <span class="model-tag franchise">Franchise</span>'
+      ? ` · <span class="model-tag franchise">${chainLabel(shop)}</span>`
       : ' · <span class="model-tag indie">Indie spot</span>';
     const curatedTag = shop.curated ? ' · <span class="curated-tag">✔ curated</span>' : '';
 

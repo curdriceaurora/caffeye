@@ -2328,7 +2328,7 @@
   "ratingPriors": {
     "C": 4.287966021708353,
     "m": 171,
-    "population": 2234,
+    "population": 2233,
     "source": "shops.json + places.json; rating_priors.py"
   }
 }

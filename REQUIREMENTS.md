@@ -6,7 +6,7 @@ Functional and non-functional requirements for the current state of the page. Ea
 
 | ID | Requirement | Principle |
 |---|---|---|
-| R1.1 | The November 2026 snapshot loads **2,234** venues across 14 Metro Atlanta counties: 60 curated seed venues plus 2,174 admitted regional venues after deduplicating the 2,219-record `places.json`. Default discovery shows 1,278 independents; enabling franchises shows all 2,234. Runtime totals derive from accepted records, not a hardcoded target. | Curation > count |
+| R1.1 | The November 2026 snapshot loads **2,233** venues across 14 Metro Atlanta counties: 60 curated seed venues plus 2,173 admitted regional venues after deduplicating the 2,218-record `places.json`. Default discovery shows 1,323 independents; enabling franchises shows all 2,233. Runtime totals derive from accepted records, not a hardcoded target. | Curation > count |
 | R1.2 | Every shop has identity, address, coordinates, category, rating (or `null`), review counts, and a Google Maps link. Curated seed records additionally have hours, USP description, 3 "loved" items, and a signature drink/dish. Regional editorial fields may be empty until verified overlays supply them; do not fabricate recommendations to fill gaps. | — |
 | R1.3 | Coworking data is an optional inline `cw` object with `tier` ∈ {`excellent`, `good`, `limited`} and an optional reservable-meeting-room flag. All curated seed venues have it; regional records without verified editorial data show unknown work suitability. | — |
 | R1.4 | Every shop has a `website` field (URL string or `null`). | — |
@@ -29,7 +29,7 @@ Functional and non-functional requirements for the current state of the page. Ea
 | R2.7 | Shops at the same building coords are fanned out in a ~20 m ring so pins don't fully overlap. | Labels must not lie |
 | R2.8 | Tapping a pin selects the shop directly (no preview popup). | One tap to the answer |
 | R2.9 | "Back to list" restores the camera saved before the first selection. Switching selections preserves that camera. | — |
-| R2.10 | The map zoom is bounded between `minZoom: 6` and `maxZoom: 19`. Viewport panning and tile network requests are strictly bounded to Greater Atlanta via `ATL_BOUNDS` (`[33.15, -85.05]` to `[34.75, -83.30]`) with `maxBoundsViscosity: 1.0`, preventing users from panning away from the coverage area and eliminating unnecessary tile rendering/requests. Applies to the default Leaflet renderer; the opt-in vector preview uses the padded bounds in R13.9. | Bound performance and avoid stray navigation |
+| R2.10 | The map zoom is bounded between `minZoom: 7` (6 on maps under 165 px tall, which cannot hold the region at 7) and `maxZoom: 19`. Viewport panning and tile network requests are strictly bounded to Greater Atlanta via `ATL_BOUNDS` (`[33.15, -85.05]` to `[34.75, -83.30]`) with `maxBoundsViscosity: 1.0`, preventing users from panning away from the coverage area and eliminating unnecessary tile rendering/requests. Applies to the default Leaflet renderer; the opt-in vector preview uses the padded bounds in R13.9. | Bound performance and avoid stray navigation |
 
 ## R3. Pin labels
 

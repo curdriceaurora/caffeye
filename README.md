@@ -23,7 +23,7 @@ The list shows only the venues that are in the map view. The list order is the B
 
 ## Data
 
-The November 2026 dataset has 2,234 venues in 14 counties. The page shows 1,278 independent venues by default. To show all 2,234 venues, set the **Include franchise stores** toggle to on.
+The November 2026 dataset has 2,233 venues in 14 counties. The page shows 1,323 independent venues by default. To show all 2,233 venues, set the **Include franchise stores** toggle to on.
 
 The data comes from two files:
 

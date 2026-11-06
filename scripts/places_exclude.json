@@ -106,5 +106,9 @@
   {
     "placeId": "ChIJZcQbbAC99YgRtMfbD5skPJ4",
     "reason": "Duplicate of ChIJK13e_9S99YgRdDHgQMJ-B54: adjacent 858/860 Duluth Hwy address, same Starbucks store locator ID 8616. Retain established 1084-review record."
+  },
+  {
+    "placeId": "ChIJoV3uwQ0H9YgRn-cunJ9Q9bw",
+    "reason": "Condesa Coffee Decatur: announced for January 2027, not yet operating despite Google status. Remove once open."
   }
 ]

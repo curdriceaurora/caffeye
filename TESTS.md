@@ -18,7 +18,7 @@ Local: `python3 -m http.server 8765 --directory public` in the project root, ope
 
 | ID | Trace | Test | Pass |
 |---|---|---|---|
-| T1.1 | R1.1 | `js> SHOPS.length` | `2234` with `places.json` loaded (Nov 2026); `60` in baseline-only mode |
+| T1.1 | R1.1 | `js> SHOPS.length` | `2233` with `places.json` loaded (Nov 2026); `60` in baseline-only mode |
 | T1.2 | R1.2 | `js> SHOPS.every(s => s.name && s.address && s.lat && s.lng && s.category && s.googleUrl) && SHOPS.filter(s => s.curated).every(s => s.yelpUrl && s.hours && s.usp && s.signature && Array.isArray(s.loved) && s.loved.length === 3)` | `true` |
 | T1.3 | R1.2 | `js> SHOPS.filter(s => !s.lat \|\| !s.lng \|\| s.lat === 0).length` | `0` |
 | T1.4 | R1.3 | `js> SHOPS.filter(s => s.cw).every(s => ['excellent','good','limited'].includes(s.cw.tier)) && SHOPS.filter(s => s.curated).every(s => s.cw)` | `true` |
@@ -26,7 +26,7 @@ Local: `python3 -m http.server 8765 --directory public` in the project root, ope
 | T1.6 | R1.5 | `js> SHOPS.filter(s => s.late).every(s => ['10pm+','midnight'].includes(s.late.tier) && typeof s.late.when === 'string')` | `true` |
 | T1.7 | R1.6 | `js> SHOPS.filter(s => !ADDR[s.addrKey] \|\| (!s.curated && !s.addrKey.startsWith('place-')))` | `[]` |
 | T1.8 | R1.7 | `js> SHOPS.filter(s => !CATS[s.category]).map(s => s.name)` | `[]` |
-| T1.9 | R1.9 | Open page, check header text. | At ≤ 380 px the loaded visual brand omits “Coffee in”; accessible naming and page title retain it. Before load: “Metro Atlanta” and “Loading Metro Atlanta…”, no numeric result count. After load: “**1278** spots in Metro Atlanta · verified **November 2026**”; franchise toggle ON: **2234**. Fallback: **40** spots in Metro Atlanta by default, **60** with franchises, with the degraded-coverage banner. Page/social descriptions use the full loaded total (2,234 or 60). Unknown verification months make no claim; one known month in a mixed-source dataset is source-attributed. |
+| T1.9 | R1.9 | Open page, check header text. | At ≤ 380 px the loaded visual brand omits “Coffee in”; accessible naming and page title retain it. Before load: “Metro Atlanta” and “Loading Metro Atlanta…”, no numeric result count. After load: “**1323** spots in Metro Atlanta · verified **November 2026**”; franchise toggle ON: **2233**. Fallback: **40** spots in Metro Atlanta by default, **60** with franchises, with the degraded-coverage banner. Page/social descriptions use the full loaded total (2,233 or 60). Unknown verification months make no claim; one known month in a mixed-source dataset is source-attributed. |
 
 ## T2. Map setup (R2)
 
@@ -126,7 +126,7 @@ recovery, not just the threshold function in isolation.
 | ID | Trace | Test | Pass |
 |---|---|---|---|
 | T4.1 | R4.1 | `js> document.querySelectorAll('#categoryChips .chip').length` | `7` (All + 6 categories) |
-| T4.2 | R4.1 | Each category chip displays its emoji + label + count; sum of category counts = inScope.length. | Six category counts sum to inScope.length matching the franchise toggle state (1278 indie shops when toggle OFF; 2,234 total shops when toggle ON; or 40 indie / 60 total in baseline Duluth mode). Category and feature chip counts intentionally reflect global category totals and ignore search text input. |
+| T4.2 | R4.1 | Each category chip displays its emoji + label + count; sum of category counts = inScope.length. | Six category counts sum to inScope.length matching the franchise toggle state (1323 indie shops when toggle OFF; 2,233 total shops when toggle ON; or 40 indie / 60 total in baseline Duluth mode). Category and feature chip counts intentionally reflect global category totals and ignore search text input. |
 | T4.3 | R4.2 | Click "All". `js> [...document.querySelectorAll('#categoryChips .chip')][0].classList.contains('active')` | `true` |
 | T4.4 | R4.3 | `js> document.querySelectorAll('#featureChips .chip').length` | `5` (Work-friendly, Meeting room, Early risers, Open late, Until midnight) |
 | T4.5 | R4.3 | Feature chip text matches `['💻Work-friendly{n}', '🤝Meeting room{n}', '🌅Early risers{n}', '🌙Open late{n}', '🦉Until midnight{n}']` (spaces normalized). | All five present. |
@@ -138,16 +138,16 @@ recovery, not just the threshold function in isolation.
 | T4.11 | R4.7 | List card tags and category names are safely escaped via `escapeHtml()`. | `true` — no unescaped markup in `tagsHtml`. |
 | T4.12 | R4.7 | Filter bar layout: `.filter-row:first-of-type` sits flush with `margin-top: 0`. | `true` |
 | T4.13 | R4.8 | On load, Indie-only is active by default: `js> state.includeFranchises === false && !document.getElementById('franchiseToggle').checked`. | `true`; all initially rendered cards have `.model-tag.indie`. |
-| T4.14 | R4.8 | Flip top-right toggle `#franchiseToggle` (Include franchise stores). Check `document.getElementById('resultsCount').textContent` and rendered items. | `resultsCount` matches total shop count (2,234); rendered cards capped at 200 initial pagination limit with "Load more" button; franchise cards appear with `.model-tag.franchise`. |
+| T4.14 | R4.8 | Flip top-right toggle `#franchiseToggle` (Include franchise stores). Check `document.getElementById('resultsCount').textContent` and rendered items. | `resultsCount` matches total shop count (2,233); rendered cards capped at 200 initial pagination limit with "Load more" button; franchise cards appear with `.model-tag.franchise`. |
 | T4.15 | R4.9 | `js> REGION_LABEL === 'Metro Atlanta'` | `true` (unified 14-county Metro Atlanta region). |
-| T4.16 | R4.9 | `js> SHOPS.length === 2234` | `true` (2,234 total venues across Metro Atlanta & North Georgia). |
+| T4.16 | R4.9 | `js> SHOPS.length === 2233` | `true` (2,233 total venues across Metro Atlanta & North Georgia). |
 | T4.17 | R4.10 | `js> typeof applyTheme === 'function' && typeof getCurrentTheme === 'function' && !!document.getElementById('themeToggle')` | `true` — `#themeToggle` button present in header; clicking toggles `data-theme` between `'light'` and `'dark'`, syncs `tileLayer` between `light_all` and `dark_all`, and persists to `localStorage`. |
 
 ## T5. Right-side list (R5)
 
 | ID | Trace | Test | Pass |
 |---|---|---|---|
-| T5.1 | R5.1 | Hard reload, after settle: `js> document.getElementById('resultsCount').textContent` and `document.querySelectorAll('.shop-item').length` | `resultsCount` shows `1278` (count of independent shops in scope on boot); rendered `.shop-item` count is `200` (initial pagination page limit). |
+| T5.1 | R5.1 | Hard reload, after settle: `js> document.getElementById('resultsCount').textContent` and `document.querySelectorAll('.shop-item').length` | `resultsCount` shows `1323` (count of independent shops in scope on boot); rendered `.shop-item` count is `200` (initial pagination page limit). |
 | T5.2 | R5.2 | First 3 list items by name. | Default independent view: Fuel Coffee Bar-Fayetteville; Douceur De France - Bakery & Brunch (Marietta); Yibna Cafe (November 2026 snapshot). Recompute after crawls using the summary below. |
 | T5.3 | R5.2 | `js> Math.abs(SHOPS.filter(s=>typeof s.rating==='number').reduce((a,s)=>a+s.rating,0)/SHOPS.filter(s=>typeof s.rating==='number').length - 4.287966021708359) < 0.001` | `true` (C ≈ 4.2880 across 2,119 rated shops in the November 2026 expanded snapshot) |
 | T5.4 | R5.3 | `js> SHOPS.filter(s => s.rating == null).every(s => typeof s.weightedRating === 'number')` | `true` (115 unrated venues in the November 2026 expanded snapshot) |
@@ -232,30 +232,30 @@ recovery, not just the threshold function in isolation.
 
 Run after each deployment:
 
-1. Open the live URL on desktop. Expect 1278 in-scope markers (40 in baseline fallback), all 6 category chips, 5 feature chips, and the first 200 ranked cards (40 in fallback). Results header reads “1278 spots” (“40 spots” in fallback). Enable franchises for all 2,234 venues (60 in fallback). Reset to independent mode before the next checks.
+1. Open the live URL on desktop. Expect 1323 in-scope markers (40 in baseline fallback), all 6 category chips, 5 feature chips, and the first 200 ranked cards (40 in fallback). Results header reads “1323 spots” (“40 spots” in fallback). Enable franchises for all 2,233 venues (60 in fallback). Reset to independent mode before the next checks.
 2. Click Bread Museum (or Chrome Yellow in Metro Atlanta) → detail card slides in (list slides left). Click "← Back to list" → list slides back in, map restores the pre-selection camera.
 3. Reset filters, then click "Until midnight" → expect late-night shops (59 independents / 112 total across Metro Atlanta; 7 independents / 11 total in baseline fallback).
 4. Reset filters, then search "matcha" → ≥ 10 results.
-5. Reset filters, then zoom in until fewer than all shops appear in the list. Confirm header changes to "X in view" and list items cascade in. Zoom back out — header returns to "1278 spots" ("40 spots" in baseline mode).
+5. Reset filters, then zoom in until fewer than all shops appear in the list. Confirm header changes to "X in view" and list items cascade in. Zoom back out — header returns to "1323 spots" ("40 spots" in baseline mode).
 6. Resize window below 820 px → mobile layout kicks in, footer disappears, cards visible and scrollable.
 7. Zoom in to a single shop, confirm label appears with no overlap. Zoom out to default fit, confirm clusters reform.
 8. Open DevTools console → no errors.
 
 ## Known-good loaded data (November 2026)
 
-Counts below were measured after the browser's validation and deduplication. The files contain 60 seed records and 2,219 regional records; 2,174 regional records are admitted. Do not add raw file lengths to predict UI counts. To check fallback, block `places.json` and reload; to recover, unblock it and click Retry.
+Counts below were measured after the browser's validation and deduplication. The files contain 60 seed records and 2,218 regional records; 2,173 regional records are admitted. Do not add raw file lengths to predict UI counts. To check fallback, block `places.json` and reload; to recover, unblock it and click Retry.
 
 | Field | Metro Atlanta (Expanded) | Duluth seed (Fallback) |
 |---|---|---|
-| Total venues | 2,234 | 60 |
-| Independent venues (default) | 1,278 | 40 |
-| Franchise venues | 956 | 20 |
+| Total venues | 2,233 | 60 |
+| Independent venues (default) | 1,323 | 40 |
+| Franchise venues | 910 | 20 |
 | Counties represented | 14 | 2 (Gwinnett and Fulton) |
 | Work-friendly, indie / total | 48 / 63 | 8 / 18 |
 | Meeting room, indie / total | 18 / 22 | 0 / 3 |
-| Early risers, indie / total | 387 / 1032 | 4 / 6 |
-| Open late, indie / total | 184 / 441 | 25 / 41 |
-| Until midnight, indie / total | 59 / 112 | 7 / 11 |
+| Early risers, indie / total | 407 / 1032 | 4 / 6 |
+| Open late, indie / total | 190 / 441 | 25 / 41 |
+| Until midnight, indie / total | 58 / 112 | 7 / 11 |
 | Bayesian C (all rated venues) | ≈ 4.2880 | ≈ 4.5183 |
 | #1 by weighted rating | Fuel Coffee Bar-Fayetteville | Yibna Cafe |
 

@@ -287,7 +287,7 @@
    "lat": 33.998452,
    "lng": -84.707008,
    "category": "Coffee",
-   "model": "franchise",
+   "model": "independent",
    "types": [
     "cafe"
    ],
@@ -670,7 +670,7 @@
    "lat": 34.11078,
    "lng": -84.223702,
    "category": "Roasters",
-   "model": "franchise",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -1210,7 +1210,7 @@
    "lat": 33.726422,
    "lng": -84.368764,
    "category": "Coffee",
-   "model": "franchise",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -3247,7 +3247,7 @@
    "lat": 33.755767,
    "lng": -84.389915,
    "category": "Coffee",
-   "model": "franchise",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -3834,7 +3834,7 @@
    "lat": 33.884181,
    "lng": -84.515624,
    "category": "Coffee",
-   "model": "franchise",
+   "model": "independent",
    "types": [
     "cafe",
     "coffee_shop"
@@ -3996,7 +3996,7 @@
    "lat": 33.988125,
    "lng": -84.420622,
    "category": "Bakery+Cafe",
-   "model": "franchise",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -4560,7 +4560,7 @@
    "lat": 33.976838,
    "lng": -84.211897,
    "category": "Bakery+Cafe",
-   "model": "franchise",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -4822,7 +4822,7 @@
    "lat": 33.739005,
    "lng": -84.367862,
    "category": "Roasters",
-   "model": "franchise",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -6176,7 +6176,7 @@
    "lat": 33.794743,
    "lng": -84.318563,
    "category": "Coffee",
-   "model": "independent",
+   "model": "franchise",
    "types": [
     "coffee_shop",
     "cafe"
@@ -6186,7 +6186,9 @@
    "ratingCount": "8",
    "hours": "Mon-Fri 7am-4pm · Sat-Sun Closed",
    "website": "https://kaldiscoffee.com/pages/health-sciences-research-building-emory",
-   "googleUrl": "https://maps.google.com/?cid=17229728081207969478&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=17229728081207969478&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "chainScope": "regional",
+   "franchiseProgram": null
   },
   {
    "placeId": "ChIJ605CCQD99IgRr52UDv_B0Gs",
@@ -6407,7 +6409,7 @@
    "lat": 33.98051,
    "lng": -84.218335,
    "category": "Bakery+Cafe",
-   "model": "franchise",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -6753,7 +6755,7 @@
    "lat": 33.810886,
    "lng": -84.433788,
    "category": "Roasters",
-   "model": "franchise",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -7546,7 +7548,7 @@
    "lat": 33.649347,
    "lng": -83.992685,
    "category": "Bakery+Cafe",
-   "model": "franchise",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -8039,7 +8041,7 @@
    "lat": 33.774645,
    "lng": -84.396267,
    "category": "Coffee",
-   "model": "independent",
+   "model": "franchise",
    "types": [
     "cafe",
     "coffee_shop"
@@ -8049,7 +8051,9 @@
    "ratingCount": "72",
    "hours": "Mon-Fri 7am-7pm · Sat-Sun Closed",
    "website": "https://kaldiscoffee.com/pages/kaldis-at-clough",
-   "googleUrl": "https://maps.google.com/?cid=13424200776495889631&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=13424200776495889631&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "chainScope": "regional",
+   "franchiseProgram": null
   },
   {
    "placeId": "ChIJ87MnGAWZ9YgR8TiVqULzV9A",
@@ -8156,7 +8160,7 @@
    "lat": 33.777043,
    "lng": -84.388255,
    "category": "Coffee",
-   "model": "independent",
+   "model": "franchise",
    "types": [
     "coffee_shop",
     "cafe"
@@ -8166,7 +8170,9 @@
    "ratingCount": "0",
    "hours": null,
    "website": "https://kaldiscoffee.com/pages/tech-square",
-   "googleUrl": "https://maps.google.com/?cid=9719949468869193115&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=9719949468869193115&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "chainScope": "regional",
+   "franchiseProgram": null
   },
   {
    "placeId": "ChIJ8V8nI1m59IgRJj-NnE4HiHo",
@@ -8263,7 +8269,7 @@
    "lat": 33.890719,
    "lng": -84.284707,
    "category": "Tea/Boba",
-   "model": "franchise",
+   "model": "independent",
    "types": [
     "tea_house"
    ],
@@ -8288,7 +8294,7 @@
    "lat": 33.78129,
    "lng": -84.280651,
    "category": "Bakery+Cafe",
-   "model": "franchise",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -9170,7 +9176,7 @@
    "lat": 33.794116,
    "lng": -84.386951,
    "category": "Roasters",
-   "model": "franchise",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -9794,7 +9800,7 @@
    "lat": 33.771037,
    "lng": -84.292334,
    "category": "Bakery+Cafe",
-   "model": "franchise",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -9914,7 +9920,9 @@
    "ratingCount": "15",
    "hours": "Mon-Fri 7am-4pm · Sat-Sun Closed",
    "website": "http://dancinggoats.com/pages/locations",
-   "googleUrl": "https://maps.google.com/?cid=8332345891469520734&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=8332345891469520734&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "chainScope": "regional",
+   "franchiseProgram": null
   },
   {
    "placeId": "ChIJAbi5azuv9YgRHAB_BFzo0TE",
@@ -10453,7 +10461,7 @@
    "lat": 33.724504,
    "lng": -84.733121,
    "category": "Dessert Cafe",
-   "model": "independent",
+   "model": "franchise",
    "types": [
     "dessert_shop"
    ],
@@ -10462,7 +10470,9 @@
    "ratingCount": "338",
    "hours": "Mon Closed · Tue-Thu 1:00-9:30pm · Fri-Sun 12:00-9:30pm",
    "website": "http://www.yoglimogli.com/",
-   "googleUrl": "https://maps.google.com/?cid=1664618493291798884&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=1664618493291798884&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "chainScope": "regional",
+   "franchiseProgram": true
   },
   {
    "placeId": "ChIJBSnZdGus9YgR1YxYbqpiJqI",
@@ -11238,7 +11248,7 @@
    "lat": 33.896961,
    "lng": -83.961559,
    "category": "Bakery+Cafe",
-   "model": "franchise",
+   "model": "independent",
    "types": [
     "dessert_shop",
     "bakery"
@@ -12696,7 +12706,7 @@
    "lat": 34.023049,
    "lng": -84.252267,
    "category": "Bakery+Cafe",
-   "model": "franchise",
+   "model": "independent",
    "types": [
     "dessert_shop",
     "bakery"
@@ -13207,7 +13217,7 @@
    "lat": 34.300723,
    "lng": -83.858589,
    "category": "Bakery+Cafe",
-   "model": "franchise",
+   "model": "independent",
    "types": [
     "donut_shop",
     "bakery"
@@ -13249,7 +13259,7 @@
    "lat": 33.959935,
    "lng": -84.300275,
    "category": "Dessert Cafe",
-   "model": "independent",
+   "model": "franchise",
    "types": [
     "dessert_shop"
    ],
@@ -13262,7 +13272,9 @@
     "when": "Fri-Sat till 10pm"
    },
    "website": "http://yoglimogli.com/",
-   "googleUrl": "https://maps.google.com/?cid=15376894862223771364&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=15376894862223771364&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "chainScope": "regional",
+   "franchiseProgram": true
   },
   {
    "placeId": "ChIJF8O_hO1r9YgRI87VZiLE44I",
@@ -13321,7 +13333,7 @@
    "lat": 34.05017,
    "lng": -83.929616,
    "category": "Bakery+Cafe",
-   "model": "franchise",
+   "model": "independent",
    "types": [
     "donut_shop",
     "bakery"
@@ -13960,6 +13972,8 @@
    "hours": "Mon-Fri 6:30am-7pm · Sat-Sun 7am-7pm",
    "website": "http://www.dancinggoats.com/",
    "googleUrl": "https://maps.google.com/?cid=10264672900120959426&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "chainScope": "regional",
+   "franchiseProgram": null,
    "cw": {
     "tier": "excellent",
     "note": "Iconic screened porch with Adirondack chairs, porch swings, fast Wi-Fi, and endless power.",
@@ -14218,7 +14232,7 @@
    "lat": 33.810283,
    "lng": -84.476704,
    "category": "Roasters",
-   "model": "franchise",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -15573,7 +15587,7 @@
    "lat": 33.961212,
    "lng": -83.972843,
    "category": "Bakery+Cafe",
-   "model": "franchise",
+   "model": "independent",
    "types": [
     "donut_shop",
     "bakery",
@@ -16166,7 +16180,7 @@
    "lat": 33.802793,
    "lng": -84.393155,
    "category": "Roasters",
-   "model": "franchise",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -16574,7 +16588,7 @@
    "lat": 33.81236,
    "lng": -84.430199,
    "category": "Bakery+Cafe",
-   "model": "franchise",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -16718,7 +16732,7 @@
    "lat": 33.757405,
    "lng": -84.365215,
    "category": "Roasters",
-   "model": "franchise",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -17430,7 +17444,7 @@
    "lat": 33.802314,
    "lng": -84.428871,
    "category": "Roasters",
-   "model": "franchise",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -18237,7 +18251,7 @@
    "lat": 33.851184,
    "lng": -84.360904,
    "category": "Roasters",
-   "model": "independent",
+   "model": "franchise",
    "types": [
     "coffee_shop",
     "cafe"
@@ -18251,7 +18265,9 @@
     "when": "Fri till midnight"
    },
    "website": "https://www.boardingpasscoffee.com/",
-   "googleUrl": "https://maps.google.com/?cid=5949072791370144615&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=5949072791370144615&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "chainScope": "regional",
+   "franchiseProgram": true
   },
   {
    "placeId": "ChIJLZYilhhr9YgR-mZ59mtvhCI",
@@ -18482,7 +18498,7 @@
    "lat": 33.759749,
    "lng": -84.371829,
    "category": "Coffee",
-   "model": "franchise",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -18882,7 +18898,7 @@
    "lat": 34.029073,
    "lng": -84.043202,
    "category": "Bakery+Cafe",
-   "model": "franchise",
+   "model": "independent",
    "types": [
     "bakery",
     "cafe"
@@ -19060,7 +19076,9 @@
    "ratingCount": "0",
    "hours": "Mon-Fri 7am-9pm · Sat-Sun 9am-4pm",
    "website": "https://dining.gatech.edu/location/dancing-goats",
-   "googleUrl": "https://maps.google.com/?cid=10812408179813625329&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=10812408179813625329&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "chainScope": "regional",
+   "franchiseProgram": null
   },
   {
    "placeId": "ChIJMdOxFCjr9IgRAIW2SiQaSPg",
@@ -19449,7 +19467,7 @@
    "lat": 33.656399,
    "lng": -84.514092,
    "category": "Bakery+Cafe",
-   "model": "franchise",
+   "model": "independent",
    "types": [
     "bakery",
     "dessert_shop"
@@ -19700,7 +19718,7 @@
    "lat": 34.236396,
    "lng": -84.49002,
    "category": "Coffee",
-   "model": "franchise",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -19805,7 +19823,7 @@
    "lat": 33.736952,
    "lng": -84.385676,
    "category": "Bakery+Cafe",
-   "model": "franchise",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -20146,7 +20164,7 @@
    "lat": 33.929455,
    "lng": -84.343066,
    "category": "Coffee",
-   "model": "independent",
+   "model": "franchise",
    "types": [
     "coffee_shop",
     "cafe"
@@ -20157,6 +20175,8 @@
    "hours": "Sun-Thu 6:30am-8pm · Fri-Sat 6:30am-8:30pm",
    "website": "https://www.foxtailcoffee.com/",
    "googleUrl": "https://maps.google.com/?cid=6684392637474610354&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "chainScope": "national",
+   "franchiseProgram": true,
    "cw": {
     "tier": "excellent",
     "note": "Expansive modern coffee bar with high-top work tables, abundant power outlets, and fast Wi-Fi.",
@@ -22314,7 +22334,7 @@
    "lat": 33.427423,
    "lng": -84.556597,
    "category": "Bakery+Cafe",
-   "model": "franchise",
+   "model": "independent",
    "types": [
     "donut_shop",
     "bakery"
@@ -23184,7 +23204,7 @@
    "lat": 34.067744,
    "lng": -84.259982,
    "category": "Roasters",
-   "model": "independent",
+   "model": "franchise",
    "types": [
     "coffee_shop",
     "cafe"
@@ -23194,7 +23214,9 @@
    "ratingCount": "173",
    "hours": "Mon-Fri 7am-4pm · Sat-Sun 8am-4pm",
    "website": "https://www.boardingpasscoffee.com/",
-   "googleUrl": "https://maps.google.com/?cid=12951413456528803658&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=12951413456528803658&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "chainScope": "regional",
+   "franchiseProgram": true
   },
   {
    "placeId": "ChIJRY-KRgCf9YgR0E4E160aZfE",
@@ -23967,7 +23989,7 @@
    "lat": 34.108101,
    "lng": -84.000113,
    "category": "Bakery+Cafe",
-   "model": "franchise",
+   "model": "independent",
    "types": [
     "donut_shop",
     "bakery"
@@ -24009,7 +24031,7 @@
    "lat": 33.746231,
    "lng": -84.372816,
    "category": "Bakery+Cafe",
-   "model": "franchise",
+   "model": "independent",
    "types": [
     "bakery",
     "dessert_shop"
@@ -24070,7 +24092,7 @@
    "lat": 33.399466,
    "lng": -84.795304,
    "category": "Dessert Cafe",
-   "model": "independent",
+   "model": "franchise",
    "types": [
     "dessert_shop"
    ],
@@ -24628,7 +24650,7 @@
    "lat": 33.757024,
    "lng": -84.364052,
    "category": "Bakery+Cafe",
-   "model": "franchise",
+   "model": "independent",
    "types": [
     "bakery",
     "coffee_shop",
@@ -24945,7 +24967,7 @@
    "lat": 34.068452,
    "lng": -84.281323,
    "category": "Bakery+Cafe",
-   "model": "franchise",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -26478,7 +26500,7 @@
    "lat": 33.775363,
    "lng": -84.295726,
    "category": "Roasters",
-   "model": "franchise",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -26795,7 +26817,7 @@
    "lat": 34.195103,
    "lng": -83.857706,
    "category": "Bakery+Cafe",
-   "model": "franchise",
+   "model": "independent",
    "types": [
     "donut_shop",
     "bakery"
@@ -27219,7 +27241,7 @@
    "lat": 34.298937,
    "lng": -83.82679,
    "category": "Roasters",
-   "model": "independent",
+   "model": "franchise",
    "types": [
     "coffee_shop",
     "cafe"
@@ -27229,7 +27251,9 @@
    "ratingCount": "216",
    "hours": "Mon-Tue 7am-5pm · Wed 7am-6pm · Thu 7am-5pm · Fri 7am-6pm · Sat-Sun 8am-6pm",
    "website": "http://www.boardingpasscoffee.com/",
-   "googleUrl": "https://maps.google.com/?cid=8582517636144175058&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=8582517636144175058&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "chainScope": "regional",
+   "franchiseProgram": true
   },
   {
    "placeId": "ChIJWZkdRXq99YgRGurXbsK5p0s",
@@ -27615,7 +27639,7 @@
    "lat": 34.17722,
    "lng": -83.912319,
    "category": "Bakery+Cafe",
-   "model": "franchise",
+   "model": "independent",
    "types": [
     "donut_shop",
     "bakery"
@@ -27904,7 +27928,7 @@
    "lat": 33.790937,
    "lng": -84.307484,
    "category": "Tea/Boba",
-   "model": "franchise",
+   "model": "independent",
    "types": [
     "dessert_shop",
     "tea_house"
@@ -28023,7 +28047,7 @@
    "lat": 34.069482,
    "lng": -84.294973,
    "category": "Bakery+Cafe",
-   "model": "franchise",
+   "model": "independent",
    "types": [
     "bakery",
     "dessert_shop"
@@ -28109,7 +28133,7 @@
    "lat": 33.980403,
    "lng": -84.080306,
    "category": "Coffee",
-   "model": "franchise",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -28199,7 +28223,7 @@
    "lat": 33.397987,
    "lng": -84.598322,
    "category": "Coffee",
-   "model": "independent",
+   "model": "franchise",
    "types": [
     "coffee_shop",
     "cafe"
@@ -28209,7 +28233,9 @@
    "ratingCount": "207",
    "hours": "Mon-Sun 6am-6pm",
    "website": "https://www.foxtailcoffee.com/locations/foxtail-coffee-peachtree-city",
-   "googleUrl": "https://maps.google.com/?cid=13021541760430913797&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=13021541760430913797&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "chainScope": "national",
+   "franchiseProgram": true
   },
   {
    "placeId": "ChIJXewXSEEj9YgRAQAtBmMEmHk",
@@ -28610,7 +28636,7 @@
    "lat": 34.028288,
    "lng": -84.358292,
    "category": "Coffee",
-   "model": "franchise",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -28828,7 +28854,7 @@
    "lat": 34.29932,
    "lng": -83.823283,
    "category": "Bakery+Cafe",
-   "model": "franchise",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -29513,7 +29539,7 @@
    "lat": 33.760724,
    "lng": -84.337859,
    "category": "Coffee",
-   "model": "independent",
+   "model": "franchise",
    "types": [
     "coffee_shop",
     "cafe"
@@ -29523,7 +29549,9 @@
    "ratingCount": "43",
    "hours": "Mon-Sun 6am-6pm",
    "website": "https://www.foxtailcoffee.com/locations/foxtail-coffee-hanover-edgewood%2C-ga",
-   "googleUrl": "https://maps.google.com/?cid=2346994070162878655&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=2346994070162878655&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "chainScope": "national",
+   "franchiseProgram": true
   },
   {
    "placeId": "ChIJZWRPwS0H9YgR7_qfv0T4jn8",
@@ -30325,7 +30353,7 @@
    "lat": 33.785553,
    "lng": -84.411948,
    "category": "Roasters",
-   "model": "franchise",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -31086,7 +31114,7 @@
    "lat": 33.795244,
    "lng": -84.323044,
    "category": "Coffee",
-   "model": "independent",
+   "model": "franchise",
    "types": [
     "coffee_shop",
     "cafe"
@@ -31096,7 +31124,9 @@
    "ratingCount": "382",
    "hours": "Mon-Fri 7am-5pm · Sat-Sun 9am-2pm",
    "website": "http://kaldiscoffee.com/pages/the-depot",
-   "googleUrl": "https://maps.google.com/?cid=16356916196504860677&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=16356916196504860677&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "chainScope": "regional",
+   "franchiseProgram": null
   },
   {
    "placeId": "ChIJaUvCQbqj9YgRt0GaRa8h6hM",
@@ -32140,7 +32170,7 @@
    "lat": 33.935376,
    "lng": -84.378973,
    "category": "Dessert Cafe",
-   "model": "independent",
+   "model": "franchise",
    "types": [
     "dessert_shop"
    ],
@@ -32153,7 +32183,9 @@
     "when": "Fri-Sat till 10pm"
    },
    "website": "http://www.yoglimogli.com/",
-   "googleUrl": "https://maps.google.com/?cid=468666291244561283&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=468666291244561283&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "chainScope": "regional",
+   "franchiseProgram": true
   },
   {
    "placeId": "ChIJb_2NOpAD9YgRQ54djmVeUl0",
@@ -32540,7 +32572,7 @@
    "lat": 33.852844,
    "lng": -84.214663,
    "category": "Roasters",
-   "model": "franchise",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -33537,7 +33569,7 @@
    "lat": 33.788378,
    "lng": -84.387966,
    "category": "Coffee",
-   "model": "independent",
+   "model": "franchise",
    "types": [
     "coffee_shop",
     "cafe"
@@ -33548,6 +33580,8 @@
    "hours": "Mon-Sun 6am-6pm",
    "website": "https://www.foxtailcoffee.com/locations/foxtail-coffee-midtown",
    "googleUrl": "https://maps.google.com/?cid=3540971864957639180&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+   "chainScope": "national",
+   "franchiseProgram": true,
    "ratingCheckedMonth": "September 2026",
    "ratingRefreshIssue": "Latest Google response omitted ratings or lost more than half the review count; retained previous observation."
   },
@@ -34081,6 +34115,8 @@
    "hours": "Mon-Fri 6:30am-7pm · Sat-Sun 7am-7pm",
    "website": "https://www.dancinggoats.com/pages/dancing-goats-coffee-bar",
    "googleUrl": "https://maps.google.com/?cid=4701635738979862481&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "chainScope": "regional",
+   "franchiseProgram": null,
    "cw": {
     "tier": "excellent",
     "note": "Generous work tables, fast Wi-Fi, ample power outlets, and a relaxed college-town vibe.",
@@ -34408,7 +34444,7 @@
    "lat": 33.7625,
    "lng": -84.333333,
    "category": "Roasters",
-   "model": "franchise",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe",
@@ -35324,7 +35360,7 @@
    "lat": 33.787337,
    "lng": -84.355499,
    "category": "Roasters",
-   "model": "franchise",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -36289,7 +36325,7 @@
    "lat": 33.77582,
    "lng": -84.296697,
    "category": "Coffee",
-   "model": "independent",
+   "model": "franchise",
    "types": [
     "coffee_shop",
     "cafe",
@@ -36301,7 +36337,9 @@
    "ratingCount": "274",
    "hours": "Sun-Thu 7am-7pm · Fri-Sat 7am-8pm",
    "website": "https://foxtailcoffee.com/",
-   "googleUrl": "https://maps.google.com/?cid=5081010035664968100&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=5081010035664968100&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "chainScope": "national",
+   "franchiseProgram": true
   },
   {
    "placeId": "ChIJhdVYYTij9YgRk0aMQQ4p1mw",
@@ -36521,7 +36559,7 @@
    "lat": 33.979104,
    "lng": -84.423686,
    "category": "Dessert Cafe",
-   "model": "independent",
+   "model": "franchise",
    "types": [
     "dessert_shop"
    ],
@@ -36534,7 +36572,9 @@
     "when": "Fri-Sat till 10pm"
    },
    "website": "http://www.yoglimogli.com/",
-   "googleUrl": "https://maps.google.com/?cid=2485351437299306803&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=2485351437299306803&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "chainScope": "regional",
+   "franchiseProgram": true
   },
   {
    "placeId": "ChIJi2GXOkOZ9YgRQKbUIVcsHWc",
@@ -37008,7 +37048,7 @@
    "lat": 34.074533,
    "lng": -84.293402,
    "category": "Roasters",
-   "model": "independent",
+   "model": "franchise",
    "types": [
     "coffee_shop",
     "cafe"
@@ -37018,7 +37058,9 @@
    "ratingCount": "69",
    "hours": "Mon-Thu 8am-4pm · Fri-Sun 8am-6pm",
    "website": "https://www.boardingpasscoffee.com/",
-   "googleUrl": "https://maps.google.com/?cid=12172159570387678240&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=12172159570387678240&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "chainScope": "regional",
+   "franchiseProgram": true
   },
   {
    "placeId": "ChIJiVVDamz19IgR6fYjdrdMe0U",
@@ -37265,7 +37307,9 @@
    "ratingCount": "451",
    "hours": "Mon-Fri 6:30am-7pm · Sat-Sun 7am-7pm",
    "website": "https://www.dancinggoats.com/pages/the-dancing-goats-coffee-bar-buckhead",
-   "googleUrl": "https://maps.google.com/?cid=8470469892688996333&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=8470469892688996333&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "chainScope": "regional",
+   "franchiseProgram": null
   },
   {
    "placeId": "ChIJialC2J6e9YgRekkSX27bZGU",
@@ -37875,7 +37919,7 @@
    "lat": 33.981948,
    "lng": -84.216194,
    "category": "Dessert Cafe",
-   "model": "franchise",
+   "model": "independent",
    "types": [
     "dessert_shop"
    ],
@@ -39385,7 +39429,7 @@
    "lat": 34.100163,
    "lng": -84.519977,
    "category": "Bakery+Cafe",
-   "model": "franchise",
+   "model": "independent",
    "types": [
     "bakery",
     "dessert_shop"
@@ -39492,7 +39536,7 @@
    "lat": 34.055761,
    "lng": -84.063198,
    "category": "Coffee",
-   "model": "franchise",
+   "model": "independent",
    "types": [
     "cafe",
     "dessert_shop"
@@ -39598,7 +39642,7 @@
    "lat": 33.375711,
    "lng": -84.799693,
    "category": "Coffee",
-   "model": "independent",
+   "model": "franchise",
    "types": [
     "coffee_shop",
     "cafe"
@@ -39608,7 +39652,9 @@
    "ratingCount": "54",
    "hours": "Mon-Sun 6am-6pm",
    "website": "https://www.foxtailcoffee.com/locations/foxtail-coffee-downtown-newnan,-ga",
-   "googleUrl": "https://maps.google.com/?cid=12297527651382180294&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=12297527651382180294&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "chainScope": "national",
+   "franchiseProgram": true
   },
   {
    "placeId": "ChIJm0FGOfZt9YgReaBktgMPa70",
@@ -39619,7 +39665,7 @@
    "lat": 34.099902,
    "lng": -84.518915,
    "category": "Coffee",
-   "model": "franchise",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -41289,7 +41335,7 @@
    "lat": 34.021195,
    "lng": -84.317074,
    "category": "Coffee",
-   "model": "franchise",
+   "model": "independent",
    "types": [
     "cafe"
    ],
@@ -41433,27 +41479,6 @@
    "hours": "Sun-Thu 8am-7pm · Fri-Sat 8am-9pm",
    "website": "https://illyatl.com/",
    "googleUrl": "https://maps.google.com/?cid=13011006707077062090&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
-   "placeId": "ChIJoV3uwQ0H9YgRn-cunJ9Q9bw",
-   "name": "Condesa Coffee",
-   "address": "715 E College Ave, Decatur, GA 30030, USA",
-   "city": "Decatur",
-   "county": "DeKalb",
-   "lat": 33.773714,
-   "lng": -84.284078,
-   "category": "Coffee",
-   "model": "franchise",
-   "types": [
-    "coffee_shop",
-    "cafe"
-   ],
-   "rating": null,
-   "ratingNum": 0,
-   "ratingCount": "0",
-   "hours": null,
-   "website": "https://condesacoffee.com/",
-   "googleUrl": "https://maps.google.com/?cid=13615877694874904479&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJoV7chU699YgRymsb-HudK0Q",
@@ -42802,7 +42827,7 @@
    "lat": 33.841964,
    "lng": -84.385844,
    "category": "Roasters",
-   "model": "franchise",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -42888,7 +42913,7 @@
    "lat": 33.943315,
    "lng": -83.990949,
    "category": "Bakery+Cafe",
-   "model": "franchise",
+   "model": "independent",
    "types": [
     "donut_shop",
     "bakery",
@@ -43380,7 +43405,7 @@
    "lat": 33.776899,
    "lng": -84.383609,
    "category": "Coffee",
-   "model": "independent",
+   "model": "franchise",
    "types": [
     "coffee_shop",
     "cafe"
@@ -43390,7 +43415,9 @@
    "ratingCount": "98",
    "hours": "Mon-Sun 6am-6pm",
    "website": "https://www.foxtailcoffee.com/locations/foxtail-coffee-society-atlanta,-ga",
-   "googleUrl": "https://maps.google.com/?cid=6162300855139450866&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=6162300855139450866&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "chainScope": "national",
+   "franchiseProgram": true
   },
   {
    "placeId": "ChIJqxcRuz_j9IgR8dut5Ex7YfQ",
@@ -43621,7 +43648,7 @@
    "lat": 33.963289,
    "lng": -84.125076,
    "category": "Bakery+Cafe",
-   "model": "franchise",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -44091,7 +44118,7 @@
    "lat": 33.782228,
    "lng": -84.369258,
    "category": "Bakery+Cafe",
-   "model": "franchise",
+   "model": "independent",
    "types": [
     "bakery",
     "dessert_shop"
@@ -44623,7 +44650,7 @@
    "lat": 34.052946,
    "lng": -84.122779,
    "category": "Bakery+Cafe",
-   "model": "franchise",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -44952,7 +44979,9 @@
    "ratingCount": "1,031",
    "hours": "Mon-Fri 6:30am-7pm · Sat-Sun 7am-7pm",
    "website": "https://www.dancinggoats.com/pages/the-dancing-goats-coffee-bar-midtown",
-   "googleUrl": "https://maps.google.com/?cid=11697356785960040205&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=11697356785960040205&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "chainScope": "regional",
+   "franchiseProgram": null
   },
   {
    "placeId": "ChIJsZqTDQe79YgRpaXF0T78veY",
@@ -45469,7 +45498,7 @@
    "lat": 33.87493,
    "lng": -84.379668,
    "category": "Roasters",
-   "model": "franchise",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -45661,7 +45690,7 @@
    "lat": 33.784104,
    "lng": -84.380574,
    "category": "Coffee",
-   "model": "franchise",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -46187,7 +46216,7 @@
    "lat": 33.847272,
    "lng": -84.357245,
    "category": "Roasters",
-   "model": "franchise",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -46498,7 +46527,7 @@
    "lat": 33.729528,
    "lng": -84.280712,
    "category": "Bakery+Cafe",
-   "model": "franchise",
+   "model": "independent",
    "types": [
     "donut_shop",
     "bakery"
@@ -46631,7 +46660,7 @@
    "lat": 34.015467,
    "lng": -84.189991,
    "category": "Bakery+Cafe",
-   "model": "franchise",
+   "model": "independent",
    "types": [
     "bakery",
     "dessert_shop"
@@ -46966,7 +46995,7 @@
    "lat": 33.783196,
    "lng": -84.354739,
    "category": "Roasters",
-   "model": "franchise",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -47489,7 +47518,7 @@
    "lat": 34.037748,
    "lng": -84.4639,
    "category": "Dessert Cafe",
-   "model": "independent",
+   "model": "franchise",
    "types": [
     "cafe",
     "dessert_shop"
@@ -47503,7 +47532,9 @@
     "when": "Fri-Sat till 10pm"
    },
    "website": "https://www.yoglimogli.com/",
-   "googleUrl": "https://maps.google.com/?cid=11527004469324222158&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=11527004469324222158&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "chainScope": "regional",
+   "franchiseProgram": true
   },
   {
    "placeId": "ChIJvyQVb9sV9YgRIZYHotbNFOY",
@@ -48178,7 +48209,7 @@
    "lat": 33.963793,
    "lng": -84.119976,
    "category": "Bakery+Cafe",
-   "model": "franchise",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -48565,7 +48596,7 @@
    "lat": 33.865738,
    "lng": -84.46714,
    "category": "Bakery+Cafe",
-   "model": "franchise",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -49010,7 +49041,7 @@
    "lat": 34.07484,
    "lng": -84.294068,
    "category": "Bakery+Cafe",
-   "model": "franchise",
+   "model": "independent",
    "types": [
     "bakery"
    ],
@@ -49144,7 +49175,7 @@
    "lat": 34.01719,
    "lng": -84.55602,
    "category": "Tea/Boba",
-   "model": "franchise",
+   "model": "independent",
    "types": [
     "tea_house",
     "dessert_shop"
@@ -49552,7 +49583,7 @@
    "lat": 33.411689,
    "lng": -84.685003,
    "category": "Coffee",
-   "model": "independent",
+   "model": "franchise",
    "types": [
     "coffee_shop",
     "cafe"
@@ -49562,7 +49593,9 @@
    "ratingCount": "314",
    "hours": "Mon-Sun 6am-6pm",
    "website": "https://www.foxtailcoffee.com/locations/foxtail-coffee-newnan",
-   "googleUrl": "https://maps.google.com/?cid=488205082137600182&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=488205082137600182&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "chainScope": "national",
+   "franchiseProgram": true
   },
   {
    "placeId": "ChIJyUDzRqq79YgR-Kp9fgpoNJg",
@@ -49595,7 +49628,7 @@
    "lat": 33.848874,
    "lng": -84.3745,
    "category": "Coffee",
-   "model": "independent",
+   "model": "franchise",
    "types": [
     "coffee_shop",
     "cafe"
@@ -49605,7 +49638,9 @@
    "ratingCount": "385",
    "hours": "Mon-Sun 7am-6pm",
    "website": "https://www.foxtailcoffee.com/locations/foxtail-coffee-buckhead",
-   "googleUrl": "https://maps.google.com/?cid=1979008453174618195&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=1979008453174618195&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "chainScope": "national",
+   "franchiseProgram": true
   },
   {
    "placeId": "ChIJyVoxg-uT9YgRe-hfJnqq8mU",
@@ -50482,7 +50517,7 @@
    "lat": 33.859922,
    "lng": -84.015669,
    "category": "Dessert Cafe",
-   "model": "franchise",
+   "model": "independent",
    "types": [
     "dessert_shop"
    ],
@@ -50506,7 +50541,7 @@
    "lat": 34.178936,
    "lng": -83.911679,
    "category": "Dessert Cafe",
-   "model": "independent",
+   "model": "franchise",
    "types": [
     "dessert_restaurant",
     "bakery",
@@ -50549,7 +50584,7 @@
    "lat": 34.244776,
    "lng": -84.488373,
    "category": "Bakery+Cafe",
-   "model": "franchise",
+   "model": "independent",
    "types": [
     "donut_shop",
     "bakery"
