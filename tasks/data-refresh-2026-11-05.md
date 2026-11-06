@@ -1,3 +1,5 @@
+> Superseded by the local review corrections described in [refresh-review-2026-11-05.md](refresh-review-2026-11-05.md). The figures below describe the original 625551d audit snapshot, before review exclusions, rating holds and classification fixes.
+
 # Google Places refresh: November 5, 2026
 
 The September listing snapshot was replaced with a complete Metro Atlanta crawl and direct checks for existing listings absent from search. Search absence alone was not treated as a closure: 54 qualifying regional records were recovered by ID. New IDs mean new to this dataset, not necessarily newly opened businesses.

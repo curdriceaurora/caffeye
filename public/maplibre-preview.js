@@ -150,7 +150,7 @@ function createVectorRenderer({ theme, onSelect, categories }) {
   const map = new maplibregl.Map({
     // Regional shell camera: Leaflet's [33.95, -84.17] at zoom 9 is MapLibre zoom 8.
     container: 'map', style: styleFor(theme), center: [-84.17, 33.95], zoom: 8,
-    minZoom: 6, maxZoom: 19, maxBounds: MAX_BOUNDS, maxPitch: 0, dragRotate: false, pitchWithRotate: false,
+    minZoom: 5, maxZoom: 19, maxBounds: MAX_BOUNDS, maxPitch: 0, dragRotate: false, pitchWithRotate: false,
     renderWorldCopies: false, attributionControl: { compact: true }
   });
   map.touchZoomRotate.disableRotation();

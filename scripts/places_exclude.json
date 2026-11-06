@@ -1,1 +1,110 @@
-[]
+[
+  {
+    "placeId": "ChIJSQJCiW-l9YgRdT_4Ry0rxYM",
+    "reason": "ghost: 0 reviews, no hours, no website; pin: street-level address only; scope: not a cafe/bakery venue; November 5 review of name, business type and website."
+  },
+  {
+    "placeId": "ChIJJeXo6hPi9IgRG8wVHAdB1BA",
+    "reason": "pin: city-level address only; scope: in-store grocery or warehouse club; November 5 review of name, business type and website."
+  },
+  {
+    "placeId": "ChIJQS69IwCi9YgRpGzL06-Hz9U",
+    "reason": "scope: in-store grocery or warehouse club; November 5 review of name, business type and website."
+  },
+  {
+    "placeId": "ChIJTTpQdQB9X4gRyziLcJQGw0U",
+    "reason": "scope: in-store grocery or warehouse club; November 5 review of name, business type and website."
+  },
+  {
+    "placeId": "ChIJW8eglZIJ9YgR8KiPsb1k4Mk",
+    "reason": "scope: in-store grocery or warehouse club; November 5 review of name, business type and website."
+  },
+  {
+    "placeId": "ChIJfZhvNC5L9IgRnUFRuIMfGkU",
+    "reason": "scope: in-store grocery or warehouse club; November 5 review of name, business type and website."
+  },
+  {
+    "placeId": "ChIJgSCMj2B19YgRIFzbnXWn3fs",
+    "reason": "scope: in-store grocery or warehouse club; November 5 review of name, business type and website."
+  },
+  {
+    "placeId": "ChIJkaGq2KFr9YgRWulhhtxwev4",
+    "reason": "scope: in-store grocery or warehouse club; November 5 review of name, business type and website."
+  },
+  {
+    "placeId": "ChIJodlWSc2a9YgRgQ4Dq4Khj1U",
+    "reason": "scope: in-store grocery or warehouse club; November 5 review of name, business type and website."
+  },
+  {
+    "placeId": "ChIJpYfdezzG9IgRH6jB4l6yDis",
+    "reason": "scope: in-store grocery or warehouse club; November 5 review of name, business type and website."
+  },
+  {
+    "placeId": "ChIJy_tfbRsF9YgR76kkynxZpFc",
+    "reason": "scope: in-store grocery or warehouse club; November 5 review of name, business type and website."
+  },
+  {
+    "placeId": "ChIJ-0x51Wj79IgRSzRokwsrf2c",
+    "reason": "scope: not a cafe/bakery venue; November 5 review of name, business type and website."
+  },
+  {
+    "placeId": "ChIJ1bkOYfIb9YgRvkl_dGUmzVs",
+    "reason": "scope: not a cafe/bakery venue; November 5 review of name, business type and website."
+  },
+  {
+    "placeId": "ChIJBSogXeGl9YgR2uuR0WO9N_w",
+    "reason": "scope: not a cafe/bakery venue; November 5 review of name, business type and website."
+  },
+  {
+    "placeId": "ChIJBclnqogm9YgRp9ZbxgvT9SM",
+    "reason": "scope: not a cafe/bakery venue; November 5 review of name, business type and website."
+  },
+  {
+    "placeId": "ChIJFczareal9YgRdJ4LqYdP3cM",
+    "reason": "scope: not a cafe/bakery venue; November 5 review of name, business type and website."
+  },
+  {
+    "placeId": "ChIJIdKDJf6C9YgR5Pm1cUsll7o",
+    "reason": "scope: not a cafe/bakery venue; November 5 review of name, business type and website."
+  },
+  {
+    "placeId": "ChIJJ4BpoCKn9YgR20Zb4ZJ6lnM",
+    "reason": "scope: not a cafe/bakery venue; November 5 review of name, business type and website."
+  },
+  {
+    "placeId": "ChIJJbEnv_Sn9YgRvPAc6glKSAo",
+    "reason": "scope: not a cafe/bakery venue; November 5 review of name, business type and website."
+  },
+  {
+    "placeId": "ChIJLzQ0asXz9YgRo4x8cnucoWo",
+    "reason": "scope: not a cafe/bakery venue; November 5 review of name, business type and website."
+  },
+  {
+    "placeId": "ChIJOwqybhrB9IgRNuGAaHGNquQ",
+    "reason": "scope: not a cafe/bakery venue; November 5 review of name, business type and website."
+  },
+  {
+    "placeId": "ChIJRcAvuEG_9YgR3WWDk1PtNws",
+    "reason": "scope: not a cafe/bakery venue; November 5 review of name, business type and website."
+  },
+  {
+    "placeId": "ChIJvy3rYwio9YgRzEeBjrGWpkA",
+    "reason": "scope: not a cafe/bakery venue; November 5 review of name, business type and website."
+  },
+  {
+    "placeId": "ChIJwyEo5HoD9YgRolpb7uDB0rA",
+    "reason": "scope: not a cafe/bakery venue; November 5 review of name, business type and website."
+  },
+  {
+    "placeId": "ChIJyW17J_6C9YgRsxl3tS1kJys",
+    "reason": "scope: not a cafe/bakery venue; November 5 review of name, business type and website."
+  },
+  {
+    "placeId": "ChIJ3141TABt9YgR2IGF6xgXCBU",
+    "reason": "scope: parking listing; November 5 review of name, business type and website."
+  },
+  {
+    "placeId": "ChIJZcQbbAC99YgRtMfbD5skPJ4",
+    "reason": "Duplicate of ChIJK13e_9S99YgRdDHgQMJ-B54: adjacent 858/860 Duluth Hwy address, same Starbucks store locator ID 8616. Retain established 1084-review record."
+  }
+]

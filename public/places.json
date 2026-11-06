@@ -111,26 +111,6 @@
    "googleUrl": "https://maps.google.com/?cid=16701277111950824229&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
-   "placeId": "ChIJ-0x51Wj79IgRSzRokwsrf2c",
-   "name": "Flowers Baking Co (Nature's Own)",
-   "address": "6866 GA-85, Riverdale, GA 30274, USA",
-   "city": "Riverdale",
-   "county": "Clayton",
-   "lat": 33.567237,
-   "lng": -84.412481,
-   "category": "Bakery+Cafe",
-   "model": "independent",
-   "types": [
-    "bakery"
-   ],
-   "rating": 4.3,
-   "ratingNum": 191,
-   "ratingCount": "191",
-   "hours": "Mon-Fri 10am-5pm · Sat 10am-4pm · Sun Closed",
-   "website": "http://www.flowersfoods.com/bakery-outlet-stores",
-   "googleUrl": "https://maps.google.com/?cid=7457726836666545227&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
    "placeId": "ChIJ-1GqdrOf9YgR-dWjStr52uI",
    "name": "Smallcakes Alpharetta",
    "address": "4055 Old Milton Pkwy #13, Alpharetta, GA 30005, USA",
@@ -1469,7 +1449,7 @@
    "lat": 33.895255,
    "lng": -84.460992,
    "category": "Coffee",
-   "model": "franchise",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -1526,26 +1506,6 @@
    },
    "website": "https://www.kungfutea.com/",
    "googleUrl": "https://maps.google.com/?cid=18235892206275097945&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
-   "placeId": "ChIJ0wSgjiiV9YgRY6XEOd3thcE",
-   "name": "Grains of Grace Haven",
-   "address": "2041 Prospect Rd NE, Lawrenceville, GA 30043, USA",
-   "city": "Lawrenceville",
-   "county": "Gwinnett",
-   "lat": 34.030631,
-   "lng": -83.976155,
-   "category": "Bakery+Cafe",
-   "model": "independent",
-   "types": [
-    "bakery"
-   ],
-   "rating": null,
-   "ratingNum": 0,
-   "ratingCount": "0",
-   "hours": null,
-   "website": null,
-   "googleUrl": "https://maps.google.com/?cid=13944813355635352931&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJ0wigfRgX9YgRg0XE5xd65NQ",
@@ -1667,27 +1627,6 @@
    "hours": "Mon-Sat 5am-9pm · Sun 6am-9pm",
    "website": "https://www.dunkindonuts.com/en",
    "googleUrl": "https://maps.google.com/?cid=3805728580815707244&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
-   "placeId": "ChIJ12FiFo4R9YgRwtP-4kBDW8Q",
-   "name": "Streetside Coffee",
-   "address": "976 Cobb Pkwy SE, Marietta, GA 30060, USA",
-   "city": "Marietta",
-   "county": "Cobb",
-   "lat": 33.928925,
-   "lng": -84.509131,
-   "category": "Coffee",
-   "model": "independent",
-   "types": [
-    "coffee_shop",
-    "cafe"
-   ],
-   "rating": null,
-   "ratingNum": 0,
-   "ratingCount": "0",
-   "hours": null,
-   "website": null,
-   "googleUrl": "https://maps.google.com/?cid=14148976600279864258&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJ136E68sn9YgRlEypqzMPnnE",
@@ -2272,27 +2211,6 @@
    "signature": "The Barry (Maple & Cinnamon Latte)"
   },
   {
-   "placeId": "ChIJ1bkOYfIb9YgRvkl_dGUmzVs",
-   "name": "Crown Bakeries | Smyrna",
-   "address": "1200 Wilson Way SE, Smyrna, GA 30082, USA",
-   "city": "Smyrna",
-   "county": "Cobb",
-   "neighborhood": "Highlands Park",
-   "lat": 33.832378,
-   "lng": -84.507618,
-   "category": "Bakery+Cafe",
-   "model": "independent",
-   "types": [
-    "bakery"
-   ],
-   "rating": 3.5,
-   "ratingNum": 48,
-   "ratingCount": "48",
-   "hours": "Mon-Fri 9am-5pm · Sat-Sun Closed",
-   "website": "http://crownbakeries.com/",
-   "googleUrl": "https://maps.google.com/?cid=6614985644865178046&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
    "placeId": "ChIJ1d0S3aQF9YgRtCdQqVEno3I",
    "name": "Larakin",
    "address": "208 12th St NE, Atlanta, GA 30309, USA",
@@ -2766,7 +2684,7 @@
    "lat": 33.781819,
    "lng": -84.404589,
    "category": "Tea/Boba",
-   "model": "independent",
+   "model": "franchise",
    "types": [
     "tea_house"
    ],
@@ -3154,28 +3072,6 @@
    "hours": "Mon-Fri 6:30am-2pm · Sat-Sun 7am-2pm",
    "website": "https://thebagelhole.com/",
    "googleUrl": "https://maps.google.com/?cid=2304758383224047114&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
-   "placeId": "ChIJ2Wj7EgAF9YgRQRR8CACEG1c",
-   "name": "La Colombe",
-   "address": "255 Courtland St NE, Atlanta, GA 30303, USA",
-   "city": "Atlanta",
-   "county": "Fulton",
-   "neighborhood": "Peachtree Center",
-   "lat": 33.76163,
-   "lng": -84.383149,
-   "category": "Coffee",
-   "model": "independent",
-   "types": [
-    "coffee_shop",
-    "cafe"
-   ],
-   "rating": null,
-   "ratingNum": 0,
-   "ratingCount": "0",
-   "hours": null,
-   "website": null,
-   "googleUrl": "https://maps.google.com/?cid=6276755641348133953&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJ2YHD9C0B9YgRv1R9J7jkDyQ",
@@ -3584,27 +3480,6 @@
    "googleUrl": "https://maps.google.com/?cid=7283672289625264550&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
-   "placeId": "ChIJ2xKRRQCn9YgRCNXkBCVJZCs",
-   "name": "Gulbergs",
-   "address": "3003 N Druid Hills Rd NE, Atlanta, GA 30329, USA",
-   "city": "Atlanta",
-   "county": "DeKalb",
-   "neighborhood": "Northlake",
-   "lat": 33.853105,
-   "lng": -84.260142,
-   "category": "Bakery+Cafe",
-   "model": "independent",
-   "types": [
-    "bakery"
-   ],
-   "rating": null,
-   "ratingNum": 0,
-   "ratingCount": "0",
-   "hours": null,
-   "website": null,
-   "googleUrl": "https://maps.google.com/?cid=3126704464646690056&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
    "placeId": "ChIJ2ySZnHsh9YgRycpHIil8Oh8",
    "name": "Just Love Coffee & Cafe - Tributary",
    "address": "1851 Market St H104, Douglasville, GA 30135, USA",
@@ -3713,27 +3588,6 @@
    "hours": "Mon-Fri 6:30am-2pm · Sat-Sun 7am-2pm",
    "website": "http://bagelboyscafe.com/",
    "googleUrl": "https://maps.google.com/?cid=13867443045103437170&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
-   "placeId": "ChIJ3141TABt9YgR2IGF6xgXCBU",
-   "name": "Black Rifle Additional Parking",
-   "address": "303 Hickory Ridge Trail, Woodstock, GA 30188, USA",
-   "city": "Woodstock",
-   "county": "Cherokee",
-   "lat": 34.087574,
-   "lng": -84.502721,
-   "category": "Coffee",
-   "model": "franchise",
-   "types": [
-    "coffee_shop",
-    "cafe"
-   ],
-   "rating": 2.0,
-   "ratingNum": 1,
-   "ratingCount": "1",
-   "hours": null,
-   "website": null,
-   "googleUrl": "https://maps.google.com/?cid=1515486670408221144&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA"
   },
   {
    "placeId": "ChIJ31v66Ax19YgRww_UDBd_zCs",
@@ -3876,7 +3730,7 @@
    "lat": 33.950358,
    "lng": -84.663137,
    "category": "Bakery+Cafe",
-   "model": "independent",
+   "model": "franchise",
    "types": [
     "dessert_restaurant",
     "dessert_shop",
@@ -4735,12 +4589,9 @@
    "ratingNum": 1,
    "ratingCount": "1",
    "hours": "Mon-Sun Open 24 hours",
-   "late": {
-    "tier": "midnight",
-    "when": "Open 24 hours"
-   },
    "website": null,
-   "googleUrl": "https://maps.google.com/?cid=15362876731290060797&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=15362876731290060797&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "hoursUnverified": true
   },
   {
    "placeId": "ChIJ42dvsEYQ9YgRQqym9azG0k4",
@@ -4962,26 +4813,6 @@
    "googleUrl": "https://maps.google.com/?cid=1226148957370295443&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
-   "placeId": "ChIJ4SamfQDv9IgRMxevelFQ3hI",
-   "name": "Cafe 503",
-   "address": "280 Hillsdale Dr, Fayetteville, GA 30214, USA",
-   "city": "Fayetteville",
-   "county": "Fayette",
-   "lat": 33.460889,
-   "lng": -84.441984,
-   "category": "Coffee",
-   "model": "franchise",
-   "types": [
-    "cafe"
-   ],
-   "rating": null,
-   "ratingNum": 0,
-   "ratingCount": "0",
-   "hours": null,
-   "website": null,
-   "googleUrl": "https://maps.google.com/?cid=1359612448393336627&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
    "placeId": "ChIJ4TfXX_0D9YgRTKTC_q63TUE",
    "name": "Bellwood Coffee - Grant Park",
    "address": "568 Boulevard SE, Atlanta, GA 30312, USA",
@@ -4991,7 +4822,7 @@
    "lat": 33.739005,
    "lng": -84.367862,
    "category": "Roasters",
-   "model": "independent",
+   "model": "franchise",
    "types": [
     "coffee_shop",
     "cafe"
@@ -5596,7 +5427,7 @@
    "lat": 33.897666,
    "lng": -84.52263,
    "category": "Coffee",
-   "model": "franchise",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -6095,28 +5926,6 @@
    "googleUrl": "https://maps.google.com/?cid=15143887360594939297&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
-   "placeId": "ChIJ5fVwV5oR9YgRAE6Cc9d5HoE",
-   "name": "Secret Sush",
-   "address": "2281 Akers Mill Rd SE, Atlanta, GA 30339, USA",
-   "city": "Atlanta",
-   "county": "Cobb",
-   "neighborhood": "Cumberland",
-   "lat": 33.897152,
-   "lng": -84.447131,
-   "category": "Coffee",
-   "model": "independent",
-   "types": [
-    "coffee_shop",
-    "cafe"
-   ],
-   "rating": null,
-   "ratingNum": 0,
-   "ratingCount": "0",
-   "hours": null,
-   "website": null,
-   "googleUrl": "https://maps.google.com/?cid=9304007846456872448&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
    "placeId": "ChIJ5f_gqxp19YgRzscMyDwLw5Q",
    "name": "The Bep Teahouse",
    "address": "3005 Old Alabama Rd Ste 30, Johns Creek, GA 30022, USA",
@@ -6181,27 +5990,6 @@
    "hours": "Mon-Sun 10am-7pm",
    "website": "https://dragonflybakeryonline.com/",
    "googleUrl": "https://maps.google.com/?cid=4213555689478814274&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
-   "placeId": "ChIJ5w2xuyiV9YgRwAsewF9daMQ",
-   "name": "Bloom & Brew Co.",
-   "address": "765 Westmoreland Ln NE, Lawrenceville, GA 30043, USA",
-   "city": "Lawrenceville",
-   "county": "Gwinnett",
-   "lat": 34.011658,
-   "lng": -83.937162,
-   "category": "Coffee",
-   "model": "independent",
-   "types": [
-    "coffee_shop",
-    "cafe"
-   ],
-   "rating": null,
-   "ratingNum": 0,
-   "ratingCount": "0",
-   "hours": null,
-   "website": null,
-   "googleUrl": "https://maps.google.com/?cid=14152664494838254528&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJ5yFTj18H9YgRhSCxxCixq8M",
@@ -6449,26 +6237,6 @@
    "googleUrl": "https://maps.google.com/?cid=12623626392928516679&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
-   "placeId": "ChIJ6150zN0L9YgRsC38OyKSKxo",
-   "name": "Sprinkle Some Joy Sweets",
-   "address": "824 Stratford Ct, Atlanta, GA 30350, USA",
-   "city": "Atlanta",
-   "county": "Fulton",
-   "lat": 33.970975,
-   "lng": -84.345909,
-   "category": "Bakery+Cafe",
-   "model": "independent",
-   "types": [
-    "bakery"
-   ],
-   "rating": null,
-   "ratingNum": 0,
-   "ratingCount": "0",
-   "hours": null,
-   "website": null,
-   "googleUrl": "https://maps.google.com/?cid=1885761544717610416&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA"
-  },
-  {
    "placeId": "ChIJ64h47j4P9YgRE2IQ4VRkBhA",
    "name": "Great American Cookies - Lenox",
    "address": "3393 Peachtree Rd NE Suite: 2026A, Atlanta, GA 30326, USA",
@@ -6478,7 +6246,7 @@
    "lat": 33.845463,
    "lng": -84.361614,
    "category": "Bakery+Cafe",
-   "model": "independent",
+   "model": "franchise",
    "types": [
     "bakery"
    ],
@@ -6985,7 +6753,7 @@
    "lat": 33.810886,
    "lng": -84.433788,
    "category": "Roasters",
-   "model": "independent",
+   "model": "franchise",
    "types": [
     "coffee_shop",
     "cafe"
@@ -6996,27 +6764,6 @@
    "hours": "Mon-Fri 7am-4pm · Sat 8am-5pm · Sun 8am-4pm",
    "website": "http://bellwoodcoffee.com/",
    "googleUrl": "https://maps.google.com/?cid=9329389097474827540&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
-   "placeId": "ChIJ6yrCFAAp9YgRysfxvcjLLBk",
-   "name": "Guatemalan Coffee LLC",
-   "address": "8600 Nolandwood Ln, Villa Rica, GA 30180, USA",
-   "city": "Villa Rica",
-   "county": "Douglas",
-   "lat": 33.708769,
-   "lng": -84.856203,
-   "category": "Coffee",
-   "model": "independent",
-   "types": [
-    "coffee_shop",
-    "cafe"
-   ],
-   "rating": null,
-   "ratingNum": 0,
-   "ratingCount": "0",
-   "hours": null,
-   "website": null,
-   "googleUrl": "https://maps.google.com/?cid=1814048812964104138&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJ6zDWQMkR9YgRa0i3EJn28DA",
@@ -7906,26 +7653,6 @@
    "googleUrl": "https://maps.google.com/?cid=1901970461206983630&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
-   "placeId": "ChIJ7ykq-wgd9YgR9JJBIl0UlO8",
-   "name": "DaBakeshopATL",
-   "address": "415 Hickory Glen Ln, Atlanta, GA 30311, USA",
-   "city": "Atlanta",
-   "county": "Fulton",
-   "lat": 33.723473,
-   "lng": -84.497548,
-   "category": "Bakery+Cafe",
-   "model": "independent",
-   "types": [
-    "bakery"
-   ],
-   "rating": null,
-   "ratingNum": 0,
-   "ratingCount": "0",
-   "hours": null,
-   "website": null,
-   "googleUrl": "https://maps.google.com/?cid=17263445661857190644&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
    "placeId": "ChIJ7ynN9o6g9YgRZIQ5hMkFHmw",
    "name": "Dunkin'",
    "address": "4009 Holcomb Bridge Rd, Norcross, GA 30092, USA",
@@ -8053,7 +7780,7 @@
    "lat": 33.907031,
    "lng": -84.349451,
    "category": "Coffee",
-   "model": "franchise",
+   "model": "independent",
    "types": [
     "cafe"
    ],
@@ -8345,26 +8072,6 @@
    "googleUrl": "https://maps.google.com/?cid=15012735350501357809&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
-   "placeId": "ChIJ88ijXjXn9IgRT2ksy1bh-fw",
-   "name": "Taylors Table LLC",
-   "address": "98 Pine St NE, Fairburn, GA 30213, USA",
-   "city": "Fairburn",
-   "county": "Fulton",
-   "lat": 33.564585,
-   "lng": -84.574522,
-   "category": "Bakery+Cafe",
-   "model": "independent",
-   "types": [
-    "bakery"
-   ],
-   "rating": null,
-   "ratingNum": 0,
-   "ratingCount": "0",
-   "hours": null,
-   "website": null,
-   "googleUrl": "https://maps.google.com/?cid=18228848729650915663&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
    "placeId": "ChIJ8RCP9pn39YgRKkA0wVz_IMs",
    "name": "Street Sweets Cafe",
    "address": "102 Clarks Bridge Rd, Gainesville, GA 30501, USA",
@@ -8602,7 +8309,7 @@
    "lat": 33.756007,
    "lng": -84.389424,
    "category": "Tea/Boba",
-   "model": "independent",
+   "model": "franchise",
    "types": [
     "tea_house"
    ],
@@ -9149,26 +8856,6 @@
    "googleUrl": "https://maps.google.com/?cid=13564197968327083258&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
-   "placeId": "ChIJ9QthVgAX9YgRjvi5MMMb-PM",
-   "name": "River oak",
-   "address": "1361 Austell Rd SE, Marietta, GA 30008, USA",
-   "city": "Marietta",
-   "county": "Cobb",
-   "lat": 33.919914,
-   "lng": -84.547012,
-   "category": "Bakery+Cafe",
-   "model": "independent",
-   "types": [
-    "bakery"
-   ],
-   "rating": null,
-   "ratingNum": 0,
-   "ratingCount": "0",
-   "hours": null,
-   "website": null,
-   "googleUrl": "https://maps.google.com/?cid=17579831670590797966&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
    "placeId": "ChIJ9RLuca-p9YgRFh9s9MPvodU",
    "name": "Dunkin'",
    "address": "4760 Memorial Dr, Decatur, GA 30032, USA",
@@ -9448,12 +9135,9 @@
    "ratingNum": 0,
    "ratingCount": "0",
    "hours": "Mon-Fri Open 24 hours · Sat-Sun Closed",
-   "late": {
-    "tier": "midnight",
-    "when": "Weekdays Open 24 hours"
-   },
    "website": null,
-   "googleUrl": "https://maps.google.com/?cid=13202930433503763835&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=13202930433503763835&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "hoursUnverified": true
   },
   {
    "placeId": "ChIJ9cWrmyj39YgRQbV5qMou4-I",
@@ -9472,12 +9156,9 @@
    "ratingNum": 0,
    "ratingCount": "0",
    "hours": "Mon-Sun Open 24 hours",
-   "late": {
-    "tier": "midnight",
-    "when": "Open 24 hours"
-   },
    "website": "https://www.facebook.com/share/1HJpWWWZ9v/?mibextid=wwXIfr",
-   "googleUrl": "https://maps.google.com/?cid=16348962520229852481&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=16348962520229852481&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "hoursUnverified": true
   },
   {
    "placeId": "ChIJ9c_pfAAF9YgRwtp-Psvxmnk",
@@ -10223,7 +9904,7 @@
    "lat": 33.797582,
    "lng": -84.323544,
    "category": "Roasters",
-   "model": "independent",
+   "model": "franchise",
    "types": [
     "coffee_shop",
     "cafe"
@@ -10828,30 +10509,6 @@
    "googleUrl": "https://maps.google.com/?cid=15115932092708081682&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
-   "placeId": "ChIJBSogXeGl9YgR2uuR0WO9N_w",
-   "name": "Flowers Foods Specialty Group",
-   "address": "5087 S Royal Atlanta Dr, Tucker, GA 30084, USA",
-   "city": "Tucker",
-   "county": "DeKalb",
-   "lat": 33.855224,
-   "lng": -84.180167,
-   "category": "Bakery+Cafe",
-   "model": "independent",
-   "types": [
-    "bakery"
-   ],
-   "rating": 3.4,
-   "ratingNum": 10,
-   "ratingCount": "10",
-   "hours": "Mon-Sun Open 24 hours",
-   "late": {
-    "tier": "midnight",
-    "when": "Open 24 hours"
-   },
-   "website": "http://www.flowersfoods.com/",
-   "googleUrl": "https://maps.google.com/?cid=18174203057692339162&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
    "placeId": "ChIJBTF9AtkD9YgRAhUpzp8DzI0",
    "name": "PERC",
    "address": "519 Memorial Dr SE C-01, Atlanta, GA 30312, USA",
@@ -11199,26 +10856,6 @@
    "googleUrl": "https://maps.google.com/?cid=8872187292100890114&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
-   "placeId": "ChIJBclnqogm9YgRp9ZbxgvT9SM",
-   "name": "Flowers Baking Co",
-   "address": "12001 East Veterans Memorial Hwy, Douglasville, GA 30134, USA",
-   "city": "Douglasville",
-   "county": "Douglas",
-   "lat": 33.761261,
-   "lng": -84.727367,
-   "category": "Bakery+Cafe",
-   "model": "independent",
-   "types": [
-    "bakery"
-   ],
-   "rating": 4.4,
-   "ratingNum": 284,
-   "ratingCount": "284",
-   "hours": "Mon-Fri 9am-6pm · Sat 10am-5pm · Sun Closed",
-   "website": "https://flowersfoods.com/",
-   "googleUrl": "https://maps.google.com/?cid=2591209208147596967&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
    "placeId": "ChIJBegXdKD99IgR-vSurauFU-M",
    "name": "Luv Scoops Ice Cream",
    "address": "1111 Forest Pkwy, Forest Park, GA 30297, USA",
@@ -11237,47 +10874,6 @@
    "hours": "Mon-Thu 1:00-8pm · Fri-Sat 1:00-9pm · Sun 1:00-7pm",
    "website": null,
    "googleUrl": "https://maps.google.com/?cid=16380583242076452090&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
-   "placeId": "ChIJBfzAGgAV9YgRHnbRW0iX4h0",
-   "name": "Ezra Coffee Company",
-   "address": "1831 W Oak Pkwy, Marietta, GA 30062, USA",
-   "city": "Marietta",
-   "county": "Cobb",
-   "lat": 33.988882,
-   "lng": -84.525158,
-   "category": "Coffee",
-   "model": "independent",
-   "types": [
-    "coffee_shop",
-    "cafe"
-   ],
-   "rating": null,
-   "ratingNum": 0,
-   "ratingCount": "0",
-   "hours": null,
-   "website": null,
-   "googleUrl": "https://maps.google.com/?cid=2153449908870411806&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
-   "placeId": "ChIJC-gxIom99YgRsd5QU1ZQsWU",
-   "name": "Keidy’s fits bakery",
-   "address": "1041 Park Creek Cir, Lawrenceville, GA 30044, USA",
-   "city": "Lawrenceville",
-   "county": "Gwinnett",
-   "lat": 33.936478,
-   "lng": -84.092229,
-   "category": "Bakery+Cafe",
-   "model": "independent",
-   "types": [
-    "bakery"
-   ],
-   "rating": null,
-   "ratingNum": 0,
-   "ratingCount": "0",
-   "hours": null,
-   "website": null,
-   "googleUrl": "https://maps.google.com/?cid=7327726400403726001&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA"
   },
   {
    "placeId": "ChIJC24pxzm1WIgRLQHA_NQvAmY",
@@ -11344,28 +10940,6 @@
    "hours": "Mon-Fri 8am-6pm · Sat 8am-3pm · Sun Closed",
    "website": "http://yibnacafe.com/",
    "googleUrl": "https://maps.google.com/?cid=11669263876304177755&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
-   "placeId": "ChIJC4zyUQDB9IgR1E_FuzICM1A",
-   "name": "Warriors Restiralon",
-   "address": "108 Nanette Dr, Newnan, GA 30265, USA",
-   "city": "Newnan",
-   "county": "Coweta",
-   "neighborhood": "Thomas Crossroads",
-   "lat": 33.413568,
-   "lng": -84.685064,
-   "category": "Coffee",
-   "model": "independent",
-   "types": [
-    "coffee_shop",
-    "cafe"
-   ],
-   "rating": null,
-   "ratingNum": 0,
-   "ratingCount": "0",
-   "hours": null,
-   "website": null,
-   "googleUrl": "https://maps.google.com/?cid=5778965163768369108&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA"
   },
   {
    "placeId": "ChIJC6Fgirb19YgRs2xS1v2RCAo",
@@ -11801,7 +11375,7 @@
    "lat": 34.013057,
    "lng": -84.564041,
    "category": "Tea/Boba",
-   "model": "independent",
+   "model": "franchise",
    "types": [
     "tea_house"
    ],
@@ -12807,26 +12381,6 @@
    "googleUrl": "https://maps.google.com/?cid=11547663528901608985&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
-   "placeId": "ChIJDetCMGBX9IgR8DZTbiGTFhM",
-   "name": "ToyaSweetTreats",
-   "address": "913 Maple Leaf Dr, McDonough, GA 30253, USA",
-   "city": "McDonough",
-   "county": "Henry",
-   "lat": 33.489495,
-   "lng": -84.191488,
-   "category": "Bakery+Cafe",
-   "model": "independent",
-   "types": [
-    "bakery"
-   ],
-   "rating": null,
-   "ratingNum": 0,
-   "ratingCount": "0",
-   "hours": null,
-   "website": null,
-   "googleUrl": "https://maps.google.com/?cid=1375448508002416368&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
    "placeId": "ChIJDfsITNwH9YgRx6S3gZmWAq8",
    "name": "CHIBAN COFFEE",
    "address": "1116 E Ponce de Leon Ave, Decatur, GA 30030, USA",
@@ -12846,27 +12400,6 @@
    "hours": "Mon-Fri 6am-6pm · Sat 7am-6pm · Sun 9am-6pm",
    "website": null,
    "googleUrl": "https://maps.google.com/?cid=12610807492641268935&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
-   "placeId": "ChIJDw4jVAC99YgRD0QVVxAaiTg",
-   "name": "Forest vale",
-   "address": "4786 Sugarloaf Pkwy, Lawrenceville, GA 30044, USA",
-   "city": "Lawrenceville",
-   "county": "Gwinnett",
-   "lat": 33.952609,
-   "lng": -84.051041,
-   "category": "Coffee",
-   "model": "independent",
-   "types": [
-    "coffee_shop",
-    "cafe"
-   ],
-   "rating": null,
-   "ratingNum": 0,
-   "ratingCount": "0",
-   "hours": null,
-   "website": null,
-   "googleUrl": "https://maps.google.com/?cid=4073815995416134671&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJDwHgSE3q9IgR6xgtjITlU8s",
@@ -13379,28 +12912,6 @@
    "googleUrl": "https://maps.google.com/?cid=7282084547386671199&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
-   "placeId": "ChIJEaPqZAZr9YgRRKxi2rb4_2A",
-   "name": "Coffee",
-   "address": "300 Townpark Dr, Kennesaw, GA 30144, USA",
-   "city": "Kennesaw",
-   "county": "Cobb",
-   "neighborhood": "Town Center",
-   "lat": 34.042889,
-   "lng": -84.572117,
-   "category": "Coffee",
-   "model": "franchise",
-   "types": [
-    "coffee_shop",
-    "cafe"
-   ],
-   "rating": null,
-   "ratingNum": 0,
-   "ratingCount": "0",
-   "hours": null,
-   "website": null,
-   "googleUrl": "https://maps.google.com/?cid=6989578610933935172&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
    "placeId": "ChIJEbRk2mKi9YgRs0wfwnNCb34",
    "name": "Crave Pie Studio",
    "address": "3107 Main St, Duluth, GA 30096, USA",
@@ -13635,12 +13146,9 @@
    "ratingNum": 0,
    "ratingCount": "0",
    "hours": "Sun-Fri 9am-5pm · Sat Open 24 hours",
-   "late": {
-    "tier": "midnight",
-    "when": "Sat till midnight"
-   },
    "website": null,
-   "googleUrl": "https://maps.google.com/?cid=12911054071196785069&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=12911054071196785069&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "hoursUnverified": true
   },
   {
    "placeId": "ChIJF1PZvNTj9IgR0g4xrHe0T4E",
@@ -13860,26 +13368,6 @@
     "iced vanilla latte"
    ],
    "signature": "Southern Seven-Flavor Pound Cake"
-  },
-  {
-   "placeId": "ChIJFSY4r1uD9YgRG29NZ1F3uAw",
-   "name": "Billy Bread Company",
-   "address": "7035 Ansley Pk Wy, Cumming, GA 30028, USA",
-   "city": "Cumming",
-   "county": "Forsyth",
-   "lat": 34.277146,
-   "lng": -84.235377,
-   "category": "Bakery+Cafe",
-   "model": "independent",
-   "types": [
-    "bakery"
-   ],
-   "rating": null,
-   "ratingNum": 0,
-   "ratingCount": "0",
-   "hours": null,
-   "website": null,
-   "googleUrl": "https://maps.google.com/?cid=916613715679080219&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJFU72h2JZ9IgRuPBKs5Lh34g",
@@ -14153,26 +13641,6 @@
    "googleUrl": "https://maps.google.com/?cid=17297645458509053513&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
-   "placeId": "ChIJFczareal9YgRdJ4LqYdP3cM",
-   "name": "Flowers Bakeries LLC (Nature's Own)",
-   "address": "5087 S Royal Atlanta Dr, Tucker, GA 30084, USA",
-   "city": "Tucker",
-   "county": "DeKalb",
-   "lat": 33.8554,
-   "lng": -84.179735,
-   "category": "Bakery+Cafe",
-   "model": "independent",
-   "types": [
-    "bakery"
-   ],
-   "rating": 4.1,
-   "ratingNum": 14,
-   "ratingCount": "14",
-   "hours": "Mon-Fri 9am-5pm · Sat-Sun Closed",
-   "website": null,
-   "googleUrl": "https://maps.google.com/?cid=14113524251324292724&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
    "placeId": "ChIJFdVm1-Gn9YgRUZdcbHwEtQo",
    "name": "Dulces Sueños Cakes 2",
    "address": "1210 Rockbridge Rd NW Ste g, Norcross, GA 30093, USA",
@@ -14191,46 +13659,6 @@
    "hours": "Mon-Sat 5am-9pm · Sun 7am-9pm",
    "website": "https://store.dulcesuenosbakery.com/products",
    "googleUrl": "https://maps.google.com/?cid=771527843604371281&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
-   "placeId": "ChIJFdzSVwCz9YgR8huhEqrd83k",
-   "name": "Five fine",
-   "address": "MWW8+G6, Stonecrest, GA 30038, USA",
-   "city": "Stonecrest",
-   "county": "DeKalb",
-   "lat": 33.69629,
-   "lng": -84.084496,
-   "category": "Bakery+Cafe",
-   "model": "independent",
-   "types": [
-    "bakery"
-   ],
-   "rating": null,
-   "ratingNum": 0,
-   "ratingCount": "0",
-   "hours": null,
-   "website": null,
-   "googleUrl": "https://maps.google.com/?cid=8787611020456696818&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
-   "placeId": "ChIJFfFiNAAN9YgRFE8GgEuohV4",
-   "name": "Jimmy Johns",
-   "address": "460 Morgan Falls Rd, Sandy Springs, GA 30350, USA",
-   "city": "Sandy Springs",
-   "county": "Fulton",
-   "lat": 33.969393,
-   "lng": -84.370596,
-   "category": "Bakery+Cafe",
-   "model": "independent",
-   "types": [
-    "bakery"
-   ],
-   "rating": null,
-   "ratingNum": 0,
-   "ratingCount": "0",
-   "hours": null,
-   "website": null,
-   "googleUrl": "https://maps.google.com/?cid=6811035053691653908&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJFflFU6-_9YgRD3HFNEtHvrI",
@@ -14521,7 +13949,7 @@
    "lat": 33.771513,
    "lng": -84.367403,
    "category": "Roasters",
-   "model": "independent",
+   "model": "franchise",
    "types": [
     "coffee_shop",
     "cafe"
@@ -14688,7 +14116,7 @@
    "lat": 34.0708,
    "lng": -84.277172,
    "category": "Bakery+Cafe",
-   "model": "independent",
+   "model": "franchise",
    "types": [
     "bakery"
    ],
@@ -14790,7 +14218,7 @@
    "lat": 33.810283,
    "lng": -84.476704,
    "category": "Roasters",
-   "model": "independent",
+   "model": "franchise",
    "types": [
     "coffee_shop",
     "cafe"
@@ -15411,28 +14839,6 @@
    "googleUrl": "https://maps.google.com/?cid=16845911247793956079&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
-   "placeId": "ChIJHU4mOQAD9YgRiBD7TRB76DI",
-   "name": "Thomaston",
-   "address": "1458 Pontiac Pl SE, Atlanta, GA 30316, USA",
-   "city": "Atlanta",
-   "county": "Fulton",
-   "neighborhood": "Custer/McDonough/Guice",
-   "lat": 33.714752,
-   "lng": -84.356065,
-   "category": "Coffee",
-   "model": "independent",
-   "types": [
-    "coffee_shop",
-    "cafe"
-   ],
-   "rating": null,
-   "ratingNum": 0,
-   "ratingCount": "0",
-   "hours": null,
-   "website": null,
-   "googleUrl": "https://maps.google.com/?cid=3668317206451261576&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
    "placeId": "ChIJHYTsAwBD9IgRyeoqokzZD5k",
    "name": "Cozy Creations",
    "address": "1690 Leguin Mill Rd, Locust Grove, GA 30248, USA",
@@ -15449,12 +14855,9 @@
    "ratingNum": 1,
    "ratingCount": "1",
    "hours": "Mon-Sun Open 24 hours",
-   "late": {
-    "tier": "midnight",
-    "when": "Open 24 hours"
-   },
    "website": "https://shopcozycreations.com/",
-   "googleUrl": "https://maps.google.com/?cid=11029272935615097545&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=11029272935615097545&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "hoursUnverified": true
   },
   {
    "placeId": "ChIJH_XVLADz9YgRSMTT_wIMTUs",
@@ -15700,26 +15103,6 @@
    "googleUrl": "https://maps.google.com/?cid=15962282921781496018&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
-   "placeId": "ChIJHzfpNmBB9YgRd60zjZF2Aj0",
-   "name": "Gimmie A Piece LLC",
-   "address": "2090 Baker Rd Ste 304, Kennesaw, GA 30144, USA",
-   "city": "Kennesaw",
-   "county": "Cobb",
-   "lat": 34.049677,
-   "lng": -84.611402,
-   "category": "Bakery+Cafe",
-   "model": "independent",
-   "types": [
-    "bakery"
-   ],
-   "rating": null,
-   "ratingNum": 0,
-   "ratingCount": "0",
-   "hours": null,
-   "website": null,
-   "googleUrl": "https://maps.google.com/?cid=4396206553778335095&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
    "placeId": "ChIJI-l6IQD99IgRrQOdA0HP3Mw",
    "name": "La Chapina Bakery",
    "address": "4095 Jonesboro Rd Ste E, Forest Park, GA 30297, USA",
@@ -15908,33 +15291,9 @@
    "ratingNum": 1,
    "ratingCount": "1",
    "hours": "Mon-Sun Open 24 hours",
-   "late": {
-    "tier": "midnight",
-    "when": "Open 24 hours"
-   },
    "website": "https://www.facebook.com/share/1CoUk7z4kw/?mibextid=wwXIfr",
-   "googleUrl": "https://maps.google.com/?cid=10074762761646279743&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
-   "placeId": "ChIJI8vgLACj9YgRgEa4FtF0hQ0",
-   "name": "Gold Bunny Bakery",
-   "address": "2131 Pleasant Hill Rd, Duluth, GA 30096, USA",
-   "city": "Duluth",
-   "county": "Gwinnett",
-   "neighborhood": "Gwinnett Place",
-   "lat": 33.954577,
-   "lng": -84.13268,
-   "category": "Bakery+Cafe",
-   "model": "independent",
-   "types": [
-    "bakery"
-   ],
-   "rating": null,
-   "ratingNum": 0,
-   "ratingCount": "0",
-   "hours": null,
-   "website": null,
-   "googleUrl": "https://maps.google.com/?cid=974313335773742720&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=10074762761646279743&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "hoursUnverified": true
   },
   {
    "placeId": "ChIJI9nbiXgE9YgRZFAjntfgsS4",
@@ -16335,26 +15694,6 @@
    "hours": "Sun-Thu 10am-9pm · Fri-Sat 10am-9:30pm",
    "website": "https://locations.cinnaholic.com/ll/us/ga/peachtree-corners/62/",
    "googleUrl": "https://maps.google.com/?cid=11800521675918498039&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
-   "placeId": "ChIJIdKDJf6C9YgR5Pm1cUsll7o",
-   "name": "Flowers Baking",
-   "address": "3758 Post Rd, Cumming, GA 30040, USA",
-   "city": "Cumming",
-   "county": "Forsyth",
-   "lat": 34.236311,
-   "lng": -84.228301,
-   "category": "Bakery+Cafe",
-   "model": "independent",
-   "types": [
-    "bakery"
-   ],
-   "rating": 4.7,
-   "ratingNum": 96,
-   "ratingCount": "96",
-   "hours": "Mon-Fri 10am-5pm · Sat 10am-4pm · Sun Closed",
-   "website": "https://flowersfoods.com/",
-   "googleUrl": "https://maps.google.com/?cid=13445256218498431460&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJIdYGaEa99YgR1zndwGoaQPw",
@@ -16827,7 +16166,7 @@
    "lat": 33.802793,
    "lng": -84.393155,
    "category": "Roasters",
-   "model": "independent",
+   "model": "franchise",
    "types": [
     "coffee_shop",
     "cafe"
@@ -16944,28 +16283,6 @@
    "hours": "Mon-Sun 5am-9pm",
    "website": "https://www.dunkindonuts.com/locations/us/ga/atlanta/2444-piedmont-rd-ne/store-350824/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=350824&y_source=1_MTIxMTI5NTYtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
    "googleUrl": "https://maps.google.com/?cid=2477234794424494678&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
-   "placeId": "ChIJJ4BpoCKn9YgR20Zb4ZJ6lnM",
-   "name": "Primicas Nutrición (Herbalife)",
-   "address": "5402 Jimmy Carter Blvd, Norcross, GA 30093, USA",
-   "city": "Norcross",
-   "county": "Gwinnett",
-   "neighborhood": "Gwinnett Village",
-   "lat": 33.906112,
-   "lng": -84.206511,
-   "category": "Coffee",
-   "model": "independent",
-   "types": [
-    "coffee_shop",
-    "cafe"
-   ],
-   "rating": 4.5,
-   "ratingNum": 11,
-   "ratingCount": "11",
-   "hours": "Mon-Fri 5:30am-1:30pm, 6:30-9pm · Sat 5:30am-1pm, 6:30-9pm · Sun 7:30am-1pm",
-   "website": null,
-   "googleUrl": "https://maps.google.com/?cid=8328979332132980443&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJJ4zk1kkF9YgRTQADNYRtTn0",
@@ -17094,26 +16411,6 @@
    "hours": "Mon-Sat 9am-6pm · Sun Closed",
    "website": "https://bakesy.shop/b/sweetsalldaye",
    "googleUrl": "https://maps.google.com/?cid=6333049962028851637&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
-   "placeId": "ChIJJ8YUQwB19YgRdtbYOnUqDGw",
-   "name": "7 SISTERS",
-   "address": "65 Oakhurst Leaf Dr, Alpharetta, GA 30004, USA",
-   "city": "Alpharetta",
-   "county": "Fulton",
-   "lat": 34.102459,
-   "lng": -84.302894,
-   "category": "Bakery+Cafe",
-   "model": "independent",
-   "types": [
-    "bakery"
-   ],
-   "rating": null,
-   "ratingNum": 0,
-   "ratingCount": "0",
-   "hours": null,
-   "website": null,
-   "googleUrl": "https://maps.google.com/?cid=7785644538803574390&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJJQJuVNgF9YgRtbcOd_tOr6k",
@@ -17474,32 +16771,6 @@
    "googleUrl": "https://maps.google.com/?cid=10186450473219623378&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA"
   },
   {
-   "placeId": "ChIJJbEnv_Sn9YgRvPAc6glKSAo",
-   "name": "Hang Asian Market",
-   "address": "6100 Live Oak Pkwy #6B, Norcross, GA 30093, USA",
-   "city": "Norcross",
-   "county": "Gwinnett",
-   "neighborhood": "Gwinnett Village",
-   "lat": 33.90728,
-   "lng": -84.201472,
-   "category": "Coffee",
-   "model": "independent",
-   "types": [
-    "coffee_shop",
-    "cafe"
-   ],
-   "rating": 3.0,
-   "ratingNum": 1,
-   "ratingCount": "1",
-   "hours": "Mon-Sun 9am-10pm",
-   "late": {
-    "tier": "10pm+",
-    "when": "Daily till 10pm"
-   },
-   "website": "https://www.facebook.com/hangasianmarket",
-   "googleUrl": "https://maps.google.com/?cid=740923545145372860&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
    "placeId": "ChIJJcgnoOkL9YgRYrFapSosSa0",
    "name": "Starbucks Coffee Company",
    "address": "5561 Chamblee Dunwoody Rd, Dunwoody, GA 30338, USA",
@@ -17520,27 +16791,6 @@
    "hours": "Mon-Sun 5am-8pm",
    "website": "https://www.starbucks.com/store-locator/store/8781/",
    "googleUrl": "https://maps.google.com/?cid=12486560003535843682&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
-   "placeId": "ChIJJdJ_A-kR9YgRU9sM5TG0Uno",
-   "name": "Aether Coffee",
-   "address": "976 Cobb Pkwy SE, Marietta, GA 30060, USA",
-   "city": "Marietta",
-   "county": "Cobb",
-   "lat": 33.928925,
-   "lng": -84.509131,
-   "category": "Coffee",
-   "model": "independent",
-   "types": [
-    "coffee_shop",
-    "cafe"
-   ],
-   "rating": null,
-   "ratingNum": 0,
-   "ratingCount": "0",
-   "hours": null,
-   "website": null,
-   "googleUrl": "https://maps.google.com/?cid=8814305547106704211&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJJe7g0ki99YgRFab6sQPCPbo",
@@ -17586,26 +16836,6 @@
    "hours": "Mon-Sun 5am-9pm",
    "website": "https://www.dunkindonuts.com/locations/us/ga/cumming/3420-canton-highway/store-364473/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=364473&y_source=1_MTAyNTQ4OTk2Ni03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
    "googleUrl": "https://maps.google.com/?cid=4711508110477175368&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
-   "placeId": "ChIJJeXo6hPi9IgRG8wVHAdB1BA",
-   "name": "BJ's Bakery",
-   "address": "East Point, GA 30344, USA",
-   "city": "East Point",
-   "county": "Fulton",
-   "lat": 33.659087,
-   "lng": -84.505341,
-   "category": "Bakery+Cafe",
-   "model": "franchise",
-   "types": [
-    "bakery"
-   ],
-   "rating": 5.0,
-   "ratingNum": 2,
-   "ratingCount": "2",
-   "hours": "Mon-Sat 9am-9pm · Sun 9am-8pm",
-   "website": "https://www.bjs.com/bakery",
-   "googleUrl": "https://maps.google.com/?cid=1212665698461273115&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJJfbA1awG9YgRy-nJNOrQZNg",
@@ -18501,28 +17731,6 @@
    "googleUrl": "https://maps.google.com/?cid=8950875047507657772&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
-   "placeId": "ChIJKzRQ114F9YgRedYcMnY6b5s",
-   "name": "rauchammer",
-   "address": "55 Ivan Allen Jr Blvd NW, Atlanta, GA 30308, USA",
-   "city": "Atlanta",
-   "county": "Fulton",
-   "neighborhood": "Hotel District",
-   "lat": 33.764783,
-   "lng": -84.389987,
-   "category": "Coffee",
-   "model": "independent",
-   "types": [
-    "coffee_shop",
-    "cafe"
-   ],
-   "rating": null,
-   "ratingNum": 0,
-   "ratingCount": "0",
-   "hours": null,
-   "website": null,
-   "googleUrl": "https://maps.google.com/?cid=11200235077615015545&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
    "placeId": "ChIJL-_iJd5c9IgReGGtLH4Gv1Y",
    "name": "Maui Wowi",
    "address": "1000 Tanger Dr #316a, Locust Grove, GA 30248, USA",
@@ -18632,26 +17840,6 @@
    "hours": "Mon-Sun 6am-8pm",
    "website": "https://scooterscoffee.com/",
    "googleUrl": "https://maps.google.com/?cid=18284741334808730433&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
-   "placeId": "ChIJL3wy8vp59YgRgtUU9_UCxIo",
-   "name": "Kimmie Bakes",
-   "address": "1841 Holbrook Campground Rd, Cumming, GA 30040, USA",
-   "city": "Cumming",
-   "county": "Cherokee",
-   "lat": 34.218351,
-   "lng": -84.272244,
-   "category": "Bakery+Cafe",
-   "model": "independent",
-   "types": [
-    "bakery"
-   ],
-   "rating": null,
-   "ratingNum": 0,
-   "ratingCount": "0",
-   "hours": null,
-   "website": null,
-   "googleUrl": "https://maps.google.com/?cid=9999120328104924546&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJL4YBE4YP9YgREZE8FQyhXs8",
@@ -19334,26 +18522,6 @@
    "googleUrl": "https://maps.google.com/?cid=413208031597593825&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
-   "placeId": "ChIJLzQ0asXz9YgRo4x8cnucoWo",
-   "name": "Flowers Discount Bakery",
-   "address": "2822 Frontage Rd, Gainesville, GA 30504, USA",
-   "city": "Gainesville",
-   "county": "Hall",
-   "lat": 34.234137,
-   "lng": -83.859432,
-   "category": "Bakery+Cafe",
-   "model": "independent",
-   "types": [
-    "bakery"
-   ],
-   "rating": 4.5,
-   "ratingNum": 62,
-   "ratingCount": "62",
-   "hours": "Mon-Tue 10am-5pm · Wed Closed · Thu-Fri 10am-5pm · Sat 10am-4pm · Sun Closed",
-   "website": null,
-   "googleUrl": "https://maps.google.com/?cid=7683594493286452387&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
    "placeId": "ChIJM-FdL9QN9YgRTu5fvjDMj04",
    "name": "Land Of A Thousand Hills Coffee",
    "address": "352 S Atlanta St, Roswell, GA 30075, USA",
@@ -19638,26 +18806,6 @@
    "googleUrl": "https://maps.google.com/?cid=14389205185854823902&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
-   "placeId": "ChIJMRz4dMZA9YgRqNNMXZnj5pg",
-   "name": "COMMUNITY COFFEE",
-   "address": "Acworth, GA 30101, USA",
-   "city": "Acworth",
-   "county": "Cobb",
-   "lat": 34.065832,
-   "lng": -84.677826,
-   "category": "Coffee",
-   "model": "independent",
-   "types": [
-    "cafe"
-   ],
-   "rating": null,
-   "ratingNum": 0,
-   "ratingCount": "0",
-   "hours": null,
-   "website": null,
-   "googleUrl": "https://maps.google.com/?cid=11017743786243314600&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
    "placeId": "ChIJMSVZ7AlLhWoRGMknGsjiTgE",
    "name": "Recuerdos Cafe",
    "address": "939 Ponce De Leon Ave NE, Atlanta, GA 30306, USA",
@@ -19793,27 +18941,6 @@
    "googleUrl": "https://maps.google.com/?cid=8188544851017036974&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
-   "placeId": "ChIJMXoOTACv9YgR9o1IrsWKhZo",
-   "name": "Dippin dots",
-   "address": "20 Walk Up Mountain Trail, Stone Mountain, GA 30087, USA",
-   "city": "Stone Mountain",
-   "county": "DeKalb",
-   "lat": 33.80602,
-   "lng": -84.146014,
-   "category": "Coffee",
-   "model": "franchise",
-   "types": [
-    "coffee_shop",
-    "cafe"
-   ],
-   "rating": null,
-   "ratingNum": 0,
-   "ratingCount": "0",
-   "hours": null,
-   "website": null,
-   "googleUrl": "https://maps.google.com/?cid=11134458235380600310&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
    "placeId": "ChIJMYhLmCgH9YgRrbujxM702W4",
    "name": "Revolution Doughnuts & Coffee",
    "address": "908 W College Ave, Decatur, GA 30030, USA",
@@ -19923,7 +19050,7 @@
    "lat": 33.773898,
    "lng": -84.39866,
    "category": "Roasters",
-   "model": "independent",
+   "model": "franchise",
    "types": [
     "coffee_shop",
     "cafe"
@@ -20057,7 +19184,7 @@
    "lat": 34.064237,
    "lng": -84.162637,
    "category": "Bakery+Cafe",
-   "model": "independent",
+   "model": "franchise",
    "types": [
     "bakery"
    ],
@@ -20067,26 +19194,6 @@
    "hours": "Mon-Sat 8am-9pm · Sun 9am-8pm",
    "website": "https://fivedaughtersbakery.com/",
    "googleUrl": "https://maps.google.com/?cid=11450998734941171000&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
-   "placeId": "ChIJMff5Bm5d9IgRRyQBReFThe8",
-   "name": "BorinCaña Bakery & Café LLC",
-   "address": "Spring, Locust Grove, GA 30248, USA",
-   "city": "Locust Grove",
-   "county": "Henry",
-   "lat": 33.345949,
-   "lng": -84.109083,
-   "category": "Bakery+Cafe",
-   "model": "independent",
-   "types": [
-    "bakery"
-   ],
-   "rating": null,
-   "ratingNum": 0,
-   "ratingCount": "0",
-   "hours": null,
-   "website": null,
-   "googleUrl": "https://maps.google.com/?cid=17259293373957743687&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA"
   },
   {
    "placeId": "ChIJMwGiqi779IgRfyVkNkijbas",
@@ -20606,26 +19713,6 @@
    "googleUrl": "https://maps.google.com/?cid=7262966531246588806&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
-   "placeId": "ChIJNb8wEAB19YgRiqUEkrm4JCg",
-   "name": "Avalon",
-   "address": "1110 Avalon Blvd, Alpharetta, GA 30009, USA",
-   "city": "Alpharetta",
-   "county": "Fulton",
-   "lat": 34.071111,
-   "lng": -84.278327,
-   "category": "Bakery+Cafe",
-   "model": "independent",
-   "types": [
-    "bakery"
-   ],
-   "rating": null,
-   "ratingNum": 0,
-   "ratingCount": "0",
-   "hours": null,
-   "website": null,
-   "googleUrl": "https://maps.google.com/?cid=2892639967836939658&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA"
-  },
-  {
    "placeId": "ChIJNcW72vgZ9YgRXQAXyslVy2M",
    "name": "Chely Cake",
    "address": "5345 Floyd Rd SW, Mableton, GA 30126, USA",
@@ -20685,26 +19772,6 @@
    "hours": "Mon-Fri 7am-5pm · Sat-Sun 8am-2pm",
    "website": "https://www.drinkcoffeeman.com/",
    "googleUrl": "https://maps.google.com/?cid=7359362705315439120&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
-   "placeId": "ChIJNesqRpYN9YgRXPzuF3D4PAo",
-   "name": "The Whisk ATL",
-   "address": "8202 Santa Fe Pkwy, Sandy Springs, GA 30350, USA",
-   "city": "Sandy Springs",
-   "county": "Fulton",
-   "lat": 33.963672,
-   "lng": -84.368147,
-   "category": "Bakery+Cafe",
-   "model": "independent",
-   "types": [
-    "bakery"
-   ],
-   "rating": null,
-   "ratingNum": 0,
-   "ratingCount": "0",
-   "hours": null,
-   "website": null,
-   "googleUrl": "https://maps.google.com/?cid=737737599303482460&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJNetEpLPr9IgR70eE4FO9eT8",
@@ -21382,7 +20449,7 @@
    "lat": 33.536705,
    "lng": -84.576172,
    "category": "Dessert Cafe",
-   "model": "independent",
+   "model": "franchise",
    "types": [
     "dessert_restaurant"
    ],
@@ -21800,26 +20867,6 @@
    "hours": null,
    "website": null,
    "googleUrl": "https://maps.google.com/?cid=17080865429087712167&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
-   "placeId": "ChIJOwqybhrB9IgRNuGAaHGNquQ",
-   "name": "Flowers Baking Co. Outlet",
-   "address": "3506 GA-16, Sharpsburg, GA 30277, USA",
-   "city": "Sharpsburg",
-   "county": "Coweta",
-   "lat": 33.341773,
-   "lng": -84.673043,
-   "category": "Bakery+Cafe",
-   "model": "independent",
-   "types": [
-    "bakery"
-   ],
-   "rating": 4.5,
-   "ratingNum": 148,
-   "ratingCount": "148",
-   "hours": "Mon-Fri 10am-5pm · Sat 10am-4pm · Sun Closed",
-   "website": "https://www.flowersfoods.com/",
-   "googleUrl": "https://maps.google.com/?cid=16477137704912478518&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJOx-xKdEL9YgR_macGZv3IoY",
@@ -23259,27 +22306,6 @@
    "googleUrl": "https://maps.google.com/?cid=10500138757022741876&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
-   "placeId": "ChIJQQgbQADJ9IgRsAN_iDh2J6w",
-   "name": "Raymond express",
-   "address": "GA-16, Newnan, GA 30263, USA",
-   "city": "Newnan",
-   "county": "Coweta",
-   "lat": 33.372143,
-   "lng": -84.800833,
-   "category": "Coffee",
-   "model": "independent",
-   "types": [
-    "coffee_shop",
-    "cafe"
-   ],
-   "rating": null,
-   "ratingNum": 0,
-   "ratingCount": "0",
-   "hours": null,
-   "website": null,
-   "googleUrl": "https://maps.google.com/?cid=12405013683795592112&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
    "placeId": "ChIJQQu2Sjzp9IgRovp9JW_dQz0",
    "name": "Donut Worry #2",
    "address": "1980 SR-54 E, Ste b, Peachtree City, GA 30269, USA",
@@ -23309,7 +22335,7 @@
    "lat": 33.55468,
    "lng": -84.232402,
    "category": "Dessert Cafe",
-   "model": "independent",
+   "model": "franchise",
    "types": [
     "dessert_shop"
    ],
@@ -23323,27 +22349,6 @@
    },
    "website": "https://www.peachcobblerfactory.com/the-peach-cobbler-factory-locations/332-stockbridge-ga",
    "googleUrl": "https://maps.google.com/?cid=15267793473478134090&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
-   "placeId": "ChIJQS69IwCi9YgRpGzL06-Hz9U",
-   "name": "WFM Coffee Bar",
-   "address": "5945 State Bridge Rd Bldg 200, Duluth, GA 30097, USA",
-   "city": "Duluth",
-   "county": "Fulton",
-   "lat": 34.013198,
-   "lng": -84.183878,
-   "category": "Coffee",
-   "model": "franchise",
-   "types": [
-    "coffee_shop",
-    "cafe"
-   ],
-   "rating": 2.8,
-   "ratingNum": 4,
-   "ratingCount": "4",
-   "hours": "Mon-Sun 7am-7pm",
-   "website": "http://www.wholefoodsmarket.com/stores/Duluth?utm_source=google&utm_medium=organic&utm_campaign=listings&ref=US_TRF_ALL_UFG_WFM_FRSEA_1003805",
-   "googleUrl": "https://maps.google.com/?cid=15406682039500106916&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJQSPMMAgn9YgRH50QL7I8iAE",
@@ -23841,26 +22846,6 @@
    "googleUrl": "https://maps.google.com/?cid=15040525699607231774&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
-   "placeId": "ChIJR7UF0pi59YgRgSjEEWkWXWI",
-   "name": "Ellie's Cookies",
-   "address": "2200 Cedar Pl Ct, Snellville, GA 30078, USA",
-   "city": "Snellville",
-   "county": "Gwinnett",
-   "lat": 33.869035,
-   "lng": -83.995695,
-   "category": "Bakery+Cafe",
-   "model": "independent",
-   "types": [
-    "bakery"
-   ],
-   "rating": null,
-   "ratingNum": 0,
-   "ratingCount": "0",
-   "hours": null,
-   "website": null,
-   "googleUrl": "https://maps.google.com/?cid=7087846029076473985&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA"
-  },
-  {
    "placeId": "ChIJR8q0Z2b79IgRYiodPSf_5mM",
    "name": "Krispy Kreme",
    "address": "6689 GA-85 Ste 85, Riverdale, GA 30274, USA",
@@ -24228,12 +23213,9 @@
    "ratingNum": 0,
    "ratingCount": "0",
    "hours": "Mon-Fri Open 24 hours · Sat-Sun 9am-9pm",
-   "late": {
-    "tier": "midnight",
-    "when": "Weekdays Open 24 hours"
-   },
    "website": null,
-   "googleUrl": "https://maps.google.com/?cid=17394338469727456976&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=17394338469727456976&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "hoursUnverified": true
   },
   {
    "placeId": "ChIJRY6V84wF9YgRyEltKe1DnBQ",
@@ -24363,27 +23345,6 @@
    "hours": "Mon-Fri 4:30am-8pm · Sat-Sun 5am-8pm",
    "website": "https://www.starbucks.com/store-locator/store/12788/",
    "googleUrl": "https://maps.google.com/?cid=2404047868155960660&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
-   "placeId": "ChIJRcAvuEG_9YgR3WWDk1PtNws",
-   "name": "Club De De 1980 Nutricion Herbalife",
-   "address": "100 Hurricane Shoals Rd NW suite,H, Lawrenceville, GA 30046, USA",
-   "city": "Lawrenceville",
-   "county": "Gwinnett",
-   "lat": 33.969076,
-   "lng": -83.99433,
-   "category": "Coffee",
-   "model": "independent",
-   "types": [
-    "coffee_shop",
-    "cafe"
-   ],
-   "rating": 4.1,
-   "ratingNum": 14,
-   "ratingCount": "14",
-   "hours": "Mon 7:00-10am, 6:00-9pm · Tue-Wed 7:00-10am, 6:30-9pm · Thu-Sat 7:00-10am, 6:00-9pm · Sun 6:00-9pm",
-   "website": "http://bayronperez.goherbalife.com/",
-   "googleUrl": "https://maps.google.com/?cid=808375601349223901&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJRdtkaxIV9YgRKbEEW8egU3U",
@@ -24971,27 +23932,6 @@
    "hours": "Mon-Sun 8am-8pm",
    "website": "https://www.starbucks.com/store-locator/store/9721",
    "googleUrl": "https://maps.google.com/?cid=6400020397177780446&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
-   "placeId": "ChIJSQJCiW-l9YgRdT_4Ry0rxYM",
-   "name": "Wesley chapel apts",
-   "address": "Sweetwater Way, Lawrenceville, GA 30044, USA",
-   "city": "Lawrenceville",
-   "county": "Gwinnett",
-   "lat": 33.913288,
-   "lng": -84.101304,
-   "category": "Coffee",
-   "model": "independent",
-   "types": [
-    "coffee_shop",
-    "cafe"
-   ],
-   "rating": null,
-   "ratingNum": 0,
-   "ratingCount": "0",
-   "hours": null,
-   "website": null,
-   "googleUrl": "https://maps.google.com/?cid=9495042862861533045&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJSQSAZq8U9YgRfmw5JtBvO7o",
@@ -25832,26 +24772,6 @@
    "googleUrl": "https://maps.google.com/?cid=5389093733603753835&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
-   "placeId": "ChIJTTpQdQB9X4gRyziLcJQGw0U",
-   "name": "Food Lion Bakery",
-   "address": "59 Main St #100, Dawsonville, GA 30534, USA",
-   "city": "Dawsonville",
-   "county": "Dawson",
-   "lat": 34.417513,
-   "lng": -84.111598,
-   "category": "Bakery+Cafe",
-   "model": "independent",
-   "types": [
-    "bakery"
-   ],
-   "rating": 4.0,
-   "ratingNum": 2,
-   "ratingCount": "2",
-   "hours": null,
-   "website": "https://foodlion.com/groceries/bread-bakery/bakery-cakes-cupcakes.html",
-   "googleUrl": "https://maps.google.com/?cid=5026868843688704203&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
    "placeId": "ChIJTU3hhkyY9YgRFKzTM7PSo9A",
    "name": "Dunkin'",
    "address": "7810 McGinnis Ferry Rd Ste 101, Suwanee, GA 30024, USA",
@@ -26502,46 +25422,6 @@
    "googleUrl": "https://maps.google.com/?cid=4494348562065832087&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
-   "placeId": "ChIJU9Lf9K239YgRP1qLedW_zc0",
-   "name": "CrushedbyRee",
-   "address": "4455 Summit Heights Dr, Snellville, GA 30039, USA",
-   "city": "Snellville",
-   "county": "Gwinnett",
-   "lat": 33.784101,
-   "lng": -84.010227,
-   "category": "Bakery+Cafe",
-   "model": "independent",
-   "types": [
-    "bakery"
-   ],
-   "rating": null,
-   "ratingNum": 0,
-   "ratingCount": "0",
-   "hours": null,
-   "website": null,
-   "googleUrl": "https://maps.google.com/?cid=14829720071589026367&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA"
-  },
-  {
-   "placeId": "ChIJU9iUYoZ19YgRxVatwbpTl5M",
-   "name": "Jam & Butter Bakery",
-   "address": "255 Tyson Cir, Roswell, GA 30076, USA",
-   "city": "Roswell",
-   "county": "Fulton",
-   "lat": 34.028155,
-   "lng": -84.305734,
-   "category": "Bakery+Cafe",
-   "model": "independent",
-   "types": [
-    "bakery"
-   ],
-   "rating": null,
-   "ratingNum": 0,
-   "ratingCount": "0",
-   "hours": null,
-   "website": null,
-   "googleUrl": "https://maps.google.com/?cid=10635061106637100741&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
    "placeId": "ChIJUQQYr2AB9YgRjFPhCWb3boM",
    "name": "Jayida Ché Herbal Tea Spot",
    "address": "566 Fayetteville Rd SE, Atlanta, GA 30316, USA",
@@ -26841,7 +25721,7 @@
    "lat": 33.755421,
    "lng": -84.381586,
    "category": "Dessert Cafe",
-   "model": "independent",
+   "model": "franchise",
    "types": [
     "dessert_shop"
    ],
@@ -26877,26 +25757,6 @@
    "hours": "Mon-Fri 6:30am-9pm · Sat-Sun 7am-9pm",
    "website": "https://www.panerabread.com/en-us/cafe/locations/ga/newnan/379-bullsboro-drive?utm_medium=local&utm_source=google&utm_campaign=dpm-dist&utm_term=202592&utm_content=main",
    "googleUrl": "https://maps.google.com/?cid=13735975751092144158&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
-   "placeId": "ChIJUbTC2Jrj9IgRtmw9hKF4vgs",
-   "name": "X-Tier Bakery",
-   "address": "2380 Sandgate Rd SW, College Park, GA 30349, USA",
-   "city": "College Park",
-   "county": "Fulton",
-   "lat": 33.590203,
-   "lng": -84.467961,
-   "category": "Bakery+Cafe",
-   "model": "independent",
-   "types": [
-    "bakery"
-   ],
-   "rating": null,
-   "ratingNum": 0,
-   "ratingCount": "0",
-   "hours": null,
-   "website": null,
-   "googleUrl": "https://maps.google.com/?cid=846246415095917750&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJUddXuXGL9YgRb5U3F7Pj7-g",
@@ -27618,7 +26478,7 @@
    "lat": 33.775363,
    "lng": -84.295726,
    "category": "Roasters",
-   "model": "independent",
+   "model": "franchise",
    "types": [
     "coffee_shop",
     "cafe"
@@ -27992,7 +26852,7 @@
    "lat": 33.731834,
    "lng": -84.401922,
    "category": "Coffee",
-   "model": "franchise",
+   "model": "independent",
    "types": [
     "coffee_shop",
     "cafe"
@@ -28043,27 +26903,6 @@
    "hours": "Sun-Mon Closed · Tue-Fri 9am-5pm · Sat 10am-4pm",
    "website": "https://titissweettreats.wixsite.com/titi",
    "googleUrl": "https://maps.google.com/?cid=2689737648511147339&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
-   "placeId": "ChIJW8eglZIJ9YgR8KiPsb1k4Mk",
-   "name": "WFM Coffee Bar",
-   "address": "5001 Peachtree Blvd Ste 300, Atlanta, GA 30341, USA",
-   "city": "Atlanta",
-   "county": "DeKalb",
-   "lat": 33.885164,
-   "lng": -84.314225,
-   "category": "Coffee",
-   "model": "franchise",
-   "types": [
-    "coffee_shop",
-    "cafe"
-   ],
-   "rating": 4.1,
-   "ratingNum": 32,
-   "ratingCount": "32",
-   "hours": "Mon-Sun 7am-7pm",
-   "website": "https://www.wholefoodsmarket.com/stores/chamblee?utm_source=google&utm_medium=organic&utm_campaign=listings&ref=US_TRF_ALL_UFG_WFM_FRSEA_1003822",
-   "googleUrl": "https://maps.google.com/?cid=14546737562297280752&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJW8xhT-AE9YgRvp9h7T0I9Fo",
@@ -28946,26 +27785,6 @@
    "googleUrl": "https://maps.google.com/?cid=1396562313223074619&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
-   "placeId": "ChIJXSbIjVIR9YgRgLWu-9v0IOs",
-   "name": "Shefa Bakehouse",
-   "address": "101 River Vista Drive, Atlanta, GA 30339, USA",
-   "city": "Atlanta",
-   "county": "Fulton",
-   "lat": 33.900998,
-   "lng": -84.439913,
-   "category": "Bakery+Cafe",
-   "model": "independent",
-   "types": [
-    "bakery"
-   ],
-   "rating": null,
-   "ratingNum": 0,
-   "ratingCount": "0",
-   "hours": null,
-   "website": null,
-   "googleUrl": "https://maps.google.com/?cid=16942811023825352064&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
    "placeId": "ChIJXT2deNMN9YgRqDFbiNVLRs8",
    "name": "Magnolia Café",
    "address": "10 Glenlake Pkwy NE North Tower, Sandy Springs, GA 30328, USA",
@@ -29725,7 +28544,7 @@
    "lat": 33.797711,
    "lng": -84.225347,
    "category": "Dessert Cafe",
-   "model": "independent",
+   "model": "franchise",
    "types": [
     "dessert_shop",
     "bakery"
@@ -29844,26 +28663,6 @@
    "hours": "Mon-Fri 4:30am-9pm · Sat-Sun 5am-9pm",
    "website": "https://www.starbucks.com/store-locator/store/1025081",
    "googleUrl": "https://maps.google.com/?cid=5223338657226532555&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
-   "placeId": "ChIJYS_SVgA9sIkRHDgYee6qO2I",
-   "name": "Luni Bakery",
-   "address": "5810 Springbox Dr, Suwanee, GA 30024, USA",
-   "city": "Suwanee",
-   "county": "Forsyth",
-   "lat": 34.075125,
-   "lng": -84.125223,
-   "category": "Bakery+Cafe",
-   "model": "independent",
-   "types": [
-    "bakery"
-   ],
-   "rating": null,
-   "ratingNum": 0,
-   "ratingCount": "0",
-   "hours": null,
-   "website": null,
-   "googleUrl": "https://maps.google.com/?cid=7078439180553435164&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJYTJHHz_u9IgRBvJ30hl0vQw",
@@ -30578,12 +29377,9 @@
    "ratingNum": 2,
    "ratingCount": "2",
    "hours": "Mon-Sun Open 24 hours",
-   "late": {
-    "tier": "midnight",
-    "when": "Open 24 hours"
-   },
    "website": null,
-   "googleUrl": "https://maps.google.com/?cid=3235369505083074074&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=3235369505083074074&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "hoursUnverified": true
   },
   {
    "placeId": "ChIJZQVHrCqn9YgRs9WhCZRYkXs",
@@ -30797,27 +29593,6 @@
    "googleUrl": "https://maps.google.com/?cid=13098297453555503107&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
-   "placeId": "ChIJZZNlLgDH9IgRfBWGbiaFdf8",
-   "name": "Mrs. Wing",
-   "address": "590 GA-34, Newnan, GA 30265, USA",
-   "city": "Newnan",
-   "county": "Coweta",
-   "lat": 33.397297,
-   "lng": -84.758767,
-   "category": "Coffee",
-   "model": "independent",
-   "types": [
-    "coffee_shop",
-    "cafe"
-   ],
-   "rating": null,
-   "ratingNum": 0,
-   "ratingCount": "0",
-   "hours": null,
-   "website": null,
-   "googleUrl": "https://maps.google.com/?cid=18407765452056302972&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
    "placeId": "ChIJZbOXDAIJ9YgR0yLsz8v6_Cc",
    "name": "Kin Coffee Co.",
    "address": "5352 Peachtree Rd, Chamblee, GA 30341, USA",
@@ -30837,27 +29612,6 @@
    "hours": "Mon-Fri 7am-6pm · Sat 8am-4pm · Sun Closed",
    "website": "https://www.kincoffeeco.com/",
    "googleUrl": "https://maps.google.com/?cid=2881453614883939027&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
-   "placeId": "ChIJZcQbbAC99YgRtMfbD5skPJ4",
-   "name": "Starbucks",
-   "address": "858 GA-120, Lawrenceville, GA 30043, USA",
-   "city": "Lawrenceville",
-   "county": "Gwinnett",
-   "lat": 33.966977,
-   "lng": -84.019091,
-   "category": "Coffee",
-   "model": "franchise",
-   "types": [
-    "coffee_shop",
-    "cafe"
-   ],
-   "rating": 2.2,
-   "ratingNum": 10,
-   "ratingCount": "10",
-   "hours": "Sun-Fri 5am-9pm · Sat 5am-8:30pm",
-   "website": "https://www.starbucks.com/store-locator/store/8616/",
-   "googleUrl": "https://maps.google.com/?cid=11402028604999845812&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJZcbC7jkR9YgRi97x4kLsb9I",
@@ -32701,12 +31455,9 @@
    "ratingNum": 0,
    "ratingCount": "0",
    "hours": "Mon-Tue 6:30am-8:30pm · Wed Open 24 hours · Thu Closed · Fri Open 24 hours · Sat-Sun Closed",
-   "late": {
-    "tier": "midnight",
-    "when": "Wed, Fri till midnight"
-   },
    "website": null,
-   "googleUrl": "https://maps.google.com/?cid=12337976288176276830&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=12337976288176276830&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "hoursUnverified": true
   },
   {
    "placeId": "ChIJawTtA1lL9IgRd2RNi-lptEU",
@@ -32889,27 +31640,6 @@
    "usp": "Independent bakery+cafe in Atlanta serving specialty coffee and fresh menu offerings."
   },
   {
-   "placeId": "ChIJb2PupR9r9YgRcQEXkrsYykI",
-   "name": "Porch Light Coffeehouse",
-   "address": "3895 Cherokee St NW #623, Kennesaw, GA 30144, USA",
-   "city": "Kennesaw",
-   "county": "Cobb",
-   "lat": 34.04818,
-   "lng": -84.601219,
-   "category": "Coffee",
-   "model": "independent",
-   "types": [
-    "coffee_shop",
-    "cafe"
-   ],
-   "rating": null,
-   "ratingNum": 0,
-   "ratingCount": "0",
-   "hours": null,
-   "website": null,
-   "googleUrl": "https://maps.google.com/?cid=4812686345687728497&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
    "placeId": "ChIJb3DRlxkADiURVex8MTgROpI",
    "name": "Thank Heaven Sweets",
    "address": "384 Westwood Pl, Austell, GA 30168, USA",
@@ -32938,7 +31668,7 @@
    "lat": 33.885152,
    "lng": -84.515952,
    "category": "Bakery+Cafe",
-   "model": "independent",
+   "model": "franchise",
    "types": [
     "bakery"
    ],
@@ -33166,12 +31896,9 @@
    "ratingNum": 0,
    "ratingCount": "0",
    "hours": "Mon-Sun Open 24 hours",
-   "late": {
-    "tier": "midnight",
-    "when": "Open 24 hours"
-   },
    "website": "https://www.worldclassluxurydesserts.com/",
-   "googleUrl": "https://maps.google.com/?cid=8024280171942906446&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=8024280171942906446&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "hoursUnverified": true
   },
   {
    "placeId": "ChIJbRZUS-sT9YgRQ1kgQ58bRrI",
@@ -33400,12 +32127,9 @@
    "ratingNum": 2,
    "ratingCount": "2",
    "hours": "Mon-Sun Open 24 hours",
-   "late": {
-    "tier": "midnight",
-    "when": "Open 24 hours"
-   },
    "website": "https://www.facebook.com/share/1FSi474vM7/",
-   "googleUrl": "https://maps.google.com/?cid=267715827924334036&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=267715827924334036&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "hoursUnverified": true
   },
   {
    "placeId": "ChIJbZxHmyAM9YgRg_PUP4IJgQY",
@@ -33511,12 +32235,14 @@
    "types": [
     "bakery"
    ],
-   "rating": null,
-   "ratingNum": 0,
-   "ratingCount": "0",
+   "rating": 5.0,
+   "ratingNum": 5,
+   "ratingCount": "5",
    "hours": "Mon-Sun 10am-4pm",
    "website": "http://roswellprovisions.com/",
-   "googleUrl": "https://maps.google.com/?cid=3581690008981878012&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA"
+   "googleUrl": "https://maps.google.com/?cid=3581690008981878012&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+   "ratingCheckedMonth": "September 2026",
+   "ratingRefreshIssue": "Latest Google response omitted ratings or lost more than half the review count; retained previous observation."
   },
   {
    "placeId": "ChIJbbrlPtS49YgRJH-YpaS7MsE",
@@ -34259,27 +32985,6 @@
    "googleUrl": "https://maps.google.com/?cid=10653289826491546229&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
-   "placeId": "ChIJcceYKgBl9YgRaq1tc3mauJo",
-   "name": "Good mood coffee and Juice",
-   "address": "Canton, GA 30114, USA",
-   "city": "Canton",
-   "county": "Cherokee",
-   "lat": 34.236762,
-   "lng": -84.490762,
-   "category": "Coffee",
-   "model": "independent",
-   "types": [
-    "coffee_shop",
-    "cafe"
-   ],
-   "rating": null,
-   "ratingNum": 0,
-   "ratingCount": "0",
-   "hours": null,
-   "website": null,
-   "googleUrl": "https://maps.google.com/?cid=11148830723973950826&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
    "placeId": "ChIJccwEgVVp9YgREpSN31Bsuzc",
    "name": "Auntie Anne's",
    "address": "915 Ridgewalk Pkwy Ste d-493, Woodstock, GA 30188, USA",
@@ -34583,7 +33288,7 @@
    "lat": 34.065159,
    "lng": -83.984274,
    "category": "Bakery+Cafe",
-   "model": "independent",
+   "model": "franchise",
    "types": [
     "dessert_shop",
     "bakery"
@@ -34594,28 +33299,6 @@
    "hours": "Mon-Thu 10am-8pm · Fri-Sat 10am-9pm · Sun 11am-7pm",
    "website": "http://www.greatamericancookies.com/lower",
    "googleUrl": "https://maps.google.com/?cid=3812958835046085667&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
-   "placeId": "ChIJd80DcQAF9YgRvOtXnDhUB-0",
-   "name": "Nashon",
-   "address": "300 Peachtree St NE, Atlanta, GA 30308, USA",
-   "city": "Atlanta",
-   "county": "Fulton",
-   "neighborhood": "Hotel District",
-   "lat": 33.762551,
-   "lng": -84.387899,
-   "category": "Coffee",
-   "model": "independent",
-   "types": [
-    "coffee_shop",
-    "cafe"
-   ],
-   "rating": null,
-   "ratingNum": 0,
-   "ratingCount": "0",
-   "hours": null,
-   "website": null,
-   "googleUrl": "https://maps.google.com/?cid=17079712713943804860&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJd9U-V1fB9IgRSQZavBwAA8s",
@@ -34859,12 +33542,14 @@
     "coffee_shop",
     "cafe"
    ],
-   "rating": null,
-   "ratingNum": 0,
-   "ratingCount": "0",
+   "rating": 4.6,
+   "ratingNum": 686,
+   "ratingCount": "686",
    "hours": "Mon-Sun 6am-6pm",
    "website": "https://www.foxtailcoffee.com/locations/foxtail-coffee-midtown",
-   "googleUrl": "https://maps.google.com/?cid=3540971864957639180&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=3540971864957639180&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+   "ratingCheckedMonth": "September 2026",
+   "ratingRefreshIssue": "Latest Google response omitted ratings or lost more than half the review count; retained previous observation."
   },
   {
    "placeId": "ChIJddJQ53ZN9IgRMJu67GqX8XU",
@@ -35385,7 +34070,7 @@
    "lat": 33.775928,
    "lng": -84.303255,
    "category": "Roasters",
-   "model": "independent",
+   "model": "franchise",
    "types": [
     "coffee_shop",
     "cafe"
@@ -35585,7 +34270,7 @@
    "lat": 33.406722,
    "lng": -84.671055,
    "category": "Dessert Cafe",
-   "model": "independent",
+   "model": "franchise",
    "types": [
     "dessert_restaurant"
    ],
@@ -36052,26 +34737,6 @@
    "googleUrl": "https://maps.google.com/?cid=8827922411945207662&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
-   "placeId": "ChIJf8l1P3919YgRTCAA8bd2u-U",
-   "name": "The Blessed Bakerie",
-   "address": "945 North Point Dr, Alpharetta, GA 30022, USA",
-   "city": "Alpharetta",
-   "county": "Fulton",
-   "lat": 34.052038,
-   "lng": -84.282939,
-   "category": "Bakery+Cafe",
-   "model": "independent",
-   "types": [
-    "bakery"
-   ],
-   "rating": null,
-   "ratingNum": 0,
-   "ratingCount": "0",
-   "hours": null,
-   "website": null,
-   "googleUrl": "https://maps.google.com/?cid=16553955387724800076&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
    "placeId": "ChIJfRRydjUJ9YgRzQVtSNiTmGQ",
    "name": "Andes Bakery",
    "address": "2715 Peachtree Square, Atlanta, GA 30360, USA",
@@ -36200,26 +34865,6 @@
    "hours": "Mon Closed · Tue-Thu 10am-6pm · Fri-Sat 8am-6pm · Sun 10am-5pm",
    "website": null,
    "googleUrl": "https://maps.google.com/?cid=904913999805155907&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
-   "placeId": "ChIJfZhvNC5L9IgRnUFRuIMfGkU",
-   "name": "BJ's Bakery",
-   "address": "1950 Dogwood Dr SE, Conyers, GA 30013, USA",
-   "city": "Conyers",
-   "county": "Rockdale",
-   "lat": 33.642213,
-   "lng": -83.983966,
-   "category": "Bakery+Cafe",
-   "model": "franchise",
-   "types": [
-    "bakery"
-   ],
-   "rating": 4.0,
-   "ratingNum": 1,
-   "ratingCount": "1",
-   "hours": "Mon-Sat 9:30am-5pm · Sun Closed",
-   "website": "https://www.bjs.com/bakery",
-   "googleUrl": "https://maps.google.com/?cid=4979326988605014429&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJfalS5hhW9IgRIH_ALtyT29g",
@@ -36363,26 +35008,6 @@
    "hours": "Mon-Sat 8am-4pm · Sun 9am-4pm",
    "website": "http://www.cafevendome.com/",
    "googleUrl": "https://maps.google.com/?cid=2566351619174026505&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
-   "placeId": "ChIJg-3JI9-x9IgRf3RiHerMH6c",
-   "name": "Modern Express Cafe",
-   "address": "2 Pelham Ct, Grantville, GA 30220, USA",
-   "city": "Grantville",
-   "county": "Coweta",
-   "lat": 33.228066,
-   "lng": -84.839799,
-   "category": "Coffee",
-   "model": "independent",
-   "types": [
-    "cafe"
-   ],
-   "rating": null,
-   "ratingNum": 0,
-   "ratingCount": "0",
-   "hours": null,
-   "website": null,
-   "googleUrl": "https://maps.google.com/?cid=12042569234499400831&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJg-U6foa99YgRhEF6v1IUErQ",
@@ -36669,27 +35294,6 @@
    "signature": "Cafe con Leche & Dulce de Leche Latte"
   },
   {
-   "placeId": "ChIJgSCMj2B19YgRIFzbnXWn3fs",
-   "name": "The Main Brews and Bites",
-   "address": "2800 Old Milton Pkwy, Alpharetta, GA 30009, USA",
-   "city": "Alpharetta",
-   "county": "Fulton",
-   "lat": 34.069467,
-   "lng": -84.278409,
-   "category": "Coffee",
-   "model": "independent",
-   "types": [
-    "coffee_shop",
-    "cafe"
-   ],
-   "rating": 4.0,
-   "ratingNum": 29,
-   "ratingCount": "29",
-   "hours": "Mon-Sun 7am-9pm",
-   "website": "http://www.wholefoodsmarket.com/stores/avalon?utm_source=google&utm_medium=organic&utm_campaign=listings&ref=US_TRF_ALL_UFG_WFM_FRSEA_1003651",
-   "googleUrl": "https://maps.google.com/?cid=18148846196974378016&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
    "placeId": "ChIJgU0giB-99YgR_SxnCATT_LM",
    "name": "Wise Coffee",
    "address": "1095 Old Peachtree Rd NW #100, Suwanee, GA 30024, USA",
@@ -36891,28 +35495,6 @@
    },
    "website": "https://ladolceatelier.com/",
    "googleUrl": "https://maps.google.com/?cid=17403093639713883694&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
-   "placeId": "ChIJgbM-ZwAb9YgRkq4JlA8kMyo",
-   "name": "Trini",
-   "address": "1670 Maldo Dr NW, Atlanta, GA 30318, USA",
-   "city": "Atlanta",
-   "county": "Fulton",
-   "neighborhood": "Lincoln Homes",
-   "lat": 33.801337,
-   "lng": -84.481427,
-   "category": "Coffee",
-   "model": "independent",
-   "types": [
-    "coffee_shop",
-    "cafe"
-   ],
-   "rating": null,
-   "ratingNum": 0,
-   "ratingCount": "0",
-   "hours": null,
-   "website": null,
-   "googleUrl": "https://maps.google.com/?cid=3040813822731988626&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJgcKzMQDr9YgRNOy33lkOBKw",
@@ -37134,26 +35716,6 @@
    },
    "website": "http://munstercravings.com/",
    "googleUrl": "https://maps.google.com/?cid=16289122031465554889&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
-   "placeId": "ChIJh2wC87yp9YgRtzVGKGXAGUI",
-   "name": "Gourmet Infusions, LLC.",
-   "address": "5055 Memorial Dr Ste A #296, Stone Mountain, GA 30083, USA",
-   "city": "Stone Mountain",
-   "county": "DeKalb",
-   "lat": 33.792925,
-   "lng": -84.226769,
-   "category": "Bakery+Cafe",
-   "model": "independent",
-   "types": [
-    "bakery"
-   ],
-   "rating": null,
-   "ratingNum": 0,
-   "ratingCount": "0",
-   "hours": null,
-   "website": null,
-   "googleUrl": "https://maps.google.com/?cid=4763049621620929975&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJh38lNV3i9IgRCyzJNFeEM9w",
@@ -37608,26 +36170,6 @@
    "googleUrl": "https://maps.google.com/?cid=12781470148973811321&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
-   "placeId": "ChIJhaNopoOf9YgRqe1o68RE03I",
-   "name": "Sweet Treats by Sophia",
-   "address": "9850 Twingate Dr, Johns Creek, GA 30022, USA",
-   "city": "Johns Creek",
-   "county": "Fulton",
-   "lat": 34.017178,
-   "lng": -84.208494,
-   "category": "Bakery+Cafe",
-   "model": "independent",
-   "types": [
-    "bakery"
-   ],
-   "rating": null,
-   "ratingNum": 0,
-   "ratingCount": "0",
-   "hours": null,
-   "website": null,
-   "googleUrl": "https://maps.google.com/?cid=8274032552963534249&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
    "placeId": "ChIJhaUcNIoF9YgRTfZgZGThWPo",
    "name": "Starbucks Coffee Company",
    "address": "725 Ponce De Leon Ave NE, Atlanta, GA 30306, USA",
@@ -37966,12 +36508,9 @@
    "ratingNum": 3,
    "ratingCount": "3",
    "hours": "Mon-Fri 10am-6pm · Sat Open 24 hours · Sun Closed",
-   "late": {
-    "tier": "midnight",
-    "when": "Sat till midnight"
-   },
    "website": "https://jim.com/a/jim_lisa-gonzalez",
-   "googleUrl": "https://maps.google.com/?cid=5083158660262749555&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=5083158660262749555&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "hoursUnverified": true
   },
   {
    "placeId": "ChIJi1GYL5wN9YgRM1E72va9fSI",
@@ -38045,27 +36584,6 @@
    },
    "website": "http://www.thebepteahousega.com/",
    "googleUrl": "https://maps.google.com/?cid=13669811427716369944&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
-   "placeId": "ChIJi5E-QhQd9YgR7gJjN9Lnfj4",
-   "name": "It's A Bowl",
-   "address": "2945 Stone Hogan Conn SW Ste 114, Atlanta, GA 30331, USA",
-   "city": "Atlanta",
-   "county": "Fulton",
-   "neighborhood": "Greenbriar",
-   "lat": 33.675598,
-   "lng": -84.4976,
-   "category": "Dessert Cafe",
-   "model": "independent",
-   "types": [
-    "dessert_shop"
-   ],
-   "rating": null,
-   "ratingNum": 0,
-   "ratingCount": "0",
-   "hours": null,
-   "website": null,
-   "googleUrl": "https://maps.google.com/?cid=4503291567475458798&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJi5KpAD399IgRd9TH8vIaxfg",
@@ -38737,7 +37255,7 @@
    "lat": 33.840581,
    "lng": -84.375803,
    "category": "Roasters",
-   "model": "independent",
+   "model": "franchise",
    "types": [
     "coffee_shop",
     "cafe"
@@ -39181,12 +37699,9 @@
    "ratingNum": 3,
    "ratingCount": "3",
    "hours": "Mon-Sun Open 24 hours",
-   "late": {
-    "tier": "midnight",
-    "when": "Open 24 hours"
-   },
    "website": null,
-   "googleUrl": "https://maps.google.com/?cid=2617571301544622354&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=2617571301544622354&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "hoursUnverified": true
   },
   {
    "placeId": "ChIJjRNBagCZ9YgRm8qrzQoMIkc",
@@ -40207,47 +38722,6 @@
    "googleUrl": "https://maps.google.com/?cid=17770449973555895897&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
-   "placeId": "ChIJkaGq2KFr9YgRWulhhtxwev4",
-   "name": "BJ's Bakery",
-   "address": "105 Long Dr, Woodstock, GA 30189, USA",
-   "city": "Woodstock",
-   "county": "Cherokee",
-   "lat": 34.08062,
-   "lng": -84.543188,
-   "category": "Bakery+Cafe",
-   "model": "franchise",
-   "types": [
-    "bakery"
-   ],
-   "rating": 4.5,
-   "ratingNum": 2,
-   "ratingCount": "2",
-   "hours": "Mon-Fri 9am-6pm · Sat 8am-7:30pm · Sun 12:00-7pm",
-   "website": "https://www.bjs.com/bakery",
-   "googleUrl": "https://maps.google.com/?cid=18337092925242075482&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
-   "placeId": "ChIJkbIBo7YV9YgRS2Ki3BTLuaM",
-   "name": "soluna bakery",
-   "address": "594 Jackson Ridge Dr NW, Kennesaw, GA 30144, USA",
-   "city": "Kennesaw",
-   "county": "Cobb",
-   "neighborhood": "Town Center",
-   "lat": 33.999857,
-   "lng": -84.568601,
-   "category": "Bakery+Cafe",
-   "model": "independent",
-   "types": [
-    "bakery"
-   ],
-   "rating": null,
-   "ratingNum": 0,
-   "ratingCount": "0",
-   "hours": null,
-   "website": null,
-   "googleUrl": "https://maps.google.com/?cid=11797683989335138891&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
    "placeId": "ChIJkdDS-9uJ9YgRc3_P7OwWYKk",
    "name": "Panera Bread",
    "address": "321 Power Center Dr, Dawsonville, GA 30534, USA",
@@ -40962,28 +39436,6 @@
     "cinnamon swirl pastry"
    ],
    "signature": "Marietta Caramel Crunch"
-  },
-  {
-   "placeId": "ChIJlwivcwAR9YgRv8ARZuQNmik",
-   "name": "Chattahoochee coffee shop",
-   "address": "1113 Riverbend Club Dr SE, Atlanta, GA 30339, USA",
-   "city": "Atlanta",
-   "county": "Cobb",
-   "neighborhood": "Cumberland",
-   "lat": 33.896567,
-   "lng": -84.445094,
-   "category": "Coffee",
-   "model": "independent",
-   "types": [
-    "coffee_shop",
-    "cafe"
-   ],
-   "rating": null,
-   "ratingNum": 0,
-   "ratingCount": "0",
-   "hours": null,
-   "website": null,
-   "googleUrl": "https://maps.google.com/?cid=2997723776584630463&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJlxNhethb9IgRAQf3walTQyc",
@@ -41945,46 +40397,6 @@
    "googleUrl": "https://maps.google.com/?cid=6234805905228350692&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
-   "placeId": "ChIJn5lv4JLx9YgRkS3kLOySK3I",
-   "name": "Daylight Delights",
-   "address": "8 3rd St, Gainesville, GA 30504, USA",
-   "city": "Gainesville",
-   "county": "Hall",
-   "lat": 34.254996,
-   "lng": -83.84261,
-   "category": "Bakery+Cafe",
-   "model": "independent",
-   "types": [
-    "bakery"
-   ],
-   "rating": null,
-   "ratingNum": 0,
-   "ratingCount": "0",
-   "hours": null,
-   "website": null,
-   "googleUrl": "https://maps.google.com/?cid=8226830687385431441&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
-   "placeId": "ChIJn6EdTACr9YgRgsWuejL-boU",
-   "name": "House crew",
-   "address": "2548 Wesley Chapel Rd, Decatur, GA 30035, USA",
-   "city": "Decatur",
-   "county": "DeKalb",
-   "lat": 33.713911,
-   "lng": -84.215806,
-   "category": "Bakery+Cafe",
-   "model": "independent",
-   "types": [
-    "bakery"
-   ],
-   "rating": null,
-   "ratingNum": 0,
-   "ratingCount": "0",
-   "hours": null,
-   "website": null,
-   "googleUrl": "https://maps.google.com/?cid=9614901747242681730&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
    "placeId": "ChIJn7iVsLQF9YgRIYIWnDAg24E",
    "name": "Starbucks Coffee Company",
    "address": "1968 Peachtree Rd NW, Atlanta, GA 30309, USA",
@@ -42664,27 +41076,6 @@
    "googleUrl": "https://maps.google.com/?cid=7684442322882239916&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
-   "placeId": "ChIJo1awOAAR9YgRYxAXRhqyO0o",
-   "name": "Life U Brew",
-   "address": "1269 Barclay Cir, Marietta, GA 30060, USA",
-   "city": "Marietta",
-   "county": "Cobb",
-   "lat": 33.932474,
-   "lng": -84.513397,
-   "category": "Coffee",
-   "model": "independent",
-   "types": [
-    "coffee_shop",
-    "cafe"
-   ],
-   "rating": null,
-   "ratingNum": 0,
-   "ratingCount": "0",
-   "hours": null,
-   "website": null,
-   "googleUrl": "https://maps.google.com/?cid=5349064808347406435&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
    "placeId": "ChIJo2f4ifsF9YgRPWEdG2srjBY",
    "name": "Sugar High Co",
    "address": "200 Peachtree St, Atlanta, GA 30303, USA",
@@ -43044,27 +41435,6 @@
    "googleUrl": "https://maps.google.com/?cid=13011006707077062090&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
-   "placeId": "ChIJoUamDQDn9IgRtuz-c5XIpjA",
-   "name": "Parqueo college park ga",
-   "address": "7860 Senoia Rd, Fairburn, GA 30213, USA",
-   "city": "Fairburn",
-   "county": "Fulton",
-   "lat": 33.54155,
-   "lng": -84.576293,
-   "category": "Coffee",
-   "model": "independent",
-   "types": [
-    "coffee_shop",
-    "cafe"
-   ],
-   "rating": null,
-   "ratingNum": 0,
-   "ratingCount": "0",
-   "hours": null,
-   "website": null,
-   "googleUrl": "https://maps.google.com/?cid=3505709904176278710&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA"
-  },
-  {
    "placeId": "ChIJoV3uwQ0H9YgRn-cunJ9Q9bw",
    "name": "Condesa Coffee",
    "address": "715 E College Ave, Decatur, GA 30030, USA",
@@ -43292,27 +41662,6 @@
    "googleUrl": "https://maps.google.com/?cid=10529497336965352186&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
-   "placeId": "ChIJo_wHMQDh9YgRsEfaxJdbWYU",
-   "name": "Treestory Bakery & Cafe",
-   "address": "2340 Pleasant Hill Rd, Duluth, GA 30096, USA",
-   "city": "Duluth",
-   "county": "Gwinnett",
-   "neighborhood": "Gwinnett Place",
-   "lat": 33.963903,
-   "lng": -84.137505,
-   "category": "Bakery+Cafe",
-   "model": "independent",
-   "types": [
-    "bakery"
-   ],
-   "rating": null,
-   "ratingNum": 0,
-   "ratingCount": "0",
-   "hours": null,
-   "website": null,
-   "googleUrl": "https://maps.google.com/?cid=9608811987372492720&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
    "placeId": "ChIJoaLrBQC59YgRWzG93b5a_Kc",
    "name": "Gideon's Grub",
    "address": "1446 Preserve Park Dr, Loganville, GA 30052, USA",
@@ -43329,12 +41678,9 @@
    "ratingNum": 1,
    "ratingCount": "1",
    "hours": "Mon-Sun Open 24 hours",
-   "late": {
-    "tier": "midnight",
-    "when": "Open 24 hours"
-   },
    "website": "https://sites.google.com/view/gideonsgrub/home",
-   "googleUrl": "https://maps.google.com/?cid=12104649674275500379&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA"
+   "googleUrl": "https://maps.google.com/?cid=12104649674275500379&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+   "hoursUnverified": true
   },
   {
    "placeId": "ChIJobCefADj9IgRcGPfpZehIYI",
@@ -43356,26 +41702,6 @@
    "hours": null,
    "website": null,
    "googleUrl": "https://maps.google.com/?cid=9376953571857097584&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
-   "placeId": "ChIJodlWSc2a9YgRgQ4Dq4Khj1U",
-   "name": "BJ's Bakery",
-   "address": "1725 Market Pl Blvd, Cumming, GA 30041, USA",
-   "city": "Cumming",
-   "county": "Forsyth",
-   "lat": 34.190638,
-   "lng": -84.132285,
-   "category": "Bakery+Cafe",
-   "model": "franchise",
-   "types": [
-    "bakery"
-   ],
-   "rating": 5.0,
-   "ratingNum": 1,
-   "ratingCount": "1",
-   "hours": "Mon-Sat 9am-9pm · Sun 9am-7pm",
-   "website": "https://www.bjs.com/bakery",
-   "googleUrl": "https://maps.google.com/?cid=6165323997480423041&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJof5b5sLt9YgRfmcjzWuSyhw",
@@ -43480,26 +41806,6 @@
    "hours": "Mon-Wed 12:00-8pm · Thu-Sat 12:00-9pm · Sun 12:30-8pm",
    "website": "https://www.greatamericancookies.com/?olonwp=JjBtp_vMLk25gkYh_bnoiQ",
    "googleUrl": "https://maps.google.com/?cid=12367749161964824255&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
-   "placeId": "ChIJp0o0KFxL9IgRobb-33Bazu4",
-   "name": "Simply Dipped",
-   "address": "Benji Blvd SE, Conyers, GA 30013, USA",
-   "city": "Conyers",
-   "county": "Rockdale",
-   "lat": 33.607931,
-   "lng": -83.986549,
-   "category": "Dessert Cafe",
-   "model": "independent",
-   "types": [
-    "dessert_shop"
-   ],
-   "rating": null,
-   "ratingNum": 0,
-   "ratingCount": "0",
-   "hours": null,
-   "website": null,
-   "googleUrl": "https://maps.google.com/?cid=17207790667070092961&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJp2AqJ2Gp9YgRd4WlMfIYRE8",
@@ -43693,12 +41999,9 @@
    "ratingNum": 2,
    "ratingCount": "2",
    "hours": "Mon-Sun Open 24 hours",
-   "late": {
-    "tier": "midnight",
-    "when": "Open 24 hours"
-   },
    "website": "http://www.clairesfilipinokitchen.com/",
-   "googleUrl": "https://maps.google.com/?cid=14794239975826771284&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=14794239975826771284&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "hoursUnverified": true
   },
   {
    "placeId": "ChIJp5g4tqwJ9YgR4AbP-VNYuME",
@@ -44062,26 +42365,6 @@
    "hours": "Mon-Sat 10am-8pm · Sun 12:00-6pm",
    "website": "http://www.greatamericancookies.com/",
    "googleUrl": "https://maps.google.com/?cid=11743299333961621277&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
-   "placeId": "ChIJpYfdezzG9IgRH6jB4l6yDis",
-   "name": "BJ's Bakery",
-   "address": "331 Newnan Crossing Bypass, Newnan, GA 30265, USA",
-   "city": "Newnan",
-   "county": "Coweta",
-   "lat": 33.38982,
-   "lng": -84.759791,
-   "category": "Bakery+Cafe",
-   "model": "franchise",
-   "types": [
-    "bakery"
-   ],
-   "rating": 4.5,
-   "ratingNum": 4,
-   "ratingCount": "4",
-   "hours": "Mon-Sat 8am-9pm · Sun 8am-7pm",
-   "website": "http://www.bjs.com/webapp/wcs/stores/servlet/LocatorMapDirectionsView?storeId=10201&catalogId=10201&langId=-1&locationId=147&searchCriteria=30265",
-   "googleUrl": "https://maps.google.com/?cid=3102613313905862687&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJpYh-pns_9YgR5ko__0WhTYw",
@@ -45127,12 +43410,9 @@
    "ratingNum": 5,
    "ratingCount": "5",
    "hours": "Mon-Sun Open 24 hours",
-   "late": {
-    "tier": "midnight",
-    "when": "Open 24 hours"
-   },
    "website": null,
-   "googleUrl": "https://maps.google.com/?cid=17609491588179680241&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=17609491588179680241&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "hoursUnverified": true
   },
   {
    "placeId": "ChIJqxs1cPED9YgRCLPVdlyFh2Q",
@@ -45737,26 +44017,6 @@
    "googleUrl": "https://maps.google.com/?cid=11974482653730330246&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
-   "placeId": "ChIJrX1smJV19YgR0J0OOvVhN1g",
-   "name": "Sugar and Brie GA",
-   "address": "11044 Alpharetta Hwy #2217, Roswell, GA 30076, USA",
-   "city": "Roswell",
-   "county": "Fulton",
-   "lat": 34.048961,
-   "lng": -84.340648,
-   "category": "Bakery+Cafe",
-   "model": "independent",
-   "types": [
-    "bakery"
-   ],
-   "rating": null,
-   "ratingNum": 0,
-   "ratingCount": "0",
-   "hours": null,
-   "website": null,
-   "googleUrl": "https://maps.google.com/?cid=6356657104925662672&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA"
-  },
-  {
    "placeId": "ChIJrXDVEPCn9YgRmW0sz6zuGmI",
    "name": "Panaderia Chics Bakery",
    "address": "7130 Buford Hwy NE c-110, Doraville, GA 30340, USA",
@@ -46009,26 +44269,6 @@
    "hours": "Mon Closed · Tue-Sat 11am-8pm · Sun 12:00-6pm",
    "website": "https://www.smallcakesgwinnett.com/",
    "googleUrl": "https://maps.google.com/?cid=15828922838954571856&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
-   "placeId": "ChIJs-vuyC3n9IgRO3QbJwDZ2Jw",
-   "name": "Glorious Temptations",
-   "address": "16 W Campbellton St, Fairburn, GA 30213, USA",
-   "city": "Fairburn",
-   "county": "Fulton",
-   "lat": 33.567222,
-   "lng": -84.582115,
-   "category": "Bakery+Cafe",
-   "model": "independent",
-   "types": [
-    "bakery"
-   ],
-   "rating": null,
-   "ratingNum": 0,
-   "ratingCount": "0",
-   "hours": null,
-   "website": null,
-   "googleUrl": "https://maps.google.com/?cid=11302021859565597755&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJs1PFA8CQ9YgRw1UrzI92C8A",
@@ -46546,26 +44786,6 @@
    "googleUrl": "https://maps.google.com/?cid=18034413803977231501&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
-   "placeId": "ChIJsUGNpGvr9YgRWaSFLZD8gvA",
-   "name": "Still Waters Sweets",
-   "address": "852 White Aster Ct, Dacula, GA 30019, USA",
-   "city": "Dacula",
-   "county": "Gwinnett",
-   "lat": 34.015177,
-   "lng": -83.916622,
-   "category": "Bakery+Cafe",
-   "model": "independent",
-   "types": [
-    "bakery"
-   ],
-   "rating": null,
-   "ratingNum": 0,
-   "ratingCount": "0",
-   "hours": null,
-   "website": null,
-   "googleUrl": "https://maps.google.com/?cid=17330692012244313177&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
    "placeId": "ChIJsVJCVpNl9YgRnjTUgG5fKo0",
    "name": "Panaderia Sweet Cake Bakery",
    "address": "Marietta Hwy, Canton, GA 30114, USA",
@@ -46622,12 +44842,9 @@
    "ratingNum": 0,
    "ratingCount": "0",
    "hours": "Mon Open 24 hours · Tue-Sun Closed",
-   "late": {
-    "tier": "midnight",
-    "when": "Mon till midnight"
-   },
    "website": null,
-   "googleUrl": "https://maps.google.com/?cid=12238500158739523684&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=12238500158739523684&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "hoursUnverified": true
   },
   {
    "placeId": "ChIJsWu3xeu-9YgREGrQo1JXlmk",
@@ -46668,27 +44885,6 @@
    "hours": "Mon-Sat 9am-2:15pm · Sun Closed",
    "website": null,
    "googleUrl": "https://maps.google.com/?cid=16075894786462252717&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
-   "placeId": "ChIJsYHy5IYR9YgRikPMSVYunSE",
-   "name": "Sweet As SINclaire",
-   "address": "800 Battery Ave SE, Atlanta, GA 30339, USA",
-   "city": "Atlanta",
-   "county": "Cobb",
-   "neighborhood": "Cumberland",
-   "lat": 33.890709,
-   "lng": -84.469508,
-   "category": "Bakery+Cafe",
-   "model": "independent",
-   "types": [
-    "bakery"
-   ],
-   "rating": null,
-   "ratingNum": 0,
-   "ratingCount": "0",
-   "hours": null,
-   "website": null,
-   "googleUrl": "https://maps.google.com/?cid=2422143122735383434&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJsYOzcJvBi6QRwlvnNzcneNI",
@@ -46746,7 +44942,7 @@
    "lat": 33.780428,
    "lng": -84.38683,
    "category": "Roasters",
-   "model": "independent",
+   "model": "franchise",
    "types": [
     "coffee_shop",
     "cafe"
@@ -46987,26 +45183,6 @@
    "googleUrl": "https://maps.google.com/?cid=15554475283566192936&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
-   "placeId": "ChIJsxhO6TTH9IgRTarYtnlgweg",
-   "name": "Living Wells of Grace, Newnan, GA",
-   "address": "18 Cottage Dr, Newnan, GA 30265, USA",
-   "city": "Newnan",
-   "county": "Coweta",
-   "lat": 33.374433,
-   "lng": -84.704668,
-   "category": "Coffee",
-   "model": "independent",
-   "types": [
-    "cafe"
-   ],
-   "rating": null,
-   "ratingNum": 0,
-   "ratingCount": "0",
-   "hours": null,
-   "website": null,
-   "googleUrl": "https://maps.google.com/?cid=16771792563179399757&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
    "placeId": "ChIJsy9hDd0R9YgRtvWoT8-pVv0",
    "name": "Happy Little Bake Shop",
    "address": "3713 Tynemoore Trce SE, Smyrna, GA 30080, USA",
@@ -47067,12 +45243,9 @@
    "ratingNum": 0,
    "ratingCount": "0",
    "hours": "Sun-Mon Closed · Tue-Thu Open 24 hours · Fri Closed · Sat 10am-1pm",
-   "late": {
-    "tier": "midnight",
-    "when": "Tue-Thu Open 24 hours"
-   },
    "website": "https://www.hotplate.com/littleannes",
-   "googleUrl": "https://maps.google.com/?cid=2267810367354662544&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=2267810367354662544&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "hoursUnverified": true
   },
   {
    "placeId": "ChIJt-s8v_659YgRnVr3Nivogng",
@@ -47170,26 +45343,6 @@
    "hours": "Mon 9am-2pm · Tue Closed · Wed 9am-2pm · Thu Closed · Fri 9am-2pm · Sat-Sun Closed",
    "website": "https://www.theblackcoffeecompany.com/black-coffee-atl",
    "googleUrl": "https://maps.google.com/?cid=4295792383369835389&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
-   "placeId": "ChIJt51RrT-l9YgRghHBbve0Kmk",
-   "name": "Flour and Flowers Sourdough Bakery",
-   "address": "25 Bryson Landing SW, Lilburn, GA 30047, USA",
-   "city": "Lilburn",
-   "county": "Gwinnett",
-   "lat": 33.886666,
-   "lng": -84.125349,
-   "category": "Bakery+Cafe",
-   "model": "independent",
-   "types": [
-    "bakery"
-   ],
-   "rating": null,
-   "ratingNum": 0,
-   "ratingCount": "0",
-   "hours": null,
-   "website": null,
-   "googleUrl": "https://maps.google.com/?cid=7578068297812349314&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJt5QVXM6j9YgRVn73gMkySMo",
@@ -47367,26 +45520,6 @@
    "hours": "Mon-Fri 9am-5pm · Sat 10am-1pm · Sun Closed",
    "website": "https://www.rumtastic.com/",
    "googleUrl": "https://maps.google.com/?cid=5831598942367492327&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
-   "placeId": "ChIJtRBHRQCz9YgRTCKxug1Ptc0",
-   "name": "Tortas michoacanas",
-   "address": "21 Crossland Dr NW, Conyers, GA 30012, USA",
-   "city": "Conyers",
-   "county": "Rockdale",
-   "lat": 33.708106,
-   "lng": -84.032271,
-   "category": "Bakery+Cafe",
-   "model": "independent",
-   "types": [
-    "bakery"
-   ],
-   "rating": null,
-   "ratingNum": 0,
-   "ratingCount": "0",
-   "hours": null,
-   "website": null,
-   "googleUrl": "https://maps.google.com/?cid=14822840668945195596&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJtRtfK14I9YgR3ESE108Heyo",
@@ -47734,26 +45867,6 @@
    "googleUrl": "https://maps.google.com/?cid=1957696193325424450&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
-   "placeId": "ChIJt_OXrDd19YgRI_frI_zJjuQ",
-   "name": "Simply Sweet Potato",
-   "address": "2001 Commerce St, Alpharetta, GA 30009, USA",
-   "city": "Alpharetta",
-   "county": "Fulton",
-   "lat": 34.074789,
-   "lng": -84.292857,
-   "category": "Bakery+Cafe",
-   "model": "independent",
-   "types": [
-    "bakery"
-   ],
-   "rating": null,
-   "ratingNum": 0,
-   "ratingCount": "0",
-   "hours": null,
-   "website": null,
-   "googleUrl": "https://maps.google.com/?cid=16469322972112090915&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
    "placeId": "ChIJtcTz-Imf9YgRUzu_VC8pq1U",
    "name": "Honey Birds Bakery",
    "address": "3719 Old Alabama Rd #200G, Alpharetta, GA 30022, USA",
@@ -47978,28 +46091,6 @@
    "googleUrl": "https://maps.google.com/?cid=15183346386480884089&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
-   "placeId": "ChIJu-XSi3cF9YgRrAZ2H_Cj3Vw",
-   "name": "Bingkong Shop",
-   "address": "235 Peachtree Rd NE Ste 400, Atlanta, GA 30303, USA",
-   "city": "Atlanta",
-   "county": "Fulton",
-   "neighborhood": "Peachtree Center",
-   "lat": 33.760532,
-   "lng": -84.387234,
-   "category": "Coffee",
-   "model": "independent",
-   "types": [
-    "coffee_shop",
-    "cafe"
-   ],
-   "rating": null,
-   "ratingNum": 0,
-   "ratingCount": "0",
-   "hours": null,
-   "website": null,
-   "googleUrl": "https://maps.google.com/?cid=6691684873057732268&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
    "placeId": "ChIJu-kBJAts9YgR_DOa0KiKjqs",
    "name": "Tiny Bubbles Tea Bar",
    "address": "230 Chambers St, Woodstock, GA 30188, USA",
@@ -48096,7 +46187,7 @@
    "lat": 33.847272,
    "lng": -84.357245,
    "category": "Roasters",
-   "model": "independent",
+   "model": "franchise",
    "types": [
     "coffee_shop",
     "cafe"
@@ -48679,12 +46770,9 @@
    "ratingNum": 0,
    "ratingCount": "0",
    "hours": "Mon 5:30am-10pm · Tue 5am-10pm · Wed-Fri Open 24 hours · Sat 5am-10pm · Sun Closed",
-   "late": {
-    "tier": "midnight",
-    "when": "Wed-Fri Open 24 hours; Mon-Tue, Sat till 10pm"
-   },
    "website": null,
-   "googleUrl": "https://maps.google.com/?cid=4590777508556526527&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
+   "googleUrl": "https://maps.google.com/?cid=4590777508556526527&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+   "hoursUnverified": true
   },
   {
    "placeId": "ChIJuyPpZWqj9YgRYSqilYoRVGE",
@@ -48955,27 +47043,6 @@
    "hours": "Mon Closed · Tue-Fri 8am-6pm · Sat-Sun 10am-6pm",
    "website": "http://www.sweetspotstockbridge.com/",
    "googleUrl": "https://maps.google.com/?cid=13376347735512655779&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
-   "placeId": "ChIJv7eKDx6D9YgRz_Gl3rdxZjI",
-   "name": "Green's Corner Starbucks",
-   "address": "Canton Hwy &, 2325 Bethelview Rd, Cumming, GA 30040, USA",
-   "city": "Cumming",
-   "county": "Forsyth",
-   "lat": 34.238271,
-   "lng": -84.193303,
-   "category": "Coffee",
-   "model": "franchise",
-   "types": [
-    "coffee_shop",
-    "cafe"
-   ],
-   "rating": null,
-   "ratingNum": 0,
-   "ratingCount": "0",
-   "hours": null,
-   "website": null,
-   "googleUrl": "https://maps.google.com/?cid=3631715184049254863&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJv7ohtmy99YgRkFw_a-xt_8k",
@@ -49439,30 +47506,6 @@
    "googleUrl": "https://maps.google.com/?cid=11527004469324222158&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
-   "placeId": "ChIJvy3rYwio9YgRzEeBjrGWpkA",
-   "name": "Rise Baking Company",
-   "address": "1912 Montreal Rd, Tucker, GA 30084, USA",
-   "city": "Tucker",
-   "county": "DeKalb",
-   "lat": 33.838656,
-   "lng": -84.258992,
-   "category": "Bakery+Cafe",
-   "model": "independent",
-   "types": [
-    "bakery"
-   ],
-   "rating": 3.2,
-   "ratingNum": 228,
-   "ratingCount": "228",
-   "hours": "Mon-Sun Open 24 hours",
-   "late": {
-    "tier": "midnight",
-    "when": "Open 24 hours"
-   },
-   "website": "https://www.risebakingcompany.com/",
-   "googleUrl": "https://maps.google.com/?cid=4658576553905571788&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
    "placeId": "ChIJvyQVb9sV9YgRIZYHotbNFOY",
    "name": "Calm Water Cafe",
    "address": "320 Kennestone Hospital Blvd, Marietta, GA 30060, USA",
@@ -49549,7 +47592,7 @@
    "lat": 33.785834,
    "lng": -84.41216,
    "category": "Bakery+Cafe",
-   "model": "independent",
+   "model": "franchise",
    "types": [
     "bakery",
     "donut_shop"
@@ -49853,27 +47896,6 @@
    "hours": "Mon-Sat 6:30am-6pm · Sun 7am-2pm",
    "website": null,
    "googleUrl": "https://maps.google.com/?cid=17614386009381503152&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
-   "placeId": "ChIJwTrZPQDj9IgRhLQ4VuDMxWU",
-   "name": "Zapatos",
-   "address": "2573 Godby Rd, College Park, GA 30349, USA",
-   "city": "College Park",
-   "county": "Fulton",
-   "lat": 33.616598,
-   "lng": -84.473135,
-   "category": "Coffee",
-   "model": "independent",
-   "types": [
-    "coffee_shop",
-    "cafe"
-   ],
-   "rating": null,
-   "ratingNum": 0,
-   "ratingCount": "0",
-   "hours": null,
-   "website": null,
-   "googleUrl": "https://maps.google.com/?cid=7333492832134018180&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJwU-VrpNt9YgRtavwkeGoWK8",
@@ -50209,27 +48231,6 @@
    "hours": "Sun-Mon Closed · Tue-Sat 11am-7pm",
    "website": "https://warmhugsbakery.com/",
    "googleUrl": "https://maps.google.com/?cid=1662364039786845777&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
-   "placeId": "ChIJwyEo5HoD9YgRolpb7uDB0rA",
-   "name": "Flowers Bakery (Nature's Own)",
-   "address": "165 Bailey St SW, Atlanta, GA 30314, USA",
-   "city": "Atlanta",
-   "county": "Fulton",
-   "neighborhood": "Atlanta University Center",
-   "lat": 33.750397,
-   "lng": -84.405587,
-   "category": "Bakery+Cafe",
-   "model": "independent",
-   "types": [
-    "bakery"
-   ],
-   "rating": 4.3,
-   "ratingNum": 114,
-   "ratingCount": "114",
-   "hours": "Mon-Sat 10:30am-5pm · Sun Closed",
-   "website": "https://flowersfoods.com/brands/",
-   "googleUrl": "https://maps.google.com/?cid=12741459467600353954&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJwyayf6r99IgRv8ulp4BuA9w",
@@ -50829,7 +48830,7 @@
    "lat": 34.064107,
    "lng": -83.985568,
    "category": "Bakery+Cafe",
-   "model": "independent",
+   "model": "franchise",
    "types": [
     "bakery"
    ],
@@ -51631,26 +49632,6 @@
    "googleUrl": "https://maps.google.com/?cid=7346121383801251963&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
-   "placeId": "ChIJyW17J_6C9YgRsxl3tS1kJys",
-   "name": "Bakery Outlet",
-   "address": "3758 Post Rd, Cumming, GA 30040, USA",
-   "city": "Cumming",
-   "county": "Forsyth",
-   "lat": 34.236262,
-   "lng": -84.228193,
-   "category": "Bakery+Cafe",
-   "model": "independent",
-   "types": [
-    "bakery"
-   ],
-   "rating": 4.9,
-   "ratingNum": 8,
-   "ratingCount": "8",
-   "hours": "Mon-Fri 10am-5pm · Sat 10am-4pm · Sun Closed",
-   "website": null,
-   "googleUrl": "https://maps.google.com/?cid=3109564215203404211&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
    "placeId": "ChIJyXHtp5-_9YgRrl5VLVeaC_0",
    "name": "Reyna's Espresso & Sweets",
    "address": "137 W Crogan St, Lawrenceville, GA 30046, USA",
@@ -51739,28 +49720,6 @@
    "hours": "Mon-Sat 6am-8pm · Sun Closed",
    "website": "http://ellianos.com/",
    "googleUrl": "https://maps.google.com/?cid=17517822966032407345&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
-   "placeId": "ChIJy_tfbRsF9YgR76kkynxZpFc",
-   "name": "WFM Coffee Bar",
-   "address": "22 14th St NW, Atlanta, GA 30309, USA",
-   "city": "Atlanta",
-   "county": "Fulton",
-   "neighborhood": "Midtown Atlanta",
-   "lat": 33.786488,
-   "lng": -84.388495,
-   "category": "Coffee",
-   "model": "franchise",
-   "types": [
-    "coffee_shop",
-    "cafe"
-   ],
-   "rating": 4.1,
-   "ratingNum": 98,
-   "ratingCount": "98",
-   "hours": "Mon-Sun 7am-5pm",
-   "website": "https://www.wholefoodsmarket.com/stores/midtownatlanta?utm_source=google&utm_medium=organic&utm_campaign=listings&ref=US_TRF_ALL_UFG_WFM_FRSEA_1003787",
-   "googleUrl": "https://maps.google.com/?cid=6315270969982495215&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJyd3viWb39YgRr-G1My9SJzw",
@@ -52111,7 +50070,7 @@
    "lat": 33.773147,
    "lng": -84.36594,
    "category": "Bakery+Cafe",
-   "model": "independent",
+   "model": "franchise",
    "types": [
     "bakery"
    ],
@@ -52209,27 +50168,6 @@
    "hours": "Mon-Fri 4:30am-8pm · Sat 5am-8pm · Sun 6am-8pm",
    "website": "https://www.dunkindonuts.com/locations/us/ga/locust-grove/4841-bill-gardner-pkwy/store-350953/?utm_source=google&utm_medium=local&utm_campaign=localmaps&utm_content=350953&y_source=1_MTIxMDcyMTYtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
    "googleUrl": "https://maps.google.com/?cid=15061877755993314370&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
-  },
-  {
-   "placeId": "ChIJzRMeRgAX9YgRBmuZcKaToBk",
-   "name": "Cabello",
-   "address": "188 Smyrna Powder Springs Rd SE, Smyrna, GA 30082, USA",
-   "city": "Smyrna",
-   "county": "Cobb",
-   "lat": 33.888392,
-   "lng": -84.547138,
-   "category": "Coffee",
-   "model": "independent",
-   "types": [
-    "coffee_shop",
-    "cafe"
-   ],
-   "rating": null,
-   "ratingNum": 0,
-   "ratingCount": "0",
-   "hours": null,
-   "website": null,
-   "googleUrl": "https://maps.google.com/?cid=1846638190284860166&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA"
   },
   {
    "placeId": "ChIJzSbcDeyj9YgRvGFxBuHeXQA",

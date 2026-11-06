@@ -303,3 +303,7 @@ All four shared one baseline, dataset and regional fit, and were compared from s
 | D | B | Fraunces venue names, tinted search and results surfaces | Repeated display type competed with the brand wordmark |
 
 The rejections are recorded so they are not re-proposed. They are judgments from screenshot comparison, not measured usability findings; the ten-second choice target remains unmeasured. The variant prototypes and full capture set were local scratch and are not in version control, so they will not survive a clean checkout.
+
+## November 2026 refresh review
+
+Current loaded population: 2,234 venues (1,278 independent / 956 chain or franchise). The dated September examples above are historical. Leaflet minimum zoom is 6; MapLibre minimum zoom is 5. Mobile filter containers stay on one line within each horizontal scroll row. See `tasks/refresh-review-2026-11-05.md` for current data provenance and utility-filter counts.
