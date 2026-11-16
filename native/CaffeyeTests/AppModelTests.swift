@@ -14,7 +14,7 @@ struct AppModelTests {
         try Data("corrupt".utf8).write(to: file)
         let model = AppModel(store: SnapshotStore(file: file))
         await model.load()
-        #expect(model.snapshot?.venues.count == 1705)
+        #expect(model.snapshot?.venues.count == 2233)
         #expect(model.failure == nil)
         #expect(model.status == "Venues · ratings omitted")
         let imported = root.appendingPathComponent("import.json")

@@ -32,8 +32,8 @@ class ReleaseChecks(unittest.TestCase):
 
     def test_inventory_keeps_coordinate_sources_separate(self):
         fields = audit(SNAPSHOT)['fieldSources']
-        self.assertEqual(fields['coordinate']['Apple geocoding (curated seed)'], 61)
-        self.assertEqual(fields['coordinate']['Google Places place pin'], 1644)
+        self.assertEqual(fields['coordinate']['Apple geocoding (curated seed)'], 60)
+        self.assertEqual(fields['coordinate']['Google Places place pin'], 2173)
         self.assertNotIn('rating', fields)
         self.assertFalse(https('http://example.com'))
         self.assertFalse(https('https://user:pass@example.com'))

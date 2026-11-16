@@ -125,11 +125,11 @@ struct UnratedSnapshotTests {
             .deletingLastPathComponent().deletingLastPathComponent().deletingLastPathComponent()
         let data = try Data(contentsOf: native.appendingPathComponent("Caffeye/Resources/venues.json"))
         let snapshot = try SnapshotStore.decode(data)
-        #expect(snapshot.venues.count == 1705)
-        #expect(snapshot.venues.filter { $0.model == .independent }.count == 970)
+        #expect(snapshot.venues.count == 2233)
+        #expect(snapshot.venues.filter { $0.model == .independent }.count == 1323)
         #expect(!snapshot.isDemo)
         #expect(snapshot.priors == nil)
         #expect(snapshot.venues.allSatisfy { $0.rating == nil })
-        #expect(snapshot.venues.filter { $0.fieldProvenance?["coordinate"]?.source == "Apple geocoding (curated seed)" }.count == 61)
+        #expect(snapshot.venues.filter { $0.fieldProvenance?["coordinate"]?.source == "Apple geocoding (curated seed)" }.count == 60)
     }
 }

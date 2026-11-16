@@ -19,7 +19,7 @@ Simulator names vary by installed runtime. Use `xcrun simctl list devices availa
 
 ## Data and offline use
 
-First launch loads **1,705 existing venues**, including **970 independents**, from the bundled `venues.json`. Names, addresses, true coordinates, categories, cities/counties, neighborhoods, hours, editorial recommendations, coworking/meeting-room notes, late-night information, source verification dates, provider IDs/types, and available external links are preserved. Ratings, review counts, weighted scores, and rating-derived priors are excluded. The list is alphabetical and explicitly says ratings were omitted.
+First launch loads **2,233 existing venues**, including **1,323 independents**, from the bundled `venues.json`. Names, addresses, true coordinates, categories, cities/counties, neighborhoods, hours, editorial recommendations, coworking/meeting-room notes, late-night information, source verification dates, provider IDs/types, and available external links are preserved. Ratings, review counts, weighted scores, and rating-derived priors are excluded. The list is alphabetical and explicitly says ratings were omitted.
 
 Regenerate the export after a source dataset change:
 

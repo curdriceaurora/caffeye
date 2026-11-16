@@ -13,9 +13,9 @@ class ExportTests(unittest.TestCase):
         seed = json.loads((ROOT / "public/shops.json").read_text())
         regional = json.loads((ROOT / "public/places.json").read_text())
         result = export(seed, regional)
-        self.assertEqual(len(result["venues"]), 1705)
-        self.assertEqual(sum(v["model"] == "independent" for v in result["venues"]), 970)
-        self.assertEqual(sum(v["curated"] for v in result["venues"]), 61)
+        self.assertEqual(len(result["venues"]), 2233)
+        self.assertEqual(sum(v["model"] == "independent" for v in result["venues"]), 1323)
+        self.assertEqual(sum(v["curated"] for v in result["venues"]), 60)
         forbidden = {"rating", "ratingNum", "ratingCount", "ratingPriors", "priors", "weightedRating"}
         def check(node):
             if isinstance(node, dict):
