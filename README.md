@@ -111,7 +111,16 @@ wrangler deploy
 3. Get curated coordinates from Apple Maps (`CLGeocoder`). Do not estimate coordinates. For more data, see `PRODUCT.md` §8.
 4. Do not edit `public/places.json` manually. A script makes this file. To change the regional data, edit `scripts/curations.json`. Then run `scripts/discover_places.py` in replay mode. [CLAUDE.md](CLAUDE.md) gives the procedure.
 5. Change `checkedMonth` only after you verify the data of that source.
-6. Do the checks in [TESTS.md](TESTS.md). Check the page with the franchise toggle on and off. Also check the fallback and the **Retry** button.
+6. After changing `public/shops.json` or regenerating `public/places.json`, refresh the native snapshot from the repository root:
+
+   ```sh
+   python3 native/scripts/export_venues.py
+   python3 native/scripts/export_venues.py --check
+   python3 native/scripts/audit_snapshot.py native/Caffeye/Resources/venues.json > native/release/dataset-inventory.json
+   ```
+
+   Commit `native/Caffeye/Resources/venues.json` and `native/release/dataset-inventory.json` with the source data changes. Native CI checks that this export is current.
+7. Do the checks in [TESTS.md](TESTS.md). Check the page with the franchise toggle on and off. Also check the fallback and the **Retry** button.
 
 To find venues that need editorial research, run this command:
 
@@ -162,3 +171,7 @@ caffeye/
 ## License
 
 MIT. See [LICENSE](LICENSE).
+
+## Native SwiftUI app
+
+The standalone iPhone, iPad, and macOS implementation is in [`native/`](native/README.md). It uses MapKit and platform controls, supports provider-neutral offline snapshots, and retains Bayesian ranking. Open `native/Caffeye.xcodeproj` to run it. The native bundle includes the existing 1,705 venues with ratings and review counts omitted. It lists venues alphabetically; Bayesian ranking remains available for rated snapshot imports.

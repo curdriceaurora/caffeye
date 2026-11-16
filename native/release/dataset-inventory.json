@@ -1,0 +1,93 @@
+{
+  "datasetSHA256": "8e9b3251a4d52595b35f2a43a9ec16f1dceee8bbd92efd2f1e35397892a5edf7",
+  "fieldSources": {
+    "address": {
+      "Caffeye curated seed (Apple-geocoded coordinates; mixed-source operational data)": 60,
+      "Google Places regional discovery with Caffeye editorial overlays": 2173
+    },
+    "category": {
+      "Caffeye curated seed (Apple-geocoded coordinates; mixed-source operational data)": 60,
+      "Google Places regional discovery with Caffeye editorial overlays": 2173
+    },
+    "city": {
+      "Caffeye curated seed (Apple-geocoded coordinates; mixed-source operational data)": 60,
+      "Google Places regional discovery with Caffeye editorial overlays": 2173
+    },
+    "coordinate": {
+      "Apple geocoding (curated seed)": 60,
+      "Google Places place pin": 2173
+    },
+    "county": {
+      "Caffeye curated seed (Apple-geocoded coordinates; mixed-source operational data)": 60,
+      "Google Places regional discovery with Caffeye editorial overlays": 2173
+    },
+    "curated": {
+      "Caffeye curated seed (Apple-geocoded coordinates; mixed-source operational data)": 60,
+      "Google Places regional discovery with Caffeye editorial overlays": 2173
+    },
+    "googleURL": {
+      "Caffeye curated seed (Apple-geocoded coordinates; mixed-source operational data)": 60,
+      "Google Places regional discovery with Caffeye editorial overlays": 2173
+    },
+    "hours": {
+      "Caffeye curated seed (Apple-geocoded coordinates; mixed-source operational data)": 60,
+      "Google Places regional discovery with Caffeye editorial overlays": 2071
+    },
+    "late": {
+      "Caffeye curated seed (Apple-geocoded coordinates; mixed-source operational data)": 41,
+      "Google Places regional discovery with Caffeye editorial overlays": 400
+    },
+    "loved": {
+      "Caffeye curated seed (Apple-geocoded coordinates; mixed-source operational data)": 60,
+      "Google Places regional discovery with Caffeye editorial overlays": 87
+    },
+    "model": {
+      "Caffeye curated seed (Apple-geocoded coordinates; mixed-source operational data)": 60,
+      "Google Places regional discovery with Caffeye editorial overlays": 2173
+    },
+    "name": {
+      "Caffeye curated seed (Apple-geocoded coordinates; mixed-source operational data)": 60,
+      "Google Places regional discovery with Caffeye editorial overlays": 2173
+    },
+    "neighborhood": {
+      "Caffeye curated seed (Apple-geocoded coordinates; mixed-source operational data)": 60,
+      "Google Places regional discovery with Caffeye editorial overlays": 2173
+    },
+    "providerIDs": {
+      "Caffeye curated seed (Apple-geocoded coordinates; mixed-source operational data)": 60,
+      "Google Places regional discovery with Caffeye editorial overlays": 2173
+    },
+    "signature": {
+      "Caffeye curated seed (Apple-geocoded coordinates; mixed-source operational data)": 60,
+      "Google Places regional discovery with Caffeye editorial overlays": 87
+    },
+    "summary": {
+      "Caffeye curated seed (Apple-geocoded coordinates; mixed-source operational data)": 60,
+      "Google Places regional discovery with Caffeye editorial overlays": 96
+    },
+    "types": {
+      "Google Places regional discovery with Caffeye editorial overlays": 2173
+    },
+    "website": {
+      "Caffeye curated seed (Apple-geocoded coordinates; mixed-source operational data)": 59,
+      "Google Places regional discovery with Caffeye editorial overlays": 1775
+    },
+    "work": {
+      "Caffeye editorial review": 60,
+      "atlanta-coffee-shops-directory": 2,
+      "editorial": 87,
+      "website-crawl": 5
+    },
+    "yelpURL": {
+      "Caffeye curated seed (Apple-geocoded coordinates; mixed-source operational data)": 60
+    }
+  },
+  "isDemo": false,
+  "permissionStatus": "Not established by this inventory; obtain source-specific review evidence.",
+  "recordSources": {
+    "Caffeye curated seed (Apple-geocoded coordinates; mixed-source operational data)": 60,
+    "Google Places regional discovery with Caffeye editorial overlays": 2173
+  },
+  "revision": "venues-no-ratings-59d2c4e72ab6b78c",
+  "venues": 2233
+}
