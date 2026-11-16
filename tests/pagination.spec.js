@@ -13,6 +13,27 @@ test.describe('pagination', () => {
     await expect(btn).toContainText('Load 200 more');
   });
 
+  test('off-screen cards skip layout at the height of a typical card', async ({ page }) => {
+    const { mode, placeholder, contentVisibility } = await page.evaluate(() => {
+      const cards = [...document.querySelectorAll('#shopList .shop-item')];
+      const list = document.getElementById('shopList').getBoundingClientRect();
+      const counts = new Map();
+      for (const c of cards) {
+        const r = c.getBoundingClientRect();
+        if (r.bottom > list.bottom) break;
+        const h = Math.round(r.height);
+        counts.set(h, (counts.get(h) || 0) + 1);
+      }
+      return {
+        mode: [...counts].sort((x, y) => y[1] - x[1])[0][0],
+        placeholder: Math.round(cards[cards.length - 1].getBoundingClientRect().height),
+        contentVisibility: getComputedStyle(cards[0]).contentVisibility,
+      };
+    });
+    expect(contentVisibility).toBe('auto');
+    expect(placeholder).toBe(mode);
+  });
+
   test('load-more renders 400 and focuses the 201st card', async ({ page }) => {
     await page.locator('.load-more-btn').click();
     await expect(page.locator('#shopList .shop-item')).toHaveCount(400);
