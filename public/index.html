@@ -399,6 +399,8 @@
     padding: 10px 16px;
     border-bottom: 1px solid var(--border);
     cursor: pointer; transition: background 150ms var(--ease-out);
+    /* Off-screen cards stay in the DOM but skip layout and paint; the size is an estimate until a card first renders. */
+    content-visibility: auto; contain-intrinsic-size: auto 64px;
   }
   .load-more {
     padding: 0; border-bottom: none;
@@ -729,7 +731,7 @@
     .search input { height: 30px; padding: 4px 10px; font-size: 16px; }
     .results-meta { padding: 3px 10px; font-size: 10px; }
     .filter-bar { padding: 3px 10px 4px; }
-    .shop-item { padding: 5px 12px; }
+    .shop-item { padding: 5px 12px; contain-intrinsic-size: auto 53px; }
     .shop-name { font-size: 13px; gap: 6px; margin: 0 0 2px 0; line-height: 1.25; }
     .shop-name .shop-icon-tile { width: 18px; height: 18px; font-size: 10px; }
     .shop-meta { font-size: 11px; margin-bottom: 2px; }
@@ -757,7 +759,7 @@
     .filter-bar { padding: 2px 10px; }
     .search { padding: 4px 10px; }
     .results-meta { padding: 3px 10px; }
-    .shop-item { padding: 5px 10px; }
+    .shop-item { padding: 5px 10px; contain-intrinsic-size: auto 53px; }
   }
 </style>
 <link rel="preload" href="./shops.json" as="fetch" crossorigin>
